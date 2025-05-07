@@ -1,11 +1,7 @@
 setwd("/Users/andreeamurariu/Documents/github/usri/")
 
-library(edgeR,quietly=T) 
-library(DESeq2,quietly=T)
-library(seqgendiff,quietly=T)
-
-readCount<-read.table(file="data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv", header = T, skip=35, sep='\t', row.names = 1)
-m <- read.table(file="data/metadata.txt", header=F, row.names=1, sep='\t')
+immuno<-read.table(file="data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv", header = T, skip=35, sep='\t', row.names = 1)
+m <- read.table(file="data/imm_metadata.txt", header=F, row.names=1, sep='\t')
 
 ##stopped editing here, start here
 
@@ -27,7 +23,7 @@ if(file.exists("analysis/thin_sim_data.out.Rda")){
   keep <- filterByExpr(y)
   y <- y[keep,keep.lib.sizes=FALSE]
   
-  # make the filtered base dataset
+  # make the filtered base dataset, filters out genes with no expr 
   immuno.data <- y$counts
   
   data.out <- list()
@@ -45,6 +41,7 @@ if(file.exists("analysis/thin_sim_data.out.Rda")){
     x.5 <- aldex(thin.immuno$mat, conditions=as.vector(thin.immuno$designmat), gamma=0.5)
     
     conds <- as.vector(thin.immuno$designmat)
+    
     #DESeq2 functions
     dds.th  <- DESeqDataSetFromMatrix(countData = thin.immuno$mat,
                                       colData = data.frame(conds),
@@ -54,7 +51,7 @@ if(file.exists("analysis/thin_sim_data.out.Rda")){
     data.iter <- list(coef=thin.immuno$coefmat, ald0=x, ald2=x.2, ald5=x.5, des=res.th)
     data.out[[i]] <- data.iter
   }
-  save(data.out, file="../analysis/thin_sim_data.out.Rda")
+  save(data.out, file="../analysis/thin_sim_data_draft.out.Rda")
 }
 
 ### wilcoxon
