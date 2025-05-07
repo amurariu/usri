@@ -1,4 +1,5 @@
-setwd("/Users/andreeamurariu/Documents/github/usri/")
+#setwd("/home/amurariu/Documents/github/usri/")
+setwd("/home/amurariu/usri")
 
 immuno<-read.table(file="data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv", header = T, skip=35, sep='\t', row.names = 1)
 m <- read.table(file="data/imm_metadata.txt", header=F, row.names=1, sep='\t')
