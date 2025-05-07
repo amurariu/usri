@@ -1,11 +1,7 @@
-#setwd("/home/amurariu/Documents/github/usri/")
-#setwd("/home/amurariu/usri")
+raw_counts <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv'
+meta <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm_metadata.txt'
 
-url <- "https://rawgithubusercontent.com/amurariu/usri/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv"
-url <- 'https://rawgithubusercontent.com/amurariu/usri/main/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv'
-meta <- "https://rawgithubusercontent.com/amurariu/usri/main/data/imm_metadata.txt"
-
-immuno<-read.table(file=url, header = T, skip=35, sep='\t', row.names = 1)
+immuno<-read.table(file=raw_counts, header = T, skip=35, sep='\t', row.names = 1)
 m <- read.table(file=meta, header=F, row.names=1, sep='\t')
 
 if(file.exists("analysis/thin_sim_data.out.Rda")){
@@ -26,11 +22,19 @@ if(file.exists("analysis/thin_sim_data.out.Rda")){
   keep <- filterByExpr(y)
   y <- y[keep,keep.lib.sizes=FALSE]
   
-  # make the filtered base dataset, filters out genes with no expr 
+  # make the filtered base dataset 
   immuno.data <- y$counts
-  
   data.out <- list()
   
+  #unpermuted DESeq2
+  for (i in 1:10){
+  dds.u  <- DESeqDataSetFromMatrix(countData = immuno.data,
+                                    colData = immuno.conds,
+                                    design = ~ conditions)
+  dds.u <- DESeq(dds.u)
+  res.u <- results(dds.u)}
+  
+  #randomized + TP addition for DESeq2
   # do 10 replicates and keep outputs
   for(i in 1:10){
     # this adds rnorm noise to 5% of the transcripts
@@ -39,51 +43,52 @@ if(file.exists("analysis/thin_sim_data.out.Rda")){
     thin.immuno <- thin_2group(immuno.data, prop_null=0.95, alpha=0,
                                signal_fun = stats::rnorm, signal_params = list(mean = 0, sd = 2))
     
-    #x <- aldex(thin.immuno$mat, conditions=as.vector(thin.immuno$designmat), gamma=1e-3)
-   # x.2 <- aldex(thin.immuno$mat, conditions=as.vector(thin.immuno$designmat), gamma=0.2)
-    #x.5 <- aldex(thin.immuno$mat, conditions=as.vector(thin.immuno$designmat), gamma=0.5)
+    condsp <- as.vector(thin.immuno$designmat)
     
-    conds <- as.vector(thin.immuno$designmat)
-    
-    #DESeq2 functions
     setClassUnion("ExpData", c("matrix", "SummarizedExperiment")) #added due to error message being shown for DESeq2
     dds.th  <- DESeqDataSetFromMatrix(countData = thin.immuno$mat,
-                                      colData = data.frame(conds),
-                                      design = ~ conds)
+                                      colData = data.frame(condsp),
+                                      design = ~ condsp)
     dds.th <- DESeq(dds.th)
-    res.th <- results(dds.th)
+    res.th <- results(dds.th)}
     
     
-    #EdgeR Code
-      immuno.conds$conditions <- factor(immuno.conds$conditions)
-      design <- model.matrix(~group)
+#unpermuted edgeR
+  for (i in 1:10){
+  group<-factor(conditions)
+  design <- model.matrix(~group)
+  fit <- glmQLFit(y,design)
+  qlf <- glmQLFTest(fit,coef=2)
+  edgeR.res.u<-topTags(qlf, n=20478, adjust.method = "BH", sort.by = "none", p.value = 1)}
+
+  
+#randomized + TP addition edgeR  
+  for (i in 1:10){
+    thin.immuno_e <- thin_2group(immuno.data, prop_null=0.95, alpha=0,
+                               signal_fun = stats::rnorm, signal_params = list(mean = 0, sd = 2)) #confirm if want to use the same thin.immuno group or no
+    cond_e <- as.vector(thin.immuno_e$designmat)
+    
+      group_e<-factor(cond_e)
+      design_e <- model.matrix(~group_e)
+      fit <- glmQLFit(thin.immuno_e,design_e) #negative counts not allowed message
       
-      y <- calcNormFactors(y)
-      count_norm = cpm(y)
-      y <- estimateDisp(y,design)
-      fit <- glmQLFit(y,design)
       qlf <- glmQLFTest(fit,coef=2)
-      qlf_i = topTags(qlf, n = nrow(conditions), p.value = 1)@.Data[[1]]
-      pvalues = qlf_i[match(rownames(count1), rownames(qlf_i)),"PValue"]
-      qlf <- topTags(qlf, n = nrow(dat), p.value = q)
-      discovery = rownames(qlf)
-      output <- list(discovery, pvalues)
-      return(output)
-    
-    
-    
-    
+      edgeR.res.p<-topTags(qlf, n=20478, adjust.method = "BH", sort.by = "none", p.value = 1)}
+      
     #data.iter <- list(coef=thin.immuno$coefmat, ald0=x, ald2=x.2, ald5=x.5, des=res.th)
     #data.out[[i]] <- data.iter
   }
   #save(data.out, file="../analysis/thin_sim_data_draft.out.Rda")
 }
 
+#create for loop such that it repeats the whole thing and adds it into one file instead of 4 loops
 
 
-#design <- model.matrix(~conds)
-# fit <- glmQLFit(y, design)
-# qlf <- glmQLFit(fit, coef=2) # returns error message because outputs negative values, which should not be possible in reality (ie. gene expression levels should not be negative values)
-# 
-# count_norm=cpm(y) 
-# count_norm<-as.data.frame(count_norm) 
+
+
+
+
+
+
+
+
