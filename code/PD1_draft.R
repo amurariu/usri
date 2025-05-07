@@ -1,7 +1,8 @@
 #setwd("/home/amurariu/Documents/github/usri/")
 #setwd("/home/amurariu/usri")
 
-url <- "https://rawgithubusercontent.com/amurariu/usri/main/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv"
+url <- "https://rawgithubusercontent.com/amurariu/usri/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv"
+url <- 'https://rawgithubusercontent.com/amurariu/usri/main/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv'
 meta <- "https://rawgithubusercontent.com/amurariu/usri/main/data/imm_metadata.txt"
 
 immuno<-read.table(file=url, header = T, skip=35, sep='\t', row.names = 1)
