@@ -58,14 +58,20 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/br
     #for me add code here--------------------------
     
     #unperm aldex2
-    x <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=1e-3)
-    x.2 <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=0.2)
-    x.5 <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=0.5)
+    x <- aldex(brca.data, conditions=brca.conds, gamma=1e-3)
+    x.2 <- aldex(brca.data, conditions=brca.conds, gamma=0.2)
+    x.5 <- aldex(brca.data, conditions=brca.conds, gamma=0.5)
     
     #perm aldex2
-    x <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=1e-3)
-    x.2 <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=0.2)
-    x.5 <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=0.5)
+    xp <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=1e-3)
+    x.2p <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=0.2)
+    x.5p <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=0.5)
+    
+    data.iter <- list(desu=res.u, desp=res.th, edgeru=edg.u, edgerp=edg.p, ald0u=x, ald2u=x.2, ald5u=x.5, ald0p=xp, ald2p=x.2p, ald5p=x.5p)
+    brca.data.out[[i]] <- data.iter
+  }
+  save(brca.data.out, file="analysis/thin_sim_brca.out.Rda")
+}
     
     
   
