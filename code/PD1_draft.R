@@ -1,11 +1,11 @@
-if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/pd1data")){
-  load("https://raw.githubusercontent.com/amurariu/usri/main/analysis/pd1data") # file is data.out, list
+library(ALDEx2, warn.conflicts=F)
+library(seqgendiff, warn.conflicts=F)
+library(edgeR, warn.conflicts=F)
+library(DESeq2, warn.conflicts=F)
+
+if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/test.Rda")){
+  load("https://raw.githubusercontent.com/amurariu/usri/main/analysis/test.Rda") # file is data.out, list
 } else {
-  library(ALDEx2, warn.conflicts=F)
-  library(seqgendiff, warn.conflicts=F)
-  library(edgeR, warn.conflicts=F)
-  library(DESeq2, warn.conflicts=F)
-  
   raw_counts <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv'
   meta <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm_metadata.txt'
   
@@ -25,17 +25,8 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/pd
   # make the filtered base dataset 
   immuno.data <- y$counts
   data.out <- list()
-  
-  #unpermuted DESeq2
-  for (i in 1:10){
-  dds.u  <- DESeqDataSetFromMatrix(countData = immuno.data,
-                                    colData = immuno.conds,
-                                    design = ~ conditions)
-  dds.u <- DESeq(dds.u)
-  res.u <- results(dds.u)
-  
-  #randomized + TP addition for DESeq2
-  
+
+  for (i in 1:2){
   # do 10 replicates and keep outputs
     # this adds rnorm noise to 5% of the transcripts
     # setting alpha=1 gives no difference between if features are
@@ -45,54 +36,70 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/pd
                                signal_params = list(mean = 0, sd = 2))
     # permuted and thinned conditions and data
     condsp <- as.vector(thin.immuno$designmat)
-    datasp <- as.vector(thin.immuno$mat)
+    datasp <- thin.immuno$mat
     
-   # setClassUnion("ExpData", c("matrix", "SummarizedExperiment")) #added due to error message being shown for DESeq2, sometimes works and sometimes doesn't?
-    dds.th  <- DESeqDataSetFromMatrix(countData = thin.immuno$mat,
+    
+    #randomized + TP addition for DESeq2
+    dds.th  <- DESeqDataSetFromMatrix(countData = datasp,
                                       colData = data.frame(condsp),
                                       design = ~ condsp)
     dds.th <- DESeq(dds.th)
     res.th <- results(dds.th)
-    
-    
-#unpermuted edgeR
-  group<-factor(conditions)
-  design <- model.matrix(~group)
-  fit <- glmQLFit(y,design)
-  qlf <- glmQLFTest(fit,coef=2)
-  edgeR.res.u<-topTags(qlf, n=nrow(thin.immuno$mat), adjust.method = "BH", sort.by = "none", p.value = 1)
 
-# plot(res.u$padj, edgeR.res.u[[1]]$FDR, log='xy')
+    # plot(res.u$padj, edgeR.res.u[[1]]$FDR, log='xy')
   
-#randomized + TP addition edgeR - not working
+    #randomized + TP addition edgeR
       group_e <- factor(condsp)
       design_e <- model.matrix(~group_e)
       # need to pull from the right slot in thin.immuno
-      fit_e <- glmQLFit(thin.immuno$mat,design_e) #negative counts not allowed message
+      fit_e <- glmQLFit(datasp,design_e)
       qlf_e <- glmQLFTest(fit_e,coef=2)
-      edgeR.res.p<-topTags(qlf_e, n=nrow(thin.immuno$mat), adjust.method = "BH", sort.by = "none", p.value = 1)
+      edgeR.res.p<-topTags(qlf_e, n=nrow(datasp), adjust.method = "BH", sort.by = "none", p.value = 1)
       
-      # check to see that things are reasonable
-      
+     # check to see that things are reasonable
      # open circles FP, blue circles TP
      # coef_T <- which(abs(thin.immuno$coefmat) > 0)
      #plot(res.th$padj, edgeR.res.p[[1]]$FDR, log='xy', xlim=c(1e-10,1), ylim=c(1e-10,1))
       #points(res.th$padj[coef_T], edgeR.res.p[[1]]$FDR[coef_T], col='blue', pch=19, cex=0.3)
        
-    data.iter <- list(desu=res.u, desp=res.th, edgu=edgeR.res.u, edgp=edgeR.res.p)
+    data.iter <- list(desp=res.th, edgp=edgeR.res.p)
     data.out[[i]] <- data.iter
   }
-  save(data.out, file="https://raw.githubusercontent.com/amurariu/usri/main/analysis/pd1data")
+  
+  #unpermuted DESeq2
+  
+  #setClassUnion("ExpData", c("matrix", "SummarizedExperiment")) #added due to error message being shown for DESeq2, sometimes works and sometimes doesn't?
+  dds.u  <- DESeqDataSetFromMatrix(countData = immuno.data,
+                                   colData = immuno.conds,
+                                   design = ~ conditions)
+  dds.u <- DESeq(dds.u)
+  res.u <- results(dds.u)
+  
+  #unpermuted edgeR
+  group<-factor(conditions)
+  design <- model.matrix(~group)
+  fit <- glmQLFit(y,design)
+  qlf <- glmQLFTest(fit,coef=2)
+  edgeR.res.u<-topTags(qlf, n=nrow(datasp), adjust.method = "BH", sort.by = "none", p.value = 1) 
+  
+   #unpermuted DESeq2
+  
+  #setClassUnion("ExpData", c("matrix", "SummarizedExperiment")) #added due to error message being shown for DESeq2, sometimes works and sometimes doesn't?
+  dds.u  <- DESeqDataSetFromMatrix(countData = immuno.data,
+                                   colData = immuno.conds,
+                                   design = ~ conditions)
+  dds.u <- DESeq(dds.u)
+  res.u <- results(dds.u)
+  
+  #unpermuted edgeR
+  group<-factor(conditions)
+  design <- model.matrix(~group)
+  fit <- glmQLFit(y,design)
+  qlf <- glmQLFTest(fit,coef=2)
+  edgeR.res.u<-topTags(qlf, n=nrow(datasp), adjust.method = "BH", sort.by = "none", p.value = 1) 
+  
+  unpermuted<-list(desu=res.u, edgu=edgeR.res.u)
+  combined <- list(unpermuted, data.out)
+  
+  save(combined, file="https://raw.githubusercontent.com/amurariu/usri/main/analysis/test.Rda")
 }
-
-#will create for loop such that it repeats the whole thing and adds it into one file instead of 4 loops
-
-
-
-
-
-
-
-
-
-
