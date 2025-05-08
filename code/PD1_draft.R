@@ -61,20 +61,14 @@ if(file.exists("analysis/thin_sim_data.out.Rda")){
   edgeR.res.u<-topTags(qlf, n=20478, adjust.method = "BH", sort.by = "none", p.value = 1)
 
   
-#randomized + TP addition edgeR  
-  
-    thin.immuno_e <- thin_2group(immuno.data, prop_null=0.95, alpha=0,
-                               signal_fun = stats::rnorm, signal_params = list(mean = 0, sd = 2)) #confirm if want to use the same thin.immuno group or no
-    cond_e <- as.vector(thin.immuno_e$designmat)
-    
-      group_e<-factor(cond_e)
+#randomized + TP addition edgeR - not working
+      group_e <- factor(condsp)
       design_e <- model.matrix(~group_e)
-      fit <- glmQLFit(thin.immuno_e,design_e) #negative counts not allowed message
+      fit_e <- glmQLFit(thin.immuno,design_e) #negative counts not allowed message
+      qlf_e <- glmQLFTest(fit_e,coef=2)
+      edgeR.res.p<-topTags(qlf_e, n=20478, adjust.method = "BH", sort.by = "none", p.value = 1)
       
-      qlf <- glmQLFTest(fit,coef=2)
-      edgeR.res.p<-topTags(qlf, n=20478, adjust.method = "BH", sort.by = "none", p.value = 1)
-      
-    data.iter <- list(coef=thin.immuno$coefmat, ald0=x, ald2=x.2, ald5=x.5, des=res.th)
+    data.iter <- list(desu=res.u, desp=res.th, edgu=edgeR.res.u, edgp=edgeR.res.p)
     data.out[[i]] <- data.iter
   }
   save(data.out, file="../analysis/thin_sim_data_draft.out.Rda")
