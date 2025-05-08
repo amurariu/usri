@@ -3,6 +3,7 @@ library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
 library(DESeq2, warn.conflicts=F)
 
+#file.exists name should be changed once code is finalized
 if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/test.Rda")){
   load("https://raw.githubusercontent.com/amurariu/usri/main/analysis/test.Rda") # file is data.out, list
 } else {
@@ -41,11 +42,11 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/te
     
      #randomized DESeq2 with no TP generation
     
-   # dds.th  <- DESeqDataSetFromMatrix(countData = immuno.data,
-                                     # colData = data.frame(condsp),
-                                    #  design = ~ condsp)
-   # dds.th <- DESeq(dds.th)
-  #  res.th <- results(dds.th)
+     dds.r  <- DESeqDataSetFromMatrix(countData = immuno.data,  #uses original data (no TP added)
+                                       colData = data.frame(condsp), #uses data randomization from thin.immuno
+                                       design = ~ condsp)
+     dds.r <- DESeq(dds.r)
+     res.r <- results(dds.r)
     
     
      #randomized + TP addition for DESeq2
