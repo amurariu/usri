@@ -55,7 +55,7 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/br
     edg.u<-topTags(qlf, n=20478, adjust.method = "BH", sort.by = "none", p.value = 1)
     
     #perm edgeR
-    #add code here--------------------------
+    #for me add code here--------------------------
     
     #unperm aldex2
     x <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=1e-3)
