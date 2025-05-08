@@ -1,16 +1,16 @@
-raw_counts <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv'
-meta <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm_metadata.txt'
-
-immuno<-read.table(file=raw_counts, header = T, skip=35, sep='\t', row.names = 1)
-m <- read.table(file=meta, header=F, row.names=1, sep='\t')
-
-if(file.exists("analysis/thin_sim_data.out.Rda")){
-  load("analysis/thin_sim_data.out.Rda") # file is data.out, list
+if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/pd1data")){
+  load("https://raw.githubusercontent.com/amurariu/usri/main/analysis/pd1data") # file is data.out, list
 } else {
   library(ALDEx2, warn.conflicts=F)
   library(seqgendiff, warn.conflicts=F)
   library(edgeR, warn.conflicts=F)
   library(DESeq2, warn.conflicts=F)
+  
+  raw_counts <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv'
+  meta <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm_metadata.txt'
+  
+  immuno<-read.table(file=raw_counts, header = T, skip=35, sep='\t', row.names = 1)
+  m <- read.table(file=meta, header=F, row.names=1, sep='\t')
   
   ###
   # edgeR functions
@@ -71,7 +71,7 @@ if(file.exists("analysis/thin_sim_data.out.Rda")){
     data.iter <- list(desu=res.u, desp=res.th, edgu=edgeR.res.u, edgp=edgeR.res.p)
     data.out[[i]] <- data.iter
   }
-  save(data.out, file="../analysis/thin_sim_data_draft.out.Rda")
+  save(data.out, file="https://raw.githubusercontent.com/amurariu/usri/main/analysis/pd1data")
 }
 
 #create for loop such that it repeats the whole thing and adds it into one file instead of 4 loops
