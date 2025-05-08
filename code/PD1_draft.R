@@ -60,13 +60,17 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/pd
   qlf <- glmQLFTest(fit,coef=2)
   edgeR.res.u<-topTags(qlf, n=20478, adjust.method = "BH", sort.by = "none", p.value = 1)
 
+# plot(res.u$padj, edgeR.res.u[[1]]$FDR, log='xy')
   
 #randomized + TP addition edgeR - not working
       group_e <- factor(condsp)
       design_e <- model.matrix(~group_e)
-      fit_e <- glmQLFit(thin.immuno,design_e) #negative counts not allowed message
+      # need to pull from the right slot in thin.immuno
+      fit_e <- glmQLFit(thin.immuno$mat,design_e) #negative counts not allowed message
       qlf_e <- glmQLFTest(fit_e,coef=2)
       edgeR.res.p<-topTags(qlf_e, n=20478, adjust.method = "BH", sort.by = "none", p.value = 1)
+      # check to see that things are reasonable
+     # plot(res.th$padj, edgeR.res.p[[1]]$FDR, log='xy')
       
     data.iter <- list(desu=res.u, desp=res.th, edgu=edgeR.res.u, edgp=edgeR.res.p)
     data.out[[i]] <- data.iter
