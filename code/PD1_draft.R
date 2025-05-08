@@ -3,8 +3,8 @@ library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
 library(DESeq2, warn.conflicts=F)
 
-if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/test.Rda")){
-  load("https://raw.githubusercontent.com/amurariu/usri/main/analysis/test.Rda") # file is data.out, list
+if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/test.R")){
+  load("https://raw.githubusercontent.com/amurariu/usri/main/analysis/test.R") # file is data.out, list
 } else {
   raw_counts <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv'
   meta <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm_metadata.txt'
@@ -101,5 +101,5 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/te
   unpermuted<-list(desu=res.u, edgu=edgeR.res.u)
   combined <- list(unpermuted, data.out)
   
-  save(combined, file="https://raw.githubusercontent.com/amurariu/usri/main/analysis/test.Rda")
+  save(combined, file='https://raw.githubusercontent.com/amurariu/usri/main/analysis/test.Rda')
 }
