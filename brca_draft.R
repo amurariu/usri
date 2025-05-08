@@ -1,3 +1,8 @@
+library(edgeR,quietly=T) 
+library(DESeq2,quietly=T)
+library(seqgendiff, quietly=T)
+library(ALDEx2, warn.conflicts=F)
+
 if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/brcadata")){
   load("https://raw.githubusercontent.com/amurariu/usri/main/analysis/brcadata") # file is data.out, list
 } else {
@@ -8,11 +13,6 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/br
   brca <- read.table(file=raw_counts, header=T, row.names=1, sep='\t')
   brca.conds <- as.vector(unlist(read.table(file=con, sep='\t')))
   conditions <- data.frame(brca.conds)
-  
-  library(ALDEx2, warn.conflicts=F)
-  library(seqgendiff, warn.conflicts=F)
-  library(edgeR, warn.conflicts=F)
-  library(DESeq2, warn.conflicts=F)
   
   ###
   # edgeR functions
