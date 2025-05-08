@@ -54,6 +54,20 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/br
     qlf <- glmQLFTest(fit,coef=2)
     edg.u<-topTags(qlf, n=20478, adjust.method = "BH", sort.by = "none", p.value = 1)
     
+    #perm edgeR
+    #add code here--------------------------
+    
+    #unperm aldex2
+    x <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=1e-3)
+    x.2 <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=0.2)
+    x.5 <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=0.5)
+    
+    #perm aldex2
+    x <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=1e-3)
+    x.2 <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=0.2)
+    x.5 <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=0.5)
+    
+    
   
   
   
