@@ -41,9 +41,11 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/pd
     # setting alpha=1 gives no difference between if features are
     # approximately gaussian
     thin.immuno <- thin_2group(immuno.data, prop_null=0.95, alpha=0,
-                               signal_fun = stats::rnorm, signal_params = list(mean = 0, sd = 2))
-    
+                               signal_fun = stats::rnorm, 
+                               signal_params = list(mean = 0, sd = 2))
+    # permuted and thinned conditions and data
     condsp <- as.vector(thin.immuno$designmat)
+    datasp <- as.vector(thin.immuno$mat)
     
    # setClassUnion("ExpData", c("matrix", "SummarizedExperiment")) #added due to error message being shown for DESeq2, sometimes works and sometimes doesn't?
     dds.th  <- DESeqDataSetFromMatrix(countData = thin.immuno$mat,
@@ -58,7 +60,7 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/pd
   design <- model.matrix(~group)
   fit <- glmQLFit(y,design)
   qlf <- glmQLFTest(fit,coef=2)
-  edgeR.res.u<-topTags(qlf, n=20478, adjust.method = "BH", sort.by = "none", p.value = 1)
+  edgeR.res.u<-topTags(qlf, n=nrow(thin.immuno$mat), adjust.method = "BH", sort.by = "none", p.value = 1)
 
 # plot(res.u$padj, edgeR.res.u[[1]]$FDR, log='xy')
   
@@ -68,10 +70,15 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/pd
       # need to pull from the right slot in thin.immuno
       fit_e <- glmQLFit(thin.immuno$mat,design_e) #negative counts not allowed message
       qlf_e <- glmQLFTest(fit_e,coef=2)
-      edgeR.res.p<-topTags(qlf_e, n=20478, adjust.method = "BH", sort.by = "none", p.value = 1)
-      # check to see that things are reasonable
-     # plot(res.th$padj, edgeR.res.p[[1]]$FDR, log='xy')
+      edgeR.res.p<-topTags(qlf_e, n=nrow(thin.immuno$mat), adjust.method = "BH", sort.by = "none", p.value = 1)
       
+      # check to see that things are reasonable
+      
+     # open circles FP, blue circles TP
+     # coef_T <- which(abs(thin.immuno$coefmat) > 0)
+     #plot(res.th$padj, edgeR.res.p[[1]]$FDR, log='xy', xlim=c(1e-10,1), ylim=c(1e-10,1))
+      #points(res.th$padj[coef_T], edgeR.res.p[[1]]$FDR[coef_T], col='blue', pch=19, cex=0.3)
+       
     data.iter <- list(desu=res.u, desp=res.th, edgu=edgeR.res.u, edgp=edgeR.res.p)
     data.out[[i]] <- data.iter
   }
