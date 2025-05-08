@@ -41,11 +41,11 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/te
     
      #randomized DESeq2 with no TP generation
     
-    dds.th  <- DESeqDataSetFromMatrix(countData = immuno.data,
-                                      colData = data.frame(condsp),
-                                      design = ~ condsp)
-    dds.th <- DESeq(dds.th)
-    res.th <- results(dds.th)
+   # dds.th  <- DESeqDataSetFromMatrix(countData = immuno.data,
+                                     # colData = data.frame(condsp),
+                                    #  design = ~ condsp)
+   # dds.th <- DESeq(dds.th)
+  #  res.th <- results(dds.th)
     
     
      #randomized + TP addition for DESeq2
@@ -113,5 +113,5 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/te
   unpermuted<-list(desu=res.u, edgu=edgeR.res.u)
   combined <- list(unpermuted, data.out)
   
-  save(combined, file="/Documents/usri/data/test.Rda")
+  save(combined, file="./Documents/github/usri/analysis/test.Rda")
 }
