@@ -43,8 +43,9 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/pd
     thin.immuno <- thin_2group(immuno.data, prop_null=0.95, alpha=0,
                                signal_fun = stats::rnorm, 
                                signal_params = list(mean = 0, sd = 2))
-    
+    # permuted and thinned conditions and data
     condsp <- as.vector(thin.immuno$designmat)
+    datasp <- as.vector(thin.immuno$mat)
     
    # setClassUnion("ExpData", c("matrix", "SummarizedExperiment")) #added due to error message being shown for DESeq2, sometimes works and sometimes doesn't?
     dds.th  <- DESeqDataSetFromMatrix(countData = thin.immuno$mat,
