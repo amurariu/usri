@@ -39,7 +39,16 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/te
     datasp <- thin.immuno$mat
     
     
-    #randomized + TP addition for DESeq2
+     #randomized DESeq2 with no TP generation
+    
+    dds.th  <- DESeqDataSetFromMatrix(countData = immuno.data,
+                                      colData = data.frame(condsp),
+                                      design = ~ condsp)
+    dds.th <- DESeq(dds.th)
+    res.th <- results(dds.th)
+    
+    
+     #randomized + TP addition for DESeq2
     dds.th  <- DESeqDataSetFromMatrix(countData = datasp,
                                       colData = data.frame(condsp),
                                       design = ~ condsp)
@@ -48,6 +57,9 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/te
 
     # plot(res.u$padj, edgeR.res.u[[1]]$FDR, log='xy')
   
+    #randomized edgeR with no TP generation
+    
+    
     #randomized + TP addition edgeR
       group_e <- factor(condsp)
       design_e <- model.matrix(~group_e)
@@ -101,5 +113,5 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/te
   unpermuted<-list(desu=res.u, edgu=edgeR.res.u)
   combined <- list(unpermuted, data.out)
   
-  save(combined, file="https://raw.githubusercontent.com/amurariu/usri/main/analysis/test.Rda")
+  save(combined, file="/Documents/usri/data/test.Rda")
 }
