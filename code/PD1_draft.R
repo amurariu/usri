@@ -43,7 +43,7 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/te
      #randomized DESeq2 with no TP generation
     
      dds.r  <- DESeqDataSetFromMatrix(countData = immuno.data,  #uses original data (no TP added)
-                                       colData = data.frame(condsp), #uses data randomization from thin.immuno
+                                       colData = data.frame(condsp), #uses data randomization order from thin.immuno
                                        design = ~ condsp)
      dds.r <- DESeq(dds.r)
      res.r <- results(dds.r)
@@ -59,12 +59,15 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/te
     # plot(res.u$padj, edgeR.res.u[[1]]$FDR, log='xy')
   
     #randomized edgeR with no TP generation
+    group_e <- factor(condsp)
+    design_e <- model.matrix(~group_e) #use data randomization from seqgendiff
+    # need to pull from the right slot in thin.immuno
+    fit_ <- glmQLFit(immuno.data,design_e) #uses original data (ie. no TP added)
+    qlf_ <- glmQLFTest(fit_,coef=2)
+    edgeR.res.r<-topTags(qlf_, n=nrow(immuno.data), adjust.method = "BH", sort.by = "none", p.value = 1)
     
     
     #randomized + TP addition edgeR
-      group_e <- factor(condsp)
-      design_e <- model.matrix(~group_e)
-      # need to pull from the right slot in thin.immuno
       fit_e <- glmQLFit(datasp,design_e)
       qlf_e <- glmQLFTest(fit_e,coef=2)
       edgeR.res.p<-topTags(qlf_e, n=nrow(datasp), adjust.method = "BH", sort.by = "none", p.value = 1)
@@ -75,7 +78,7 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/te
      #plot(res.th$padj, edgeR.res.p[[1]]$FDR, log='xy', xlim=c(1e-10,1), ylim=c(1e-10,1))
       #points(res.th$padj[coef_T], edgeR.res.p[[1]]$FDR[coef_T], col='blue', pch=19, cex=0.3)
        
-    data.iter <- list(desp=res.th, edgp=edgeR.res.p)
+    data.iter <- list(desp=res.th, desr=res.r, edgp=edgeR.res.p, edgrr= edgeR.res.r)
     data.out[[i]] <- data.iter
   }
   
@@ -93,23 +96,7 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/te
   design <- model.matrix(~group)
   fit <- glmQLFit(y,design)
   qlf <- glmQLFTest(fit,coef=2)
-  edgeR.res.u<-topTags(qlf, n=nrow(datasp), adjust.method = "BH", sort.by = "none", p.value = 1) 
-  
-   #unpermuted DESeq2
-  
-  #setClassUnion("ExpData", c("matrix", "SummarizedExperiment")) #added due to error message being shown for DESeq2, sometimes works and sometimes doesn't?
-  dds.u  <- DESeqDataSetFromMatrix(countData = immuno.data,
-                                   colData = immuno.conds,
-                                   design = ~ conditions)
-  dds.u <- DESeq(dds.u)
-  res.u <- results(dds.u)
-  
-  #unpermuted edgeR
-  group<-factor(conditions)
-  design <- model.matrix(~group)
-  fit <- glmQLFit(y,design)
-  qlf <- glmQLFTest(fit,coef=2)
-  edgeR.res.u<-topTags(qlf, n=nrow(datasp), adjust.method = "BH", sort.by = "none", p.value = 1) 
+  edgeR.res.u<-topTags(qlf, n=nrow(immuno.data), adjust.method = "BH", sort.by = "none", p.value = 1) 
   
   unpermuted<-list(desu=res.u, edgu=edgeR.res.u)
   combined <- list(unpermuted, data.out)
