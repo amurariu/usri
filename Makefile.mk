@@ -6,7 +6,7 @@ all: analysis/test2.Rda
 #recipe is to run the R script
 
 analysis/test2.Rda: brca_draft.R
-	Rscript 'brca_draft.R'
+	Rscript 'code/brca_draft.R'
 
 clean:	
 	rm analysis/test2.Rda
