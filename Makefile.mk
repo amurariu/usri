@@ -8,6 +8,6 @@ all: analysis/test2.Rda
 analysis/test2.Rda: 'code/brca_draft.R'
 	Rscript 'code/brca_draft.R'
 
-#clean:	
+clean:	
 	rm analysis/test2.Rda
 	
