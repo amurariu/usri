@@ -61,17 +61,18 @@ if(file.exists(file="./Documents/github/usri/analysis/test2.Rda")){
     qlf_e <- glmQLFTest(fit_e,coef=2)
     edg.p<-topTags(qlf_e, n=nrow(datasp), adjust.method = "BH", sort.by = "none", p.value = 1)
     
-    #unperm aldex2
-    #x <- aldex(brca.data, conditions=brca.conds, gamma=1e-3)
-    #x.2 <- aldex(brca.data, conditions=brca.conds, gamma=0.2)
-    #x.5 <- aldex(brca.data, conditions=brca.conds, gamma=0.5)
+    #permuted without TP addition aldex2
+    xr <- aldex(brca.data, conditions=conds, gamma=1e-3) #uses original dataset but permuted conditions
+    x.2r <- aldex(brca.data, conditions=conds, gamma=0.2)
+    x.5r <- aldex(brca.data, conditions=conds, gamma=0.5)
+   
     
-    #perm aldex2
-   # xp <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=1e-3)
-    #x.2p <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=0.2)
-    #x.5p <- aldex(thin.brca$mat, conditions=as.vector(thin.brca$designmat), gamma=0.5)
+     #permuted + TP addition aldex2
+    xp <- aldex(datasp, conditions=conds, gamma=1e-3)
+    x.2p <- aldex(datasp, conditions=conds, gamma=0.2)
+    x.5p <- aldex(datasp, conditions=conds, gamma=0.5)
     
-    data.iter <- list(desr=res.r, desp=res.th, edgerp=edg.r, edgerp=edg.p)
+    data.iter <- list(desr=res.r, desp=res.th, edgr=edg.r, edgp=edg.p,ald0r=xr, ald2r=x.2r, ald5r=x.5r, ald0p=xp, ald2p=x.2p, ald5p=x.5p )
     brca.data.out[[i]] <- data.iter
   }
   
@@ -88,8 +89,13 @@ if(file.exists(file="./Documents/github/usri/analysis/test2.Rda")){
   fit <- glmQLFit(y,design)
   qlf <- glmQLFTest(fit,coef=2)
   edg.u<-topTags(qlf, n=nrow(brca.data), adjust.method = "BH", sort.by = "none", p.value = 1)
+  
+  #unpermuted aldex2
+  x <- aldex(brca.data, conditions=brca.conds, gamma=1e-3)
+  x.2 <- aldex(brca.data, conditions=brca.conds, gamma=0.2)
+  x.5 <- aldex(brca.data, conditions=brca.conds, gamma=0.5)
 
-  unpermuted<-list(desu=res.u, edgeru=edg.u)
+  unpermuted<-list(desu=res.u, edgeru=edg.u, ald0u=x, ald2u=x.2, ald5u=x.5)
   combinedbrca <- list(unpermuted, brca.data.out)
   
   save(combinedbrca, file="./Documents/github/usri/analysis/test2.Rda")

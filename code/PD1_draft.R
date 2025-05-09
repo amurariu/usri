@@ -77,8 +77,19 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/te
      # coef_T <- which(abs(thin.immuno$coefmat) > 0)
      #plot(res.th$padj, edgeR.res.p[[1]]$FDR, log='xy', xlim=c(1e-10,1), ylim=c(1e-10,1))
       #points(res.th$padj[coef_T], edgeR.res.p[[1]]$FDR[coef_T], col='blue', pch=19, cex=0.3)
+      
+      #permuted without TP addition aldex2
+      xr <- aldex(immuno.data, conditions=condsp, gamma=1e-3) #uses original dataset but permuted conditions
+      x.2r <- aldex(immuno.data, conditions=condsp, gamma=0.2)
+      x.5r <- aldex(immuno.data, conditions=condsp, gamma=0.5)
+      
+      
+      #permuted + TP addition aldex2
+      xp <- aldex(datasp, conditions=condsp, gamma=1e-3)
+      x.2p <- aldex(datasp, conditions=condsp, gamma=0.2)
+      x.5p <- aldex(datasp, conditions=condsp, gamma=0.5)
        
-    data.iter <- list(desp=res.th, desr=res.r, edgp=edgeR.res.p, edgrr= edgeR.res.r)
+    data.iter <- list(desp=res.th, desr=res.r, edgp=edgeR.res.p, edgr= edgeR.res.r, ald0r=xr, ald2r=x.2r, ald5r=x.5r, ald0p=xp, ald2p=x.2p, ald5p=x.5p)
     data.out[[i]] <- data.iter
   }
   
@@ -98,7 +109,12 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/te
   qlf <- glmQLFTest(fit,coef=2)
   edgeR.res.u<-topTags(qlf, n=nrow(immuno.data), adjust.method = "BH", sort.by = "none", p.value = 1) 
   
-  unpermuted<-list(desu=res.u, edgu=edgeR.res.u)
+  #unpermuted aldex2
+  x <- aldex(immuno.data, conditions=immuno.conds, gamma=1e-3)
+  x.2 <- aldex(immuno.data, conditions=immuno.conds, gamma=0.2)
+  x.5 <- aldex(immuno.data, conditions=immuno.conds, gamma=0.5)
+  
+  unpermuted<-list(desu=res.u, edgu=edgeR.res.u, ald0u=x, ald2u=x.2, ald5u=x.5)
   combined <- list(unpermuted, data.out)
   
   save(combined, file="./Documents/github/usri/analysis/test.Rda")
