@@ -5,7 +5,7 @@ all: analysis/test2.Rda
 #prereq is brca_draft.R
 #recipe is to run the R script
 
-analysis/test2.Rda: 'code/brca_draft.R'
+analysis/test2.Rda: code/brca_draft.R
 	Rscript 'code/brca_draft.R'
 
 clean:	
