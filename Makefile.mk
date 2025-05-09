@@ -9,10 +9,10 @@ ANALYSIS = $(ANALYSIS_DIR)/test2.Rda
 
 
 #target
-all: $ANALYSIS
+all: $(ANALYSIS)
 
 #generating output
-$(OUTPUT): $SCRIPT
+$(OUTPUT): $(SCRIPT)
 	mkdir -p $(ANALYSIS_DIR)
 	Rscript $(SCRIPT) > $(ANALYSIS)
 
