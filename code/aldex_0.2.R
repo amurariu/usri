@@ -32,14 +32,18 @@ y_pd1 <- DGEList(counts=immuno, group=factor(conditions_p))
 keep_pd1 <- filterByExpr(y_pd1)
 y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
-data.out <- list() #check this, unsure of how this works
+immuno.data.out.u <- list() 
+immuno.data.out.r <- list() 
+immuno.data.out.p <- list() 
 
 #brca
 y_brca <- DGEList(counts=brca, group=factor(conditions_b))
 keep_brca <- filterByExpr(y_brca)
 y_brca <- y_brca[keep_brca,keep.lib.sizes=FALSE]
 brca.data <- y_brca$counts #filtered base dataset
-brca.data.out <- list() #check this, unsure of how this works
+brca.data.out.u <- list() 
+brca.data.out.r <- list() 
+brca.data.out.p <- list() 
 
 #repeat adding edgeR conditions for each new dataset
 
@@ -85,3 +89,32 @@ xup <- aldex(immuno.data, conditions=immuno.conds, gamma=0.2)
 
 #unpermuted BRCA
 xub <- aldex(brca.data, conditions=brca.conds, gamma=0.2)
+
+
+#Save files here
+#PD1 save file
+resup<-list(resu=xup)
+immuno.data.out.u <- list(resup)
+save(immuno.data.out.u, file="./Documents/github/usri/analysis/immuno.data.u.aldex2.Rda")
+
+resrp<-list(resr=xrp)
+immuno.data.out.r <- list(resrp)
+save(immuno.data.out.r, file="./Documents/github/usri/analysis/immuno.data.r.aldex2.Rda")
+
+respp<-list(resp=xpp)
+immuno.data.out.p <- list(respp)
+save(immuno.data.out.p, file="./Documents/github/usri/analysis/immuno.data.p.aldex2.Rda")
+
+#BRCA save file
+resub<-list(resu=xub)
+brca.data.out.u <- list(resub)
+save(brca.data.out.u, file="./Documents/github/usri/analysis/brca.data.u.aldex2.Rda")
+
+resrb<-list(resr=xrb)
+brca.data.out.r <- list(resrb)
+save(brca.data.out.r, file="./Documents/github/usri/analysis/brca.data.r.aldex2.Rda")
+
+respb<-list(resp=xpb)
+brca.data.out.p <- list(respb)
+save(brca.data.out.p, file="./Documents/github/usri/analysis/brca.data.p.aldex2.Rda")
+
