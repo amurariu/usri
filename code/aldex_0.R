@@ -76,8 +76,6 @@ for (i in 1:2){
   #randomized with FP addition PD1
   xpb <- aldex(datasb, conditions=condsb, gamma=1e-3) #uses new dataset with permuted conditions
   
-  #add code to save each file separately
-  
 }
 
 #unpermuted datasets
@@ -86,3 +84,15 @@ xup <- aldex(immuno.data, conditions=immuno.conds, gamma=1e-3)
 
 #unpermuted BRCA
 xub <- aldex(brca.data, conditions=brca.conds, gamma=1e-3)
+
+#SAVE FILE HERE -------------------------- come back to edit
+
+#PD1 save file
+combined_p<-list(resu=edg.up, resr=edg.rp, resp=edg.pp)
+immuno.data.out <- list(combined_p)
+save(immuno.data.out, file="./Documents/github/usri/analysis/immuno.data.edger.Rda")
+
+#BRCA save file
+combined_b<-list(resu=edg.ub, resr=edg.rb, resp=edg.pb)
+brca.data.out <- list(combined_b)
+save(brca.data.out, file="./Documents/github/usri/analysis/brca.data.edger.Rda")
