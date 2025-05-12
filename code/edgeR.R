@@ -110,12 +110,29 @@ qlf_ub <- glmQLFTest(fit_ub,coef=2)
 edg.ub<-topTags(qlf_ub, n=nrow(brca.data), adjust.method = "BH", sort.by = "none", p.value = 1)
 
 
+#saving file
 #PD1 save file
-combined_p<-list(resu=edg.up, resr=edg.rp, resp=edg.pp)
-immuno.data.out <- list(combined_p)
-save(immuno.data.out, file="./Documents/github/usri/analysis/immuno.data.edger.Rda")
+resup<-list(resu=edg.up)
+immuno.data.out.u <- list(resup)
+save(immuno.data.out.u, file="./Documents/github/usri/analysis/immuno.data.u.edger.Rda")
+
+resrp<-list(resr=edg.rp)
+immuno.data.out.r <- list(resrp)
+save(immuno.data.out.r, file="./Documents/github/usri/analysis/immuno.data.r.edger.Rda")
+
+respp<-list(resp=edg.pp)
+immuno.data.out.p <- list(respp)
+save(immuno.data.out.p, file="./Documents/github/usri/analysis/immuno.data.p.edger.Rda")
 
 #BRCA save file
-combined_b<-list(resu=edg.ub, resr=edg.rb, resp=edg.pb)
-brca.data.out <- list(combined_b)
-save(brca.data.out, file="./Documents/github/usri/analysis/brca.data.edger.Rda")
+resub<-list(resu=edg.ub)
+brca.data.out.u <- list(resub)
+save(brca.data.out.u, file="./Documents/github/usri/analysis/brca.data.u.edger.Rda")
+
+resrb<-list(resr=edg.rb)
+brca.data.out.r <- list(resrb)
+save(brca.data.out.r, file="./Documents/github/usri/analysis/brca.data.r.edger.Rda")
+
+respb<-list(resp=edg.pb)
+brca.data.out.p <- list(respb)
+save(brca.data.out.p, file="./Documents/github/usri/analysis/brca.data.p.edger.Rda")
