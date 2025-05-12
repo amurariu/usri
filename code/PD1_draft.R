@@ -122,7 +122,7 @@ if(file.exists("https://raw.githubusercontent.com/amurariu/usri/main/analysis/te
 }
 
 
-### analysis draft
+### analysis draft start from here
 
 analysis.wi <- matrix(data=NA, nrow=300, ncol=7)
 analysis.wi <- as.data.frame(analysis.wi)

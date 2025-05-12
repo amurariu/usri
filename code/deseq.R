@@ -114,3 +114,5 @@ res.ub <- results(dds.ub)
 
 
 #add code to save as separate files
+
+#start analysis from here
