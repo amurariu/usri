@@ -95,4 +95,16 @@ for (i in 1:2){
 }
   
 
-#add unpermuted datasets
+#unpermuted PD1
+group_up<-factor(conditions_p)
+design_up <- model.matrix(~group_up)
+fit_up <- glmQLFit(y_pd1,design_up)
+qlf_up <- glmQLFTest(fit,coef=2)
+edg.up<-topTags(qlf, n=nrow(immuno.data), adjust.method = "BH", sort.by = "none", p.value = 1) 
+
+#unpermuted BRCA
+group_ub<-factor(condititons_ub)
+design_ub <- model.matrix(~group_ub)
+fit_ub <- glmQLFit(y_brca,design_ub)
+qlf_ub <- glmQLFTest(fit_ub,coef=2)
+edg.ub<-topTags(qlf, n=nrow(brca.data), adjust.method = "BH", sort.by = "none", p.value = 1)

@@ -80,4 +80,9 @@ for (i in 1:2){
   
 }
 
-#add unpermuted datasets
+#unpermuted datasets
+#unpermuted PD1
+xup <- aldex(immuno.data, conditions=immuno.conds, gamma=1e-3)
+
+#unpermuted BRCA
+xub <- aldex(brca.data, conditions=brca.conds, gamma=1e-3)

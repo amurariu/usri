@@ -93,8 +93,22 @@ for (i in 1:2){
   res.thb <- results(dds.thb)
   
   
-  #data.iter <- list(desr=res.r, desp=res.th, edgr=edg.r, edgp=edg.p,ald0r=xr, ald2r=x.2r, ald5r=x.5r, ald0p=xp, ald2p=x.2p, ald5p=x.5p )
-  #brca.data.out[[i]] <- data.iter
+  data.iter.pd1.r <- list(desr=res.rp)
+  pd1.data.out.r[[i]] <- data.iter.pd1.r
+  save(pd1.data.out.r, file="./Documents/github/usri/analysis/pd1_data_out.r.Rda")
+  
+  data.iter.pd1.p <- list(desp=res.thp)
+  pd1.data.out.p[[i]] <- data.iter.pd1.p
+  save(pd1.data.out.p, file="./Documents/github/usri/analysis/pd1_data_out.p.Rda")
+  
+  data.iter.brca.r <- list(desr=res.rb)
+  brca.data.out.r[[i]] <- data.iter.brca.r
+  save(brca.data.out.r, file="./Documents/github/usri/analysis/brca_data_out.r.Rda")
+  
+  data.iter.brca.p <- list(desp=res.thb)
+  brca.data.out.p[[i]] <- data.iter.brca.p
+  save(brca.data.out.p, file="./Documents/github/usri/analysis/brca_data_out.p.Rda")
+  
 }
 
 #unpermuted datasets
@@ -112,7 +126,13 @@ dds.ub  <- DESeqDataSetFromMatrix(countData = brca.data,
 dds.ub <- DESeq(dds.ub)
 res.ub <- results(dds.ub)
 
+data.iter.pd1.u <- list(desp=res.up)
+pd1.data.out.u[[i]] <- data.iter.pd1.u
+save(pd1.data.out.u, file="./Documents/github/usri/analysis/pd1_data_out.u.Rda")
 
-#add code to save as separate files
+data.iter.brca.u <- list(desr=res.ub)
+brca.data.out.u[[i]] <- data.iter.brca.u
+save(brca.data.out.u, file="./Documents/github/usri/analysis/brca_data_out.u.Rda")
+
 
 #start analysis from here
