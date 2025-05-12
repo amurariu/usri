@@ -75,6 +75,9 @@ for (i in 1:2){
                                    design = ~ condsp)
   dds.rp <- DESeq(dds.rp)
   res.rp <- results(dds.rp)
+ 
+  resrp<-list(resr=res.rp)
+  immuno.data.out.r[[i]] <- resrp #added [[i]] and referenced list in line prior
   
   #randomized with FP addition PD1
   dds.thp  <- DESeqDataSetFromMatrix(countData = datasp,
@@ -83,6 +86,8 @@ for (i in 1:2){
   dds.thp <- DESeq(dds.thp)
   res.thp <- results(dds.thp)
   
+  respp<-list(resp=res.thp)
+  immuno.data.out.p[[i]] <- respp
   
   #randomized without FP addition BRCA
   dds.rb  <- DESeqDataSetFromMatrix(countData = brca.data,  #uses original data (no TP added)
@@ -91,12 +96,25 @@ for (i in 1:2){
   dds.rb <- DESeq(dds.rb)
   res.rb <- results(dds.rb)
   
+  resrb<-list(resr=res.rb)
+  brca.data.out.r[[i]] <- resrb
+  
   #randomized with FP addition BRCA
   dds.thb  <- DESeqDataSetFromMatrix(countData = thin.brca$mat, #data that includes TP
                                     colData = data.frame(condsb),
                                     design = ~ condsb)
   dds.thb <- DESeq(dds.thb)
   res.thb <- results(dds.thb)
+  
+  respb<-list(resp=res.thb)
+  brca.data.out.p[[i]] <- respb
+  
+  #save files
+
+  save(immuno.data.out.r, file="./Documents/github/usri/analysis/immuno.data.r.deseq.Rda")
+  save(immuno.data.out.p, file="./Documents/github/usri/analysis/immuno.data.p.deseq.Rda")
+  save(brca.data.out.r, file="./Documents/github/usri/analysis/brca.data.r.deseq.Rda")
+  save(brca.data.out.p, file="./Documents/github/usri/analysis/brca.data.p.deseq.Rda")
   
 }
 
@@ -108,6 +126,10 @@ dds.up  <- DESeqDataSetFromMatrix(countData = immuno.data,
 dds.up <- DESeq(dds.up)
 res.up <- results(dds.up)
 
+resup<-list(resu=res.up)
+immuno.data.out.u <- list(resup)
+save(immuno.data.out.u, file="./Documents/github/usri/analysis/immuno.data.u.deseq.Rda")
+
 #unpermuted BRCA
 dds.ub  <- DESeqDataSetFromMatrix(countData = brca.data,
                                  colData = brca.conds,
@@ -116,30 +138,9 @@ dds.ub <- DESeq(dds.ub)
 res.ub <- results(dds.ub)
 
 
-#PD1 save file
-resup<-list(resu=res.up)
-immuno.data.out.u <- list(resup)
-save(immuno.data.out.u, file="./Documents/github/usri/analysis/immuno.data.u.deseq.Rda")
-
-resrp<-list(resr=res.rp)
-immuno.data.out.r <- list(resrp)
-save(immuno.data.out.r, file="./Documents/github/usri/analysis/immuno.data.r.deseq.Rda")
-
-respp<-list(resp=res.thp)
-immuno.data.out.p <- list(respp)
-save(immuno.data.out.p, file="./Documents/github/usri/analysis/immuno.data.p.deseq.Rda")
-
 #BRCA save file
 resub<-list(resu=res.ub)
 brca.data.out.u <- list(resub)
 save(brca.data.out.u, file="./Documents/github/usri/analysis/brca.data.u.deseq.Rda")
 
-resrb<-list(resr=res.rb)
-brca.data.out.r <- list(resrb)
-save(brca.data.out.r, file="./Documents/github/usri/analysis/brca.data.r.deseq.Rda")
 
-respb<-list(resp=res.thb)
-brca.data.out.p <- list(respb)
-save(brca.data.out.p, file="./Documents/github/usri/analysis/brca.data.p.deseq.Rda")
-
-#start analysis from here
