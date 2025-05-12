@@ -31,7 +31,7 @@ y_pd1 <- DGEList(counts=immuno, group=factor(conditions_p))
 keep_pd1 <- filterByExpr(y_pd1)
 y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
-data.out <- list() #check this, unsure of how this works
+imumuno.data.out <- list() #check this, unsure of how this works
 
 #brca
 y_brca <- DGEList(counts=brca, group=factor(conditions_b))
@@ -92,23 +92,6 @@ for (i in 1:2){
   dds.thb <- DESeq(dds.thb)
   res.thb <- results(dds.thb)
   
-  
-  data.iter.pd1.r <- list(desr=res.rp)
-  pd1.data.out.r[[i]] <- data.iter.pd1.r
-  save(pd1.data.out.r, file="./Documents/github/usri/analysis/pd1_data_out.r.Rda")
-  
-  data.iter.pd1.p <- list(desp=res.thp)
-  pd1.data.out.p[[i]] <- data.iter.pd1.p
-  save(pd1.data.out.p, file="./Documents/github/usri/analysis/pd1_data_out.p.Rda")
-  
-  data.iter.brca.r <- list(desr=res.rb)
-  brca.data.out.r[[i]] <- data.iter.brca.r
-  save(brca.data.out.r, file="./Documents/github/usri/analysis/brca_data_out.r.Rda")
-  
-  data.iter.brca.p <- list(desp=res.thb)
-  brca.data.out.p[[i]] <- data.iter.brca.p
-  save(brca.data.out.p, file="./Documents/github/usri/analysis/brca_data_out.p.Rda")
-  
 }
 
 #unpermuted datasets
@@ -126,13 +109,15 @@ dds.ub  <- DESeqDataSetFromMatrix(countData = brca.data,
 dds.ub <- DESeq(dds.ub)
 res.ub <- results(dds.ub)
 
-data.iter.pd1.u <- list(desp=res.up)
-pd1.data.out.u[[i]] <- data.iter.pd1.u
-save(pd1.data.out.u, file="./Documents/github/usri/analysis/pd1_data_out.u.Rda")
 
-data.iter.brca.u <- list(desr=res.ub)
-brca.data.out.u[[i]] <- data.iter.brca.u
-save(brca.data.out.u, file="./Documents/github/usri/analysis/brca_data_out.u.Rda")
+#PD1 save file
+combined_p<-list(desu=res.up, desr=res.rp, desp=res.thp)
+immuno.data.out <- list(combined_p)
+save(immuno.data.out, file="./Documents/github/usri/analysis/immuno.data.deseq.Rda")
 
+#BRCA save file
+combined_b<-list(desu=res.ub, desr=res.rb, desp=res.thb)
+brca.data.out <- list(combined_b)
+save(brca.data.out, file="./Documents/github/usri/analysis/brca.data.deseq.Rda")
 
 #start analysis from here
