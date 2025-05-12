@@ -69,15 +69,27 @@ for (i in 1:2){
   #ALDEX2 code added
   #randomized without FP addition PD1
   xrp <- aldex(immuno.data, conditions=condsp, gamma=0.2) #uses original dataset but permuted conditions
+ 
+  resrp<-list(resu=xrp)
+  immuno.data.out.r[[i]] <- list(resrp)
   
   #randomized with FP addition PD1
   xpp <- aldex(datasp, conditions=condsp, gamma=0.2) #uses new dataset with permuted conditions
   
+  respp<-list(resu=xpp)
+  immuno.data.out.p[[i]] <- list(respp)
+  
   #randomized without FP addition BRCA
   xrb <- aldex(brca.data, conditions=condsb, gamma=0.2) #uses original dataset but permuted conditions
   
+  resrb<-list(resu=xrb)
+  brca.data.out.r[[i]] <- list(resrb)
+  
   #randomized with FP addition PD1
   xpb <- aldex(datasb, conditions=condsb, gamma=0.2) #uses new dataset with permuted conditions
+  
+  respb<-list(resu=xpb)
+  brca.data.out.p[[i]] <- list(respb)
   
   #add code to save each file separately
   
@@ -93,28 +105,14 @@ xub <- aldex(brca.data, conditions=brca.conds, gamma=0.2)
 
 #Save files here
 #PD1 save file
-resup<-list(resu=xup)
-immuno.data.out.u <- list(resup)
+
 save(immuno.data.out.u, file="./Documents/github/usri/analysis/immuno.data.u.aldex2.Rda")
-
-resrp<-list(resr=xrp)
-immuno.data.out.r <- list(resrp)
 save(immuno.data.out.r, file="./Documents/github/usri/analysis/immuno.data.r.aldex2.Rda")
-
-respp<-list(resp=xpp)
-immuno.data.out.p <- list(respp)
 save(immuno.data.out.p, file="./Documents/github/usri/analysis/immuno.data.p.aldex2.Rda")
 
 #BRCA save file
-resub<-list(resu=xub)
-brca.data.out.u <- list(resub)
+
 save(brca.data.out.u, file="./Documents/github/usri/analysis/brca.data.u.aldex2.Rda")
-
-resrb<-list(resr=xrb)
-brca.data.out.r <- list(resrb)
 save(brca.data.out.r, file="./Documents/github/usri/analysis/brca.data.r.aldex2.Rda")
-
-respb<-list(resp=xpb)
-brca.data.out.p <- list(respb)
 save(brca.data.out.p, file="./Documents/github/usri/analysis/brca.data.p.aldex2.Rda")
 

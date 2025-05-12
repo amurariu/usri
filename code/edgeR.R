@@ -32,14 +32,18 @@ y_pd1 <- DGEList(counts=immuno, group=factor(conditions_p))
 keep_pd1 <- filterByExpr(y_pd1)
 y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
-immuno.data.out <- list() #check this, unsure of how this works
+imumuno.data.out.u <- list() 
+imumuno.data.out.r <- list() 
+imumuno.data.out.p <- list() 
 
 #brca
 y_brca <- DGEList(counts=brca, group=factor(conditions_b))
 keep_brca <- filterByExpr(y_brca)
 y_brca <- y_brca[keep_brca,keep.lib.sizes=FALSE]
 brca.data <- y_brca$counts #filtered base dataset
-brca.data.out <- list() #check this, unsure of how this works
+brca.data.out.u <- list() 
+brca.data.out.r <- list() 
+brca.data.out.p <- list() 
 
 #repeat adding edgeR conditions for each new dataset
 
