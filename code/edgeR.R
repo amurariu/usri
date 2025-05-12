@@ -114,7 +114,7 @@ qlf_up <- glmQLFTest(fit_up,coef=2)
 edg.up<-topTags(qlf_up, n=nrow(immuno.data), adjust.method = "BH", sort.by = "none", p.value = 1) 
 
 resup<-list(resu=edg.up)
-immuno.data.out.u <- list(res.up)
+immuno.data.out.u <- list(resup)
 
 #unpermuted BRCA
 group_ub<-factor(conditions_b)
