@@ -70,12 +70,17 @@ for (i in 1:2){
   fit_rp <- glmQLFit(immuno.data,design_p) #uses original data (ie. no TP added)
   qlf_rp <- glmQLFTest(fit_rp,coef=2)
   edg.rp<-topTags(qlf_rp, n=nrow(immuno.data), adjust.method = "BH", sort.by = "none", p.value = 1)
+ 
+  resrp<-list(resu=edg.rp)
+  immuno.data.out.r[[i]] <- resrp
   
   #randomized with FP addition PD1
   fit_pp <- glmQLFit(datasp,design_p)
   qlf_pp <- glmQLFTest(fit_pp,coef=2)
   edg.pp<-topTags(qlf_pp, n=nrow(datasp), adjust.method = "BH", sort.by = "none", p.value = 1)
   
+  respp<-list(resu=edg.pp)
+  immuno.data.out.p[[i]] <- respp
   
   #BRCA setup
   group_b <- factor(condsb)
@@ -86,11 +91,17 @@ for (i in 1:2){
   qlf_rb <- glmQLFTest(fit_rb,coef=2)
   edg.rb<-topTags(qlf_rb, n=nrow(brca.data), adjust.method = "BH", sort.by = "none", p.value = 1)
   
+  resrb<-list(resu=edg.rb)
+  brca.data.out.r[[i]] <- resrb
+  
   #randomized with FP addition BRCA
   fit_pb <- glmQLFit(datasb,design_b) #data with TPs
   qlf_pb <- glmQLFTest(fit_pb,coef=2)
   edg.pb<-topTags(qlf_pb, n=nrow(datasb), adjust.method = "BH", sort.by = "none", p.value = 1)
  
+  respb<-list(resu=edg.pb)
+  brca.data.out.p[[i]] <- respb
+  
   #add code to save these each as separate files 
 }
   
@@ -102,6 +113,9 @@ fit_up <- glmQLFit(y_pd1,design_up)
 qlf_up <- glmQLFTest(fit_up,coef=2)
 edg.up<-topTags(qlf_up, n=nrow(immuno.data), adjust.method = "BH", sort.by = "none", p.value = 1) 
 
+resup<-list(resu=edg.up)
+immuno.data.out.u <- list(res.up)
+
 #unpermuted BRCA
 group_ub<-factor(conditions_b)
 design_ub <- model.matrix(~group_ub)
@@ -109,30 +123,16 @@ fit_ub <- glmQLFit(y_brca,design_ub)
 qlf_ub <- glmQLFTest(fit_ub,coef=2)
 edg.ub<-topTags(qlf_ub, n=nrow(brca.data), adjust.method = "BH", sort.by = "none", p.value = 1)
 
+resub<-list(resu=edg.ub)
+brca.data.out.u <- list(resub)
 
 #saving file
 #PD1 save file
-resup<-list(resu=edg.up)
-immuno.data.out.u <- list(resup)
 save(immuno.data.out.u, file="./Documents/github/usri/analysis/immuno.data.u.edger.Rda")
-
-resrp<-list(resr=edg.rp)
-immuno.data.out.r <- list(resrp)
 save(immuno.data.out.r, file="./Documents/github/usri/analysis/immuno.data.r.edger.Rda")
-
-respp<-list(resp=edg.pp)
-immuno.data.out.p <- list(respp)
 save(immuno.data.out.p, file="./Documents/github/usri/analysis/immuno.data.p.edger.Rda")
 
 #BRCA save file
-resub<-list(resu=edg.ub)
-brca.data.out.u <- list(resub)
 save(brca.data.out.u, file="./Documents/github/usri/analysis/brca.data.u.edger.Rda")
-
-resrb<-list(resr=edg.rb)
-brca.data.out.r <- list(resrb)
 save(brca.data.out.r, file="./Documents/github/usri/analysis/brca.data.r.edger.Rda")
-
-respb<-list(resp=edg.pb)
-brca.data.out.p <- list(respb)
 save(brca.data.out.p, file="./Documents/github/usri/analysis/brca.data.p.edger.Rda")
