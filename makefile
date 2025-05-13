@@ -1,7 +1,7 @@
 #makes the file .Rda if make all is called
 #all: analysis/test2.Rda
 
-all: data_collection
+#all: data_collection
 
 #rules to generate the deseq output files
 
