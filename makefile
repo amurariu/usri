@@ -5,10 +5,12 @@ all: data_collection
 
 #rules to generate the deseq output files
 
-data_collection:
-	analysis/brca.data.r.aldex0.Rda : code/aldex_0.R
-		Rscript 'code/aldex_0.R'
-		
+objects = analysis/brca.data.r.aldex0.Rda analysis/immuno.data.u.aldex0.Rda 
+analysis/brca.data.r.aldex0.Rda : code/aldex_0.R
+analysis/immuno.data.u.aldex0.Rda : code/aldex_0.R
+$(objects) : Rscript 'code/aldex_0.R'
+
+
 	analysis/immuno.data.u.deseq.Rda : code/deseq.R
 		Rscript 'code/deseq.R'
 	
