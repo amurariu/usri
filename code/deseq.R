@@ -33,7 +33,7 @@ y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
 immuno.data.out.u <- list() 
 immuno.data.out.r <- list() 
-imumuno.data.out.p <- list() 
+immuno.data.out.p <- list() 
 
 
 #brca
