@@ -1,7 +1,7 @@
 #makes the file .Rda if make all is called
 #all: analysis/test2.Rda
 
-#all: 
+all: analysis/immuno.data.u.deseq.Rda analysis/immuno.data.u.edger.Rda analysis/immuno.data.u.aldex0.Rda 
 
 #rules to generate the deseq output files
 analysis/immuno.data.u.deseq.Rda : code/deseq.R
