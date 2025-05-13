@@ -32,7 +32,7 @@ keep_pd1 <- filterByExpr(y_pd1)
 y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
 imumuno.data.out.u <- list() 
-imumuno.data.out.r <- list() 
+immuno.data.out.r <- list() 
 imumuno.data.out.p <- list() 
 
 
