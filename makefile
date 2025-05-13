@@ -77,29 +77,29 @@ clean:
 	
 	rm analysis/brca.data.p.deseq.Rda
 
-	rm analysis/immuno.data.u.edger.Rda
+	#rm analysis/immuno.data.u.edger.Rda
 	
-	rm analysis/immuno.data.r.edger.Rda
+	#rm analysis/immuno.data.r.edger.Rda
 	
-	rm analysis/immuno.data.p.edger.Rda
+#	rm analysis/immuno.data.p.edger.Rda
 	
-	rm analysis/brca.data.u.edger.Rda
+#	rm analysis/brca.data.u.edger.Rda
 	
-	rm analysis/brca.data.r.edger.Rda
+#	rm analysis/brca.data.r.edger.Rda
 	
-	rm analysis/brca.data.p.edger.Rda
+#	rm analysis/brca.data.p.edger.Rda
 	
-	rm analysis/immuno.data.u.aldex0.Rda
+#	rm analysis/immuno.data.u.aldex0.Rda
 	
-	rm analysis/immuno.data.r.aldex0.Rda
+#	rm analysis/immuno.data.r.aldex0.Rda
 	
-	rm analysis/immuno.data.p.aldex0.Rda
+#	rm analysis/immuno.data.p.aldex0.Rda
 	
-	rm analysis/brca.data.u.aldex0.Rda
+#	rm analysis/brca.data.u.aldex0.Rda
 	
-	rm analysis/brca.data.r.aldex0.Rda
+#	rm analysis/brca.data.r.aldex0.Rda
 	
-	rm analysis/brca.data.p.aldex0.Rda
+#	rm analysis/brca.data.p.aldex0.Rda
 
 
 	
