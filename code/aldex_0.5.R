@@ -95,27 +95,27 @@ xub <- aldex(brca.data, conditions=brca.conds, gamma=0.5)
 #PD1 save file
 resup<-list(resu=xup)
 immuno.data.out.u <- list(resup)
-save(immuno.data.out.u, file="./Documents/github/usri/analysis/immuno.data.u.aldex5.Rda")
+save(immuno.data.out.u, file="./analysis/immuno.data.u.aldex5.Rda")
 
 resrp<-list(resr=xrp)
 immuno.data.out.r <- list(resrp)
-save(immuno.data.out.r, file="./Documents/github/usri/analysis/immuno.data.r.aldex5.Rda")
+save(immuno.data.out.r, file="./analysis/immuno.data.r.aldex5.Rda")
 
 respp<-list(resp=xpp)
 immuno.data.out.p <- list(respp)
-save(immuno.data.out.p, file="./Documents/github/usri/analysis/immuno.data.p.aldex5.Rda")
+save(immuno.data.out.p, file="./analysis/immuno.data.p.aldex5.Rda")
 
 #BRCA save file
 resub<-list(resu=xub)
 brca.data.out.u <- list(resub)
-save(brca.data.out.u, file="./Documents/github/usri/analysis/brca.data.u.aldex5.Rda")
+save(brca.data.out.u, file="./analysis/brca.data.u.aldex5.Rda")
 
 resrb<-list(resr=xrb)
 brca.data.out.r <- list(resrb)
-save(brca.data.out.r, file="./Documents/github/usri/analysis/brca.data.r.aldex5.Rda")
+save(brca.data.out.r, file="./analysis/brca.data.r.aldex5.Rda")
 
 respb<-list(resp=xpb)
 brca.data.out.p <- list(respb)
-save(brca.data.out.p, file="./Documents/github/usri/analysis/brca.data.p.aldex5.Rda")
+save(brca.data.out.p, file="./analysis/brca.data.p.aldex5.Rda")
 
 

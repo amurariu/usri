@@ -111,10 +111,10 @@ for (i in 1:2){
   
   #save files
 
-  save(immuno.data.out.r, file="./Documents/github/usri/analysis/immuno.data.r.deseq.Rda")
-  save(immuno.data.out.p, file="./Documents/github/usri/analysis/immuno.data.p.deseq.Rda")
-  save(brca.data.out.r, file="./Documents/github/usri/analysis/brca.data.r.deseq.Rda")
-  save(brca.data.out.p, file="./Documents/github/usri/analysis/brca.data.p.deseq.Rda")
+  save(immuno.data.out.r, file="./analysis/immuno.data.r.deseq.Rda")
+  save(immuno.data.out.p, file="./analysis/immuno.data.p.deseq.Rda")
+  save(brca.data.out.r, file="./analysis/brca.data.r.deseq.Rda")
+  save(brca.data.out.p, file="./analysis/brca.data.p.deseq.Rda")
   
 }
 
@@ -128,7 +128,7 @@ res.up <- results(dds.up)
 
 resup<-list(resu=res.up)
 immuno.data.out.u <- list(resup)
-save(immuno.data.out.u, file="./Documents/github/usri/analysis/immuno.data.u.deseq.Rda")
+save(immuno.data.out.u, file="./analysis/immuno.data.u.deseq.Rda")
 
 #unpermuted BRCA
 dds.ub  <- DESeqDataSetFromMatrix(countData = brca.data,
@@ -141,6 +141,6 @@ res.ub <- results(dds.ub)
 #BRCA save file
 resub<-list(resu=res.ub)
 brca.data.out.u <- list(resub)
-save(brca.data.out.u, file="./Documents/github/usri/analysis/brca.data.u.deseq.Rda")
+save(brca.data.out.u, file="./analysis/brca.data.u.deseq.Rda")
 
 

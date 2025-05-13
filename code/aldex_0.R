@@ -109,12 +109,12 @@ brca.data.out.u <- list(resub)
 
 #Save files here
 #PD1 save file
-save(immuno.data.out.u, file="./Documents/github/usri/analysis/immuno.data.u.aldex0.Rda")
-save(immuno.data.out.r, file="./Documents/github/usri/analysis/immuno.data.r.aldex0.Rda")
-save(immuno.data.out.p, file="./Documents/github/usri/analysis/immuno.data.p.aldex0.Rda")
+save(immuno.data.out.u, file="./analysis/immuno.data.u.aldex0.Rda")
+save(immuno.data.out.r, file="./analysis/immuno.data.r.aldex0.Rda")
+save(immuno.data.out.p, file="./analysis/immuno.data.p.aldex0.Rda")
 
 #BRCA save file
-save(brca.data.out.u, file="./Documents/github/usri/analysis/brca.data.u.aldex0.Rda")
-save(brca.data.out.r, file="./Documents/github/usri/analysis/brca.data.r.aldex0.Rda")
-save(brca.data.out.p, file="./Documents/github/usri/analysis/brca.data.p.aldex0.Rda")
+save(brca.data.out.u, file="./analysis/brca.data.u.aldex0.Rda")
+save(brca.data.out.r, file="./analysis/brca.data.r.aldex0.Rda")
+save(brca.data.out.p, file="./analysis/brca.data.p.aldex0.Rda")
 
