@@ -6,6 +6,9 @@ edgeR: analysis/immuno.data.u.edger.Rda
 
 ALDEx: analysis/immuno.data.u.aldex0.Rda
 
+ALDEx2: analysis/immuno.data.u.aldex2.Rda
+
+ALDEx5: analysis/immuno.data.u.aldex5.Rda
 
 #all: data_collection
 
