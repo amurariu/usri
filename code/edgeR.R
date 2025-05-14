@@ -19,9 +19,9 @@ y_pd1 <- DGEList(counts=immuno, group=factor(conditions_p))
 keep_pd1 <- filterByExpr(y_pd1)
 y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
-imumuno.data.out.edgeR.u <- list() 
-imumuno.data.out.edgeR.r <- list() 
-imumuno.data.out.edgeR.p <- list() 
+immuno.data.out.edgeR.u <- list() 
+immuno.data.out.edgeR.r <- list() 
+immuno.data.out.edgeR.p <- list() 
 
 #for loop
 for (i in 1:2){
@@ -53,7 +53,7 @@ for (i in 1:2){
   qlf_pp <- glmQLFTest(fit_pp,coef=2)
   edg.pp<-topTags(qlf_pp, n=nrow(datasp), adjust.method = "BH", sort.by = "none", p.value = 1)
   
-  respp.edgeR<-list(resu=edg.pp.edgeR)
+  respp.edgeR<-list(resu=edg.pp)
   immuno.data.out.edgeR.p[[i]] <- respp.edgeR
   
 }

@@ -21,11 +21,9 @@ y_pd1 <- DGEList(counts=immuno, group=factor(conditions_p))
 keep_pd1 <- filterByExpr(y_pd1)
 y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
-immuno.data.out.u <- list() 
-immuno.data.out.r <- list() 
-immuno.data.out.p <- list() 
-
-#repeat adding edgeR conditions for each new dataset
+immuno.data.out.aldex0.u <- list() 
+immuno.data.out.aldex.0.r <- list() 
+immuno.data.out.aldex.0.p <- list() 
 
 
 #for loop
@@ -42,27 +40,27 @@ for (i in 1:2){
   
   #ALDEX2 code added
   #randomized without FP addition PD1
-  xrp <- aldex(immuno.data, conditions=condsp, gamma=1e-3) #uses original dataset but permuted conditions
+  xrp.aldex0 <- aldex(immuno.data, conditions=condsp, gamma=1e-3) #uses original dataset but permuted conditions
   
-  resrp<-list(resu=xrp)
-  immuno.data.out.r[[i]] <- list(resrp)
+  resrp.aldex0<-list(resu=xrp)
+  immuno.data.out.aldex0.r[[i]] <- list(resrp.aldex0)
 
   #randomized with FP addition PD1
-  xpp <- aldex(datasp, conditions=condsp, gamma=1e-3) #uses new dataset with permuted conditions
+  xpp.aldex0 <- aldex(datasp, conditions=condsp, gamma=1e-3) #uses new dataset with permuted conditions
   
-  respp<-list(resu=xpp)
-  immuno.data.out.p[[i]] <- list(respp)
+  respp.aldex0<-list(resu=xpp.aldex0)
+  immuno.data.out.aldex0.p[[i]] <- list(respp.aldex0)
   
 }
 
 #unpermuted datasets
 #unpermuted PD1
-xup <- aldex(immuno.data, conditions=immuno.conds, gamma=1e-3)
-immuno.data.out.u <- list(xup)
+xup.aldex0 <- aldex(immuno.data, conditions=immuno.conds, gamma=1e-3)
+immuno.data.out.aldex0.u <- list(xup.aldex0)
 
 #Save files here
 #PD1 save file
-save(immuno.data.out.u, file="./analysis/immuno.data.u.aldex0.Rda")
-save(immuno.data.out.r, file="./analysis/immuno.data.r.aldex0.Rda")
-save(immuno.data.out.p, file="./analysis/immuno.data.p.aldex0.Rda")
+save(immuno.data.out.aldex0.u, file="./analysis/immuno.data.u.aldex0.Rda")
+save(immuno.data.out.aldex0.r, file="./analysis/immuno.data.r.aldex0.Rda")
+save(immuno.data.out.aldex0.p, file="./analysis/immuno.data.p.aldex0.Rda")
 
