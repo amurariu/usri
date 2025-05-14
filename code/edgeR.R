@@ -72,6 +72,6 @@ immuno.data.out.u <- list(resup)
 
 #saving file
 #PD1 save file
-save(immuno.data.out.u, file="./analysis/immuno.data.u.edger.Rda")
-save(immuno.data.out.r, file="./analysis/immuno.data.r.edger.Rda")
-save(immuno.data.out.p, file="./analysis/immuno.data.p.edger.Rda")
+save(immuno.data.out.edgeR.u, file="./analysis/immuno.data.u.edger.Rda")
+save(immuno.data.out.edgeR.r, file="./analysis/immuno.data.r.edger.Rda")
+save(immuno.data.out.edgeR.p, file="./analysis/immuno.data.p.edger.Rda")

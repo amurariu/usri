@@ -36,24 +36,24 @@ for (i in 1:2){
   
   #DESeq2 analysis
   #randomized without FP addition PD1
-  dds.rp  <- DESeqDataSetFromMatrix(countData = immuno.data,  #uses original data (no TP added)
+  dds.rp.deseq  <- DESeqDataSetFromMatrix(countData = immuno.data,  #uses original data (no TP added)
                                    colData = data.frame(condsp), #uses data randomization order from thin.immuno
                                    design = ~ condsp)
-  dds.rp <- DESeq(dds.rp)
-  res.rp <- results(dds.rp)
+  dds.rp.deseq <- DESeq(dds.rp.deseq)
+  res.rp.deseq <- results(dds.rp.deseq)
  
-  resrp<-list(resr=res.rp)
-  immuno.data.out.deseq.r[[i]] <- resrp #added [[i]] and referenced list in line prior
+  resrp.deseq<-list(resr=res.rp.deseq)
+  immuno.data.out.deseq.r[[i]] <- resrp.deseq #added [[i]] and referenced list in line prior
   
   #randomized with FP addition PD1
-  dds.thp  <- DESeqDataSetFromMatrix(countData = datasp,
+  dds.thp.deseq  <- DESeqDataSetFromMatrix(countData = datasp,
                                     colData = data.frame(condsp),
                                     design = ~ condsp)
-  dds.thp <- DESeq(dds.thp)
-  res.thp <- results(dds.thp)
+  dds.thp.deseq <- DESeq(dds.thp.deseq)
+  res.thp.deseq <- results(dds.thp.deseq)
   
-  respp<-list(resp=res.thp)
-  immuno.data.out.deseq.p[[i]] <- respp
+  respp.deseq<-list(resp=res.thp.deseq)
+  immuno.data.out.deseq.p[[i]] <- respp.deseq
  
 
   save(immuno.data.out.deseq.r, file="./analysis/immuno.data.r.deseq.Rda")
@@ -62,11 +62,11 @@ for (i in 1:2){
 }
 
 #unpermuted PD1
-dds.up  <- DESeqDataSetFromMatrix(countData = immuno.data,
+dds.up.deseq  <- DESeqDataSetFromMatrix(countData = immuno.data,
                                  colData = immuno.conds,
                                  design = ~ conditions_p)
-dds.up <- DESeq(dds.up)
-res.up <- results(dds.up)
+dds.up.deseq <- DESeq(dds.up.deseq)
+res.up.deseq <- results(dds.up.deseq)
 
 immuno.data.out.deseq.u<-list(resu=res.up)
 save(immuno.data.out.deseq.u, file="./analysis/immuno.data.u.deseq.Rda")
