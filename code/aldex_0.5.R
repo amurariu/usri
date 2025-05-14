@@ -52,15 +52,12 @@ xup <- aldex(immuno.data, conditions=immuno.conds, gamma=0.5)
 
 #Save files here
 #PD1 save file
-resup<-list(resu=xup)
-immuno.data.out.u <- list(resup)
+immuno.data.out.u<-list(resu=xup)
 save(immuno.data.out.u, file="./analysis/immuno.data.u.aldex5.Rda")
 
-resrp<-list(resr=xrp)
-immuno.data.out.r <- list(resrp)
+immuno.data.out.r<-list(resr=xrp)
 save(immuno.data.out.r, file="./analysis/immuno.data.r.aldex5.Rda")
 
-respp<-list(resp=xpp)
-immuno.data.out.p <- list(respp)
+immuno.data.out.p<-list(resp=xpp)
 save(immuno.data.out.p, file="./analysis/immuno.data.p.aldex5.Rda")
 

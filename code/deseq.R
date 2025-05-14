@@ -58,7 +58,6 @@ for (i in 1:2){
 
   save(immuno.data.out.r, file="./analysis/immuno.data.r.deseq.Rda")
   save(immuno.data.out.p, file="./analysis/immuno.data.p.deseq.Rda")
- 
   
 }
 
@@ -69,7 +68,6 @@ dds.up  <- DESeqDataSetFromMatrix(countData = immuno.data,
 dds.up <- DESeq(dds.up)
 res.up <- results(dds.up)
 
-resup<-list(resu=res.up)
-immuno.data.out.u <- list(resup)
+immuno.data.out.u<-list(resu=res.up)
 save(immuno.data.out.u, file="./analysis/immuno.data.u.deseq.Rda")
 

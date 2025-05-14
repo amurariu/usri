@@ -55,6 +55,8 @@ for (i in 1:2){
 #unpermuted datasets
 #unpermuted PD1
 xup <- aldex(immuno.data, conditions=immuno.conds, gamma=0.2)
+immuno.data.out.u <- list(xub)
+
 
 #Save files here
 #PD1 save file
