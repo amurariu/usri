@@ -99,13 +99,11 @@ for (i in 1:2){
 #unpermuted datasets
 #unpermuted PD1
 xup <- aldex(immuno.data, conditions=immuno.conds, gamma=1e-3)
-resup<-list(resu=xup)
-immuno.data.out.u <- list(resup)
+immuno.data.out.u <- list(xup)
 
 #unpermuted BRCA
 xub <- aldex(brca.data, conditions=brca.conds, gamma=1e-3)
-resub<-list(resu=xub)
-brca.data.out.u <- list(resub)
+brca.data.out.u <- list(xub)
 
 #Save files here
 #PD1 save file
