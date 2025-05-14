@@ -68,6 +68,6 @@ dds.up.deseq  <- DESeqDataSetFromMatrix(countData = immuno.data,
 dds.up.deseq <- DESeq(dds.up.deseq)
 res.up.deseq <- results(dds.up.deseq)
 
-immuno.data.out.deseq.u<-list(resu=res.up)
+immuno.data.out.deseq.u<-list(resu=res.up.deseq)
 save(immuno.data.out.deseq.u, file="./analysis/immuno.data.u.deseq.Rda")
 
