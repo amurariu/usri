@@ -1,3 +1,4 @@
+.libPaths(aldex)
 library(ALDEx2)
 library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
