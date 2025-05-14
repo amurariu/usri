@@ -3,8 +3,6 @@ library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
 library(DESeq2, warn.conflicts=F)
 
-#load datasets
-
 #immuno/PD1 dataset loading
 raw_counts <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv'
 meta <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm_metadata.txt'
@@ -13,18 +11,7 @@ m <- read.table(file=meta, header=F, row.names=1, sep='\t')
 #establishing conditions for PD1
 conditions_p <- rep("Pre", 109)
 conditions_p[grep("_On",m)] <- "On"
-immuno.conds <- data.frame(conditions_p) #changed conditions to conditions_p to be consistent across datasets
-
-#brca dataset loading
-raw_counts<- "https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-BRCA.normal-tumor.pair.rawCount.tsv"
-con<-"https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-BRCA.conditions.tsv"
-
-brca <- read.table(file=raw_counts, header=T, row.names=1, sep='\t')
-conditions_b <- as.vector(unlist(read.table(file=con, sep='\t'))) #changed from brca.conds to conditions_b
-brca.conds <- data.frame(conditions_b) #changed from conditions to brca.conds for consistency with PD1 dataset
-
-#insert additional datasets + conditions here:
-
+immuno.conds <- data.frame(conditions_p) 
 
 #edgeR conditions for initial filtering
 #PD1
@@ -35,17 +22,6 @@ immuno.data <- y_pd1$counts #filtered base dataset
 imumuno.data.out.u <- list() 
 imumuno.data.out.r <- list() 
 imumuno.data.out.p <- list() 
-
-#brca
-y_brca <- DGEList(counts=brca, group=factor(conditions_b))
-keep_brca <- filterByExpr(y_brca)
-y_brca <- y_brca[keep_brca,keep.lib.sizes=FALSE]
-brca.data <- y_brca$counts #filtered base dataset
-brca.data.out.u <- list() 
-brca.data.out.r <- list() 
-brca.data.out.p <- list() 
-
-#repeat adding edgeR conditions for each new dataset
 
 #for loop
 for (i in 1:2){
@@ -58,12 +34,6 @@ for (i in 1:2){
                              signal_params = list(mean = 0, sd = 2))
   condsp <- as.vector(thin.immuno$designmat)   # permuted and thinned conditions and data
   datasp <- thin.immuno$mat
-  
-  #BRCA
-  thin.brca <- thin_2group(brca.data, prop_null=0.95, alpha=0,
-                           signal_fun = stats::rnorm, signal_params = list(mean = 0, sd = 2))
-  condsb <- as.vector(thin.brca$designmat)  # permuted and thinned conditions and data
-  datasb <- thin.brca$mat #changed these from conds and datasp to condsb and datasb for consistency
   
   #edgeR analysis
   #PD1 setup
@@ -86,27 +56,6 @@ for (i in 1:2){
   respp<-list(resu=edg.pp)
   immuno.data.out.p[[i]] <- respp
   
-  #BRCA setup
-  group_b <- factor(condsb)
-  design_b <- model.matrix(~group_b) #use data randomization from seqgendiff
-  
-  #randomized without FP addition BRCA
-  fit_rb <- glmQLFit(brca.data,design_b) #uses original data (ie. no TP added)
-  qlf_rb <- glmQLFTest(fit_rb,coef=2)
-  edg.rb<-topTags(qlf_rb, n=nrow(brca.data), adjust.method = "BH", sort.by = "none", p.value = 1)
-  
-  resrb<-list(resu=edg.rb)
-  brca.data.out.r[[i]] <- resrb
-  
-  #randomized with FP addition BRCA
-  fit_pb <- glmQLFit(datasb,design_b) #data with TPs
-  qlf_pb <- glmQLFTest(fit_pb,coef=2)
-  edg.pb<-topTags(qlf_pb, n=nrow(datasb), adjust.method = "BH", sort.by = "none", p.value = 1)
- 
-  respb<-list(resu=edg.pb)
-  brca.data.out.p[[i]] <- respb
-  
-  #add code to save these each as separate files 
 }
   
 
@@ -120,23 +69,9 @@ edg.up<-topTags(qlf_up, n=nrow(immuno.data), adjust.method = "BH", sort.by = "no
 resup<-list(resu=edg.up)
 immuno.data.out.u <- list(resup)
 
-#unpermuted BRCA
-group_ub<-factor(conditions_b)
-design_ub <- model.matrix(~group_ub)
-fit_ub <- glmQLFit(y_brca,design_ub)
-qlf_ub <- glmQLFTest(fit_ub,coef=2)
-edg.ub<-topTags(qlf_ub, n=nrow(brca.data), adjust.method = "BH", sort.by = "none", p.value = 1)
-
-resub<-list(resu=edg.ub)
-brca.data.out.u <- list(resub)
 
 #saving file
 #PD1 save file
 save(immuno.data.out.u, file="./analysis/immuno.data.u.edger.Rda")
 save(immuno.data.out.r, file="./analysis/immuno.data.r.edger.Rda")
 save(immuno.data.out.p, file="./analysis/immuno.data.p.edger.Rda")
-
-#BRCA save file
-save(brca.data.out.u, file="./analysis/brca.data.u.edger.Rda")
-save(brca.data.out.r, file="./analysis/brca.data.r.edger.Rda")
-save(brca.data.out.p, file="./analysis/brca.data.p.edger.Rda")
