@@ -1,5 +1,11 @@
 #makes the file .Rda if make all is called
 #all: analysis/test2.Rda
+DESeq: analysis/immuno.data.u.deseq.Rda
+
+edgeR: analysis/immuno.data.u.edger.Rda
+
+ALDEx: analysis/immuno.data.u.aldex0.Rda
+
 
 #all: data_collection
 
