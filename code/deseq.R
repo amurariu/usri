@@ -2,6 +2,13 @@ library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
 library(DESeq2, warn.conflicts=F)
 
+#download datasets
+
+#data_files = list.files(pattern="data-") #want to use the datafiles that start with "data-"
+#num_files = length(data_files)
+  
+#for (i in 1:num_files) {
+
 #immuno/PD1 dataset loading
 raw_counts <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv'
 meta <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm_metadata.txt'
@@ -11,6 +18,7 @@ m <- read.table(file=meta, header=F, row.names=1, sep='\t')
 conditions_p <- rep("Pre", 109)
 conditions_p[grep("_On",m)] <- "On"
 immuno.conds <- data.frame(conditions_p)
+
 
 #edgeR conditions for initial filtering
 #PD1
@@ -69,5 +77,5 @@ dds.up.deseq <- DESeq(dds.up.deseq)
 res.up.deseq <- results(dds.up.deseq)
 
 immuno.data.out.deseq.u<-list(resu=res.up.deseq)
-save(immuno.data.out.deseq.u, file="./analysis/immuno.data.u.deseq.Rda")
+save(immuno.data.out.deseq.u, file="./analysis/immuno.data.u.deseq.Rda") #}
 
