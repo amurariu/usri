@@ -45,20 +45,19 @@ for (i in 1:2){
   qlf_rp <- glmQLFTest(fit_rp,coef=2)
   edg.rp<-topTags(qlf_rp, n=nrow(immuno.data), adjust.method = "BH", sort.by = "none", p.value = 1)
  
-  resrp<-list(resu=edg.rp)
-  immuno.data.out.r[[i]] <- resrp
+  resrp.edgeR<-list(resu=edg.rp)
+  immuno.data.out.edgeR.r[[i]] <- resrp.edgeR
   
   #randomized with FP addition PD1
   fit_pp <- glmQLFit(datasp,design_p)
   qlf_pp <- glmQLFTest(fit_pp,coef=2)
   edg.pp<-topTags(qlf_pp, n=nrow(datasp), adjust.method = "BH", sort.by = "none", p.value = 1)
   
-  respp<-list(resu=edg.pp)
-  immuno.data.out.p[[i]] <- respp
+  respp.edgeR<-list(resu=edg.pp.edgeR)
+  immuno.data.out.edgeR.p[[i]] <- respp.edgeR
   
 }
   
-
 #unpermuted PD1
 group_up<-factor(conditions_p)
 design_up <- model.matrix(~group_up)
@@ -66,8 +65,8 @@ fit_up <- glmQLFit(y_pd1,design_up)
 qlf_up <- glmQLFTest(fit_up,coef=2)
 edg.up<-topTags(qlf_up, n=nrow(immuno.data), adjust.method = "BH", sort.by = "none", p.value = 1) 
 
-resup<-list(resu=edg.up)
-immuno.data.out.u <- list(resup)
+resup.edgeR<-list(resu=edg.up)
+immuno.data.out.edgeR.u <- list(resup.edgeR)
 
 
 #saving file
