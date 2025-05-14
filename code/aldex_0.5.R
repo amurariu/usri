@@ -21,9 +21,9 @@ y_pd1 <- DGEList(counts=immuno, group=factor(conditions_p))
 keep_pd1 <- filterByExpr(y_pd1)
 y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
-immuno.data.out.u <- list() 
-immuno.data.out.r <- list() 
-immuno.data.out.p <- list() 
+immuno.data.out.aldex5.u <- list() 
+immuno.data.out.aldex5.r <- list() 
+immuno.data.out.aldex5.p <- list() 
 
 #for loop
 for (i in 1:2){
@@ -39,25 +39,25 @@ for (i in 1:2){
   
   #ALDEX2 code added
   #randomized without FP addition PD1
-  xrp <- aldex(immuno.data, conditions=condsp, gamma=0.5) #uses original dataset but permuted conditions
+  xrp.aldex5 <- aldex(immuno.data, conditions=condsp, gamma=0.5) #uses original dataset but permuted conditions
   
   #randomized with FP addition PD1
-  xpp <- aldex(datasp, conditions=condsp, gamma=0.5) #uses new dataset with permuted conditions
+  xpp.aldex5 <- aldex(datasp, conditions=condsp, gamma=0.5) #uses new dataset with permuted conditions
   
 }
 
 #unpermuted datasets
 #unpermuted PD1
-xup <- aldex(immuno.data, conditions=immuno.conds, gamma=0.5)
+xup.aldex5 <- aldex(immuno.data, conditions=immuno.conds, gamma=0.5)
 
 #Save files here
 #PD1 save file
-immuno.data.out.u<-list(resu=xup)
-save(immuno.data.out.u, file="./analysis/immuno.data.u.aldex5.Rda")
+immuno.data.out.aldex5.u<-list(resu=xup.aldex5)
+save(immuno.data.out.aldex5.u, file="./analysis/immuno.data.u.aldex5.Rda")
 
-immuno.data.out.r<-list(resr=xrp)
-save(immuno.data.out.r, file="./analysis/immuno.data.r.aldex5.Rda")
+immuno.data.out.aldex5.r<-list(resr=xrp.aldex5)
+save(immuno.data.out.aldex5.r, file="./analysis/immuno.data.r.aldex5.Rda")
 
-immuno.data.out.p<-list(resp=xpp)
-save(immuno.data.out.p, file="./analysis/immuno.data.p.aldex5.Rda")
+immuno.data.out.aldex5.p<-list(resp=xpp.aldex5)
+save(immuno.data.out.aldex5.p, file="./analysis/immuno.data.p.aldex5.Rda")
 

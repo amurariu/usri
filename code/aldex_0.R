@@ -22,8 +22,8 @@ keep_pd1 <- filterByExpr(y_pd1)
 y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
 immuno.data.out.aldex0.u <- list() 
-immuno.data.out.aldex.0.r <- list() 
-immuno.data.out.aldex.0.p <- list() 
+immuno.data.out.aldex0.r <- list() 
+immuno.data.out.aldex0.p <- list() 
 
 
 #for loop
@@ -42,7 +42,7 @@ for (i in 1:2){
   #randomized without FP addition PD1
   xrp.aldex0 <- aldex(immuno.data, conditions=condsp, gamma=1e-3) #uses original dataset but permuted conditions
   
-  resrp.aldex0<-list(resu=xrp)
+  resrp.aldex0<-list(resu=xrp.aldex0)
   immuno.data.out.aldex0.r[[i]] <- list(resrp.aldex0)
 
   #randomized with FP addition PD1
