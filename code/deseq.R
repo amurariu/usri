@@ -18,9 +18,9 @@ y_pd1 <- DGEList(counts=immuno, group=factor(conditions_p))
 keep_pd1 <- filterByExpr(y_pd1)
 y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
-immuno.data.out.u <- list() 
-immuno.data.out.r <- list() 
-immuno.data.out.p <- list() 
+immuno.data.out.deseq.u <- list() 
+immuno.data.out.deseq.r <- list() 
+immuno.data.out.deseq.p <- list() 
 
 #for loop
 for (i in 1:2){
@@ -43,7 +43,7 @@ for (i in 1:2){
   res.rp <- results(dds.rp)
  
   resrp<-list(resr=res.rp)
-  immuno.data.out.r[[i]] <- resrp #added [[i]] and referenced list in line prior
+  immuno.data.out.deseq.r[[i]] <- resrp #added [[i]] and referenced list in line prior
   
   #randomized with FP addition PD1
   dds.thp  <- DESeqDataSetFromMatrix(countData = datasp,
@@ -53,11 +53,11 @@ for (i in 1:2){
   res.thp <- results(dds.thp)
   
   respp<-list(resp=res.thp)
-  immuno.data.out.p[[i]] <- respp
+  immuno.data.out.deseq.p[[i]] <- respp
  
 
-  save(immuno.data.out.r, file="./analysis/immuno.data.r.deseq.Rda")
-  save(immuno.data.out.p, file="./analysis/immuno.data.p.deseq.Rda")
+  save(immuno.data.out.deseq.r, file="./analysis/immuno.data.r.deseq.Rda")
+  save(immuno.data.out.deseq.p, file="./analysis/immuno.data.p.deseq.Rda")
   
 }
 
@@ -68,6 +68,6 @@ dds.up  <- DESeqDataSetFromMatrix(countData = immuno.data,
 dds.up <- DESeq(dds.up)
 res.up <- results(dds.up)
 
-immuno.data.out.u<-list(resu=res.up)
-save(immuno.data.out.u, file="./analysis/immuno.data.u.deseq.Rda")
+immuno.data.out.deseq.u<-list(resu=res.up)
+save(immuno.data.out.deseq.u, file="./analysis/immuno.data.u.deseq.Rda")
 
