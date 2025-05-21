@@ -4,10 +4,8 @@ library(DESeq2, warn.conflicts=F)
 
 #download datasets
 
-#data_files = list.files(pattern="data-") #want to use the datafiles that start with "data-"
-#num_files = length(data_files)
-  
-#for (i in 1:num_files) {
+#data_files = c("immuno", "brca")
+#for (i in 1:data_files) {
 
 #immuno/PD1 dataset loading
 raw_counts <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv'
