@@ -24,7 +24,7 @@ immuno.data.out.aldex5.r <- list()
 immuno.data.out.aldex5.p <- list() 
 
 #for loop
-for (i in 1:2){
+for (i in 1:100){
   #thin_2group adds rnorm noise to 5% of the transcripts, generates TPs in the dataset
   #generate thin_2group for each dataset as well as labelling for conditions and new dataset
   
