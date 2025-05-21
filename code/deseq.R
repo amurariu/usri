@@ -2,11 +2,6 @@ library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
 library(DESeq2, warn.conflicts=F)
 
-#download datasets
-
-#data_files = c("immuno", "brca")
-#for (i in 1:data_files) {
-
 #immuno/PD1 dataset loading
 raw_counts <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv'
 meta <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm_metadata.txt'
