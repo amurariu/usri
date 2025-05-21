@@ -38,13 +38,16 @@ analysis/immuno.data.u.aldex5.Rda : code/aldex_0.5.R
 clean DESeq:
 	rm analysis/immuno.data.u.deseq.Rda
 
-
+clean edgeR:
 	rm analysis/immuno.data.u.edger.Rda
-	
+
+clean ALDEx:	
 	rm analysis/immuno.data.u.aldex0.Rda
-	
+
+clean ALDEx2:	
 	rm analysis/immuno.data.u.aldex2.Rda
 
+clean ALDEx5:
 	rm analysis/immuno.data.u.aldex5.Rda
 
 	
