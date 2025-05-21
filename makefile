@@ -32,22 +32,19 @@ analysis/immuno.data.u.aldex5.Rda : code/aldex_0.5.R
 #analysis/test2.Rda: code/brca_draft.R
 #	Rscript 'code/brca_draft.R'
 
-#clean all:	
-	#rm analysis/test2.Rda
-	
-clean DESeq:
+clean all:
 	rm analysis/immuno.data.u.deseq.Rda
 
-clean edgeR:
-	rm analysis/immuno.data.u.edger.Rda
+#clean edgeR:
+#	rm analysis/immuno.data.u.edger.Rda
 
-clean ALDEx:	
+#clean ALDEx:	
 	rm analysis/immuno.data.u.aldex0.Rda
 
-clean ALDEx2:	
+#clean ALDEx2:	
 	rm analysis/immuno.data.u.aldex2.Rda
 
-clean ALDEx5:
+#clean ALDEx5:
 	rm analysis/immuno.data.u.aldex5.Rda
 
 	
