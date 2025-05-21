@@ -22,8 +22,14 @@ analysis/immuno.data.u.edger.Rda : code/edgeR.R
 
 analysis/immuno.data.u.aldex0.Rda : code/aldex_0.R
 	Rscript 'code/aldex_0.R'
+	
+analysis/immuno.data.u.aldex2.Rda : code/aldex_0.2.R
+	Rscript 'code/aldex_0.R'
 
-nalysis/test2.Rda: code/brca_draft.R
+analysis/immuno.data.u.aldex5.Rda : code/aldex_0.5.R
+	Rscript 'code/aldex_0.R'
+	
+#analysis/test2.Rda: code/brca_draft.R
 #	Rscript 'code/brca_draft.R'
 
 clean:	
@@ -34,7 +40,11 @@ clean:
 
 	rm analysis/immuno.data.u.edger.Rda
 	
-	
 	rm analysis/immuno.data.u.aldex0.Rda
+	
+	rm analysis/immuno.data.u.aldex2.Rda
+
+	rm analysis/immuno.data.u.aldex5.Rda
+
 	
 	
