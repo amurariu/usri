@@ -23,8 +23,8 @@ des.fun <- function(data, conditions, nloop=2){
 	  
 	  #PD1
 	  thin <- thin_2group(data, prop_null=0.95, alpha=0,
-								 signal_fun = stats::rnorm, 
-								 signal_params = list(mean = 0, sd = 2))
+	                      signal_fun = stats::rnorm, 
+	                      signal_params = list(mean = 0, sd = 2))
 	  thin.data.out[[i]] <- thin
 	  condsp <- as.vector(thin$designmat)   # permuted and thinned conditions and data
 	  datasp <- thin$mat
