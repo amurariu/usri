@@ -14,7 +14,7 @@ ALDEx5: analysis/immuno.data.u.aldex5.Rda
 
 #rules to generate the deseq output files
 
-analysis/immuno.data.u.deseq.Rda : code/deseq.R code/des.fun.R
+analysis/immuno.data.Rda : code/deseq.R code/des.fun.R
 	Rscript 'code/deseq.R' 'code/des.fun.R'
 
 #analysis/immuno.data.u.edger.Rda : code/edgeR.R
@@ -33,7 +33,7 @@ analysis/immuno.data.u.deseq.Rda : code/deseq.R code/des.fun.R
 #	Rscript 'code/brca_draft.R'
 
 clean all:
-	rm analysis/immuno.data.u.deseq.Rda
+	rm analysis/immuno.data.Rda
 
 #clean edgeR:
 #	rm analysis/immuno.data.u.edger.Rda
