@@ -14,8 +14,8 @@ ALDEx5: analysis/immuno.data.u.aldex5.Rda
 
 #rules to generate the deseq output files
 
-analysis/immuno.data.u.deseq.Rda : code/deseq.R
-	Rscript 'code/deseq.R'
+analysis/immuno.data.u.deseq.Rda : code/deseq.R code/des.fun.R
+	Rscript 'code/deseq.R' 'code/des.fun.R'
 
 #analysis/immuno.data.u.edger.Rda : code/edgeR.R
 #	Rscript 'code/edgeR.R'
