@@ -34,7 +34,7 @@ des.fun <- function(data, conditions, nloop=2){
 	  dds.rp.deseq  <- DESeqDataSetFromMatrix(countData = data,  #uses original data (no TP added)
 									   colData = data.frame(condsp), #uses data randomization order from thin
 									   design = ~ condsp)
-	  dds.rp.deseq <- DESeq(dds.rp.deseq)
+	  dds.rp.deseq <- DESeq(dds.rp.deseq, quiet=T)
 	  res.rp.deseq <- results(dds.rp.deseq)
 	  data.out.deseq.r[[i]] <- as.data.frame(res.rp.deseq@listData) #added [[i]] and referenced list in line prior
 	  
@@ -42,7 +42,7 @@ des.fun <- function(data, conditions, nloop=2){
 	  dds.thp.deseq  <- DESeqDataSetFromMatrix(countData = datasp,
 										colData = data.frame(condsp),
 										design = ~ condsp)
-	  dds.thp.deseq <- DESeq(dds.thp.deseq)
+	  dds.thp.deseq <- DESeq(dds.thp.deseq, quiet=T)
 	  res.thp.deseq <- results(dds.thp.deseq)
 	  data.out.deseq.p[[i]] <- as.data.frame(res.thp.deseq@listData)
 	}
@@ -53,7 +53,7 @@ des.fun <- function(data, conditions, nloop=2){
 	dds.up.deseq  <- DESeqDataSetFromMatrix(countData = data,
 									 colData = conds,
 									 design = ~ conditions_p)
-	dds.up.deseq <- DESeq(dds.up.deseq)
+	dds.up.deseq <- DESeq(dds.up.deseq, quiet=T)
 	data.out.deseq.u <- results(dds.up.deseq)
 	data.des.u <- as.data.frame(data.out.deseq.u@listData)
 	
