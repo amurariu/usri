@@ -3,7 +3,7 @@ library(edgeR, warn.conflicts=F)
 library(DESeq2, warn.conflicts=F)
 
 # loads the DESeq2 function to permute and add random true positives to the dataset
-source('~/code/des.fun.R')
+source('code/des.fun.R')
 
 #####
 # PD1 immunotherapy dataset
