@@ -29,5 +29,5 @@ immuno.data <- y_pd1$counts #filtered base dataset
 # immuno.conds is the conditions for the unpermuted data
 # N is the number of random instances
 immuno.data.DESeq <- des.fun(immuno.data, conditions_p, 2)
-save(immuno.data.DESeq, file='./Documents/usri/analysis/immuno.data.Rda') #works in terminal but have to change to "./Documents/usri/analysis/immuno.data.Rda"
+save(immuno.data.DESeq, file="./analysis/immuno.data.Rda') #works in terminal but have to change to "./Documents/usri/analysis/immuno.data.Rda"
 
