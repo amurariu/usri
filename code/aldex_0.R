@@ -19,10 +19,6 @@ y_pd1 <- DGEList(counts=immuno, group=factor(conditions_p))
 keep_pd1 <- filterByExpr(y_pd1)
 y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
-immuno.data.out.aldex0.u <- list() 
-immuno.data.out.aldex0.r <- list() 
-immuno.data.out.aldex0.p <- list() 
-
 
 #for loop
 for (i in 1:100){
@@ -56,9 +52,7 @@ for (i in 1:100){
 xup.aldex0 <- aldex(immuno.data, conditions=immuno.conds, gamma=1e-3)
 immuno.data.out.aldex0.u <- list(xup.aldex0)
 
-#Save files here
-#PD1 save file
-save(immuno.data.out.aldex0.u, file="./analysis/immuno.data.u.aldex0.Rda")
-save(immuno.data.out.aldex0.r, file="./analysis/immuno.data.r.aldex0.Rda")
-save(immuno.data.out.aldex0.p, file="./analysis/immuno.data.p.aldex0.Rda")
+#save file
+immuno.data.aldex <- ald.fun(immuno.data, conditions_p, 4)
+save(immuno.data.aldex, file="./analysis/immuno.data.aldex.out.Rda")
 
