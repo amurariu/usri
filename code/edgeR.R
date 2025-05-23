@@ -2,7 +2,11 @@ library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
 library(DESeq2, warn.conflicts=F)
 
-#immuno/PD1 dataset loading
+source('code/edg.fun.R')
+
+##PD1 immuno dataset
+
+#loading and filtering of data
 raw_counts <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv'
 meta <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm_metadata.txt'
 immuno<-read.table(file=raw_counts, header = T, skip=35, sep='\t', row.names = 1)
@@ -18,9 +22,6 @@ y_pd1 <- DGEList(counts=immuno, group=factor(conditions_p))
 keep_pd1 <- filterByExpr(y_pd1)
 y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
-immuno.data.out.edgeR.u <- list() 
-immuno.data.out.edgeR.r <- list() 
-immuno.data.out.edgeR.p <- list() 
 
 #for loop
 for (i in 1:100){
