@@ -9,7 +9,7 @@ edg.fun <- function(data, conditions, nloop=4){
   conditions_p <- conditions
   conds <- data.frame(conditions_p)
   
-  thin.data.out <- list() #change name of list here-----------
+  thin.data.out.edger <- list() #change name of list here-----------
   data.out.edger.u <- list() 
   data.out.edger.r <- list() 
   data.out.edger.p <- list() 
@@ -20,11 +20,12 @@ edg.fun <- function(data, conditions, nloop=4){
     #generate thin_2group for each dataset as well as labelling for conditions and new dataset
     
     #PD1
-    thin.immuno <- thin_2group(immuno.data, prop_null=0.95, alpha=0,
+    thin <- thin_2group(immuno.data, prop_null=0.95, alpha=0,
                                signal_fun = stats::rnorm, 
                                signal_params = list(mean = 0, sd = 2))
-    condsp <- as.vector(thin.immuno$designmat)   # permuted and thinned conditions and data
-    datasp <- thin.immuno$mat
+    thin.data.out.edger[[i]] <- thin
+    condsp <- as.vector(thin$designmat)   # permuted and thinned conditions and data
+    datasp <- thin$mat
     
     #edgeR analysis
     #PD1 setup
@@ -37,7 +38,7 @@ edg.fun <- function(data, conditions, nloop=4){
     edg.rp<-topTags(qlf_rp, n=nrow(immuno.data), adjust.method = "BH", sort.by = "none", p.value = 1)
     
     resrp.edgeR<-list(resu=edg.rp)
-    immuno.data.out.edgeR.r[[i]] <- resrp.edgeR
+    immuno.data.out.edgeR.r[[i]] <- resrp.edgeR@listData
     
     #randomized with FP addition PD1
     fit_pp <- glmQLFit(datasp,design_p)
@@ -45,7 +46,7 @@ edg.fun <- function(data, conditions, nloop=4){
     edg.pp<-topTags(qlf_pp, n=nrow(datasp), adjust.method = "BH", sort.by = "none", p.value = 1)
     
     respp.edgeR<-list(resu=edg.pp)
-    immuno.data.out.edgeR.p[[i]] <- respp.edgeR
+    immuno.data.out.edgeR.p[[i]] <- respp.edgeR@listData
   }
   print("done loop")
   
