@@ -10,9 +10,9 @@ edg.fun <- function(data, conditions, nloop=4){
   conds <- data.frame(conditions_p)
   
   thin.data.out.edger <- list() #change name of list here-----------
-  data.out.edger.u <- list() 
-  data.out.edger.r <- list() 
-  data.out.edger.p <- list() 
+  data.out.edgeR.u <- list() 
+  data.out.edgeR.r <- list() 
+  data.out.edgeR.p <- list() 
   
   #for loop
   for (i in 1:nloop){
@@ -38,7 +38,7 @@ edg.fun <- function(data, conditions, nloop=4){
     edg.rp<-topTags(qlf_rp, n=nrow(immuno.data), adjust.method = "BH", sort.by = "none", p.value = 1)
     
     resrp.edgeR<-list(resu=edg.rp)
-    immuno.data.out.edgeR.r[[i]] <- resrp.edgeR@listData
+    data.out.edgeR.r[[i]] <- as.data.frame(resrp.edgeR)
     
     #randomized with FP addition PD1
     fit_pp <- glmQLFit(datasp,design_p)
@@ -46,7 +46,7 @@ edg.fun <- function(data, conditions, nloop=4){
     edg.pp<-topTags(qlf_pp, n=nrow(datasp), adjust.method = "BH", sort.by = "none", p.value = 1)
     
     respp.edgeR<-list(resu=edg.pp)
-    immuno.data.out.edgeR.p[[i]] <- respp.edgeR@listData
+    data.out.edgeR.p[[i]] <- as.data.frame(respp.edgeR)
   }
   print("done loop")
   
@@ -59,7 +59,7 @@ edg.fun <- function(data, conditions, nloop=4){
   edg.up<-topTags(qlf_up, n=nrow(immuno.data), adjust.method = "BH", sort.by = "none", p.value = 1) 
   
   resup.edgeR<-list(resu=edg.up)
-  immuno.data.out.edgeR.u <- list(resup.edgeR)
+  data.out.edgeR.u <- list(resup.edgeR)
   
   return(list(conditions=conditions_p, thin.data=thin.data.out, u.data=data.edg.u, r.data=data.out.edger.r, p.data=data.out.edger.p))
 }
