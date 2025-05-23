@@ -20,38 +20,6 @@ keep_pd1 <- filterByExpr(y_pd1)
 y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
 
-#for loop
-for (i in 1:100){
-  #thin_2group adds rnorm noise to 5% of the transcripts, generates TPs in the dataset
-  #generate thin_2group for each dataset as well as labelling for conditions and new dataset
-  
-  #PD1
-  thin.immuno <- thin_2group(immuno.data, prop_null=0.95, alpha=0,
-                             signal_fun = stats::rnorm, 
-                             signal_params = list(mean = 0, sd = 2))
-  condsp <- as.vector(thin.immuno$designmat)   # permuted and thinned conditions and data
-  datasp <- thin.immuno$mat
-  
-  #ALDEX2 code added
-  #randomized without FP addition PD1
-  xrp.aldex0 <- aldex(immuno.data, conditions=condsp, gamma=1e-3) #uses original dataset but permuted conditions
-  
-  resrp.aldex0<-list(resu=xrp.aldex0)
-  immuno.data.out.aldex0.r[[i]] <- list(resrp.aldex0)
-
-  #randomized with FP addition PD1
-  xpp.aldex0 <- aldex(datasp, conditions=condsp, gamma=1e-3) #uses new dataset with permuted conditions
-  
-  respp.aldex0<-list(resu=xpp.aldex0)
-  immuno.data.out.aldex0.p[[i]] <- list(respp.aldex0)
-  
-}
-
-#unpermuted datasets
-#unpermuted PD1
-xup.aldex0 <- aldex(immuno.data, conditions=immuno.conds, gamma=1e-3)
-immuno.data.out.aldex0.u <- list(xup.aldex0)
-
 #save file
 immuno.data.aldex <- ald.fun(immuno.data, conditions_p, 4)
 save(immuno.data.aldex, file="./analysis/immuno.data.aldex.out.Rda")
