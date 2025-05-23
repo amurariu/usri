@@ -28,5 +28,5 @@ immuno.data <- y_pd1$counts #filtered base dataset
 # immuno is the data table
 # immuno.conds is the conditions for the unpermuted data
 # N is the number of random instances
-immuno.data.DESeq <- des.fun(immuno.data, conditions_p, 2)
+immuno.data.DESeq <- des.fun(immuno.data, conditions_p, 4)
 save(immuno.data.DESeq, file="./analysis/immuno.data.Rda") 
