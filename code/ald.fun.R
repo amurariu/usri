@@ -2,7 +2,10 @@
 # conditions is conditions_p from above
 # name is the name of the output file and must be in quotes
 # nloops is the number of test loops
-ald.fun <- function(data, conditions, nloop=4){
+
+scale <-c(1e-3, 0.2, 0.5) #contains different scale values
+
+ald.fun <- function(data, conditions, nloop=2){
   
   #assign(paste("perf.a", "1", sep=""),5)
   #perf.a1
@@ -37,6 +40,9 @@ ald.fun <- function(data, conditions, nloop=4){
     respp.aldex<-list(resu=xpp.aldex)
     data.out.aldex.p[[i]] <- as.data.frame(respp.aldex)
   }
+  
+  sapply(scale,ald.fun) #runs function through all values present in scale
+  
   print("done loop")
   
   #unpermuted PD1

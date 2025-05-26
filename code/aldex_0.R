@@ -23,6 +23,6 @@ y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
 
 #save file
-immuno.data.aldex <- ald.fun(immuno.data, conditions_p, 4)
+immuno.data.aldex <- ald.fun(immuno.data, conditions_p, 2)
 save(immuno.data.aldex, file="./analysis/immuno.data.aldex.out.Rda")
 
