@@ -10,7 +10,7 @@ ALDEx: analysis/immuno.data.aldex.out.Rda
 
 #ALDEx5: analysis/immuno.data.u.aldex5.Rda
 
-#all: data_collection  scripts
+#all: data_collection  
 
 #rules to generate the deseq output files
 
