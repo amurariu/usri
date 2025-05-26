@@ -2,9 +2,9 @@
 #all: analysis/test2.Rda
 DESeq: analysis/immuno.data.Rda
 
-edgeR: analysis/immuno.data.u.edger.Rda
+edgeR: analysis/immuno.data.edger.out.Rda
 
-ALDEx: analysis/immuno.data.u.aldex0.Rda
+ALDEx: analysis/immuno.data.aldex.out.Rda
 
 #ALDEx2: analysis/immuno.data.u.aldex2.Rda
 
