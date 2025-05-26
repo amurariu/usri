@@ -2,9 +2,9 @@
 #all: analysis/test2.Rda
 DESeq: analysis/immuno.data.Rda
 
-#edgeR: analysis/immuno.data.u.edger.Rda
+edgeR: analysis/immuno.data.u.edger.Rda
 
-#ALDEx: analysis/immuno.data.u.aldex0.Rda
+ALDEx: analysis/immuno.data.u.aldex0.Rda
 
 #ALDEx2: analysis/immuno.data.u.aldex2.Rda
 
@@ -17,11 +17,11 @@ DESeq: analysis/immuno.data.Rda
 analysis/immuno.data.Rda : code/deseq.R code/des.fun.R
 	Rscript 'code/deseq.R' 'code/des.fun.R'
 
-#analysis/immuno.data.u.edger.Rda : code/edgeR.R
-#	Rscript 'code/edgeR.R'
+analysis/immuno.data.edger.out.Rda : code/edgeR.R code/edg.fun.R
+	Rscript 'code/edgeR.R' 'code/edg.fun.R'
 
-#analysis/immuno.data.u.aldex0.Rda : code/aldex_0.R
-	#Rscript 'code/aldex_0.R'
+analysis/immuno.data.aldex.out.Rda : code/aldex_0.R code/ald.fun.R
+	Rscript 'code/aldex_0.R' 'code/ald.fun.R'
 	
 #analysis/immuno.data.u.aldex2.Rda : code/aldex_0.2.R
 	#Rscript 'code/aldex_0.R'
@@ -35,16 +35,12 @@ analysis/immuno.data.Rda : code/deseq.R code/des.fun.R
 clean:
 	rm analysis/immuno.data.Rda
 
-#clean edgeR:
-#	rm analysis/immuno.data.u.edger.Rda
+	rm analysis/immuno.data.edger.out.Rda
 
-#clean ALDEx:	
-	#rm analysis/immuno.data.u.aldex0.Rda
+	rm analysis/immuno.data.aldex.out.Rda
 
-#clean ALDEx2:	
 #	rm analysis/immuno.data.u.aldex2.Rda
 
-#clean ALDEx5:
 #	rm analysis/immuno.data.u.aldex5.Rda
 
 	
