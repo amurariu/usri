@@ -23,6 +23,8 @@ y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
 
 #save file
-immuno.data.aldex <- ald.fun(immuno.data, conditions_p, 2)
+scale <-c(1e-3, 0.2, 0.5) #contains different scale values
+immuno.data.aldex.out <- ald.fun(immuno.data, conditions_p, 2)
+immuno.data.aldex <- sapply(scale,ald.fun)
 save(immuno.data.aldex, file="./analysis/immuno.data.aldex.out.Rda")
 
