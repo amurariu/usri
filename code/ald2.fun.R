@@ -2,7 +2,7 @@
 # conditions is conditions_p from above
 # name is the name of the output file and must be in quotes
 # nloops is the number of test loops
-ald.fun <- function(data, conditions, nloop=2, gamma){
+ald2.fun <- function(data, conditions, nloop=2, gamma){
   set.seed(4)
   #assign(paste("perf.a", "1", sep=""),5)
   #perf.a1
