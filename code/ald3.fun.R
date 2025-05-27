@@ -2,8 +2,7 @@
 # conditions is conditions_p from above
 # name is the name of the output file and must be in quotes
 # nloops is the number of test loops
-scale <-c(1e-3, 0.2, 0.5) #contains different scale values
-ald.fun <- function(data, conditions, nloop=2){
+ald3.fun <- function(data, conditions, nloop=2){
   
   #assign(paste("perf.a", "1", sep=""),5)
   #perf.a1
@@ -11,9 +10,9 @@ ald.fun <- function(data, conditions, nloop=2){
   conds <- data.frame(conditions_p)
   
   thin.data.out.aldex <- list() #change name of list here-----------
-  data.out.aldex.u <- list() 
-  data.out.aldex.r <- list() 
-  data.out.aldex.p <- list() 
+  data.out.aldex3.u <- list() 
+  data.out.aldex3.r <- list() 
+  data.out.aldex3.p <- list() 
   
   #for loop
   for (i in 1:nloop){
@@ -29,22 +28,21 @@ ald.fun <- function(data, conditions, nloop=2){
     datasp <- thin$mat
     
     #randomized without FP addition PD1
-    xrp.aldex <- aldex(immuno.data, conditions=condsp, gamma=scale) #uses original dataset but permuted conditions
-    resrp.aldex<-list(resu=xrp.aldex)
-    data.out.aldex.r[[i]] <- as.data.frame(resrp.aldex)
+    xrp.aldex3 <- aldex(immuno.data, conditions=condsp, gamma=scale) #uses original dataset but permuted conditions
+    resrp.aldex3 <-list(resu=xrp.aldex3)
+    data.out.aldex3.r[[i]] <- as.data.frame(resrp.aldex3)
     
     #randomized with FP addition PD1
-    xpp.aldex <- aldex(datasp, conditions=condsp, gamma=scale) #uses new dataset with permuted conditions
-    respp.aldex<-list(resu=xpp.aldex)
-    data.out.aldex.p[[i]] <- as.data.frame(respp.aldex)
+    xpp.aldex3 <- aldex(datasp, conditions=condsp, gamma=scale) #uses new dataset with permuted conditions
+    respp.aldex3 <-list(resu=xpp.aldex3)
+    data.out.aldex3.p[[i]] <- as.data.frame(respp.aldex3)
   }
   
   print("done loop")
-  sapply(scale,ald.fun)
-  
+
   #unpermuted PD1
-  xup.aldex <- aldex(immuno.data, conditions=immuno.conds, gamma=1e-3)
-  immuno.data.out.aldex.u <- list(xup.aldex)
+  xup.aldex3 <- aldex(immuno.data, conditions=immuno.conds, gamma=1e-3)
+  immuno.data.out.aldex3.u <- list(xup.aldex3)
   
-  return(list(conditions=conditions_p, thin.data=thin.data.out.aldex, u.data=data.out.aldex.u, r.data=data.out.aldex.r, p.data=data.out.aldex.p))
+  return(list(conditions=conditions_p, thin.data=thin.data.out.aldex3, u.data=data.out.aldex3.u, r.data=data.out.aldex3.r, p.data=data.out.aldex3.p))
 }
