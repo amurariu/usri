@@ -1,3 +1,4 @@
+library(ALDEx2,warn.conflicts = F)
 library(ALDEx3,warn.conflicts = F)
 library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
@@ -23,8 +24,8 @@ y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
 
 #save file
-scale <-c(1e-3, 0.2, 0.5) #contains different scale values
-immuno.data.aldex.out <- ald3.fun(immuno.data, conditions_p, 2)
-immuno.data.aldex <- sapply(scale,ald.fun)
-save(immuno.data.aldex, file="./analysis/immuno.data.aldex.out.Rda")
+#scale <-c(1e-3, 0.2, 0.5) #contains different scale values
+immuno.data.aldex3 <- ald3.fun(immuno.data, conditions_p, 2)
+#immuno.data.aldex <- sapply(scale,ald.fun) #rename if using this
+save(immuno.data.aldex3, file="./analysis/immuno.data.aldex3.out.Rda")
 
