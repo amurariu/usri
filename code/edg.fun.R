@@ -3,7 +3,7 @@
 # name is the name of the output file and must be in quotes
 # nloops is the number of test loops
 edg.fun <- function(data, conditions, nloop=4){
-  
+  set.seed(20)
   #assign(paste("perf.a", "1", sep=""),5)
   #perf.a1
   conditions_p <- conditions

@@ -1,8 +1,6 @@
-library(ALDEx2,warn.conflicts = F)
-library(ALDEx3,warn.conflicts = F)
+library(ALDEx3,warn.conflicts = F) #do not load aldex2 and aldex3 at the same time
 library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
-library(DESeq2, warn.conflicts=F)
 
 source('code/ald3.fun.R')
 

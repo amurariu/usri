@@ -1,7 +1,6 @@
-library(ALDEx2,warn.conflicts = F)
+library(ALDEx2,warn.conflicts = F) #do not load aldex2 and aldex3 at the same time
 library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
-library(DESeq2, warn.conflicts=F)
 
 source('code/ald.fun.R')
 
@@ -23,8 +22,14 @@ y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
 
 #save file
-scale <-c(1e-3, 0.2, 0.5) #contains different scale values
-immuno.data.aldex.out <- ald.fun(immuno.data, conditions_p, 2)
-immuno.data.aldex <- sapply(scale,ald.fun)
-save(immuno.data.aldex, file="./analysis/immuno.data.aldex.out.Rda")
+immuno.data.aldex2_0.out <- ald.fun(immuno.data, conditions_p, 2, gamma=1e-3)
+save(immuno.data_0.aldex2, file="../ext_analysis/immuno.data.aldex2_0.out.Rda")
+
+#save file
+immuno.data.aldex2_0.out <- ald.fun(immuno.data, conditions_p, 2, gamma=0.2)
+save(immuno.data_2.aldex2, file="../ext_analysis/immuno.data.aldex2_2.out.Rda")
+
+#save file
+immuno.data.aldex2_0.out <- ald.fun(immuno.data, conditions_p, 2, gamma=0.5)
+save(immuno.data_5.aldex2, file="../ext_analysis/immuno.data.aldex2_5.out.Rda")
 

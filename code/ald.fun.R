@@ -2,11 +2,11 @@
 # conditions is conditions_p from above
 # name is the name of the output file and must be in quotes
 # nloops is the number of test loops
-scale <-c(1e-3, 0.2, 0.5) #contains different scale values
-ald.fun <- function(data, conditions, nloop=2){
-  
+ald.fun <- function(data, conditions, nloop=2, gamma){
+  set.seed(4)
   #assign(paste("perf.a", "1", sep=""),5)
   #perf.a1
+  #gam <- c(1e-3, 0.2, 0.5) #contains different scale values
   conditions_p <- conditions
   conds <- data.frame(conditions_p)
   
@@ -29,18 +29,17 @@ ald.fun <- function(data, conditions, nloop=2){
     datasp <- thin$mat
     
     #randomized without FP addition PD1
-    xrp.aldex <- aldex(immuno.data, conditions=condsp, gamma=scale) #uses original dataset but permuted conditions
+    xrp.aldex <- aldex(immuno.data, conditions=condsp, gamma=num, scale) #uses original dataset but permuted conditions
     resrp.aldex<-list(resu=xrp.aldex)
     data.out.aldex.r[[i]] <- as.data.frame(resrp.aldex)
     
     #randomized with FP addition PD1
-    xpp.aldex <- aldex(datasp, conditions=condsp, gamma=scale) #uses new dataset with permuted conditions
+    xpp.aldex <- aldex(datasp, conditions=condsp, gamma=num) #uses new dataset with permuted conditions
     respp.aldex<-list(resu=xpp.aldex)
     data.out.aldex.p[[i]] <- as.data.frame(respp.aldex)
   }
   
   print("done loop")
-  sapply(scale,ald.fun)
   
   #unpermuted PD1
   xup.aldex <- aldex(immuno.data, conditions=immuno.conds, gamma=1e-3)

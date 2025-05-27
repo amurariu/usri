@@ -3,7 +3,7 @@
 # name is the name of the output file and must be in quotes
 # nloops is the number of test loops
 ald3.fun <- function(data, conditions, nloop=2){
-  
+  set.seed(13)
   #assign(paste("perf.a", "1", sep=""),5)
   #perf.a1
   conditions_p <- conditions
