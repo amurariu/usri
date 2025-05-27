@@ -21,15 +21,15 @@ keep_pd1 <- filterByExpr(y_pd1)
 y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
 
-#save file
+#save file - gamma=1e-3
 immuno.data.aldex2_0.out <- ald.fun(immuno.data, conditions_p, 2, gamma=1e-3)
 save(immuno.data_0.aldex2, file="../ext_analysis/immuno.data.aldex2_0.out.Rda")
 
-#save file
+#save file - gamma=0.2
 immuno.data.aldex2_0.out <- ald.fun(immuno.data, conditions_p, 2, gamma=0.2)
 save(immuno.data_2.aldex2, file="../ext_analysis/immuno.data.aldex2_2.out.Rda")
 
-#save file
+#save file - gamma=0.5
 immuno.data.aldex2_0.out <- ald.fun(immuno.data, conditions_p, 2, gamma=0.5)
 save(immuno.data_5.aldex2, file="../ext_analysis/immuno.data.aldex2_5.out.Rda")
 
