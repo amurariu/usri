@@ -2,7 +2,7 @@
 #all: analysis/test2.Rda
 DESeq: ../ext_analysis/immuno.data.deseq.Rda
 
-edgeR: ../ext_analysis/immuno.data.edger.out.Rda
+edgeR: ../ext_analysis/immuno.data.edger.Rda
 
 ALDEx2: ../ext_analysis/immuno.data_0.aldex2
 
