@@ -33,10 +33,10 @@ analysis/immuno.data.aldex3.out.Rda : code/aldex3_0.R code/ald3.fun.R
 #	Rscript 'code/brca_draft.R'
 
 clean_DESeq:
-	rm analysis/immuno.data.deseq.Rda
+	rm ../ext_analysis/immuno.data.deseq.Rda
 
 clean_edgeR:
-	rm analysis/immuno.data.edger.out.Rda
+	rm ../ext_analysis/immuno.data.edger.out.Rda
 
 clean_ALDEx2:
 	rm ../ext_analysis/immuno.data_0.aldex2
