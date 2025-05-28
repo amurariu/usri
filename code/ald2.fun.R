@@ -7,9 +7,7 @@ ald2.fun <- function(data, conditions, nloop=2, gamma){
   #assign(paste("perf.a", "1", sep=""),5)
   #perf.a1
   #gam <- c(1e-3, 0.2, 0.5) #contains different scale values
-  conditions_p <- conditions
-  immuno.conds <- data.frame(conditions_p)
-  
+
   thin.data.out.aldex <- list() #change name of list here-----------
   data.out.aldex.u <- list() 
   data.out.aldex.r <- list() 
@@ -21,7 +19,7 @@ ald2.fun <- function(data, conditions, nloop=2, gamma){
     #generate thin_2group for each dataset as well as labelling for conditions and new dataset
     
     #PD1
-    thin <- thin_2group(immuno.data, prop_null=0.95, alpha=0,
+    thin <- thin_2group(data, prop_null=0.95, alpha=0,
                         signal_fun = stats::rnorm, 
                         signal_params = list(mean = 0, sd = 2))
     thin.data.out.aldex[[i]] <- thin
@@ -29,21 +27,18 @@ ald2.fun <- function(data, conditions, nloop=2, gamma){
     datasp <- thin$mat
     
     #randomized without FP addition PD1
-    xrp.aldex <- aldex(immuno.data, conditions=condsp, gamma = ) #uses original dataset but permuted conditions
-    resrp.aldex<-list(resu=xrp.aldex)
-    data.out.aldex.r[[i]] <- as.data.frame(resrp.aldex)
+    xrp.aldex <- aldex(data, conditions=condsp, gamma = gamma) #uses original dataset but permuted conditions
+    data.out.aldex.r[[i]] <- xrp.aldex
     
     #randomized with FP addition PD1
-    xpp.aldex <- aldex(datasp, conditions=condsp, gamma = ) #uses new dataset with permuted conditions
-    respp.aldex<-list(resu=xpp.aldex)
-    data.out.aldex.p[[i]] <- as.data.frame(respp.aldex)
+    xpp.aldex <- aldex(datasp, conditions=condsp, gamma = gamma) #uses new dataset with permuted conditions
+    data.out.aldex.p[[i]] <- xpp.aldex
   }
   
   print("done loop")
   
   #unpermuted PD1
-  xup.aldex <- aldex(immuno.data, conditions=immuno.conds)
-  immuno.data.out.aldex.u <- list(xup.aldex)
-  
-  return(list(conditions=conditions_p, thin.data=thin.data.out.aldex, u.data=data.out.aldex.u, r.data=data.out.aldex.r, p.data=data.out.aldex.p))
+  xup.aldex <- aldex(data, conditions=conditions, gamma=gamma)
+
+  return(list(conditions=conditions, thin.data=thin.data.out.aldex, u.data=xup.aldex, r.data=data.out.aldex.r, p.data=data.out.aldex.p))
 }
