@@ -5,7 +5,7 @@
 # nloops is the number of test loops
 
 
-des.fun <- function(data, conditions, nloop=1){
+des.fun <- function(data, conditions, nloop=100){
   set.seed(17)
 	#assign(paste("perf.a", "1", sep=""),5)
     #perf.a1
