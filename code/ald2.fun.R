@@ -8,7 +8,7 @@ ald2.fun <- function(data, conditions, nloop=2, gamma){
   #perf.a1
   #gam <- c(1e-3, 0.2, 0.5) #contains different scale values
   conditions_p <- conditions
-  conds <- data.frame(conditions_p)
+  immuno.conds <- data.frame(conditions_p)
   
   thin.data.out.aldex <- list() #change name of list here-----------
   data.out.aldex.u <- list() 
@@ -34,7 +34,7 @@ ald2.fun <- function(data, conditions, nloop=2, gamma){
     data.out.aldex.r[[i]] <- as.data.frame(resrp.aldex)
     
     #randomized with FP addition PD1
-    xpp.aldex <- aldex(datasp, conditions=condsp) #uses new dataset with permuted conditions
+    xpp.aldex <- aldex(datasp, conditions=condsp, gamma = ) #uses new dataset with permuted conditions
     respp.aldex<-list(resu=xpp.aldex)
     data.out.aldex.p[[i]] <- as.data.frame(respp.aldex)
   }
