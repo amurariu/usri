@@ -2,7 +2,9 @@ lim.fun <- function(data, conditions, nloop=100){
   set.seed(20)
  
   conditions_p <- conditions
-  conds <- data.frame(conditions_p)
+  conds <- as.data.frame(conditions_p, row.names = NULL, optional = FALSE,
+                         make.names = TRUE,
+                         stringsAsFactors = FALSE)
   
   thin.data.out <- list() 
   data.out.deseq.u <- list() 
@@ -25,9 +27,12 @@ lim.fun <- function(data, conditions, nloop=100){
     
     #limma analysis
     #randomized without FP addition PD1
-    fit <- lmFit(immuno.data,condsp)
+    y <- calcNormFactors(immuno.data)
+    design<-model.matrix(~conds)
+    v<-voom(y,design)
+    fit <- lmFit(v,design)
     fit <- eBayes(fit)
-    topTable(fit)
+    res.lim = topTable(fit)
 
     #randomized with FP addition PD1
    
