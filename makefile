@@ -20,7 +20,7 @@ ALDEx3: ../ext_analysis/immuno.data.aldex3.out.Rda
 ../ext_analysis/immuno.data.edger.Rda : code/edgeR.R code/edg.fun.R
 	Rscript 'code/edgeR.R' 'code/edg.fun.R'
 
-../ext_analysis/immuno.data_0.aldex2 : code/aldex2_0.R code/ald2.fun.R
+../ext_analysis/immuno.data.aldex2_0.out.Rda : code/aldex2_0.R code/ald2.fun.R
 	Rscript 'code/aldex2_0.R' 'code/ald2.fun.R'
 	
 ../ext_analysis/immuno.data.aldex3.out.Rda : code/aldex3_0.R code/ald3.fun.R
@@ -39,8 +39,9 @@ clean_edgeR:
 	rm ../ext_analysis/immuno.data.edger.Rda
 
 clean_ALDEx2:
-	rm ../ext_analysis/immuno.data_0.aldex2
-	
+	rm ../ext_analysis/immuno.data.aldex2_0.out.Rda
+	rm ../ext_analysis/immuno.data.aldex2_2.out.Rda
+	rm ../ext_analysis/immuno.data.aldex2_5.out.Rda
 	
 
 #	rm analysis/immuno.data.u.aldex2.Rda
