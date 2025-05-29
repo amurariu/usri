@@ -1,3 +1,5 @@
+library(devtools)
+devtools::load_all("../ALDEx3")
 library(ALDEx3,warn.conflicts = F) #do not load aldex2 and aldex3 at the same time
 library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
@@ -20,16 +22,17 @@ y_pd1 <- DGEList(counts=immuno, group=factor(conditions_p))
 keep_pd1 <- filterByExpr(y_pd1)
 y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
+Y_data <- matrix(nrow=nrow(immuno.data), ncol=ncol(immuno.data))
 
 #save file - gamma=1e-3
-immuno.data.aldex3_0.out <- ald3.fun(data=immuno.data, conditions=conditions_p, nloop=100, gamma=1e-3)
-save(immuno.data.aldex3_0.out, file="../ext_analysis/immuno.data.aldex3_0.out.Rda")
+immuno.data_0.aldex3 <- ald3.fun(Y = Y_data, data=immuno.data, conditions=conditions_p, nsample=1024, nloop=1, scale = clr, gamma = 1e-3)
+save(immuno.data_0.aldex3, file="../ext_analysis/immuno.data.aldex3_0.out.Rda")
 
 #save file - gamma=0.2
-immuno.data.aldex3_2.out <- ald3.fun(data=immuno.data, conditions=conditions_p, nloop=100, gamma = 0.2)
-save(immuno.data.aldex3_2.out, file="../ext_analysis/immuno.data.aldex3_2.out.Rda")
+immuno.data_2.aldex3 <- ald3.fun(Y = Y_datasp, data=immuno.data, conditions=conditions_p, nsample=1024, nloop=1, scale=clr, gamma = 0.2)
+save(immuno.data_2.aldex3, file="../ext_analysis/immuno.data.aldex3_2.out.Rda")
 
 #save file - gamma=0.5
-immuno.data.aldex3_5.out <- ald3.fun(data=immuno.data, conditions=conditions_p, nloop=100, gamma = 0.5)
-save(immuno.data.aldex3_5.out, file="../ext_analysis/immuno.data.aldex3_5.out.Rda")
+immuno.data_5.aldex3 <- ald3.fun(Y = Y_data, data=immuno.data, conditions=conditions_p, nsample=1024, nloop=1, scale=clr, gamma = 0.5)
+save(immuno.data_5.aldex3, file="../ext_analysis/immuno.data.aldex3_5.out.Rda")
 
