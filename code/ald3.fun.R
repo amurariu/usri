@@ -28,18 +28,18 @@ ald3.fun <- function(Y, data, conditions, nsample, nloop=1, scale, gamma){
     Y_datasp <- matrix(nrow=nrow(datasp), ncol=ncol(datasp))
     
     #randomized without FP addition PD1
-    xrp.aldex3 <- aldex(Y, data, conditions=condsp, nsample=1024, scale = clr, gamma = gamma) #uses original dataset but permuted conditions
+    xrp.aldex3 <- aldex(Y, data, conditions=condsp, nsample=1024, scale = scale, gamma = gamma) #uses original dataset but permuted conditions
     data.out.aldex.r3[[i]] <- xrp.aldex3
     
     #randomized with FP addition PD1
-    xpp.aldex3 <- aldex(Y = Y_datasp, datasp, conditions=condsp, nsample=1024, scale = clr, gamma = gamma) #uses new dataset with permuted conditions
+    xpp.aldex3 <- aldex(Y = Y_datasp, datasp, conditions=condsp, nsample=1024, scale = clr.sm, gamma = gamma) #uses new dataset with permuted conditions
     data.out.aldex.p3[[i]] <- xpp.aldex3
   }
   
   print("done loop")
   
   #unpermuted PD1
-  xup.aldex <- aldex(Y, data, conditions=conditions, nsample=1024, scale=clr, gamma = gamma)
+  xup.aldex <- aldex(Y, data, conditions=conditions, nsample=1024, gamma = gamma)
   
   return(list(conditions=conditions, thin.data=thin.data.out.aldex3, u.data=xup.aldex, r.data=data.out.aldex.r3, p.data=data.out.aldex.p3))
 }
