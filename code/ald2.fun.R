@@ -3,7 +3,6 @@
 # name is the name of the output file and must be in quotes
 # nloops is the number of test loops
 ald2.fun <- function(data, conditions, nloop=100, gamma){
-  set.seed(4)
   #assign(paste("perf.a", "1", sep=""),5)
   #perf.a1
   #gam <- c(1e-3, 0.2, 0.5) #contains different scale values
@@ -15,7 +14,6 @@ ald2.fun <- function(data, conditions, nloop=100, gamma){
   
   #for loop
   for (i in 1:nloop){
-    
     seed = 20 + i
     set.seed(seed)
     #thin_2group adds rnorm noise to 5% of the transcripts, generates TPs in the dataset
