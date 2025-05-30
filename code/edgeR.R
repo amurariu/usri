@@ -24,5 +24,5 @@ y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
 
 #saving file
-immuno.data.edgeR <-edg.fun(immuno.data, conditions_p,100)
+immuno.data.edgeR <-edg.fun(immuno.data, conditions_p,1)
 save(immuno.data.edgeR, file="../ext_analysis/immuno.data.edger.Rda")

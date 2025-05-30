@@ -27,9 +27,10 @@ lim.fun <- function(data, conditions, nloop=100){
     
     #limma analysis
     #randomized without FP addition PD1
-    y <- calcNormFactors(immuno.data)
-    design<-model.matrix(~conds)
-    v<-voom(y,design)
+  
+    y_pd1 <- calcNormFactors(y_pd1)
+    design<-model.matrix(~condsp)
+    v<-voom(y_pd1,design)
     fit <- lmFit(v,design)
     fit <- eBayes(fit)
     res.lim = topTable(fit)

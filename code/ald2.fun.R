@@ -15,6 +15,9 @@ ald2.fun <- function(data, conditions, nloop=100, gamma){
   
   #for loop
   for (i in 1:nloop){
+    
+    seed = 20 + i
+    set.seed(seed)
     #thin_2group adds rnorm noise to 5% of the transcripts, generates TPs in the dataset
     #generate thin_2group for each dataset as well as labelling for conditions and new dataset
     
