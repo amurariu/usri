@@ -35,9 +35,6 @@ lim.fun <- function(y, data, conditions, nloop=100){
     fit <- lmFit(v,design)
     fit <- eBayes(fit)
     res.lim = topTable(fit)
-
-    #randomized with FP addition PD1
-   
     
   }
   print("done loop")
