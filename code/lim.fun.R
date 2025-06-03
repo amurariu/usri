@@ -1,6 +1,4 @@
-lim.fun <- function(data, conditions, nloop=100){
-  set.seed(20)
- 
+lim.fun <- function(y, data, conditions, nloop=100){
   conditions_p <- conditions
   conds <- as.data.frame(conditions_p, row.names = NULL, optional = FALSE,
                          make.names = TRUE,
@@ -14,6 +12,9 @@ lim.fun <- function(data, conditions, nloop=100){
   #for loop
   for (i in 1:nloop){
     print(i)
+    seed = 20 + i
+    set.seed(seed)
+    
     #thin_2group adds rnorm noise to 5% of the transcripts, generates TPs in the dataset
     #generate thin_2group for each dataset as well as labelling for conditions and new dataset
     
@@ -27,15 +28,13 @@ lim.fun <- function(data, conditions, nloop=100){
     
     #limma analysis
     #randomized without FP addition PD1
-    y <- calcNormFactors(immuno.data)
-    design<-model.matrix(~conds)
+  
+    y <- calcNormFactors(y)
+    design<-model.matrix(~condsp)
     v<-voom(y,design)
     fit <- lmFit(v,design)
     fit <- eBayes(fit)
     res.lim = topTable(fit)
-
-    #randomized with FP addition PD1
-   
     
   }
   print("done loop")

@@ -21,11 +21,11 @@ immuno.conds <- data.frame(conditions_p)
 #edgeR conditions for initial filtering
 y_pd1 <- DGEList(counts=immuno, group=factor(conditions_p))
 keep_pd1 <- filterByExpr(y_pd1)
-y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
-immuno.data <- y_pd1$counts #filtered base dataset
+y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE] #had to take out y_pd1$counts
+immuno.data <- y_pd1$counts
 
 # immuno is the data table
 # immuno.conds is the conditions for the unpermuted data
 # N is the number of random instances
-immuno.data.limma <- des.fun(immuno.data, conditions_p, 100)
+immuno.data.limma <- lim.fun(y_pd1, immuno.data, conditions_p, 1)
 save(immuno.data.limma, file="../ext_analysis/immuno.data.limma.Rda") 

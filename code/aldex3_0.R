@@ -25,14 +25,14 @@ immuno.data <- y_pd1$counts #filtered base dataset
 Y_data <- matrix(nrow=nrow(immuno.data), ncol=ncol(immuno.data))
 
 #save file - gamma=1e-3
-immuno.data_0.aldex3 <- ald3.fun(Y = Y_data, data=immuno.data, conditions=conditions_p, nsample=1024, nloop=1, scale = clr.sm, gamma = 1e-3)
+immuno.data_0.aldex3 <- ald3.fun(Y = Y_data, data=immuno.data, conditions=conditions_p, nsample=1024, nloop=1, scale = clr, gamma = 1e-3)
 save(immuno.data_0.aldex3, file="../ext_analysis/immuno.data.aldex3_0.out.Rda")
 
 #save file - gamma=0.2
-immuno.data_2.aldex3 <- ald3.fun(Y = Y_datasp, data=immuno.data, conditions=conditions_p, nsample=1024, nloop=1, scale = clr.sm, gamma = 0.2)
+immuno.data_2.aldex3 <- ald3.fun(Y = Y_datasp, data=immuno.data, conditions=conditions_p, nsample=1024, nloop=1, scale = clr, gamma = 0.2)
 save(immuno.data_2.aldex3, file="../ext_analysis/immuno.data.aldex3_2.out.Rda")
 
 #save file - gamma=0.5
-immuno.data_5.aldex3 <- ald3.fun(Y = Y_data, data=immuno.data, conditions=conditions_p, nsample=1024, nloop=1, gamma = 0.5)
+immuno.data_5.aldex3 <- ald3.fun(Y = Y_data, data=immuno.data, conditions=conditions_p, nsample=1024, nloop=1, scale = clr, gamma = 0.5)
 save(immuno.data_5.aldex3, file="../ext_analysis/immuno.data.aldex3_5.out.Rda")
 

@@ -4,9 +4,8 @@
 # name is the name of the output file and must be in quotes
 # nloops is the number of test loops
 
-
 des.fun <- function(data, conditions, nloop=100){
-  set.seed(17)
+  
 	#assign(paste("perf.a", "1", sep=""),5)
     #perf.a1
 	conditions_p <- conditions
@@ -22,7 +21,8 @@ des.fun <- function(data, conditions, nloop=100){
 	  print(i)
 	  #thin_2group adds rnorm noise to 5% of the transcripts, generates TPs in the dataset
 	  #generate thin_2group for each dataset as well as labelling for conditions and new dataset
-	  
+	  seed = 20 + i
+	  set.seed(seed)
 	  #PD1
 	  thin <- thin_2group(data, prop_null=0.95, alpha=0,
 	                      signal_fun = stats::rnorm, 
