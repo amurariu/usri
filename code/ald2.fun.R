@@ -2,7 +2,7 @@
 # conditions is conditions_p from above
 # name is the name of the output file and must be in quotes
 # nloops is the number of test loops
-ald2.fun <- function(data, conditions, nloop=100, gamma){
+ald2.fun <- function(data, conditions, nloop=5, gamma){
   #assign(paste("perf.a", "1", sep=""),5)
   #perf.a1
   #gam <- c(1e-3, 0.2, 0.5) #contains different scale values
