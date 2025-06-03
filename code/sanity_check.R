@@ -17,7 +17,7 @@ load("/Users/andreeamurariu/Documents/github/ext_analysis/immuno.data.aldex2_5.o
 plot(immuno.data.edgeR$thin.data[[11]]$coefmat, immuno.data.DESeq$thin.data[[11]]$coefmat)
 plot(immuno.data.edgeR$thin.data[[11]]$coefmat, immuno.data_0.aldex2$thin.data[[11]]$coefmat)
 plot(immuno.data.edgeR$thin.data[[11]]$coefmat, immuno.data_2.aldex2$thin.data[[11]]$coefmat)
-plot(immuno.data.edgeR$thin.data[[11]]$coefmat, immuno.data_5.aldex2$thin.data[[11]]$coefmat) #### AM: does not look right, looks like cross?
+plot(immuno.data.edgeR$thin.data[[11]]$coefmat, immuno.data_5.aldex2$thin.data[[11]]$coefmat) #### AM: does not look right, looks like cross instead of diagonal?
 
 # do a correlation for each between samples - should be 1 
 # AM: looks good for the first 3 above (not aldex 0.5)
@@ -45,12 +45,14 @@ plot(immuno.data_5.aldex2$thin.data[[15]]$coefmat,immuno.data_5.aldex2$thin.data
 # AM check a few more
 
 #for logFC, log2FoldChange, diff.btw - for r.data
+#AM: seems fine, points centered around 0 for both axes
 plot(immuno.data.edgeR$r.data[[11]]$logFC,immuno.data.DESeq$r.data[[11]]$log2FoldChange, pch=19, cex=0.2, col=rgb(0,0,0,0.5), log="y")
 plot(immuno.data.edgeR$r.data[[11]]$logFC,immuno.data_0.aldex2$r.data[[11]]$diff.btw, pch=19, cex=0.2, col=rgb(0,0,0,0.5), log="y")
 plot(immuno.data.edgeR$r.data[[11]]$logFC,immuno.data_2.aldex2$r.data[[11]]$diff.btw, pch=19, cex=0.2, col=rgb(0,0,0,0.5), log="y")
 plot(immuno.data.edgeR$r.data[[11]]$logFC,immuno.data_5.aldex2$r.data[[11]]$diff.btw, pch=19, cex=0.2, col=rgb(0,0,0,0.5), log="y")
 
-#for log CPM, log(BaseMean), rab.all
+#for log CPM, log(BaseMean), rab.all 
+#AM: also seems fine, get diagonal line for all 4 variations
 plot(immuno.data.edgeR$r.data[[11]]$logCPM,immuno.data.DESeq$r.data[[11]]$baseMean, pch=19, cex=0.2, col=rgb(0,0,0,0.5), log="y")
 plot(immuno.data.edgeR$r.data[[11]]$logCPM,immuno.data_0.aldex2$r.data[[11]]$rab.all, pch=19, cex=0.2, col=rgb(0,0,0,0.5))
 plot(immuno.data.edgeR$r.data[[11]]$logCPM,immuno.data_2.aldex2$r.data[[11]]$rab.all, pch=19, cex=0.2, col=rgb(0,0,0,0.5))
@@ -58,11 +60,11 @@ plot(immuno.data.edgeR$r.data[[11]]$logCPM,immuno.data_5.aldex2$r.data[[11]]$rab
 
 # only random data
 # edgeR shows positives, ALDEx2 not
-plot(immuno.data.edgeR$r.data[[11]]$FDR,immuno.data_0.aldex2$r.data[[11]]$we.eBH, pch=19, cex=0.2, col=rgb(0,0,0,0.5), log='xy') #for FDR, we.eBH, wi.eBH, and padj
+plot(immuno.data.edgeR$r.data[[30]]$FDR,immuno.data_0.aldex2$r.data[[30]]$we.eBH, pch=19, cex=0.2, col=rgb(0,0,0,0.5), log='xy') #get odd graphs here for 30,32,33
 abline(v=0.05)
 abline(h=0.05)
 
-plot(immuno.data.edgeR$r.data[[11]]$FDR,immuno.data_0.aldex2$r.data[[11]]$wi.eBH, pch=19, cex=0.2, col=rgb(0,0,0,0.5), log='xy')
+plot(immuno.data.edgeR$r.data[[11]]$FDR,immuno.data_0.aldex2$r.data[[11]]$wi.eBH, pch=19, cex=0.2, col=rgb(0,0,0,0.5), log='xy') #get odd graphs here for 30,32,33
 abline(v=0.05)
 abline(h=0.05)
 

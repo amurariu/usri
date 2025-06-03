@@ -16,6 +16,9 @@ load("immuno.data.aldex2_5.out.Rda")
 # "immuno.data_5.aldex2" "immuno.data.DESeq"    
 # "immuno.data.edgeR"  
 
+#thinking of leaving the names the same and just changing it for the input files?
+analysis.fun <- function()
+
 ### wilcoxon (t-test is labled welches below)
 # there is duplication for deseq with the we and wilcoxon
 analysis.wi <- matrix(data=NA, nrow=300, ncol=7)
@@ -36,7 +39,7 @@ for(i in 1:10){
 # coefficients same in every instance
 # can hardcode this if sanity check passes
 
-model <- which(abs(immuno.data.edgeR$thin.data[[11]]$coefmat) > coeff)
+model <- which(abs(analysis.data$thin.data[[11]]$coefmat) > coeff) #analysis.dat
 null.model <- which(abs(immuno.data.edgeR$thin.data[[11]]$coefmat) < coeff)
 # rename each 
 TP.wi.ald  <- intersect(which(aldex.0$p.data[[11]]$wi.eBH < 0.05), model)
