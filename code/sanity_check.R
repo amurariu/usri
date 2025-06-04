@@ -17,7 +17,7 @@ load("/Users/andreeamurariu/Documents/github/ext_analysis/immuno.data.aldex2_5.o
 plot(immuno.data.edgeR$thin.data[[11]]$coefmat, immuno.data.DESeq$thin.data[[11]]$coefmat)
 plot(immuno.data.edgeR$thin.data[[11]]$coefmat, immuno.data_0.aldex2$thin.data[[11]]$coefmat)
 plot(immuno.data.edgeR$thin.data[[11]]$coefmat, immuno.data_2.aldex2$thin.data[[11]]$coefmat)
-plot(immuno.data.edgeR$thin.data[[11]]$coefmat, immuno.data_5.aldex2$thin.data[[11]]$coefmat) #### AM: does not look right, looks like cross instead of diagonal?
+plot(immuno.data.edgeR$thin.data[[2]]$coefmat, immuno.data_5.aldex2$thin.data[[2]]$coefmat) #### AM: does not look right, looks like cross instead of diagonal?
 
 # do a correlation for each between samples - should be 1 
 # AM: looks good for the first 3 above (not aldex 0.5)
