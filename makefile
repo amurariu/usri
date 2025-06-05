@@ -39,8 +39,8 @@ clean_edgeR:
 	rm ../ext_analysis/immuno.data.edger.Rda
 
 clean_ALDEx2:
-	rm ../ext_analysis/immuno.data.aldex2_0.out.Rda
-	rm ../ext_analysis/immuno.data.aldex2_2.out.Rda
+	#rm ../ext_analysis/immuno.data.aldex2_0.out.Rda
+	#rm ../ext_analysis/immuno.data.aldex2_2.out.Rda
 	rm ../ext_analysis/immuno.data.aldex2_5.out.Rda
 	
 
