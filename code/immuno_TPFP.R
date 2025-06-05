@@ -17,15 +17,23 @@ load("immuno.data.aldex2_5.out.Rda")
 # "immuno.data.edgeR"  
 
 #thinking of leaving the names the same and just changing it for the input files?
-analysis.fun <- function(analysis.deseq, analysis.edgeR, analysis.aldex0, analysis.aldex0.2, analysis.aldex0.5) {
+analysis.fun <- function(analysis.deseq, analysis.edgeR, analysis.aldex0, analysis.aldex0.2, analysis.aldex0.5, nloop=100) {
 
 ### wilcoxon (t-test is labled welches below)
 # there is duplication for deseq with the we and wilcoxon
-analysis.wi <- matrix(data=NA, nrow=300, ncol=7)
+analysis.wi <- matrix(data=NA, nrow=300, ncol=7) #change nrow/ncol?
 analysis.wi <- as.data.frame(analysis.wi)
 colnames(analysis.wi) <- c("coeff","iter", "met","PPV","FDR","SEN","SPE")
-met = c("ald", "ald2", "ald5", "des", "des5")
+met = c("ald", "ald2", "ald5", "des", "des0.5", "des1")
 analysis.wi[,3] <- rep(met,60)
+
+#### we.eBH
+analysis.we <- matrix(data=NA, nrow=300, ncol=7)
+analysis.we <- as.data.frame(analysis.we)
+colnames(analysis.we) <- c("coeff","iter", "met","PPV","FDR","SEN","SPE")
+met = c("ald", "ald2", "ald5", "des", "des0.5", "des1")
+analysis.we[,3] <- rep(met,60)
+    
 
 # equivalence
 # immuno.data_0.aldex2$p.data[[i]]$we.eBH == data.out[[i]]$ald0$wi.eBH
@@ -35,39 +43,99 @@ aldex.0 <- immuno.data_0.aldex2
 
 row=1
 for(coeff in c(0.01,0.1,0.2,0.5,0.75,1)){
-for(i in 1:10){
+for(i in 1:nloop){ 
 # coefficients same in every instance
 # can hardcode this if sanity check passes
 
-model <- which(abs(analysis.edgeR$thin.data[[11]]$coefmat) > coeff) #analysis.dat
+model <- which(abs(analysis.edgeR$thin.data[[11]]$coefmat) > coeff) 
 null.model <- which(abs(analysis.edgeR$thin.data[[11]]$coefmat) < coeff)
-# rename each 
-TP.wi.ald  <- intersect(which(analysis.aldex0$p.data[[11]]$wi.eBH < 0.05), model)
-TP.wi.ald.5 <- intersect(which(analysis.aldex0.5[[i]]$wi.eBH < 0.05), model)
-TP.wi.ald.2 <- intersect(which(analysis.aldex0.2[[i]]$wi.eBH < 0.05), model)
-TP.wi.des <- intersect(which(analysis.deseq[[i]]$padj < 0.05), model)
-TP.wi.des5 <- intersect(which(analysis.deseq[[i]]$padj < 0.05 & abs(analysis.deseq[[i]]$log2FoldChange) >0.5), model)
-TP.wi.des5.1 <- intersect(which(analysis.deseq[[i]]$padj < 0.05 & abs(analysis.deseq[[i]]$log2FoldChange) >1), model) # add in FC > 1
 
-FN.wi.ald <- setdiff(model, which(analysis.aldex0[[i]]$wi.eBH < 0.05))
-FN.wi.ald.5 <- setdiff(model, which(analysis.aldex0.5[[i]]$wi.eBH < 0.05))
-FN.wi.ald.2 <- setdiff(model, which(analysis.aldex0.2[[i]]$wi.eBH < 0.05))
-FN.wi.des <- setdiff(model, which(analysis.deseq[[i]]$padj < 0.05))
-FN.wi.des5 <- setdiff(model, which(analysis.deseq[[i]]$padj < 0.05 & abs(analysis.deseq[[i]]$log2FoldChange) > 0.5))
 
-FP.wi.ald <- intersect(which(analysis.aldex0[[i]]$wi.eBH < 0.05), null.model)
-FP.wi.ald.2 <- intersect(which(analysis.aldex0.2[[i]]$wi.eBH < 0.05), null.model)
-FP.wi.ald.5 <- intersect(which(analysis.aldex0.5[[i]]$wi.eBH < 0.05), null.model)
-FP.wi.des <- intersect(which(analysis.deseq[[i]]$padj < 0.05), null.model)
-FP.wi.des5 <- intersect(which(analysis.deseq[[i]]$padj < 0.05 & abs(analysis.deseq[[i]]$log2FoldChange) > 0.5), null.model)
+#for randomized data only (r)
+TP.wi.ald.r  <- intersect(which(analysis.aldex0$r.data[[11]]$wi.eBH < 0.05), model)
+TP.wi.ald.5.r <- intersect(which(analysis.aldex0.5$r.data[[i]]$wi.eBH < 0.05), model)
+TP.wi.ald.2.r <- intersect(which(analysis.aldex0.2$r.data[[i]]$wi.eBH < 0.05), model)
+TP.we.ald.r  <- intersect(which(analysis.aldex0$r.data[[i]]$we.eBH < 0.05), model)
+TP.we.ald.5.r <- intersect(which(analysis.aldex0.5$r.data[[i]]$we.eBH < 0.05), model)
+TP.we.ald.2.r <- intersect(which(analysis.aldex0.2$r.data[[i]]$we.eBH < 0.05), model)
+TP.wi.des.r <- intersect(which(analysis.deseq$r.data[[i]]$padj < 0.05), model)
+TP.wi.des5.r <- intersect(which(analysis.deseq$r.data[[i]]$padj < 0.05 & abs(analysis.deseq$r.data[[i]]$log2FoldChange) >0.5), model)
+TP.wi.des1.r <- intersect(which(analysis.deseq$r.data[[i]]$padj < 0.05 & abs(analysis.deseq$r.data[[i]]$log2FoldChange) >1), model) # add in FC > 1
 
-TN.wi.ald <- intersect(which(analysis.aldex0[[i]]$wi.eBH >= 0.05), null.model)
-TN.wi.ald.2 <- intersect(which(analysis.aldex0.2[[i]]$wi.eBH >= 0.05), null.model)
-TN.wi.ald.5 <- intersect(which(analysis.aldex0.5[[i]]$wi.eBH >= 0.05), null.model)
-TN.wi.des <- intersect(which(analysis.deseq[[i]]$padj >= 0.05), null.model)
-TN.wi.des5 <- intersect(which(analysis.deseq[[i]]$padj >= 0.05 & abs(analysis.deseq[[i]]$log2FoldChange) > 0.5), null.model)
+FN.wi.ald.r <- setdiff(model, which(analysis.aldex0$r.data[[i]]$wi.eBH < 0.05))
+FN.wi.ald.5.r <- setdiff(model, which(analysis.aldex0.5$r.data[[i]]$wi.eBH < 0.05))
+FN.wi.ald.2.r <- setdiff(model, which(analysis.aldex0.2$r.data[[i]]$wi.eBH < 0.05))
+FN.we.ald.r <- setdiff(model, which(analysis.aldex0$r.data[[i]]$we.eBH < 0.05))
+FN.we.ald.5.r <- setdiff(model, which(analysis.aldex0.5$r.data[[i]]$we.eBH < 0.05))
+FN.we.ald.2.r <- setdiff(model, which(analysis.aldex0.2$r.data[[i]]$we.eBH < 0.05))
+FN.wi.des.r <- setdiff(model, which(analysis.deseq$r.data[[i]]$padj < 0.05))
+FN.wi.des5.r <- setdiff(model, which(analysis.deseq$r.data[[i]]$padj < 0.05 & abs(analysis.deseq$r.data[[i]]$log2FoldChange) > 0.5))
+FN.wi.des1.r <- setdiff(model, which(analysis.deseq$r.data[[i]]$padj < 0.05 & abs(analysis.deseq$r.data[[i]]$log2FoldChange) > 1))
+
+FP.wi.ald.r <- intersect(which(analysis.aldex0$r.data[[i]]$wi.eBH < 0.05), null.model)
+FP.wi.ald.2.r <- intersect(which(analysis.aldex0.2$r.data[[i]]$wi.eBH < 0.05), null.model)
+FP.wi.ald.5.r <- intersect(which(analysis.aldex0.5$r.data[[i]]$wi.eBH < 0.05), null.model)
+FP.we.ald.r <- intersect(which(analysis.aldex0$r.data[[i]]$we.eBH < 0.05), null.model)
+TN.we.ald.2.r <- intersect(which(analysis.aldex0.2$r.data[[i]]$we.eBH < 0.05), null.model)
+TN.we.ald.5.r <- intersect(which(analysis.aldex0.5$r.data[[i]]$we.eBH < 0.05), null.model)
+FP.wi.des.r <- intersect(which(analysis.deseq$r.data[[i]]$padj < 0.05), null.model)
+FP.wi.des5.r <- intersect(which(analysis.deseq$r.data[[i]]$padj < 0.05 & abs(analysis.deseq$r.data[[i]]$log2FoldChange) > 0.5), null.model)
+FP.wi.des1.r <- intersect(which(analysis.deseq$r.data[[i]]$padj < 0.05 & abs(analysis.deseq$r.data[[i]]$log2FoldChange) > 1), null.model)
+
+TN.wi.ald.r <- intersect(which(analysis.aldex0$r.data[[i]]$wi.eBH >= 0.05), null.model)
+TN.wi.ald.2.r <- intersect(which(analysis.aldex0.2$r.data[[i]]$wi.eBH >= 0.05), null.model)
+TN.wi.ald.5.r <- intersect(which(analysis.aldex0.5$r.data[[i]]$wi.eBH >= 0.05), null.model)
+TN.we.ald.r <- intersect(which(analysis.aldex0$r.data[[i]]$we.eBH >= 0.05), null.model)
+TN.we.ald.2.r <- intersect(which(analysis.aldex0.2$r.data[[i]]$we.eBH >= 0.05), null.model)
+TN.we.ald.5.r <- intersect(which(analysis.aldex0.5$r.data[[i]]$we.eBH >= 0.05), null.model)
+TN.wi.des.r <- intersect(which(analysis.deseq$r.data[[i]]$padj >= 0.05), null.model)
+TN.wi.des5.r <- intersect(which(analysis.deseq$r.data[[i]]$padj >= 0.05 & abs(analysis.deseq$r.data[[i]]$log2FoldChange) > 0.5), null.model)
+TN.wi.des1.r <- intersect(which(analysis.deseq$r.data[[i]]$padj >= 0.05 & abs(analysis.deseq$r.data[[i]]$log2FoldChange) > 1), null.model)
+
+
+#for permuted + randomized data (p)
+TP.wi.ald.p  <- intersect(which(analysis.aldex0$p.data[[11]]$wi.eBH < 0.05), model)
+TP.wi.ald.5.p <- intersect(which(analysis.aldex0.5$p.data[[i]]$wi.eBH < 0.05), model)
+TP.wi.ald.2.p <- intersect(which(analysis.aldex0.2$p.data[[i]]$wi.eBH < 0.05), model)
+TP.we.ald.p  <- intersect(which(analysis.aldex0$p.data[[i]]$we.eBH < 0.05), model)
+TP.we.ald.5.p <- intersect(which(analysis.aldex0.5$p.data[[i]]$we.eBH < 0.05), model)
+TP.we.ald.2.p <- intersect(which(analysis.aldex0.2$p.data[[i]]$we.eBH < 0.05), model)
+TP.wi.des.p <- intersect(which(analysis.deseq$p.data[[i]]$padj < 0.05), model)
+TP.wi.des5.p <- intersect(which(analysis.deseq$p.data[[i]]$padj < 0.05 & abs(analysis.deseq$p.data[[i]]$log2FoldChange) >0.5), model)
+TP.wi.des1.p <- intersect(which(analysis.deseq$p.data[[i]]$padj < 0.05 & abs(analysis.deseq$p.data[[i]]$log2FoldChange) >1), model) # add in FC > 1
+
+FN.wi.ald.p <- setdiff(model, which(analysis.aldex0$p.data[[i]]$wi.eBH < 0.05))
+FN.wi.ald.5.p <- setdiff(model, which(analysis.aldex0.5$p.data[[i]]$wi.eBH < 0.05))
+FN.wi.ald.2.p <- setdiff(model, which(analysis.aldex0.2$p.data[[i]]$wi.eBH < 0.05))
+FN.we.ald.p <- setdiff(model, which(analysis.aldex0$p.data[[i]]$we.eBH < 0.05))
+FN.we.ald.5.p <- setdiff(model, which(analysis.aldex0.5$p.data[[i]]$we.eBH < 0.05))
+FN.we.ald.2.p <- setdiff(model, which(analysis.aldex0.2$p.data[[i]]$we.eBH < 0.05))
+FN.wi.des.p <- setdiff(model, which(analysis.deseq$p.data[[i]]$padj < 0.05))
+FN.wi.des5.p <- setdiff(model, which(analysis.deseq$p.data[[i]]$padj < 0.05 & abs(analysis.deseq$p.data[[i]]$log2FoldChange) > 0.5))
+FN.wi.des1.p <- setdiff(model, which(analysis.deseq$p.data[[i]]$padj < 0.05 & abs(analysis.deseq$p.data[[i]]$log2FoldChange) > 1))
+
+FP.wi.ald.p <- intersect(which(analysis.aldex0$p.data[[i]]$wi.eBH < 0.05), null.model)
+FP.wi.ald.2.p <- intersect(which(analysis.aldex0.2$p.data[[i]]$wi.eBH < 0.05), null.model)
+FP.wi.ald.5.p <- intersect(which(analysis.aldex0.5$p.data[[i]]$wi.eBH < 0.05), null.model)
+FP.we.ald.p <- intersect(which(analysis.aldex0$p.data[[i]]$we.eBH < 0.05), null.model)
+TN.we.ald.2.p <- intersect(which(analysis.aldex0.2$p.data[[i]]$we.eBH < 0.05), null.model)
+TN.we.ald.5.p <- intersect(which(analysis.aldex0.5$p.data[[i]]$we.eBH < 0.05), null.model)
+FP.wi.des.p <- intersect(which(analysis.deseq$p.data[[i]]$padj < 0.05), null.model)
+FP.wi.des5.p <- intersect(which(analysis.deseq$p.data[[i]]$padj < 0.05 & abs(analysis.deseq$p.data[[i]]$log2FoldChange) > 0.5), null.model)
+FP.wi.des1.p <- intersect(which(analysis.deseq$p.data[[i]]$padj < 0.05 & abs(analysis.deseq$p.data[[i]]$log2FoldChange) > 1), null.model)
+
+TN.wi.ald.p <- intersect(which(analysis.aldex0$p.data[[i]]$wi.eBH >= 0.05), null.model)
+TN.wi.ald.2.p <- intersect(which(analysis.aldex0.2$p.data[[i]]$wi.eBH >= 0.05), null.model)
+TN.wi.ald.5.p <- intersect(which(analysis.aldex0.5$p.data[[i]]$wi.eBH >= 0.05), null.model)
+TN.we.ald.p <- intersect(which(analysis.aldex0$p.data[[i]]$we.eBH >= 0.05), null.model)
+TN.we.ald.2.p <- intersect(which(analysis.aldex0.2$p.data[[i]]$we.eBH >= 0.05), null.model)
+TN.we.ald.5.p <- intersect(which(analysis.aldex0.5$p.data[[i]]$we.eBH >= 0.05), null.model)
+TN.wi.des.p <- intersect(which(analysis.deseq$p.data[[i]]$padj >= 0.05), null.model)
+TN.wi.des5.p <- intersect(which(analysis.deseq$p.data[[i]]$padj >= 0.05 & abs(analysis.deseq$p.data[[i]]$log2FoldChange) > 0.5), null.model)
+TN.wi.des1.p <- intersect(which(analysis.deseq$p.data[[i]]$padj >= 0.05 & abs(analysis.deseq$p.data[[i]]$log2FoldChange) > 1), null.model)
 
 # should not have to change but can augment with edgeR, limma, etc
+#for randomized data (r)
 PPV.wi.ald <- length(TP.wi.ald)/sum(length(TP.wi.ald),length(FP.wi.ald))
 PPV.wi.ald.2 <- length(TP.wi.ald.2)/sum(length(TP.wi.ald.2),length(FP.wi.ald.2))
 PPV.wi.ald.5 <- length(TP.wi.ald.5)/sum(length(TP.wi.ald.5),length(FP.wi.ald.5))
@@ -160,25 +228,6 @@ for(i in 1:5){
   means.wi[i+25,3:6] <- colMeans(analysis.wi[seq(from=i+251, to=300, by=5),4:7])
 }
 
-#### we.eBH
-analysis.out <- matrix(data=NA, nrow=300, ncol=7)
-analysis.out <- as.data.frame(analysis.out)
-colnames(analysis.out) <- c("coeff","iter", "met","PPV","FDR","SEN","SPE")
-met = c("ald", "ald2", "ald5", "des", "des5")
-analysis.out[,3] <- rep(met,60)
-
-row=1
-for(coeff in c(0.01,0.1,0.2,0.5,0.75,1)){
-for(i in 1:10){
-model <- which(abs(data.out[[i]]$coef) > coeff)
-null.model <- which(abs(data.out[[i]]$coef) < coeff)
-
-TP.ald  <- intersect(which(data.out[[i]]$ald0$we.eBH < 0.05), model)
-TP.ald.5 <- intersect(which(data.out[[i]]$ald5$we.eBH < 0.05), model)
-TP.ald.2 <- intersect(which(data.out[[i]]$ald2$we.eBH < 0.05), model)
-TP.des <- intersect(which(data.out[[i]]$des$padj < 0.05), model)
-TP.des5 <- intersect(which(data.out[[i]]$des$padj < 0.05 & abs(data.out[[i]]$des$log2FoldChange) >0.5), model)
-
 FN.ald <- setdiff(model, which(data.out[[i]]$ald0$we.eBH < 0.05))
 FN.ald.5 <- setdiff(model, which(data.out[[i]]$ald5$we.eBH < 0.05))
 FN.ald.2 <- setdiff(model, which(data.out[[i]]$ald2$we.eBH < 0.05))
@@ -191,9 +240,7 @@ FP.ald.5 <- intersect(which(data.out[[i]]$ald5$we.eBH < 0.05), null.model)
 FP.des <- intersect(which(data.out[[i]]$des$padj < 0.05), null.model)
 FP.des5 <- intersect(which(data.out[[i]]$des$padj < 0.05 & abs(data.out[[i]]$des$log2FoldChange) > 0.5), null.model)
 
-TN.ald <- intersect(which(data.out[[i]]$ald0$we.eBH >= 0.05), null.model)
-TN.ald.2 <- intersect(which(data.out[[i]]$ald2$we.eBH >= 0.05), null.model)
-TN.ald.5 <- intersect(which(data.out[[i]]$ald5$we.eBH >= 0.05), null.model)
+
 TN.des <- intersect(which(data.out[[i]]$des$padj >= 0.05), null.model)
 TN.des5 <- intersect(which(data.out[[i]]$des$padj >= 0.05 & abs(data.out[[i]]$des$log2FoldChange) > 0.5), null.model)
 
