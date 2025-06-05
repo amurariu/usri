@@ -136,11 +136,14 @@ TN.wi.des1.p <- intersect(which(analysis.deseq$p.data[[i]]$padj >= 0.05 & abs(an
 
 # should not have to change but can augment with edgeR, limma, etc
 #for randomized data (r)
-PPV.wi.ald <- length(TP.wi.ald)/sum(length(TP.wi.ald),length(FP.wi.ald))
-PPV.wi.ald.2 <- length(TP.wi.ald.2)/sum(length(TP.wi.ald.2),length(FP.wi.ald.2))
-PPV.wi.ald.5 <- length(TP.wi.ald.5)/sum(length(TP.wi.ald.5),length(FP.wi.ald.5))
-PPV.wi.des <- length(TP.wi.des)/sum(length(TP.wi.des),length(FP.wi.des))
-PPV.wi.des5 <- length(TP.wi.des5)/sum(length(TP.wi.des5),length(FP.wi.des5))
+PPV.wi.ald.r <- length(TP.wi.ald.r)/sum(length(TP.wi.ald.r),length(FP.wi.ald.r))
+PPV.wi.ald.2.r <- length(TP.wi.ald.2.r)/sum(length(TP.wi.ald.2.r),length(FP.wi.ald.2.r))
+PPV.wi.ald.5.r <- length(TP.wi.ald.5.r)/sum(length(TP.wi.ald.5.r),length(FP.wi.ald.5.r))
+PPV.we.ald.r <- length(TP.we.ald.r)/sum(length(TP.we.ald.r),length(FP.we.ald.r))
+PPV.we.ald.2.r <- length(TP.we.ald.2.r)/sum(length(TP.we.ald.2.r),length(FP.we.ald.2.r))
+PPV.we.ald.5.r <- length(TP.we.ald.5.r)/sum(length(TP.we.ald.5.r),length(FP.we.ald.5.r))
+PPV.wi.des.r <- length(TP.wi.des)/sum(length(TP.wi.des),length(FP.wi.des))
+PPV.wi.des5.r <- length(TP.wi.des5)/sum(length(TP.wi.des5),length(FP.wi.des5))
 
 FDR.wi.ald <- length(FP.wi.ald)/sum(length(TP.wi.ald),length(FP.wi.ald))
 FDR.wi.ald.2 <- length(FP.wi.ald.2)/sum(length(TP.wi.ald.2),length(FP.wi.ald.2))
