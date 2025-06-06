@@ -25,17 +25,15 @@ lim.fun <- function(y, data, conditions, nloop=100){
     datasp <- thin$mat
     
     #randomized without FP addition PD1
-    #y <- calcNormFactors(y) #pd_1/immuno.data
-    logCPM <- cpm (y_pd1, log = TRUE)
     design<-model.matrix(~condsp)
-    v<-voom(y,design)
+    v<-voom(immuno.data,design) #check immuno.data(normal) with permuted conds
     fit <- lmFit(v,design)
     fit <- eBayes(fit)
     res.lim <- topTable(fit)
     
     #randomized and FP addition PD1 - works!!
     design<-model.matrix(~condsp)
-    v<-voom(datasp,design)
+    v<-voom(datasp,design) #thinned data+conditions
     fit <- lmFit(v,design)
     fit <- eBayes(fit)
     res.lim <- topTable(fit, coef = ncol(design))
