@@ -1,38 +1,33 @@
-#####
-# R code for the modeled immuno dataset from Li et al
-# This dataset gave many false positives when shuffled
-# new in this analysis is including 5% true positives in
-# the shuffled datasets to examine both FP and TP identification
-# TP data are added using the seqgendiff R package
-#####
-
 load("immuno.data.edger.Rda")
 load("immuno.data.deseq.Rda")
 load("immuno.data.aldex2_0.out.Rda")
 load("immuno.data.aldex2_2.out.Rda")
 load("immuno.data.aldex2_5.out.Rda")
 
-# "immuno.data_0.aldex2" "immuno.data_2.aldex2"
-# "immuno.data_5.aldex2" "immuno.data.DESeq"    
-# "immuno.data.edgeR"  
+# "immuno.data_0.aldex2" "immuno.data_2.aldex2" "immuno.data_5.aldex2" "immuno.data.DESeq" "immuno.data.edgeR"  
 
-if (type = "DESeq") {
-  padj = 
-} else if (type = "edgeR") {
-  padj = 
-} else if (type = "aldex0") {
-  we.eBH = 
-  wi.eBH = 
-} else if (type = "aldex0.2"){
-  we.eBH = 
-  wi.eBH =
-} else if (type = "aldex0.5") {
-  we.eBH = 
-  wi.eBH = 
-}
+analysis.fun <- function(input=NULL, type=NULL, nloop=100) {
 
-#thinking of leaving the names the same and just changing it for the input files?
-analysis.fun <- function(analysis.deseq, analysis.edgeR, analysis.aldex0, analysis.aldex0.2, analysis.aldex0.5, nloop=100) {
+  if (type = "DESeq") {
+    padj = 6
+  } else if (type = "edgeR") {
+    padj = 5
+  } else if (type = "aldex0.we") {
+    we.eBH = 10
+  } else if (type = "aldex0.wi") {
+    wi.eBH = 12
+  } else if (type = "aldex0.2.we"){
+    we.eBH = 10
+  } else if (type = "aldex0.2.wi"{
+    wi.eBH = 12
+  } else if (type = "aldex0.5.we") {
+    we.eBH = 10
+  } else if (type = "aldex0.5.wi") {
+    wi.eBH = 12
+  }
+  
+if(input == NULL){stop("input modelled data")}
+
 
 ### wilcoxon (t-test is labled welches below)
 # there is duplication for deseq with the we and wilcoxon
@@ -67,7 +62,10 @@ null.model <- which(abs(analysis.edgeR$thin.data[[11]]$coefmat) < coeff)
 
 
 #for randomized data only (r)
-TP.wi.ald.r  <- intersect(which(analysis.aldex0$r.data[[11]]$wi.eBH < 0.05), model)
+
+#sample
+
+TP.wi.ald.r  <- intersect(which(dataset$r.data[[11]]$wi.eBH < 0.05), model)
 TP.wi.ald.5.r <- intersect(which(analysis.aldex0.5$r.data[[i]]$wi.eBH < 0.05), model)
 TP.wi.ald.2.r <- intersect(which(analysis.aldex0.2$r.data[[i]]$wi.eBH < 0.05), model)
 TP.we.ald.r  <- intersect(which(analysis.aldex0$r.data[[i]]$we.eBH < 0.05), model)
