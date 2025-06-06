@@ -33,14 +33,12 @@ lim.fun <- function(y, data, conditions, nloop=100){
     fit <- eBayes(fit)
     res.lim <- topTable(fit)
     
-    #randomized and FP addition PD1
-    data.p <- as.data.frame(thin$mat)
-    yfd <- calcNormFactors(data.p) #pd_1/immuno.data
+    #randomized and FP addition PD1 - works!!
     design<-model.matrix(~condsp)
-    v<-voom(data.p,design)
+    v<-voom(datasp,design)
     fit <- lmFit(v,design)
     fit <- eBayes(fit)
-    res.lim <- topTable(fit)
+    res.lim <- topTable(fit, coef = ncol(design))
     
   }
   print("done loop")

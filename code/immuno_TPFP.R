@@ -80,6 +80,8 @@ FDR.r <- length(FP.r)/sum(length(TP.r),length(FP.r))
 SEN.r <- length(TP.r)/(length(TP.r) + length(FN.r))
 SPE.r <- length(TN.r)/(length(TN.r) + length(FP.r))
 
+##add for des.5 and des.1
+
 #for randomized + permuted data (p)
 PPV.p <- length(TP.p)/sum(length(TP.p),length(FP.p))
 FDR.p <- length(FP.p)/sum(length(TP.p),length(FP.p))
