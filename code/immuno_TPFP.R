@@ -2,6 +2,7 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=1) {
 
   if (type == "DESeq") {
     padj = 6
+    log2FoldChange = 3
   } else if (type == "edgeR") {
     padj = 5
   } else if (type == "aldex0.we") {
@@ -20,7 +21,6 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=1) {
 
 if (input == NULL) {stop("input modelled data")} 
     
-
 # equivalence
 # immuno.data_0.aldex2$p.data[[i]]$we.eBH == data.out[[i]]$ald0$wi.eBH
 # immuno.data.DESeq$p.data[[i]]$padj == data.out[[i]]$des0$padj
@@ -33,33 +33,46 @@ for(i in 1:2){
 # coefficients same in every instance
 # can hardcode this if sanity check passes
 
-model <- which(abs(input$thin.data[[11]]$coefmat) > coeff) 
-null.model <- which(abs(input$thin.data[[11]]$coefmat) < coeff)
-
+model <- which(abs(input$thin.data[[11]]$coefmat) > coeff)  #need to rename because error message from coefmat
+null.model <- which(abs(input$thin.data[[11]]$coefmat) < coeff) # ^same 
 
 #for randomized data only (r)
-#sample
 TP.r <- intersect(which(input$r.data[[i]][,padj] < 0.05), model)
 FN.r <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05))
 FP.r <- intersect(which(input$r.data[[i]][,padj] < 0.05), null.model)
 TN.r <- intersect(which(input$r.data[[i]][,padj] >= 0.05), null.model)
 
+#for randomized data only (r) - DESeq with Log2FoldChange for 0.5 and 1
+TP.des5.r <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) >0.5), model)
+TP.des1.r <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) >1), model) 
+
+FN.des5.r <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 0.5))
+FN.des1.r <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 1))
+
+FP.des5.r <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 0.5), null.model)
+FP.des1.r <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 1), null.model)
+
+TN.des5.r <- intersect(which(input$r.data[[i]][,padj] >= 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 0.5), null.model)
+TN.des1.r <- intersect(which(input$r.data[[i]][,padj] >= 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 1), null.model)
+
 #for randomized + permuted data (p)
-#sample
 TP.p <- intersect(which(input$p.data[[i]][,padj] < 0.05), model)
 FN.p <- setdiff(model, which(input$p.data[[i]][,padj] < 0.05))
 FP.p <- intersect(which(input$p.data[[i]][,padj] < 0.05), null.model)
 TN.p <- intersect(which(input$p.data[[i]][,padj] >= 0.05), null.model)
 
-#how to integrate this
-#TP.des5.r <- intersect(which(analysis.deseq$r.data[[i]]$padj < 0.05 & abs(analysis.deseq$r.data[[i]]$log2FoldChange) >0.5), model)
-#TP.des1.r <- intersect(which(analysis.deseq$r.data[[i]]$padj < 0.05 & abs(analysis.deseq$r.data[[i]]$log2FoldChange) >1), model) # add in FC > 1
-#FN.des5.r <- setdiff(model, which(analysis.deseq$r.data[[i]]$padj < 0.05 & abs(analysis.deseq$r.data[[i]]$log2FoldChange) > 0.5))
-#FN.des1.r <- setdiff(model, which(analysis.deseq$r.data[[i]]$padj < 0.05 & abs(analysis.deseq$r.data[[i]]$log2FoldChange) > 1))
-#FP.des5.r <- intersect(which(analysis.deseq$r.data[[i]]$padj < 0.05 & abs(analysis.deseq$r.data[[i]]$log2FoldChange) > 0.5), null.model)
-#FP.des1.r <- intersect(which(analysis.deseq$r.data[[i]]$padj < 0.05 & abs(analysis.deseq$r.data[[i]]$log2FoldChange) > 1), null.model)
-#TN.des5.r <- intersect(which(analysis.deseq$r.data[[i]]$padj >= 0.05 & abs(analysis.deseq$r.data[[i]]$log2FoldChange) > 0.5), null.model)
-#TN.des1.r <- intersect(which(analysis.deseq$r.data[[i]]$padj >= 0.05 & abs(analysis.deseq$r.data[[i]]$log2FoldChange) > 1), null.model)
+#for randomized data only (p) - DESeq with Log2FoldChange for 0.5 and 1
+TP.des5.p <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) >0.5), model)
+TP.des1.p <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) >1), model) 
+
+FN.des5.p <- setdiff(model, which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5))
+FN.des1.p <- setdiff(model, which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1))
+
+FP.des5.p <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5), null.model)
+FP.des1.p <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1), null.model)
+
+TN.des5.p <- intersect(which(input$p.data[[i]][,padj] >= 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5), null.model)
+TN.des1.p <- intersect(which(input$p.data[[i]][,padj] >= 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1), null.model)
 
 #for randomized data (r)
 PPV.r <- length(TP.r)/sum(length(TP.r),length(FP.r))
