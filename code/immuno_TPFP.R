@@ -18,24 +18,7 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=1) {
     padj = 12
   }
 
-  
-#if (input == NULL) {stop("input modelled data")} 
-
-
-### wilcoxon (t-test is labled welches below)
-# there is duplication for deseq with the we and wilcoxon
-#analysis.wi <- matrix(data=NA, nrow=300, ncol=7) #change nrow/ncol?
-#analysis.wi <- as.data.frame(analysis.wi)
-#colnames(analysis.wi) <- c("coeff","iter", "met","PPV","FDR","SEN","SPE")
-#met = c("ald", "ald2", "ald5", "des", "des0.5", "des1")
-#analysis.wi[,3] <- rep(met,60)
-
-#### we.eBH
-#analysis.we <- matrix(data=NA, nrow=300, ncol=7)
-#analysis.we <- as.data.frame(analysis.we)
-#colnames(analysis.we) <- c("coeff","iter", "met","PPV","FDR","SEN","SPE")
-#met = c("ald", "ald2", "ald5", "des", "des0.5", "des1")
-#analysis.we[,3] <- rep(met,60)
+if (input == NULL) {stop("input modelled data")} 
     
 
 # equivalence
