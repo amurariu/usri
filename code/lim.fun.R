@@ -1,13 +1,11 @@
 lim.fun <- function(y, data, conditions, nloop=100){
   conditions_p <- conditions
-  conds <- as.data.frame(conditions_p, row.names = NULL, optional = FALSE,
-                         make.names = TRUE,
-                         stringsAsFactors = FALSE)
+  conds <- as.data.frame(conditions_p)
   
   thin.data.out <- list() 
-  data.out.deseq.u <- list() 
-  data.out.deseq.r <- list() 
-  data.out.deseq.p <- list() 
+  data.out.limma.u <- list() 
+  data.out.limma.r <- list() 
+  data.out.limma.p <- list() 
   
   #for loop
   for (i in 1:nloop){
@@ -26,22 +24,35 @@ lim.fun <- function(y, data, conditions, nloop=100){
     condsp <- as.vector(thin$designmat)   # permuted and thinned conditions and data
     datasp <- thin$mat
     
-    #limma analysis
     #randomized without FP addition PD1
-  
-    y <- calcNormFactors(y)
+    y <- calcNormFactors(y) #pd_1/immuno.data
     design<-model.matrix(~condsp)
     v<-voom(y,design)
     fit <- lmFit(v,design)
     fit <- eBayes(fit)
-    res.lim = topTable(fit)
+    res.lim <- topTable(fit)
+    
+    #randomized and FP addition PD1
+    data.p <- as.data.frame(thin$mat)
+    yfd <- calcNormFactors(data.p) #pd_1/immuno.data
+    design<-model.matrix(~condsp)
+    v<-voom(data.p,design)
+    fit <- lmFit(v,design)
+    fit <- eBayes(fit)
+    res.lim <- topTable(fit)
     
   }
   print("done loop")
   
-  
   #unpermuted PD1
+  #randomized without FP addition PD1
+  y <- calcNormFactors(y) #pd_1/immuno.data
+  design<-model.matrix(~conds) #normal conditions
+  v<-voom(y,design)
+  fit <- lmFit(v,design)
+  fit <- eBayes(fit)
+  res.lim <- topTable(fit)
  
   
-  return(list(conditions=conditions_p, thin.data=thin.data.out, u.data=data.des.u, r.data=data.out.deseq.r, p.data=data.out.deseq.p))
+  return(list(conditions=conditions_p, thin.data=thin.data.out, data.out.limma.r = res.lim))
 }

@@ -14,7 +14,7 @@ load(paste(anal.path,"immuno.data.aldex2_5.out.Rda", sep=""))
 # Types: "DESeq", "edgeR", "aldex0.we", "aldex0.wi", "aldex0.2.we", "aldex0.2.wi", aldex0.5.we", ""aldex0.5.wi"
 
 #inputting parameters for function
-immuno.deseq.analysis <- analysis.fun(input = "immuno.data.deseq.Rda", type = "DESeq", nloop=1) 
+immuno.deseq.analysis <- analysis.fun(input = "immuno.data.DESeq", type = "DESeq", nloop=1) 
 save(immuno.deseq.analysis, file="./analysis/immuno.deseq.analysis.Rda")
 
   

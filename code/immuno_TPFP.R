@@ -17,8 +17,9 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=1) {
   } else if (type == "aldex0.5.wi") {
     padj = 12
   }
+
   
-if(input == NULL){stop("input modelled data")} }
+#if (input == NULL) {stop("input modelled data")} 
 
 
 ### wilcoxon (t-test is labled welches below)
@@ -49,8 +50,8 @@ for(i in 1:2){
 # coefficients same in every instance
 # can hardcode this if sanity check passes
 
-model <- which(abs(analysis.edgeR$thin.data[[11]]$coefmat) > coeff) 
-null.model <- which(abs(analysis.edgeR$thin.data[[11]]$coefmat) < coeff)
+model <- which(abs(input$thin.data[[11]]$coefmat) > coeff) 
+null.model <- which(abs(input$thin.data[[11]]$coefmat) < coeff)
 
 
 #for randomized data only (r)
@@ -88,6 +89,8 @@ PPV.p <- length(TP.p)/sum(length(TP.p),length(FP.p))
 FDR.p <- length(FP.p)/sum(length(TP.p),length(FP.p))
 SEN.p <- length(TP.p)/(length(TP.p) + length(FN.p))
 SPE.p <- length(TN.p)/(length(TN.p) + length(FP.p))
+
+return(list(t_pos.r = TP.r, f_neg.r = FN.r, f_pos.r = FP.r, t_neg.r = TN.r))
 
 } #end bracket here - finished editing up to here
 
