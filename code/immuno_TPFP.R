@@ -29,13 +29,12 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=1) {
 
 row=1
 for(coeff in c(0.01,0.1,0.2,0.5,0.75,1)){
-for(i in 1:2){ 
+for(i in 1:100){ 
 # coefficients same in every instance
 # can hardcode this if sanity check passes
 
-dataf<-as.data.frame(input)
-  
-model <- which(abs(dataf$thin.data[[11]]$coefmat) > coeff)  #coefmat giving error - says is not numeric
+
+model <- which(abs(input$thin.data[[11]]$coefmat[,1]) > coeff)  #coefmat giving error - says is not numeric
 null.model <- which(abs(input$thin.data[[11]]$coefmat) < coeff) # ^same 
 
 #for randomized data only (r)
@@ -82,8 +81,6 @@ FDR.r <- length(FP.r)/sum(length(TP.r),length(FP.r))
 SEN.r <- length(TP.r)/(length(TP.r) + length(FN.r))
 SPE.r <- length(TN.r)/(length(TN.r) + length(FP.r))
 
-##add for des.5 and des.1
-
 #for randomized + permuted data (p)
 PPV.p <- length(TP.p)/sum(length(TP.p),length(FP.p))
 FDR.p <- length(FP.p)/sum(length(TP.p),length(FP.p))
@@ -92,7 +89,7 @@ SPE.p <- length(TN.p)/(length(TN.p) + length(FP.p))
 
 return(list(t_pos.r = TP.r, f_neg.r = FN.r, f_pos.r = FP.r, t_neg.r = TN.r))
 
-} #end bracket here - finished editing up to here
+}}} #end bracket here - finished editing up to here
 
 # even butt uglier ...
 for (j in 1:5){
