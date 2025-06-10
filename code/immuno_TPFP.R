@@ -34,10 +34,11 @@ for(i in 1:100){
 # can hardcode this if sanity check passes
 
 
-model <- which(abs(input$thin.data[[11]]$coefmat[,1]) > coeff)  #coefmat giving error - says is not numeric
-null.model <- which(abs(input$thin.data[[11]]$coefmat) < coeff) # ^same 
+model <- which(abs(input$thin.data[[i]]$coefmat) > coeff)  #coefmat giving error - says is not numeric
+null.model.r <- which(abs(input$thin.data[[i]]$coefmat) == 0) # randomized nulls only 
+null.model.p <- which(abs(input$thin.data[[i]]$coefmat) > 0 & abs(input$thin.data[[11]]$coefmat) < coeff) # only less than coeff FP 
 
-#for randomized data only (r)
+#for randomized data only (r) 
 TP.r <- intersect(which(input$r.data[[i]][,padj] < 0.05), model)
 FN.r <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05))
 FP.r <- intersect(which(input$r.data[[i]][,padj] < 0.05), null.model)
