@@ -1,0 +1,1029 @@
+sample	abx	delmode	age	dyad	twin
+MLP-0003-ST3	Not exposed	Vaginal	10 days	P1	No
+MLP-0004-ST4	Not exposed	Vaginal	3 months	P1	No
+MLP-0007-ST3	Exposed	C/S emergency	10 days	P2	No
+MLP-0008-ST4	Exposed	C/S emergency	3 months	P2	No
+MLP-0011-ST3	Not exposed	Vaginal	10 days	P3	No
+MLP-0012-ST4	Not exposed	Vaginal	3 months	P3	No
+MLP-0015-ST3	Exposed	C/S emergency	10 days	P4	No
+MLP-0016-ST4	Exposed	C/S emergency	3 months	P4	No
+MLP-0019-ST3	Not exposed	Vaginal	10 days	P5	No
+MLP-0020-ST4	Not exposed	Vaginal	3 months	P5	No
+MLP-0023-ST3	Exposed	Vaginal	10 days	P6	No
+MLP-0024-ST4	Exposed	Vaginal	3 months	P6	No
+MLP-0027-ST3	Exposed	C/S elective	10 days	P7	No
+MLP-0028-ST4	Exposed	C/S elective	3 months	P7	No
+MLP-0031-ST3	Exposed	C/S emergency	10 days	P8	No
+MLP-0032-ST4	Exposed	C/S emergency	3 months	P8	No
+MLP-0035-ST4	Exposed	C/S emergency	3 months	P9	No
+MLP-0039-ST4	Exposed	Vaginal	3 months	P10	No
+MLP-0042-ST3	Not exposed	Vaginal	10 days	P11	No
+MLP-0043-ST4	Not exposed	Vaginal	3 months	P11	No
+MLP-0046-ST3	Exposed	C/S elective	10 days	P12	No
+MLP-0047-ST4	Exposed	C/S elective	3 months	P12	No
+MLP-0050-ST3	Exposed	C/S elective	10 days	P13	No
+MLP-0051-ST4	Exposed	C/S elective	3 months	P13	No
+MLP-0054-ST3	Not exposed	Vaginal	10 days	P14	No
+MLP-0055-ST4	Not exposed	Vaginal	3 months	P14	No
+MLP-0059-ST3	Exposed	C/S elective	10 days	P16	No
+MLP-0060-ST4	Exposed	C/S elective	3 months	P16	No
+MLP-0063-ST3	Exposed	C/S emergency	10 days	P17	No
+MLP-0064-ST4	Exposed	C/S emergency	3 months	P17	No
+MLP-0068-ST3	Exposed	C/S elective	10 days	P18	Yes
+MLP-0069-ST3	Exposed	C/S elective	10 days	P18	Yes
+MLP-0070-ST4	Exposed	C/S elective	3 months	P18	Yes
+MLP-0071-ST4	Exposed	C/S elective	3 months	P18	Yes
+MLP-0074-ST3	Exposed	C/S elective	10 days	P19	No
+MLP-0075-ST4	Exposed	C/S elective	3 months	P19	No
+MLP-0078-ST3	Exposed	C/S elective	10 days	P20	No
+MLP-0079-ST4	Exposed	C/S elective	3 months	P20	No
+MLP-0084-ST3	Exposed	C/S elective	10 days	P22	No
+MLP-0085-ST4	Exposed	C/S elective	3 months	P22	No
+MLP-0091-ST3	Exposed	C/S elective	10 days	P24	No
+MLP-0092-ST4	Exposed	C/S elective	3 months	P24	No
+MLP-0095-ST3	Not exposed	Vaginal	10 days	P25	No
+MLP-0096-ST4	Not exposed	Vaginal	3 months	P25	No
+MLP-0099-ST3	Exposed	C/S elective	10 days	P26	No
+MLP-0100-ST4	Exposed	C/S elective	3 months	P26	No
+MLP-0103-ST3	Exposed	C/S elective	10 days	P27	No
+MLP-0104-ST4	Exposed	C/S elective	3 months	P27	No
+MLP-0107-ST3	Exposed	C/S elective	10 days	P28	No
+MLP-0108-ST4	Exposed	C/S elective	3 months	P28	No
+MLP-0115-ST4	Exposed	C/S elective	3 months	P30	No
+MLP-0118-ST3	Exposed	C/S elective	10 days	P31	No
+MLP-0122-ST3	Exposed	C/S elective	10 days	P33	No
+MLP-0123-ST4	Exposed	C/S elective	3 months	P33	No
+MLP-0126-ST3	Exposed	C/S elective	10 days	P34	No
+MLP-0127-ST4	Exposed	C/S elective	3 months	P34	No
+MLP-0130-ST3	Not exposed	Vaginal	10 days	P35	No
+MLP-0131-ST4	Not exposed	Vaginal	3 months	P35	No
+MLP-0134-ST3	Exposed	C/S elective	10 days	P36	No
+MLP-0139-ST3	Exposed	C/S elective	10 days	P38	No
+MLP-0142-ST3	Not exposed	Vaginal	10 days	P39	No
+MLP-0143-ST4	Not exposed	Vaginal	3 months	P39	No
+MLP-0146-ST3	Exposed	C/S elective	10 days	P40	No
+MLP-0149-ST3	Not exposed	Vaginal	10 days	P41	No
+MLP-0150-ST4	Not exposed	Vaginal	3 months	P41	No
+MLP-0153-ST3	Exposed	C/S elective	10 days	P42	No
+MLP-0154-ST4	Exposed	C/S elective	3 months	P42	No
+MLP-0157-ST3	Not exposed	Vaginal	10 days	P43	No
+MLP-0158-ST4	Not exposed	Vaginal	3 months	P43	No
+MLP-0161-ST3	Exposed	C/S emergency	10 days	P44	No
+MLP-0162-ST4	Exposed	C/S emergency	3 months	P44	No
+MLP-0165-ST3	Exposed	C/S elective	10 days	P45	No
+MLP-0166-ST4	Exposed	C/S elective	3 months	P45	No
+MLP-0169-ST3	Exposed	C/S elective	10 days	P46	No
+MLP-0170-ST4	Exposed	C/S elective	3 months	P46	No
+MLP-0173-ST3	Not exposed	Vaginal	10 days	P47	No
+MLP-0174-ST4	Not exposed	Vaginal	3 months	P47	No
+MLP-0180-ST3	Not exposed	Vaginal	10 days	P49	No
+MLP-0181-ST4	Not exposed	Vaginal	3 months	P49	No
+MLP-0184-ST3	Exposed	C/S emergency	10 days	P50	No
+MLP-0185-ST4	Exposed	C/S emergency	3 months	P50	No
+MLP-0188-ST3	Not exposed	Vaginal	10 days	P51	No
+MLP-0189-ST4	Not exposed	Vaginal	3 months	P51	No
+MLP-0192-ST3	Not exposed	Vaginal	10 days	P52	No
+MLP-0193-ST4	Not exposed	Vaginal	3 months	P52	No
+MLP-0196-ST3	Exposed	C/S emergency	10 days	P53	No
+MLP-0197-ST4	Exposed	C/S emergency	3 months	P53	No
+MLP-0200-ST3	Not exposed	Vaginal	10 days	P54	No
+MLP-0201-ST4	Not exposed	Vaginal	3 months	P54	No
+MLP-0204-ST3	Exposed	C/S emergency	10 days	P55	No
+MLP-0205-ST4	Exposed	C/S emergency	3 months	P55	No
+MLP-0208-ST3	Exposed	C/S emergency	10 days	P56	No
+MLP-0209-ST4	Exposed	C/S emergency	3 months	P56	No
+MLP-0212-ST3	Exposed	Vaginal	10 days	P57	No
+MLP-0213-ST4	Exposed	Vaginal	3 months	P57	No
+MLP-0216-ST3	Exposed	C/S emergency	10 days	P58	No
+MLP-0217-ST4	Exposed	C/S emergency	3 months	P58	No
+MLP-0220-ST3	Exposed	C/S emergency	10 days	P59	No
+MLP-0221-ST4	Exposed	C/S emergency	3 months	P59	No
+MLP-0224-ST3	Exposed	C/S elective	10 days	P60	No
+MLP-0225-ST4	Exposed	C/S elective	3 months	P60	No
+MLP-0228-ST3	Exposed	Vaginal	10 days	P61	No
+MLP-0229-ST4	Exposed	Vaginal	3 months	P61	No
+MLP-0232-ST3	Not exposed	Vaginal	10 days	P62	No
+MLP-0233-ST4	Not exposed	Vaginal	3 months	P62	No
+MLP-0236-ST3	Not exposed	Vaginal	10 days	P63	No
+MLP-0237-ST4	Not exposed	Vaginal	3 months	P63	No
+MLP-0240-ST3	Not exposed	Vaginal	10 days	P64	No
+MLP-0241-ST4	Not exposed	Vaginal	3 months	P64	No
+MLP-0245-ST4	Exposed	Vaginal	3 months	P65	No
+MLP-0248-ST3	Exposed	C/S emergency	10 days	P66	No
+MLP-0249-ST4	Exposed	C/S emergency	3 months	P66	No
+MLP-0252-ST3	Exposed	Vaginal	10 days	P67	No
+MLP-0255-ST3	Exposed	C/S emergency	10 days	P68	No
+MLP-0256-ST4	Exposed	C/S emergency	3 months	P68	No
+MLP-0259-ST3	Not exposed	Vaginal	10 days	P69	No
+MLP-0260-ST4	Not exposed	Vaginal	3 months	P69	No
+MLP-0263-ST3	Not exposed	Vaginal	10 days	P70	No
+MLP-0266-ST3	Exposed	C/S emergency	10 days	P71	No
+MLP-0267-ST4	Exposed	C/S emergency	3 months	P71	No
+MLP-0270-ST3	Exposed	C/S emergency	10 days	P72	No
+MLP-0271-ST4	Exposed	C/S emergency	3 months	P72	No
+MLP-0274-ST3	Exposed	C/S emergency	10 days	P73	No
+MLP-0275-ST4	Exposed	C/S emergency	3 months	P73	No
+MLP-0278-ST3	Exposed	C/S emergency	10 days	P74	No
+MLP-0279-ST4	Exposed	C/S emergency	3 months	P74	No
+MLP-0282-ST3	Not exposed	Vaginal	10 days	P75	No
+MLP-0283-ST4	Not exposed	Vaginal	3 months	P75	No
+MLP-0286-ST3	Not exposed	Vaginal	10 days	P76	No
+MLP-0287-ST4	Not exposed	Vaginal	3 months	P76	No
+MLP-0290-ST3	Exposed	Vaginal	10 days	P77	No
+MLP-0291-ST4	Exposed	Vaginal	3 months	P77	No
+MLP-0294-ST3	Not exposed	Vaginal	10 days	P78	No
+MLP-0295-ST4	Not exposed	Vaginal	3 months	P78	No
+MLP-0299-ST3	Not exposed	Vaginal	10 days	P79	Yes
+MLP-0300-ST3	Not exposed	Vaginal	10 days	P79	Yes
+MLP-0303-ST3	Not exposed	Vaginal	10 days	P80	No
+MLP-0304-ST4	Not exposed	Vaginal	3 months	P80	No
+MLP-0309-ST3	Exposed	Vaginal	10 days	P82	No
+MLP-0310-ST4	Exposed	Vaginal	3 months	P82	No
+MLP-0313-ST3	Exposed	C/S emergency	10 days	P83	No
+MLP-0314-ST4	Exposed	C/S emergency	3 months	P83	No
+MLP-0319-ST3	Not exposed	Vaginal	10 days	P85	No
+MLP-0320-ST4	Not exposed	Vaginal	3 months	P85	No
+MLP-0323-ST3	Exposed	C/S elective	10 days	P86	No
+MLP-0324-ST4	Exposed	C/S elective	3 months	P86	No
+MLP-0327-ST3	Exposed	C/S elective	10 days	P87	No
+MLP-0328-ST4	Exposed	C/S elective	3 months	P87	No
+MLP-0331-ST3	Exposed	C/S elective	10 days	P88	No
+MLP-0332-ST4	Exposed	C/S elective	3 months	P88	No
+MLP-0335-ST3	Exposed	C/S elective	10 days	P89	No
+MLP-0336-ST4	Exposed	C/S elective	3 months	P89	No
+MLP-0339-ST3	Exposed	C/S emergency	10 days	P90	No
+MLP-0340-ST4	Exposed	C/S emergency	3 months	P90	No
+MLP-0342-ST3	Exposed	Vaginal	10 days	P91	No
+MLP-0343-ST4	Exposed	Vaginal	3 months	P91	No
+MLP-0346-ST3	Exposed	C/S elective	10 days	P92	No
+MLP-0347-ST4	Exposed	C/S elective	3 months	P92	No
+MLP-0350-ST3	Not exposed	Vaginal	10 days	P93	No
+MLP-0353-ST3	Exposed	C/S elective	10 days	P94	No
+MLP-0354-ST4	Exposed	C/S elective	3 months	P94	No
+MLP-0357-ST3	Exposed	C/S elective	10 days	P95	No
+MLP-0358-ST4	Exposed	C/S elective	3 months	P95	No
+MLP-0361-ST3	Exposed	C/S elective	10 days	P96	No
+MLP-0362-ST4	Exposed	C/S elective	3 months	P96	No
+MLP-0367-ST3	Exposed	C/S elective	10 days	P98	No
+MLP-0368-ST4	Exposed	C/S elective	3 months	P98	No
+MLP-0371-ST3	Exposed	C/S emergency	10 days	P100	No
+MLP-0372-ST4	Exposed	C/S emergency	3 months	P100	No
+MLP-0375-ST4	Not exposed	Vaginal	3 months	P101	No
+MLP-0378-ST3	Exposed	C/S elective	10 days	P102	No
+MLP-0379-ST4	Exposed	C/S elective	3 months	P102	No
+MLP-0382-ST3	Exposed	C/S elective	10 days	P103	No
+MLP-0383-ST4	Exposed	C/S elective	3 months	P103	No
+MLP-0386-ST3	Not exposed	Vaginal	10 days	P104	No
+MLP-0391-ST3	Not exposed	Vaginal	10 days	P106	No
+MLP-0392-ST4	Not exposed	Vaginal	3 months	P106	No
+MLP-0395-ST3	Not exposed	Vaginal	10 days	P107	No
+MLP-0396-ST4	Not exposed	Vaginal	3 months	P107	No
+MLP-0399-ST3	Not exposed	Vaginal	10 days	P108	No
+MLP-0400-ST4	Not exposed	Vaginal	3 months	P108	No
+MLP-0403-ST3	Exposed	Vaginal	10 days	P110	No
+MLP-0406-ST3	Not exposed	Vaginal	10 days	P111	No
+MLP-0407-ST4	Not exposed	Vaginal	3 months	P111	No
+MLP-0409-ST3	Not exposed	Vaginal	10 days	P113	No
+MLP-0410-ST4	Not exposed	Vaginal	3 months	P113	No
+MLP-0413-ST3	Not exposed	Vaginal	10 days	P114	No
+MLP-0414-ST4	Not exposed	Vaginal	3 months	P114	No
+MLP-0419-ST3	Exposed	C/S elective	10 days	P117	No
+MLP-0421-ST4	Exposed	C/S elective	3 months	P118	No
+MLP-0424-ST3	Exposed	C/S elective	10 days	P119	No
+MLP-0425-ST4	Exposed	C/S elective	3 months	P119	No
+MLP-0428-ST3	Exposed	C/S elective	10 days	P120	No
+MLP-0429-ST4	Exposed	C/S elective	3 months	P120	No
+MLP-0432-ST3	Not exposed	Vaginal	10 days	P123	No
+MLP-0433-ST4	Not exposed	Vaginal	3 months	P123	No
+MLP-0436-ST3	Not exposed	Vaginal	10 days	P124	No
+MLP-0437-ST4	Not exposed	Vaginal	3 months	P124	No
+MLP-0440-ST3	Exposed	C/S elective	10 days	P125	No
+MLP-0441-ST4	Exposed	C/S elective	3 months	P125	No
+MLP-0444-ST3	Exposed	C/S elective	10 days	P126	No
+MLP-0445-ST4	Exposed	C/S elective	3 months	P126	No
+MLP-0448-ST3	Exposed	C/S elective	10 days	P128	No
+MLP-0449-ST4	Exposed	C/S elective	3 months	P128	No
+MLP-0452-ST3	Exposed	C/S elective	10 days	P129	No
+MLP-0453-ST4	Exposed	C/S elective	3 months	P129	No
+MLP-0456-ST3	Exposed	C/S elective	10 days	P130	No
+MLP-0457-ST4	Exposed	C/S elective	3 months	P130	No
+MLP-0460-ST3	Exposed	C/S elective	10 days	P131	No
+MLP-0461-ST4	Exposed	C/S elective	3 months	P131	No
+MLP-0464-ST3	Exposed	C/S elective	10 days	P132	No
+MLP-0465-ST4	Exposed	C/S elective	3 months	P132	No
+MLP-0468-ST3	Not exposed	Vaginal	10 days	P138	No
+MLP-0469-ST4	Not exposed	Vaginal	3 months	P138	No
+MLP-0472-ST3	Not exposed	Vaginal	10 days	P139	No
+MLP-0473-ST4	Not exposed	Vaginal	3 months	P139	No
+MLP-0476-ST3	Exposed	Vaginal	10 days	P140	No
+MLP-0477-ST4	Exposed	Vaginal	3 months	P140	No
+MLP-0480-ST3	Exposed	C/S emergency	10 days	P141	No
+MLP-0481-ST4	Exposed	C/S emergency	3 months	P141	No
+MLP-0484-ST3	Not exposed	Vaginal	10 days	P142	No
+MLP-0485-ST4	Not exposed	Vaginal	3 months	P142	No
+MLP-0488-ST3	Exposed	C/S emergency	10 days	P143	No
+MLP-0489-ST4	Exposed	C/S emergency	3 months	P143	No
+MLP-0492-ST3	Exposed	C/S emergency	10 days	P144	No
+MLP-0493-ST4	Exposed	C/S emergency	3 months	P144	No
+MLP-0496-ST3	Not exposed	Vaginal	10 days	P145	No
+MLP-0497-ST4	Not exposed	Vaginal	3 months	P145	No
+MLP-0500-ST3	Not exposed	Vaginal	10 days	P146	No
+MLP-0501-ST4	Not exposed	Vaginal	3 months	P146	No
+MLP-0507-ST3	Exposed	C/S emergency	10 days	P148	No
+MLP-0508-ST4	Exposed	C/S emergency	3 months	P148	No
+MLP-0511-ST3	Not exposed	Vaginal	10 days	P149	No
+MLP-0512-ST4	Not exposed	Vaginal	3 months	P149	No
+MLP-0515-ST3	Exposed	C/S emergency	10 days	P150	No
+MLP-0518-ST3	Exposed	C/S emergency	10 days	P151	No
+MLP-0519-ST4	Exposed	C/S emergency	3 months	P151	No
+MLP-0522-ST3	Not exposed	Vaginal	10 days	P152	No
+MLP-0523-ST4	Not exposed	Vaginal	3 months	P152	No
+MLP-0526-ST3	Exposed	C/S emergency	10 days	P153	No
+MLP-0527-ST4	Exposed	C/S emergency	3 months	P153	No
+MLP-0530-ST3	Exposed	C/S elective	10 days	P180	No
+MLP-0531-ST4	Exposed	C/S elective	3 months	P180	No
+MLP-0534-ST3	Exposed	C/S elective	10 days	P181	No
+MLP-0537-ST3	Exposed	C/S elective	10 days	P182	No
+MLP-0538-ST4	Exposed	C/S elective	3 months	P182	No
+MLP-0539-ST3	Exposed	C/S elective	10 days	P194	No
+MLP-0586-ST3	Exposed	C/S emergency	10 days	P99	No
+MLP-0587-ST4	Exposed	C/S emergency	3 months	P99	No
+MLP-0588-ST3	Not exposed	Vaginal	10 days	P101	No
+MLP-0591-ST3	Not exposed	Vaginal	10 days	P109	No
+MLP-0592-ST4	Not exposed	Vaginal	3 months	P109	No
+MLP-0595-ST3	Exposed	C/S emergency	10 days	P112	No
+MLP-0596-ST4	Exposed	C/S emergency	3 months	P112	No
+MLP-0599-ST3	Not exposed	Vaginal	10 days	P115	No
+MLP-0600-ST4	Not exposed	Vaginal	3 months	P115	No
+MLP-0603-ST3	Not exposed	Vaginal	10 days	P121	No
+MLP-0604-ST4	Not exposed	Vaginal	3 months	P121	No
+MLP-0607-ST3	Not exposed	Vaginal	10 days	P122	No
+MLP-0608-ST4	Not exposed	Vaginal	3 months	P122	No
+MLP-0611-ST3	Exposed	Vaginal	10 days	P127	No
+MLP-0612-ST4	Exposed	Vaginal	3 months	P127	No
+MLP-0615-ST3	Exposed	Vaginal	10 days	P133	No
+MLP-0616-ST4	Exposed	Vaginal	3 months	P133	No
+MLP-0619-ST3	Exposed	Vaginal	10 days	P134	No
+MLP-0620-ST4	Exposed	Vaginal	3 months	P134	No
+MLP-0624-ST3	Exposed	C/S elective	10 days	P135	Yes
+MLP-0625-ST3	Exposed	C/S elective	10 days	P135	Yes
+MLP-0626-ST4	Exposed	C/S elective	3 months	P135	Yes
+MLP-0627-ST4	Exposed	C/S elective	3 months	P135	Yes
+MLP-0630-ST3	Not exposed	Vaginal	10 days	P136	No
+MLP-0631-ST4	Not exposed	Vaginal	3 months	P136	No
+MLP-0634-ST3	Exposed	C/S emergency	10 days	P137	No
+MLP-0635-ST4	Exposed	C/S emergency	3 months	P137	No
+MLP-0638-ST3	Not exposed	Vaginal	10 days	P154	No
+MLP-0639-ST4	Not exposed	Vaginal	3 months	P154	No
+MLP-0642-ST3	Exposed	C/S emergency	10 days	P155	No
+MLP-0645-ST3	Exposed	Vaginal	10 days	P156	No
+MLP-0646-ST4	Exposed	Vaginal	3 months	P156	No
+MLP-0649-ST3	Not exposed	Vaginal	10 days	P157	No
+MLP-0650-ST4	Not exposed	Vaginal	3 months	P157	No
+MLP-0653-ST3	Exposed	C/S emergency	10 days	P158	No
+MLP-0654-ST4	Exposed	C/S emergency	3 months	P158	No
+MLP-0657-ST3	Exposed	C/S emergency	10 days	P159	No
+MLP-0658-ST4	Exposed	C/S emergency	3 months	P159	No
+MLP-0661-ST3	Not exposed	Vaginal	10 days	P160	No
+MLP-0664-ST3	Exposed	C/S elective	10 days	P161	No
+MLP-0665-ST4	Exposed	C/S elective	3 months	P161	No
+MLP-0668-ST3	Exposed	Vaginal	10 days	P162	No
+MLP-0669-ST4	Exposed	Vaginal	3 months	P162	No
+MLP-0672-ST3	Not exposed	Vaginal	10 days	P163	No
+MLP-0673-ST4	Not exposed	Vaginal	3 months	P163	No
+MLP-0676-ST3	Not exposed	Vaginal	10 days	P164	No
+MLP-0677-ST4	Not exposed	Vaginal	3 months	P164	No
+MLP-0680-ST3	Exposed	C/S emergency	10 days	P165	No
+MLP-0681-ST4	Exposed	C/S emergency	3 months	P165	No
+MLP-0684-ST3	Not exposed	Vaginal	10 days	P166	No
+MLP-0685-ST4	Not exposed	Vaginal	3 months	P166	No
+MLP-0688-ST3	Not exposed	Vaginal	10 days	P167	No
+MLP-0689-ST4	Not exposed	Vaginal	3 months	P167	No
+MLP-0692-ST3	Exposed	Vaginal	10 days	P168	No
+MLP-0693-ST4	Exposed	Vaginal	3 months	P168	No
+MLP-0696-ST3	Not exposed	Vaginal	10 days	P169	No
+MLP-0697-ST4	Not exposed	Vaginal	3 months	P169	No
+MLP-0700-ST3	Exposed	C/S emergency	10 days	P170	No
+MLP-0701-ST4	Exposed	C/S emergency	3 months	P170	No
+MLP-0704-ST3	Exposed	C/S emergency	10 days	P171	No
+MLP-0705-ST4	Exposed	C/S emergency	3 months	P171	No
+MLP-0708-ST3	Exposed	C/S emergency	10 days	P172	No
+MLP-0711-ST4	Exposed	Vaginal	3 months	P173	No
+MLP-0716-ST3	Exposed	C/S emergency	10 days	P175	No
+MLP-0717-ST4	Exposed	C/S emergency	3 months	P175	No
+MLP-0720-ST3	Not exposed	Vaginal	10 days	P176	No
+MLP-0721-ST4	Not exposed	Vaginal	3 months	P176	No
+MLP-0724-ST3	Exposed	C/S emergency	10 days	P177	No
+MLP-0725-ST4	Exposed	C/S emergency	3 months	P177	No
+MLP-0728-ST3	Exposed	C/S emergency	10 days	P178	No
+MLP-0729-ST4	Exposed	C/S emergency	3 months	P178	No
+MLP-0732-ST3	Exposed	C/S emergency	10 days	P179	No
+MLP-0733-ST4	Exposed	C/S emergency	3 months	P179	No
+MLP-0736-ST3	Exposed	C/S elective	10 days	P183	No
+MLP-0739-ST3	Exposed	C/S elective	10 days	P184	No
+MLP-0742-ST3	Exposed	C/S elective	10 days	P185	No
+MLP-0743-ST4	Exposed	C/S elective	3 months	P185	No
+MLP-0746-ST3	Exposed	C/S elective	10 days	P186	No
+MLP-0747-ST4	Exposed	C/S elective	3 months	P186	No
+MLP-0750-ST3	Exposed	C/S elective	10 days	P187	No
+MLP-0751-ST4	Exposed	C/S elective	3 months	P187	No
+MLP-0754-ST3	Exposed	C/S elective	10 days	P188	No
+MLP-0758-ST3	Exposed	C/S elective	10 days	P189	No
+MLP-0759-ST4	Exposed	C/S elective	3 months	P189	No
+MLP-0762-ST3	Exposed	C/S elective	10 days	P190	No
+MLP-0763-ST4	Exposed	C/S elective	3 months	P190	No
+MLP-0766-ST3	Exposed	C/S elective	10 days	P191	No
+MLP-0767-ST4	Exposed	C/S elective	3 months	P191	No
+MLP-0770-ST3	Exposed	C/S elective	10 days	P192	No
+MLP-0771-ST4	Exposed	C/S elective	3 months	P192	No
+MLP-0775-ST4	Exposed	C/S elective	3 months	P193	No
+MLP-0778-ST4	Exposed	C/S elective	3 months	P194	No
+MLP-0781-ST3	Exposed	C/S elective	10 days	P195	No
+MLP-0782-ST4	Exposed	C/S elective	3 months	P195	No
+MLP-0785-ST3	Exposed	C/S elective	10 days	P196	No
+MLP-0786-ST4	Exposed	C/S elective	3 months	P196	No
+MLP-0789-ST3	Exposed	C/S elective	10 days	P197	No
+MLP-0790-ST4	Exposed	C/S elective	3 months	P197	No
+MLP-0793-ST3	Exposed	C/S elective	10 days	P198	No
+MLP-0794-ST4	Exposed	C/S elective	3 months	P198	No
+MLP-0797-ST3	Exposed	C/S elective	10 days	P199	No
+MLP-0798-ST4	Exposed	C/S elective	3 months	P199	No
+MLP-0801-ST3	Exposed	C/S elective	10 days	P200	No
+MLP-0802-ST4	Exposed	C/S elective	3 months	P200	No
+MLP-0805-ST3	Exposed	C/S elective	10 days	P201	No
+MLP-0806-ST4	Exposed	C/S elective	3 months	P201	No
+MLP-0809-ST3	Exposed	C/S elective	10 days	P202	No
+MLP-0810-ST4	Exposed	C/S elective	3 months	P202	No
+MLP-0813-ST3	Exposed	C/S elective	10 days	P203	No
+MLP-0814-ST4	Exposed	C/S elective	3 months	P203	No
+MLP-0817-ST3	Exposed	C/S elective	10 days	P204	No
+MLP-0818-ST4	Exposed	C/S elective	3 months	P204	No
+MLP-0821-ST3	Exposed	C/S elective	10 days	P205	No
+MLP-0822-ST4	Exposed	C/S elective	3 months	P205	No
+MLP-0825-ST3	Exposed	C/S elective	10 days	P206	No
+MLP-0828-ST3	Exposed	C/S elective	10 days	P207	No
+MLP-0831-ST3	Exposed	C/S elective	10 days	P208	No
+MLP-0834-ST3	Exposed	C/S elective	10 days	P209	No
+MLP-0835-ST4	Exposed	C/S elective	3 months	P209	No
+MLP-0838-ST3	Exposed	C/S elective	10 days	P210	No
+MLP-0839-ST4	Exposed	C/S elective	3 months	P210	No
+MLP-0842-ST3	Exposed	C/S elective	10 days	P212	No
+MLP-0843-ST4	Exposed	C/S elective	3 months	P212	No
+MLP-0846-ST3	Exposed	C/S elective	10 days	P213	No
+MLP-0847-ST4	Exposed	C/S elective	3 months	P213	No
+MLP-0850-ST3	Exposed	C/S elective	10 days	P214	No
+MLP-0851-ST4	Exposed	C/S elective	3 months	P214	No
+MLP-0854-ST3	Exposed	C/S elective	10 days	P215	No
+MLP-0858-ST3	Exposed	C/S elective	10 days	P216	No
+MLP-0859-ST4	Exposed	C/S elective	3 months	P216	No
+MLP-0862-ST3	Exposed	C/S elective	10 days	P217	No
+MLP-0863-ST4	Exposed	C/S elective	3 months	P217	No
+MLP-0866-ST3	Exposed	C/S elective	10 days	P218	No
+MLP-0867-ST4	Exposed	C/S elective	3 months	P218	No
+MLP-0870-ST3	Exposed	C/S elective	10 days	P219	No
+MLP-0871-ST4	Exposed	C/S elective	3 months	P219	No
+MLP-0874-ST3	Exposed	C/S elective	10 days	P220	No
+MLP-0875-ST4	Exposed	C/S elective	3 months	P220	No
+MLP-0878-ST3	Exposed	C/S elective	10 days	P223	No
+MLP-0879-ST4	Exposed	C/S elective	3 months	P223	No
+MLP-0882-ST3	Exposed	C/S elective	10 days	P228	No
+MLP-0883-ST4	Exposed	C/S elective	3 months	P228	No
+MLP-0886-ST3	Exposed	C/S elective	10 days	P326	No
+MLP-0887-ST4	Exposed	C/S elective	3 months	P326	No
+MLP-0890-ST3	Exposed	C/S emergency	10 days	P327	No
+MLP-0893-ST3	Not exposed	Vaginal	10 days	P328	No
+MLP-0894-ST4	Not exposed	Vaginal	3 months	P328	No
+MLP-0897-ST3	Exposed	Vaginal	10 days	P329	No
+MLP-0898-ST4	Exposed	Vaginal	3 months	P329	No
+MLP-0901-ST3	Not exposed	Vaginal	10 days	P330	No
+MLP-0902-ST4	Not exposed	Vaginal	3 months	P330	No
+MLP-0905-ST3	Exposed	C/S emergency	10 days	P331	No
+MLP-0906-ST4	Exposed	C/S emergency	3 months	P331	No
+MLP-0909-ST3	Exposed	Vaginal	10 days	P332	No
+MLP-0910-ST4	Exposed	Vaginal	3 months	P332	No
+MLP-0913-ST3	Not exposed	Vaginal	10 days	P333	No
+MLP-0914-ST4	Not exposed	Vaginal	3 months	P333	No
+MLP-0917-ST3	Exposed	C/S emergency	10 days	P334	No
+MLP-0918-ST4	Exposed	C/S emergency	3 months	P334	No
+MLP-0921-ST3	Exposed	C/S emergency	10 days	P335	No
+MLP-0922-ST4	Exposed	C/S emergency	3 months	P335	No
+MLP-0925-ST3	Not exposed	Vaginal	10 days	P336	No
+MLP-0926-ST4	Not exposed	Vaginal	3 months	P336	No
+MLP-0929-ST3	Exposed	C/S emergency	10 days	P337	No
+MLP-0930-ST4	Exposed	C/S emergency	3 months	P337	No
+MLP-0933-ST3	Exposed	C/S elective	10 days	P338	No
+MLP-0934-ST4	Exposed	C/S elective	3 months	P338	No
+MLP-0937-ST3	Not exposed	Vaginal	10 days	P339	No
+MLP-0938-ST4	Not exposed	Vaginal	3 months	P339	No
+MLP-0941-ST3	Exposed	C/S emergency	10 days	P340	No
+MLP-0942-ST4	Exposed	C/S emergency	3 months	P340	No
+MLP-0945-ST3	Not exposed	Vaginal	10 days	P341	No
+MLP-0946-ST4	Not exposed	Vaginal	3 months	P341	No
+MLP-0949-ST3	Not exposed	Vaginal	10 days	P344	No
+MLP-0952-ST3	Exposed	C/S emergency	10 days	P345	No
+MLP-0953-ST4	Exposed	C/S emergency	3 months	P345	No
+MLP-0956-ST3	Not exposed	Vaginal	10 days	P347	No
+MLP-0957-ST4	Not exposed	Vaginal	3 months	P347	No
+MLP-0960-ST3	Exposed	Vaginal	10 days	P348	No
+MLP-0961-ST4	Exposed	Vaginal	3 months	P348	No
+MLP-0964-ST3	Exposed	C/S elective	10 days	P350	No
+MLP-0967-ST3	Not exposed	Vaginal	10 days	P354	No
+MLP-0968-ST4	Not exposed	Vaginal	3 months	P354	No
+MLP-0971-ST3	Not exposed	Vaginal	10 days	P355	No
+MLP-0972-ST4	Not exposed	Vaginal	3 months	P355	No
+MLP-0975-ST3	Exposed	C/S emergency	10 days	P356	No
+MLP-0976-ST4	Exposed	C/S emergency	3 months	P356	No
+MLP-0979-ST3	Not exposed	Vaginal	10 days	P357	No
+MLP-0980-ST4	Not exposed	Vaginal	3 months	P357	No
+MLP-0983-ST3	Exposed	C/S emergency	10 days	P358	No
+MLP-0984-ST4	Exposed	C/S emergency	3 months	P358	No
+MLP-0987-ST3	Exposed	C/S emergency	10 days	P359	No
+MLP-0988-ST4	Exposed	C/S emergency	3 months	P359	No
+MLP-0991-ST3	Not exposed	Vaginal	10 days	P360	No
+MLP-0992-ST4	Not exposed	Vaginal	3 months	P360	No
+MLP-0995-ST3	Exposed	C/S elective	10 days	P361	No
+MLP-0996-ST4	Exposed	C/S elective	3 months	P361	No
+MLP-0999-ST3	Not exposed	Vaginal	10 days	P362	No
+MLP-1005-ST3	Not exposed	Vaginal	10 days	P364	No
+MLP-1006-ST4	Not exposed	Vaginal	3 months	P364	No
+MLP-1009-ST3	Exposed	Vaginal	10 days	P365	No
+MLP-1010-ST4	Exposed	Vaginal	3 months	P365	No
+MLP-1013-ST3	Exposed	C/S emergency	10 days	P366	No
+MLP-1014-ST4	Exposed	C/S emergency	3 months	P366	No
+MLP-1016-ST3	Not exposed	Vaginal	10 days	P367	No
+MLP-1017-ST4	Not exposed	Vaginal	3 months	P367	No
+MLP-1020-ST3	Not exposed	Vaginal	10 days	P368	No
+MLP-1021-ST4	Not exposed	Vaginal	3 months	P368	No
+MLP-1024-ST3	Exposed	C/S emergency	10 days	P369	No
+MLP-1025-ST4	Exposed	C/S emergency	3 months	P369	No
+MLP-1028-ST3	Not exposed	Vaginal	10 days	P370	No
+MLP-1029-ST4	Not exposed	Vaginal	3 months	P370	No
+MLP-1031-ST3	Exposed	C/S elective	10 days	P371	No
+MLP-1032-ST4	Exposed	C/S elective	3 months	P371	No
+MLP-1035-ST3	Not exposed	Vaginal	10 days	P372	No
+MLP-1036-ST4	Not exposed	Vaginal	3 months	P372	No
+MLP-1039-ST3	Not exposed	Vaginal	10 days	P379	No
+MLP-1040-ST4	Not exposed	Vaginal	3 months	P379	No
+MLP-1043-ST3	Exposed	Vaginal	10 days	P382	No
+MLP-1044-ST4	Exposed	Vaginal	3 months	P382	No
+MLP-1047-ST3	Exposed	Vaginal	10 days	P384	No
+MLP-1048-ST4	Exposed	Vaginal	3 months	P384	No
+MLP-1051-ST3	Not exposed	Vaginal	10 days	P385	No
+MLP-1052-ST4	Not exposed	Vaginal	3 months	P385	No
+MLP-1055-ST3	Not exposed	Vaginal	10 days	P386	No
+MLP-1056-ST4	Not exposed	Vaginal	3 months	P386	No
+MLP-1059-ST3	Exposed	C/S emergency	10 days	P388	No
+MLP-1060-ST4	Exposed	C/S emergency	3 months	P388	No
+MLP-1098-ST3	Exposed	C/S elective	10 days	P211	No
+MLP-1099-ST4	Exposed	C/S elective	3 months	P211	No
+MLP-1101-ST3	Exposed	C/S elective	10 days	P221	No
+MLP-1102-ST4	Exposed	C/S elective	3 months	P221	No
+MLP-1104-ST3	Exposed	C/S elective	10 days	P222	No
+MLP-1105-ST4	Exposed	C/S elective	3 months	P222	No
+MLP-1107-ST3	Exposed	C/S elective	10 days	P225	No
+MLP-1108-ST4	Exposed	C/S elective	3 months	P225	No
+MLP-1110-ST3	Exposed	C/S elective	10 days	P226	No
+MLP-1111-ST4	Exposed	C/S elective	3 months	P226	No
+MLP-1113-ST3	Exposed	C/S elective	10 days	P227	No
+MLP-1114-ST4	Exposed	C/S elective	3 months	P227	No
+MLP-1117-ST4	Exposed	C/S elective	3 months	P229	No
+MLP-1119-ST3	Exposed	C/S elective	10 days	P230	No
+MLP-1120-ST4	Exposed	C/S elective	3 months	P230	No
+MLP-1122-ST3	Exposed	C/S elective	10 days	P231	No
+MLP-1123-ST4	Exposed	C/S elective	3 months	P231	No
+MLP-1125-ST3	Exposed	C/S elective	10 days	P232	No
+MLP-1126-ST4	Exposed	C/S elective	3 months	P232	No
+MLP-1128-ST3	Exposed	C/S elective	10 days	P233	No
+MLP-1129-ST4	Exposed	C/S elective	3 months	P233	No
+MLP-1131-ST3	Exposed	C/S elective	10 days	P234	No
+MLP-1132-ST4	Exposed	C/S elective	3 months	P234	No
+MLP-1134-ST3	Exposed	C/S elective	10 days	P235	No
+MLP-1135-ST4	Exposed	C/S elective	3 months	P235	No
+MLP-1137-ST3	Exposed	C/S elective	10 days	P236	No
+MLP-1138-ST4	Exposed	C/S elective	3 months	P236	No
+MLP-1140-ST3	Exposed	C/S elective	10 days	P237	No
+MLP-1141-ST4	Exposed	C/S elective	3 months	P237	No
+MLP-1143-ST3	Exposed	C/S elective	10 days	P238	No
+MLP-1144-ST4	Exposed	C/S elective	3 months	P238	No
+MLP-1146-ST3	Exposed	C/S elective	10 days	P240	No
+MLP-1147-ST4	Exposed	C/S elective	3 months	P240	No
+MLP-1149-ST3	Exposed	C/S elective	10 days	P241	No
+MLP-1150-ST4	Exposed	C/S elective	3 months	P241	No
+MLP-1152-ST3	Exposed	C/S elective	10 days	P242	No
+MLP-1153-ST4	Exposed	C/S elective	3 months	P242	No
+MLP-1155-ST3	Exposed	C/S elective	10 days	P243	No
+MLP-1156-ST4	Exposed	C/S elective	3 months	P243	No
+MLP-1158-ST3	Exposed	C/S elective	10 days	P244	No
+MLP-1159-ST4	Exposed	C/S elective	3 months	P244	No
+MLP-1161-ST3	Exposed	C/S elective	10 days	P245	No
+MLP-1162-ST4	Exposed	C/S elective	3 months	P245	No
+MLP-1164-ST3	Exposed	C/S elective	10 days	P246	No
+MLP-1165-ST4	Exposed	C/S elective	3 months	P246	No
+MLP-1167-ST3	Exposed	C/S elective	10 days	P248	No
+MLP-1168-ST4	Exposed	C/S elective	3 months	P248	No
+MLP-1170-ST3	Exposed	C/S elective	10 days	P249	No
+MLP-1171-ST4	Exposed	C/S elective	3 months	P249	No
+MLP-1173-ST3	Exposed	C/S elective	10 days	P250	No
+MLP-1174-ST4	Exposed	C/S elective	3 months	P250	No
+MLP-1176-ST3	Exposed	C/S elective	10 days	P253	Yes
+MLP-1177-ST3	Exposed	C/S elective	10 days	P253	Yes
+MLP-1178-ST4	Exposed	C/S elective	3 months	P253	Yes
+MLP-1179-ST4	Exposed	C/S elective	3 months	P253	Yes
+MLP-1181-ST3	Exposed	C/S elective	10 days	P254	No
+MLP-1182-ST4	Exposed	C/S elective	3 months	P254	No
+MLP-1184-ST3	Exposed	C/S elective	10 days	P255	No
+MLP-1185-ST4	Exposed	C/S elective	3 months	P255	No
+MLP-1187-ST3	Exposed	C/S elective	10 days	P256	No
+MLP-1188-ST4	Exposed	C/S elective	3 months	P256	No
+MLP-1190-ST3	Exposed	C/S elective	10 days	P257	No
+MLP-1191-ST4	Exposed	C/S elective	3 months	P257	No
+MLP-1193-ST3	Exposed	C/S elective	10 days	P258	No
+MLP-1194-ST4	Exposed	C/S elective	3 months	P258	No
+MLP-1196-ST3	Exposed	C/S elective	10 days	P259	No
+MLP-1197-ST4	Exposed	C/S elective	3 months	P259	No
+MLP-1199-ST3	Exposed	C/S elective	10 days	P260	No
+MLP-1200-ST4	Exposed	C/S elective	3 months	P260	No
+MLP-1202-ST3	Exposed	C/S elective	10 days	P262	No
+MLP-1203-ST4	Exposed	C/S elective	3 months	P262	No
+MLP-1205-ST3	Exposed	C/S elective	10 days	P263	No
+MLP-1206-ST4	Exposed	C/S elective	3 months	P263	No
+MLP-1208-ST3	Exposed	C/S elective	10 days	P264	No
+MLP-1209-ST4	Exposed	C/S elective	3 months	P264	No
+MLP-1211-ST3	Exposed	C/S elective	10 days	P265	No
+MLP-1212-ST4	Exposed	C/S elective	3 months	P265	No
+MLP-1214-ST3	Exposed	C/S elective	10 days	P266	No
+MLP-1215-ST4	Exposed	C/S elective	3 months	P266	No
+MLP-1217-ST3	Exposed	C/S elective	10 days	P267	No
+MLP-1218-ST4	Exposed	C/S elective	3 months	P267	No
+MLP-1220-ST3	Exposed	C/S elective	10 days	P268	No
+MLP-1221-ST4	Exposed	C/S elective	3 months	P268	No
+MLP-1223-ST3	Exposed	C/S elective	10 days	P269	No
+MLP-1224-ST4	Exposed	C/S elective	3 months	P269	No
+MLP-1226-ST3	Exposed	C/S elective	10 days	P271	No
+MLP-1227-ST4	Exposed	C/S elective	3 months	P271	No
+MLP-1229-ST3	Exposed	C/S elective	10 days	P272	No
+MLP-1230-ST4	Exposed	C/S elective	3 months	P272	No
+MLP-1232-ST3	Exposed	C/S elective	10 days	P273	No
+MLP-1233-ST4	Exposed	C/S elective	3 months	P273	No
+MLP-1236-ST4	Exposed	C/S elective	3 months	P283	No
+MLP-1238-ST3	Exposed	C/S elective	10 days	P284	No
+MLP-1239-ST4	Exposed	C/S elective	3 months	P284	No
+MLP-1241-ST3	Exposed	C/S elective	10 days	P285	No
+MLP-1242-ST4	Exposed	C/S elective	3 months	P285	No
+MLP-1244-ST3	Exposed	C/S elective	10 days	P286	No
+MLP-1245-ST4	Exposed	C/S elective	3 months	P286	No
+MLP-1247-ST3	Exposed	C/S emergency	10 days	P293	Yes
+MLP-1248-ST3	Exposed	C/S emergency	10 days	P293	Yes
+MLP-1249-ST4	Exposed	C/S emergency	3 months	P293	Yes
+MLP-1250-ST4	Exposed	C/S emergency	3 months	P293	Yes
+MLP-1252-ST3	Exposed	C/S emergency	10 days	P343	No
+MLP-1253-ST4	Exposed	C/S emergency	3 months	P343	No
+MLP-1255-ST3	Exposed	C/S elective	10 days	P346	No
+MLP-1256-ST4	Exposed	C/S elective	3 months	P346	No
+MLP-1258-ST3	Not exposed	Vaginal	10 days	P351	No
+MLP-1259-ST4	Not exposed	Vaginal	3 months	P351	No
+MLP-1261-ST3	Exposed	Vaginal	10 days	P352	No
+MLP-1262-ST4	Exposed	Vaginal	3 months	P352	No
+MLP-1264-ST3	Not exposed	Vaginal	10 days	P353	No
+MLP-1265-ST4	Not exposed	Vaginal	3 months	P353	No
+MLP-1267-ST3	Not exposed	Vaginal	10 days	P373	No
+MLP-1268-ST4	Not exposed	Vaginal	3 months	P373	No
+MLP-1270-ST3	Not exposed	Vaginal	10 days	P374	No
+MLP-1271-ST4	Not exposed	Vaginal	3 months	P374	No
+MLP-1273-ST3	Exposed	Vaginal	10 days	P375	No
+MLP-1274-ST4	Exposed	Vaginal	3 months	P375	No
+MLP-1276-ST3	Exposed	Vaginal	10 days	P376	No
+MLP-1277-ST4	Exposed	Vaginal	3 months	P376	No
+MLP-1279-ST3	Not exposed	Vaginal	10 days	P377	No
+MLP-1280-ST4	Not exposed	Vaginal	3 months	P377	No
+MLP-1282-ST3	Not exposed	Vaginal	10 days	P378	No
+MLP-1283-ST4	Not exposed	Vaginal	3 months	P378	No
+MLP-1285-ST3	Exposed	C/S emergency	10 days	P380	No
+MLP-1286-ST4	Exposed	C/S emergency	3 months	P380	No
+MLP-1288-ST3	Not exposed	Vaginal	10 days	P383	No
+MLP-1289-ST4	Not exposed	Vaginal	3 months	P383	No
+MLP-1291-ST3	Not exposed	Vaginal	10 days	P387	No
+MLP-1292-ST4	Not exposed	Vaginal	3 months	P387	No
+MLP-1294-ST3	Not exposed	Vaginal	10 days	P389	No
+MLP-1295-ST4	Not exposed	Vaginal	3 months	P389	No
+MLP-1297-ST3	Exposed	C/S emergency	10 days	P390	No
+MLP-1298-ST4	Exposed	C/S emergency	3 months	P390	No
+MLP-1300-ST3	Exposed	C/S emergency	10 days	P391	No
+MLP-1301-ST4	Exposed	C/S emergency	3 months	P391	No
+MLP-1303-ST3	Not exposed	Vaginal	10 days	P392	No
+MLP-1304-ST4	Not exposed	Vaginal	3 months	P392	No
+MLP-1306-ST3	Not exposed	Vaginal	10 days	P393	No
+MLP-1307-ST4	Not exposed	Vaginal	3 months	P393	No
+MLP-1309-ST3	Exposed	C/S emergency	10 days	P394	No
+MLP-1310-ST4	Exposed	C/S emergency	3 months	P394	No
+MLP-1312-ST3	Exposed	Vaginal	10 days	P396	No
+MLP-1313-ST4	Exposed	Vaginal	3 months	P396	No
+MLP-1315-ST3	Not exposed	Vaginal	10 days	P397	No
+MLP-1316-ST4	Not exposed	Vaginal	3 months	P397	No
+MLP-1318-ST3	Not exposed	Vaginal	10 days	P398	No
+MLP-1319-ST4	Not exposed	Vaginal	3 months	P398	No
+MLP-1321-ST3	Exposed	Vaginal	10 days	P400	No
+MLP-1322-ST4	Exposed	Vaginal	3 months	P400	No
+MLP-1324-ST3	Exposed	C/S emergency	10 days	P401	No
+MLP-1325-ST4	Exposed	C/S emergency	3 months	P401	No
+MLP-1327-ST3	Not exposed	Vaginal	10 days	P402	No
+MLP-1328-ST4	Not exposed	Vaginal	3 months	P402	No
+MLP-1330-ST3	Exposed	C/S elective	10 days	P403	No
+MLP-1331-ST4	Exposed	C/S elective	3 months	P403	No
+MLP-1333-ST3	Exposed	C/S emergency	10 days	P406	No
+MLP-1334-ST4	Exposed	C/S emergency	3 months	P406	No
+MLP-1336-ST3	Not exposed	Vaginal	10 days	P408	No
+MLP-1337-ST4	Not exposed	Vaginal	3 months	P408	No
+MLP-1339-ST3	Not exposed	Vaginal	10 days	P409	No
+MLP-1340-ST4	Not exposed	Vaginal	3 months	P409	No
+MLP-1342-ST3	Exposed	C/S elective	10 days	P410	No
+MLP-1343-ST4	Exposed	C/S elective	3 months	P410	No
+MLP-1345-ST3	Exposed	Vaginal	10 days	P411	No
+MLP-1346-ST4	Exposed	Vaginal	3 months	P411	No
+MLP-1348-ST3	Exposed	Vaginal	10 days	P412	No
+MLP-1349-ST4	Exposed	Vaginal	3 months	P412	No
+MLP-1351-ST3	Exposed	Vaginal	10 days	P414	No
+MLP-1352-ST4	Exposed	Vaginal	3 months	P414	No
+MLP-1354-ST3	Not exposed	Vaginal	10 days	P415	No
+MLP-1355-ST4	Not exposed	Vaginal	3 months	P415	No
+MLP-1357-ST3	Exposed	C/S emergency	10 days	P416	No
+MLP-1358-ST4	Exposed	C/S emergency	3 months	P416	No
+MLP-1360-ST3	Not exposed	Vaginal	10 days	P417	No
+MLP-1361-ST4	Not exposed	Vaginal	3 months	P417	No
+MLP-1363-ST3	Not exposed	Vaginal	10 days	P418	No
+MLP-1366-ST3	Exposed	C/S emergency	10 days	P421	No
+MLP-1367-ST4	Exposed	C/S emergency	3 months	P421	No
+MLP-1369-ST3	Not exposed	Vaginal	10 days	P422	No
+MLP-1370-ST4	Not exposed	Vaginal	3 months	P422	No
+MLP-1372-ST3	Exposed	C/S emergency	10 days	P423	No
+MLP-1373-ST4	Exposed	C/S emergency	3 months	P423	No
+MLP-1375-ST3	Not exposed	Vaginal	10 days	P424	No
+MLP-1376-ST4	Not exposed	Vaginal	3 months	P424	No
+MLP-1378-ST3	Exposed	C/S emergency	10 days	P425	No
+MLP-1379-ST4	Exposed	C/S emergency	3 months	P425	No
+MLP-1381-ST3	Not exposed	Vaginal	10 days	P426	No
+MLP-1382-ST4	Not exposed	Vaginal	3 months	P426	No
+MLP-1384-ST3	Exposed	C/S emergency	10 days	P427	No
+MLP-1385-ST4	Exposed	C/S emergency	3 months	P427	No
+MLP-1387-ST3	Exposed	C/S emergency	10 days	P428	No
+MLP-1388-ST4	Exposed	C/S emergency	3 months	P428	No
+MLP-1390-ST3	Exposed	Vaginal	10 days	P429	No
+MLP-1391-ST4	Exposed	Vaginal	3 months	P429	No
+MLP-1393-ST3	Not exposed	Vaginal	10 days	P433	No
+MLP-1394-ST4	Not exposed	Vaginal	3 months	P433	No
+MLP-1396-ST3	Not exposed	Vaginal	10 days	P434	No
+MLP-1397-ST4	Not exposed	Vaginal	3 months	P434	No
+MLP-1399-ST3	Not exposed	Vaginal	10 days	P436	No
+MLP-1400-ST4	Not exposed	Vaginal	3 months	P436	No
+MLP-1402-ST3	Exposed	C/S emergency	10 days	P437	No
+MLP-1403-ST4	Exposed	C/S emergency	3 months	P437	No
+MLP-1405-ST3	Not exposed	Vaginal	10 days	P438	No
+MLP-1406-ST4	Not exposed	Vaginal	3 months	P438	No
+MLP-1408-ST3	Exposed	C/S elective	10 days	P439	Yes
+MLP-1409-ST3	Exposed	C/S elective	10 days	P439	Yes
+MLP-1410-ST4	Exposed	C/S elective	3 months	P439	Yes
+MLP-1411-ST4	Exposed	C/S elective	3 months	P439	Yes
+MLP-1413-ST3	Exposed	C/S elective	10 days	P440	No
+MLP-1414-ST4	Exposed	C/S elective	3 months	P440	No
+MLP-1416-ST3	Exposed	C/S emergency	10 days	P441	No
+MLP-1417-ST4	Exposed	C/S emergency	3 months	P441	No
+MLP-1419-ST3	Exposed	Vaginal	10 days	P442	No
+MLP-1420-ST4	Exposed	Vaginal	3 months	P442	No
+MLP-1422-ST3	Exposed	Vaginal	10 days	P443	No
+MLP-1423-ST4	Exposed	Vaginal	3 months	P443	No
+MLP-1425-ST3	Not exposed	Vaginal	10 days	P444	No
+MLP-1426-ST4	Not exposed	Vaginal	3 months	P444	No
+MLP-1428-ST3	Exposed	C/S emergency	10 days	P445	No
+MLP-1429-ST4	Exposed	C/S emergency	3 months	P445	No
+MLP-1431-ST3	Exposed	C/S elective	10 days	P446	No
+MLP-1432-ST4	Exposed	C/S elective	3 months	P446	No
+MLP-1434-ST3	Not exposed	Vaginal	10 days	P449	No
+MLP-1435-ST4	Not exposed	Vaginal	3 months	P449	No
+MLP-1437-ST3	Exposed	Vaginal	10 days	P450	No
+MLP-1438-ST4	Exposed	Vaginal	3 months	P450	No
+MLP-1440-ST3	Exposed	C/S emergency	10 days	P451	No
+MLP-1441-ST4	Exposed	C/S emergency	3 months	P451	No
+MLP-1443-ST3	Not exposed	Vaginal	10 days	P454	No
+MLP-1444-ST4	Not exposed	Vaginal	3 months	P454	No
+MLP-1446-ST3	Not exposed	Vaginal	10 days	P456	No
+MLP-1447-ST4	Not exposed	Vaginal	3 months	P456	No
+MLP-1449-ST3	Not exposed	Vaginal	10 days	P457	No
+MLP-1450-ST4	Not exposed	Vaginal	3 months	P457	No
+MLP-1452-ST3	Exposed	C/S emergency	10 days	P458	No
+MLP-1453-ST4	Exposed	C/S emergency	3 months	P458	No
+MLP-1455-ST3	Exposed	Vaginal	10 days	P459	No
+MLP-1456-ST4	Exposed	Vaginal	3 months	P459	No
+MLP-1458-ST3	Exposed	Vaginal	10 days	P460	No
+MLP-1459-ST4	Exposed	Vaginal	3 months	P460	No
+MLP-1461-ST3	Not exposed	Vaginal	10 days	P461	No
+MLP-1462-ST4	Not exposed	Vaginal	3 months	P461	No
+MLP-1464-ST3	Not exposed	Vaginal	10 days	P462	No
+MLP-1465-ST4	Not exposed	Vaginal	3 months	P462	No
+MLP-1467-ST3	Exposed	C/S emergency	10 days	P463	No
+MLP-1468-ST4	Exposed	C/S emergency	3 months	P463	No
+MLP-1470-ST3	Not exposed	Vaginal	10 days	P465	No
+MLP-1471-ST4	Not exposed	Vaginal	3 months	P465	No
+MLP-1473-ST3	Exposed	C/S elective	10 days	P466	No
+MLP-1474-ST4	Exposed	C/S elective	3 months	P466	No
+MLP-1476-ST3	Exposed	Vaginal	10 days	P467	No
+MLP-1477-ST4	Exposed	Vaginal	3 months	P467	No
+MLP-1479-ST3	Not exposed	Vaginal	10 days	P468	No
+MLP-1480-ST4	Not exposed	Vaginal	3 months	P468	No
+MLP-1482-ST3	Exposed	C/S emergency	10 days	P469	No
+MLP-1483-ST4	Exposed	C/S emergency	3 months	P469	No
+MLP-1485-ST3	Exposed	C/S emergency	10 days	P470	No
+MLP-1486-ST4	Exposed	C/S emergency	3 months	P470	No
+MLP-1488-ST3	Exposed	C/S emergency	10 days	P472	No
+MLP-1489-ST4	Exposed	C/S emergency	3 months	P472	No
+MLP-1491-ST3	Not exposed	Vaginal	10 days	P473	No
+MLP-1492-ST4	Not exposed	Vaginal	3 months	P473	No
+MLP-1494-ST3	Exposed	C/S emergency	10 days	P474	No
+MLP-1495-ST4	Exposed	C/S emergency	3 months	P474	No
+MLP-1497-ST3	Exposed	C/S elective	10 days	P475	No
+MLP-1498-ST4	Exposed	C/S elective	3 months	P475	No
+MLP-1500-ST3	Exposed	Vaginal	10 days	P476	No
+MLP-1501-ST4	Exposed	Vaginal	3 months	P476	No
+MLP-1503-ST3	Not exposed	Vaginal	10 days	P477	No
+MLP-1504-ST4	Not exposed	Vaginal	3 months	P477	No
+MLP-1506-ST3	Not exposed	Vaginal	10 days	P478	No
+MLP-1507-ST4	Not exposed	Vaginal	3 months	P478	No
+MLP-1509-ST3	Exposed	C/S emergency	10 days	P479	No
+MLP-1510-ST4	Exposed	C/S emergency	3 months	P479	No
+MLP-1512-ST3	Not exposed	Vaginal	10 days	P481	No
+MLP-1513-ST4	Not exposed	Vaginal	3 months	P481	No
+MLP-1515-ST3	Not exposed	Vaginal	10 days	P482	No
+MLP-1516-ST4	Not exposed	Vaginal	3 months	P482	No
+MLP-1518-ST3	Exposed	C/S emergency	10 days	P483	No
+MLP-1519-ST4	Exposed	C/S emergency	3 months	P483	No
+MLP-1521-ST3	Exposed	C/S emergency	10 days	P484	No
+MLP-1522-ST4	Exposed	C/S emergency	3 months	P484	No
+MLP-1524-ST3	Not exposed	Vaginal	10 days	P485	No
+MLP-1525-ST4	Not exposed	Vaginal	3 months	P485	No
+MLP-1527-ST3	Not exposed	Vaginal	10 days	P486	No
+MLP-1528-ST4	Not exposed	Vaginal	3 months	P486	No
+MLP-1530-ST3	Exposed	C/S emergency	10 days	P489	No
+MLP-1531-ST4	Exposed	C/S emergency	3 months	P489	No
+MLP-1533-ST3	Not exposed	Vaginal	10 days	P493	No
+MLP-1534-ST4	Not exposed	Vaginal	3 months	P493	No
+MLP-1536-ST3	Not exposed	Vaginal	10 days	P494	No
+MLP-1537-ST4	Not exposed	Vaginal	3 months	P494	No
+MLP-1539-ST3	Exposed	C/S emergency	10 days	P495	No
+MLP-1540-ST4	Exposed	C/S emergency	3 months	P495	No
+MLP-1542-ST3	Exposed	C/S elective	10 days	P568	No
+MLP-1543-ST4	Exposed	C/S elective	3 months	P568	No
+MLP-1546-ST4	Exposed	C/S emergency	3 months	P570	No
+MLP-1548-ST3	Not exposed	Vaginal	10 days	P573	No
+MLP-1549-ST4	Not exposed	Vaginal	3 months	P573	No
+MLP-1551-ST3	Exposed	C/S emergency	10 days	P574	No
+MLP-1552-ST4	Exposed	C/S emergency	3 months	P574	No
+MLP-1554-ST3	Exposed	C/S emergency	10 days	P575	No
+MLP-1555-ST4	Exposed	C/S emergency	3 months	P575	No
+MLP-1557-ST3	Exposed	Vaginal	10 days	P576	No
+MLP-1558-ST4	Exposed	Vaginal	3 months	P576	No
+MLP-1560-ST3	Exposed	C/S emergency	10 days	P579	No
+MLP-1563-ST3	Exposed	Vaginal	10 days	P581	No
+MLP-1566-ST3	Not exposed	Vaginal	10 days	P582	No
+MLP-1569-ST3	Exposed	C/S elective	10 days	P583	No
+MLP-1572-ST3	Not exposed	Vaginal	10 days	P584	No
+MLP-1575-ST3	Not exposed	Vaginal	10 days	P585	No
+MLP-1578-ST3	Exposed	C/S emergency	10 days	P586	No
+MLP-1581-ST3	Not exposed	Vaginal	10 days	P587	No
+MLP-1582-ST4	Not exposed	Vaginal	3 months	P587	No
+MLP-1584-ST3	Exposed	C/S emergency	10 days	P588	No
+MLP-1585-ST4	Exposed	C/S emergency	3 months	P588	No
+MLP-1587-ST3	Exposed	C/S elective	10 days	P589	No
+MLP-1588-ST4	Exposed	C/S elective	3 months	P589	No
+MLP-1590-ST3	Exposed	C/S emergency	10 days	P590	No
+MLP-1591-ST4	Exposed	C/S emergency	3 months	P590	No
+MLP-1593-ST3	Not exposed	Vaginal	10 days	P591	No
+MLP-1594-ST4	Not exposed	Vaginal	3 months	P591	No
+MLP-1596-ST3	Exposed	C/S emergency	10 days	P592	No
+MLP-1597-ST4	Exposed	C/S emergency	3 months	P592	No
+MLP-1599-ST3	Exposed	C/S emergency	10 days	P594	No
+MLP-1600-ST4	Exposed	C/S emergency	3 months	P594	No
+MLP-1602-ST3	Exposed	C/S emergency	10 days	P595	No
+MLP-1603-ST4	Exposed	C/S emergency	3 months	P595	No
+MLP-1605-ST3	Not exposed	Vaginal	10 days	P597	No
+MLP-1606-ST4	Not exposed	Vaginal	3 months	P597	No
+MLP-1608-ST3	Exposed	C/S emergency	10 days	P599	No
+MLP-1609-ST4	Exposed	C/S emergency	3 months	P599	No
+MLP-1611-ST3	Exposed	C/S emergency	10 days	P600	No
+MLP-1612-ST4	Exposed	C/S emergency	3 months	P600	No
+MLP-1614-ST3	Exposed	Vaginal	10 days	P601	No
+MLP-1615-ST4	Exposed	Vaginal	3 months	P601	No
+MLP-1617-ST3	Exposed	Vaginal	10 days	P609	No
+MLP-1618-ST4	Exposed	Vaginal	3 months	P609	No
+MLP-1685-ST3	Exposed	C/S elective	10 days	P224	No
+MLP-1687-ST3	Exposed	C/S elective	10 days	P239	No
+MLP-1691-ST3	Exposed	C/S elective	10 days	P252	Yes
+MLP-1692-ST3	Exposed	C/S elective	10 days	P252	Yes
+MLP-1694-ST3	Exposed	C/S elective	10 days	P261	No
+MLP-1696-ST3	Exposed	C/S elective	10 days	P270	No
+MLP-1699-ST3	Exposed	C/S elective	10 days	P275	No
+MLP-1700-ST4	Exposed	C/S elective	3 months	P275	No
+MLP-1702-ST3	Exposed	C/S elective	10 days	P276	No
+MLP-1703-ST4	Exposed	C/S elective	3 months	P276	No
+MLP-1705-ST4	Exposed	C/S elective	3 months	P277	No
+MLP-1707-ST4	Exposed	C/S elective	3 months	P278	No
+MLP-1709-ST3	Not exposed	Vaginal	10 days	P279	No
+MLP-1710-ST4	Not exposed	Vaginal	3 months	P279	No
+MLP-1712-ST3	Exposed	C/S elective	10 days	P280	No
+MLP-1713-ST4	Exposed	C/S elective	3 months	P280	No
+MLP-1715-ST3	Exposed	C/S elective	10 days	P281	No
+MLP-1717-ST3	Exposed	C/S elective	10 days	P282	No
+MLP-1718-ST4	Exposed	C/S elective	3 months	P282	No
+MLP-1720-ST3	Exposed	C/S elective	10 days	P287	No
+MLP-1721-ST4	Exposed	C/S elective	3 months	P287	No
+MLP-1723-ST3	Exposed	C/S elective	10 days	P288	No
+MLP-1724-ST4	Exposed	C/S elective	3 months	P288	No
+MLP-1726-ST3	Exposed	C/S elective	10 days	P289	No
+MLP-1727-ST4	Exposed	C/S elective	3 months	P289	No
+MLP-1729-ST3	Exposed	C/S elective	10 days	P290	No
+MLP-1730-ST4	Exposed	C/S elective	3 months	P290	No
+MLP-1732-ST3	Exposed	C/S elective	10 days	P291	No
+MLP-1733-ST4	Exposed	C/S elective	3 months	P291	No
+MLP-1736-ST4	Exposed	C/S elective	3 months	P292	No
+MLP-1739-ST3	Exposed	C/S elective	10 days	P295	No
+MLP-1740-ST4	Exposed	C/S elective	3 months	P295	No
+MLP-1742-ST3	Exposed	C/S elective	10 days	P296	No
+MLP-1743-ST4	Exposed	C/S elective	3 months	P296	No
+MLP-1745-ST3	Exposed	C/S elective	10 days	P297	No
+MLP-1746-ST4	Exposed	C/S elective	3 months	P297	No
+MLP-1749-ST4	Exposed	C/S elective	3 months	P298	No
+MLP-1751-ST3	Exposed	C/S elective	10 days	P299	No
+MLP-1752-ST4	Exposed	C/S elective	3 months	P299	No
+MLP-1754-ST3	Exposed	C/S elective	10 days	P300	No
+MLP-1755-ST4	Exposed	C/S elective	3 months	P300	No
+MLP-1757-ST3	Exposed	C/S elective	10 days	P301	No
+MLP-1758-ST4	Exposed	C/S elective	3 months	P301	No
+MLP-1760-ST3	Exposed	C/S elective	10 days	P302	No
+MLP-1761-ST4	Exposed	C/S elective	3 months	P302	No
+MLP-1763-ST3	Exposed	C/S elective	10 days	P303	No
+MLP-1765-ST3	Exposed	C/S elective	10 days	P304	No
+MLP-1768-ST3	Exposed	C/S elective	10 days	P305	No
+MLP-1770-ST3	Exposed	C/S elective	10 days	P306	No
+MLP-1771-ST4	Exposed	C/S elective	3 months	P306	No
+MLP-1773-ST3	Exposed	C/S elective	10 days	P307	No
+MLP-1778-ST3	Exposed	C/S elective	10 days	P309	No
+MLP-1780-ST3	Exposed	C/S elective	10 days	P310	No
+MLP-1783-ST3	Exposed	C/S elective	10 days	P311	No
+MLP-1786-ST3	Exposed	C/S elective	10 days	P312	No
+MLP-1788-ST3	Exposed	C/S elective	10 days	P313	No
+MLP-1791-ST3	Exposed	C/S elective	10 days	P314	No
+MLP-1794-ST3	Exposed	C/S elective	10 days	P315	No
+MLP-1797-ST3	Exposed	C/S elective	10 days	P316	No
+MLP-1800-ST3	Exposed	C/S elective	10 days	P317	No
+MLP-1802-ST3	Exposed	C/S elective	10 days	P318	No
+MLP-1804-ST3	Exposed	C/S emergency	10 days	P319	No
+MLP-1806-ST3	Exposed	C/S elective	10 days	P320	No
+MLP-1809-ST3	Exposed	C/S elective	10 days	P321	No
+MLP-1813-ST3	Exposed	C/S elective	10 days	P323	No
+MLP-1817-ST3	Exposed	C/S elective	10 days	P325	No
+MLP-1820-ST3	Exposed	C/S emergency	10 days	P342	No
+MLP-1822-ST3	Exposed	C/S emergency	10 days	P349	No
+MLP-1824-ST3	Exposed	Vaginal	10 days	P381	No
+MLP-1825-ST4	Exposed	Vaginal	3 months	P381	No
+MLP-1828-ST3	Exposed	C/S emergency	10 days	P399	No
+MLP-1830-ST3	Exposed	Vaginal	10 days	P404	No
+MLP-1832-ST3	Exposed	Vaginal	10 days	P405	No
+MLP-1834-ST3	Exposed	Vaginal	10 days	P407	No
+MLP-1835-ST4	Exposed	Vaginal	3 months	P407	No
+MLP-1838-ST3	Exposed	C/S emergency	10 days	P419	No
+MLP-1840-ST3	Exposed	C/S emergency	10 days	P420	No
+MLP-1842-ST3	Exposed	C/S elective	10 days	P430	No
+MLP-1845-ST3	Exposed	C/S elective	10 days	P431	No
+MLP-1847-ST3	Exposed	C/S emergency	10 days	P432	No
+MLP-1849-ST3	Exposed	C/S emergency	10 days	P435	No
+MLP-1851-ST3	Exposed	Vaginal	10 days	P447	No
+MLP-1852-ST4	Exposed	Vaginal	3 months	P447	No
+MLP-1854-ST3	Exposed	Vaginal	10 days	P448	No
+MLP-1855-ST4	Exposed	Vaginal	3 months	P448	No
+MLP-1857-ST4	Not exposed	Vaginal	3 months	P452	No
+MLP-1859-ST3	Exposed	C/S emergency	10 days	P453	No
+MLP-1861-ST3	Exposed	C/S emergency	10 days	P455	No
+MLP-1862-ST4	Exposed	C/S emergency	3 months	P455	No
+MLP-1864-ST3	Not exposed	Vaginal	10 days	P464	No
+MLP-1867-ST3	Exposed	C/S emergency	10 days	P471	No
+MLP-1869-ST3	Not exposed	Vaginal	10 days	P480	No
+MLP-1873-ST3	Exposed	Vaginal	10 days	P490	No
+MLP-1874-ST4	Exposed	Vaginal	3 months	P490	No
+MLP-1876-ST3	Exposed	C/S emergency	10 days	P491	No
+MLP-1878-ST3	Exposed	Vaginal	10 days	P492	No
+MLP-1880-ST3	Exposed	C/S emergency	10 days	P496	No
+MLP-1881-ST4	Exposed	C/S emergency	3 months	P496	No
+MLP-1883-ST3	Exposed	Vaginal	10 days	P497	No
+MLP-1884-ST4	Exposed	Vaginal	3 months	P497	No
+MLP-1886-ST3	Not exposed	Vaginal	10 days	P498	No
+MLP-1887-ST4	Not exposed	Vaginal	3 months	P498	No
+MLP-1889-ST3	Not exposed	Vaginal	10 days	P499	No
+MLP-1890-ST4	Not exposed	Vaginal	3 months	P499	No
+MLP-1892-ST3	Not exposed	Vaginal	10 days	P500	No
+MLP-1893-ST4	Not exposed	Vaginal	3 months	P500	No
+MLP-1895-ST3	Not exposed	Vaginal	10 days	P501	No
+MLP-1896-ST4	Not exposed	Vaginal	3 months	P501	No
+MLP-1898-ST3	Not exposed	Vaginal	10 days	P502	No
+MLP-1899-ST4	Not exposed	Vaginal	3 months	P502	No
+MLP-1901-ST3	Not exposed	Vaginal	10 days	P503	No
+MLP-1902-ST4	Not exposed	Vaginal	3 months	P503	No
+MLP-1904-ST3	Exposed	Vaginal	10 days	P504	No
+MLP-1905-ST4	Exposed	Vaginal	3 months	P504	No
+MLP-1907-ST3	Exposed	C/S emergency	10 days	P505	No
+MLP-1909-ST3	Exposed	C/S emergency	10 days	P506	No
+MLP-1910-ST4	Exposed	C/S emergency	3 months	P506	No
+MLP-1912-ST3	Exposed	Vaginal	10 days	P507	No
+MLP-1914-ST3	Exposed	C/S emergency	10 days	P508	No
+MLP-1915-ST4	Exposed	C/S emergency	3 months	P508	No
+MLP-1917-ST3	Exposed	Vaginal	10 days	P509	No
+MLP-1918-ST4	Exposed	Vaginal	3 months	P509	No
+MLP-1920-ST3	Not exposed	Vaginal	10 days	P510	No
+MLP-1921-ST4	Not exposed	Vaginal	3 months	P510	No
+MLP-1923-ST3	Exposed	Vaginal	10 days	P511	No
+MLP-1925-ST3	Exposed	C/S elective	10 days	P512	No
+MLP-1926-ST4	Exposed	C/S elective	3 months	P512	No
+MLP-1928-ST3	Not exposed	Vaginal	10 days	P513	No
+MLP-1929-ST4	Not exposed	Vaginal	3 months	P513	No
+MLP-1931-ST3	Exposed	C/S emergency	10 days	P514	No
+MLP-1933-ST3	Exposed	Vaginal	10 days	P515	No
+MLP-1934-ST4	Exposed	Vaginal	3 months	P515	No
+MLP-1936-ST3	Exposed	C/S emergency	10 days	P516	No
+MLP-1937-ST4	Exposed	C/S emergency	3 months	P516	No
+MLP-1939-ST3	Not exposed	Vaginal	10 days	P517	No
+MLP-1942-ST3	Not exposed	Vaginal	10 days	P519	No
+MLP-1943-ST4	Not exposed	Vaginal	3 months	P519	No
+MLP-1945-ST3	Exposed	Vaginal	10 days	P520	No
+MLP-1946-ST4	Exposed	Vaginal	3 months	P520	No
+MLP-1948-ST3	Exposed	C/S emergency	10 days	P521	No
+MLP-1949-ST4	Exposed	C/S emergency	3 months	P521	No
+MLP-1951-ST3	Exposed	C/S emergency	10 days	P522	No
+MLP-1952-ST4	Exposed	C/S emergency	3 months	P522	No
+MLP-1954-ST3	Exposed	C/S emergency	10 days	P523	No
+MLP-1955-ST4	Exposed	C/S emergency	3 months	P523	No
+MLP-1957-ST3	Exposed	C/S emergency	10 days	P524	No
+MLP-1960-ST3	Not exposed	Vaginal	10 days	P525	No
+MLP-1961-ST4	Not exposed	Vaginal	3 months	P525	No
+MLP-1963-ST3	Exposed	C/S emergency	10 days	P526	No
+MLP-1964-ST4	Exposed	C/S emergency	3 months	P526	No
+MLP-1966-ST3	Exposed	C/S emergency	10 days	P527	No
+MLP-1967-ST4	Exposed	C/S emergency	3 months	P527	No
+MLP-1969-ST3	Exposed	C/S emergency	10 days	P528	No
+MLP-1970-ST4	Exposed	C/S emergency	3 months	P528	No
+MLP-1972-ST3	Not exposed	Vaginal	10 days	P529	No
+MLP-1973-ST4	Not exposed	Vaginal	3 months	P529	No
+MLP-1975-ST3	Not exposed	Vaginal	10 days	P530	No
+MLP-1976-ST4	Not exposed	Vaginal	3 months	P530	No
+MLP-1978-ST3	Exposed	C/S emergency	10 days	P531	No
+MLP-1979-ST4	Exposed	C/S emergency	3 months	P531	No
+MLP-1982-ST3	Exposed	C/S emergency	10 days	P533	No
+MLP-1986-ST4	Exposed	C/S emergency	3 months	P535	No
+MLP-1988-ST3	Not exposed	Vaginal	10 days	P536	No
+MLP-1990-ST3	Exposed	C/S emergency	10 days	P537	No
+MLP-1991-ST4	Exposed	C/S emergency	3 months	P537	No
+MLP-1993-ST3	Exposed	Vaginal	10 days	P538	No
+MLP-1995-ST3	Exposed	C/S emergency	10 days	P539	No
+MLP-1996-ST4	Exposed	C/S emergency	3 months	P539	No
+MLP-1998-ST3	Exposed	C/S emergency	10 days	P540	No
+MLP-2001-ST3	Exposed	C/S emergency	10 days	P541	No
+MLP-2003-ST3	Not exposed	Vaginal	10 days	P542	No
+MLP-2006-ST3	Exposed	C/S emergency	10 days	P543	No
+MLP-2009-ST3	Exposed	C/S emergency	10 days	P544	No
+MLP-2012-ST3	Exposed	C/S emergency	10 days	P545	No
+MLP-2015-ST3	Exposed	C/S emergency	10 days	P547	No
+MLP-2018-ST3	Exposed	C/S emergency	10 days	P548	No
+MLP-2021-ST3	Not exposed	Vaginal	10 days	P549	No
+MLP-2023-ST3	Not exposed	Vaginal	10 days	P550	No
+MLP-2026-ST3	Not exposed	Vaginal	10 days	P551	No
+MLP-2029-ST3	Not exposed	Vaginal	10 days	P552	No
+MLP-2032-ST3	Exposed	C/S emergency	10 days	P553	No
+MLP-2035-ST3	Exposed	Vaginal	10 days	P554	No
+MLP-2038-ST3	Exposed	Vaginal	10 days	P555	No
+MLP-2041-ST3	Not exposed	Vaginal	10 days	P556	No
+MLP-2042-ST4	Not exposed	Vaginal	3 months	P556	No
+MLP-2047-ST3	Exposed	Vaginal	10 days	P558	No
+MLP-2050-ST3	Exposed	C/S emergency	10 days	P559	No
+MLP-2053-ST3	Exposed	Vaginal	10 days	P560	No
+MLP-2056-ST3	Exposed	Vaginal	10 days	P561	No
+MLP-2057-ST4	Exposed	Vaginal	3 months	P561	No
+MLP-2059-ST3	Exposed	C/S emergency	10 days	P562	No
+MLP-2063-ST3	Exposed	Vaginal	10 days	P564	No
+MLP-2066-ST3	Exposed	C/S emergency	10 days	P565	No
+MLP-2073-ST3	Exposed	C/S elective	10 days	P569	No
+MLP-2075-ST4	Not exposed	Vaginal	3 months	P571	No
+MLP-2077-ST3	Not exposed	Vaginal	10 days	P572	No
+MLP-2079-ST3	Exposed	C/S elective	10 days	P577	No
+MLP-2081-ST3	Exposed	Vaginal	10 days	P578	No
+MLP-2083-ST3	Not exposed	Vaginal	10 days	P580	No
+MLP-2085-ST4	Not exposed	Vaginal	3 months	P593	No
+MLP-2088-ST3	Not exposed	Vaginal	10 days	P598	No
+MLP-2090-ST3	Exposed	C/S elective	10 days	P602	No
+MLP-2091-ST4	Exposed	C/S elective	3 months	P602	No
+MLP-2093-ST3	Exposed	C/S emergency	10 days	P603	No
+MLP-2098-ST3	Exposed	C/S emergency	10 days	P607	No
+MLP-2100-ST3	Exposed	C/S emergency	10 days	P608	No
+MLP-2103-ST3	Exposed	C/S elective	10 days	P611	No
+MLP-2106-ST3	Exposed	C/S emergency	10 days	P612	No
+MLP-2109-ST3	Not exposed	Vaginal	10 days	P613	No
+MLP-2112-ST3	Not exposed	Vaginal	10 days	P614	No
+MLP-2115-ST3	Exposed	C/S elective	10 days	P615	No
+MLP-2118-ST3	Exposed	Vaginal	10 days	P617	No
+MLP-2122-ST3	Exposed	C/S emergency	10 days	P619	No
+MLP-2124-ST3	Not exposed	Vaginal	10 days	P620	No
