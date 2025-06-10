@@ -1,4 +1,4 @@
-lim.fun <- function(data, conditions, nloop=10){
+lim.fun <- function(data, conditions, nloop=100){
   conditions_p <- conditions
   conds <- as.vector(conditions_p)
   
