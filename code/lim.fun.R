@@ -1,4 +1,4 @@
-lim.fun <- function(y, data, conditions, nloop=100){
+lim.fun <- function(data, conditions, nloop=1){
   conditions_p <- conditions
   conds <- as.data.frame(conditions_p)
   
@@ -25,31 +25,28 @@ lim.fun <- function(y, data, conditions, nloop=100){
     datasp <- thin$mat
     
     #randomized without FP addition PD1
-    design<-model.matrix(~condsp)
-    v<-voom(immuno.data,design) #check immuno.data(normal) with permuted conds
-    fit <- lmFit(v,design)
-    fit <- eBayes(fit)
-    res.lim <- topTable(fit)
+    designp<-model.matrix(~condsp)
+    vp<-voom(immuno.data,designp) #check immuno.data(normal) with permuted conds
+    fitp <- lmFit(vp,designp)
+    fitp <- eBayes(fitp)
+    res.lim.p <- topTable(fitp)
     
     #randomized and FP addition PD1 - works!!
-    design<-model.matrix(~condsp)
-    v<-voom(datasp,design) #thinned data+conditions
-    fit <- lmFit(v,design)
-    fit <- eBayes(fit)
-    res.lim <- topTable(fit, coef = ncol(design))
+    designr<-model.matrix(~condsp)
+    vr<-voom(datasp,designr) #thinned data+conditions
+    fitr <- lmFit(vr,designr)
+    fitr <- eBayes(fitr)
+    res.lim.r <- topTable(fitr, coef = ncol(design))
     
   }
   print("done loop")
   
   #unpermuted PD1
-  #randomized without FP addition PD1
-  y <- calcNormFactors(y) #pd_1/immuno.data
-  design<-model.matrix(~conds) #normal conditions
-  v<-voom(y,design)
-  fit <- lmFit(v,design)
-  fit <- eBayes(fit)
-  res.lim <- topTable(fit)
- 
+  designu<-model.matrix(~conds)
+  vu<-voom(immuno.data,designu) #original conditions + original data
+  fitu <- lmFit(vu,designu)
+  fitu <- eBayes(fitu)
+  res.lim.u <- topTable(fitu, coef = ncol(design))
   
-  return(list(conditions=conditions_p, thin.data=thin.data.out, data.out.limma.r = res.lim))
+  return(list(conditions=conditions_p, thin.data=thin.data.out, data.out.limma.r = res.lim.r, data.out.limma.p = res.lim.p, data.out.limma.u = res.lim.r))
 }
