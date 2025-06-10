@@ -5,18 +5,25 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=1) {
     log2FoldChange = 3
   } else if (type == "edgeR") {
     padj = 5
+    log2FoldChange = 2
   } else if (type == "aldex0.we") {
     padj = 10 #for welch's
+    log2FoldChange = 5
   } else if (type == "aldex0.wi") {
     padj = 12  #for wilcoxon
+    log2FoldChange = 5
   } else if (type == "aldex0.2.we") {
     padj = 10 
+    log2FoldChange = 5
   } else if (type == "aldex0.2.wi") {
     padj = 12 
+    log2FoldChange = 5
   } else if (type == "aldex0.5.we") {
     padj = 10 
+    log2FoldChange = 5
   } else if (type == "aldex0.5.wi") {
     padj = 12
+    log2FoldChange = 5
   }
 
 #if (input == NULL) {stop("input modelled data")} 

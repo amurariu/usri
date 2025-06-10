@@ -3,7 +3,6 @@ lim.fun <- function(data, conditions, nloop=100){
   conds <- as.vector(conditions_p)
   
   thin.data.out <- list() 
-  data.out.limma.u <- list() 
   data.out.limma.r <- list() 
   data.out.limma.p <- list() 
   
@@ -48,5 +47,5 @@ lim.fun <- function(data, conditions, nloop=100){
   fitu <- eBayes(fitu)
   res.lim.u <- topTable(fitu, coef = ncol(designu))
   
-  return(list(conditions=conditions_p, thin.data=thin.data.out, data.out.limma.r = data.out.limma.r, data.out.limma.p = data.out.limma.p, data.out.limma.u = res.lim.r))
+  return(list(conditions=conditions_p, thin.data=thin.data.out, data.out.limma.r = data.out.limma.r, data.out.limma.p = data.out.limma.p, data.out.limma.u = res.lim.u))
 }
