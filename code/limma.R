@@ -27,5 +27,5 @@ immuno.data <- y_pd1$counts
 # immuno is the data table
 # immuno.conds is the conditions for the unpermuted data
 # N is the number of random instances
-immuno.data.limma <- lim.fun(immuno.data, conditions_p, 100)
+immuno.data.limma <- lim.fun(immuno.data, conditions_p, 10)
 save(immuno.data.limma, file="../ext_analysis/immuno.data.limma.Rda") 

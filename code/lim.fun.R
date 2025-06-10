@@ -1,4 +1,4 @@
-lim.fun <- function(data, conditions, nloop=100){
+lim.fun <- function(data, conditions, nloop=10){
   conditions_p <- conditions
   conds <- as.vector(conditions_p)
   
@@ -36,7 +36,7 @@ lim.fun <- function(data, conditions, nloop=100){
     vr<-voom(datasp,designr) #thinned data+conditions
     fitr <- lmFit(vr,designr)
     fitr <- eBayes(fitr)
-    res.lim.r <- topTable(fitr, coef = ncol(design))
+    res.lim.r <- topTable(fitr, coef = ncol(designr))
     
   }
   print("done loop")
@@ -46,7 +46,7 @@ lim.fun <- function(data, conditions, nloop=100){
   vu<-voom(immuno.data,designu) #original conditions + original data
   fitu <- lmFit(vu,designu)
   fitu <- eBayes(fitu)
-  res.lim.u <- topTable(fitu, coef = ncol(design))
+  res.lim.u <- topTable(fitu, coef = ncol(designu))
   
   return(list(conditions=conditions_p, thin.data=thin.data.out, data.out.limma.r = res.lim.r, data.out.limma.p = res.lim.p, data.out.limma.u = res.lim.r))
 }
