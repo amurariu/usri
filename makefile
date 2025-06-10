@@ -28,11 +28,6 @@ limma: ../ext_analysis/immuno.data.limma.Rda
 ../ext_analysis/immuno.data.limma.Rda : code/limma.R code/lim.fun.R
 	Rscript 'code/limma.R' 'code/lim.fun.R'
 
-#analysis/immuno.data.u.aldex5.Rda : code/aldex_0.5.R
-	#Rscript 'code/aldex_0.R'
-	
-#analysis/test2.Rda: code/brca_draft.R
-#	Rscript 'code/brca_draft.R'
 
 clean_DESeq:
 	rm ../ext_analysis/immuno.data.deseq.Rda
@@ -49,9 +44,6 @@ clean_limma:
 	rm ../ext_analysis/immuno.data.limma.Rda
 	
 
-#	rm analysis/immuno.data.u.aldex2.Rda
-
-#	rm analysis/immuno.data.u.aldex5.Rda
 
 	
 	
