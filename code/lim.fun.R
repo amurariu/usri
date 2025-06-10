@@ -29,14 +29,14 @@ lim.fun <- function(data, conditions, nloop=100){
     vp<-voom(immuno.data,designp) #check immuno.data(normal) with permuted conds
     fitp <- lmFit(vp,designp)
     fitp <- eBayes(fitp)
-    res.lim.p <- topTable(fitp)
+    data.out.limma.p[[i]] <- topTable(fitp)
     
     #randomized and FP addition PD1 - works!!
     designr<-model.matrix(~condsp)
     vr<-voom(datasp,designr) #thinned data+conditions
     fitr <- lmFit(vr,designr)
     fitr <- eBayes(fitr)
-    res.lim.r <- topTable(fitr, coef = ncol(designr))
+    data.out.limma.r[[i]] <- topTable(fitr, coef = ncol(designr))
     
   }
   print("done loop")
@@ -48,5 +48,5 @@ lim.fun <- function(data, conditions, nloop=100){
   fitu <- eBayes(fitu)
   res.lim.u <- topTable(fitu, coef = ncol(designu))
   
-  return(list(conditions=conditions_p, thin.data=thin.data.out, data.out.limma.r = res.lim.r, data.out.limma.p = res.lim.p, data.out.limma.u = res.lim.r))
+  return(list(conditions=conditions_p, thin.data=thin.data.out, data.out.limma.r = data.out.limma.r, data.out.limma.p = data.out.limma.p, data.out.limma.u = res.lim.r))
 }
