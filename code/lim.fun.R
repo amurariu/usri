@@ -1,6 +1,6 @@
-lim.fun <- function(data, conditions, nloop=1){
+lim.fun <- function(data, conditions, nloop=100){
   conditions_p <- conditions
-  conds <- as.data.frame(conditions_p)
+  conds <- as.vector(conditions_p)
   
   thin.data.out <- list() 
   data.out.limma.u <- list() 

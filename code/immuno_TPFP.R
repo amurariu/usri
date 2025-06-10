@@ -6,7 +6,7 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=1) {
   } else if (type == "edgeR") {
     padj = 5
   } else if (type == "aldex0.we") {
-    padj = 10 #for welches
+    padj = 10 #for welch's
   } else if (type == "aldex0.wi") {
     padj = 12  #for wilcoxon
   } else if (type == "aldex0.2.we") {
@@ -19,7 +19,7 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=1) {
     padj = 12
   }
 
-if (input == NULL) {stop("input modelled data")} 
+#if (input == NULL) {stop("input modelled data")} 
     
 # equivalence
 # immuno.data_0.aldex2$p.data[[i]]$we.eBH == data.out[[i]]$ald0$wi.eBH
@@ -33,7 +33,9 @@ for(i in 1:2){
 # coefficients same in every instance
 # can hardcode this if sanity check passes
 
-model <- which(abs(input$thin.data[[11]]$coefmat) > coeff)  #need to rename because error message from coefmat
+dataf<-as.data.frame(input)
+  
+model <- which(abs(dataf$thin.data[[11]]$coefmat) > coeff)  #coefmat giving error - says is not numeric
 null.model <- which(abs(input$thin.data[[11]]$coefmat) < coeff) # ^same 
 
 #for randomized data only (r)
