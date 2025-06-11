@@ -36,128 +36,92 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=100) {
 # immuno.data.DESeq$p.data[[i]]$padj == data.out[[i]]$des0$padj
 #aldex.0 <- immuno.data_0.aldex2
 
-for(coeff in c(0.01,0.1,0.2,0.5,0.75,1)){
-
-  for(i in 1:nloop){ 
-  
-  model <- list()
-  null.model.r <- list()
-  null.model.p <- list()
-  TP.r <- list()
-  FN.r <- list()
-  FP.r <- list()
-  TN.r <- list()
-  
-  TP.LFC.0.5.r <- list()
-  TP.LFC.1.r <- list()
-  FN.LFC.0.5.r <- list()
-  FN.LFC.1.r <- list()
-  FP.LFC.0.5.r <- list()
-  FP.LFC.1.r <- list()
-  TN.LFC.0.5.r <- list()
-  TN.LFC.1.r <- list()
-  
-  TP.p <- list()
-  FN.p <- list()
-  FP.pr <- list()
-  FP.pp <- list()
-  TN.pr <- list()
-  TN.pp <- list()
-  
-  TP.LFC.0.5.p <- list()
-  TP.LFC.1.p <- list()
-  FN.LFC.0.5.p <- list()
-  FN.LFC.1.p <- list()
-  FP.LFC.0.5.pr <- list()
-  FP.LFC.1.pr <- list()
-  FP.LFC.0.5.pp <- list()
-  FP.LFC.1.pp <- list()
-  TN.LFC.0.5.pr <- list()
-  TN.LFC.1.pr <- list()
-  TN.LFC.0.5.pp <- list()
-  TN.LFC.1.pp <- list()
-  
-  PPV.r <- list()
-  FDR.r <- list()
-  SEN.r <- list()
-  SPE.r <- list()
-  
-  PPV.pr <- list()
-  PPV.pp <- list()
-  FDR.pr <- list()
-  FDR.pp <- list()
-  SEN.p <- list()
-  SPE.pr <- list()
-  SPE.pp <- list()
-  
-# coefficients same in every instance
-# can hardcode this if sanity check passes
-
-model [[i]] <- which(abs(input$thin.data[[i]]$coefmat) > coeff)  
-null.model.r [[i]] <- which(abs(input$thin.data[[i]]$coefmat) == 0) # randomized nulls only 
-null.model.p [[i]] <- which(abs(input$thin.data[[i]]$coefmat) > 0 & abs(input$thin.data[[i]]$coefmat) < coeff) # only less than coeff FP 
-
-#for randomized data only (r) 
-TP.r[[i]] <- intersect(which(input$r.data[[i]][,padj] < 0.05), model)
-FN.r[[i]] <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05))
-FP.r[[i]] <- intersect(which(input$r.data[[i]][,padj] < 0.05), null.model.r) #uses only the randomized null model
-TN.r[[i]] <- intersect(which(input$r.data[[i]][,padj] >= 0.05), null.model.r)
-
-#for randomized data only (r) - DESeq with Log2FoldChange for 0.5 and 1, changed name to LFC, unsure if should rename?
-TP.LFC.0.5.r[[i]] <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) >0.5), model)
-TP.LFC.1.r[[i]] <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) >1), model) 
-FN.LFC.0.5.r[[i]] <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 0.5))
-FN.LFC.1.r[[i]] <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 1))
-FP.LFC.0.5.r[[i]] <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 0.5), null.model.r)
-FP.LFC.1.r[[i]] <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 1), null.model.r)
-TN.LFC.0.5.r[[i]] <- intersect(which(input$r.data[[i]][,padj] >= 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 0.5), null.model.r)
-TN.LFC.1.r[[i]] <- intersect(which(input$r.data[[i]][,padj] >= 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 1), null.model.r)
-
-#for randomized + permuted data (p) 
-# TN and FP uses both null models for randomized data and randomized+permuted data
-TP.p[[i]] <- intersect(which(input$p.data[[i]][,padj] < 0.05), model)
-FN.p[[i]] <- setdiff(model, which(input$p.data[[i]][,padj] < 0.05))
-FP.pr[[i]] <- intersect(which(input$p.data[[i]][,padj] < 0.05), null.model.r)
-TN.pr[[i]] <- intersect(which(input$p.data[[i]][,padj] >= 0.05), null.model.r)
-FP.pp[[i]] <- intersect(which(input$p.data[[i]][,padj] < 0.05), null.model.p)
-TN.pp[[i]] <- intersect(which(input$p.data[[i]][,padj] >= 0.05), null.model.p)
-
-#for randomized data only (p) - DESeq with Log2FoldChange for 0.5 and 1
-TP.LFC.0.5.p[[i]] <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) >0.5), model)
-TP.LFC.1.p[[i]] <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) >1), model) 
-FN.LFC.0.5.p[[i]] <- setdiff(model, which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5))
-FN.LFC.1.p[[i]] <- setdiff(model, which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1))
-FP.LFC.0.5.pr[[i]] <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5), null.model.r)
-FP.LFC.1.pr[[i]] <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1), null.model.r)
-FP.LFC.0.5.pp[[i]] <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5), null.model.p)
-FP.LFC.1.pp[[i]] <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1), null.model.p)
-TN.LFC.0.5.pr[[i]] <- intersect(which(input$p.data[[i]][,padj] >= 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5), null.model.r)
-TN.LFC.1.pr[[i]] <- intersect(which(input$p.data[[i]][,padj] >= 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1), null.model.r)
-TN.LFC.0.5.pp[[i]] <- intersect(which(input$p.data[[i]][,padj] >= 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5), null.model.p)
-TN.LFC.1.pp[[i]] <- intersect(which(input$p.data[[i]][,padj] >= 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1), null.model.p)
-
-#for randomized data (r)
-PPV.r[[i]] <- length(TP.r)/sum(length(TP.r),length(FP.r))
-FDR.r[[i]] <- length(FP.r)/sum(length(TP.r),length(FP.r))
-SEN.r[[i]] <- length(TP.r)/(length(TP.r) + length(FN.r))
-SPE.r[[i]] <- length(TN.r)/(length(TN.r) + length(FP.r))
-
-#for randomized + permuted data (p)
-PPV.pr[[i]] <- length(TP.p)/sum(length(TP.p),length(FP.pr))
-PPV.pp[[i]] <- length(TP.p)/sum(length(TP.p),length(FP.pp))
-FDR.pr[[i]] <- length(FP.pr)/sum(length(TP.p),length(FP.pr))
-FDR.pp[[i]] <- length(FP.pp)/sum(length(TP.p),length(FP.pp))
-SEN.p[[i]] <- length(TP.p)/(length(TP.p) + length(FN.p)) #same for both?
-SPE.pr[[i]] <- length(TN.pr)/(length(TN.pr) + length(FP.pr))
-SPE.pp[[i]] <- length(TN.pp)/(length(TN.pp) + length(FP.pp))
-
-return(list(truepos.r = TP.r, falseneg.r = FN.r, falsepos.r = FP.r, trueneg.r = TN.r, 
-            TP.LFC.0.5.r = TP.LFC.0.5.r, TP.LFC.1.r = TP.LFC.1.r, FN.LFC.0.5.r = FN.LFC.0.5.r,  FN.LFC.1.r = FN.LFC.1.r, FP.LFC.0.5.r = FP.LFC.0.5.r, FP.LFC.1.r = FP.LFC.1.r, TN.LFC.0.5.r =  TN.LFC.0.5.r,  TN.LFC.1.r =  TN.LFC.1.r, 
-            truepos.p = TP.p, falseneg.p = FN.r, falsepos.pr = FP.pr, falsepos.pp = FP.pp, trueneg.pr = TN.pr, trueneg.pp = TN.pp, 
-            TP.LFC.0.5.p = TP.LFC.0.5.p, TP.LFC.1.p = TP.LFC.1.p, FN.LFC.0.5.p = FN.LFC.0.5.p,  FN.LFC.1.p = FN.LFC.1.p, FP.LFC.0.5.pr = FP.LFC.0.5.pr, FP.LFC.1.pr = FP.LFC.1.pr, TN.LFC.0.5.pr =  TN.LFC.0.5.pr,  TN.LFC.1.pr =  TN.LFC.1.pr, FP.LFC.0.5.pp = FP.LFC.0.5.pp, FP.LFC.1.pp = FP.LFC.1.pp, TN.LFC.0.5.pp =  TN.LFC.0.5.pp,  TN.LFC.1.pp =  TN.LFC.1.pp,
-            PPV.r = PPV.r, FDR.r = FDR.r, SEN.r = SEN.r, SPE.r = SPE.r,
-            PPV.pr = PPV.pr, PPV.pp = PPV.pp, FDR.pr = FDR.pr, FDR.pp = FDR.pp, SEN.p = SEN.p, SPE.pr = SPE.pr, SPE.pp = SPE.pp))
-}}} #end bracket here - finished editing up to here
+	coeff.vec <- c(0.01,0.1,0.2,0.5,0.75,1)
+		
+	PPV.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	FDR.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	SEN.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	SPE.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	
+	PPV.pr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	PPV.pp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	FDR.pr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	FDR.pp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	SEN.p <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	SPE.pr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	SPE.pp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	
+	for(coeff in 1:6){
+			for(i in 1:nloop){ 
+			
+			
+		# coefficients same in every instance
+		# can hardcode this if sanity check passes
+		
+		model <- which(abs(input$thin.data[[i]]$coefmat) > coeff.vec[coeff])  
+		null.model.r <- which(abs(input$thin.data[[i]]$coefmat) == 0) # randomized nulls only 
+		null.model.p <- which(abs(input$thin.data[[i]]$coefmat) > 0 & abs(input$thin.data[[i]]$coefmat) < coeff) # only less than coeff FP 
+		
+		#for randomized data only (r) 
+		TP.r <- intersect(which(input$r.data[[i]][,padj] < 0.05), model)
+		FN.r <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05))
+		FP.r <- intersect(which(input$r.data[[i]][,padj] < 0.05), null.model.r) #uses only the randomized null model
+		TN.r <- intersect(which(input$r.data[[i]][,padj] >= 0.05), null.model.r)
+		
+		#for randomized data only (r) - DESeq with Log2FoldChange for 0.5 and 1, changed name to LFC, unsure if should rename?
+		TP.LFC.0.5.r <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) >0.5), model)
+		TP.LFC.1.r <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) >1), model) 
+		FN.LFC.0.5.r <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 0.5))
+		FN.LFC.1.r <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 1))
+		FP.LFC.0.5.r <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 0.5), null.model.r)
+		FP.LFC.1.r <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 1), null.model.r)
+		TN.LFC.0.5.r <- intersect(which(input$r.data[[i]][,padj] >= 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 0.5), null.model.r)
+		TN.LFC.1.r <- intersect(which(input$r.data[[i]][,padj] >= 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 1), null.model.r)
+		
+		#for randomized + permuted data (p) 
+		# TN and FP uses both null models for randomized data and randomized+permuted data
+		TP.p <- intersect(which(input$p.data[[i]][,padj] < 0.05), model)
+		FN.p <- setdiff(model, which(input$p.data[[i]][,padj] < 0.05))
+		FP.pr <- intersect(which(input$p.data[[i]][,padj] < 0.05), null.model.r)
+		TN.pr <- intersect(which(input$p.data[[i]][,padj] >= 0.05), null.model.r)
+		FP.pp <- intersect(which(input$p.data[[i]][,padj] < 0.05), null.model.p)
+		TN.pp <- intersect(which(input$p.data[[i]][,padj] >= 0.05), null.model.p)
+		
+		#for randomized data only (p) - DESeq with Log2FoldChange for 0.5 and 1
+		TP.LFC.0.5.p <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) >0.5), model)
+		TP.LFC.1.p <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) >1), model) 
+		FN.LFC.0.5.p <- setdiff(model, which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5))
+		FN.LFC.1.p <- setdiff(model, which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1))
+		FP.LFC.0.5.pr <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5), null.model.r)
+		FP.LFC.1.pr <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1), null.model.r)
+		FP.LFC.0.5.pp <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5), null.model.p)
+		FP.LFC.1.pp <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1), null.model.p)
+		TN.LFC.0.5.pr <- intersect(which(input$p.data[[i]][,padj] >= 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5), null.model.r)
+		TN.LFC.1.pr <- intersect(which(input$p.data[[i]][,padj] >= 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1), null.model.r)
+		TN.LFC.0.5.pp <- intersect(which(input$p.data[[i]][,padj] >= 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5), null.model.p)
+		TN.LFC.1.pp <- intersect(which(input$p.data[[i]][,padj] >= 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1), null.model.p)
+		
+		#for randomized data (r)
+		# if PPV.r is a matrix PPV[coeff,i]
+		PPV.r[i, coeff] <- length(TP.r)/sum(length(TP.r),length(FP.r))
+		FDR.r[i, coeff] <- length(FP.r)/sum(length(TP.r),length(FP.r))
+		SEN.r[i, coeff] <- length(TP.r)/(length(TP.r) + length(FN.r))
+		SPE.r[i, coeff] <- length(TN.r)/(length(TN.r) + length(FP.r))
+		
+		#for randomized + permuted data (p)
+		PPV.pr[i, coeff] <- length(TP.p)/sum(length(TP.p),length(FP.pr))
+		PPV.pp[i, coeff] <- length(TP.p)/sum(length(TP.p),length(FP.pp))
+		FDR.pr[i, coeff] <- length(FP.pr)/sum(length(TP.p),length(FP.pr))
+		FDR.pp[i, coeff] <- length(FP.pp)/sum(length(TP.p),length(FP.pp))
+		SEN.p[i, coeff] <- length(TP.p)/(length(TP.p) + length(FN.p)) #same for both?
+		SPE.pr[i, coeff] <- length(TN.pr)/(length(TN.pr) + length(FP.pr))
+		SPE.pp[i, coeff] <- length(TN.pp)/(length(TN.pp) + length(FP.pp))
+		
+		return(list(PPV.r, FDR.r, SEN.r, SPE.r, PPV.pr,  PPV.pp, FDR.pr, FDR.pp, SEN.p, SPE.pr = SPE.pr, SPE.pp = SPE.pp))
+		} # end coeff loop
+	} # end randomization loop
+} #end function 
+# finished editing up to here
 
 # even butt uglier ...
 for (j in 1:5){
