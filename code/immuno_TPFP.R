@@ -150,7 +150,6 @@ SEN.p[[i]] <- length(TP.p)/(length(TP.p) + length(FN.p)) #same for both?
 SPE.pr[[i]] <- length(TN.pr)/(length(TN.pr) + length(FP.pr))
 SPE.pp[[i]] <- length(TN.pp)/(length(TN.pp) + length(FP.pp))
 
-
 return(list(truepos.r = TP.r, falseneg.r = FN.r, falsepos.r = FP.r, trueneg.r = TN.r, 
             TP.LFC.0.5.r = TP.LFC.0.5.r, TP.LFC.1.r = TP.LFC.1.r, FN.LFC.0.5.r = FN.LFC.0.5.r,  FN.LFC.1.r = FN.LFC.1.r, FP.LFC.0.5.r = FP.LFC.0.5.r, FP.LFC.1.r = FP.LFC.1.r, TN.LFC.0.5.r =  TN.LFC.0.5.r,  TN.LFC.1.r =  TN.LFC.1.r, 
             truepos.p = TP.p, falseneg.p = FN.r, falsepos.pr = FP.pr, falsepos.pp = FP.pp, trueneg.pr = TN.pr, trueneg.pp = TN.pp, 
