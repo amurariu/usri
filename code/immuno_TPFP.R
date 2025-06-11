@@ -37,7 +37,8 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=100) {
 #aldex.0 <- immuno.data_0.aldex2
 
 for(coeff in c(0.01,0.1,0.2,0.5,0.75,1)){
-for(i in 1:nloop){ 
+
+  for(i in 1:nloop){ 
   
   model <- list()
   null.model.r <- list()
