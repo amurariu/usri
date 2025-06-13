@@ -33,39 +33,39 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=100) {
 
 	coeff.vec <- c(0.01,0.1,0.2,0.5,0.75,1)
 		
-	PPV.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	FDR.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	SEN.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	SPE.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	PPV.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	FDR.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	SEN.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	SPE.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	
-	PPV.pr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	PPV.pp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	FDR.pr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	FDR.pp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	SEN.p <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	SPE.pr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	SPE.pp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	PPV.perm.nullr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	PPV.perm.nullp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	FDR.perm.nullr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	FDR.perm.nullp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	SEN.perm <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	SPE.perm.nullr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	SPE.perm.nullp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	
-	PPV.LFC.0.5.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	FDR.LFC.0.5.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	SEN.LFC.0.5.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	SPE.LFC.0.5.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	PPV.LFC.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	FDR.LFC.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	SEN.LFC.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	SPE.LFC.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	
 	#PPV.LFC.1.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	#FDR.LFC.1.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	#SEN.LFC.1.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	#SPE.LFC.1.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	
-	PPV.LFC.0.5.pp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	PPV.LFC.0.5.pr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	PPV.LFC.perm.nullp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	PPV.LFC.perm.nullr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	
-	FDR.LFC.0.5.pp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	FDR.LFC.0.5.pr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	FDR.LFC.perm.nullp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	FDR.LFC.perm.nullr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	
-	SEN.LFC.0.5.p <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	SEN.LFC.perm <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	
-	SPE.LFC.0.5.pp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	SPE.LFC.0.5.pr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	SPE.LFC.perm.nullp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	SPE.LFC.perm.nullr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	
 	#PPV.LFC.1.pp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	#PPV.LFC.1.pr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
@@ -89,98 +89,98 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=100) {
 		null.model.p <- which(abs(input$thin.data[[i]]$coefmat) > 0 & abs(input$thin.data[[i]]$coefmat) < coeff) # only less than coeff FP 
 		
 		#for randomized data only (r) 
-		TP.r <- intersect(which(input$r.data[[i]][,padj] < 0.05), model)
-		FN.r <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05))
-		FP.r <- intersect(which(input$r.data[[i]][,padj] < 0.05), null.model.r) #uses only the randomized null model
-		TN.r <- intersect(which(input$r.data[[i]][,padj] >= 0.05), null.model.r)
+		TP.rand <- intersect(which(input$r.data[[i]][,padj] < 0.05), model)
+		FN.rand <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05))
+		FP.rand <- intersect(which(input$r.data[[i]][,padj] < 0.05), null.model.r) #uses only the randomized null model
+		TN.rand <- intersect(which(input$r.data[[i]][,padj] >= 0.05), null.model.r)
 		
 		#for randomized data only (r) - DESeq with Log2FoldChange for 0.5 and 1, changed name to LFC, unsure if should rename?
-		TP.LFC.0.5.r <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) >0.5), model)
-		TP.LFC.1.r <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) >1), model) #no entries/IDs identified
-		FN.LFC.0.5.r <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 0.5))
-		FN.LFC.1.r <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 1))
-		FP.LFC.0.5.r <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 0.5), null.model.r)
-		FP.LFC.1.r <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 1), null.model.r) #no entries/IDs identified
-		TN.LFC.0.5.r <- intersect(which(input$r.data[[i]][,padj] >= 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 0.5), null.model.r)
-		TN.LFC.1.r <- intersect(which(input$r.data[[i]][,padj] >= 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 1), null.model.r)
+		TP.LFC.rand <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) >0.5), model)
+		#TP.LFC.1.r <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) >1), model) #no entries/IDs identified
+		FN.LFC.rand <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 0.5))
+		#FN.LFC.1.r <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 1))
+		FP.LFC.rand <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 0.5), null.model.r)
+		#FP.LFC.1.r <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 1), null.model.r) #no entries/IDs identified
+		TN.LFC.rand <- intersect(which(input$r.data[[i]][,padj] >= 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 0.5), null.model.r)
+		#TN.LFC.1.r <- intersect(which(input$r.data[[i]][,padj] >= 0.05 & abs(input$r.data[[i]][,log2FoldChange]) > 1), null.model.r)
 		
 		#for randomized + permuted data (p) 
 		# TN and FP uses both null models for randomized data and randomized+permuted data
-		TP.p <- intersect(which(input$p.data[[i]][,padj] < 0.05), model)
-		FN.p <- setdiff(model, which(input$p.data[[i]][,padj] < 0.05))
-		FP.pr <- intersect(which(input$p.data[[i]][,padj] < 0.05), null.model.r)
-		TN.pr <- intersect(which(input$p.data[[i]][,padj] >= 0.05), null.model.r)
-		FP.pp <- intersect(which(input$p.data[[i]][,padj] < 0.05), null.model.p)
-		TN.pp <- intersect(which(input$p.data[[i]][,padj] >= 0.05), null.model.p)
+		TP.perm <- intersect(which(input$p.data[[i]][,padj] < 0.05), model)
+		FN.perm <- setdiff(model, which(input$p.data[[i]][,padj] < 0.05))
+		FP.perm <- intersect(which(input$p.data[[i]][,padj] < 0.05), null.model.r)
+		TN.perm <- intersect(which(input$p.data[[i]][,padj] >= 0.05), null.model.r)
+		FP.perm <- intersect(which(input$p.data[[i]][,padj] < 0.05), null.model.p)
+		TN.perm <- intersect(which(input$p.data[[i]][,padj] >= 0.05), null.model.p)
 		
 		#for randomized data only (p) - DESeq with Log2FoldChange for 0.5 and 1
-		TP.LFC.0.5.p <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) >0.5), model)
-		TP.LFC.1.p <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) >1), model) #no entries/IDs identified
-		FN.LFC.0.5.p <- setdiff(model, which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5))
-		FN.LFC.1.p <- setdiff(model, which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1))
-		FP.LFC.0.5.pr <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5), null.model.r)
-		FP.LFC.1.pr <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1), null.model.r) #no entries/IDs identified
-		FP.LFC.0.5.pp <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5), null.model.p)
-		FP.LFC.1.pp <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1), null.model.p) #no entries/IDs identified
-		TN.LFC.0.5.pr <- intersect(which(input$p.data[[i]][,padj] >= 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5), null.model.r)
-		TN.LFC.1.pr <- intersect(which(input$p.data[[i]][,padj] >= 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1), null.model.r)
-		TN.LFC.0.5.pp <- intersect(which(input$p.data[[i]][,padj] >= 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5), null.model.p)
-		TN.LFC.1.pp <- intersect(which(input$p.data[[i]][,padj] >= 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1), null.model.p) #no entries/IDs identified
+		TP.LFC.perm <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) >0.5), model)
+		#TP.LFC.1.p <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) >1), model) #no entries/IDs identified
+		FN.LFC.perm <- setdiff(model, which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5))
+		#FN.LFC.1.p <- setdiff(model, which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1))
+		FP.LFC.perm.nullr <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5), null.model.r)
+		#FP.LFC.1.pr <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1), null.model.r) #no entries/IDs identified
+		FP.LFC.perm.nullp <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5), null.model.p)
+		#FP.LFC.1.pp <- intersect(which(input$p.data[[i]][,padj] < 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1), null.model.p) #no entries/IDs identified
+		TN.LFC.perm.nullr <- intersect(which(input$p.data[[i]][,padj] >= 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5), null.model.r)
+		#TN.LFC.1.pr <- intersect(which(input$p.data[[i]][,padj] >= 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1), null.model.r)
+		TN.LFC.perm.nullp <- intersect(which(input$p.data[[i]][,padj] >= 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 0.5), null.model.p)
+		#TN.LFC.1.pp <- intersect(which(input$p.data[[i]][,padj] >= 0.05 & abs(input$p.data[[i]][,log2FoldChange]) > 1), null.model.p) #no entries/IDs identified
 		
 		#for randomized data (r)
 		# if PPV.r is a matrix PPV[coeff,i]
-		PPV.r[i, coeff] <- length(TP.r)/sum(length(TP.r),length(FP.r))
-		FDR.r[i, coeff] <- length(FP.r)/sum(length(TP.r),length(FP.r))
-		SEN.r[i, coeff] <- length(TP.r)/(length(TP.r) + length(FN.r))
-		SPE.r[i, coeff] <- length(TN.r)/(length(TN.r) + length(FP.r))
+		PPV.rand[i, coeff] <- length(TP.r)/sum(length(TP.r),length(FP.r))
+		FDR.rand[i, coeff] <- length(FP.r)/sum(length(TP.r),length(FP.r))
+		SEN.rand[i, coeff] <- length(TP.r)/(length(TP.r) + length(FN.r))
+		SPE.rand[i, coeff] <- length(TN.r)/(length(TN.r) + length(FP.r))
 		
-		PPV.LFC.0.5.r[i, coeff] <- length(TP.LFC.0.5.r)/sum(length(TP.LFC.0.5.r),length(FP.LFC.0.5.r))
-		FDR.LFC.0.5.r[i, coeff] <- length(FP.LFC.0.5.r)/sum(length(TP.LFC.0.5.r),length(FP.LFC.0.5.r))
-		SEN.LFC.0.5.r[i, coeff] <- length(TP.LFC.0.5.r)/(length(TP.LFC.0.5.r) + length(FN.LFC.0.5.r))
-		SPE.LFC.0.5.r[i, coeff] <- length(TN.LFC.0.5.r)/(length(TN.LFC.0.5.r) + length(FP.LFC.0.5.r))
+		PPV.LFC.rand[i, coeff] <- length(TP.LFC.0.5.r)/sum(length(TP.LFC.0.5.r),length(FP.LFC.0.5.r))
+		FDR.LFC.rand[i, coeff] <- length(FP.LFC.0.5.r)/sum(length(TP.LFC.0.5.r),length(FP.LFC.0.5.r))
+		SEN.LFC.rand[i, coeff] <- length(TP.LFC.0.5.r)/(length(TP.LFC.0.5.r) + length(FN.LFC.0.5.r))
+		SPE.LFC.rand[i, coeff] <- length(TN.LFC.0.5.r)/(length(TN.LFC.0.5.r) + length(FP.LFC.0.5.r))
 		
-		PPV.LFC.1.r[i, coeff] <- length(TP.LFC.1.r)/sum(length(TP.LFC.1.r),length(FP.LFC.1.r)) #NaN
-		FDR.LFC.1.r[i, coeff] <- length(FP.LFC.1.r)/sum(length(TP.LFC.1.r),length(FP.LFC.1.r)) #NaN
-		SEN.LFC.1.r[i, coeff] <- length(TP.LFC.1.r)/(length(TP.LFC.1.r) + length(FN.LFC.1.r)) #0
-		SPE.LFC.1.r[i, coeff] <- length(TN.LFC.1.r)/(length(TN.LFC.1.r) + length(FP.LFC.1.r)) #1
+		#PPV.LFC.1.r[i, coeff] <- length(TP.LFC.1.r)/sum(length(TP.LFC.1.r),length(FP.LFC.1.r)) #NaN
+		#FDR.LFC.1.r[i, coeff] <- length(FP.LFC.1.r)/sum(length(TP.LFC.1.r),length(FP.LFC.1.r)) #NaN
+		#SEN.LFC.1.r[i, coeff] <- length(TP.LFC.1.r)/(length(TP.LFC.1.r) + length(FN.LFC.1.r)) #0
+		#SPE.LFC.1.r[i, coeff] <- length(TN.LFC.1.r)/(length(TN.LFC.1.r) + length(FP.LFC.1.r)) #1
 		
 		
 		#for randomized + permuted data (p)
-		PPV.pr[i, coeff] <- length(TP.p)/sum(length(TP.p),length(FP.pr))
-		PPV.pp[i, coeff] <- length(TP.p)/sum(length(TP.p),length(FP.pp))
-		FDR.pr[i, coeff] <- length(FP.pr)/sum(length(TP.p),length(FP.pr))
-		FDR.pp[i, coeff] <- length(FP.pp)/sum(length(TP.p),length(FP.pp))
-		SEN.p[i, coeff] <- length(TP.p)/(length(TP.p) + length(FN.p)) 
-		SPE.pr[i, coeff] <- length(TN.pr)/(length(TN.pr) + length(FP.pr))
-		SPE.pp[i, coeff] <- length(TN.pp)/(length(TN.pp) + length(FP.pp))
+		PPV.perm.nullr[i, coeff] <- length(TP.p)/sum(length(TP.p),length(FP.pr))
+		PPV.perm.nullp[i, coeff] <- length(TP.p)/sum(length(TP.p),length(FP.pp))
+		FDR.perm.nullr[i, coeff] <- length(FP.pr)/sum(length(TP.p),length(FP.pr))
+		FDR.perm.nullp[i, coeff] <- length(FP.pp)/sum(length(TP.p),length(FP.pp))
+		SEN.perm[i, coeff] <- length(TP.p)/(length(TP.p) + length(FN.p)) 
+		SPE.perm.nullr[i, coeff] <- length(TN.pr)/(length(TN.pr) + length(FP.pr))
+		SPE.perm.nullp[i, coeff] <- length(TN.pp)/(length(TN.pp) + length(FP.pp))
 		
-		PPV.LFC.0.5.pp[i, coeff] <- length(TP.LFC.0.5.p)/sum(length(TP.LFC.0.5.p),length(FP.LFC.0.5.pp))
-		PPV.LFC.0.5.pr[i, coeff] <- length(TP.LFC.0.5.p)/sum(length(TP.LFC.0.5.p),length(FP.LFC.0.5.pr))
+		PPV.LFC.perm.nullp[i, coeff] <- length(TP.LFC.0.5.p)/sum(length(TP.LFC.0.5.p),length(FP.LFC.0.5.pp))
+		PPV.LFC.perm.nullr[i, coeff] <- length(TP.LFC.0.5.p)/sum(length(TP.LFC.0.5.p),length(FP.LFC.0.5.pr))
 		
-		FDR.LFC.0.5.pp[i, coeff] <- length(FP.LFC.0.5.pp)/sum(length(TP.LFC.0.5.p),length(FP.LFC.0.5.pp))
-		FDR.LFC.0.5.pr[i, coeff] <- length(FP.LFC.0.5.pr)/sum(length(TP.LFC.0.5.p),length(FP.LFC.0.5.pr))
+		FDR.LFC.perm.nullp[i, coeff] <- length(FP.LFC.0.5.pp)/sum(length(TP.LFC.0.5.p),length(FP.LFC.0.5.pp))
+		FDR.LFC.perm.nullr[i, coeff] <- length(FP.LFC.0.5.pr)/sum(length(TP.LFC.0.5.p),length(FP.LFC.0.5.pr))
 		
-		SEN.LFC.0.5.p[i, coeff] <- length(TP.LFC.0.5.p)/(length(TP.LFC.0.5.p) + length(FN.LFC.0.5.p))
+		SEN.LFC.perm[i, coeff] <- length(TP.LFC.0.5.p)/(length(TP.LFC.0.5.p) + length(FN.LFC.0.5.p))
 		
-		SPE.LFC.0.5.pp[i, coeff] <- length(TN.LFC.0.5.pp)/(length(TN.LFC.0.5.pp) + length(FP.LFC.0.5.pp))
-		SPE.LFC.0.5.pr[i, coeff] <- length(TN.LFC.0.5.pr)/(length(TN.LFC.0.5.pr) + length(FP.LFC.0.5.pr))
+		SPE.LFC.perm.nullp[i, coeff] <- length(TN.LFC.0.5.pp)/(length(TN.LFC.0.5.pp) + length(FP.LFC.0.5.pp))
+		SPE.LFC.perm.nullr[i, coeff] <- length(TN.LFC.0.5.pr)/(length(TN.LFC.0.5.pr) + length(FP.LFC.0.5.pr))
 		
 		
-		PPV.LFC.1.pp[i, coeff] <- length(TP.LFC.1.p)/sum(length(TP.LFC.1.p),length(FP.LFC.1.pp)) #NaN
-		PPV.LFC.1.pr[i, coeff] <- length(TP.LFC.1.p)/sum(length(TP.LFC.1.p),length(FP.LFC.1.pr)) #NaN
+		#PPV.LFC.1.pp[i, coeff] <- length(TP.LFC.1.p)/sum(length(TP.LFC.1.p),length(FP.LFC.1.pp)) #NaN
+		#PPV.LFC.1.pr[i, coeff] <- length(TP.LFC.1.p)/sum(length(TP.LFC.1.p),length(FP.LFC.1.pr)) #NaN
 		
-		FDR.LFC.1.pp[i, coeff] <- length(FP.LFC.1.pp)/sum(length(TP.LFC.1.p),length(FP.LFC.1.pp)) #NaN
-		FDR.LFC.1.pr[i, coeff] <- length(FP.LFC.1.pr)/sum(length(TP.LFC.1.p),length(FP.LFC.1.pr)) #NaN
+		#FDR.LFC.1.pp[i, coeff] <- length(FP.LFC.1.pp)/sum(length(TP.LFC.1.p),length(FP.LFC.1.pp)) #NaN
+		#FDR.LFC.1.pr[i, coeff] <- length(FP.LFC.1.pr)/sum(length(TP.LFC.1.p),length(FP.LFC.1.pr)) #NaN
 		
-		SEN.LFC.1.p[i, coeff] <- length(TP.LFC.1.p)/(length(TP.LFC.1.p) + length(FN.LFC.1.p)) #0
+		#SEN.LFC.1.p[i, coeff] <- length(TP.LFC.1.p)/(length(TP.LFC.1.p) + length(FN.LFC.1.p)) #0
 		
-		SPE.LFC.1.pp[i, coeff] <- length(TN.LFC.1.pp)/(length(TN.LFC.1.pp) + length(FP.LFC.1.pp)) #NaN
-		SPE.LFC.1.pr[i, coeff] <- length(TN.LFC.1.pr)/(length(TN.LFC.1.pr) + length(FP.LFC.1.pr)) #1
+		#SPE.LFC.1.pp[i, coeff] <- length(TN.LFC.1.pp)/(length(TN.LFC.1.pp) + length(FP.LFC.1.pp)) #NaN
+		#SPE.LFC.1.pr[i, coeff] <- length(TN.LFC.1.pr)/(length(TN.LFC.1.pr) + length(FP.LFC.1.pr)) #1
 
 
 		} # end coeff loop
 	} # end randomization loop
-	return(list(PPV.r, FDR.r, SEN.r, SPE.r, PPV.pr,  PPV.pp, FDR.pr, FDR.pp, SEN.p, SPE.pr, SPE.pp, PPV.LFC.0.5.r, FDR.LFC.0.5.r, SPE.LFC.0.5.r, SEN.LFC.0.5.r, PPV.LFC.1.r, FDR.LFC.1.r, SPE.LFC.1.r, SEN.LFC.1.r, PPV.LFC.0.5.pp, PPV.LFC.0.5.pr, FDR.LFC.0.5.pp, FDR.LFC.0.5.pr, SEN.LFC.0.5.p, SPE.LFC.0.5.pp, SPE.LFC.0.5.pr, PPV.LFC.1.pp, PPV.LFC.1.pr, FDR.LFC.1.pp, FDR.LFC.1.pr, SEN.LFC.1.p, SPE.LFC.1.pp, SPE.LFC.1.pr))
+	return(list(PPV.rand = PPV.rand, FDR.rand = FDR.rand, SEN.rand = SEN.rand, SPE.rand = SPE.rand, PPV.perm.nullr = PPV.perm.nullr,  PPV.perm.nullp = PPV.perm.nullp, FDR.perm.nullr = FDR.perm.nullr, FDR.perm.nullp = FDR.perm.nullp, SEN.perm = SEN.perm, SPE.perm.nullr = SPE.perm.nullr, SPE.perm.nullp = SPE.perm.nullp, PPV.LFC.rand = PPV.LFC.rand, FDR.LFC.rand = FDR.LFC.rand, SPE.LFC.rand = SPE.LFC.rand, SEN.LFC.rand = SEN.LFC.rand, PPV.LFC.perm.nullp = PPV.LFC.perm.nullp, PPV.LFC.perm.nullr = PPV.LFC.perm.nullr, FDR.LFC.perm.nullp = FDR.LFC.perm.nullp, FDR.LFC.perm.nullr, SEN.LFC.perm.nullp = SEN.LFC.perm.nullp, SPE.LFC.perm.nullp = SPE.LFC.perm.nullp, SPE.LFC.perm.nullr = SPE.LFC.perm.nullr)
 } #end function 
 # finished editing up to here
 # 
