@@ -13,6 +13,8 @@ ALDEx2_brca: ../ext_analysis/brca.data.aldex2_0.out.Rda
 ALDEx3_immuno: ../ext_analysis/immuno.data.aldex3.out.Rda
 
 limma_immuno: ../ext_analysis/immuno.data.limma.Rda
+limma_brca: ../ext_analysis/brca.data.limma.Rda
+
 
 
 #rules to generate the output files
@@ -37,6 +39,9 @@ limma_immuno: ../ext_analysis/immuno.data.limma.Rda
 	
 ../ext_analysis/immuno.data.limma.Rda : code/limma.R code/lim.fun.R
 	Rscript 'code/limma.R' 'code/lim.fun.R'
+	
+../ext_analysis/brca.data.limma.Rda : code/limma.R code/lim.fun.R
+	Rscript 'code/limma.R' 'code/lim.fun.R'
 
 
 clean_DESeq:
@@ -58,6 +63,12 @@ clean_ALDEx2:
 	
 clean_limma:
 	rm ../ext_analysis/immuno.data.limma.Rda
+	
+clean_limma_brca:
+	rm ../ext_analysis/brca.data.limma.Rda
+	
+
+
 	
 
 
