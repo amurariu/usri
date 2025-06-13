@@ -1,19 +1,23 @@
 #makes the file .Rda if make all is called
 #all: analysis/test2.Rda
-DESeq: ../ext_analysis/immuno.data.deseq.Rda
+DESeq_immuno: ../ext_analysis/immuno.data.deseq.Rda
+DESeq_brca: ../ext_analysis/brca.data.deseq.Rda
 
-edgeR: ../ext_analysis/immuno.data.edger.Rda
+edgeR_immuno: ../ext_analysis/immuno.data.edger.Rda
 
-ALDEx2: ../ext_analysis/immuno.data.aldex2_5.out.Rda
+ALDEx2_immuno: ../ext_analysis/immuno.data.aldex2_5.out.Rda
 
-ALDEx3: ../ext_analysis/immuno.data.aldex3.out.Rda
+ALDEx3_immuno: ../ext_analysis/immuno.data.aldex3.out.Rda
 
-limma: ../ext_analysis/immuno.data.limma.Rda
+limma_immuno: ../ext_analysis/immuno.data.limma.Rda
 
 
 #rules to generate the output files
 
 ../ext_analysis/immuno.data.deseq.Rda : code/deseq.R code/des.fun.R
+	Rscript 'code/deseq.R' 'code/des.fun.R'
+	
+../ext_analysis/brca.data.deseq.Rda : code/deseq.R code/des.fun.R
 	Rscript 'code/deseq.R' 'code/des.fun.R'
 
 ../ext_analysis/immuno.data.edger.Rda : code/edgeR.R code/edg.fun.R
@@ -31,6 +35,10 @@ limma: ../ext_analysis/immuno.data.limma.Rda
 
 clean_DESeq:
 	rm ../ext_analysis/immuno.data.deseq.Rda
+	
+clean_DESeq_brca:
+	rm ../ext_analysis/brca.data.deseq.Rda
+
 
 clean_edgeR:
 	rm ../ext_analysis/immuno.data.edger.Rda
