@@ -1,6 +1,4 @@
 lim.fun <- function(data, conditions, nloop=100){
-  conditions_p <- conditions
-  conds <- as.vector(conditions_p)
   
   thin.data.out <- list() 
   data.out.limma.r <- list() 
@@ -41,11 +39,11 @@ lim.fun <- function(data, conditions, nloop=100){
   print("done loop")
   
   #unpermuted PD1
-  designu<-model.matrix(~conds)
+  designu<-model.matrix(~conditions)
   vu<-voom(immuno.data,designu) #original conditions + original data
   fitu <- lmFit(vu,designu)
   fitu <- eBayes(fitu)
   res.lim.u <- topTable(fitu, coef = ncol(designu))
   
-  return(list(conditions=conditions_p, thin.data=thin.data.out, data.out.limma.r = data.out.limma.r, data.out.limma.p = data.out.limma.p, data.out.limma.u = res.lim.u))
+  return(list(conditions=conditions, thin.data=thin.data.out, data.out.limma.r = data.out.limma.r, data.out.limma.p = data.out.limma.p, data.out.limma.u = res.lim.u))
 }

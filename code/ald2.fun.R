@@ -8,7 +8,6 @@ ald2.fun <- function(data, conditions, nloop=100, gamma){
   #gam <- c(1e-3, 0.2, 0.5) #contains different scale values
 
   thin.data.out.aldex <- list() #change name of list here-----------
-  data.out.aldex.u <- list() 
   data.out.aldex.r <- list() 
   data.out.aldex.p <- list() 
   

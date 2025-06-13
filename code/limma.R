@@ -24,8 +24,29 @@ keep_pd1 <- filterByExpr(y_pd1)
 y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE] #had to take out y_pd1$counts
 immuno.data <- y_pd1$counts
 
+#####
+#BRCA dataset
+#####
+
+#pull the data and filter
+raw_counts<- "https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-BRCA.normal-tumor.pair.rawCount.tsv"
+con <-"https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-BRCA.conditions.tsv"
+
+brca <- read.table(file=raw_counts, header=T, row.names=1, sep='\t')
+conditions_b <- as.vector(unlist(read.table(file=con, sep='\t'))) #changed from brca.conds to conditions_b
+brca.conds <- data.frame(conditions_b) #changed from conditions to brca.conds for consistency with PD1 dataset
+
+#edgeR
+y_brca <- DGEList(counts=brca, group=factor(conditions_b))
+keep_brca <- filterByExpr(y_brca)
+y_brca <- y_brca[keep_brca,keep.lib.sizes=FALSE]
+brca.data <- y_brca$counts #filtered base dataset
+
 # immuno is the data table
 # immuno.conds is the conditions for the unpermuted data
 # N is the number of random instances
-immuno.data.limma <- lim.fun(immuno.data, conditions_p, 100)
+immuno.data.limma <- lim.fun(immuno.data, immuno.conds, 100)
 save(immuno.data.limma, file="../ext_analysis/immuno.data.limma.Rda") 
+
+brca.data.limma <- lim.fun(brca.data, brca.conds, 100)
+save(brca.data.limma, file="../ext_analysis/brca.data.limma.Rda") 
