@@ -23,7 +23,7 @@ lim.fun <- function(data, conditions, nloop=100){
     
     #randomized without FP addition PD1
     designp<-model.matrix(~condsp)
-    vp<-voom(immuno.data,designp) #check immuno.data(normal) with permuted conds
+    vp<-voom(data,designp) #check immuno.data(normal) with permuted conds
     fitp <- lmFit(vp,designp)
     fitp <- eBayes(fitp)
     data.out.limma.p[[i]] <- topTable(fitp)
@@ -40,7 +40,7 @@ lim.fun <- function(data, conditions, nloop=100){
   
   #unpermuted PD1
   designu<-model.matrix(~conditions)
-  vu<-voom(immuno.data,designu) #original conditions + original data
+  vu<-voom(data,designu) #original conditions + original data
   fitu <- lmFit(vu,designu)
   fitu <- eBayes(fitu)
   res.lim.u <- topTable(fitu, coef = ncol(designu))
