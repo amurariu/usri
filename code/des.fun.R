@@ -8,8 +8,8 @@ des.fun <- function(data, conditions, nloop=100){
   
 	#assign(paste("perf.a", "1", sep=""),5)
     #perf.a1
-	conditions_p <- conditions
-	conds <- data.frame(conditions_p)
+	#conditions_b <- conditions
+	#conds <- data.frame(conditions_p)
 	
 	thin.data.out <- list() 
 	data.out.deseq.u <- list() 
@@ -53,7 +53,7 @@ des.fun <- function(data, conditions, nloop=100){
 	
 	#unpermuted PD1
 	dds.up.deseq  <- DESeqDataSetFromMatrix(countData = data,
-									 colData = conds,
+									 colData = conditions,
 									 design = ~ conditions_p)
 	dds.up.deseq <- DESeq(dds.up.deseq, quiet=T)
 	data.out.deseq.u <- results(dds.up.deseq)
