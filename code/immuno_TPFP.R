@@ -180,7 +180,7 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=100) {
 
 		} # end coeff loop
 	} # end randomization loop
-	return(list(PPV.rand = PPV.rand, FDR.rand = FDR.rand, SEN.rand = SEN.rand, SPE.rand = SPE.rand, PPV.perm.nullr = PPV.perm.nullr,  PPV.perm.nullp = PPV.perm.nullp, FDR.perm.nullr = FDR.perm.nullr, FDR.perm.nullp = FDR.perm.nullp, SEN.perm = SEN.perm, SPE.perm.nullr = SPE.perm.nullr, SPE.perm.nullp = SPE.perm.nullp, PPV.LFC.rand = PPV.LFC.rand, FDR.LFC.rand = FDR.LFC.rand, SPE.LFC.rand = SPE.LFC.rand, SEN.LFC.rand = SEN.LFC.rand, PPV.LFC.perm.nullp = PPV.LFC.perm.nullp, PPV.LFC.perm.nullr = PPV.LFC.perm.nullr, FDR.LFC.perm.nullp = FDR.LFC.perm.nullp, FDR.LFC.perm.nullr, SEN.LFC.perm.nullp = SEN.LFC.perm.nullp, SPE.LFC.perm.nullp = SPE.LFC.perm.nullp, SPE.LFC.perm.nullr = SPE.LFC.perm.nullr)
+	return(list(TP.rand = TP.rand, FN.rand = FN.rand, FP.rand = FP.rand, TN.rand = TN.rand, PPV.rand = PPV.rand, FDR.rand = FDR.rand, SEN.rand = SEN.rand, SPE.rand = SPE.rand, PPV.perm.nullr = PPV.perm.nullr,  PPV.perm.nullp = PPV.perm.nullp, FDR.perm.nullr = FDR.perm.nullr, FDR.perm.nullp = FDR.perm.nullp, SEN.perm = SEN.perm, SPE.perm.nullr = SPE.perm.nullr, SPE.perm.nullp = SPE.perm.nullp, PPV.LFC.rand = PPV.LFC.rand, FDR.LFC.rand = FDR.LFC.rand, SPE.LFC.rand = SPE.LFC.rand, SEN.LFC.rand = SEN.LFC.rand, PPV.LFC.perm.nullp = PPV.LFC.perm.nullp, PPV.LFC.perm.nullr = PPV.LFC.perm.nullr, FDR.LFC.perm.nullp = FDR.LFC.perm.nullp, FDR.LFC.perm.nullr, SEN.LFC.perm = SEN.LFC.perm, SPE.LFC.perm.nullp = SPE.LFC.perm.nullp, SPE.LFC.perm.nullr = SPE.LFC.perm.nullr))
 } #end function 
 # finished editing up to here
 # 
