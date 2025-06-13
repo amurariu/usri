@@ -51,10 +51,10 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=100) {
 	SEN.LFC.0.5.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	SPE.LFC.0.5.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	
-	PPV.LFC.1.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	FDR.LFC.1.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	SEN.LFC.1.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	SPE.LFC.1.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	#PPV.LFC.1.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	#FDR.LFC.1.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	#SEN.LFC.1.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	#SPE.LFC.1.r <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	
 	PPV.LFC.0.5.pp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	PPV.LFC.0.5.pr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
@@ -67,16 +67,16 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=100) {
 	SPE.LFC.0.5.pp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	SPE.LFC.0.5.pr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	
-	PPV.LFC.1.pp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	PPV.LFC.1.pr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	#PPV.LFC.1.pp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	#PPV.LFC.1.pr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	
-	FDR.LFC.1.pp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	FDR.LFC.1.pr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	#FDR.LFC.1.pp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	#FDR.LFC.1.pr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	
-	SEN.LFC.1.p <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	#SEN.LFC.1.p <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	
-	SPE.LFC.1.pp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	SPE.LFC.1.pr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	#SPE.LFC.1.pp <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	#SPE.LFC.1.pr <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	
 	for(coeff in 1:6){
 			for(i in 1:nloop){ 
