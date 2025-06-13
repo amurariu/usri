@@ -5,8 +5,6 @@
 edg.fun <- function(data, conditions, nloop=100){
   #assign(paste("perf.a", "1", sep=""),5)
   #perf.a1
-  conditions_p <- conditions
-  conds <- data.frame(conditions_p)
   
   thin.data.out.edger <- list() #change name of list here-----------
   data.out.edgeR.u <- list() 
@@ -38,7 +36,7 @@ edg.fun <- function(data, conditions, nloop=100){
     #randomized without FP addition PD1
     fit_rp <- glmQLFit(data,design_p) #uses original data (ie. no TP added)
     qlf_rp <- glmQLFTest(fit_rp,coef=2)
-    edg.rp<-topTags(qlf_rp, n=nrow(immuno.data), adjust.method = "BH", sort.by = "none", p.value = 1)
+    edg.rp<-topTags(qlf_rp, n=nrow(data), adjust.method = "BH", sort.by = "none", p.value = 1)
     
     data.out.edgeR.r[[i]] <- as.data.frame(edg.rp[[1]])
     
@@ -53,11 +51,11 @@ edg.fun <- function(data, conditions, nloop=100){
   
   
   #unpermuted PD1
-  group_up<-factor(conditions_p)
+  group_up<-factor(conditions)
   design_up <- model.matrix(~group_up)
   fit_up <- glmQLFit(data,design_up)
   qlf_up <- glmQLFTest(fit_up,coef=2)
-  edg.up<-topTags(qlf_up, n=nrow(immuno.data), adjust.method = "BH", sort.by = "none", p.value = 1) 
+  edg.up<-topTags(qlf_up, n=nrow(data), adjust.method = "BH", sort.by = "none", p.value = 1) 
   
   data.out.edgeR.u <- as.data.frame(edg.up[[1]])
   
