@@ -44,8 +44,8 @@ brca.data <- y_brca$counts #filtered base dataset
 
 
 #saving file
-immuno.data.edgeR <-edg.fun(immuno.data, conditions_p,100)
-save(immuno.data.edgeR, file="../ext_analysis/immuno.data.edger.Rda")
+#immuno.data.edgeR <-edg.fun(immuno.data, conditions_p,100)
+#save(immuno.data.edgeR, file="../ext_analysis/immuno.data.edger.Rda")
 
 brca.data.edgeR <- edg.fun(brca.data, brca.conds, 100)
 save(brca.data.edgeR, file="../ext_analysis/brca.data.edger.Rda")
