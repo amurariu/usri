@@ -51,7 +51,7 @@ edg.fun <- function(data, conditions, nloop=100){
   group_u<-factor(conditions)
   design_u <- model.matrix(~group_u)
   fit_u <- glmQLFit(data,design_u)
-  qlf_u <- glmQLFTest(fit_up,coef=2)
+  qlf_u <- glmQLFTest(fit_u,coef=2)
   edg.u<-topTags(qlf_u, n=nrow(data), adjust.method = "BH", sort.by = "none", p.value = 1) 
   
   data.out.edgeR.u <- as.data.frame(edg.up[[1]])
