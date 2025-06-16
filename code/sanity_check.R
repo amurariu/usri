@@ -7,6 +7,9 @@ load("/Users/andreeamurariu/Documents/github/ext_analysis/immuno.data.aldex2_2.o
 load("/Users/andreeamurariu/Documents/github/ext_analysis/immuno.data.aldex2_5.out.Rda")
 load ("/Users/andreeamurariu/Documents/github/ext_analysis/immuno.data.limma.Rda")
 
+load("/Users/andreeamurariu/Documents/github/ext_analysis/brca.data.edger.Rda")
+load ("/Users/andreeamurariu/Documents/github/ext_analysis/brca.data.limma.Rda")
+
 # "immuno.data_0.aldex2" "immuno.data_2.aldex2"
 # "immuno.data_5.aldex2" "immuno.data.DESeq"    
 # "immuno.data.edgeR"  

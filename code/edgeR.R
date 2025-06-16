@@ -7,9 +7,9 @@ source('code/edg.fun.R')
 ##PD1 immuno dataset
 
 #loading and filtering of data
-raw_counts <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv'
-meta <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm_metadata.txt'
-immuno<-read.table(file=raw_counts, header = T, skip=35, sep='\t', row.names = 1)
+raw_counts_immuno <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv'
+meta_immuno <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm_metadata.txt'
+immuno<-read.table(file=raw_counts_immuno, header = T, skip=35, sep='\t', row.names = 1)
 m <- read.table(file=meta, header=F, row.names=1, sep='\t')
 #establishing conditions for PD1
 conditions_p <- rep("Pre", 109)
@@ -29,17 +29,22 @@ immuno.data <- y_pd1$counts #filtered base dataset
 #####
 
 #pull the data and filter
-raw_counts<- "https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-BRCA.normal-tumor.pair.rawCount.tsv"
-con <-"https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-BRCA.conditions.tsv"
+raw_counts_brca <- "https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-BRCA.normal-tumor.pair.rawCount.tsv"
+conds_brca <-"https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-BRCA.conditions.tsv"
 
-brca <- read.table(file=raw_counts, header=T, row.names=1, sep='\t')
-brca.conds <- as.vector(unlist(read.table(file=con, sep='\t'))) #changed from brca.conds to conditions_b
+brca <- read.table(file=raw_counts_brca, header=T, row.names=1, sep='\t')
+brca.conds <- as.vector(unlist(read.table(file=conds_brca, sep='\t'))) #changed from brca.conds to conditions_b
 
 #edgeR
 y_brca <- DGEList(counts=brca, group=factor(brca.conds))
 keep_brca <- filterByExpr(y_brca)
 y_brca <- y_brca[keep_brca,keep.lib.sizes=FALSE]
 brca.data <- y_brca$counts #filtered base dataset
+
+#####
+#KIRC dataset
+#####
+
 
 
 #saving file
