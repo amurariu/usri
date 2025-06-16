@@ -36,7 +36,7 @@ brca <- read.table(file=raw_counts, header=T, row.names=1, sep='\t')
 brca.conds <- as.vector(unlist(read.table(file=con, sep='\t'))) #changed from brca.conds to conditions_b
 
 #edgeR
-y_brca <- DGEList(counts=brca, group=factor(conditions_b))
+y_brca <- DGEList(counts=brca, group=factor(brca.conds))
 keep_brca <- filterByExpr(y_brca)
 y_brca <- y_brca[keep_brca,keep.lib.sizes=FALSE]
 brca.data <- y_brca$counts #filtered base dataset
