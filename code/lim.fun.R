@@ -1,5 +1,8 @@
 lim.fun <- function(data, conditions, nloop=100){
   
+  condition <- conditions
+  conds <- as.vector(condition)
+  
   thin.data.out <- list() 
   data.out.limma.r <- list() 
   data.out.limma.p <- list() 
@@ -38,8 +41,8 @@ lim.fun <- function(data, conditions, nloop=100){
   }
   print("done loop")
   
-  #unpermuted PD1
-  designu<-model.matrix(~conditions)
+  #unpermuted PD1 ## add print statement to see what step is failing
+  designu<-model.matrix(~conds)
   vu<-voom(data,designu) #original conditions + original data
   fitu <- lmFit(vu,designu)
   fitu <- eBayes(fitu)
