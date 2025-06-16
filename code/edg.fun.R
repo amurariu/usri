@@ -54,7 +54,7 @@ edg.fun <- function(data, conditions, nloop=100){
   qlf_u <- glmQLFTest(fit_u,coef=2)
   edg.u<-topTags(qlf_u, n=nrow(data), adjust.method = "BH", sort.by = "none", p.value = 1) 
   
-  data.out.edgeR.u <- as.data.frame(edg.up[[1]])
+  data.out.edgeR.u <- as.data.frame(edg.u[[1]])
   
   return(list(conditions=conditions, thin.data=thin.data.out.edger, u.data=data.out.edgeR.u, r.data=data.out.edgeR.r, t.data=data.out.edgeR.t))
 }
