@@ -10,7 +10,7 @@ source('code/edg.fun.R')
 raw_counts_immuno <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv'
 meta_immuno <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm_metadata.txt'
 immuno<-read.table(file=raw_counts_immuno, header = T, skip=35, sep='\t', row.names = 1)
-m <- read.table(file=meta, header=F, row.names=1, sep='\t')
+m <- read.table(file=meta_immuno, header=F, row.names=1, sep='\t')
 #establishing conditions for PD1
 conditions_p <- rep("Pre", 109)
 conditions_p[grep("_On",m)] <- "On" #deleted immuno.conds line because of error "cannot xtfrm data frames"
