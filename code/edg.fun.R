@@ -59,5 +59,5 @@ edg.fun <- function(data, conditions, nloop=100){
   
   data.out.edgeR.u <- as.data.frame(edg.up[[1]])
   
-  return(list(conditions=conditions_p, thin.data=thin.data.out.edger, u.data=data.out.edgeR.u, r.data=data.out.edgeR.r, p.data=data.out.edgeR.p))
+  return(list(conditions=conditions, thin.data=thin.data.out.edger, u.data=data.out.edgeR.u, r.data=data.out.edgeR.r, p.data=data.out.edgeR.p))
 }
