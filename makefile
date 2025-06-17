@@ -2,18 +2,27 @@
 #all: analysis/test2.Rda
 DESeq_immuno: ../ext_analysis/immuno.data.deseq.Rda
 DESeq_brca: ../ext_analysis/brca.data.deseq.Rda
+DESeq_kirc: ../ext_analysis/kirc.data.deseq.Rda
+DESeq_lihc: ../ext_analysis/lihc.data.deseq.Rda
 
 edgeR_immuno: ../ext_analysis/immuno.data.edger.Rda
 edgeR_brca: ../ext_analysis/brca.data.edger.Rda
+edgeR_kirc: ../ext_analysis/kirc.data.edger.Rda
+edgeR_lihc: ../ext_analysis/lihc.data.edger.Rda
 
 ALDEx2_immuno: ../ext_analysis/immuno.data.aldex2_0.out.Rda
 ALDEx2_brca: ../ext_analysis/brca.data.aldex2_0.out.Rda
+ALDEx2_kirc: ../ext_analysis/kirc.data.aldex2_0.out.Rda
+ALDEx2_lihc: ../ext_analysis/lihc.data.aldex2_0.out.Rda
 
 
-ALDEx3_immuno: ../ext_analysis/immuno.data.aldex3.out.Rda
+#ALDEx3_immuno: ../ext_analysis/immuno.data.aldex3.out.Rda
 
 limma_immuno: ../ext_analysis/immuno.data.limma.Rda
 limma_brca: ../ext_analysis/brca.data.limma.Rda
+limma_kirc: ../ext_analysis/kirc.data.limma.Rda
+limma_lihc: ../ext_analysis/lihc.data.limma.Rda
+
 
 
 
