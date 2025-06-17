@@ -34,6 +34,9 @@ limma_brca: ../ext_analysis/brca.data.limma.Rda
 ../ext_analysis/immuno.data.aldex2_5.out.Rda : code/aldex2_0.R code/ald2.fun.R
 	Rscript 'code/aldex2_0.R' 'code/ald2.fun.R'
 	
+../ext_analysis/brca.data.aldex2_0.out.Rda : code/aldex2_0.R code/ald2.fun.R
+	Rscript 'code/aldex2_0.R' 'code/ald2.fun.R'
+	
 ../ext_analysis/immuno.data.aldex3.out.Rda : code/aldex3_0.R code/ald3.fun.R
 	Rscript 'code/aldex3_0.R' 'code/ald3.fun.R'
 	
