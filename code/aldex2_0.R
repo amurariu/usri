@@ -22,16 +22,16 @@ y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
 
 #save file - gamma=1e-3
-#immuno.data_0.aldex2 <- ald2.fun(data=immuno.data, conditions=immuno.conds, nloop=100, gamma=1e-3)
-#save(immuno.data_0.aldex2, file="../ext_analysis/immuno.data.aldex2_0.out.Rda")
+immuno.data_0.aldex2 <- ald2.fun(data=immuno.data, conditions=immuno.conds, nloop=100, gamma=1e-3)
+save(immuno.data_0.aldex2, file="../ext_analysis/immuno.data.aldex2_0.out.Rda")
 
 #save file - gamma=0.2
-#immuno.data_2.aldex2 <- ald2.fun(data=immuno.data, conditions=immuno.conds, nloop=100, gamma = 0.2)
-#save(immuno.data_2.aldex2, file="../ext_analysis/immuno.data.aldex2_2.out.Rda")
+immuno.data_2.aldex2 <- ald2.fun(data=immuno.data, conditions=immuno.conds, nloop=100, gamma = 0.2)
+save(immuno.data_2.aldex2, file="../ext_analysis/immuno.data.aldex2_2.out.Rda")
 
 #save file - gamma=0.5
-#immuno.data_5.aldex2 <- ald2.fun(data=immuno.data, conditions=immuno.conds, nloop=100, gamma = 0.5)
-#save(immuno.data_5.aldex2, file="../ext_analysis/immuno.data.aldex2_5.out.Rda")
+immuno.data_5.aldex2 <- ald2.fun(data=immuno.data, conditions=immuno.conds, nloop=100, gamma = 0.5)
+save(immuno.data_5.aldex2, file="../ext_analysis/immuno.data.aldex2_5.out.Rda")
 
 #####
 #BRCA dataset
@@ -42,8 +42,8 @@ raw_counts_brca<- "https://raw.githubusercontent.com/amurariu/usri/main/data/TCG
 conds_brca <-"https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-BRCA.conditions.tsv"
 
 brca <- read.table(file=raw_counts_brca, header=T, row.names=1, sep='\t')
-conditions_b <- as.vector(unlist(read.table(file=conds_brca, sep='\t'))) #changed from brca.conds to conditions_b
-brca.conds <- data.frame(conditions_b) #changed from conditions to brca.conds for consistency with PD1 dataset
+conditions_b <- as.vector(unlist(read.table(file=conds_brca, sep='\t')))
+brca.conds <- data.frame(conditions_b) 
 
 #edgeR
 y_brca <- DGEList(counts=brca, group=factor(conditions_b))
@@ -71,7 +71,9 @@ raw_counts_kirc <- "https://raw.githubusercontent.com/amurariu/usri/main/data/TC
 conds_kirc <-"https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-KIRC.conditions.tsv"
 
 kirc <- read.table(file=raw_counts_kirc, header=T, row.names=1, sep='\t')
-kirc.conds <- as.vector(unlist(read.table(file=conds_kirc, sep='\t'))) 
+conditions_k <- as.vector(unlist(read.table(file=conds_kirc, sep='\t'))) 
+kirc.conds <- data.frame(conditions_k) #changed from conditions to brca.conds for consistency with PD1 dataset
+
 
 y_kirc <- DGEList(counts=kirc, group=factor(kirc.conds))
 keep_kirc <- filterByExpr(y_kirc)
@@ -99,7 +101,9 @@ raw_counts_lihc <- "https://raw.githubusercontent.com/amurariu/usri/main/data/TC
 conds_lihc <-"https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-LIHC.conditions.tsv"
 
 lihc <- read.table(file=raw_counts_lihc, header=T, row.names=1, sep='\t')
-lihc.conds <- as.vector(unlist(read.table(file=conds_lihc, sep='\t'))) 
+conditions_li <- as.vector(unlist(read.table(file=conds_lihc, sep='\t'))) 
+lihc.conds <- data.frame(conditions_li) 
+
 
 y_lihc <- DGEList(counts=lihc, group=factor(lihc.conds))
 keep_lihc <- filterByExpr(y_lihc)
@@ -117,3 +121,88 @@ save(lihc.data_2.aldex2, file="../ext_analysis/lihc.data.aldex2_2.out.Rda")
 #save file - gamma=0.5
 lihc.data_5.aldex2 <- ald2.fun(data=lihc.data, conditions=lihc.conds, nloop=100, gamma = 0.5)
 save(lihc.data_5.aldex2, file="../ext_analysis/lihc.data.aldex2_5.out.Rda")
+
+
+#####
+#LUAD dataset
+#####
+
+raw_counts_luad <- "https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-LUAD.normal-tumor.pair.rawCount.tsv"
+conds_luad <-"https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-LUAD.conditions.tsv"
+luad <- read.table(file=raw_counts_luad, header=T, row.names=1, sep='\t')
+conditions_lu <- as.vector(unlist(read.table(file=conds_luad, sep='\t'))) 
+luad.conds <- data.frame(conditions_lu) 
+
+y_luad <- DGEList(counts=luad, group=factor(luad.conds))
+keep_luad <- filterByExpr(y_luad)
+y_luad <- y_luad[keep_luad,keep.lib.sizes=FALSE]
+luad.data <- y_luad$counts #filtered base dataset
+
+#save file - gamma=1e-3
+luad.data_0.aldex2 <- ald2.fun(data=luad.data, conditions=luad.conds, nloop=100, gamma=1e-3)
+save(luad.data_0.aldex2, file="../ext_analysis/luad.data.aldex2_0.out.Rda")
+
+#save file - gamma=0.2
+luad.data_2.aldex2 <- ald2.fun(data=luad.data, conditions=luad.conds, nloop=100, gamma = 0.2)
+save(luad.data_2.aldex2, file="../ext_analysis/luad.data.aldex2_2.out.Rda")
+
+#save file - gamma=0.5
+luad.data_5.aldex2 <- ald2.fun(data=luad.data, conditions=luad.conds, nloop=100, gamma = 0.5)
+save(luad.data_5.aldex2, file="../ext_analysis/luad.data.aldex2_5.out.Rda")
+
+#####
+#PRAD dataset
+#####
+
+raw_counts_prad <- "https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-PRAD.normal-tumor.pair.rawCount.tsv"
+conds_prad <-"https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-PRAD.conditions.tsv"
+prad <- read.table(file=raw_counts_prad, header=T, row.names=1, sep='\t')
+conditions_pr <- as.vector(unlist(read.table(file=conds_prad, sep='\t')))
+prad.conds <- data.frame(conditions_pr) 
+
+y_prad <- DGEList(counts=prad, group=factor(prad.conds))
+keep_prad <- filterByExpr(y_prad)
+y_prad <- y_prad[keep_prad,keep.lib.sizes=FALSE]
+prad.data <- y_prad$counts #filtered base dataset
+
+#save file - gamma=1e-3
+prad.data_0.aldex2 <- ald2.fun(data=prad.data, conditions=prad.conds, nloop=100, gamma=1e-3)
+save(prad.data_0.aldex2, file="../ext_analysis/prad.data.aldex2_0.out.Rda")
+
+#save file - gamma=0.2
+prad.data_2.aldex2 <- ald2.fun(data=prad.data, conditions=prad.conds, nloop=100, gamma = 0.2)
+save(prad.data_2.aldex2, file="../ext_analysis/prad.data.aldex2_2.out.Rda")
+
+#save file - gamma=0.5
+prad.data_5.aldex2 <- ald2.fun(data=prad.data, conditions=prad.conds, nloop=100, gamma = 0.5)
+save(prad.data_5.aldex2, file="../ext_analysis/prad.data.aldex2_5.out.Rda")
+
+#####
+#THCA dataset
+#####
+
+raw_counts_thca <- "https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-THCA.normal-tumor.pair.rawCount.tsv"
+conds_thca <-"https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-THCA.conditions.tsv"
+thca <- read.table(file=raw_counts_thca, header=T, row.names=1, sep='\t')
+conditions_t <- as.vector(unlist(read.table(file=conds_thca, sep='\t')))
+thca.conds <- data.frame(conditions_t) 
+
+y_thca <- DGEList(counts=thca, group=factor(thca.conds))
+keep_thca <- filterByExpr(y_thca)
+y_thca <- y_thca[keep_thca,keep.lib.sizes=FALSE]
+thca.data <- y_thca$counts #filtered base dataset
+
+#save file - gamma=1e-3
+thca.data_0.aldex2 <- ald2.fun(data=thca.data, conditions=thca.conds, nloop=100, gamma=1e-3)
+save(thca.data_0.aldex2, file="../ext_analysis/thca.data.aldex2_0.out.Rda")
+
+#save file - gamma=0.2
+thca.data_2.aldex2 <- ald2.fun(data=thca.data, conditions=thca.conds, nloop=100, gamma = 0.2)
+save(thca.data_2.aldex2, file="../ext_analysis/thca.data.aldex2_2.out.Rda")
+
+#save file - gamma=0.5
+thca.data_5.aldex2 <- ald2.fun(data=thca.data, conditions=thca.conds, nloop=100, gamma = 0.5)
+save(thca.data_5.aldex2, file="../ext_analysis/thca.data.aldex2_5.out.Rda")
+
+
+
