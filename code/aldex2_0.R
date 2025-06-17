@@ -62,3 +62,58 @@ save(brca.data_2.aldex2, file="../ext_analysis/brca.data.aldex2_2.out.Rda")
 #save file - gamma=0.5
 brca.data_5.aldex2 <- ald2.fun(data=brca.data, conditions=brca.conds, nloop=100, gamma = 0.5)
 save(brca.data_5.aldex2, file="../ext_analysis/brca.data.aldex2_5.out.Rda")
+
+#####
+#KIRC
+#####
+
+raw_counts_kirc <- "https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-KIRC.normal-tumor.pair.rawCount.tsv"
+conds_kirc <-"https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-KIRC.conditions.tsv"
+
+kirc <- read.table(file=raw_counts_kirc, header=T, row.names=1, sep='\t')
+kirc.conds <- as.vector(unlist(read.table(file=conds_kirc, sep='\t'))) 
+
+y_kirc <- DGEList(counts=kirc, group=factor(kirc.conds))
+keep_kirc <- filterByExpr(y_kirc)
+y_kirc <- y_kirc[keep_kirc,keep.lib.sizes=FALSE]
+kirc.data <- y_kirc$counts #filtered base dataset
+
+#save file - gamma=1e-3
+kirc.data_0.aldex2 <- ald2.fun(data=kirc.data, conditions=kirc.conds, nloop=100, gamma=1e-3)
+save(kirc.data_0.aldex2, file="../ext_analysis/kirc.data.aldex2_0.out.Rda")
+
+#save file - gamma=0.2
+kirc.data_2.aldex2 <- ald2.fun(data=kirc.data, conditions=kirc.conds, nloop=100, gamma = 0.2)
+save(kirc.data_2.aldex2, file="../ext_analysis/kirc.data.aldex2_2.out.Rda")
+
+#save file - gamma=0.5
+kirc.data_5.aldex2 <- ald2.fun(data=kirc.data, conditions=kirc.conds, nloop=100, gamma = 0.5)
+save(kirc.data_5.aldex2, file="../ext_analysis/kirc.data.aldex2_5.out.Rda")
+
+
+#####
+#LIHC dataset
+#####
+
+raw_counts_lihc <- "https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-LIHC.normal-tumor.pair.rawCount.tsv"
+conds_lihc <-"https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-LIHC.conditions.tsv"
+
+lihc <- read.table(file=raw_counts_lihc, header=T, row.names=1, sep='\t')
+lihc.conds <- as.vector(unlist(read.table(file=conds_lihc, sep='\t'))) 
+
+y_lihc <- DGEList(counts=lihc, group=factor(lihc.conds))
+keep_lihc <- filterByExpr(y_lihc)
+y_lihc <- y_lihc[keep_lihc,keep.lib.sizes=FALSE]
+lihc.data <- y_lihc$counts #filtered base dataset
+
+#save file - gamma=1e-3
+lihc.data_0.aldex2 <- ald2.fun(data=lihc.data, conditions=lihc.conds, nloop=100, gamma=1e-3)
+save(lihc.data_0.aldex2, file="../ext_analysis/lihc.data.aldex2_0.out.Rda")
+
+#save file - gamma=0.2
+lihc.data_2.aldex2 <- ald2.fun(data=lihc.data, conditions=lihc.conds, nloop=100, gamma = 0.2)
+save(lihc.data_2.aldex2, file="../ext_analysis/lihc.data.aldex2_2.out.Rda")
+
+#save file - gamma=0.5
+lihc.data_5.aldex2 <- ald2.fun(data=lihc.data, conditions=lihc.conds, nloop=100, gamma = 0.5)
+save(lihc.data_5.aldex2, file="../ext_analysis/lihc.data.aldex2_5.out.Rda")

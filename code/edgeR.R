@@ -45,6 +45,32 @@ brca.data <- y_brca$counts #filtered base dataset
 #KIRC dataset
 #####
 
+raw_counts_kirc <- "https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-KIRC.normal-tumor.pair.rawCount.tsv"
+conds_kirc <-"https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-KIRC.conditions.tsv"
+
+kirc <- read.table(file=raw_counts_kirc, header=T, row.names=1, sep='\t')
+kirc.conds <- as.vector(unlist(read.table(file=conds_kirc, sep='\t'))) 
+
+#edgeR
+y_kirc <- DGEList(counts=kirc, group=factor(kirc.conds))
+keep_kirc <- filterByExpr(y_kirc)
+y_kirc <- y_kirc[keep_kirc,keep.lib.sizes=FALSE]
+kirc.data <- y_kirc$counts #filtered base dataset
+
+#####
+#LIHC dataset
+#####
+
+raw_counts_lihc <- "https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-LIHC.normal-tumor.pair.rawCount.tsv"
+conds_lihc <-"https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-LIHC.conditions.tsv"
+
+lihc <- read.table(file=raw_counts_lihc, header=T, row.names=1, sep='\t')
+lihc.conds <- as.vector(unlist(read.table(file=conds_lihc, sep='\t'))) 
+
+y_lihc <- DGEList(counts=lihc, group=factor(lihc.conds))
+keep_lihc <- filterByExpr(y_lihc)
+y_lihc <- y_lihc[keep_lihc,keep.lib.sizes=FALSE]
+lihc.data <- y_lihc$counts #filtered base dataset
 
 
 #saving file
@@ -53,3 +79,10 @@ save(immuno.data.edgeR, file="../ext_analysis/immuno.data.edger.Rda")
 
 brca.data.edgeR <- edg.fun(brca.data, brca.conds, 100)
 save(brca.data.edgeR, file="../ext_analysis/brca.data.edger.Rda")
+
+kirc.data.edgeR <- edg.fun(kirc.data, kirc.conds, 100)
+save(kirc.data.edgeR, file="../ext_analysis/kirc.data.edger.Rda")
+
+lihc.data.edgeR <- edg.fun(lihc.data, lihc.conds, 100)
+save(lihc.data.edgeR, file="../ext_analysis/lihc.data.edger.Rda")
+
