@@ -1,11 +1,8 @@
 lim.fun <- function(data, conditions, nloop=100){
   
-  condition <- conditions
-  conds <- as.vector(condition)
-  
   thin.data.out <- list() 
   data.out.limma.r <- list() 
-  data.out.limma.p <- list() 
+  data.out.limma.t <- list() 
   
   #for loop
   for (i in 1:nloop){
@@ -19,29 +16,29 @@ lim.fun <- function(data, conditions, nloop=100){
                         signal_fun = stats::rnorm, 
                         signal_params = list(mean = 0, sd = 2))
     thin.data.out[[i]] <- thin
-    condsp <- as.vector(thin$designmat)   # permuted and thinned conditions and data
-    datasp <- thin$mat
+    conds_th <- as.vector(thin$designmat)   # permuted and thinned conditions and data
+    data_th <- thin$mat
     
     #randomized without FP addition
-    designp<-model.matrix(~condsp)
-    vp<-voom(data,designp) 
-    fitp <- lmFit(vp,designp)
-    fitp <- eBayes(fitp)
-    data.out.limma.p[[i]] <- topTable(fitp)
-    
-    #randomized and FP addition 
-    designr<-model.matrix(~condsp)
-    vr<-voom(datasp,designr) #thinned data+conditions
+    designr<-model.matrix(~conds_th)
+    vr<-voom(data,designr) 
     fitr <- lmFit(vr,designr)
     fitr <- eBayes(fitr)
-    data.out.limma.r[[i]] <- topTable(fitr, coef = ncol(designr))
+    data.out.limma.r[[i]] <- topTable(fitr)
+    
+    #randomized and FP addition 
+    designt<-model.matrix(~conds_th)
+    vt<-voom(data_th,designt) #thinned data+conditions
+    fitt <- lmFit(vt,designt)
+    fitt <- eBayes(fitt)
+    data.out.limma.t[[i]] <- topTable(fitt, coef = ncol(designt))
     
   }
   print("done loop")
   
   #unpermuted PD1 
   set.seed(2025)
-  designu<-model.matrix(~conds)
+  designu<-model.matrix(~conditions)
   vu<-voom(data,designu) #original conditions + original data
   fitu <- lmFit(vu,designu)
   fitu <- eBayes(fitu)
