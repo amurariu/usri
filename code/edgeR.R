@@ -133,5 +133,3 @@ save(kirc.data.edgeR, file="../ext_analysis/kirc.data.edger.Rda")
 
 thca.data.edgeR <- edg.fun(thca.data, thca.conds, 100)
 save(thca.data.edgeR, file="../ext_analysis/thca.data.edger.Rda")
-
-

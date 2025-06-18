@@ -23,18 +23,19 @@ ald2.fun <- function(data, conditions, nloop=100, gamma){
     conds_th <- as.vector(thin$designmat)   # permuted and thinned conditions and data
     data_th <- thin$mat
     
-    #randomized without FP addition PD1
+    #randomized without FP addition 
     aldex.r <- aldex(data, conditions=conds_th, gamma = gamma) #uses original dataset but permuted conditions
     data.out.aldex.r[[i]] <- aldex.r
     
-    #randomized with FP addition PD1
+    #randomized with FP addition 
     aldex.t <- aldex(data_th, conditions=conds_th, gamma = gamma) #uses new dataset with permuted conditions
     data.out.aldex.t[[i]] <- aldex.t
   }
   
   print("done loop")
   
-  #unpermuted PD1
+  set.seed(2025)
+  #unpermuted
   aldex.u <- aldex(data, conditions=conditions, gamma = gamma)
 
   return(list(conditions=conditions, thin.data=thin.data.out.aldex, u.data=aldex.u, r.data=data.out.aldex.r, t.data=data.out.aldex.t))

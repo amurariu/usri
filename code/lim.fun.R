@@ -15,8 +15,6 @@ lim.fun <- function(data, conditions, nloop=100){
     
     #thin_2group adds rnorm noise to 5% of the transcripts, generates TPs in the dataset
     #generate thin_2group for each dataset as well as labelling for conditions and new dataset
-    
-    #PD1
     thin <- thin_2group(data, prop_null=0.95, alpha=0,
                         signal_fun = stats::rnorm, 
                         signal_params = list(mean = 0, sd = 2))
@@ -24,14 +22,14 @@ lim.fun <- function(data, conditions, nloop=100){
     condsp <- as.vector(thin$designmat)   # permuted and thinned conditions and data
     datasp <- thin$mat
     
-    #randomized without FP addition PD1
+    #randomized without FP addition
     designp<-model.matrix(~condsp)
-    vp<-voom(data,designp) #check immuno.data(normal) with permuted conds
+    vp<-voom(data,designp) 
     fitp <- lmFit(vp,designp)
     fitp <- eBayes(fitp)
     data.out.limma.p[[i]] <- topTable(fitp)
     
-    #randomized and FP addition PD1 - works!!
+    #randomized and FP addition 
     designr<-model.matrix(~condsp)
     vr<-voom(datasp,designr) #thinned data+conditions
     fitr <- lmFit(vr,designr)
@@ -41,7 +39,8 @@ lim.fun <- function(data, conditions, nloop=100){
   }
   print("done loop")
   
-  #unpermuted PD1 ## add print statement to see what step is failing
+  #unpermuted PD1 
+  set.seed(2025)
   designu<-model.matrix(~conds)
   vu<-voom(data,designu) #original conditions + original data
   fitu <- lmFit(vu,designu)

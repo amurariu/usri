@@ -23,21 +23,21 @@ edg.fun <- function(data, conditions, nloop=100){
                                signal_fun = stats::rnorm, 
                                signal_params = list(mean = 0, sd = 2))
     thin.data.out.edger[[i]] <- thin
-    conds_th <- as.vector(thin$designmat)   # permuted and thinned conditions and data
-    data_th <- thin$mat
+    conds_th <- as.vector(thin$designmat)   #thinned and randomized conditions
+    data_th <- thin$mat #thinned and randomized data
     
     #edgeR analysis
     group_th <- factor(conds_th)
     design_th <- model.matrix(~group_th) #use data randomization from seqgendiff
     
-    #randomized without FP addition PD1
+    #randomized without FP addition
     fit_r <- glmQLFit(data,design_th) #uses original data (ie. no TP added)
     qlf_r <- glmQLFTest(fit_r,coef=2)
     edg.r<-topTags(qlf_r, n=nrow(data), adjust.method = "BH", sort.by = "none", p.value = 1)
     
     data.out.edgeR.r[[i]] <- as.data.frame(edg.r[[1]])
     
-    #randomized with FP addition PD1
+    #randomized with FP addition 
     fit_t <- glmQLFit(data_th,design_th)
     qlf_t <- glmQLFTest(fit_t,coef=2)
     edg.t<-topTags(qlf_t, n=nrow(data_th), adjust.method = "BH", sort.by = "none", p.value = 1)
@@ -46,8 +46,8 @@ edg.fun <- function(data, conditions, nloop=100){
   }
   print("done loop")
   
-  
-  #unpermuted PD1
+  set.seed(2025)
+  #unpermuted 
   group_u<-factor(conditions)
   design_u <- model.matrix(~group_u)
   fit_u <- glmQLFit(data,design_u)
