@@ -4,7 +4,7 @@
 # nloops is the number of test loops
 ald2.fun <- function(data, conditions, nloop=100, gamma){
 
-  thin.data.out.aldex <- list() #change name of list here-----------
+  thin.data.out.aldex <- list() 
   data.out.aldex.r <- list() 
   data.out.aldex.t <- list() 
   
@@ -37,5 +37,5 @@ ald2.fun <- function(data, conditions, nloop=100, gamma){
   #unpermuted PD1
   aldex.u <- aldex(data, conditions=conditions, gamma = gamma)
 
-  return(list(conditions=conditions, thin.data=thin.data.out.aldex, u.data=xup.aldex, r.data=data.out.aldex.r, p.data=data.out.aldex.p))
+  return(list(conditions=conditions, thin.data=thin.data.out.aldex, u.data=aldex.u, r.data=data.out.aldex.r, t.data=data.out.aldex.t))
 }
