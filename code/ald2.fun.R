@@ -9,7 +9,7 @@ ald2.fun <- function(data, conditions, nloop=100, gamma){
 
   thin.data.out.aldex <- list() #change name of list here-----------
   data.out.aldex.r <- list() 
-  data.out.aldex.p <- list() 
+  data.out.aldex.t <- list() 
   
   #for loop
   for (i in 1:nloop){
@@ -23,22 +23,22 @@ ald2.fun <- function(data, conditions, nloop=100, gamma){
                         signal_fun = stats::rnorm, 
                         signal_params = list(mean = 0, sd = 2))
     thin.data.out.aldex[[i]] <- thin
-    condsp <- as.vector(thin$designmat)   # permuted and thinned conditions and data
-    datasp <- thin$mat
+    conds_th <- as.vector(thin$designmat)   # permuted and thinned conditions and data
+    data_th <- thin$mat
     
     #randomized without FP addition PD1
-    xrp.aldex <- aldex(data, conditions=condsp, gamma = gamma) #uses original dataset but permuted conditions
-    data.out.aldex.r[[i]] <- xrp.aldex
+    aldex.r <- aldex(data, conditions=conds_th, gamma = gamma) #uses original dataset but permuted conditions
+    data.out.aldex.r[[i]] <- aldex.r
     
     #randomized with FP addition PD1
-    xpp.aldex <- aldex(datasp, conditions=condsp, gamma = gamma) #uses new dataset with permuted conditions
-    data.out.aldex.p[[i]] <- xpp.aldex
+    aldex.t <- aldex(data_th, conditions=conds_th, gamma = gamma) #uses new dataset with permuted conditions
+    data.out.aldex.t[[i]] <- aldex.t
   }
   
   print("done loop")
   
   #unpermuted PD1
-  xup.aldex <- aldex(data, conditions=conditions, gamma = gamma)
+  aldex.u <- aldex(data, conditions=conditions, gamma = gamma)
 
   return(list(conditions=conditions, thin.data=thin.data.out.aldex, u.data=xup.aldex, r.data=data.out.aldex.r, p.data=data.out.aldex.p))
 }
