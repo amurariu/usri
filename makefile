@@ -71,13 +71,13 @@ limma_thca: ../ext_analysis/thca.data.limma.Rda
 ../ext_analysis/brca.data.aldex2_0.out.Rda : code/brca_aldex2.R code/ald2.fun.R
 	Rscript 'code/brca_aldex2.R' 'code/ald2.fun.R'
 	
-	../ext_analysis/kirc.data.aldex2_0.out.Rda : code/kirc_aldex2.R code/ald2.fun.R
+../ext_analysis/kirc.data.aldex2_0.out.Rda : code/kirc_aldex2.R code/ald2.fun.R
 	Rscript 'code/kirc_aldex2.R' 'code/ald2.fun.R'
 	
 ../ext_analysis/lihc.data.aldex2_0.out.Rda : code/lihc_aldex2.R code/ald2.fun.R
 	Rscript 'code/lihc_aldex2.R' 'code/ald2.fun.R'
 	
-	../ext_analysis/luad.data.aldex2_0.out.Rda : code/luad_aldex2.R code/ald2.fun.R
+../ext_analysis/luad.data.aldex2_0.out.Rda : code/luad_aldex2.R code/ald2.fun.R
 	Rscript 'code/luad_aldex2.R' 'code/ald2.fun.R'
 	
 ../ext_analysis/prad.data.aldex2_0.out.Rda : code/prad_aldex2.R code/ald2.fun.R
