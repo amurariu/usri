@@ -1,0 +1,34 @@
+library(ALDEx2,warn.conflicts = F) #do not load aldex2 and aldex3 at the same time
+library(seqgendiff, warn.conflicts=F)
+library(edgeR, warn.conflicts=F)
+
+source('code/ald2.fun.R')
+
+#####
+#KIRC
+#####
+
+raw_counts_kirc <- "https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-KIRC.normal-tumor.pair.rawCount.tsv"
+conds_kirc <-"https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-KIRC.conditions.tsv"
+
+kirc <- read.table(file=raw_counts_kirc, header=T, row.names=1, sep='\t')
+conditions_k <- as.vector(unlist(read.table(file=conds_kirc, sep='\t'))) 
+kirc.conds <- data.frame(conditions_k) #changed from conditions to brca.conds for consistency with PD1 dataset
+
+
+y_kirc <- DGEList(counts=kirc, group=factor(kirc.conds))
+keep_kirc <- filterByExpr(y_kirc)
+y_kirc <- y_kirc[keep_kirc,keep.lib.sizes=FALSE]
+kirc.data <- y_kirc$counts #filtered base dataset
+
+#save file - gamma=1e-3
+kirc.data_0.aldex2 <- ald2.fun(data=kirc.data, conditions=kirc.conds, nloop=100, gamma=1e-3)
+save(kirc.data_0.aldex2, file="../ext_analysis/kirc.data.aldex2_0.out.Rda")
+
+#save file - gamma=0.2
+kirc.data_2.aldex2 <- ald2.fun(data=kirc.data, conditions=kirc.conds, nloop=100, gamma = 0.2)
+save(kirc.data_2.aldex2, file="../ext_analysis/kirc.data.aldex2_2.out.Rda")
+
+#save file - gamma=0.5
+kirc.data_5.aldex2 <- ald2.fun(data=kirc.data, conditions=kirc.conds, nloop=100, gamma = 0.5)
+save(kirc.data_5.aldex2, file="../ext_analysis/kirc.data.aldex2_5.out.Rda")
