@@ -13,7 +13,7 @@ immuno <-read.table(file=raw_counts_immuno, header = T, skip=35, sep='\t', row.n
 m <- read.table(file=meta_immuno, header=F, row.names=1, sep='\t')
 #establishing conditions for PD1
 conditions_p <- rep("Pre", 109)
-conditions_p[grep("_On",m)] <- "On" #deleted immuno.conds line because of error "cannot xtfrm data frames"
+conditions_p[grep("_On",m)] <- "On"
 immuno.conds <- as.vector(conditions_p)
 
 #edgeR conditions for initial filtering
@@ -32,13 +32,13 @@ immuno.data <- y_pd1$counts #filtered base dataset
 raw_counts_brca <- "https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-BRCA.normal-tumor.pair.rawCount.tsv"
 conds_brca <-"https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-BRCA.conditions.tsv"
 brca <- read.table(file=raw_counts_brca, header=T, row.names=1, sep='\t')
-brca.conds <- as.vector(unlist(read.table(file=conds_brca, sep='\t'))) #changed from brca.conds to conditions_b
+brca.conds <- as.vector(unlist(read.table(file=conds_brca, sep='\t'))) 
 
 #edgeR
 y_brca <- DGEList(counts=brca, group=factor(brca.conds))
 keep_brca <- filterByExpr(y_brca)
 y_brca <- y_brca[keep_brca,keep.lib.sizes=FALSE]
-brca.data <- y_brca$counts #filtered base dataset
+brca.data <- y_brca$counts 
 
 #####
 #KIRC dataset
@@ -53,7 +53,7 @@ kirc.conds <- as.vector(unlist(read.table(file=conds_kirc, sep='\t')))
 y_kirc <- DGEList(counts=kirc, group=factor(kirc.conds))
 keep_kirc <- filterByExpr(y_kirc)
 y_kirc <- y_kirc[keep_kirc,keep.lib.sizes=FALSE]
-kirc.data <- y_kirc$counts #filtered base dataset
+kirc.data <- y_kirc$counts 
 
 #####
 #LIHC dataset
@@ -67,7 +67,7 @@ lihc.conds <- as.vector(unlist(read.table(file=conds_lihc, sep='\t')))
 y_lihc <- DGEList(counts=lihc, group=factor(lihc.conds))
 keep_lihc <- filterByExpr(y_lihc)
 y_lihc <- y_lihc[keep_lihc,keep.lib.sizes=FALSE]
-lihc.data <- y_lihc$counts #filtered base dataset
+lihc.data <- y_lihc$counts 
 
 #####
 #LUAD dataset
@@ -81,7 +81,7 @@ luad.conds <- as.vector(unlist(read.table(file=conds_luad, sep='\t')))
 y_luad <- DGEList(counts=luad, group=factor(luad.conds))
 keep_luad <- filterByExpr(y_luad)
 y_luad <- y_luad[keep_luad,keep.lib.sizes=FALSE]
-luad.data <- y_luad$counts #filtered base dataset
+luad.data <- y_luad$counts 
 
 #####
 #PRAD dataset
@@ -95,7 +95,7 @@ prad.conds <- as.vector(unlist(read.table(file=conds_prad, sep='\t')))
 y_prad <- DGEList(counts=prad, group=factor(prad.conds))
 keep_prad <- filterByExpr(y_prad)
 y_prad <- y_prad[keep_prad,keep.lib.sizes=FALSE]
-prad.data <- y_prad$counts #filtered base dataset
+prad.data <- y_prad$counts 
 
 #####
 #THCA dataset
@@ -109,7 +109,7 @@ thca.conds <- as.vector(unlist(read.table(file=conds_thca, sep='\t')))
 y_thca <- DGEList(counts=thca, group=factor(thca.conds))
 keep_thca <- filterByExpr(y_thca)
 y_thca <- y_thca[keep_thca,keep.lib.sizes=FALSE]
-thca.data <- y_thca$counts #filtered base dataset
+thca.data <- y_thca$counts 
 
 
 #saving file
