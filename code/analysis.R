@@ -42,9 +42,6 @@ load (paste(anal.path,"lihc.data.limma.Rda", sep=""))
 immuno.deseq.analysis <- analysis.fun(input = immuno.data.DESeq, type = "DESeq", nloop=100)
 save(immuno.deseq.analysis, file="./analysis/immuno.deseq.analysis.Rda")
 
-immuno.edgeR.analysis <- analysis.fun(input = immuno.data.edgeR, type = "edgeR", nloop=100)
-save(immuno.edgeR.analysis, file="./analysis/immuno.edgeR.analysis.Rda")
-
 ##would we prefer to do aldex wilcoxon or welch's or both?
 
 brca.deseq.analysis <- analysis.fun(input = brca.data.DESeq, type = "DESeq", nloop=100)

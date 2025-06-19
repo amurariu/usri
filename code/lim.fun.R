@@ -44,5 +44,5 @@ lim.fun <- function(data, conditions, nloop=100){
   fitu <- eBayes(fitu)
   res.lim.u <- topTable(fitu, coef = ncol(designu))
   
-  return(list(conditions=conditions, thin.data=thin.data.out, data.out.limma.r = data.out.limma.r, data.out.limma.t = data.out.limma.t, data.out.limma.u = res.lim.u))
+  return(list(conditions=conditions, thin.data=thin.data.out, r.data=data.out.limma.r, t.data=data.out.limma.t, u.data=res.lim.u))
 }
