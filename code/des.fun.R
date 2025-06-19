@@ -7,7 +7,7 @@
 # conditions: original grouping variable vector
 # nloop: number of randomisation instances for randomised data
 
-des.fun <- function(data, conditions, nloop=100){
+des.fun <- function(data, nloop=100, conditions){
 	
 	thin.data.out <- list() 
 	data.out.deseq.u <- list()

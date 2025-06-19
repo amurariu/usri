@@ -9,6 +9,9 @@ edgeR_immuno: ../ext_analysis/immuno.data.edger.Rda
 edgeR_brca: ../ext_analysis/brca.data.edger.Rda
 edgeR_kirc: ../ext_analysis/kirc.data.edger.Rda
 edgeR_lihc: ../ext_analysis/lihc.data.edger.Rda
+edgeR_luad: ../ext_analysis/luad.data.edger.Rda
+edgeR_prad: ../ext_analysis/prad.data.edger.Rda
+edgeR_thca: ../ext_analysis/thca.data.edger.Rda
 
 ALDEx2_immuno: ../ext_analysis/immuno.data.aldex2_0.out.Rda
 ALDEx2_brca: ../ext_analysis/brca.data.aldex2_0.out.Rda
@@ -33,17 +36,26 @@ limma_lihc: ../ext_analysis/lihc.data.limma.Rda
 	Rscript 'code/deseq.R' 'code/des.fun.R'
 
 ### edgeR
-../ext_analysis/immuno.data.edger.Rda : code/edgeR.R code/edg.fun.R
-	Rscript 'code/edgeR.R' 'code/edg.fun.R'
+../ext_analysis/immuno.data.edger.Rda : code/immuno_edgeR.R code/edg.fun.R
+	Rscript 'code/immuno_edgeR.R' 'code/edg.fun.R'
 	
-../ext_analysis/brca.data.edger.Rda : code/edgeR.R code/edg.fun.R
-	Rscript 'code/edgeR.R' 'code/edg.fun.R'
+../ext_analysis/brca.data.edger.Rda : code/brca_edgeR.R code/edg.fun.R
+	Rscript 'code/brca_edgeR.R' 'code/edg.fun.R'
 	
-../ext_analysis/kirc.data.edger.Rda : code/edgeR.R code/edg.fun.R
-	Rscript 'code/edgeR.R' 'code/edg.fun.R'
+../ext_analysis/kirc.data.edger.Rda : code/kirc_edgeR.R code/edg.fun.R
+	Rscript 'code/kirc_edgeR.R' 'code/edg.fun.R'
 
-../ext_analysis/lihc.data.edger.Rda : code/edgeR.R code/edg.fun.R
-	Rscript 'code/edgeR.R' 'code/edg.fun.R'
+../ext_analysis/lihc.data.edger.Rda : code/lihc_edgeR.R code/edg.fun.R
+	Rscript 'code/lihc_edgeR.R' 'code/edg.fun.R'
+	
+../ext_analysis/luad.data.edger.Rda : code/luad_edgeR.R code/edg.fun.R
+	Rscript 'code/luad_edgeR.R' 'code/edg.fun.R'
+	
+../ext_analysis/prad.data.edger.Rda : code/prad_edgeR.R code/edg.fun.R
+	Rscript 'code/prad_edgeR.R' 'code/edg.fun.R'
+
+../ext_analysis/thca.data.edger.Rda : code/thca_edgeR.R code/edg.fun.R
+	Rscript 'code/thca_edgeR.R' 'code/edg.fun.R'
 
 
 ### aldex
