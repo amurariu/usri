@@ -16,7 +16,7 @@ conditions_li <- as.vector(unlist(read.table(file=conds_lihc, sep='\t')))
 lihc.conds <- data.frame(conditions_li) 
 
 
-y_lihc <- DGEList(counts=lihc, group=factor(lihc.conds))
+y_lihc <- DGEList(counts=lihc, group=factor(conditions_li))
 keep_lihc <- filterByExpr(y_lihc)
 y_lihc <- y_lihc[keep_lihc,keep.lib.sizes=FALSE]
 lihc.data <- y_lihc$counts #filtered base dataset

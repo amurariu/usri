@@ -15,8 +15,7 @@ kirc <- read.table(file=raw_counts_kirc, header=T, row.names=1, sep='\t')
 conditions_k <- as.vector(unlist(read.table(file=conds_kirc, sep='\t'))) 
 kirc.conds <- data.frame(conditions_k) #changed from conditions to brca.conds for consistency with PD1 dataset
 
-
-y_kirc <- DGEList(counts=kirc, group=factor(kirc.conds))
+y_kirc <- DGEList(counts=kirc, group=factor(conditions_k))
 keep_kirc <- filterByExpr(y_kirc)
 y_kirc <- y_kirc[keep_kirc,keep.lib.sizes=FALSE]
 kirc.data <- y_kirc$counts #filtered base dataset
