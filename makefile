@@ -16,13 +16,29 @@ edgeR_luad: ../ext_analysis/luad.data.edger.Rda
 edgeR_prad: ../ext_analysis/prad.data.edger.Rda
 edgeR_thca: ../ext_analysis/thca.data.edger.Rda
 
-ALDEx2_immuno: ../ext_analysis/immuno.data.aldex2_0.out.Rda
-ALDEx2_brca: ../ext_analysis/brca.data.aldex2_0.out.Rda
-ALDEx2_kirc: ../ext_analysis/kirc.data.aldex2_0.out.Rda
-ALDEx2_lihc: ../ext_analysis/lihc.data.aldex2_0.out.Rda
-ALDEx2_luad: ../ext_analysis/luad.data.aldex2_0.out.Rda
-ALDEx2_prad: ../ext_analysis/prad.data.aldex2_0.out.Rda
-ALDEx2_thca: ../ext_analysis/thca.data.aldex2_0.out.Rda
+ALDEx2_0_immuno: ../ext_analysis/immuno.data.aldex2_0.out.Rda
+ALDEx2_0_brca: ../ext_analysis/brca.data.aldex2_0.out.Rda
+ALDEx2_0_kirc: ../ext_analysis/kirc.data.aldex2_0.out.Rda
+ALDEx2_0_lihc: ../ext_analysis/lihc.data.aldex2_0.out.Rda
+ALDEx2_0_luad: ../ext_analysis/luad.data.aldex2_0.out.Rda
+ALDEx2_0_prad: ../ext_analysis/prad.data.aldex2_0.out.Rda
+ALDEx2_0_thca: ../ext_analysis/thca.data.aldex2_0.out.Rda
+
+ALDEx2_2_immuno: ../ext_analysis/immuno.data.aldex2_2.out.Rda
+ALDEx2_2_brca: ../ext_analysis/brca.data.aldex2_2.out.Rda
+ALDEx2_2_kirc: ../ext_analysis/kirc.data.aldex2_2.out.Rda
+ALDEx2_2_lihc: ../ext_analysis/lihc.data.aldex2_2.out.Rda
+ALDEx2_2_luad: ../ext_analysis/luad.data.aldex2_2.out.Rda
+ALDEx2_2_prad: ../ext_analysis/prad.data.aldex2_2.out.Rda
+ALDEx2_2_thca: ../ext_analysis/thca.data.aldex2_2.out.Rda
+
+ALDEx2_5_immuno: ../ext_analysis/immuno.data.aldex2_5.out.Rda
+ALDEx2_5_brca: ../ext_analysis/brca.data.aldex2_5.out.Rda
+ALDEx2_5_kirc: ../ext_analysis/kirc.data.aldex2_5.out.Rda
+ALDEx2_5_lihc: ../ext_analysis/lihc.data.aldex2_5.out.Rda
+ALDEx2_5_luad: ../ext_analysis/luad.data.aldex2_5.out.Rda
+ALDEx2_5_prad: ../ext_analysis/prad.data.aldex2_5.out.Rda
+ALDEx2_5_thca: ../ext_analysis/thca.data.aldex2_5.out.Rda
 
 limma_immuno: ../ext_analysis/immuno.data.limma.Rda
 limma_brca: ../ext_analysis/brca.data.limma.Rda
@@ -80,27 +96,71 @@ limma_thca: ../ext_analysis/thca.data.limma.Rda
 	Rscript 'code/thca_edgeR.R' 'code/edg.fun.R'
 
 
-### aldex2
-../ext_analysis/immuno.data.aldex2_0.out.Rda : code/immuno_aldex2.R code/ald2.fun.R
-	Rscript 'code/immuno_aldex2.R' 'code/ald2.fun.R'
+### aldex2_0
+../ext_analysis/immuno.data.aldex2_0.out.Rda : code/immuno_aldex2_0.R code/ald2.fun.R
+	Rscript 'code/immuno_aldex2_0.R' 'code/ald2.fun.R'
 	
-../ext_analysis/brca.data.aldex2_0.out.Rda : code/brca_aldex2.R code/ald2.fun.R
-	Rscript 'code/brca_aldex2.R' 'code/ald2.fun.R'
+../ext_analysis/brca.data.aldex2_0.out.Rda : code/brca_aldex2_0.R code/ald2.fun.R
+	Rscript 'code/brca_aldex2_0.R' 'code/ald2.fun.R'
 	
-../ext_analysis/kirc.data.aldex2_0.out.Rda : code/kirc_aldex2.R code/ald2.fun.R
-	Rscript 'code/kirc_aldex2.R' 'code/ald2.fun.R'
+../ext_analysis/kirc.data.aldex2_0.out.Rda : code/kirc_aldex2_0.R code/ald2.fun.R
+	Rscript 'code/kirc_aldex2_0.R' 'code/ald2.fun.R'
 	
-../ext_analysis/lihc.data.aldex2_0.out.Rda : code/lihc_aldex2.R code/ald2.fun.R
-	Rscript 'code/lihc_aldex2.R' 'code/ald2.fun.R'
+../ext_analysis/lihc.data.aldex2_0.out.Rda : code/lihc_aldex2_0.R code/ald2.fun.R
+	Rscript 'code/lihc_aldex2_0.R' 'code/ald2.fun.R'
 	
-../ext_analysis/luad.data.aldex2_0.out.Rda : code/luad_aldex2.R code/ald2.fun.R
-	Rscript 'code/luad_aldex2.R' 'code/ald2.fun.R'
+../ext_analysis/luad.data.aldex2_0.out.Rda : code/luad_aldex2_0.R code/ald2.fun.R
+	Rscript 'code/luad_aldex2_0.R' 'code/ald2.fun.R'
 	
-../ext_analysis/prad.data.aldex2_0.out.Rda : code/prad_aldex2.R code/ald2.fun.R
-	Rscript 'code/prad_aldex2.R' 'code/ald2.fun.R'
+../ext_analysis/prad.data.aldex2_0.out.Rda : code/prad_aldex2_0.R code/ald2.fun.R
+	Rscript 'code/prad_aldex2_0.R' 'code/ald2.fun.R'
 	
-../ext_analysis/thca.data.aldex2_0.out.Rda : code/thca_aldex2.R code/ald2.fun.R
-	Rscript 'code/thca_aldex2.R' 'code/ald2.fun.R'
+../ext_analysis/thca.data.aldex2_0.out.Rda : code/thca_aldex2_0.R code/ald2.fun.R
+	Rscript 'code/thca_aldex2_0.R' 'code/ald2.fun.R'
+	
+### aldex2_2
+../ext_analysis/immuno.data.aldex2_2.out.Rda : code/immuno_aldex2_2.R code/ald2.fun.R
+	Rscript 'code/immuno_aldex2_2.R' 'code/ald2.fun.R'
+	
+../ext_analysis/brca.data.aldex2_2.out.Rda : code/brca_aldex2_2.R code/ald2.fun.R
+	Rscript 'code/brca_aldex2_2.R' 'code/ald2.fun.R'
+	
+../ext_analysis/kirc.data.aldex2_2.out.Rda : code/kirc_aldex2_2.R code/ald2.fun.R
+	Rscript 'code/kirc_aldex2_2.R' 'code/ald2.fun.R'
+	
+../ext_analysis/lihc.data.aldex2_2.out.Rda : code/lihc_aldex2_2.R code/ald2.fun.R
+	Rscript 'code/lihc_aldex2_2.R' 'code/ald2.fun.R'
+	
+../ext_analysis/luad.data.aldex2_2.out.Rda : code/luad_aldex2_2.R code/ald2.fun.R
+	Rscript 'code/luad_aldex2_2.R' 'code/ald2.fun.R'
+	
+../ext_analysis/prad.data.aldex2_2.out.Rda : code/prad_aldex2_2.R code/ald2.fun.R
+	Rscript 'code/prad_aldex2_2.R' 'code/ald2.fun.R'
+	
+../ext_analysis/thca.data.aldex2_2.out.Rda : code/thca_aldex2_2.R code/ald2.fun.R
+	Rscript 'code/thca_aldex2_2.R' 'code/ald2.fun.R'
+	
+### aldex2_5
+../ext_analysis/immuno.data.aldex2_5.out.Rda : code/immuno_aldex2_5.R code/ald2.fun.R
+	Rscript 'code/immuno_aldex2_5.R' 'code/ald2.fun.R'
+	
+../ext_analysis/brca.data.aldex2_5.out.Rda : code/brca_aldex2_5.R code/ald2.fun.R
+	Rscript 'code/brca_aldex2_5.R' 'code/ald2.fun.R'
+	
+../ext_analysis/kirc.data.aldex2_5.out.Rda : code/kirc_aldex2_5.R code/ald2.fun.R
+	Rscript 'code/kirc_aldex2_5.R' 'code/ald2.fun.R'
+	
+../ext_analysis/lihc.data.aldex2_5.out.Rda : code/lihc_aldex2_5.R code/ald2.fun.R
+	Rscript 'code/lihc_aldex2_5.R' 'code/ald2.fun.R'
+	
+../ext_analysis/luad.data.aldex2_5.out.Rda : code/luad_aldex2_5.R code/ald2.fun.R
+	Rscript 'code/luad_aldex2_5.R' 'code/ald2.fun.R'
+	
+../ext_analysis/prad.data.aldex2_5.out.Rda : code/prad_aldex2_5.R code/ald2.fun.R
+	Rscript 'code/prad_aldex2_5.R' 'code/ald2.fun.R'
+	
+../ext_analysis/thca.data.aldex2_5.out.Rda : code/thca_aldex2_5.R code/ald2.fun.R
+	Rscript 'code/thca_aldex2_5.R' 'code/ald2.fun.R'
 	
 
 ###limma 	
