@@ -32,7 +32,12 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=100) {
 #if (input == NULL) {stop("input modelled data")} #says to use is.null?
 
 	coeff.vec <- c(0.01,0.1,0.2,0.5,0.75,1)
-		
+	
+	TP.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	FN.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	FP.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
+	TN.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))	
+	
 	PPV.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	FDR.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	SEN.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
@@ -89,10 +94,10 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=100) {
 		null.model.t <- which(abs(input$thin.data[[i]]$coefmat) > 0 & abs(input$thin.data[[i]]$coefmat) < coeff) # only less than coeff FP 
 		
 		#for randomized data only (r) 
-		TP.rand <- intersect(which(input$r.data[[i]][,padj] < 0.05), model)
-		FN.rand <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05))
-		FP.rand <- intersect(which(input$r.data[[i]][,padj] < 0.05), null.model.r) #uses only the randomized null model
-		TN.rand <- intersect(which(input$r.data[[i]][,padj] >= 0.05), null.model.r)
+		TP.rand[i, coeff] <- intersect(which(input$r.data[[i]][,padj] < 0.05), model)
+		FN.rand[i, coeff] <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05))
+		FP.rand[i, coeff] <- intersect(which(input$r.data[[i]][,padj] < 0.05), null.model.r) #uses only the randomized null model
+		TN.rand[i, coeff] <- intersect(which(input$r.data[[i]][,padj] >= 0.05), null.model.r)
 		
 		#for randomized data only (r) - DESeq with Log2FoldChange for 0.5 and 1, changed name to LFC, unsure if should rename?
 		TP.LFC.rand <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) >0.5), model)
@@ -180,7 +185,7 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=100) {
 
 		} # end coeff loop
 	} # end randomization loop
-	return(list(TP.rand = TP.rand, FN.rand = FN.rand, FP.rand = FP.rand, TN.rand = TN.rand, PPV.rand = PPV.rand, FDR.rand = FDR.rand, SEN.rand = SEN.rand, SPE.rand = SPE.rand, PPV.thin.nullr = PPV.thin.nullr,  PPV.thin.nullt = PPV.thin.nullt, FDR.thin.nullr = FDR.thin.nullr, FDR.thin.nullt = FDR.thin.nullt, SEN.thin = SEN.thin, SPE.thin.nullr = SPE.thin.nullr, SPE.thin.nullt = SPE.thin.nullt, PPV.LFC.rand = PPV.LFC.rand, FDR.LFC.rand = FDR.LFC.rand, SPE.LFC.rand = SPE.LFC.rand, SEN.LFC.rand = SEN.LFC.rand, PPV.LFC.thin.nullt = PPV.LFC.thin.nullt, PPV.LFC.thin.nullr = PPV.LFC.thin.nullr, FDR.LFC.thin.nullt = FDR.LFC.thin.nullt, FDR.LFC.thin.nullr, SEN.LFC.thin = SEN.LFC.thin, SPE.LFC.thin.nullt = SPE.LFC.thin.nullt, SPE.LFC.thin.nullr = SPE.LFC.thin.nullr))
+	return(list(TP.rand = TP.rand, FN.rand = FN.rand, FP.rand = FP.rand, TN.rand = TN.rand, PPV.rand = PPV.rand, FDR.rand = FDR.rand, SEN.rand = SEN.rand, SPE.rand = SPE.rand, PPV.thin.nullr = PPV.thin.nullr,  PPV.thin.nullt = PPV.thin.nullt, FDR.thin.nullr = FDR.thin.nullr, FDR.thin.nullt = FDR.thin.nullt, SEN.thin = SEN.thin, SPE.thin.nullr = SPE.thin.nullr, SPE.thin.nullt = SPE.thin.nullt, PPV.LFC.rand = PPV.LFC.rand, FDR.LFC.rand = FDR.LFC.rand, SPE.LFC.rand = SPE.LFC.rand, SEN.LFC.rand = SEN.LFC.rand, PPV.LFC.thin.nullt = PPV.LFC.thin.nullt, PPV.LFC.thin.nullr = PPV.LFC.thin.nullr, FDR.LFC.thin.nullt = FDR.LFC.thin.nullt, FDR.LFC.thin.nullr = FDR.LFC.thin.nullr, SEN.LFC.thin = SEN.LFC.thin, SPE.LFC.thin.nullt = SPE.LFC.thin.nullt, SPE.LFC.thin.nullr = SPE.LFC.thin.nullr))
 } #end function 
 # finished editing up to here
 # 
