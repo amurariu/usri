@@ -33,11 +33,6 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=100) {
 
 	coeff.vec <- c(0.01,0.1,0.2,0.5,0.75,1)
 	
-	TP.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	FN.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	FP.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
-	TN.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))	
-	
 	PPV.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	FDR.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
 	SEN.rand <- matrix(data=NA, nrow=nloop, ncol=length(coeff.vec))
@@ -94,10 +89,10 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=100) {
 		null.model.t <- which(abs(input$thin.data[[i]]$coefmat) > 0 & abs(input$thin.data[[i]]$coefmat) < coeff) # only less than coeff FP 
 		
 		#for randomized data only (r) 
-		TP.rand[i, coeff] <- intersect(which(input$r.data[[i]][,padj] < 0.05), model)
-		FN.rand[i, coeff] <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05))
-		FP.rand[i, coeff] <- intersect(which(input$r.data[[i]][,padj] < 0.05), null.model.r) #uses only the randomized null model
-		TN.rand[i, coeff] <- intersect(which(input$r.data[[i]][,padj] >= 0.05), null.model.r)
+		TP.rand <- intersect(which(input$r.data[[i]][,padj] < 0.05), model)
+		FN.rand <- setdiff(model, which(input$r.data[[i]][,padj] < 0.05))
+		FP.rand <- intersect(which(input$r.data[[i]][,padj] < 0.05), null.model.r) #uses only the randomized null model
+		TN.rand <- intersect(which(input$r.data[[i]][,padj] >= 0.05), null.model.r)
 		
 		#for randomized data only (r) - DESeq with Log2FoldChange for 0.5 and 1, changed name to LFC, unsure if should rename?
 		TP.LFC.rand <- intersect(which(input$r.data[[i]][,padj] < 0.05 & abs(input$r.data[[i]][,log2FoldChange]) >0.5), model)
