@@ -24,14 +24,14 @@ lim.fun <- function(data, conditions, nloop=20){
     vr<-voom(data,designr) 
     fitr <- lmFit(vr,designr)
     fitr <- eBayes(fitr)
-    data.out.limma.r[[i]] <- topTable(fitr, coef = ncol(designr), number = ncol(data))
+    data.out.limma.r[[i]] <- topTable(fitr, coef = ncol(designr), number = nrow(data))
     
     #randomized and FP addition 
     designt<-model.matrix(~conds_th)
     vt<-voom(data_th,designt) #thinned data+conditions
     fitt <- lmFit(vt,designt)
     fitt <- eBayes(fitt)
-    data.out.limma.t[[i]] <- topTable(fitt, coef = ncol(designt), number = ncol(data_th))
+    data.out.limma.t[[i]] <- topTable(fitt, coef = ncol(designt), number = nrow(data_th))
     
   }
   print("done loop")
@@ -42,7 +42,7 @@ lim.fun <- function(data, conditions, nloop=20){
   vu<-voom(data,designu) #original conditions + original data
   fitu <- lmFit(vu,designu)
   fitu <- eBayes(fitu)
-  res.lim.u <- topTable(fitu, coef = ncol(designu), number = ncol(data))
+  res.lim.u <- topTable(fitu, coef = ncol(designu), number = nrow(data))
   
   return(list(conditions=conditions, thin.data=thin.data.out, r.data=data.out.limma.r, t.data=data.out.limma.t, u.data=res.lim.u))
 }
