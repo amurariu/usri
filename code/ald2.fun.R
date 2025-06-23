@@ -12,6 +12,9 @@ ald2.fun <- function(data, conditions, nloop=1, gamma){
   for (i in 1:nloop){
     seed = 20 + i
     set.seed(seed)
+    
+    message(paste0("\nLoop iteration: ", i))
+    
     #thin_2group adds rnorm noise to 5% of the transcripts, generates TPs in the dataset
     #generate thin_2group for each dataset as well as labelling for conditions and new dataset
     
@@ -24,15 +27,18 @@ ald2.fun <- function(data, conditions, nloop=1, gamma){
     data_th <- thin$mat
     
     #randomized without FP addition 
+    message("Running ALDEx2 (scale = ", gamma, ") on original data with randomised groups...")
     aldex.r <- aldex(data, conditions=conds_th, gamma = gamma) #uses original dataset but permuted conditions
     data.out.aldex.r[[i]] <- aldex.r
     
     #randomized with FP addition 
+    message("Running ALDEx2 (scale = ", gamma, ") on thinned data with randomised groups...")
     aldex.t <- aldex(data_th, conditions=conds_th, gamma = gamma) #uses new dataset with permuted conditions
     data.out.aldex.t[[i]] <- aldex.t
   }
   
-  print("done loop")
+  message("\nAll ", i, " iterations of loop finished\n")
+  message("Running ALDEx2 (scale = ", gamma, ") on original data with non-randomised groups...")
   
   set.seed(2025)
   #unpermuted
