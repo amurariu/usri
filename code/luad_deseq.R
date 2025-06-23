@@ -14,7 +14,7 @@ luad <- read.table(file=raw_counts_luad, header=T, row.names=1, sep='\t')
 conditions_lu <- as.vector(unlist(read.table(file=conds_luad, sep='\t'))) 
 luad.conds <- data.frame(conditions_lu) 
 
-y_luad <- DGEList(counts=luad, group=factor(luad.conds))
+y_luad <- DGEList(counts=luad, group=factor(conditions_lu))
 keep_luad <- filterByExpr(y_luad)
 y_luad <- y_luad[keep_luad,keep.lib.sizes=FALSE]
 luad.data <- y_luad$counts 
