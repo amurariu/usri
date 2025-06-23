@@ -27,6 +27,6 @@ y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
 
 #Immuno function
-immuno.data.DESeq <- des.fun(data = immuno.data, nloop = 1, conditions = immuno.conds$conditions_p)
+immuno.data.DESeq <- des.fun(data = immuno.data, nloop = 100, conditions = immuno.conds$conditions_p)
 save(immuno.data.DESeq, file="../ext_analysis/immuno.data.deseq.Rda") 
 
