@@ -2,7 +2,7 @@
 # conditions is conditions_p from above
 # name is the name of the output file and must be in quotes
 # nloops is the number of test loops
-ald2.fun <- function(data, conditions, nloop=100, gamma){
+ald2.fun <- function(data, conditions, nloop=1, gamma){
 
   thin.data.out.aldex <- list() 
   data.out.aldex.r <- list() 

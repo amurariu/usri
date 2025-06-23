@@ -1,4 +1,4 @@
-lim.fun <- function(data, conditions, nloop=20){
+lim.fun <- function(data, conditions, nloop=100){
   
   thin.data.out <- list() 
   data.out.limma.r <- list() 
