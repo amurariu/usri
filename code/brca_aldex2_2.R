@@ -23,5 +23,5 @@ y_brca <- y_brca[keep_brca,keep.lib.sizes=FALSE]
 brca.data <- y_brca$counts #filtered base dataset
 
 #save file - gamma=0.2
-brca.data_2.aldex2 <- ald2.fun(data=brca.data, conditions=brca.conds, nloop=100, gamma = 0.2)
-save(brca.data_2.aldex2, file="../ext_analysis/brca.data.aldex2_2.out.Rda")
+brca.data_2.aldex2 <- ald2.fun(data=brca.data, conditions=brca.conds$conditions_b, nloop=100, gamma = 0.2)
+save(brca.data_2.aldex2, file="../ext_analysis/brca.data.aldex2_2.Rda")
