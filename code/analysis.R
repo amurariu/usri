@@ -6,33 +6,33 @@ source('code/immuno_TPFP.R')
 #immuno dataset
 load(paste(anal.path,"immuno.data.deseq.Rda", sep="")) 
 load(paste(anal.path,"immuno.data.edger.Rda", sep=""))
-load(paste(anal.path,"immuno.data.aldex2_0.out.Rda", sep=""))
-load(paste(anal.path,"immuno.data.aldex2_2.out.Rda", sep=""))
-load(paste(anal.path,"immuno.data.aldex2_5.out.Rda", sep=""))
+load(paste(anal.path,"immuno.data.aldex2_0.Rda", sep=""))
+load(paste(anal.path,"immuno.data.aldex2_2.Rda", sep=""))
+load(paste(anal.path,"immuno.data.aldex2_5.Rda", sep=""))
 load (paste(anal.path,"immuno.data.limma.Rda", sep=""))
 
 #brca dataset
 load(paste(anal.path,"brca.data.deseq.Rda", sep="")) 
 load(paste(anal.path,"brca.data.edger.Rda", sep=""))
-load(paste(anal.path,"brca.data.aldex2_0.out.Rda", sep=""))
-load(paste(anal.path,"brca.data.aldex2_2.out.Rda", sep=""))
-load(paste(anal.path,"brca.data.aldex2_5.out.Rda", sep=""))
+load(paste(anal.path,"brca.data.aldex2_0.Rda", sep=""))
+load(paste(anal.path,"brca.data.aldex2_2.Rda", sep=""))
+load(paste(anal.path,"brca.data.aldex2_5.Rda", sep=""))
 load (paste(anal.path,"brca.data.limma.Rda", sep=""))
 
 #kirc dataset
 load(paste(anal.path,"kirc.data.deseq.Rda", sep="")) 
 load(paste(anal.path,"kirc.data.edger.Rda", sep=""))
-load(paste(anal.path,"kirc.data.aldex2_0.out.Rda", sep=""))
-load(paste(anal.path,"kirc.data.aldex2_2.out.Rda", sep=""))
-load(paste(anal.path,"kirc.data.aldex2_5.out.Rda", sep=""))
+load(paste(anal.path,"kirc.data.aldex2_0.Rda", sep=""))
+load(paste(anal.path,"kirc.data.aldex2_2.Rda", sep=""))
+load(paste(anal.path,"kirc.data.aldex2_5.Rda", sep=""))
 load (paste(anal.path,"kirc.data.limma.Rda", sep=""))
 
 #lihc dataset
 load(paste(anal.path,"lihc.data.deseq.Rda", sep="")) 
 load(paste(anal.path,"lihc.data.edger.Rda", sep=""))
-load(paste(anal.path,"lihc.data.aldex2_0.out.Rda", sep=""))
-load(paste(anal.path,"lihc.data.aldex2_2.out.Rda", sep=""))
-load(paste(anal.path,"lihc.data.aldex2_5.out.Rda", sep=""))
+load(paste(anal.path,"lihc.data.aldex2_0.Rda", sep=""))
+load(paste(anal.path,"lihc.data.aldex2_2.Rda", sep=""))
+load(paste(anal.path,"lihc.data.aldex2_5.Rda", sep=""))
 load (paste(anal.path,"lihc.data.limma.Rda", sep=""))
 
 # Inputs: "immuno.data_0.aldex2" "immuno.data_2.aldex2" "immuno.data_5.aldex2" "immuno.data.DESeq" "immuno.data.edgeR", "immuno.data.limma"
