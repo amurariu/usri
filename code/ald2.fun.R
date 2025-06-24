@@ -44,5 +44,5 @@ ald2.fun <- function(data, conditions, nloop=1, gamma){
   #unpermuted
   aldex.u <- aldex(data, conditions=conditions, gamma = gamma)
 
-  return(list(conditions=conditions, thin.data=thin.data.out.aldex, r.data=data.out.aldex.r, t.data=data.out.aldex.t, u.data=aldex.u))
+  return(list(conditions=conditions, thin.data=thin.data.out.aldex, u.data=aldex.u, r.data=data.out.aldex.r, t.data=data.out.aldex.t))
 }
