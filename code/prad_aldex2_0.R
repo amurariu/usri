@@ -20,5 +20,5 @@ y_prad <- y_prad[keep_prad,keep.lib.sizes=FALSE]
 prad.data <- y_prad$counts #filtered base dataset
 
 #save file - gamma=1e-3
-prad.data_0.aldex2 <- ald2.fun(data=prad.data, conditions=prad.conds, nloop=100, gamma=1e-3)
-save(prad.data_0.aldex2, file="../ext_analysis/prad.data.aldex2_0.out.Rda")
+prad.data_0.aldex2 <- ald2.fun(data=prad.data, conditions=prad.conds$conditions_pr, nloop=100, gamma=1e-3)
+save(prad.data_0.aldex2, file="../ext_analysis/prad.data.aldex2_0.Rda")

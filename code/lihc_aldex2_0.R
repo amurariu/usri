@@ -22,5 +22,5 @@ y_lihc <- y_lihc[keep_lihc,keep.lib.sizes=FALSE]
 lihc.data <- y_lihc$counts #filtered base dataset
 
 #save file - gamma=1e-3
-lihc.data_0.aldex2 <- ald2.fun(data=lihc.data, conditions=lihc.conds, nloop=100, gamma=1e-3)
-save(lihc.data_0.aldex2, file="../ext_analysis/lihc.data.aldex2_0.out.Rda")
+lihc.data_0.aldex2 <- ald2.fun(data=lihc.data, conditions=lihc.conds$conditions_li, nloop=100, gamma=1e-3)
+save(lihc.data_0.aldex2, file="../ext_analysis/lihc.data.aldex2_0.Rda")

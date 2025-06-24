@@ -20,5 +20,5 @@ y_thca <- y_thca[keep_thca,keep.lib.sizes=FALSE]
 thca.data <- y_thca$counts #filtered base dataset
 
 #save file - gamma=0.5
-thca.data_5.aldex2 <- ald2.fun(data=thca.data, conditions=thca.conds, nloop=100, gamma = 0.5)
-save(thca.data_5.aldex2, file="../ext_analysis/thca.data.aldex2_5.out.Rda")
+thca.data_5.aldex2 <- ald2.fun(data=thca.data, conditions=thca.conds$conditions_t, nloop=100, gamma = 0.5)
+save(thca.data_5.aldex2, file="../ext_analysis/thca.data.aldex2_5.Rda")

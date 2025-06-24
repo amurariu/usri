@@ -20,5 +20,5 @@ y_luad <- y_luad[keep_luad,keep.lib.sizes=FALSE]
 luad.data <- y_luad$counts #filtered base dataset
 
 #save file - gamma=1e-3
-luad.data_0.aldex2 <- ald2.fun(data=luad.data, conditions=luad.conds, nloop=100, gamma=1e-3)
-save(luad.data_0.aldex2, file="../ext_analysis/luad.data.aldex2_0.out.Rda")
+luad.data_0.aldex2 <- ald2.fun(data=luad.data, conditions=luad.conds$conditions_lu, nloop=100, gamma=1e-3)
+save(luad.data_0.aldex2, file="../ext_analysis/luad.data.aldex2_0.Rda")
