@@ -1,0 +1,99 @@
+source('code/gg-conf.R')
+
+# this outputs a list with 
+# test on the immuno data
+# only have aldex_5
+
+load("../andreea_usri_outputs/immuno.data.limma.Rda")
+load("../andreea_usri_outputs/immuno.data.deseq.Rda")
+load("../andreea_usri_outputs/immuno.data.edgeR.Rda")
+load("../andreea_usri_outputs/immuno.data.aldex2_5.out.Rda")
+
+des.imm <- get_confusion(immuno.data.DESeq, "DESeq")
+jnk.edge <- get_confusion(immuno.data.edgeR, "edgeR")
+jnk.limma <- get_confusion(immuno.data.limma, "limma")
+jnk.ald5 <- get_confusion(immuno.data_5.aldex2, "ALDEx2")
+
+plot(rownames(jnk.des$TPFPR), jnk.des$TPFPR[,1], ylim=c(0,1), type='b', xlab="minimum coefficient", ylab="TPR FDR")
+points(rownames(jnk.des$TPFPR), jnk.des$TPFPR[,2], ylim=c(0,1), type='b', lty=2)
+points(rownames(jnk.des$TPFPR), jnk.des$TPFPR[,3], ylim=c(0,1), type='b')
+points(rownames(jnk.des$TPFPR), jnk.des$TPFPR[,4], ylim=c(0,1), type='b', lty=2)
+
+points(rownames(jnk.edge$TPFPR), jnk.edge$TPFPR[,1], ylim=c(0,1), type='b', col='red')
+points(rownames(jnk.edge$TPFPR), jnk.edge$TPFPR[,2], ylim=c(0,1), type='b', col='red', lty=2)
+points(rownames(jnk.edge$TPFPR), jnk.edge$TPFPR[,3], ylim=c(0,1), type='b', col='red')
+points(rownames(jnk.edge$TPFPR), jnk.edge$TPFPR[,4], ylim=c(0,1), type='b', col='red',lty=2)
+
+points(rownames(jnk.ald5$TPFPR), jnk.ald5$TPFPR[,1], ylim=c(0,1), type='b', col='orange')
+points(rownames(jnk.ald5$TPFPR), jnk.ald5$TPFPR[,2], ylim=c(0,1), type='b', col='orange',lty=2)
+points(rownames(jnk.ald5$TPFPR), jnk.ald5$TPFPR[,3], ylim=c(0,1), type='b', col='orange')
+points(rownames(jnk.ald5$TPFPR), jnk.ald5$TPFPR[,4], ylim=c(0,1), type='b', col='orange',lty=2)
+
+points(rownames(jnk.limma$TPFPR), jnk.limma$TPFPR[,1], ylim=c(0,1), type='b', col='blue')
+points(rownames(jnk.limma$TPFPR), jnk.limma$TPFPR[,2], ylim=c(0,1), type='b', col='blue',lty=2)
+points(rownames(jnk.limma$TPFPR), jnk.limma$TPFPR[,3], ylim=c(0,1), type='b', col='blue')
+points(rownames(jnk.limma$TPFPR), jnk.limma$TPFPR[,4], ylim=c(0,1), type='b', col='blue', lty=2)
+
+abline(h=0.05, lty=3, col='grey', lwd=2)
+
+# Lets try thca
+# no aldex
+
+load("../andreea_usri_outputs/thca.data.limma.Rda")
+load("../andreea_usri_outputs/thca.data.deseq.Rda")
+load("../andreea_usri_outputs/thca.data.edgeR.Rda")
+#load("../andreea_usri_outputs/immuno.data.aldex2_5.out.Rda")
+
+des.thca <- get_confusion(thca.data.DESeq, "DESeq")
+edg.thca <- get_confusion(thca.data.edgeR, "edgeR")
+limma.thca <- get_confusion(thca.data.limma, "limma")
+#jnk.ald5 <- get_confusion(immuno.data_5.aldex2, "ALDEx2")
+
+plot(rownames(des.thca$TPFPR), des.thca$TPFPR[,1], ylim=c(0,1), type='b', xlab="minimum coefficient", ylab="TPR FDR")
+points(rownames(des.thca$TPFPR), des.thca$TPFPR[,2], ylim=c(0,1), type='b', lty=2)
+points(rownames(des.thca$TPFPR), des.thca$TPFPR[,3], ylim=c(0,1), type='b')
+points(rownames(des.thca$TPFPR), des.thca$TPFPR[,4], ylim=c(0,1), type='b', lty=2)
+
+points(rownames(edg.thca$TPFPR), edg.thca$TPFPR[,1], ylim=c(0,1), type='b', col='red')
+points(rownames(edg.thca$TPFPR), edg.thca$TPFPR[,2], ylim=c(0,1), type='b', col='red', lty=2)
+points(rownames(edg.thca$TPFPR), edg.thca$TPFPR[,3], ylim=c(0,1), type='b', col='red')
+points(rownames(edg.thca$TPFPR), edg.thca$TPFPR[,4], ylim=c(0,1), type='b', col='red',lty=2)
+
+points(rownames(limma.thca$TPFPR), limma.thca$TPFPR[,1], ylim=c(0,1), type='b', col='blue')
+points(rownames(limma.thca$TPFPR), limma.thca$TPFPR[,2], ylim=c(0,1), type='b', col='blue',lty=2)
+points(rownames(limma.thca$TPFPR), limma.thca$TPFPR[,3], ylim=c(0,1), type='b', col='blue')
+points(rownames(limma.thca$TPFPR), limma.thca$TPFPR[,4], ylim=c(0,1), type='b', col='blue', lty=2)
+
+abline(h=0.05, lty=3, col='grey', lwd=2)
+
+# Lets try thca
+# no aldex
+
+load("../andreea_usri_outputs/thca.data.limma.Rda")
+load("../andreea_usri_outputs/thca.data.deseq.Rda")
+load("../andreea_usri_outputs/thca.data.edgeR.Rda")
+#load("../andreea_usri_outputs/immuno.data.aldex2_5.out.Rda")
+
+des.thca <- get_confusion(thca.data.DESeq, "DESeq")
+edg.thca <- get_confusion(thca.data.edgeR, "edgeR")
+limma.thca <- get_confusion(thca.data.limma, "limma")
+#jnk.ald5 <- get_confusion(immuno.data_5.aldex2, "ALDEx2")
+
+plot(rownames(des.thca$TPFPR), des.thca$TPFPR[,1], ylim=c(0,1), type='b', xlab="minimum coefficient", ylab="TPR FDR")
+points(rownames(des.thca$TPFPR), des.thca$TPFPR[,2], ylim=c(0,1), type='b', lty=2)
+points(rownames(des.thca$TPFPR), des.thca$TPFPR[,3], ylim=c(0,1), type='b')
+points(rownames(des.thca$TPFPR), des.thca$TPFPR[,4], ylim=c(0,1), type='b', lty=2)
+
+points(rownames(edg.thca$TPFPR), edg.thca$TPFPR[,1], ylim=c(0,1), type='b', col='red')
+points(rownames(edg.thca$TPFPR), edg.thca$TPFPR[,2], ylim=c(0,1), type='b', col='red', lty=2)
+points(rownames(edg.thca$TPFPR), edg.thca$TPFPR[,3], ylim=c(0,1), type='b', col='red')
+points(rownames(edg.thca$TPFPR), edg.thca$TPFPR[,4], ylim=c(0,1), type='b', col='red',lty=2)
+
+points(rownames(limma.thca$TPFPR), limma.thca$TPFPR[,1], ylim=c(0,1), type='b', col='blue')
+points(rownames(limma.thca$TPFPR), limma.thca$TPFPR[,2], ylim=c(0,1), type='b', col='blue',lty=2)
+points(rownames(limma.thca$TPFPR), limma.thca$TPFPR[,3], ylim=c(0,1), type='b', col='blue')
+points(rownames(limma.thca$TPFPR), limma.thca$TPFPR[,4], ylim=c(0,1), type='b', col='blue', lty=2)
+
+abline(h=0.05, lty=3, col='grey', lwd=2)
+
+

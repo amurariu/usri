@@ -2,10 +2,10 @@ analysis.fun <- function(input=NULL, type=NULL, nloop=100) {
 
   if (type == "DESeq") {
     padj = 6
-    log2FoldChange = 3
+    log2FoldChange = 2
   } else if (type == "edgeR") {
     padj = 5
-    log2FoldChange = 2
+    log2FoldChange = 1
   } else if (type == "aldex0.we") {
     padj = 10 #for welch's
     log2FoldChange = 5
