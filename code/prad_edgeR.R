@@ -1,0 +1,23 @@
+library(seqgendiff, warn.conflicts=F)
+library(edgeR, warn.conflicts=F)
+library(DESeq2, warn.conflicts=F)
+
+source('code/edg.fun.R')
+
+#####
+#PRAD dataset
+#####
+
+raw_counts_prad <- "https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-PRAD.normal-tumor.pair.rawCount.tsv"
+conds_prad <-"https://raw.githubusercontent.com/amurariu/usri/main/data/TCGA-PRAD.conditions.tsv"
+prad <- read.table(file=raw_counts_prad, header=T, row.names=1, sep='\t')
+prad.conds <- as.vector(unlist(read.table(file=conds_prad, sep='\t'))) 
+
+#edgeR
+y_prad <- DGEList(counts=prad, group=factor(prad.conds))
+keep_prad <- filterByExpr(y_prad)
+y_prad <- y_prad[keep_prad,keep.lib.sizes=FALSE]
+prad.data <- y_prad$counts 
+
+prad.data.edgeR <- edg.fun(prad.data, prad.conds, 100)
+save(kirc.data.edgeR, file="../ext_analysis/kirc.data.edger.Rda")

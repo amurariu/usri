@@ -3,13 +3,11 @@
 # name is the name of the output file and must be in quotes
 # nloops is the number of test loops
 edg.fun <- function(data, conditions, nloop=100){
-  #assign(paste("perf.a", "1", sep=""),5)
-  #perf.a1
   
   thin.data.out.edger <- list() #change name of list here-----------
   data.out.edgeR.u <- list() 
   data.out.edgeR.r <- list() 
-  data.out.edgeR.p <- list() 
+  data.out.edgeR.t <- list() 
   
   #for loop
   for (i in 1:nloop){
@@ -25,39 +23,38 @@ edg.fun <- function(data, conditions, nloop=100){
                                signal_fun = stats::rnorm, 
                                signal_params = list(mean = 0, sd = 2))
     thin.data.out.edger[[i]] <- thin
-    condsp <- as.vector(thin$designmat)   # permuted and thinned conditions and data
-    datasp <- thin$mat
+    conds_th <- as.vector(thin$designmat)   #thinned and randomized conditions
+    data_th <- thin$mat #thinned and randomized data
     
     #edgeR analysis
-    #PD1 setup
-    group_p <- factor(condsp)
-    design_p <- model.matrix(~group_p) #use data randomization from seqgendiff
+    group_th <- factor(conds_th)
+    design_th <- model.matrix(~group_th) #use data randomization from seqgendiff
     
-    #randomized without FP addition PD1
-    fit_rp <- glmQLFit(data,design_p) #uses original data (ie. no TP added)
-    qlf_rp <- glmQLFTest(fit_rp,coef=2)
-    edg.rp<-topTags(qlf_rp, n=nrow(data), adjust.method = "BH", sort.by = "none", p.value = 1)
+    #randomized without FP addition
+    fit_r <- glmQLFit(data,design_th) #uses original data (ie. no TP added)
+    qlf_r <- glmQLFTest(fit_r,coef=2)
+    edg.r<-topTags(qlf_r, n=nrow(data), adjust.method = "BH", sort.by = "none", p.value = 1)
     
-    data.out.edgeR.r[[i]] <- as.data.frame(edg.rp[[1]])
+    data.out.edgeR.r[[i]] <- as.data.frame(edg.r[[1]])
     
-    #randomized with FP addition PD1
-    fit_pp <- glmQLFit(datasp,design_p)
-    qlf_pp <- glmQLFTest(fit_pp,coef=2)
-    edg.pp<-topTags(qlf_pp, n=nrow(datasp), adjust.method = "BH", sort.by = "none", p.value = 1)
+    #randomized with FP addition 
+    fit_t <- glmQLFit(data_th,design_th)
+    qlf_t <- glmQLFTest(fit_t,coef=2)
+    edg.t<-topTags(qlf_t, n=nrow(data_th), adjust.method = "BH", sort.by = "none", p.value = 1)
     
-    data.out.edgeR.p[[i]] <- as.data.frame(edg.pp[[1]])
+    data.out.edgeR.t[[i]] <- as.data.frame(edg.t[[1]])
   }
   print("done loop")
   
+  set.seed(2025)
+  #unpermuted 
+  group_u<-factor(conditions)
+  design_u <- model.matrix(~group_u)
+  fit_u <- glmQLFit(data,design_u)
+  qlf_u <- glmQLFTest(fit_u,coef=2)
+  edg.u<-topTags(qlf_u, n=nrow(data), adjust.method = "BH", sort.by = "none", p.value = 1) 
   
-  #unpermuted PD1
-  group_up<-factor(conditions)
-  design_up <- model.matrix(~group_up)
-  fit_up <- glmQLFit(data,design_up)
-  qlf_up <- glmQLFTest(fit_up,coef=2)
-  edg.up<-topTags(qlf_up, n=nrow(data), adjust.method = "BH", sort.by = "none", p.value = 1) 
+  data.out.edgeR.u <- as.data.frame(edg.u[[1]])
   
-  data.out.edgeR.u <- as.data.frame(edg.up[[1]])
-  
-  return(list(conditions=conditions_p, thin.data=thin.data.out.edger, u.data=data.out.edgeR.u, r.data=data.out.edgeR.r, p.data=data.out.edgeR.p))
+  return(list(conditions=conditions, thin.data=thin.data.out.edger, u.data=data.out.edgeR.u, r.data=data.out.edgeR.r, t.data=data.out.edgeR.t))
 }

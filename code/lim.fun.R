@@ -2,7 +2,7 @@ lim.fun <- function(data, conditions, nloop=100){
   
   thin.data.out <- list() 
   data.out.limma.r <- list() 
-  data.out.limma.p <- list() 
+  data.out.limma.t <- list() 
   
   #for loop
   for (i in 1:nloop){
@@ -12,38 +12,37 @@ lim.fun <- function(data, conditions, nloop=100){
     
     #thin_2group adds rnorm noise to 5% of the transcripts, generates TPs in the dataset
     #generate thin_2group for each dataset as well as labelling for conditions and new dataset
-    
-    #PD1
     thin <- thin_2group(data, prop_null=0.95, alpha=0,
                         signal_fun = stats::rnorm, 
                         signal_params = list(mean = 0, sd = 2))
     thin.data.out[[i]] <- thin
-    condsp <- as.vector(thin$designmat)   # permuted and thinned conditions and data
-    datasp <- thin$mat
+    conds_th <- as.vector(thin$designmat)   # permuted and thinned conditions and data
+    data_th <- thin$mat
     
-    #randomized without FP addition PD1
-    designp<-model.matrix(~condsp)
-    vp<-voom(data,designp) #check immuno.data(normal) with permuted conds
-    fitp <- lmFit(vp,designp)
-    fitp <- eBayes(fitp)
-    data.out.limma.p[[i]] <- topTable(fitp)
-    
-    #randomized and FP addition PD1 - works!!
-    designr<-model.matrix(~condsp)
-    vr<-voom(datasp,designr) #thinned data+conditions
+    #randomized without FP addition
+    designr<-model.matrix(~conds_th)
+    vr<-voom(data,designr) 
     fitr <- lmFit(vr,designr)
     fitr <- eBayes(fitr)
-    data.out.limma.r[[i]] <- topTable(fitr, coef = ncol(designr))
+    data.out.limma.r[[i]] <- topTable(fitr, coef = ncol(designr), number = nrow(data), sort.by = "none")
+    
+    #randomized and FP addition 
+    designt<-model.matrix(~conds_th)
+    vt<-voom(data_th,designt) #thinned data+conditions
+    fitt <- lmFit(vt,designt)
+    fitt <- eBayes(fitt)
+    data.out.limma.t[[i]] <- topTable(fitt, coef = ncol(designt), number = nrow(data_th), sort.by = "none")
     
   }
   print("done loop")
   
-  #unpermuted PD1
+  #unpermuted PD1 
+  set.seed(2025)
   designu<-model.matrix(~conditions)
   vu<-voom(data,designu) #original conditions + original data
   fitu <- lmFit(vu,designu)
   fitu <- eBayes(fitu)
-  res.lim.u <- topTable(fitu, coef = ncol(designu))
+  res.lim.u <- topTable(fitu, coef = ncol(designu), number = nrow(data), sort.by = "none")
   
-  return(list(conditions=conditions, thin.data=thin.data.out, data.out.limma.r = data.out.limma.r, data.out.limma.p = data.out.limma.p, data.out.limma.u = res.lim.u))
+  return(list(conditions=conditions, thin.data=thin.data.out, r.data=data.out.limma.r, t.data=data.out.limma.t, u.data=res.lim.u))
 }
