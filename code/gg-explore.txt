@@ -9,7 +9,7 @@ load("../andreea_usri_outputs/immuno.data.deseq.Rda")
 load("../andreea_usri_outputs/immuno.data.edgeR.Rda")
 load("../andreea_usri_outputs/immuno.data.aldex2_5.out.Rda")
 
-des.imm <- get_confusion(immuno.data.DESeq, "DESeq")
+jnk.des <- get_confusion(immuno.data.DESeq, "DESeq")
 jnk.edge <- get_confusion(immuno.data.edgeR, "edgeR")
 jnk.limma <- get_confusion(immuno.data.limma, "limma")
 jnk.ald5 <- get_confusion(immuno.data_5.aldex2, "ALDEx2")
