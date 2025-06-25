@@ -19,7 +19,7 @@ edgeR_thca: ../ext_analysis/thca.data.edger.Rda
 ALDEx2_0_immuno: ../ext_analysis/immuno.data.aldex2_0.Rda
 ALDEx2_0_brca: ../ext_analysis/brca.data.aldex2_0.Rda
 ALDEx2_0_kirc: ../ext_analysis/kirc.data.aldex2_0.Rda
-ALDEx2_0_lihc: ../ext_analysis/lihc.data.aldex2_.Rda
+ALDEx2_0_lihc: ../ext_analysis/lihc.data.aldex2_0.Rda
 ALDEx2_0_luad: ../ext_analysis/luad.data.aldex2_0.Rda
 ALDEx2_0_prad: ../ext_analysis/prad.data.aldex2_0.Rda
 ALDEx2_0_thca: ../ext_analysis/thca.data.aldex2_0.Rda
