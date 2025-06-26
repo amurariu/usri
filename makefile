@@ -109,8 +109,8 @@ limma_thca: ../ext_analysis/thca.data.limma.Rda
 ../ext_analysis/lihc.data.aldex2_0.Rda : code/lihc_aldex2_0.R code/ald2.fun.R
 	Rscript 'code/lihc_aldex2_0.R' 'code/ald2.fun.R'
 	
-../ext_analysis/luad.data.aldex2_0.Rda : code/luad_aldex2_0.R code/ald2.fun.R
-	Rscript 'code/luad_aldex2_0.R' 'code/ald2.fun.R'
+../ext_analysis/luad.data.aldex2_0.Rda : code/luad_aldex2_0.R 
+	Rscript 'code/luad_aldex2_0.R' 
 	
 ../ext_analysis/prad.data.aldex2_0.Rda : code/prad_aldex2_0.R code/ald2.fun.R
 	Rscript 'code/prad_aldex2_0.R' 'code/ald2.fun.R'
