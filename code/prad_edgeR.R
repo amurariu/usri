@@ -20,4 +20,4 @@ y_prad <- y_prad[keep_prad,keep.lib.sizes=FALSE]
 prad.data <- y_prad$counts 
 
 prad.data.edgeR <- edg.fun(prad.data, prad.conds, 100)
-save(kirc.data.edgeR, file="../ext_analysis/kirc.data.edger.Rda")
+save(prad.data.edgeR, file="../ext_analysis/prad.data.edger.Rda")
