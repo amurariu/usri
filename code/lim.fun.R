@@ -1,4 +1,4 @@
-lim.fun <- function(data, conditions, nloop=100){
+lim.fun <- function(data, conditions, nloop=10, mean){
   
   thin.data.out <- list() 
   data.out.limma.r <- list() 
@@ -14,7 +14,7 @@ lim.fun <- function(data, conditions, nloop=100){
     #generate thin_2group for each dataset as well as labelling for conditions and new dataset
     thin <- thin_2group(data, prop_null=0.95, alpha=0,
                         signal_fun = stats::rnorm, 
-                        signal_params = list(mean = 0, sd = 2))
+                        signal_params = list(mean = mean, sd = 2))
     thin.data.out[[i]] <- thin
     conds_th <- as.vector(thin$designmat)   # permuted and thinned conditions and data
     data_th <- thin$mat

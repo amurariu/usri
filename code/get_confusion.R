@@ -81,7 +81,7 @@ get_confusion <- function(input=NULL, prog=NULL){
 			raw.coeff[i,2] <- length(intersect(which(input$t.data[[i]][,padj] < 0.05), TN.coeff))
 			raw.zero[i,2] <- length(intersect(which(input$t.data[[i]][,padj] < 0.05), TN.zero))
 			diff.coeff[i,2] <- length(intersect(which(input$t.data[[i]][,padj] < 0.05 & 
-			  abs(input$t.data[[i]][,lfc]) > 0.5), TN.coeff))
+			                                            abs(input$t.data[[i]][,lfc]) > 0.5), TN.coeff))
 			diff.zero[i,2] <- length(intersect(which(input$t.data[[i]][,padj] < 0.05 & 
 			  abs(input$t.data[[i]][,lfc]) > 0.5), TN.zero))
 			

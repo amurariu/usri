@@ -1,9 +1,9 @@
-source('code/gg-conf.R')
+source('code/get_confusion.R')
 
 load("../andreea_usri_outputs/immuno.data.limma.Rda")
 load("../andreea_usri_outputs/immuno.data.deseq.Rda")
 load("../andreea_usri_outputs/immuno.data.edgeR.Rda")
-load("../andreea_usri_outputs/immuno.data.aldex2_5.out.Rda")
+load("../andreea_usri_outputs/immuno.data.aldex2_5.Rda")
 load("../andreea_usri_outputs/immuno.data.aldex2_2.Rda")
 load("../andreea_usri_outputs/immuno.data.aldex2_0.Rda")
 
