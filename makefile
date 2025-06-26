@@ -24,6 +24,14 @@ ALDEx2_0_luad: ../ext_analysis/luad.data.aldex2_0.Rda
 ALDEx2_0_prad: ../ext_analysis/prad.data.aldex2_0.Rda
 ALDEx2_0_thca: ../ext_analysis/thca.data.aldex2_0.Rda
 
+ALDEx2_1_immuno: ../ext_analysis/immuno.data.aldex2_1.Rda
+ALDEx2_1_brca: ../ext_analysis/brca.data.aldex2_1.Rda
+ALDEx2_1_kirc: ../ext_analysis/kirc.data.aldex2_1.Rda
+ALDEx2_1_lihc: ../ext_analysis/lihc.data.aldex2_1.Rda
+ALDEx2_1_luad: ../ext_analysis/luad.data.aldex2_1.Rda
+ALDEx2_1_prad: ../ext_analysis/prad.data.aldex2_1.Rda
+ALDEx2_1_thca: ../ext_analysis/thca.data.aldex2_1.Rda
+
 ALDEx2_2_immuno: ../ext_analysis/immuno.data.aldex2_2.Rda
 ALDEx2_2_brca: ../ext_analysis/brca.data.aldex2_2.Rda
 ALDEx2_2_kirc: ../ext_analysis/kirc.data.aldex2_2.Rda
@@ -117,6 +125,28 @@ limma_thca: ../ext_analysis/thca.data.limma.Rda
 	
 ../ext_analysis/thca.data.aldex2_0.Rda : code/thca_aldex2_0.R code/ald2.fun.R
 	Rscript 'code/thca_aldex2_0.R' 'code/ald2.fun.R'
+	
+### aldex2_1
+../ext_analysis/immuno.data.aldex2_1.Rda : code/immuno_aldex2_1.R
+	Rscript 'code/immuno_aldex2_1.R' 
+	
+../ext_analysis/brca.data.aldex2_1.Rda : code/brca_aldex2_1.R 
+	Rscript 'code/brca_aldex2_1.R' 
+	
+../ext_analysis/kirc.data.aldex2_1.Rda : code/kirc_aldex2_1.R 
+	Rscript 'code/kirc_aldex2_1.R'
+	
+../ext_analysis/lihc.data.aldex2_1.Rda : code/lihc_aldex2_1.R 
+	Rscript 'code/lihc_aldex2_1.R' 
+	
+../ext_analysis/luad.data.aldex2_1.Rda : code/luad_aldex2_1.R 
+	Rscript 'code/luad_aldex2_1.R' 
+	
+../ext_analysis/prad.data.aldex2_1.Rda : code/prad_aldex2_1.R 
+	Rscript 'code/prad_aldex2_1.R' 
+	
+../ext_analysis/thca.data.aldex2_1.Rda : code/thca_aldex2_1.R 
+	Rscript 'code/thca_aldex2_1.R' 
 	
 ### aldex2_2
 ../ext_analysis/immuno.data.aldex2_2.Rda : code/immuno_aldex2_2.R code/ald2.fun.R
@@ -218,42 +248,56 @@ clean_thca_edgeR:
 	
 clean_immuno_aldex2_0:
 	rm ../ext_analysis/immuno.data.aldex2_0.Rda
+clean_immuno_aldex2_1:
+	rm ../ext_analysis/immuno.data.aldex2_1.Rda
 clean_immuno_aldex2_2:
 	rm ../ext_analysis/immuno.data.aldex2_2.Rda
 clean_immuno_aldex2_5:
 	rm ../ext_analysis/immuno.data.aldex2_5.Rda
 clean_brca_aldex2_0:
 	rm ../ext_analysis/brca.data.aldex2_0.Rda
+clean_brca_aldex2_1:
+	rm ../ext_analysis/brca.data.aldex2_1.Rda
 clean_brca_aldex2_2:
 	rm ../ext_analysis/brca.data.aldex2_2.Rda
 clean_brca_aldex2_5:
 	rm ../ext_analysis/brca.data.aldex2_5.Rda
 clean_kirc_aldex2_0:
 	rm ../ext_analysis/kirc.data.aldex2_0.Rda
+clean_kirc_aldex2_1:
+	rm ../ext_analysis/kirc.data.aldex2_1.Rda
 clean_kirc_aldex2_2:
 	rm ../ext_analysis/kirc.data.aldex2_2.Rda
 clean_kirc_aldex2_5:
 	rm ../ext_analysis/kirc.data.aldex2_5.Rda
 clean_lihc_aldex2_0:
 	rm ../ext_analysis/lihc.data.aldex2_0.Rda
+clean_lihc_aldex2_1:
+	rm ../ext_analysis/lihc.data.aldex2_1.Rda
 clean_lihc_aldex2_2:
 	rm ../ext_analysis/lihc.data.aldex2_2.Rda
 clean_lihc_aldex2_5:
 	rm ../ext_analysis/lihc.data.aldex2_5.Rda
 clean_luad_aldex2_0:
 	rm ../ext_analysis/luad.data.aldex2_0.Rda
+clean_luad_aldex2_1:
+	rm ../ext_analysis/luad.data.aldex2_1.Rda
 clean_luad_aldex2_2:
 	rm ../ext_analysis/luad.data.aldex2_2.Rda
 clean_luad_aldex2_5:
 	rm ../ext_analysis/luad.data.aldex2_5.Rda
 clean_prad_aldex2_0:
 	rm ../ext_analysis/prad.data.aldex2_0.Rda
+clean_prad_aldex2_1:
+	rm ../ext_analysis/prad.data.aldex2_1.Rda
 clean_prad_aldex2_2:
 	rm ../ext_analysis/prad.data.aldex2_2.Rda
 clean_prad_aldex2_5:
 	rm ../ext_analysis/prad.data.aldex2_5.Rda
 clean_thca_aldex2_0:
 	rm ../ext_analysis/thca.data.aldex2_0.Rda
+clean_thca_aldex2_1:
+	rm ../ext_analysis/thca.data.aldex2_1.Rda
 clean_thca_aldex2_2:
 	rm ../ext_analysis/thca.data.aldex2_2.Rda
 clean_thca_aldex2_5:
