@@ -20,5 +20,5 @@ keep_brca <- filterByExpr(y_brca)
 y_brca <- y_brca[keep_brca,keep.lib.sizes=FALSE]
 brca.data <- y_brca$counts #filtered base dataset
 
-brca.data.limma <- lim.fun(brca.data, brca.conds, 100, mean = 0)
-save(brca.data.limma, file="../ext_analysis/brca.data.limma.Rda") 
+brca.data.limma.asym1 <- lim.fun(brca.data, brca.conds, 100, mean = 1)
+save(brca.data.limma.asym1, file="../ext_analysis/brca.data.limma.asym1.Rda") 

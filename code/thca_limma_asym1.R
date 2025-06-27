@@ -17,5 +17,5 @@ keep_thca <- filterByExpr(y_thca)
 y_thca <- y_thca[keep_thca,keep.lib.sizes=FALSE]
 thca.data <- y_thca$counts #filtered base dataset
 
-thca.data.limma <- lim.fun(thca.data, thca.conds, 100, mean = 0)
-save(thca.data.limma, file="../ext_analysis/thca.data.limma.Rda") 
+thca.data.limma.asym1 <- lim.fun(thca.data, thca.conds, 100, mean = 1)
+save(thca.data.limma.asym1, file="../ext_analysis/thca.data.limma.asym1.Rda") 

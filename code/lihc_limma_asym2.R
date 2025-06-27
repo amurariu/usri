@@ -17,5 +17,5 @@ keep_lihc <- filterByExpr(y_lihc)
 y_lihc <- y_lihc[keep_lihc,keep.lib.sizes=FALSE]
 lihc.data <- y_lihc$counts #filtered base dataset
 
-lihc.data.limma <- lim.fun(lihc.data, lihc.conds, 100, mean = 0)
-save(lihc.data.limma, file="../ext_analysis/lihc.data.limma.Rda") 
+lihc.data.limma.asym2 <- lim.fun(lihc.data, lihc.conds, 100, mean = 2)
+save(lihc.data.limma.asym2, file="../ext_analysis/lihc.data.limma.asym2.Rda") 

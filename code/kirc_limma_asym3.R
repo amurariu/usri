@@ -18,5 +18,5 @@ keep_kirc <- filterByExpr(y_kirc)
 y_kirc <- y_kirc[keep_kirc,keep.lib.sizes=FALSE]
 kirc.data <- y_kirc$counts #filtered base dataset
 
-kirc.data.limma <- lim.fun(kirc.data, kirc.conds, 100, mean = 0)
-save(kirc.data.limma, file="../ext_analysis/kirc.data.limma.Rda") 
+kirc.data.limma.asym3 <- lim.fun(kirc.data, kirc.conds, 100, mean = 3)
+save(kirc.data.limma.asym3, file="../ext_analysis/kirc.data.limma.asym3.Rda") 
