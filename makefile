@@ -56,6 +56,33 @@ limma_luad: ../ext_analysis/luad.data.limma.Rda
 limma_prad: ../ext_analysis/prad.data.limma.Rda
 limma_thca: ../ext_analysis/thca.data.limma.Rda
 
+limma_immuno_asym1: ../ext_analysis/immuno.data.limma.asym1.Rda
+limma_immuno_asym2: ../ext_analysis/immuno.data.limma.asym2.Rda
+limma_immuno_asym3: ../ext_analysis/immuno.data.limma.asym3.Rda
+
+limma_brca_asym1: ../ext_analysis/brca.data.limma.asym1.Rda
+limma_brca_asym2: ../ext_analysis/brca.data.limma.asym2.Rda
+limma_brca_asym3: ../ext_analysis/brca.data.limma.asym3.Rda
+
+limma_kirc_asym1: ../ext_analysis/kirc.data.limma.asym1.Rda
+limma_kirc_asym2: ../ext_analysis/kirc.data.limma.asym2.Rda
+limma_kirc_asym3: ../ext_analysis/kirc.data.limma.asym3.Rda
+
+limma_lihc_asym1: ../ext_analysis/lihc.data.limma.asym1.Rda
+limma_lihc_asym2: ../ext_analysis/lihc.data.limma.asym2.Rda
+limma_lihc_asym3: ../ext_analysis/lihc.data.limma.asym3.Rda
+
+limma_luad_asym1: ../ext_analysis/luad.data.limma.asym1.Rda
+limma_luad_asym2: ../ext_analysis/luad.data.limma.asym2.Rda
+limma_luad_asym3: ../ext_analysis/luad.data.limma.asym3.Rda
+
+limma_prad_asym1: ../ext_analysis/prad.data.limma.asym1.Rda
+limma_prad_asym2: ../ext_analysis/prad.data.limma.asym2.Rda
+limma_prad_asym3: ../ext_analysis/prad.data.limma.asym3.Rda
+
+limma_thca_asym1: ../ext_analysis/thca.data.limma.asym1.Rda
+limma_thca_asym2: ../ext_analysis/thca.data.limma.asym2.Rda
+limma_thca_asym3: ../ext_analysis/thca.data.limma.asym3.Rda
 
 #rules to generate the output files
 ### DESeq
@@ -215,7 +242,58 @@ limma_thca: ../ext_analysis/thca.data.limma.Rda
 ../ext_analysis/thca.data.limma.Rda : code/thca_limma.R code/lim.fun.R
 	Rscript 'code/thca_limma.R' 'code/lim.fun.R'
 
+#asymmetrical limma files
+../ext_analysis/immuno.data.limma.asym1.Rda : immuno_limma_asym1.R
+	Rscript 'code/immuno_limma_asym1.R'
+../ext_analysis/immuno.data.limma.asym2.Rda : immuno_limma_asym2.R
+	Rscript 'code/immuno_limma_asym2.R'
+../ext_analysis/immuno.data.limma.asym3.Rda : immuno_limma_asym3.R
+	Rscript 'code/immuno_limma_asym3.R'
 
+../ext_analysis/brca.data.limma.asym1.Rda : brca_limma_asym1.R
+	Rscript 'code/brca_limma_asym1.R'
+../ext_analysis/brca.data.limma.asym2.Rda : brca_limma_asym2.R
+	Rscript 'code/brca_limma_asym2.R'
+../ext_analysis/brca.data.limma.asym3.Rda : brca_limma_asym3.R
+	Rscript 'code/brca_limma_asym3.R'
+
+../ext_analysis/kirc.data.limma.asym1.Rda : kirc_limma_asym1.R
+	Rscript 'code/kirc_limma_asym1.R'
+../ext_analysis/kirc.data.limma.asym2.Rda : kirc_limma_asym2.R
+	Rscript 'code/kirc_limma_asym2.R'
+../ext_analysis/kirc.data.limma.asym3.Rda : kirc_limma_asym3.R
+	Rscript 'code/kirc_limma_asym3.R'
+
+../ext_analysis/lihc.data.limma.asym1.Rda : lihc_limma_asym1.R
+	Rscript 'code/lihc_limma_asym1.R'
+../ext_analysis/lihc.data.limma.asym2.Rda : lihc_limma_asym2.R
+	Rscript 'code/lihc_limma_asym2.R'
+../ext_analysis/lihc.data.limma.asym3.Rda : lihc_limma_asym3.R
+	Rscript 'code/lihc_limma_asym3.R'
+
+../ext_analysis/luad.data.limma.asym1.Rda : luad_limma_asym1.R
+	Rscript 'code/luad_limma_asym1.R'
+../ext_analysis/luad.data.limma.asym2.Rda : luad_limma_asym2.R
+	Rscript 'code/luad_limma_asym2.R'
+../ext_analysis/luad.data.limma.asym3.Rda : luad_limma_asym3.R
+	Rscript 'code/luad_limma_asym3.R'
+
+../ext_analysis/prad.data.limma.asym1.Rda : code/prad_limma_asym1.R
+	Rscript 'code/prad_limma_asym1.R'
+../ext_analysis/prad.data.limma.asym2.Rda : code/prad_limma_asym2.R
+	Rscript 'code/prad_limma_asym2.R'
+../ext_analysis/prad.data.limma.asym3.Rda : code/prad_limma_asym3.R
+	Rscript 'code/prad_limma_asym3.R'
+
+../ext_analysis/thca.data.limma.asym1.Rda : code/thca_limma_asym1.R
+	Rscript 'code/thca_limma_asym1.R'
+../ext_analysis/thca.data.limma.asym2.Rda : code/thca_limma_asym2.R
+	Rscript 'code/thca_limma_asym2.R'
+../ext_analysis/thca.data.limma.asym3.Rda : code/thca_limma_asym3.R
+	Rscript 'code/thca_limma_asym3.R'
+
+
+#DESeq clean files
 clean_immuno_DESeq:
 	rm ../ext_analysis/immuno.data.deseq.Rda
 clean_brca_DESeq:
@@ -230,7 +308,8 @@ clean_prad_DESeq:
 	rm ../ext_analysis/prad.data.deseq.Rda
 clean_thca_DESeq:
 	rm ../ext_analysis/thca.data.deseq.Rda
-	
+
+#edgeR clean files
 clean_immuno_edgeR:
 	rm ../ext_analysis/immuno.data.edger.Rda
 clean_brca_edgeR:
@@ -246,6 +325,7 @@ clean_prad_edgeR:
 clean_thca_edgeR:
 	rm ../ext_analysis/thca.data.edger.Rda
 	
+#aldex clean files
 clean_immuno_aldex2_0:
 	rm ../ext_analysis/immuno.data.aldex2_0.Rda
 clean_immuno_aldex2_1:
@@ -303,6 +383,7 @@ clean_thca_aldex2_2:
 clean_thca_aldex2_5:
 	rm ../ext_analysis/thca.data.aldex2_5.Rda
 
+#limma clean files
 clean_immuno_limma:
 	rm ../ext_analysis/immuno.data.limma.Rda
 clean_brca_limma:
