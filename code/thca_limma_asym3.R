@@ -18,4 +18,4 @@ y_thca <- y_thca[keep_thca,keep.lib.sizes=FALSE]
 thca.data <- y_thca$counts #filtered base dataset
 
 thca.data.limma.asym3 <- lim.fun(thca.data, thca.conds, 100, mean = 3)
-save(thca.data.limma.asym3, file="../ext_analysis/thca.data.limma.asym3.Rda") 
+save(thca.data.limma.asym3, file="/Volumes/data2/andreea/ext_analysis/thca.data.limma.asym3.Rda") 

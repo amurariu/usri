@@ -18,4 +18,4 @@ y_lihc <- y_lihc[keep_lihc,keep.lib.sizes=FALSE]
 lihc.data <- y_lihc$counts #filtered base dataset
 
 lihc.data.limma.asym1 <- lim.fun(lihc.data, lihc.conds, 100, mean = 1)
-save(lihc.data.limma.asym1, file="../ext_analysis/lihc.data.limma.asym1.Rda") 
+save(lihc.data.limma.asym1, file="/Volumes/data2/andreea/ext_analysis/lihc.data.limma.asym1.Rda") 

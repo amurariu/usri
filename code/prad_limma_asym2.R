@@ -18,4 +18,4 @@ y_prad <- y_prad[keep_prad,keep.lib.sizes=FALSE]
 prad.data <- y_prad$counts #filtered base dataset
 
 prad.data.limma.asym2 <- lim.fun(prad.data, prad.conds, 100, mean = 2)
-save(prad.data.limma.asym2 file="../ext_analysis/prad.data.limma.asym2.Rda") 
+save(prad.data.limma.asym2 file="/Volumes/data2/andreea/ext_analysis/prad.data.limma.asym2.Rda") 

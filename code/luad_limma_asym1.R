@@ -18,4 +18,4 @@ y_luad <- y_luad[keep_luad,keep.lib.sizes=FALSE]
 luad.data <- y_luad$counts #filtered base dataset
 
 luad.data.limma.asym1 <- lim.fun(luad.data, luad.conds, 100, mean = 1)
-save(luad.data.limma.asym1, file="../ext_analysis/luad.data.limma.asym1.Rda") 
+save(luad.data.limma.asym1, file="/Volumes/data2/andreea/ext_analysis/luad.data.limma.asym1.Rda") 
