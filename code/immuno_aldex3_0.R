@@ -3,6 +3,8 @@ devtools::load_all('~/Documents/github/ALDEx3')
 library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
 
+source('code/ald3.fun.R')
+
 #immuno/PD1 dataset loading
 raw_counts_immuno <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm-GSE91061_raw_counts_GRCh38.p13_NCBI.tsv'
 meta_immuno <- 'https://raw.githubusercontent.com/amurariu/usri/main/data/imm_metadata.txt'
@@ -20,28 +22,10 @@ keep_pd1 <- filterByExpr(y_pd1)
 y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
 
-########## ALDEx3 
-# change conditions to binary from named conditions
-gp1 <- which(conditions_p == levels(factor(conditions_p))[1])
-gp2 <- which(conditions_p == levels(factor(conditions_p))[2])
-conditions <- conditions_p
-condition[gp1] <- 0
-condition[gp2] <- 1
-condition <- as.numeric(condition)
-
-X <- formula(~condition)
-data <- data.frame(condition=condition)
-
-nsample <- 1000
-foo0 <- aldex(immuno.data, X, data=data, nsample=nsample, scale=clr.sm, gamma=1e-3)
-sum.imm <- summary.aldex(foo0)
-# LFC column is estimate column 3
-# padj column is p.val.adj column 5
-###########
-
 #save file - gamma=1e-3
-immuno.data_0.aldex3 <- ald3.fun(data=immuno.data, conditions=immuno.conds$conditions_p, nloop=100, gamma=1e-3)
+immuno.data_0.aldex3 <- ald3.fun(data=immuno.data, conds=immuno.conds$conditions_p, nloop=1, gamma=1e-3) #works
 save(immuno.data_0.aldex3, file="../ext_analysis/immuno.data.aldex3_0.Rda")
+
 
 # aldex3 test with selex
 url <- "https://raw.githubusercontent.com/ggloor/datasets/refs/heads/main/selex.txt"

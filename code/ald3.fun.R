@@ -2,11 +2,11 @@
 # conditions is conditions_p from above
 # name is the name of the output file and must be in quotes
 # nloops is the number of test loops
-ald3.fun <- function(data, conds, nsample, gamma, nloop){
+ald3.fun <- function(data, conds, gamma, nloop){
   
   thin.data.out.aldex3 <- list() 
-  data.out.aldex.r3 <- list() 
-  data.out.aldex.t3 <- list() 
+  data.out.aldex3.r <- list() 
+  data.out.aldex3.t <- list() 
   
   #for loop
   for (i in 1:nloop){
@@ -18,9 +18,9 @@ ald3.fun <- function(data, conds, nsample, gamma, nloop){
     thin3 <- thin_2group(data, prop_null=0.95, alpha=0,
                         signal_fun = stats::rnorm, 
                         signal_params = list(mean = 0, sd = 2))
-    #thin.data.out.aldex3[[i]] <- thin3
-    conds_th <- as.vector(thin3$designmat)   # permuted and thinned conditions and data
-    data_th <- thin3$mat
+    thin.data.out.aldex3[[i]] <- thin3
+    conds_th <- as.vector(thin3$designmat)   #thinned conditions
+    data_th <- thin3$mat #thinned data
     
     print('thinned data')
     
@@ -37,12 +37,20 @@ ald3.fun <- function(data, conds, nsample, gamma, nloop){
     nsample <- 1000
     
     # randomized conditions only (.r)
-    data.out.aldex.r3 <- aldex(immuno.data, Xt, data=datat, nsample=nsample, scale=clr.sm, gamma=1e-3, nloop = 1)
+    data.out.aldex3.r <- aldex(immuno.data, Xt, data=datat, nsample=nsample, scale=clr.sm, gamma=1e-3, nloop = 1)
+    sum.imm.r <- summary.aldex(data.out.aldex3.r)
     # LFC column is estimate column 3
     # padj column is p.val.adj column 5
     
+    print('randomized conditions done')
+    
+    
     # randomized and thinned (.t)
-     data.out.aldex.t3 <- aldex(data_th, Xt, data=datat, nsample=nsample, scale=clr.sm, gamma=1e-3, nloop = 1)
+     data.out.aldex3.t <- aldex(data_th, Xt, data=datat, nsample=nsample, scale=clr.sm, gamma=1e-3, nloop = 1)
+     sum.imm.t <- summary.aldex(data.out.aldex3.t)
+     
+     print('thinned conditions done')
+     
     
   }
   #unpermuted conditions (.u)
@@ -59,10 +67,12 @@ ald3.fun <- function(data, conds, nsample, gamma, nloop){
   nsample <- 1000
   
   set.seed(2025)
-  data.out.aldex.u3 <- aldex(immuno.data, X, data=dataf, nsample=nsample, scale=clr.sm, gamma=1e-3, nloop = 1)
+  data.out.aldex3.u <- aldex(immuno.data, X, data=dataf, nsample=nsample, scale=clr.sm, gamma=1e-3, nloop = 1)
+  sum.imm.u <- summary.aldex(data.out.aldex3.u)
   
+  print('unpermuted conditions done')
   print("done loop")
   
-  return(list(conditions=conditions, thin.data=thin.data.out.aldex3, u.data=data.out.aldex.u3, r.data=data.out.aldex.r3, t.data= data.out.aldex.t3))
+  return(list(conditions=conditions, thin.data=thin.data.out.aldex3, u.data=data.out.aldex3.u, r.data=data.out.aldex3.r, t.data= data.out.aldex3.t))
 
   }
