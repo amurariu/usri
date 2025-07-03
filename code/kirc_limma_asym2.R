@@ -19,4 +19,4 @@ y_kirc <- y_kirc[keep_kirc,keep.lib.sizes=FALSE]
 kirc.data <- y_kirc$counts #filtered base dataset
 
 kirc.data.limma.asym2 <- lim.fun(kirc.data, kirc.conds, 100, mean = 2)
-save(kirc.data.limma.asym2, file="/Volumes/data2/andreea/kirc.data.limma.asym2.Rda") 
+save(kirc.data.limma.asym2, file="/Volumes/data2/andreea/ext_analysis/kirc.data.limma.asym2.Rda") 
