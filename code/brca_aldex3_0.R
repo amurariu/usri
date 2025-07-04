@@ -1,5 +1,4 @@
-install.packages("devtools")
-devtools::load_all('~/Documents/github/ALDEx3')
+devtools::load_all('~/Documents/ALDEx3')
 library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
 
