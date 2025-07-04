@@ -1,3 +1,4 @@
+library(devtools)
 devtools::load_all('~/Documents/github/ALDEx3')
 library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
