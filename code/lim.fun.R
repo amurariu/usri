@@ -1,4 +1,4 @@
-lim.fun <- function(data, conditions, nloop=10, mean){
+lim.fun <- function(data, conditions, nloop=10, mean, prop_null){
   
   thin.data.out <- list() 
   data.out.limma.r <- list() 
@@ -12,7 +12,7 @@ lim.fun <- function(data, conditions, nloop=10, mean){
     
     #thin_2group adds rnorm noise to 5% of the transcripts, generates TPs in the dataset
     #generate thin_2group for each dataset as well as labelling for conditions and new dataset
-    thin <- thin_2group(data, prop_null=0.95, alpha=0,
+    thin <- thin_2group(data, prop_null = prop_null, alpha=0,
                         signal_fun = stats::rnorm, 
                         signal_params = list(mean = mean, sd = 2))
     thin.data.out[[i]] <- thin
