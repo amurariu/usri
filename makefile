@@ -86,6 +86,39 @@ limma_thca_asym1: $out_path/ext_analysis/thca.data.limma.asym1.Rda
 limma_thca_asym2: $out_path/ext_analysis/thca.data.limma.asym2.Rda
 limma_thca_asym3: $out_path/ext_analysis/thca.data.limma.asym3.Rda
 
+ALDEx3_0_immuno: $out_path/ext_analysis/immuno.data.aldex3_0.Rda
+ALDEx3_0_brca: $out_path/ext_analysis/brca.data.aldex3_0.Rda
+ALDEx3_0_kirc: $out_path/ext_analysis/kirc.data.aldex3_0.Rda
+ALDEx3_0_lihc: $out_path/ext_analysis/lihc.data.aldex3_0.Rda
+ALDEx3_0_luad: $out_path/ext_analysis/luad.data.aldex3_0.Rda
+ALDEx3_0_prad: $out_path/ext_analysis/prad.data.aldex3_0.Rda
+ALDEx3_0_thca: $out_path/ext_analysis/thca.data.aldex3_0.Rda
+
+ALDEx3_1_immuno: $out_path/ext_analysis/immuno.data.aldex3_1.Rda
+ALDEx3_1_brca: $out_path/ext_analysis/brca.data.aldex3_1.Rda
+ALDEx3_1_kirc: $out_path/ext_analysis/kirc.data.aldex3_1.Rda
+ALDEx3_1_lihc: $out_path/ext_analysis/lihc.data.aldex3_1.Rda
+ALDEx3_1_luad: $out_path/ext_analysis/luad.data.aldex3_1.Rda
+ALDEx3_1_prad: $out_path/ext_analysis/prad.data.aldex3_1.Rda
+ALDEx3_1_thca: $out_path/ext_analysis/thca.data.aldex3_1.Rda
+
+ALDEx3_2_immuno: $out_path/ext_analysis/immuno.data.aldex3_2.Rda
+ALDEx3_2_brca: $out_path/ext_analysis/brca.data.aldex3_2.Rda
+ALDEx3_2_kirc: $out_path/ext_analysis/kirc.data.aldex3_2.Rda
+ALDEx3_2_lihc: $out_path/ext_analysis/lihc.data.aldex3_2.Rda
+ALDEx3_2_luad: $out_path/ext_analysis/luad.data.aldex3_2.Rda
+ALDEx3_2_prad: $out_path/ext_analysis/prad.data.aldex3_2.Rda
+ALDEx3_2_thca: $out_path/ext_analysis/thca.data.aldex3_2.Rda
+
+ALDEx3_5_immuno: $out_path/ext_analysis/immuno.data.aldex3_5.Rda
+ALDEx3_5_brca: $out_path/ext_analysis/brca.data.aldex3_5.Rda
+ALDEx3_5_kirc: $out_path/ext_analysis/kirc.data.aldex3_5.Rda
+ALDEx3_5_lihc: $out_path/ext_analysis/lihc.data.aldex3_5.Rda
+ALDEx3_5_luad: $out_path/ext_analysis/luad.data.aldex3_5.Rda
+ALDEx3_5_prad: $out_path/ext_analysis/prad.data.aldex3_5.Rda
+ALDEx3_5_thca: $out_path/ext_analysis/thca.data.aldex3_5.Rda
+
+
 #rules to generate the output files
 ### DESeq
 $out_path/ext_analysis/immuno.data.deseq.Rda : code/immuno_deseq.R code/des.fun.R
@@ -308,6 +341,95 @@ $out_path/ext_analysis/thca.data.limma.asym2.Rda : code/thca_limma_asym2.R
 	
 $out_path/ext_analysis/thca.data.limma.asym3.Rda : code/thca_limma_asym3.R
 	Rscript 'code/thca_limma_asym3.R'
+	
+
+### aldex3_0
+$out_path/ext_analysis/immuno.data.aldex3_0.Rda : code/immuno_aldex3_0.R 
+	Rscript 'code/immuno_aldex3_0.R' 
+	
+$out_path/ext_analysis/brca.data.aldex3_0.Rda : code/brca_aldex3_0.R 
+	Rscript 'code/brca_aldex3_0.R' 
+	
+$out_path/ext_analysis/kirc.data.aldex3_0.Rda : code/kirc_aldex3_0.R 
+	Rscript 'code/kirc_aldex3_0.R'
+	
+$out_path/ext_analysis/lihc.data.aldex3_0.Rda : code/lihc_aldex3_0.R 
+	Rscript 'code/lihc_aldex3_0.R' 
+	
+$out_path/ext_analysis/luad.data.aldex3_0.Rda : code/luad_aldex3_0.R 
+	Rscript 'code/luad_aldex3_0.R' 
+	
+$out_path/ext_analysis/prad.data.aldex3_0.Rda : code/prad_aldex3_0.R 
+	Rscript 'code/prad_aldex3_0.R' 
+	
+$out_path/ext_analysis/thca.data.aldex3_0.Rda : code/thca_aldex3_0.R 
+	Rscript 'code/thca_aldex3_0.R' 
+	
+### aldex3_1
+$out_path/ext_analysis/immuno.data.aldex3_1.Rda : code/immuno_aldex3_1.R
+	Rscript 'code/immuno_aldex3_1.R' 
+	
+$out_path/ext_analysis/brca.data.aldex3_1.Rda : code/brca_aldex3_1.R 
+	Rscript 'code/brca_aldex3_1.R' 
+	
+$out_path/ext_analysis/kirc.data.aldex3_1.Rda : code/kirc_aldex3_1.R 
+	Rscript 'code/kirc_aldex3_1.R'
+	
+$out_path/ext_analysis/lihc.data.aldex3_1.Rda : code/lihc_aldex3_1.R 
+	Rscript 'code/lihc_aldex3_1.R' 
+	
+$out_path/ext_analysis/luad.data.aldex3_1.Rda : code/luad_aldex3_1.R 
+	Rscript 'code/luad_aldex3_1.R' 
+	
+$out_path/ext_analysis/prad.data.aldex3_1.Rda : code/prad_aldex3_1.R 
+	Rscript 'code/prad_aldex3_1.R' 
+	
+$out_path/ext_analysis/thca.data.aldex3_1.Rda : code/thca_aldex3_1.R 
+	Rscript 'code/thca_aldex3_1.R' 
+	
+### aldex3_2
+$out_path/ext_analysis/immuno.data.aldex3_2.Rda : code/immuno_aldex3_2.R 
+	Rscript 'code/immuno_aldex3_2.R' 
+	
+$out_path/ext_analysis/brca.data.aldex3_2.Rda : code/brca_aldex3_2.R 
+	Rscript 'code/brca_aldex3_2.R' 
+	
+$out_path/ext_analysis/kirc.data.aldex3_2.Rda : code/kirc_aldex3_2.R 
+	Rscript 'code/kirc_aldex3_2.R' 
+	
+$out_path/ext_analysis/lihc.data.aldex3_2.Rda : code/lihc_aldex3_2.R 
+	Rscript 'code/lihc_aldex3_2.R' 
+	
+$out_path/ext_analysis/luad.data.aldex3_2.Rda : code/luad_aldex3_2.R 
+	Rscript 'code/luad_aldex3_2.R'
+	
+$out_path/ext_analysis/prad.data.aldex3_2.Rda : code/prad_aldex3_2.R 
+	Rscript 'code/prad_aldex3_2.R' 
+	
+$out_path/ext_analysis/thca.data.aldex3_2.Rda : code/thca_aldex3_2.R 
+	Rscript 'code/thca_aldex3_2.R'
+	
+### aldex3_5
+$out_path/ext_analysis/immuno.data.aldex3_5.Rda : code/immuno_aldex3_5.R 
+	Rscript 'code/immuno_aldex3_5.R' 
+	
+$out_path/ext_analysis/brca.data.aldex3_5.Rda : code/brca_aldex3_5.R 
+	Rscript 'code/brca_aldex3_5.R' 
+
+$out_path/ext_analysis/kirc.data.aldex3_5.Rda : code/kirc_aldex3_5.R 
+	Rscript 'code/kirc_aldex3_5.R' 
+	
+$out_path/ext_analysis/lihc.data.aldex3_5.Rda : code/lihc_aldex3_5.R 
+	Rscript 'code/lihc_aldex3_5.R' 
+	
+$out_path/ext_analysis/luad.data.aldex3_5.Rda : code/luad_aldex3_5.R 
+	Rscript 'code/luad_aldex3_5.R' 
+	
+$out_path/ext_analysis/prad.data.aldex3_5.Rda : code/prad_aldex3_5.R 
+	Rscript 'code/prad_aldex3_5.R' 
+	
+$out_path/ext_analysis/thca.data.aldex3_5.Rda : code/thca_aldex3_5.R 
+	Rscript 'code/thca_aldex3_5.R'
 
 
 #DESeq clean files
