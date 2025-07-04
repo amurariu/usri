@@ -119,6 +119,12 @@ ALDEx3_5_prad: $out_path/ext_analysis/prad.data.aldex3_5.Rda
 ALDEx3_5_thca: $out_path/ext_analysis/thca.data.aldex3_5.Rda
 
 
+limma_immuno_asym1_90: $out_path/ext_analysis/immuno.data.limma.asym1.prop90.Rda
+limma_immuno_asym1_80: $out_path/ext_analysis/immuno.data.limma.asym1.prop80.Rda
+limma_immuno_asym1_70: $out_path/ext_analysis/immuno.data.limma.asym1.prop70.Rda
+
+
+
 #rules to generate the output files
 ### DESeq
 $out_path/ext_analysis/immuno.data.deseq.Rda : code/immuno_deseq.R code/des.fun.R
@@ -430,6 +436,17 @@ $out_path/ext_analysis/prad.data.aldex3_5.Rda : code/prad_aldex3_5.R
 	
 $out_path/ext_analysis/thca.data.aldex3_5.Rda : code/thca_aldex3_5.R 
 	Rscript 'code/thca_aldex3_5.R'
+	
+#asymmetrical limma with different prop_null values
+
+$out_path/ext_analysis/immuno.data.limma.asym1.prop90.Rda : code/immuno_limma_asym1_90.R
+	Rscript 'code/immuno_limma_asym1_90.R'
+
+$out_path/ext_analysis/immuno.data.limma.asym1.prop80.Rda : code/immuno_limma_asym1_80.R
+	Rscript 'code/immuno_limma_asym1_80.R'
+
+$out_path/ext_analysis/immuno.data.limma.asym1.prop70.Rda : code/immuno_limma_asym1_70.R
+	Rscript 'code/immuno_limma_asym1_70.R'
 
 
 #DESeq clean files
