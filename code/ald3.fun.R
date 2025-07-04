@@ -37,7 +37,7 @@ ald3.fun <- function(data, conds, gamma, nloop){
     nsample <- 1000
     
     # randomized conditions only (.r)
-    data.out.aldex3.r <- aldex(immuno.data, Xt, data=datat, nsample=nsample, scale=clr.sm, gamma=1e-3, nloop = 1)
+    data.out.aldex3.r <- aldex(data, Xt, data=datat, nsample=nsample, scale=clr.sm, gamma=1e-3, nloop = 1)
     sum.imm.r <- summary.aldex(data.out.aldex3.r)
     # LFC column is estimate column 3
     # padj column is p.val.adj column 5
