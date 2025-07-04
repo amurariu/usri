@@ -34,7 +34,7 @@ ald3.fun <- function(data, conds, gamma, nloop){
   
     Xt <- formula(~conditions_t)
     datat <- data.frame(conditions_t=conditions_t)
-    nsample <- 1000
+    nsample <- 256
     
     # randomized conditions only (.r)
     data.out.aldex3.r <- aldex(data, Xt, data=datat, nsample=nsample, scale=clr.sm, gamma=1e-3, nloop = 1)
@@ -64,7 +64,7 @@ ald3.fun <- function(data, conds, gamma, nloop){
   
   X <- formula(~conditions)
   dataf <- data.frame(conditions=conditions)
-  nsample <- 1000
+  nsample <- 256
   
   set.seed(2025)
   data.out.aldex3.u <- aldex(immuno.data, X, data=dataf, nsample=nsample, scale=clr.sm, gamma=1e-3, nloop = 1)
