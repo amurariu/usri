@@ -5,9 +5,7 @@
 ald3.fun <- function(data, conds, gamma, nloop){
   
   thin.data.out.aldex3 <- list() 
-  data.out.aldex3.r <- list() 
   aldex.summary.r <- list()
-  data.out.aldex3.t <- list() 
   aldex.summary.t <- list()
   
   #for loop
@@ -40,8 +38,8 @@ ald3.fun <- function(data, conds, gamma, nloop){
     
     # randomized conditions only (.r)
     data.out.r <- aldex(data, Xt, data=datat, nsample=nsample, scale=clr.sm, gamma=1e-3, nloop = 1)
-    data.out.aldex3.r[[i]] <- data.out.r 
-    sum.imm.r <- summary.aldex(data.out.aldex3.r)
+   sum.imm.r <- summary.aldex(data.out.r)
+   aldex.summary.r[[i]] <- sum.imm.r
 
     # LFC column is estimate column 3
     # padj column is p.val.adj column 5
@@ -51,8 +49,8 @@ ald3.fun <- function(data, conds, gamma, nloop){
     
     # randomized and thinned (.t)
      data.out.t <- aldex(data_th, Xt, data=datat, nsample=nsample, scale=clr.sm, gamma=1e-3, nloop = 1)
-     data.out.aldex3.t[[i]] <- data.out.t
-     sum.imm.t <- summary.aldex(data.out.aldex3.t)
+     sum.imm.t <- summary.aldex(data.out.t)
+     aldex.summary.t[[i]] <- sum.imm.t
 
      
      print('thinned conditions done')
@@ -79,6 +77,6 @@ ald3.fun <- function(data, conds, gamma, nloop){
   print('unpermuted conditions done')
   print("done loop")
   
-  return(list(conditions=conditions, thin.data=thin.data.out.aldex3, u.data=data.out.aldex3.u, summary.u = sum.imm.u , r.data=data.out.aldex3.r, summary.r = sum.imm.r, t.data= data.out.aldex3.t, summary.t = sum.imm.t))
+  return(list(conditions=conditions, thin.data=thin.data.out.aldex3, summary.u = sum.imm.u, summary.r = aldex.summary.r, summary.t = aldex.summary.t))
 
   }
