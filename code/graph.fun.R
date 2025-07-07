@@ -1,6 +1,6 @@
 source('code/get_confusion.R')
 
-graph.fun <- function( DESeq_var, edgeR_var, limma_var, aldex_0_var, aldex_2_var, aldex_5_var, limma_a1, limma_a2,limma_a3){
+graph.fun <- function( DESeq_var, edgeR_var, limma_var, aldex_0_var, aldex_2_var, aldex_5_var, limma_a1, limma_a2,limma_a3, lim.90, lim.80, lim.70){
   
   #perform get_confusion function first
   des.conf <- get_confusion(DESeq_var, "DESeq")
@@ -13,6 +13,9 @@ graph.fun <- function( DESeq_var, edgeR_var, limma_var, aldex_0_var, aldex_2_var
   limma.a1 <- get_confusion(limma_a1, "limma")
   limma.a2 <- get_confusion(limma_a2, "limma")
   limma.a3 <- get_confusion(limma_a3, "limma")
+  limma.90 <- get_confusion(lim.90, "limma")
+  limma.80 <- get_confusion(lim.80, "limma")
+  limma.70 <- get_confusion(lim.70, "limma")
   
   
   coeff <- as.numeric(rownames(ald0.conf$TPFPR))
@@ -37,18 +40,18 @@ graph.fun <- function( DESeq_var, edgeR_var, limma_var, aldex_0_var, aldex_2_var
   points(coeff,ald2.conf$TPFPR[,4], col="grey", type='b', lty=2, pch='2', cex=0.6)
   points(coeff,ald5.conf$TPFPR[,4], col="grey", type='b', lty=2, pch='5', cex=0.6)
   
-  points(coeff, des.conf$TPFPR[,1], col="blue", type='b', lty=1)
-  points(coeff, des.conf$TPFPR[,2], col="blue", type='b', lty=2)
-  points(coeff, des.conf$TPFPR[,3], col="steelblue1", type='b', lty=1)
-  points(coeff, des.conf$TPFPR[,4], col="steelblue1", type='b', lty=2)
-  points(coeff, edge.conf$TPFPR[,1], col="violetred", type='b', lty=1)
-  points(coeff, edge.conf$TPFPR[,2], col="violetred", type='b', lty=2)
-  points(coeff, edge.conf$TPFPR[,3], col="pink", type='b', lty=1)
-  points(coeff, edge.conf$TPFPR[,4], col="pink", type='b', lty=2)
-  points(coeff, limma.conf$TPFPR[,1], col="brown", type='b', lty=1)
-  points(coeff, limma.conf$TPFPR[,2], col="brown", type='b', lty=2)
-  points(coeff, limma.conf$TPFPR[,3], col="orange", type='b', lty=1)
-  points(coeff, limma.conf$TPFPR[,4], col="orange", type='b', lty=2)
+  # points(coeff, des.conf$TPFPR[,1], col="blue", type='b', lty=1)
+  # points(coeff, des.conf$TPFPR[,2], col="blue", type='b', lty=2)
+  # points(coeff, des.conf$TPFPR[,3], col="steelblue1", type='b', lty=1)
+  # points(coeff, des.conf$TPFPR[,4], col="steelblue1", type='b', lty=2)
+  # points(coeff, edge.conf$TPFPR[,1], col="violetred", type='b', lty=1)
+  # points(coeff, edge.conf$TPFPR[,2], col="violetred", type='b', lty=2)
+  # points(coeff, edge.conf$TPFPR[,3], col="pink", type='b', lty=1)
+  # points(coeff, edge.conf$TPFPR[,4], col="pink", type='b', lty=2)
+  # points(coeff, limma.conf$TPFPR[,1], col="brown", type='b', lty=1)
+  # points(coeff, limma.conf$TPFPR[,2], col="brown", type='b', lty=2)
+  # points(coeff, limma.conf$TPFPR[,3], col="orange", type='b', lty=1)
+  # points(coeff, limma.conf$TPFPR[,4], col="orange", type='b', lty=2)
   
   points(coeff, limma.a1$TPFPR[,1], col="darkgreen", type='b', lty=1)
   points(coeff, limma.a1$TPFPR[,2], col="darkgreen", type='b', lty=2)
@@ -64,6 +67,21 @@ graph.fun <- function( DESeq_var, edgeR_var, limma_var, aldex_0_var, aldex_2_var
   points(coeff, limma.a3$TPFPR[,2], col="purple", type='b', lty=2)
   points(coeff, limma.a3$TPFPR[,3], col="violet", type='b', lty=1)
   points(coeff, limma.a3$TPFPR[,4], col="violet", type='b', lty=2)
+  
+  points(coeff, lim.90$TPFPR[,1], col= "coral3", type='b', lty=1)
+  points(coeff, lim.90$TPFPR[,2], col="coral3", type='b', lty=2)
+  points(coeff, lim.90$TPFPR[,3], col="coral", type='b', lty=1)
+  points(coeff, lim.90$TPFPR[,4], col="coral", type='b', lty=2)
+  
+  points(coeff, lim.80$TPFPR[,1], col="hotpink2", type='b', lty=1)
+  points(coeff, lim.80$TPFPR[,2], col="hotpink2", type='b', lty=2)
+  points(coeff, lim.80$TPFPR[,3], col="hotpink", type='b', lty=1)
+  points(coeff, lim.80$TPFPR[,4], col= "hotpink", type='b', lty=2)
+  
+  points(coeff, limma.a3$TPFPR[,1], col="cyan3", type='b', lty=1)
+  points(coeff, limma.a3$TPFPR[,2], col="cyan3", type='b', lty=2)
+  points(coeff, limma.a3$TPFPR[,3], col="cyan", type='b', lty=1)
+  points(coeff, limma.a3$TPFPR[,4], col="cyan", type='b', lty=2)
 
   abline(h=0.05, lty=3, lwd=2, col="grey") 
   
@@ -90,19 +108,19 @@ graph.fun <- function( DESeq_var, edgeR_var, limma_var, aldex_0_var, aldex_2_var
   points(coeff,ald5.conf$TPFPR[,8], col="grey", type='b', lty=2, pch='5', cex=0.6)
   abline(h=0.05, lty=3, lwd=2, col="grey")
   
-  points(coeff, des.conf$TPFPR[,5], col="blue", type='b', lty=1)
-  points(coeff, des.conf$TPFPR[,6], col="blue", type='b', lty=2)
-  points(coeff, des.conf$TPFPR[,7], col="steelblue1", type='b', lty=1)
-  points(coeff, des.conf$TPFPR[,8], col="steelblue1", type='b', lty=2)
-  points(coeff, edge.conf$TPFPR[,5], col="violetred", type='b', lty=1)
-  points(coeff, edge.conf$TPFPR[,6], col="violetred", type='b', lty=2)
-  points(coeff, edge.conf$TPFPR[,7], col="pink", type='b', lty=1)
-  points(coeff, edge.conf$TPFPR[,8], col="pink", type='b', lty=2)
-  points(coeff, limma.conf$TPFPR[,5], col="brown", type='b', lty=1)
-  points(coeff, limma.conf$TPFPR[,6], col="brown", type='b', lty=2)
-  points(coeff, limma.conf$TPFPR[,7], col="orange", type='b', lty=1)
-  points(coeff, limma.conf$TPFPR[,8], col="orange", type='b', lty=2)
-  
+  # points(coeff, des.conf$TPFPR[,5], col="blue", type='b', lty=1)
+  # points(coeff, des.conf$TPFPR[,6], col="blue", type='b', lty=2)
+  # points(coeff, des.conf$TPFPR[,7], col="steelblue1", type='b', lty=1)
+  # points(coeff, des.conf$TPFPR[,8], col="steelblue1", type='b', lty=2)
+  # points(coeff, edge.conf$TPFPR[,5], col="violetred", type='b', lty=1)
+  # points(coeff, edge.conf$TPFPR[,6], col="violetred", type='b', lty=2)
+  # points(coeff, edge.conf$TPFPR[,7], col="pink", type='b', lty=1)
+  # points(coeff, edge.conf$TPFPR[,8], col="pink", type='b', lty=2)
+  # points(coeff, limma.conf$TPFPR[,5], col="brown", type='b', lty=1)
+  # points(coeff, limma.conf$TPFPR[,6], col="brown", type='b', lty=2)
+  # points(coeff, limma.conf$TPFPR[,7], col="orange", type='b', lty=1)
+  # points(coeff, limma.conf$TPFPR[,8], col="orange", type='b', lty=2)
+  # 
   points(coeff, limma.a1$TPFPR[,5], col="darkgreen", type='b', lty=1)
   points(coeff, limma.a1$TPFPR[,6], col="darkgreen", type='b', lty=2)
   points(coeff, limma.a1$TPFPR[,7], col="lightgreen", type='b', lty=1)
@@ -117,6 +135,22 @@ graph.fun <- function( DESeq_var, edgeR_var, limma_var, aldex_0_var, aldex_2_var
   points(coeff, limma.a3$TPFPR[,6], col="purple", type='b', lty=2)
   points(coeff, limma.a3$TPFPR[,7], col="violet", type='b', lty=1)
   points(coeff, limma.a3$TPFPR[,8], col="violet", type='b', lty=2)
+  
+  points(coeff, lim.90$TPFPR[,5], col= "coral3", type='b', lty=1)
+  points(coeff, lim.90$TPFPR[,6], col="coral3", type='b', lty=2)
+  points(coeff, lim.90$TPFPR[,7], col="coral", type='b', lty=1)
+  points(coeff, lim.90$TPFPR[,8], col="coral", type='b', lty=2)
+  
+  points(coeff, lim.80$TPFPR[,5], col="hotpink2", type='b', lty=1)
+  points(coeff, lim.80$TPFPR[,6], col="hotpink2", type='b', lty=2)
+  points(coeff, lim.80$TPFPR[,7], col="hotpink", type='b', lty=1)
+  points(coeff, lim.80$TPFPR[,8], col= "hotpink", type='b', lty=2)
+  
+  points(coeff, limma.a3$TPFPR[,5], col="cyan3", type='b', lty=1)
+  points(coeff, limma.a3$TPFPR[,6], col="cyan3", type='b', lty=2)
+  points(coeff, limma.a3$TPFPR[,7], col="cyan", type='b', lty=1)
+  points(coeff, limma.a3$TPFPR[,8], col="cyan", type='b', lty=2)
+  
   
   abline(h=0.05, lty=3, lwd=2, col="grey")
   

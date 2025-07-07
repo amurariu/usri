@@ -15,8 +15,11 @@ load (paste(anal.path,"immuno.data.limma.Rda", sep=""))
 load (paste(anal.path,"immuno.data.limma.asym1.Rda", sep=""))
 load (paste(anal.path,"immuno.data.limma.asym2.Rda", sep=""))
 load (paste(anal.path,"immuno.data.limma.asym3.Rda", sep=""))
+load (paste(anal.path,"immuno.data.limma.asym1.prop90.Rda", sep=""))
+load (paste(anal.path,"immuno.data.limma.asym1.prop80.Rda", sep=""))
+load (paste(anal.path,"immuno.data.limma.asym1.prop70.Rda", sep=""))
 
-graph.fun(DESeq_var = immuno.data.DESeq, edgeR_var = immuno.data.edgeR, limma_var = immuno.data.limma, aldex_0_var = immuno.data_0.aldex2, aldex_1_var = immuno.data_1.aldex2,  aldex_2_var = immuno.data_2.aldex2, aldex_5_var = immuno.data_5.aldex2, limma_a1 = immuno.data.limma.asym1, limma_a2 = immuno.data.limma.asym2, limma_a3 = immuno.data.limma.asym3)
+graph.fun(DESeq_var = immuno.data.DESeq, edgeR_var = immuno.data.edgeR, limma_var = immuno.data.limma, aldex_0_var = immuno.data_0.aldex2,  aldex_2_var = immuno.data_2.aldex2, aldex_5_var = immuno.data_5.aldex2, limma_a1 = immuno.data.limma.asym1, limma_a2 = immuno.data.limma.asym2, limma_a3 = immuno.data.limma.asym3, lim.90 = immuno.data.limma.asym1.90, lim.80 = immuno.data.limma.asym1.80, lim.70 = immuno.data.limma.asym1.70)
 
 #brca dataset
 load(paste(anal.path,"brca.data.deseq.Rda", sep="")) 
