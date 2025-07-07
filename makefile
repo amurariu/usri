@@ -118,11 +118,61 @@ ALDEx3_5_luad: $out_path/ext_analysis/luad.data.aldex3_5.Rda
 ALDEx3_5_prad: $out_path/ext_analysis/prad.data.aldex3_5.Rda
 ALDEx3_5_thca: $out_path/ext_analysis/thca.data.aldex3_5.Rda
 
+limma_immuno_asym0_90: $out_path/ext_analysis/brca.data.limma.asym0.prop90.Rda
+limma_immuno_asym0_80: $out_path/ext_analysis/brca.data.limma.asym0.prop80.Rda
+limma_immuno_asym0_70: $out_path/ext_analysis/brca.data.limma.asym0.prop70.Rda
 
-limma_immuno_asym1_90: $out_path/ext_analysis/immuno.data.limma.asym1.prop90.Rda
-limma_immuno_asym1_80: $out_path/ext_analysis/immuno.data.limma.asym1.prop80.Rda
-limma_immuno_asym1_70: $out_path/ext_analysis/immuno.data.limma.asym1.prop70.Rda
+limma_immuno_asym1_90: $out_path/ext_analysis/brca.data.limma.asym1.prop90.Rda
+limma_immuno_asym1_80: $out_path/ext_analysis/brca.data.limma.asym1.prop80.Rda
+limma_immuno_asym1_70: $out_path/ext_analysis/brca.data.limma.asym1.prop70.Rda
 
+brca_immuno_asym0_90: $out_path/ext_analysis/brca.data.limma.asym0.prop90.Rda
+brca_immuno_asym0_80: $out_path/ext_analysis/brca.data.limma.asym0.prop80.Rda
+brca_immuno_asym0_70: $out_path/ext_analysis/brca.data.limma.asym0.prop70.Rda
+
+brca_immuno_asym1_90: $out_path/ext_analysis/brca.data.limma.asym1.prop90.Rda
+brca_immuno_asym1_80: $out_path/ext_analysis/brca.data.limma.asym1.prop80.Rda
+brca_immuno_asym1_70: $out_path/ext_analysis/brca.data.limma.asym1.prop70.Rda
+
+kirc_immuno_asym0_90: $out_path/ext_analysis/kirc.data.limma.asym0.prop90.Rda
+kirc_immuno_asym0_80: $out_path/ext_analysis/kirc.data.limma.asym0.prop80.Rda
+kirc_immuno_asym0_70: $out_path/ext_analysis/kirc.data.limma.asym0.prop70.Rda
+
+kirc_immuno_asym1_90: $out_path/ext_analysis/kirc.data.limma.asym1.prop90.Rda
+kirc_immuno_asym1_80: $out_path/ext_analysis/kirc.data.limma.asym1.prop80.Rda
+kirc_immuno_asym1_70: $out_path/ext_analysis/kirc.data.limma.asym1.prop70.Rda
+
+lihc_immuno_asym0_90: $out_path/ext_analysis/lihc.data.limma.asym0.prop90.Rda
+lihc_immuno_asym0_80: $out_path/ext_analysis/lihc.data.limma.asym0.prop80.Rda
+lihc_immuno_asym0_70: $out_path/ext_analysis/lihc.data.limma.asym0.prop70.Rda
+
+lihc_immuno_asym1_90: $out_path/ext_analysis/lihc.data.limma.asym1.prop90.Rda
+lihc_immuno_asym1_80: $out_path/ext_analysis/lihc.data.limma.asym1.prop80.Rda
+lihc_immuno_asym1_70: $out_path/ext_analysis/lihc.data.limma.asym1.prop70.Rda
+
+luad_immuno_asym0_90: $out_path/ext_analysis/luad.data.limma.asym0.prop90.Rda
+luad_immuno_asym0_80: $out_path/ext_analysis/luad.data.limma.asym0.prop80.Rda
+luad_immuno_asym0_70: $out_path/ext_analysis/luad.data.limma.asym0.prop70.Rda
+
+luad_immuno_asym1_90: $out_path/ext_analysis/luad.data.limma.asym1.prop90.Rda
+luad_immuno_asym1_80: $out_path/ext_analysis/luad.data.limma.asym1.prop80.Rda
+luad_immuno_asym1_70: $out_path/ext_analysis/luad.data.limma.asym1.prop70.Rda
+
+prad_immuno_asym0_90: $out_path/ext_analysis/prad.data.limma.asym0.prop90.Rda
+prad_immuno_asym0_80: $out_path/ext_analysis/prad.data.limma.asym0.prop80.Rda
+prad_immuno_asym0_70: $out_path/ext_analysis/prad.data.limma.asym0.prop70.Rda
+
+prad_immuno_asym1_90: $out_path/ext_analysis/prad.data.limma.asym1.prop90.Rda
+prad_immuno_asym1_80: $out_path/ext_analysis/prad.data.limma.asym1.prop80.Rda
+prad_immuno_asym1_70: $out_path/ext_analysis/prad.data.limma.asym1.prop70.Rda
+
+thca_immuno_asym0_90: $out_path/ext_analysis/thca.data.limma.asym0.prop90.Rda
+thca_immuno_asym0_80: $out_path/ext_analysis/thca.data.limma.asym0.prop80.Rda
+thca_immuno_asym0_70: $out_path/ext_analysis/thca.data.limma.asym0.prop70.Rda
+
+thca_immuno_asym1_90: $out_path/ext_analysis/thca.data.limma.asym1.prop90.Rda
+thca_immuno_asym1_80: $out_path/ext_analysis/thca.data.limma.asym1.prop80.Rda
+thca_immuno_asym1_70: $out_path/ext_analysis/thca.data.limma.asym1.prop70.Rda
 
 
 #rules to generate the output files
@@ -439,6 +489,15 @@ $out_path/ext_analysis/thca.data.aldex3_5.Rda : code/thca_aldex3_5.R
 	
 #asymmetrical limma with different prop_null values
 
+$out_path/ext_analysis/immuno.data.limma.asym0.prop90.Rda : code/immuno_limma_asym0_90.R
+	Rscript 'code/immuno_limma_asym0_90.R'
+
+$out_path/ext_analysis/immuno.data.limma.asym0.prop80.Rda : code/immuno_limma_asym0_80.R
+	Rscript 'code/immuno_limma_asym0_80.R'
+
+$out_path/ext_analysis/immuno.data.limma.asym0.prop70.Rda : code/immuno_limma_asym0_70.R
+	Rscript 'code/immuno_limma_asym0_70.R'
+
 $out_path/ext_analysis/immuno.data.limma.asym1.prop90.Rda : code/immuno_limma_asym1_90.R
 	Rscript 'code/immuno_limma_asym1_90.R'
 
@@ -447,6 +506,114 @@ $out_path/ext_analysis/immuno.data.limma.asym1.prop80.Rda : code/immuno_limma_as
 
 $out_path/ext_analysis/immuno.data.limma.asym1.prop70.Rda : code/immuno_limma_asym1_70.R
 	Rscript 'code/immuno_limma_asym1_70.R'
+
+$out_path/ext_analysis/brca.data.limma.asym0.prop90.Rda : code/brca_limma_asym0_90.R
+	Rscript 'code/brca_limma_asym0_90.R'
+
+$out_path/ext_analysis/brca.data.limma.asym0.prop80.Rda : code/brca_limma_asym0_80.R
+	Rscript 'code/brca_limma_asym0_80.R'
+
+$out_path/ext_analysis/brca.data.limma.asym0.prop70.Rda : code/brca_limma_asym0_70.R
+	Rscript 'code/brca_limma_asym0_70.R'
+
+$out_path/ext_analysis/brca.data.limma.asym1.prop90.Rda : code/brca_limma_asym1_90.R
+	Rscript 'code/brca_limma_asym1_90.R'
+
+$out_path/ext_analysis/brca.data.limma.asym1.prop80.Rda : code/brca_limma_asym1_80.R
+	Rscript 'code/brca_limma_asym1_80.R'
+
+$out_path/ext_analysis/brca.data.limma.asym1.prop70.Rda : code/brca_limma_asym1_70.R
+	Rscript 'code/brca_limma_asym1_70.R'
+	
+$out_path/ext_analysis/kirc.data.limma.asym0.prop90.Rda : code/kirc_limma_asym0_90.R
+	Rscript 'code/kirc_limma_asym0_90.R'
+
+$out_path/ext_analysis/kirc.data.limma.asym0.prop80.Rda : code/kirc_limma_asym0_80.R
+	Rscript 'code/kirc_limma_asym0_80.R'
+
+$out_path/ext_analysis/kirc.data.limma.asym0.prop70.Rda : code/kirc_limma_asym0_70.R
+	Rscript 'code/kirc_limma_asym0_70.R'
+
+$out_path/ext_analysis/kirc.data.limma.asym1.prop90.Rda : code/kirc_limma_asym1_90.R
+	Rscript 'code/kirc_limma_asym1_90.R'
+
+$out_path/ext_analysis/kirc.data.limma.asym1.prop80.Rda : code/kirc_limma_asym1_80.R
+	Rscript 'code/kirc_limma_asym1_80.R'
+
+$out_path/ext_analysis/kirc.data.limma.asym1.prop70.Rda : code/kirc_limma_asym1_70.R
+	Rscript 'code/kirc_limma_asym1_70.R'
+
+$out_path/ext_analysis/lihc.data.limma.asym0.prop90.Rda : code/lihc_limma_asym0_90.R
+	Rscript 'code/lihc_limma_asym0_90.R'
+
+$out_path/ext_analysis/lihc.data.limma.asym0.prop80.Rda : code/lihc_limma_asym0_80.R
+	Rscript 'code/lihc_limma_asym0_80.R'
+
+$out_path/ext_analysis/lihc.data.limma.asym0.prop70.Rda : code/lihc_limma_asym0_70.R
+	Rscript 'code/lihc_limma_asym0_70.R'
+
+$out_path/ext_analysis/lihc.data.limma.asym1.prop90.Rda : code/lihc_limma_asym1_90.R
+	Rscript 'code/lihc_limma_asym1_90.R'
+
+$out_path/ext_analysis/lihc.data.limma.asym1.prop80.Rda : code/lihc_limma_asym1_80.R
+	Rscript 'code/lihc_limma_asym1_80.R'
+
+$out_path/ext_analysis/lihc.data.limma.asym1.prop70.Rda : code/lihc_limma_asym1_70.R
+	Rscript 'code/lihc_limma_asym1_70.R'
+	
+$out_path/ext_analysis/luad.data.limma.asym0.prop90.Rda : code/luad_limma_asym0_90.R
+	Rscript 'code/luad_limma_asym0_90.R'
+
+$out_path/ext_analysis/luad.data.limma.asym0.prop80.Rda : code/luad_limma_asym0_80.R
+	Rscript 'code/luad_limma_asym0_80.R'
+
+$out_path/ext_analysis/luad.data.limma.asym0.prop70.Rda : code/luad_limma_asym0_70.R
+	Rscript 'code/luad_limma_asym0_70.R'
+
+$out_path/ext_analysis/luad.data.limma.asym1.prop90.Rda : code/luad_limma_asym1_90.R
+	Rscript 'code/luad_limma_asym1_90.R'
+
+$out_path/ext_analysis/luad.data.limma.asym1.prop80.Rda : code/luad_limma_asym1_80.R
+	Rscript 'code/luad_limma_asym1_80.R'
+
+$out_path/ext_analysis/luad.data.limma.asym1.prop70.Rda : code/luad_limma_asym1_70.R
+	Rscript 'code/luad_limma_asym1_70.R'
+
+$out_path/ext_analysis/prad.data.limma.asym0.prop90.Rda : code/prad_limma_asym0_90.R
+	Rscript 'code/prad_limma_asym0_90.R'
+
+$out_path/ext_analysis/prad.data.limma.asym0.prop80.Rda : code/prad_limma_asym0_80.R
+	Rscript 'code/prad_limma_asym0_80.R'
+
+$out_path/ext_analysis/prad.data.limma.asym0.prop70.Rda : code/prad_limma_asym0_70.R
+	Rscript 'code/prad_limma_asym0_70.R'
+
+$out_path/ext_analysis/prad.data.limma.asym1.prop90.Rda : code/prad_limma_asym1_90.R
+	Rscript 'code/prad_limma_asym1_90.R'
+
+$out_path/ext_analysis/prad.data.limma.asym1.prop80.Rda : code/prad_limma_asym1_80.R
+	Rscript 'code/prad_limma_asym1_80.R'
+
+$out_path/ext_analysis/prad.data.limma.asym1.prop70.Rda : code/prad_limma_asym1_70.R
+	Rscript 'code/prad_limma_asym1_70.R'
+	
+$out_path/ext_analysis/thca.data.limma.asym0.prop90.Rda : code/thca_limma_asym0_90.R
+	Rscript 'code/thca_limma_asym0_90.R'
+
+$out_path/ext_analysis/thca.data.limma.asym0.prop80.Rda : code/thca_limma_asym0_80.R
+	Rscript 'code/thca_limma_asym0_80.R'
+
+$out_path/ext_analysis/thca.data.limma.asym0.prop70.Rda : code/thca_limma_asym0_70.R
+	Rscript 'code/prad_limma_asym0_70.R'
+
+$out_path/ext_analysis/thca.data.limma.asym1.prop90.Rda : code/thca_limma_asym1_90.R
+	Rscript 'code/thca_limma_asym1_90.R'
+
+$out_path/ext_analysis/thca.data.limma.asym1.prop80.Rda : code/thca_limma_asym1_80.R
+	Rscript 'code/thca_limma_asym1_80.R'
+
+$out_path/ext_analysis/thca.data.limma.asym1.prop70.Rda : code/thca_limma_asym1_70.R
+	Rscript 'code/thca_limma_asym1_70.R'
 
 
 #DESeq clean files
