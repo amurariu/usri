@@ -33,6 +33,9 @@ get_confusion <- function(input=NULL, prog=NULL){
 	}else if(prog=="ALDEx2.wi"){
 		lfc=4
 		padj=11
+	}else if (prog=="ALDEx3" || prog=="aldex3") {
+	  lfc= 
+	  padj=7
 	}
 	
 	# get the confusion matrix for the t.data
