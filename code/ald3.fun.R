@@ -37,7 +37,7 @@ ald3.fun <- function(data, conds, gamma, nloop){
     nsample <- 256
     
     # randomized conditions only (.r)
-    data.out.r <- aldex(data, Xt, data=datat, nsample=nsample, scale=clr.sm, gamma=1e-3)
+    data.out.r <- aldex(data, Xt, data=datat, nsample=nsample, scale=clr.sm, gamma=gamma)
    sum.imm.r <- summary.aldex(data.out.r)
    aldex.summary.r[[i]] <- sum.imm.r
 
@@ -48,7 +48,7 @@ ald3.fun <- function(data, conds, gamma, nloop){
     
     
     # randomized and thinned (.t)
-     data.out.t <- aldex(data_th, Xt, data=datat, nsample=nsample, scale=clr.sm, gamma=1e-3)
+     data.out.t <- aldex(data_th, Xt, data=datat, nsample=nsample, scale=clr.sm, gamma=gamma)
      sum.imm.t <- summary.aldex(data.out.t)
      aldex.summary.t[[i]] <- sum.imm.t
 
@@ -71,7 +71,7 @@ ald3.fun <- function(data, conds, gamma, nloop){
   nsample <- 256
   
   set.seed(2025)
-  data.out.aldex3.u <- aldex(immuno.data, X, data=dataf, nsample=nsample, scale=clr.sm, gamma=1e-3)
+  data.out.aldex3.u <- aldex(immuno.data, X, data=dataf, nsample=nsample, scale=clr.sm, gamma=gamma)
   sum.imm.u <- summary.aldex(data.out.aldex3.u)
   
   print('unpermuted conditions done')
