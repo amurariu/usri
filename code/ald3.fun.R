@@ -77,6 +77,6 @@ ald3.fun <- function(data, conds, gamma, nloop){
   print('unpermuted conditions done')
   print("done loop")
   
-  return(list(conditions=conditions, thin.data=thin.data.out.aldex3, summary.u = sum.imm.u, summary.r = aldex.summary.r, summary.t = aldex.summary.t))
+  return(list(conditions=conditions, thin.data=thin.data.out.aldex3, u.data = sum.imm.u, r.data = aldex.summary.r, t.data = aldex.summary.t))
 
   }
