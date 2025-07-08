@@ -34,7 +34,7 @@ get_confusion <- function(input=NULL, prog=NULL){
 		lfc=4
 		padj=11
 	}else if (prog=="ALDEx3" || prog=="aldex3") {
-	  lfc= 
+	  lfc= 4
 	  padj=7
 	}
 	
