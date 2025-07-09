@@ -1,13 +1,13 @@
-# running aldex2 (0.2 gamma) on cpn60 dataset (ST3, abx vs. no abx exposure)
+# running DESeq2 on cpn60 dataset (ST3, abx vs. no abx exposure)
 
 # Scott Dos Santos
-# 2025-06-23
+# 2025-06-25
 
-library(ALDEx2,warn.conflicts = F) #do not load aldex2 and aldex3 at the same time
 library(seqgendiff, warn.conflicts=F)
+library(DESeq2, warn.conflicts=F)
 
-# load ALDEx2 function for generating randomised/thinned data
-source('code/ald2.fun.R')
+# load DESeq2 function for generating randomised/thinned data
+source('code/des.fun.R')
 
 # load cpn60 dataset and metadata
 loc.counts <- "https://github.com/amurariu/usri/raw/refs/heads/main/data/cpn60.data.txt"
@@ -27,12 +27,12 @@ cpn60.counts <- cpn60.counts[, rownames(cpn60.meta)]
 any(rowSums(cpn60.counts) == 0) # returns TRUE
 cpn60.counts <- cpn60.counts[-which(rowSums(cpn60.counts)==0),]
 
-# convert count table to matrix
+# convert count table to matrix and add 1 to all counts (DESeq throws an error
+# if every feature has a count of zero in one or more samples)
 cpn60.counts <- as.matrix(cpn60.counts)
+cpn60.counts <- cpn60.counts +1
 
 # generate results for thinned +/- randomised cpn60 data, 100 times, plus 1x
 # non-randomised, non-thinned (i.e. original data)
-cpn60.data.aldex2.0 <- ald2.fun(data = cpn60.counts, nloop = 100,
-                                conditions = cpn60.meta$abx, gamma = 0.2)
-
-save(cpn60.data.aldex2.0, file = "../ext_analysis/cpn60.data.aldex2_2.Rda")
+cpn60.data.DESeq <- des.fun(data = cpn60.counts, nloop = 100, conditions = cpn60.meta$abx)
+save(cpn60.data.DESeq, file = "../ext_analysis/cpn60.data.deseq.Rda")

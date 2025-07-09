@@ -27,9 +27,12 @@ cpn60.counts <- cpn60.counts[, rownames(cpn60.meta)]
 any(rowSums(cpn60.counts) == 0) # returns TRUE
 cpn60.counts <- cpn60.counts[-which(rowSums(cpn60.counts)==0),]
 
+# convert count table to matrix
+cpn60.counts <- as.matrix(cpn60.counts)
+
 # generate results for thinned +/- randomised cpn60 data, 100 times, plus 1x
 # non-randomised, non-thinned (i.e. original data)
-cpn60.data.aldex2.0 <- ald2.fun(data = as.matrix(cpn60.counts),
-                                conditions = cpn60.meta$abx, nloop = 100, gamma = 1e-3)
+cpn60.data.aldex2.0 <- ald2.fun(data = cpn60.counts, nloop = 100,
+                                conditions = cpn60.meta$abx, gamma = 1e-3)
 
 save(cpn60.data.aldex2.0, file = "../ext_analysis/cpn60.data.aldex2_0.Rda")
