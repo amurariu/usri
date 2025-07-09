@@ -74,34 +74,34 @@ get_confusion <- function(input=NULL, prog=NULL){
 			diff.zero[i,5] <- length(TP.coeff)
 			
 			# TP, the same for all
-			raw.coeff[i,1] <- length(intersect(which(input$t.data[[i]][,padj] < 0.05), TP.coeff))
+			raw.coeff[i,1] <- length(intersect(which(input$t.data[[i]][,padj] < 0.1), TP.coeff))
 			raw.zero[i,1] <- raw.coeff[i,1]
-			diff.coeff[i,1] <- length(intersect(which(input$t.data[[i]][,padj] < 0.05 & 
+			diff.coeff[i,1] <- length(intersect(which(input$t.data[[i]][,padj] < 0.1 & 
 			  abs(input$t.data[[i]][,lfc]) > 0.5), TP.coeff))
 			diff.zero[i,1] <- diff.coeff[i,1]
 			
 			# FP, differ by negative definition
-			raw.coeff[i,2] <- length(intersect(which(input$t.data[[i]][,padj] < 0.05), TN.coeff))
-			raw.zero[i,2] <- length(intersect(which(input$t.data[[i]][,padj] < 0.05), TN.zero))
-			diff.coeff[i,2] <- length(intersect(which(input$t.data[[i]][,padj] < 0.05 & 
+			raw.coeff[i,2] <- length(intersect(which(input$t.data[[i]][,padj] < 0.1), TN.coeff))
+			raw.zero[i,2] <- length(intersect(which(input$t.data[[i]][,padj] < 0.1), TN.zero))
+			diff.coeff[i,2] <- length(intersect(which(input$t.data[[i]][,padj] < 0.1 & 
 			                                            abs(input$t.data[[i]][,lfc]) > 0.5), TN.coeff))
-			diff.zero[i,2] <- length(intersect(which(input$t.data[[i]][,padj] < 0.05 & 
+			diff.zero[i,2] <- length(intersect(which(input$t.data[[i]][,padj] < 0.1 & 
 			  abs(input$t.data[[i]][,lfc]) > 0.5), TN.zero))
 			
 			# TN, differ by negative definition
-			raw.coeff[i,3] <- length(intersect(which(input$t.data[[i]][,padj] > 0.05), TN.coeff))
-			diff.coeff[i,3] <- length(intersect(which(input$t.data[[i]][,padj] > 0.05 & 
+			raw.coeff[i,3] <- length(intersect(which(input$t.data[[i]][,padj] > 0.1), TN.coeff))
+			diff.coeff[i,3] <- length(intersect(which(input$t.data[[i]][,padj] > 0.1 & 
 			  abs(input$t.data[[i]][,lfc]) < 0.5), TN.coeff))
-			raw.zero[i,3] <- length(intersect(which(input$t.data[[i]][,padj] > 0.05), TN.zero))
-			diff.zero[i,3] <- length(intersect(which(input$t.data[[i]][,padj] > 0.05 & 
+			raw.zero[i,3] <- length(intersect(which(input$t.data[[i]][,padj] > 0.1), TN.zero))
+			diff.zero[i,3] <- length(intersect(which(input$t.data[[i]][,padj] > 0.1 & 
 			  abs(input$t.data[[i]][,lfc]) < 0.5), TN.zero))
 			
 			# FN, same for all
-			raw.coeff[i,4] <- length(intersect(which(input$t.data[[i]][,padj] > 0.05), TP.coeff))
-			diff.coeff[i,3] <- length(intersect(which(input$t.data[[i]][,padj] > 0.05 & 
+			raw.coeff[i,4] <- length(intersect(which(input$t.data[[i]][,padj] > 0.1), TP.coeff))
+			diff.coeff[i,3] <- length(intersect(which(input$t.data[[i]][,padj] > 0.1 & 
 			  abs(input$t.data[[i]][,lfc]) < 0.5), TP.coeff))
-			raw.zero[i,4] <- length(intersect(which(input$t.data[[i]][,padj] > 0.05), TP.coeff))
-			diff.zero[i,3] <- length(intersect(which(input$t.data[[i]][,padj] > 0.05 & 
+			raw.zero[i,4] <- length(intersect(which(input$t.data[[i]][,padj] > 0.1), TP.coeff))
+			diff.zero[i,3] <- length(intersect(which(input$t.data[[i]][,padj] > 0.1 & 
 			  abs(input$t.data[[i]][,lfc]) < 0.5), TP.coeff))
 			# TPR
 			raw.coeff[i,6] <- round(raw.coeff[i,1]/raw.coeff[i,5],3)

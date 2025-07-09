@@ -18,7 +18,7 @@ load(paste(anal.path,"immuno.data.aldex3_1.Rda", sep=""))
 load(paste(anal.path,"immuno.data.aldex3_2.Rda", sep=""))
 load(paste(anal.path,"immuno.data.aldex3_5.Rda", sep=""))
 
-graph.fun(DESeq_var = immuno.data.DESeq, edgeR_var = immuno.data.edgeR, limma_var = immuno.data.limma, aldex_0_var = immuno.data_0.aldex2, aldex_1_var = immuno.data_1.aldex2, aldex_2_var = immuno.data_2.aldex2, aldex_5_var = immuno.data_5.aldex2, aldex3_0_var = immuno.data_0.aldex3, aldex3_1_var = immuno.data_1.aldex3, aldex3_2_var = immuno.data_1.aldex3)
+graph.fun(DESeq_var = immuno.data.DESeq, edgeR_var = immuno.data.edgeR, limma_var = immuno.data.limma, aldex_0_var = immuno.data_0.aldex2, aldex_1_var = immuno.data_1.aldex2, aldex_2_var = immuno.data_2.aldex2, aldex_5_var = immuno.data_5.aldex2, aldex3_0_var = immuno.data_0.aldex3, aldex3_1_var = immuno.data_1.aldex3, aldex3_2_var = immuno.data_1.aldex3, aldex3_5_var = immuno.data_5.aldex3)
 
 #brca dataset
 load(paste(anal.path,"brca.data.deseq.Rda", sep="")) 
