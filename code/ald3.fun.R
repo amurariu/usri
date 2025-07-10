@@ -12,9 +12,12 @@ ald3.fun <- function(data, conds, gamma, nloop){
   for (i in 1:nloop){
     seed = 20 + i
     set.seed(seed)
+    
+    message(paste0("\nLoop iteration: ", i))
+    
     #thin_2group adds rnorm noise to 5% of the transcripts, generates TPs in the dataset
     #generate thin_2group for each dataset as well as labelling for conditions and new dataset
-    
+    message('Thinning data...')
     thin3 <- thin_2group(data, prop_null=0.95, alpha=0,
                         signal_fun = stats::rnorm, 
                         signal_params = list(mean = 0, sd = 2))
@@ -22,7 +25,6 @@ ald3.fun <- function(data, conds, gamma, nloop){
     conds_th <- as.vector(thin3$designmat)   #thinned conditions
     data_th <- thin3$mat #thinned data
     
-    print('thinned data')
     
     # setting conditions for thinned data
     gp1 <- which(conds_th == levels(factor(conds_th))[1])
@@ -37,26 +39,25 @@ ald3.fun <- function(data, conds, gamma, nloop){
     nsample <- 256
     
     # randomized conditions only (.r)
+    message("Running ALDEx3 (scale = ", gamma, ") on original data with randomised groups...")
     data.out.r <- aldex(data, Xt, data=datat, nsample=nsample, scale=clr.sm, gamma=gamma)
-   sum.imm.r <- summary.aldex(data.out.r)
-   aldex.summary.r[[i]] <- sum.imm.r
+    sum.imm.r <- summary.aldex(data.out.r)
+    aldex.summary.r[[i]] <- sum.imm.r
 
     # LFC column is estimate column 3
     # padj column is p.val.adj column 5
     
-    print('randomized conditions done')
-    
     
     # randomized and thinned (.t)
-     data.out.t <- aldex(data_th, Xt, data=datat, nsample=nsample, scale=clr.sm, gamma=gamma)
-     sum.imm.t <- summary.aldex(data.out.t)
-     aldex.summary.t[[i]] <- sum.imm.t
-
-     
-     print('thinned conditions done')
-     
+    message("Running ALDEx3 (scale = ", gamma, ") on thinned data with randomised groups...")
+    data.out.t <- aldex(data_th, Xt, data=datat, nsample=nsample, scale=clr.sm, gamma=gamma)
+    sum.imm.t <- summary.aldex(data.out.t)
+    aldex.summary.t[[i]] <- sum.imm.t
     
-  }
+    }
+  
+  message("\nAll ", i, " iterations of loop finished\n")
+  
   #unpermuted conditions (.u)
   # change conditions to binary from named conditions
   gp1 <- which(conds == levels(factor(conds))[1])
@@ -70,12 +71,10 @@ ald3.fun <- function(data, conds, gamma, nloop){
   dataf <- data.frame(conditions=conditions)
   nsample <- 256
   
+  message("Running ALDEx3 (scale = ", gamma, ") on original data with non-randomised groups...")
   set.seed(2025)
   data.out.aldex3.u <- aldex(data, X, data=dataf, nsample=nsample, scale=clr.sm, gamma=gamma)
   sum.imm.u <- summary.aldex(data.out.aldex3.u)
-  
-  print('unpermuted conditions done')
-  print("done loop")
   
   return(list(conditions=conditions, thin.data=thin.data.out.aldex3, u.data = sum.imm.u, r.data = aldex.summary.r, t.data = aldex.summary.t))
 
