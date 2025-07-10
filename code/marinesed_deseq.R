@@ -8,16 +8,13 @@ source('code/des.fun.R')
 #marine sediment dataset
 #####
 
-raw_counts_mar <- "https://raw.githubusercontent.com/amurariu/usri/main/data/name.tsv"
-conds_mar <-"https://raw.githubusercontent.com/amurariu/usri/main/data/name.tsv"
-mar <- read.table(file=raw_counts_mar, header=T, row.names=1, sep='\t')
+raw_counts_mar <- "https://raw.githubusercontent.com/amurariu/usri/main/data/sw_sed_detender_ASVs_table.tsv"
+conds_mar <-"https://raw.githubusercontent.com/amurariu/usri/main/data/sw_sed_detender_metadata.tsv"
+mar.data <- read.table(file=raw_counts_mar, header=T, row.names=1, sep='\t')
 conditions_m <- as.vector(unlist(read.table(file=conds_mar, sep='\t')))
 mar.conds <- data.frame(conditions_m) 
 
-y_mar <- DGEList(counts=mar, group=factor(conditions_m))
-keep_mar <- filterByExpr(y_mar)
-y_mar <- y_mar[keep_mar,keep.lib.sizes=FALSE]
-mar.data <- y_mar$counts 
+#will have to transpose the datasets too
 
 # function
 mar.data.DESeq <- des.fun(data = mar.data, nloop = 100, conditions = mar.conds$conditions_m)

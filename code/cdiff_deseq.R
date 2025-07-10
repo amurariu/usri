@@ -14,6 +14,7 @@ cdiff <- read.table(file=raw_counts_cdiff, header=T, row.names=1, sep='\t')
 conditions_c <- as.vector(unlist(read.table(file=conds_cdiff, sep='\t')))
 cdiff.conds <- data.frame(conditions_c) 
 
+transposed_cdiff<- t(cdiff)
 y_cdiff <- DGEList(counts=cdiff, group=factor(conditions_c))
 keep_cdiff <- filterByExpr(y_cdiff)
 y_cdiff <- y_cdiff[keep_cdiff,keep.lib.sizes=FALSE]

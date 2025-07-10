@@ -71,7 +71,7 @@ ald3.fun <- function(data, conds, gamma, nloop){
   nsample <- 256
   
   set.seed(2025)
-  data.out.aldex3.u <- aldex(immuno.data, X, data=dataf, nsample=nsample, scale=clr.sm, gamma=gamma)
+  data.out.aldex3.u <- aldex(data, X, data=dataf, nsample=nsample, scale=clr.sm, gamma=gamma)
   sum.imm.u <- summary.aldex(data.out.aldex3.u)
   
   print('unpermuted conditions done')
