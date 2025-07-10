@@ -10,12 +10,12 @@ source('code/des.fun.R')
 
 raw_counts_mar <- "https://raw.githubusercontent.com/amurariu/usri/main/data/sw_sed_detender_ASVs_table.tsv"
 conds_mar <-"https://raw.githubusercontent.com/amurariu/usri/main/data/sw_sed_detender_metadata.tsv"
-mar.data <- read.table(file=raw_counts_mar, header=T, row.names=1, sep='\t')
-conditions_m <- as.vector(unlist(read.table(file=conds_mar, sep='\t')))
+mar <- read.table(file=raw_counts_hiv, header=T, row.names=1, sep='\t')
+conditions_m <- read.table(file=conds_mar, sep='\t', row.names = 1, header = T)
 mar.conds <- data.frame(conditions_m) 
+transposed_mar<- t(mar)
 
-#will have to transpose the datasets too
 
 # function
-mar.data.DESeq <- des.fun(data = mar.data, nloop = 100, conditions = mar.conds$conditions_m)
+mar.data.DESeq <- des.fun(data = transposed_mar, nloop = 100, conditions = mar.conds$conditions_m)
 save(mar.data.DESeq, file="/Volumes/data2/andreea/ext_analysis/mar.data.deseq.Rda") 

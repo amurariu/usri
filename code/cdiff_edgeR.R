@@ -1,6 +1,7 @@
 library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
-library(DESeq2, warn.conflicts=F)
+
+source('code/edg.fun.R')
 
 #####
 #c.diff(1) dataset
@@ -14,5 +15,5 @@ cdiff.conds <- data.frame(conditions_c)
 transposed_cdiff<- t(cdiff)
 
 # function
-cdiff.data.DESeq <- des.fun(data = transposed_cdiff, nloop = 100, conditions = cdiff.conds$conditions_c)
-save(cdiff.data.DESeq, file="/Volumes/data2/andreea/ext_analysis/cdiff.data.deseq.Rda") 
+cdiff.data.edgeR <- edg.fun(data = transposed_cdiff, conditions = cdiff.conds$conditions_c, nloop = 100)
+save(cdiff.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/cdiff.data.deseq.Rda") 
