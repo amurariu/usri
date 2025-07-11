@@ -177,15 +177,14 @@ limma_thca_asym1_70: $out_path/ext_analysis/thca.data.limma.asym1.prop70.Rda
 #16S datasets
 
 cdiff_edgeR: $out_path/ext_analysis/cdiff.data.edgeR.Rda
+hiv_edgeR: $out_path/ext_analysis/hiv.data.edgeR.Rda
+fre_edgeR: $out_path/ext_analysis/fre.data.edgeR.Rda
+mar_edgeR: $out_path/ext_analysis/mar.data.edgeR.Rda
 
 cdiff_limma: $out_path/ext_analysis/cdiff.data.limma.Rda
 hiv_limma: $out_path/ext_analysis/hiv.data.limma.Rda
 fre_limma: $out_path/ext_analysis/fre.data.limma.Rda
 mar_limma: $out_path/ext_analysis/mar.data.limma.Rda
-
-
-
-
 
 
 #rules to generate the output files
@@ -632,6 +631,15 @@ $out_path/ext_analysis/thca.data.limma.asym1.prop70.Rda : code/thca_limma_asym1_
 
 $out_path/ext_analysis/cdiff.data.edgeR.Rda : code/cdiff_edgeR.R
 	Rscript 'code/cdiff_edgeR.R'
+	
+$out_path/ext_analysis/hiv.data.edgeR.Rda : code/humanhiv_edgeR.R
+	Rscript 'code/humanhiv_edgeR.R'
+
+$out_path/ext_analysis/fre.data.edgeR.Rda : code/freshwater_edgeR.R
+	Rscript 'code/freshwater_edgeR.R'
+
+$out_path/ext_analysis/mar.data.edgeR.Rda : code/marinesed_edgeR.R
+	Rscript 'code/marinesed_edgeR.R'
 
 $out_path/ext_analysis/cdiff.data.limma.Rda : code/cdiff_limma.R
 	Rscript 'code/cdiff_limma.R'
