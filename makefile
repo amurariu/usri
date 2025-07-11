@@ -177,7 +177,14 @@ limma_thca_asym1_70: $out_path/ext_analysis/thca.data.limma.asym1.prop70.Rda
 #16S datasets
 
 cdiff_edgeR: $out_path/ext_analysis/cdiff.data.edgeR.Rda
+
 cdiff_limma: $out_path/ext_analysis/cdiff.data.limma.Rda
+hiv_limma: $out_path/ext_analysis/hiv.data.limma.Rda
+fre_limma: $out_path/ext_analysis/fre.data.limma.Rda
+mar_limma: $out_path/ext_analysis/mar.data.limma.Rda
+
+
+
 
 
 
@@ -628,7 +635,15 @@ $out_path/ext_analysis/cdiff.data.edgeR.Rda : code/cdiff_edgeR.R
 
 $out_path/ext_analysis/cdiff.data.limma.Rda : code/cdiff_limma.R
 	Rscript 'code/cdiff_limma.R'
-
+	
+$out_path/ext_analysis/fre.data.limma.Rda : code/freshwater_limma.R
+	Rscript 'code/freshwater_limma.R'
+	
+$out_path/ext_analysis/hiv.data.limma.Rda : code/humanhiv_limma.R
+	Rscript 'code/humanhiv_limma.R'
+	
+$out_path/ext_analysis/mar.data.limma.Rda : code/marinesed_limma.R
+	Rscript 'code/marinesed_limma.R'
 
 #DESeq clean files
 clean_immuno_DESeq:
