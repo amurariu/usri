@@ -13,6 +13,8 @@ conds_mar <-"https://raw.githubusercontent.com/amurariu/usri/main/data/sw_sed_de
 mar <- read.table(file=raw_counts_mar, header=T, row.names=1, sep='\t')
 conditions_m <- read.table(file=conds_mar, sep='\t', row.names = 1, header = T)
 
+# remove taxonomy column
+mar <- mar[,-ncol(mar)]
 
-mar.data.limma <- lim.fun(data = as.matrix(mar), conditions = conditions_m$comparison, nloop = 100, mean = 0, prop_null = 0.95)
-save(mar.data.limma, file="/Volumes/data2/andreea/ext_analysis/mar.data.limma.Rda") 
+mar.data.limma <- lim.fun(data = as.matrix(mar), conditions = conditions_m$comparison, nloop = 2, mean = 0, prop_null = 0.95)
+save(mar.data.limma, file="/Volumes/data2/andreea/ext_analysis/mar.data.limma.Rda")
