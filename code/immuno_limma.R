@@ -23,5 +23,5 @@ keep_pd1 <- filterByExpr(y_pd1)
 y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE] #had to take out y_pd1$counts
 immuno.data <- y_pd1$counts
 
-immuno.data.limma <- lim.fun(immuno.data, immuno.conds, 100, mean = 0)
+immuno.data.limma <- lim.fun(immuno.data, immuno.conds, nloop = 100, mean = 0, prop_null = 0.95)
 save(immuno.data.limma, file="../ext_analysis/immuno.data.limma.Rda") 
