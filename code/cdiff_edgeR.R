@@ -15,5 +15,5 @@ cdiff.conds <- data.frame(conditions_c)
 transposed_cdiff<- t(cdiff)
 
 # function
-cdiff.data.edgeR <- edg.fun(data = transposed_cdiff, conditions = cdiff.conds$conditions_c, nloop = 100)
+cdiff.data.edgeR <- edg.fun(data = transposed_cdiff, conditions = cdiff.conds$conditions_c, nloop = 10)
 save(cdiff.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/cdiff.data.deseq.Rda") 
