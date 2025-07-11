@@ -174,6 +174,12 @@ limma_thca_asym1_90: $out_path/ext_analysis/thca.data.limma.asym1.prop90.Rda
 limma_thca_asym1_80: $out_path/ext_analysis/thca.data.limma.asym1.prop80.Rda
 limma_thca_asym1_70: $out_path/ext_analysis/thca.data.limma.asym1.prop70.Rda
 
+#16S datasets
+
+cdiff_edgeR: $out_path/ext_analysis/cdiff.data.edgeR.Rda
+cdiff_limma: $out_path/ext_analysis/cdiff.data.limma.Rda
+
+
 
 #rules to generate the output files
 ### DESeq
@@ -614,6 +620,14 @@ $out_path/ext_analysis/thca.data.limma.asym1.prop80.Rda : code/thca_limma_asym1_
 
 $out_path/ext_analysis/thca.data.limma.asym1.prop70.Rda : code/thca_limma_asym1_70.R
 	Rscript 'code/thca_limma_asym1_70.R'
+	
+#16S datasets
+
+$out_path/ext_analysis/cdiff.data.edgeR.Rda : code/cdiff_edgeR.R
+	Rscript 'code/cdiff_edgeR.R'
+
+$out_path/ext_analysis/cdiff.data.limma.Rda : code/cdiff_limma.R
+	Rscript 'code/cdiff_limma.R'
 
 
 #DESeq clean files
