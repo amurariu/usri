@@ -353,8 +353,8 @@ $out_path/ext_analysis/thca.data.aldex2_5.Rda : code/thca_aldex2_5.R code/ald2.f
 $out_path/ext_analysis/cdiff.data.aldex2_5.Rda : code/cdiff_aldex2_5.R 
 	Rscript 'code/cdiff_aldex2_5.R' 
 	
-$out_path/ext_analysis/fre.data.aldex2_0.Rda : code/fre_aldex2_0.R 
-	Rscript 'code/fre_aldex2_0.R' 
+$out_path/ext_analysis/fre.data.aldex2_5.Rda : code/fre_aldex2_5.R 
+	Rscript 'code/fre_aldex2_5.R' 
 
 ###limma 	
 $out_path/ext_analysis/immuno.data.limma.Rda : code/immuno_limma.R code/lim.fun.R
