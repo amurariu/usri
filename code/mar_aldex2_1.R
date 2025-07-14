@@ -12,6 +12,7 @@ raw_counts_mar <- "https://raw.githubusercontent.com/amurariu/usri/main/data/sw_
 conds_mar <-"https://raw.githubusercontent.com/amurariu/usri/main/data/sw_sed_detender_metadata.tsv"
 
 mar <- read.table(file=raw_counts_mar, header=T, row.names=1, sep='\t')
+mar <- mar[,-ncol(mar)]
 conditions_m <- read.table(file=conds_mar, sep='\t', row.names = 1, header = T)
 mar.conds <- data.frame(conditions_m) 
 
