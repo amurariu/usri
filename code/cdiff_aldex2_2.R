@@ -15,5 +15,5 @@ cdiff <- read.table(file=raw_counts_cdiff, header=T, row.names=1, sep='\t')
 conditions_c <- read.table(file=conds_cdiff, sep='\t', row.names = 1, header = T)
 cdiff.conds <- data.frame(conditions_c) 
 
-cdiff.data_2.aldex2 <- ald2.fun(data=as.matrix(cdiff), conditions=cdiff.conds$conditions_c, nloop=100, gamma=0.2)
+cdiff.data_2.aldex2 <- ald2.fun(data=as.matrix(cdiff), conditions=cdiff.conds$comparison, nloop=100, gamma=0.2)
 save(cdiff.data_2.aldex2, file="/Volumes/data2/andreea/ext_analysis/cdiff.data.aldex2_2.Rda")

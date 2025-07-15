@@ -16,5 +16,5 @@ mar <- mar[,-ncol(mar)]
 conditions_m <- read.table(file=conds_mar, sep='\t', row.names = 1, header = T)
 mar.conds <- data.frame(conditions_m) 
 
-mar.data_0.aldex2 <- ald2.fun(data=as.matrix(mar), conditions=mar.conds$conditions_m, nloop=100, gamma=1e-3)
+mar.data_0.aldex2 <- ald2.fun(data=as.matrix(mar), conditions=mar.conds$comparison, nloop=100, gamma=1e-3)
 save(mar.data_0.aldex2, file="/Volumes/data2/andreea/ext_analysis/mar.data.aldex2_0.Rda")

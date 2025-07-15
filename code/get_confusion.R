@@ -67,7 +67,9 @@ get_confusion <- function(input=NULL, prog=NULL, FDR=NULL){
 			TP.coeff <- which(abs(input$thin.data[[i]]$coefmat) >= coeff[j]) # true null
 			TN.coeff <- which(abs(input$thin.data[[i]]$coefmat) < coeff[j])
 			TN.zero <- which(abs(input$thin.data[[i]]$coefmat) == 0)
-			# model is the same for all 
+		
+				# model is the same for all
+		    # TP > coeff
 			raw.coeff[i,5] <- length(TP.coeff)
 			diff.coeff[i,5] <- length(TP.coeff)
 			raw.zero[i,5] <- length(TP.coeff)
@@ -103,7 +105,8 @@ get_confusion <- function(input=NULL, prog=NULL, FDR=NULL){
 			raw.zero[i,4] <- length(intersect(which(input$t.data[[i]][,padj] > FDR), TP.coeff))
 			diff.zero[i,3] <- length(intersect(which(input$t.data[[i]][,padj] > FDR & 
 			  abs(input$t.data[[i]][,lfc]) < 0.5), TP.coeff))
-			# TPR
+		
+				# TPR
 			raw.coeff[i,6] <- round(raw.coeff[i,1]/raw.coeff[i,5],3)
 			diff.coeff[i,6] <- round(diff.coeff[i,1]/diff.coeff[i,5],3)
 			raw.zero[i,6] <- round(raw.zero[i,1]/raw.zero[i,5],3)
@@ -119,14 +122,14 @@ get_confusion <- function(input=NULL, prog=NULL, FDR=NULL){
 			raw_zero[[j]] <- raw.zero
 			diff_zero[[j]] <- diff.coeff
 			
-			TPFPR.mat[j,1] <- raw.coeff[,6] #TPR
-			TPFPR.mat[j,2] <- raw.coeff[,7] # FDR
-			TPFPR.mat[j,3] <- diff.coeff[,6]
-			TPFPR.mat[j,4] <- diff.coeff[,7]
-			TPFPR.mat[j,5] <- raw.zero[,6] # TPR
-			TPFPR.mat[j,6] <- raw.zero[,7] # FDR
-			TPFPR.mat[j,7] <- diff.zero[,6]
-			TPFPR.mat[j,8] <- diff.zero[,7]
+			TPFPR.mat[j,1] <- raw.coeff[i,6] #TPR
+			TPFPR.mat[j,2] <- raw.coeff[i,7] # FDR
+			TPFPR.mat[j,3] <- diff.coeff[i,6]
+			TPFPR.mat[j,4] <- diff.coeff[i,7]
+			TPFPR.mat[j,5] <- raw.zero[i,6] # TPR
+			TPFPR.mat[j,6] <- raw.zero[i,7] # FDR
+			TPFPR.mat[j,7] <- diff.zero[i,6]
+			TPFPR.mat[j,8] <- diff.zero[i,7]
 			
 			
 			

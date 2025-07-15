@@ -15,5 +15,5 @@ hiv <- read.table(file=raw_counts_hiv, header=T, row.names=1, sep='\t')
 conditions_h <- read.table(file=conds_hiv, sep='\t', row.names = 1, header = T)
 hiv.conds <- data.frame(conditions_h) 
 
-hiv.data_2.aldex2 <- ald2.fun(data=as.matrix(hiv), conditions=hiv.conds$conditions_h, nloop=100, gamma=0.2)
+hiv.data_2.aldex2 <- ald2.fun(data=as.matrix(hiv), conditions=hiv.conds$comparison, nloop=100, gamma=0.2)
 save(hiv.data_2.aldex2, file="/Volumes/data2/andreea/ext_analysis/hiv.data.aldex2_2.Rda")
