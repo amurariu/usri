@@ -16,4 +16,4 @@ conditions_h <- read.table(file=conds_hiv, sep='\t', row.names = 1, header = T)
 hiv.conds <- data.frame(conditions_h) 
 
 hiv.data_0.aldex2 <- ald2.fun(data=as.matrix(hiv), conditions=hiv.conds$conditions_h, nloop=100, gamma=1e-3)
-save(hiv.data_0.aldex2, file="../ext_analysis/hiv.data.aldex2_0.Rda")
+save(hiv.data_0.aldex2, file="/Volumes/data2/andreea/ext_analysis/hiv.data.aldex2_0.Rda")
