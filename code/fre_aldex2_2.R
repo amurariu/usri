@@ -16,4 +16,4 @@ conditions_f <- read.table(file=conds_fre, sep='\t', row.names = 1, header = T)
 fre.conds <- data.frame(conditions_f) 
 
 fre.data_2.aldex2 <- ald2.fun(data=as.matrix(fre), conditions=fre.conds$conditions_c, nloop=100, gamma=0.2)
-save(fre.data_2.aldex2, file="../ext_analysis/fre.data.aldex2_2.Rda")
+save(fre.data_2.aldex2, file="/Volumes/data2/andreea/ext_analysis/fre.data.aldex2_2.Rda")
