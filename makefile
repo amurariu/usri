@@ -109,6 +109,10 @@ ALDEx3_0_lihc: $out_path/ext_analysis/lihc.data.aldex3_0.Rda
 ALDEx3_0_luad: $out_path/ext_analysis/luad.data.aldex3_0.Rda
 ALDEx3_0_prad: $out_path/ext_analysis/prad.data.aldex3_0.Rda
 ALDEx3_0_thca: $out_path/ext_analysis/thca.data.aldex3_0.Rda
+ALDEx3_0_cdiff: $out_path/ext_analysis/cdiff.data.aldex3_0.Rda
+ALDEx3_0_fre: $out_path/ext_analysis/fre.data.aldex3_0.Rda
+ALDEx3_0_hiv: $out_path/ext_analysis/hiv.data.aldex3_0.Rda
+ALDEx3_0_mar: $out_path/ext_analysis/mar.data.aldex3_0.Rda
 
 ALDEx3_1_immuno: $out_path/ext_analysis/immuno.data.aldex3_1.Rda
 ALDEx3_1_brca: $out_path/ext_analysis/brca.data.aldex3_1.Rda
@@ -117,6 +121,11 @@ ALDEx3_1_lihc: $out_path/ext_analysis/lihc.data.aldex3_1.Rda
 ALDEx3_1_luad: $out_path/ext_analysis/luad.data.aldex3_1.Rda
 ALDEx3_1_prad: $out_path/ext_analysis/prad.data.aldex3_1.Rda
 ALDEx3_1_thca: $out_path/ext_analysis/thca.data.aldex3_1.Rda
+ALDEx3_1_cdiff: $out_path/ext_analysis/cdiff.data.aldex3_1.Rda
+ALDEx3_1_fre: $out_path/ext_analysis/fre.data.aldex3_1.Rda
+ALDEx3_1_hiv: $out_path/ext_analysis/hiv.data.aldex3_1.Rda
+ALDEx3_2_mar: $out_path/ext_analysis/mar.data.aldex3_1.Rda
+
 
 ALDEx3_2_immuno: $out_path/ext_analysis/immuno.data.aldex3_2.Rda
 ALDEx3_2_brca: $out_path/ext_analysis/brca.data.aldex3_2.Rda
@@ -125,6 +134,11 @@ ALDEx3_2_lihc: $out_path/ext_analysis/lihc.data.aldex3_2.Rda
 ALDEx3_2_luad: $out_path/ext_analysis/luad.data.aldex3_2.Rda
 ALDEx3_2_prad: $out_path/ext_analysis/prad.data.aldex3_2.Rda
 ALDEx3_2_thca: $out_path/ext_analysis/thca.data.aldex3_2.Rda
+ALDEx3_2_cdiff: $out_path/ext_analysis/cdiff.data.aldex3_2.Rda
+ALDEx3_2_fre: $out_path/ext_analysis/fre.data.aldex3_2.Rda
+ALDEx3_2_hiv: $out_path/ext_analysis/hiv.data.aldex3_2.Rda
+ALDEx3_2_mar: $out_path/ext_analysis/mar.data.aldex3_2.Rda
+
 
 ALDEx3_5_immuno: $out_path/ext_analysis/immuno.data.aldex3_5.Rda
 ALDEx3_5_brca: $out_path/ext_analysis/brca.data.aldex3_5.Rda
@@ -133,6 +147,11 @@ ALDEx3_5_lihc: $out_path/ext_analysis/lihc.data.aldex3_5.Rda
 ALDEx3_5_luad: $out_path/ext_analysis/luad.data.aldex3_5.Rda
 ALDEx3_5_prad: $out_path/ext_analysis/prad.data.aldex3_5.Rda
 ALDEx3_5_thca: $out_path/ext_analysis/thca.data.aldex3_5.Rda
+ALDEx3_5_cdiff: $out_path/ext_analysis/cdiff.data.aldex3_5.Rda
+ALDEx3_5_fre: $out_path/ext_analysis/fre.data.aldex3_5.Rda
+ALDEx3_5_hiv: $out_path/ext_analysis/hiv.data.aldex3_5.Rda
+ALDEx3_5_mar: $out_path/ext_analysis/mar.data.aldex3_5.Rda
+
 
 limma_immuno_asym0_90: $out_path/ext_analysis/immuno.data.limma.asym0.prop90.Rda
 limma_immuno_asym0_80: $out_path/ext_analysis/immuno.data.limma.asym0.prop80.Rda
@@ -498,6 +517,19 @@ $out_path/ext_analysis/prad.data.aldex3_0.Rda : code/prad_aldex3_0.R
 $out_path/ext_analysis/thca.data.aldex3_0.Rda : code/thca_aldex3_0.R 
 	Rscript 'code/thca_aldex3_0.R' 
 	
+$out_path/ext_analysis/cdiff.data.aldex3_0.Rda : code/cdiff_aldex3_0.R 
+	Rscript 'code/cdiff_aldex3_0.R' 
+	
+$out_path/ext_analysis/fre.data.aldex3_0.Rda : code/fre_aldex3_0.R 
+	Rscript 'code/fre_aldex3_0.R' 
+	
+$out_path/ext_analysis/hiv.data.aldex3_0.Rda : code/hiv_aldex3_0.R 
+	Rscript 'code/hiv_aldex3_0.R' 
+	
+$out_path/ext_analysis/mar.data.aldex3_0.Rda : code/mar_aldex3_0.R 
+	Rscript 'code/mar_aldex3_0.R' 
+	
+	
 ### aldex3_1
 $out_path/ext_analysis/immuno.data.aldex3_1.Rda : code/immuno_aldex3_1.R
 	Rscript 'code/immuno_aldex3_1.R' 
@@ -519,6 +551,18 @@ $out_path/ext_analysis/prad.data.aldex3_1.Rda : code/prad_aldex3_1.R
 	
 $out_path/ext_analysis/thca.data.aldex3_1.Rda : code/thca_aldex3_1.R 
 	Rscript 'code/thca_aldex3_1.R' 
+	
+$out_path/ext_analysis/cdiff.data.aldex3_1.Rda : code/cdiff_aldex3_1.R 
+	Rscript 'code/cdiff_aldex3_1.R' 
+	
+$out_path/ext_analysis/fre.data.aldex3_1.Rda : code/fre_aldex3_1.R 
+	Rscript 'code/fre_aldex3_1.R' 
+	
+$out_path/ext_analysis/hiv.data.aldex3_1.Rda : code/hiv_aldex3_1.R 
+	Rscript 'code/hiv_aldex3_1.R' 
+	
+$out_path/ext_analysis/mar.data.aldex3_1.Rda : code/mar_aldex3_1.R 
+	Rscript 'code/mar_aldex3_1.R' 
 	
 ### aldex3_2
 $out_path/ext_analysis/immuno.data.aldex3_2.Rda : code/immuno_aldex3_2.R 
@@ -542,6 +586,18 @@ $out_path/ext_analysis/prad.data.aldex3_2.Rda : code/prad_aldex3_2.R
 $out_path/ext_analysis/thca.data.aldex3_2.Rda : code/thca_aldex3_2.R 
 	Rscript 'code/thca_aldex3_2.R'
 	
+$out_path/ext_analysis/cdiff.data.aldex3_2.Rda : code/cdiff_aldex3_2.R 
+	Rscript 'code/cdiff_aldex3_2.R' 
+	
+$out_path/ext_analysis/fre.data.aldex3_2.Rda : code/fre_aldex3_2.R 
+	Rscript 'code/fre_aldex3_2.R' 
+	
+$out_path/ext_analysis/hiv.data.aldex3_2.Rda : code/hiv_aldex3_2.R 
+	Rscript 'code/hiv_aldex3_2.R' 
+	
+$out_path/ext_analysis/mar.data.aldex3_2.Rda : code/mar_aldex3_2.R 
+	Rscript 'code/mar_aldex3_2.R' 
+	
 ### aldex3_5
 $out_path/ext_analysis/immuno.data.aldex3_5.Rda : code/immuno_aldex3_5.R 
 	Rscript 'code/immuno_aldex3_5.R' 
@@ -563,6 +619,18 @@ $out_path/ext_analysis/prad.data.aldex3_5.Rda : code/prad_aldex3_5.R
 	
 $out_path/ext_analysis/thca.data.aldex3_5.Rda : code/thca_aldex3_5.R 
 	Rscript 'code/thca_aldex3_5.R'
+	
+$out_path/ext_analysis/cdiff.data.aldex3_5.Rda : code/cdiff_aldex3_5.R 
+	Rscript 'code/cdiff_aldex3_5.R'
+	
+$out_path/ext_analysis/fre.data.aldex3_5.Rda : code/fre_aldex3_5.R 
+	Rscript 'code/fre_aldex3_5.R' 
+	
+$out_path/ext_analysis/hiv.data.aldex3_5.Rda : code/hiv_aldex3_5.R 
+	Rscript 'code/hiv_aldex3_5.R' 
+	
+$out_path/ext_analysis/mar.data.aldex3_5.Rda : code/mar_aldex3_5.R 
+	Rscript 'code/mar_aldex3_5.R' 
 	
 #asymmetrical limma with different prop_null values
 
