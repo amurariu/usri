@@ -15,5 +15,5 @@ fre <- read.table(file=raw_counts_fre, header=T, row.names=1, sep='\t')
 conditions_f <- read.table(file=conds_fre, sep='\t', row.names = 1, header = T)
 fre.conds <- data.frame(conditions_f) 
 
-fre.data_0.aldex3 <- ald3.fun(data=fre.data, conds=fre.conds$comparison, nloop=100, gamma=1e-3)
+fre.data_0.aldex3 <- ald3.fun(data=fre, conds=fre.conds$comparison, nloop=100, gamma=1e-3)
 save(fre.data_0.aldex3, file="/Volumes/data2/andreea/ext_analysis/fre.data.aldex3_0.Rda")
