@@ -40,7 +40,7 @@ get_confusion <- function(input=NULL, prog=NULL, FDR=NULL){
 	
 	# get the confusion matrix for the t.data
 
-	coeff <- c(0.01,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1)
+	coeff <- c(0.01,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1) #modelled LFC from thinning
 	# count of all FP in random
 	TPFPR.mat = matrix(data=NA, nrow=length(coeff), ncol=8)
 	colnames(TPFPR.mat) <- c("cTPR0", "cFDR0", "cTPR5","cFDR5","zTPR0", "zFDR0", "zTPR5","zFDR5")
