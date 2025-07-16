@@ -211,6 +211,11 @@ limma_thca_asym1_70: $out_path/ext_analysis/thca.data.limma.asym1.prop70.Rda
 
 #16S datasets
 
+DESeq_cdiff: $out_path/ext_analysis/cdiff.data.edgeR.Rda
+DESeq_hiv: $out_path/ext_analysis/hiv.data.edgeR.Rda
+DESeq_fre: $out_path/ext_analysis/fre.data.edgeR.Rda
+DESeq_mar: $out_path/ext_analysis/mar.data.edgeR.Rda
+
 cdiff_edgeR: $out_path/ext_analysis/cdiff.data.edgeR.Rda
 hiv_edgeR: $out_path/ext_analysis/hiv.data.edgeR.Rda
 fre_edgeR: $out_path/ext_analysis/fre.data.edgeR.Rda
@@ -245,6 +250,20 @@ $out_path/ext_analysis/prad.data.deseq.Rda : code/prad_deseq.R code/des.fun.R
 
 $out_path/ext_analysis/thca.data.deseq.Rda : code/thca_deseq.R code/des.fun.R
 	Rscript 'code/thca_deseq.R' 'code/des.fun.R'
+	
+$out_path/ext_analysis/cdiff.data.deseq.Rda : code/cdiff_deseq.R 
+	Rscript 'code/cdiff_deseq.R' 
+
+$out_path/ext_analysis/fre.data.deseq.Rda : code/fre_deseq.R 
+	Rscript 'code/fre_deseq.R' 
+
+$out_path/ext_analysis/hiv.data.deseq.Rda : code/hiv_deseq.R 
+	Rscript 'code/hiv_deseq.R' 
+	
+$out_path/ext_analysis/mar.data.deseq.Rda : code/mar_deseq.R 
+	Rscript 'code/mar_deseq.R' 
+
+
 
 
 ### edgeR
