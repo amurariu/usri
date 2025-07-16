@@ -124,7 +124,7 @@ ALDEx3_1_thca: $out_path/ext_analysis/thca.data.aldex3_1.Rda
 ALDEx3_1_cdiff: $out_path/ext_analysis/cdiff.data.aldex3_1.Rda
 ALDEx3_1_fre: $out_path/ext_analysis/fre.data.aldex3_1.Rda
 ALDEx3_1_hiv: $out_path/ext_analysis/hiv.data.aldex3_1.Rda
-ALDEx3_2_mar: $out_path/ext_analysis/mar.data.aldex3_1.Rda
+ALDEx3_1_mar: $out_path/ext_analysis/mar.data.aldex3_1.Rda
 
 
 ALDEx3_2_immuno: $out_path/ext_analysis/immuno.data.aldex3_2.Rda
