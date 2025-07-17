@@ -2,7 +2,7 @@
 # conditions is conditions_p from above
 # name is the name of the output file and must be in quotes
 # nloops is the number of test loops
-ald3.fun <- function(data, conds, gamma, nloop){
+ald3.fun <- function(data, conds, gamma, nloop, prop_null, mean){
   
   thin.data.out.aldex3 <- list() 
   aldex.summary.r <- list()
@@ -18,9 +18,9 @@ ald3.fun <- function(data, conds, gamma, nloop){
     #thin_2group adds rnorm noise to 5% of the transcripts, generates TPs in the dataset
     #generate thin_2group for each dataset as well as labelling for conditions and new dataset
     message('Thinning data...')
-    thin3 <- thin_2group(data, prop_null=0.95, alpha=0,
+    thin3 <- thin_2group(data, prop_null= prop_null, alpha=0,
                         signal_fun = stats::rnorm, 
-                        signal_params = list(mean = 0, sd = 2))
+                        signal_params = list(mean = mean, sd = 2))
     thin.data.out.aldex3[[i]] <- thin3
     conds_th <- as.vector(thin3$designmat)   #thinned conditions
     data_th <- thin3$mat #thinned data
