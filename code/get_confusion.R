@@ -122,26 +122,14 @@ get_confusion <- function(input=NULL, prog=NULL, FDR=NULL){
 			raw_zero[[j]] <- raw.zero
 			diff_zero[[j]] <- diff.coeff
 			
-			TPFPR.mat[j,1] <- raw.coeff[i,6] #TPR
-			TPFPR.mat[j,2] <- raw.coeff[i,7] # FDR
-			TPFPR.mat[j,3] <- diff.coeff[i,6]
-			TPFPR.mat[j,4] <- diff.coeff[i,7]
-			TPFPR.mat[j,5] <- raw.zero[i,6] # TPR
-			TPFPR.mat[j,6] <- raw.zero[i,7] # FDR
-			TPFPR.mat[j,7] <- diff.zero[i,6]
-			TPFPR.mat[j,8] <- diff.zero[i,7]
-			
-			
-			
-			#for average FDR/TPR
-			# TPFPR.mat[j,1] <- mean(raw.coeff[,6]) # TPR
-			# TPFPR.mat[j,2] <- mean(raw.coeff[,7]) # FDR
-			# TPFPR.mat[j,3] <- mean(diff.coeff[,6])
-			# TPFPR.mat[j,4] <- mean(diff.coeff[,7])
-			# TPFPR.mat[j,5] <- mean(raw.zero[,6]) # TPR
-			# TPFPR.mat[j,6] <- mean(raw.zero[,7]) # FDR
-			# TPFPR.mat[j,7] <- mean(diff.zero[,6])
-			# TPFPR.mat[j,8] <- mean(diff.zero[,7])
+			TPFPR.mat[j,1] <- mean(raw.coeff[,6]) # TPR
+			TPFPR.mat[j,2] <- mean(raw.coeff[,7]) # FDR
+			TPFPR.mat[j,3] <- mean(diff.coeff[,6])
+			TPFPR.mat[j,4] <- mean(diff.coeff[,7])
+		  TPFPR.mat[j,5] <- mean(raw.zero[,6]) # TPR
+			TPFPR.mat[j,6] <- mean(raw.zero[,7]) # FDR
+			TPFPR.mat[j,7] <- mean(diff.zero[,6])
+			TPFPR.mat[j,8] <- mean(diff.zero[,7])
 			
 		}
 		names(raw_coeff) <- coeff
