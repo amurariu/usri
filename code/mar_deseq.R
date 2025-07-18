@@ -11,10 +11,12 @@ source('code/des.fun.R')
 raw_counts_mar <- "https://raw.githubusercontent.com/amurariu/usri/main/data/sw_sed_detender_ASVs_table.tsv"
 conds_mar <-"https://raw.githubusercontent.com/amurariu/usri/main/data/sw_sed_detender_metadata.tsv"
 mar <- read.table(file=raw_counts_mar, header=T, row.names=1, sep='\t')
-mar <- mar+1
 taxa <- mar$taxonomy
 mar$taxonomy <- NULL
-conditions_m <- read.table(file=conds_mar, sep='\t', header = T)
+
+mar.counts <- as.matrix(mar)
+mar.counts <- mar.counts +1
+conditions_m <- read.table(file=conds_mar, row.names = 1, sep='\t', header = T)
 transposed_mar<- t(mar)
 
 # function
