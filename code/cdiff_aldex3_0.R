@@ -14,7 +14,6 @@ conds_cdiff <-"https://raw.githubusercontent.com/amurariu/usri/main/data/cdi_sch
 
 cdiff <- read.table(file=raw_counts_cdiff, header=T, row.names=1, sep='\t')
 conditions_c <- read.table(file=conds_cdiff, sep='\t', row.names = 1, header = T)
-cdiff.conds <- data.frame(conditions_c) 
 
-cdiff.data_0.aldex3 <- ald3.fun(data=as.matrix(cdiff), conds=cdiff.conds$comparison, nloop=100, gamma=1e-3)
+cdiff.data_0.aldex3 <- ald3.fun(data=as.matrix(cdiff), conds=conditions_c$comparison, nloop=100, gamma=1e-3, prop_null = 0.95, mean = 0)
 save(cdiff.data_0.aldex3, file="/Volumes/data2/andreea/ext_analysis/cdiff.data.aldex3_0.Rda")

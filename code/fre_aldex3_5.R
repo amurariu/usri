@@ -13,7 +13,6 @@ conds_fre <-"https://raw.githubusercontent.com/amurariu/usri/main/data/Ji_WTP_DS
 
 fre <- read.table(file=raw_counts_fre, header=T, row.names=1, sep='\t')
 conditions_f <- read.table(file=conds_fre, sep='\t', row.names = 1, header = T)
-fre.conds <- data.frame(conditions_f) 
 
-fre.data_5.aldex3 <- ald3.fun(data=as.matrix(fre), conds=fre.conds$comparison, nloop=100, gamma=0.5)
+fre.data_5.aldex3 <- ald3.fun(data=as.matrix(fre), conds=conditions_f$comparison, nloop=100, gamma=0.5, prop_null = 0.95, mean = 0)
 save(fre.data_5.aldex3, file="/Volumes/data2/andreea/ext_analysis/fre.data.aldex3_5.Rda")
