@@ -14,8 +14,8 @@ mar <- read.table(file=raw_counts_mar, header=T, row.names=1, sep='\t')
 taxa <- mar$taxonomy
 mar$taxonomy <- NULL
 
-mar.counts <- as.matrix(mar)
-mar.counts <- mar.counts +1
+mar <- as.matrix(mar)
+mar <- mar + 1
 conditions_m <- read.table(file=conds_mar, row.names = 1, sep='\t', header = T)
 transposed_mar<- t(mar)
 
