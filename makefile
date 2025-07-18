@@ -226,6 +226,38 @@ hiv_limma: $out_path/ext_analysis/hiv.data.limma.Rda
 fre_limma: $out_path/ext_analysis/fre.data.limma.Rda
 mar_limma: $out_path/ext_analysis/mar.data.limma.Rda
 
+#immuno dataset with asym and prop_null parameters
+ALDEx3_0_immuno_asym0_90: $out_path/ext_analysis/immuno.data.aldex3_0.asym0.prop90.Rda
+ALDEx3_0_immuno_asym0_80: $out_path/ext_analysis/immuno.data.aldex3_0.asym0.prop80.Rda
+ALDEx3_0_immuno_asym0_70: $out_path/ext_analysis/immuno.data.aldex3_0.asym0.prop70.Rda
+
+ALDEx3_1_immuno_asym0_90: $out_path/ext_analysis/immuno.data.aldex3_1.asym0.prop90.Rda
+ALDEx3_1_immuno_asym0_80: $out_path/ext_analysis/immuno.data.aldex3_1.asym0.prop80.Rda
+ALDEx3_1_immuno_asym0_70: $out_path/ext_analysis/immuno.data.aldex3_1.asym0.prop70.Rda
+
+ALDEx3_0_immuno_asym1_90: $out_path/ext_analysis/immuno.data.aldex3_0.asym1.prop90.Rda
+ALDEx3_0_immuno_asym1_80: $out_path/ext_analysis/immuno.data.aldex3_0.asym1.prop80.Rda
+ALDEx3_0_immuno_asym1_70: $out_path/ext_analysis/immuno.data.aldex3_0.asym1.prop70.Rda
+
+ALDEx3_1_immuno_asym1_90: $out_path/ext_analysis/immuno.data.aldex3_1.asym1.prop90.Rda
+ALDEx3_1_immuno_asym1_80: $out_path/ext_analysis/immuno.data.aldex3_1.asym1.prop80.Rda
+ALDEx3_1_immuno_asym1_70: $out_path/ext_analysis/immuno.data.aldex3_1.asym1.prop70.Rda
+
+ALDEx3_0_immuno_asym2_90: $out_path/ext_analysis/immuno.data.aldex3_0.asym2.prop90.Rda
+ALDEx3_0_immuno_asym2_80: $out_path/ext_analysis/immuno.data.aldex3_0.asym2.prop80.Rda
+ALDEx3_0_immuno_asym2_70: $out_path/ext_analysis/immuno.data.aldex3_0.asym2.prop70.Rda
+
+ALDEx3_1_immuno_asym2_90: $out_path/ext_analysis/immuno.data.aldex3_1.asym2.prop90.Rda
+ALDEx3_1_immuno_asym2_80: $out_path/ext_analysis/immuno.data.aldex3_1.asym2.prop80.Rda
+ALDEx3_1_immuno_asym2_70: $out_path/ext_analysis/immuno.data.aldex3_1.asym2.prop70.Rda
+
+ALDEx3_0_immuno_asym3_90: $out_path/ext_analysis/immuno.data.aldex3_0.asym3.prop90.Rda
+ALDEx3_0_immuno_asym3_80: $out_path/ext_analysis/immuno.data.aldex3_0.asym3.prop80.Rda
+ALDEx3_0_immuno_asym3_70: $out_path/ext_analysis/immuno.data.aldex3_0.asym3.prop70.Rda
+
+ALDEx3_1_immuno_asym3_90: $out_path/ext_analysis/immuno.data.aldex3_1.asym3.prop90.Rda
+ALDEx3_1_immuno_asym3_80: $out_path/ext_analysis/immuno.data.aldex3_1.asym3.prop80.Rda
+ALDEx3_1_immuno_asym3_70: $out_path/ext_analysis/immuno.data.aldex3_1.asym3.prop70.Rda
 
 
 #rules to generate the output files
@@ -802,6 +834,81 @@ $out_path/ext_analysis/hiv.data.limma.Rda : code/humanhiv_limma.R
 	
 $out_path/ext_analysis/mar.data.limma.Rda : code/mar_limma.R
 	Rscript 'code/mar_limma.R'
+
+#immuno with prop_null and different mean parameters
+
+$out_path/ext_analysis/immuno.data.aldex3_0.asym0.prop90.Rda : code/immuno_aldex3_0_asym0_90.R
+	Rscript 'code/immuno_aldex3_0_asym0_90.R'
+	
+$out_path/ext_analysis/immuno.data.aldex3_0.asym0.prop80.Rda : code/immuno_aldex3_0_asym0_80.R
+	Rscript 'code/immuno_aldex3_0_asym0_80.R'
+	
+$out_path/ext_analysis/immuno.data.aldex3_0.asym0.prop70.Rda : code/immuno_aldex3_0_asym0_70.R
+	Rscript 'code/immuno_aldex3_0_asym0_70.R'
+
+$out_path/ext_analysis/immuno.data.aldex3_1.asym0.prop90.Rda  : code/immuno_aldex3_1_asym0_90.R
+	Rscript 'code/immuno_aldex3_1_asym0_90.R'
+	
+$out_path/ext_analysis/immuno.data.aldex3_1.asym0.prop80.Rda : code/immuno_aldex3_1_asym0_80.R
+	Rscript 'code/immuno_aldex3_1_asym0_80.R'
+	
+$out_path/ext_analysis/immuno.data.aldex3_1.asym0.prop70.Rda : code/immuno_aldex3_1_asym0_70.R
+	Rscript 'code/immuno_aldex3_1_asym0_70.R'
+
+$out_path/ext_analysis/immuno.data.aldex3_0.asym1.prop90.Rda  : code/immuno_aldex3_0_asym1_90.R
+	Rscript 'code/immuno_aldex3_0_asym1_90.R'
+	
+$out_path/ext_analysis/immuno.data.aldex3_0.asym1.prop80.Rda  : code/immuno_aldex3_0_asym1_80.R
+	Rscript 'code/immuno_aldex3_0_asym1_80.R'
+	
+$out_path/ext_analysis/immuno.data.aldex3_0.asym1.prop70.Rda  : code/immuno_aldex3_0_asym1_70.R
+	Rscript 'code/immuno_aldex3_0_asym1_70.R'
+
+$out_path/ext_analysis/immuno.data.aldex3_1.asym1.prop90.Rda  : code/immuno_aldex3_1_asym1_90.R
+	Rscript 'code/immuno_aldex3_1_asym1_90.R'
+	
+$out_path/ext_analysis/immuno.data.aldex3_1.asym1.prop80.Rda  : code/immuno_aldex3_1_asym1_80.R
+	Rscript 'code/immuno_aldex3_1_asym1_80.R'
+	
+$out_path/ext_analysis/immuno.data.aldex3_1.asym1.prop70.Rda  : code/immuno_aldex3_1_asym1_70.R
+	Rscript 'code/immuno_aldex3_1_asym1_70.R'
+
+$out_path/ext_analysis/immuno.data.aldex3_0.asym2.prop90.Rda : code/immuno_aldex3_0_asym2_90.R
+	Rscript 'code/immuno_aldex3_0_asym2_90.R'
+	
+$out_path/ext_analysis/immuno.data.aldex3_0.asym2.prop80.Rda : code/immuno_aldex3_0_asym2_80.R
+	Rscript 'code/immuno_aldex3_0_asym2_80.R'
+	
+$out_path/ext_analysis/immuno.data.aldex3_0.asym2.prop70.Rda : code/immuno_aldex3_0_asym2_70.R
+	Rscript 'code/immuno_aldex3_0_asym2_70.R'
+
+$out_path/ext_analysis/immuno.data.aldex3_1.asym2.prop90.Rda : code/immuno_aldex3_1_asym2_90.R
+	Rscript 'code/immuno_aldex3_1_asym2_90.R'
+	
+$out_path/ext_analysis/immuno.data.aldex3_1.asym2.prop80.Rda : code/immuno_aldex3_1_asym2_80.R
+	Rscript 'code/immuno_aldex3_1_asym2_80.R'
+	
+$out_path/ext_analysis/immuno.data.aldex3_1.asym2.prop70.Rda : code/immuno_aldex3_1_asym2_70.R
+	Rscript 'code/immuno_aldex3_1_asym2_70.R'
+
+$out_path/ext_analysis/immuno.data.aldex3_0.asym3.prop90.Rda : code/immuno_aldex3_0_asym3_90.R
+	Rscript 'code/immuno_aldex3_0_asym3_90.R'
+	
+$out_path/ext_analysis/immuno.data.aldex3_0.asym3.prop80.Rda : code/immuno_aldex3_0_asym3_80.R
+	Rscript 'code/immuno_aldex3_0_asym3_80.R'
+	
+$out_path/ext_analysis/immuno.data.aldex3_0.asym3.prop70.Rda : code/immuno_aldex3_0_asym3_70.R
+	Rscript 'code/immuno_aldex3_0_asym3_70.R'
+
+$out_path/ext_analysis/immuno.data.aldex3_1.asym3.prop90.Rda : code/immuno_aldex3_1_asym3_90.R
+	Rscript 'code/immuno_aldex3_1_asym3_90.R'
+	
+$out_path/ext_analysis/immuno.data.aldex3_1.asym3.prop80.Rda : code/immuno_aldex3_1_asym3_80.R
+	Rscript 'code/immuno_aldex3_1_asym3_80.R'
+	
+$out_path/ext_analysis/immuno.data.aldex3_1.asym3.prop70.Rda : code/immuno_aldex3_1_asym3_70.R
+	Rscript 'code/immuno_aldex3_1_asym3_70.R'
+
 
 #DESeq clean files
 clean_immuno_DESeq:
