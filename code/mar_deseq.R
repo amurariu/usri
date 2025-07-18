@@ -17,8 +17,7 @@ mar$taxonomy <- NULL
 mar <- as.matrix(mar)
 mar <- mar + 1
 conditions_m <- read.table(file=conds_mar, row.names = 1, sep='\t', header = T)
-transposed_mar<- t(mar)
 
 # function
-mar.data.DESeq <- des.fun(data = mar, nloop = 100, conditions = mar.conds$comparison)
+mar.data.DESeq <- des.fun(data = mar, nloop = 100, conditions = conditions_m$comparison)
 save(mar.data.DESeq, file="/Volumes/data2/andreea/ext_analysis/mar.data.deseq.Rda") 
