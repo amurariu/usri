@@ -295,5 +295,4 @@ graph.fun <- function(aldex_0_var, aldex_1_var, aldex_2_var, aldex_5_var, aldex3
 #   
 #   abline(h=0.05, lty=3, lwd=2, col="grey")
 #   
-# }
-  
+}

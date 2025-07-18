@@ -259,6 +259,11 @@ ALDEx3_1_immuno_asym3_90: $out_path/ext_analysis/immuno.data.aldex3_1.asym3.prop
 ALDEx3_1_immuno_asym3_80: $out_path/ext_analysis/immuno.data.aldex3_1.asym3.prop80.Rda
 ALDEx3_1_immuno_asym3_70: $out_path/ext_analysis/immuno.data.aldex3_1.asym3.prop70.Rda
 
+#asym 49 mean 1
+
+ALDEx3_0_immuno_asym1_49: $out_path/ext_analysis/immuno.data.aldex3_0.asym1.prop49.Rda
+limma_immuno_asym1_49: $out_path/ext_analysis/immuno.data.limma.asym1.prop49.Rda
+
 
 #rules to generate the output files
 ### DESeq
@@ -908,6 +913,15 @@ $out_path/ext_analysis/immuno.data.aldex3_1.asym3.prop80.Rda : code/immuno_aldex
 	
 $out_path/ext_analysis/immuno.data.aldex3_1.asym3.prop70.Rda : code/immuno_aldex3_1_asym3_70.R
 	Rscript 'code/immuno_aldex3_1_asym3_70.R'
+
+#asym 49 mean 1
+
+$out_path/ext_analysis/immuno.data.aldex3_0.asym1.prop49.Rda : code/immuno_aldex3_0_asym1_49.R
+	Rscript 'code/immuno_aldex3_0_asym1_49.R'
+
+$out_path/ext_analysis/immuno.data.limma.asym1.prop49.Rda : code/immuno_limma_asym1_49.R
+	Rscript 'code/immuno_limma_asym1_49.R'
+
 
 
 #DESeq clean files
