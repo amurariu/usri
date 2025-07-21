@@ -14,5 +14,5 @@ conds_hiv <-"https://raw.githubusercontent.com/amurariu/usri/main/data/hiv_nogue
 hiv <- read.table(file=raw_counts_hiv, header=T, row.names=1, sep='\t')
 conditions_h <- read.table(file=conds_hiv, sep='\t', row.names = 1, header = T)
 
-hiv.data_0.aldex3 <- ald3.fun(data=as.matrix(hiv), conds=conditions_h$comparison, nloop=100, gamma=1e-3, prop_null = 0.95, mean = 0)
+hiv.data_0.aldex3 <- ald3.fun(data=as.matrix(hiv), conds=conditions_h$comparison, nloop=10, gamma=1e-3, prop_null = 0.95, mean = 0)
 save(hiv.data_0.aldex3, file="/Volumes/data2/andreea/ext_analysis/hiv.data.aldex3_0.Rda")
