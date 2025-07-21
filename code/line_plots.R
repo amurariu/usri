@@ -50,6 +50,19 @@ coef <- as.numeric(names(ald0.conf$diff_zero))
 
 plot(coef, TPR_raw[1,], col=rgb(0,0,0,0.2), ylim=c(0,1), type='l', main = 'ALDEx2')
 
+start <- 1
+end <- 100
+diff.tpr.ald23 <- as.data.frame(matrix(data = NA, nrow = 1100, ncol = 2))
+colnames(diff.tpr.ald23) <- c("coeff", "TPR.difference")
+
+for(i in 1:length(coef)){
+  temp <- get(paste0("diff.between."), i)
+  diff.tpr.ald23[c(start:end),1] <- rep(coef[i], 100)
+  diff.tpr.ald23[c(start:end),2] <- abs(temp[,6])
+  start <- start + 100 
+  end <- end + 100
+}
+
 #plots
 coef <- as.numeric(names(ald0.conf$diff_zero))
 TPR_raw <- matrix(data=NA, nrow=length(ald0.conf$diff_zero[[1]]$TP), ncol=length(coef))
