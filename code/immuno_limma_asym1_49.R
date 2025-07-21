@@ -24,4 +24,4 @@ y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE] #had to take out y_pd1$counts
 immuno.data <- y_pd1$counts
 
 immuno.data.limma.asym1.49 <- lim.fun(immuno.data, immuno.conds, 100, mean = 1, prop_null = 0.49)
-save(immuno.data.limma.asym0.49, file="/Volumes/data2/andreea/ext_analysis/immuno.data.limma.asym1.prop49.Rda") 
+save(immuno.data.limma.asym1.49, file="/Volumes/data2/andreea/ext_analysis/immuno.data.limma.asym1.prop49.Rda") 
