@@ -32,10 +32,25 @@ ald3_5.conf5 <- get_confusion(aldex3_5_var, "ALDEx3", FDR=0.05)
 
 #diff betweeen ALDEx2 and ALDEx3
 
-diff.between.0 = unlist(ald3_0.conf) - unlist(ald0.conf)
+diff.between.0 = ald3_0.conf$diff_coeff[[1]] - ald0.conf$diff_coeff[[1]]
+diff.between.1 = ald3_0.conf$diff_coeff[[2]] - ald0.conf$diff_coeff[[2]]
+diff.between.2 = ald3_0.conf$diff_coeff[[3]] - ald0.conf$diff_coeff[[3]]
+diff.between.3 = ald3_0.conf$diff_coeff[[4]] - ald0.conf$diff_coeff[[4]]
+diff.between.4 = ald3_0.conf$diff_coeff[[5]] - ald0.conf$diff_coeff[[5]]
+diff.between.5 = ald3_0.conf$diff_coeff[[6]] - ald0.conf$diff_coeff[[6]]
+diff.between.6 = ald3_0.conf$diff_coeff[[7]] - ald0.conf$diff_coeff[[7]]
+diff.between.7 = ald3_0.conf$diff_coeff[[8]] - ald0.conf$diff_coeff[[8]]
+diff.between.8 = ald3_0.conf$diff_coeff[[9]] - ald0.conf$diff_coeff[[9]]
+diff.between.9 = ald3_0.conf$diff_coeff[[10]] - ald0.conf$diff_coeff[[10]]
+diff.between.10 = ald3_0.conf$diff_coeff[[11]] - ald0.conf$diff_coeff[[11]]
+
+combined = list(diff.between.0, diff.between.1, diff.between.2, diff.between.3, diff.between.4, diff.between.5, diff.between.6, diff.between.7, diff.between.8, diff.between.9, diff.between.10)
+
+coef <- as.numeric(names(ald0.conf$diff_zero))
+
+plot(coef, TPR_raw[1,], col=rgb(0,0,0,0.2), ylim=c(0,1), type='l', main = 'ALDEx2')
 
 #plots
-
 coef <- as.numeric(names(ald0.conf$diff_zero))
 TPR_raw <- matrix(data=NA, nrow=length(ald0.conf$diff_zero[[1]]$TP), ncol=length(coef))
 FDR_raw <- matrix(data=NA, nrow=length(ald0.conf$diff_zero[[1]]$TP), ncol=length(coef))
