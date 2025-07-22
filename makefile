@@ -264,6 +264,20 @@ ALDEx3_1_immuno_asym3_70: $out_path/ext_analysis/immuno.data.aldex3_1.asym3.prop
 ALDEx3_0_immuno_asym1_49: $out_path/ext_analysis/immuno.data.aldex3_0.asym1.prop49.Rda
 limma_immuno_asym1_49: $out_path/ext_analysis/immuno.data.limma.asym1.prop49.Rda
 
+#metatranscriptome
+
+deseq_mts: $out_path/ext_analysis/mts.data.deseq.Rda
+edgeR_mts: $out_path/ext_analysis/mts.data.edgeR.Rda
+ALDEx2_0_mts: $out_path/ext_analysis/mts.data.aldex2_0.Rda
+ALDEx2_1_mts: $out_path/ext_analysis/mts.data.aldex2_1.Rda
+ALDEx2_2_mts: $out_path/ext_analysis/mts.data.aldex2_2.Rda
+ALDEx2_5_mts: $out_path/ext_analysis/mts.data.aldex2_5.Rda
+ALDEx3_0_mts: $out_path/ext_analysis/mts.data.aldex3_0.Rda
+ALDEx3_1_mts: $out_path/ext_analysis/mts.data.aldex3_1.Rda
+ALDEx3_2_mts: $out_path/ext_analysis/mts.data.aldex3_2.Rda
+ALDEx3_5_mts: $out_path/ext_analysis/mts.data.aldex3_5.Rda
+limma_mts: $out_path/ext_analysis/mts.data.limma.Rda
+
 
 #rules to generate the output files
 ### DESeq
@@ -922,6 +936,30 @@ $out_path/ext_analysis/immuno.data.aldex3_0.asym1.prop49.Rda : code/immuno_aldex
 $out_path/ext_analysis/immuno.data.limma.asym1.prop49.Rda : code/immuno_limma_asym1_49.R
 	Rscript 'code/immuno_limma_asym1_49.R'
 
+#metatranscriptome
+
+$out_path/ext_analysis/mts.data.deseq.Rda : code/mts_deseq.R
+	Rscript 'code/mts_deseq.R'
+$out_path/ext_analysis/mts.data.edgeR.Rda : code/mts_edgeR.R
+	Rscript 'code/mts_edgeR.R'
+$out_path/ext_analysis/mts.data.aldex2_0.Rda : code/mts_aldex2_0.R
+	Rscript 'code/mts_aldex2_0.R'
+$out_path/ext_analysis/mts.data.aldex2_1.Rda : code/mts_aldex2_1.R
+	Rscript 'code/mts_aldex2_1.R'
+$out_path/ext_analysis/mts.data.aldex2_2.Rda : code/mts_aldex2_2.R
+	Rscript 'code/mts_aldex2_2.R'
+$out_path/ext_analysis/mts.data.aldex2_5.Rda : code/mts_aldex2_5.R
+	Rscript 'code/mts_aldex2_5.R'
+$out_path/ext_analysis/mts.data.aldex3_0.Rda : code/mts_aldex3_0.R
+	Rscript 'code/mts_aldex3_0.R'
+$out_path/ext_analysis/mts.data.aldex3_1.Rda  : code/mts_aldex3_1.R
+	Rscript 'code/mts_aldex3_1.R'
+$out_path/ext_analysis/mts.data.aldex3_2.Rda : code/mts_aldex3_2.R
+	Rscript 'code/mts_aldex3_2.R'
+$out_path/ext_analysis/mts.data.aldex3_5.Rda : code/mts_aldex3_5.R
+	Rscript 'code/mts_aldex3_5.R'
+$out_path/ext_analysis/mts.data.limma.Rda : code/mts_limma.R
+	Rscript 'code/mts_limma.R'
 
 
 #DESeq clean files

@@ -2,24 +2,25 @@
 title: "Supplemental Figures Draft"
 author: "Andreea Murariu"
 date: "`r Sys.Date()`"
-output: html_document
+output: pdf_document
 ---
 
+make sure output is pdf 
 ```{r}
 #load datasets
-anal.path <- "../ext_analysis/"
-load(paste(anal.path,"immuno.data.aldex2_0.Rda", sep=""))
-load(paste(anal.path,"immuno.data.aldex2_1.Rda", sep=""))
-load(paste(anal.path,"immuno.data.aldex2_2.Rda", sep=""))
-load(paste(anal.path,"immuno.data.aldex2_5.Rda", sep=""))
-load(paste(anal.path,"immuno.data.aldex3_0.Rda", sep=""))
-load(paste(anal.path,"immuno.data.aldex3_1.Rda", sep=""))
-load(paste(anal.path,"immuno.data.aldex3_2.Rda", sep=""))
-load(paste(anal.path,"immuno.data.aldex3_5.Rda", sep=""))
+load("~/Documents/github/ext_analysis/immuno.data.aldex2_0.Rda")
+load("~/Documents/github/ext_analysis/immuno.data.aldex2_1.Rda")
+load("~/Documents/github/ext_analysis/immuno.data.aldex2_2.Rda")
+load("~/Documents/github/ext_analysis/immuno.data.aldex2_5.Rda")
+load("~/Documents/github/ext_analysis/immuno.data.aldex3_0.Rda")
+load("~/Documents/github/ext_analysis/immuno.data.aldex3_1.Rda")
+load("~/Documents/github/ext_analysis/immuno.data.aldex3_2.Rda")
+load("~/Documents/github/ext_analysis/immuno.data.aldex3_5.Rda")
 ```
 
 ```{r}
-#diff between plots example code
+#calculations for diff between plots
+
 source('code/get_confusion.R')
 ald0.conf <- get_confusion(immuno.data_0.aldex2, "ALDEx2", FDR=0.1)
 ald3_0.conf <- get_confusion(immuno.data_0.aldex3, "ALDEx3", FDR=0.1)
@@ -40,10 +41,6 @@ combined = list(diff.between.0, diff.between.1, diff.between.2, diff.between.3, 
 
 coef <- as.numeric(names(ald0.conf$diff_zero))
 
-par(mfrow=c(1,2))
-
-## diff between plot that works
-
 diff.tpr.ald23 <- as.data.frame(matrix(data = NA, nrow = 100, ncol = 10))
 
 for(i in 1:length(coef)){
@@ -52,6 +49,13 @@ for(i in 1:length(coef)){
 }
 
 
+```
+
+
+```{r}
+#diff between plots example code
+
+#Gamma = 0
 
 par(mfrow=c(1,2))
 
@@ -72,6 +76,39 @@ for(i in 2:nrow(TPR_raw)){
 plot(coef, diff.tpr.ald23[1,], ylim = c(0,0.04), col=rgb(0,0,0,0.2), type='l', main = 'difference between')
 
 for(i in 1:nrow(diff.tpr.ald23)){points(coef, diff.tpr.ald23[i,], ylim = c(0,0.04), col=rgb(0,0,0,0.2), type='l')}
+
+```
+```{r}
+#Gamma = 0.1
+
+par(mfrow=c(1,2))
+
+#ALDEx3 panel
+plot(coef, TPR_raw3[1,], col=rgb(0,0.2,0.4,0.2), ylim=c(0,1), type='l', main = 'ALDEx3')
+points(coef, FDR_raw3[1,], col=rgb(0,0.6,1,0.2), type='l')
+points(coef, TPR_03[1,], col=rgb(1,0.2,0.4,0.2), type='l')
+points(coef, FDR_03[1,], col=rgb(0.8,0.2,0.6,0.2), type='l')
+
+for(i in 2:nrow(TPR_raw)){
+  points(coef, TPR_raw3[i,], col=rgb(0,0.2,0.4,0.2), type='l')
+  points(coef, FDR_raw3[i,], col=rgb(0,0.6,1,0.2), type='l')
+  points(coef, TPR_03[i,], col=rgb(1,0.2,0.4,0.2), type='l')
+  points(coef, FDR_03[i,], col=rgb(0.8,0.2,0.6,0.2), type='l')
+}
+
+#diff.between panel
+plot(coef, diff.tpr.ald23[1,], ylim = c(0,0.04), col=rgb(0,0,0,0.2), type='l', main = 'difference between')
+
+for(i in 1:nrow(diff.tpr.ald23)){points(coef, diff.tpr.ald23[i,], ylim = c(0,0.04), col=rgb(0,0,0,0.2), type='l')}
+```
+
+
+```{r}
+#plots containing limma, DESeq, edgeR, ALDEx2, and ALDEx3
+#sample code 
+
+source('code/graph.fun.R')
+graph.fun(DESeq_var = cdiff.data.DESeq, edgeR_var = cdiff.data.edgeR, limma_var = cdiff.data.limma, aldex_0_var = cdiff.data_0.aldex2, aldex_1_var = cdiff.data_1.aldex2, aldex_2_var = cdiff.data_2.aldex2, aldex_5_var = cdiff.data_5.aldex2, aldex3_0_var = cdiff.data_0.aldex3, aldex3_1_var = cdiff.data_1.aldex3, aldex3_2_var = cdiff.data_2.aldex3, aldex3_5_var = cdiff.data_5.aldex3)
 
 ```
 
