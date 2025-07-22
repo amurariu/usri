@@ -27,4 +27,4 @@ mts.counts <- as.matrix(mts.counts)
 mts.data.aldex3.0 <- ald3.fun(data = mts.counts, nloop = 100,
                               conds = mts.meta$groups.2, gamma = 1e-3)
 
-save(mts.data.aldex3.0, file = "../ext_analysis/mts.data.aldex3_0.Rda")
+save(mts.data.aldex3.0, file = "/Volumes/data2/andreea/ext_analysis/mts.data.aldex3_0.Rda")
