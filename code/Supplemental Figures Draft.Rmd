@@ -52,8 +52,6 @@ for(i in 1:length(coef)){
 ```
 
 
-```{r fig.cap=“Counts of penguins of different species”}
-```
 
 ```{r}
 #diff between plots example code
@@ -108,12 +106,31 @@ for(i in 1:nrow(diff.tpr.ald23)){points(coef, diff.tpr.ald23[i,], ylim = c(0,0.0
 
 ```{r}
 #plots containing limma, DESeq, edgeR, ALDEx2, and ALDEx3
-#sample code 
+#sample code, 2 panel plotting the tools with a 0.5 fold change cutoff
+source('code/graph2.fun.R')
 
-source('code/graph.fun.R')
+des.conf <- get_confusion(DESeq_var, "DESeq", FDR = 0.05)
+edge.conf <- get_confusion(edgeR_var, "edgeR", FDR= 0.05)
+ald0.conf <- get_confusion(aldex_0_var, "ALDEx2", FDR=0.05)
+ald1.conf <- get_confusion(aldex_1_var, "ALDEx2", FDR=0.05)
+ald2.conf <- get_confusion(aldex_2_var, "ALDEx2", FDR=0.05)
+ald5.conf <- get_confusion(aldex_5_var, "ALDEx2", FDR=0.05)
+ald3_0.conf <- get_confusion(aldex3_0_var, "ALDEx3", FDR=0.05)
+ald3_1.conf <- get_confusion(aldex3_1_var, "ALDEx3", FDR=0.05)
+ald3_2.conf <- get_confusion(aldex3_2_var, "ALDEx3", FDR=0.05)
+ald3_5.conf <- get_confusion(aldex3_5_var, "ALDEx3", FDR=0.05)
+limma.conf <- get_confusion(limma_var, "limma")
+  
+  
 
-graph.fun(DESeq_var = immuno.data.DESeq, edgeR_var = immuno.data.edgeR, limma_var = immuno.data.limma, aldex_0_var = immuno.data_0.aldex2, aldex_1_var = immuno.data_1.aldex2, aldex_2_var = immuno.data_2.aldex2, aldex_5_var = immuno.data_5.aldex2, aldex3_0_var = immuno.data_0.aldex3, aldex3_1_var = immuno.data_1.aldex3, aldex3_2_var = immuno.data_2.aldex3, aldex3_5_var = immuno.data_5.aldex3)
 
+graph2.fun(DESeq_var = immuno.data.DESeq, edgeR_var = immuno.data.edgeR, limma_var = immuno.data.limma, aldex_0_var = immuno.data_0.aldex2, aldex_1_var = immuno.data_1.aldex2, aldex_2_var = immuno.data_2.aldex2, aldex_5_var = immuno.data_5.aldex2, aldex3_0_var = immuno.data_0.aldex3, aldex3_1_var = immuno.data_1.aldex3, aldex3_2_var = immuno.data_2.aldex3, aldex3_5_var = immuno.data_5.aldex3)
+```
+
+```{r fig.cap=“Counts of penguins of different species”}
+```
+
+```{r}
 graph.fun(DESeq_var = cdiff.data.DESeq, edgeR_var = cdiff.data.edgeR, limma_var = cdiff.data.limma, aldex_0_var = cdiff.data_0.aldex2, aldex_1_var = cdiff.data_1.aldex2, aldex_2_var = cdiff.data_2.aldex2, aldex_5_var = cdiff.data_5.aldex2, aldex3_0_var = cdiff.data_0.aldex3, aldex3_1_var = cdiff.data_1.aldex3, aldex3_2_var = cdiff.data_2.aldex3, aldex3_5_var = cdiff.data_5.aldex3)
 
 ```

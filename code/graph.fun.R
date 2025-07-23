@@ -28,40 +28,40 @@ graph.fun <- function(DESeq_var, edgeR_var, limma_var, aldex_0_var, aldex_1_var,
   coeff <- as.numeric(rownames(ald0.conf$TPFPR))
   par(mfrow=c(1,2))
   
-       plot(coeff, ald0.conf$TPFPR[,1], col="black", type='b', lty=1,
-           xlab="modeled LFC", ylab="TPR/FDR", xlim=c(0,1), ylim=c(0,1),
-           main="real LFC > coeff")
-        points(coeff,ald1.conf$TPFPR[,1], col="black", type='b', pch='1', lty=1, cex=0.6)
-        points(coeff,ald2.conf$TPFPR[,1], col="black", type='b', pch='2', lty=1, cex=0.6)
-        points(coeff,ald5.conf$TPFPR[,1], col="black", type='b', pch='5', lty=1, cex=0.6)
-        points(coeff,ald0.conf$TPFPR[,2], col="black", type='b', lty=2)
-        points(coeff,ald1.conf$TPFPR[,2], col="black", type='b', lty=2, pch='1', cex=0.6)
-        points(coeff,ald2.conf$TPFPR[,2], col="black", type='b', lty=2, pch='2', cex=0.6)
-        points(coeff,ald5.conf$TPFPR[,2], col="black", type='b', lty=2, pch='5', cex=0.6)
+plot(coeff, ald0.conf$TPFPR[,1], col="black", type='b', lty=1,
+      xlab="modeled LFC", ylab="TPR/FDR", xlim=c(0,1), ylim=c(0,1),
+      main="real LFC > coeff")
+points(coeff,ald1.conf$TPFPR[,1], col="black", type='b', pch='1', lty=1, cex=0.6) #plotting cTPR0 from TPFPR
+points(coeff,ald2.conf$TPFPR[,1], col="black", type='b', pch='2', lty=1, cex=0.6)
+points(coeff,ald5.conf$TPFPR[,1], col="black", type='b', pch='5', lty=1, cex=0.6)
+points(coeff,ald0.conf$TPFPR[,2], col="black", type='b', lty=2) #plotting cFDR0 from TPFPR
+points(coeff,ald1.conf$TPFPR[,2], col="black", type='b', lty=2, pch='1', cex=0.6) 
+points(coeff,ald2.conf$TPFPR[,2], col="black", type='b', lty=2, pch='2', cex=0.6)
+points(coeff,ald5.conf$TPFPR[,2], col="black", type='b', lty=2, pch='5', cex=0.6)
        
-        points(coeff, ald0.conf5$TPFPR[,1], col="blue", type='b', lty=1)
-        points(coeff,ald1.conf5$TPFPR[,1], col="blue", type='b', pch='1', lty=1, cex=0.6)
-        points(coeff,ald2.conf5$TPFPR[,1], col="blue", type='b', pch='2', lty=1, cex=0.6)
-        points(coeff,ald5.conf5$TPFPR[,1], col="blue", type='b', pch='5', lty=1, cex=0.6)
-        points(coeff,ald0.conf5$TPFPR[,2], col="blue", type='b', lty=2)
-        points(coeff,ald1.conf5$TPFPR[,2], col="blue", type='b', lty=2, pch='1', cex=0.6)
-        points(coeff,ald2.conf5$TPFPR[,2], col="blue", type='b', lty=2, pch='2', cex=0.6)
-        points(coeff,ald5.conf5$TPFPR[,2], col="blue", type='b', lty=2, pch='5', cex=0.6)
+points(coeff, ald0.conf5$TPFPR[,1], col="blue", type='b', lty=1) #plotting cTPR0 from TPFPR
+points(coeff,ald1.conf5$TPFPR[,1], col="blue", type='b', pch='1', lty=1, cex=0.6)
+points(coeff,ald2.conf5$TPFPR[,1], col="blue", type='b', pch='2', lty=1, cex=0.6)
+points(coeff,ald5.conf5$TPFPR[,1], col="blue", type='b', pch='5', lty=1, cex=0.6)
+points(coeff,ald0.conf5$TPFPR[,2], col="blue", type='b', lty=2) #plotting cFDR0 from TPFPR
+points(coeff,ald1.conf5$TPFPR[,2], col="blue", type='b', lty=2, pch='1', cex=0.6)
+points(coeff,ald2.conf5$TPFPR[,2], col="blue", type='b', lty=2, pch='2', cex=0.6)
+points(coeff,ald5.conf5$TPFPR[,2], col="blue", type='b', lty=2, pch='5', cex=0.6)
 
-        points(coeff,ald0.conf$TPFPR[,3], col="grey", type='b', lty=2)
+points(coeff,ald0.conf$TPFPR[,3], col="grey", type='b', lty=2) #plotting cTPR5 from TPFPR
         points(coeff,ald1.conf$TPFPR[,3], col="grey", type='b', lty=2, pch='1', cex=0.6)
         points(coeff,ald2.conf$TPFPR[,3], col="grey", type='b', lty=2, pch='2', cex=0.6)
         points(coeff,ald5.conf$TPFPR[,3], col="grey", type='b', lty=2, pch='5', cex=0.6)
-        points(coeff,ald0.conf$TPFPR[,4], col="grey", type='b', lty=2)
+        points(coeff,ald0.conf$TPFPR[,4], col="grey", type='b', lty=2) #plotting cFDR5 from TPFPR
         points(coeff,ald1.conf$TPFPR[,4], col="grey", type='b', lty=2, pch='1', cex=0.6)
         points(coeff,ald2.conf$TPFPR[,4], col="grey", type='b', lty=2, pch='2', cex=0.6)
         points(coeff,ald5.conf$TPFPR[,4], col="grey", type='b', lty=2, pch='5', cex=0.6)
 
-        points(coeff, ald3_0.conf$TPFPR[,1], col="darkgreen", type='b', lty=1)
+        points(coeff, ald3_0.conf$TPFPR[,1], col="darkgreen", type='b', lty=1) #plotting cTPR5 from TPFPR
         points(coeff,ald3_1.conf$TPFPR[,1], col="darkgreen", type='b', pch='1', lty=1, cex=0.6)
         points(coeff,ald3_2.conf$TPFPR[,1], col="darkgreen", type='b', pch='2', lty=1, cex=0.6)
         points(coeff,ald3_5.conf$TPFPR[,1], col="darkgreen", type='b', pch='5', lty=1, cex=0.6)
-        points(coeff,ald3_0.conf$TPFPR[,2], col="darkgreen", type='b', lty=2)
+        points(coeff,ald3_0.conf$TPFPR[,2], col="darkgreen", type='b', lty=2) #plotting cFDR5 from TPFPR
         points(coeff,ald3_1.conf$TPFPR[,2], col="darkgreen", type='b', lty=2, pch='1', cex=0.6)
         points(coeff,ald3_2.conf$TPFPR[,2], col="darkgreen", type='b', lty=2, pch='2', cex=0.6)
         points(coeff,ald3_5.conf$TPFPR[,2], col="darkgreen", type='b', lty=2, pch='5', cex=0.6)
