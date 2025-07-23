@@ -52,6 +52,9 @@ for(i in 1:length(coef)){
 ```
 
 
+```{r fig.cap=“Counts of penguins of different species”}
+```
+
 ```{r}
 #diff between plots example code
 
@@ -108,6 +111,9 @@ for(i in 1:nrow(diff.tpr.ald23)){points(coef, diff.tpr.ald23[i,], ylim = c(0,0.0
 #sample code 
 
 source('code/graph.fun.R')
+
+graph.fun(DESeq_var = immuno.data.DESeq, edgeR_var = immuno.data.edgeR, limma_var = immuno.data.limma, aldex_0_var = immuno.data_0.aldex2, aldex_1_var = immuno.data_1.aldex2, aldex_2_var = immuno.data_2.aldex2, aldex_5_var = immuno.data_5.aldex2, aldex3_0_var = immuno.data_0.aldex3, aldex3_1_var = immuno.data_1.aldex3, aldex3_2_var = immuno.data_2.aldex3, aldex3_5_var = immuno.data_5.aldex3)
+
 graph.fun(DESeq_var = cdiff.data.DESeq, edgeR_var = cdiff.data.edgeR, limma_var = cdiff.data.limma, aldex_0_var = cdiff.data_0.aldex2, aldex_1_var = cdiff.data_1.aldex2, aldex_2_var = cdiff.data_2.aldex2, aldex_5_var = cdiff.data_5.aldex2, aldex3_0_var = cdiff.data_0.aldex3, aldex3_1_var = cdiff.data_1.aldex3, aldex3_2_var = cdiff.data_2.aldex3, aldex3_5_var = cdiff.data_5.aldex3)
 
 ```

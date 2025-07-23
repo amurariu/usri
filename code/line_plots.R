@@ -44,7 +44,7 @@ diff.between.9 = ald3_0.conf$diff_coeff[[9]] - ald0.conf$diff_coeff[[9]]
 diff.between.10 = ald3_0.conf$diff_coeff[[10]] - ald0.conf$diff_coeff[[10]]
 diff.between.11 = ald3_0.conf$diff_coeff[[11]] - ald0.conf$diff_coeff[[11]]
 
-combined = list(diff.between.0, diff.between.1, diff.between.2, diff.between.3, diff.between.4, diff.between.5, diff.between.6, diff.between.7, diff.between.8, diff.between.9, diff.between.10)
+combined = list(diff.between.1, diff.between.2, diff.between.3, diff.between.4, diff.between.5, diff.between.6, diff.between.7, diff.between.8, diff.between.9, diff.between.10, diff.between.11)
 
 coef <- as.numeric(names(ald0.conf$diff_zero))
 
@@ -146,3 +146,56 @@ points(coef, FDR_raw3[i,], col=rgb(0,0.6,1,0.2), type='l')
 points(coef, TPR_03[i,], col=rgb(1,0.2,0.4,0.2), type='l')
 points(coef, FDR_03[i,], col=rgb(0.8,0.2,0.6,0.2), type='l')
 }
+
+
+
+
+####
+#take the get_confusion output and plot all TPR/FDR lines
+#ald0.conf is the output of get_confusion
+
+# coef <- as.numeric(names(ald0.conf$diff_zero))
+# 
+# TPR_raw <- matrix(data=NA, nrow=length(ald0.conf$diff_zero[[1]]$TP), ncol=length(coef))
+# FDR_raw <- matrix(data=NA, nrow=length(ald0.conf$diff_zero[[1]]$TP), ncol=length(coef))
+# TPR_0 <- matrix(data=NA, nrow=length(ald0.conf$diff_zero[[1]]$TP), ncol=length(coef))
+# FDR_0 <- matrix(data=NA, nrow=length(ald0.conf$diff_zero[[1]]$TP), ncol=length(coef))
+# 
+# TPR_raw3 <- matrix(data=NA, nrow=length(ald3_0.conf$diff_zero[[1]]$TP), ncol=length(coef))
+# FDR_raw3 <- matrix(data=NA, nrow=length(ald3_0.conf$diff_zero[[1]]$TP), ncol=length(coef))
+# TPR_03 <- matrix(data=NA, nrow=length(ald3_0.conf$diff_zero[[1]]$TP), ncol=length(coef))
+# FDR_03 <- matrix(data=NA, nrow=length(ald3_0.conf$diff_zero[[1]]$TP), ncol=length(coef))
+# 
+# for(i in 1:length(coef)){
+#   TPR_raw[,i] <- ald0.conf$raw_coeff[[i]]$TPR
+#   FDR_raw[,i] <- ald0.conf$raw_coeff[[i]]$FDR
+#   TPR_0[,i] <- ald0.conf$raw_zero[[i]]$TPR
+#   FDR_0[,i] <- ald0.conf$raw_zero[[i]]$FDR
+#   
+#   TPR_raw3[,i] <- ald3_0.conf$raw_coeff[[i]]$TPR
+#   FDR_raw3[,i] <- ald3_0.conf$raw_coeff[[i]]$FDR
+#   TPR_03[,i] <- ald3_0.conf$raw_zero[[i]]$TPR
+#   FDR_03[,i] <- ald3_0.conf$raw_zero[[i]]$FDR
+# }
+# 
+# par(mfrow=c(1,1))
+# 
+# plot(coef, TPR_raw[1,], col=rgb(0,0,0,0.2), ylim=c(0,1), type='l')
+# points(coef, FDR_raw[1,], col=rgb(0,0,1,0.2), type='l')
+# points(coef, TPR_0[1,], col=rgb(1,0,0,0.2), type='l')
+# points(coef, FDR_0[1,], col=rgb(1,0,1,0.2), type='l')
+# points(coef, TPR_raw3[1,], col=rgb(0,0.2,0.4,0.2))
+# points(coef, FDR_raw3[1,], col=rgb(0,0.6,1,0.2), type='l')
+# points(coef, TPR_03[1,], col=rgb(1,0.2,0.4,0.2), type='l')
+# points(coef, FDR_03[1,], col=rgb(0.8,0.2,0.6,0.2), type='l')
+# 
+# for(i in 2:nrow(TPR_raw)){
+#   points(coef, TPR_raw[i,], col=rgb(0,0,0,0.2), type='l')
+#   points(coef, FDR_raw[i,], col=rgb(0,0,1,0.2), type='l')
+#   points(coef, TPR_0[i,], col=rgb(1,0,0,0.2), type='l')
+#   points(coef, FDR_0[i,], col=rgb(1,0,1,0.2), type='l')
+#   points(coef, TPR_raw3[i,], col=rgb(0,0.2,0.4,0.2), type='l')
+#   points(coef, FDR_raw3[i,], col=rgb(0,0.6,1,0.2), type='l')
+#   points(coef, TPR_03[i,], col=rgb(1,0.2,0.4,0.2), type='l')
+#   points(coef, FDR_03[i,], col=rgb(0.8,0.2,0.6,0.2), type='l')
+# }

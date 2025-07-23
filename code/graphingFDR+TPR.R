@@ -102,3 +102,22 @@ load (paste(anal.path,"thca.data.limma.asym3.Rda", sep=""))
 
 graph.fun(DESeq_var = thca.data.DESeq, edgeR_var = thca.data.edgeR, limma_var = thca.data.limma, aldex_0_var = thca.data_0.aldex2, aldex_2_var = thca.data_2.aldex2, aldex_5_var = thca.data_5.aldex2, limma_a1 = thca.data.limma.asym1, limma_a2 = thca.data.limma.asym2, limma_a3 = thca.data.limma.asym3)
 
+
+#16S datasets
+
+#thca dataset
+load(paste(anal.path,"cdiff.data.deseq.Rda", sep="")) 
+load(paste(anal.path,"cdiff.data.edgeR.Rda", sep=""))
+load(paste(anal.path,"cdiff.data.aldex2_0.Rda", sep=""))
+load(paste(anal.path,"cdiff.data.aldex2_1.Rda", sep=""))
+load(paste(anal.path,"cdiff.data.aldex2_2.Rda", sep=""))
+load(paste(anal.path,"cdiff.data.aldex2_5.Rda", sep=""))
+load(paste(anal.path,"cdiff.data.aldex3_0.Rda", sep=""))
+load(paste(anal.path,"cdiff.data.aldex3_1.Rda", sep=""))
+load(paste(anal.path,"cdiff.data.aldex3_2.Rda", sep=""))
+load(paste(anal.path,"cdiff.data.aldex3_5.Rda", sep=""))
+load (paste(anal.path,"cdiff.data.limma.Rda", sep=""))
+
+
+graph.fun(DESeq_var = cdiff.data.DESeq, edgeR_var = cdiff.data.edgeR, limma_var = cdiff.data.limma, aldex_0_var = cdiff.data_0.aldex2, aldex_1_var = cdiff.data_1.aldex2, aldex_2_var = cdiff.data_2.aldex2, aldex_5_var = cdiff.data_5.aldex2, aldex3_0_var = cdiff.data_0.aldex3, aldex3_1_var = cdiff.data_1.aldex3, aldex3_2_var = cdiff.data_2.aldex3, aldex3_5_var = cdiff.data_5.aldex3)
+
