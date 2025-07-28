@@ -16,5 +16,8 @@ conditions_m <- read.table(file=conds_mar, sep='\t', row.names = 1, header = T)
 # remove taxonomy column
 mar <- mar[,-ncol(mar)]
 
-mar.data.limma <- lim.fun(data = as.matrix(mar), conditions = conditions_m$comparison, nloop = 2, mean = 0, prop_null = 0.95)
+# filter to remove any ASV present in <10 % of samples
+mar.filt <- mar[apply(mar, 1, function(x){length(which(x != 0))/length(x)} >0.1),]
+
+mar.data.limma <- lim.fun(data = as.matrix(mar.filt), conditions = conditions_m$comparison, nloop = 100, mean = 0, prop_null = 0.95)
 save(mar.data.limma, file="/Volumes/data2/andreea/ext_analysis/mar.data.limma.Rda")

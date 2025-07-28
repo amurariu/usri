@@ -17,5 +17,5 @@ cdiff.conds <- data.frame(conditions_c)
 cdiff.filt <- cdiff[apply(cdiff, 1, function(x){length(which(x != 0))/length(x)} >0.1),]
 
 # function
-cdiff.data.edgeR <- edg.fun(data = as.matrix(cdiff), conditions = cdiff.conds$comparison, nloop = 100)
+cdiff.data.edgeR <- edg.fun(data = as.matrix(cdiff.filt), conditions = cdiff.conds$comparison, nloop = 100)
 save(cdiff.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/cdiff.data.edgeR.Rda") 

@@ -14,6 +14,9 @@ hiv <- read.table(file=raw_counts_hiv, header=T, row.names=1, sep='\t')
 conditions_h <- read.table(file=conds_hiv, sep='\t', row.names = 1, header = T)
 hiv.conds <- data.frame(conditions_h) 
 
+# filter to remove any ASV present in <10 % of samples,
+hiv.filt <- hiv[apply(hiv, 1, function(x){length(which(x != 0))/length(x)} >0.1),]
+
 # function
-hiv.data.edgeR <- edg.fun(data = as.matrix(hiv), conditions = hiv.conds$comparison, nloop = 100)
+hiv.data.edgeR <- edg.fun(data = as.matrix(hiv.filt), conditions = hiv.conds$comparison, nloop = 100)
 save(hiv.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/hiv.data.edgeR.Rda") 

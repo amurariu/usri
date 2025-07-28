@@ -1,6 +1,5 @@
 library(ALDEx2,warn.conflicts = F) #do not load aldex2 and aldex3 at the same time
 library(seqgendiff, warn.conflicts=F)
-library(edgeR, warn.conflicts=F)
 
 source('code/ald2.fun.R')
 
@@ -15,5 +14,8 @@ cdiff <- read.table(file=raw_counts_cdiff, header=T, row.names=1, sep='\t')
 conditions_c <- read.table(file=conds_cdiff, sep='\t', row.names = 1, header = T)
 cdiff.conds <- data.frame(conditions_c) 
 
-cdiff.data_2.aldex2 <- ald2.fun(data=as.matrix(cdiff), conditions=cdiff.conds$comparison, nloop=100, gamma=0.2)
+# filter to remove any ASV present in <10 % of samples
+cdiff.filt <- cdiff[apply(cdiff, 1, function(x){length(which(x != 0))/length(x)} >0.1),]
+
+cdiff.data_2.aldex2 <- ald2.fun(data=as.matrix(cdiff.filt), conditions=cdiff.conds$comparison, nloop=100, gamma=0.2)
 save(cdiff.data_2.aldex2, file="/Volumes/data2/andreea/ext_analysis/cdiff.data.aldex2_2.Rda")

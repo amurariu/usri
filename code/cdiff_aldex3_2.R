@@ -1,6 +1,5 @@
 devtools::load_all('~/Documents/ALDEx3')
 library(seqgendiff, warn.conflicts=F)
-library(edgeR, warn.conflicts=F)
 
 source('code/ald3.fun.R')
 
@@ -15,5 +14,8 @@ conds_cdiff <-"https://raw.githubusercontent.com/amurariu/usri/main/data/cdi_sch
 cdiff <- read.table(file=raw_counts_cdiff, header=T, row.names=1, sep='\t')
 conditions_c <- read.table(file=conds_cdiff, sep='\t', row.names = 1, header = T)
 
-cdiff.data_2.aldex3 <- ald3.fun(data=as.matrix(cdiff), conds=conditions_c$comparison, nloop=100, gamma=0.2, prop_null = 0.95, mean = 0)
+# filter to remove any ASV present in <10 % of samples
+cdiff.filt <- cdiff[apply(cdiff, 1, function(x){length(which(x != 0))/length(x)} >0.1),]
+
+cdiff.data_2.aldex3 <- ald3.fun(data=as.matrix(cdiff.filt), conds=conditions_c$comparison, nloop=100, gamma=0.2, prop_null = 0.95, mean = 0)
 save(cdiff.data_2.aldex3, file="/Volumes/data2/andreea/ext_analysis/cdiff.data.aldex3_2.Rda")
