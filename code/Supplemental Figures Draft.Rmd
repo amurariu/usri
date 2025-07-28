@@ -5,7 +5,6 @@ date: "`r Sys.Date()`"
 output: pdf_document
 ---
 
-make sure output is pdf 
 ```{r}
 #load datasets
 load("~/Documents/github/ext_analysis/immuno.data.aldex2_0.Rda")
@@ -16,118 +15,98 @@ load("~/Documents/github/ext_analysis/immuno.data.aldex3_0.Rda")
 load("~/Documents/github/ext_analysis/immuno.data.aldex3_1.Rda")
 load("~/Documents/github/ext_analysis/immuno.data.aldex3_2.Rda")
 load("~/Documents/github/ext_analysis/immuno.data.aldex3_5.Rda")
+load ("~/Documents/github/ext_analysis/immuno.data.limma.Rda")
+load("~/Documents/github/ext_analysis/immuno.data.deseq.Rda") 
+load("~/Documents/github/ext_analysis/immuno.data.edger.Rda")
+
+load("~/Documents/github/ext_analysis/brca.data.aldex2_0.Rda")
+load("~/Documents/github/ext_analysis/brca.data.aldex2_1.Rda")
+load("~/Documents/github/ext_analysis/brca.data.aldex2_2.Rda")
+load("~/Documents/github/ext_analysis/brca.data.aldex2_5.Rda")
+load("~/Documents/github/ext_analysis/brca.data.aldex3_0.Rda")
+load("~/Documents/github/ext_analysis/brca.data.aldex3_1.Rda")
+load("~/Documents/github/ext_analysis/brca.data.aldex3_2.Rda")
+load("~/Documents/github/ext_analysis/brca.data.aldex3_5.Rda")
+load ("~/Documents/github/ext_analysis/brca.data.limma.Rda")
+load("~/Documents/github/ext_analysis/brca.data.deseq.Rda") 
+load("~/Documents/github/ext_analysis/brca.data.edger.Rda")
+
+load("~/Documents/github/ext_analysis/kirc.data.aldex2_0.Rda")
+load("~/Documents/github/ext_analysis/kirc.data.aldex2_1.Rda")
+load("~/Documents/github/ext_analysis/kirc.data.aldex2_2.Rda")
+load("~/Documents/github/ext_analysis/kirc.data.aldex2_5.Rda")
+load("~/Documents/github/ext_analysis/kirc.data.aldex3_0.Rda")
+load("~/Documents/github/ext_analysis/kirc.data.aldex3_1.Rda")
+load("~/Documents/github/ext_analysis/kirc.data.aldex3_2.Rda")
+load("~/Documents/github/ext_analysis/kirc.data.aldex3_5.Rda")
+load ("~/Documents/github/ext_analysis/kirc.data.limma.Rda")
+load("~/Documents/github/ext_analysis/kirc.data.deseq.Rda") 
+load("~/Documents/github/ext_analysis/kirc.data.edger.Rda")
+
+load("~/Documents/github/ext_analysis/lihc.data.aldex2_0.Rda")
+load("~/Documents/github/ext_analysis/lihc.data.aldex2_1.Rda")
+load("~/Documents/github/ext_analysis/lihc.data.aldex2_2.Rda")
+load("~/Documents/github/ext_analysis/lihc.data.aldex2_5.Rda")
+load("~/Documents/github/ext_analysis/lihc.data.aldex3_0.Rda")
+load("~/Documents/github/ext_analysis/lihc.data.aldex3_1.Rda")
+load("~/Documents/github/ext_analysis/lihc.data.aldex3_2.Rda")
+load("~/Documents/github/ext_analysis/lihc.data.aldex3_5.Rda")
+load ("~/Documents/github/ext_analysis/lihc.data.limma.Rda")
+load("~/Documents/github/ext_analysis/lihc.data.deseq.Rda") 
+load("~/Documents/github/ext_analysis/lihc.data.edger.Rda")
+
+load("~/Documents/github/ext_analysis/luad.data.aldex2_0.Rda")
+load("~/Documents/github/ext_analysis/luad.data.aldex2_1.Rda")
+load("~/Documents/github/ext_analysis/luad.data.aldex2_2.Rda")
+load("~/Documents/github/ext_analysis/luad.data.aldex2_5.Rda")
+load("~/Documents/github/ext_analysis/luad.data.aldex3_0.Rda")
+load("~/Documents/github/ext_analysis/luad.data.aldex3_1.Rda")
+load("~/Documents/github/ext_analysis/luad.data.aldex3_2.Rda")
+load("~/Documents/github/ext_analysis/luad.data.aldex3_5.Rda")
+load ("~/Documents/github/ext_analysis/luad.data.limma.Rda")
+load("~/Documents/github/ext_analysis/luad.data.deseq.Rda") 
+load("~/Documents/github/ext_analysis/luad.data.edger.Rda")
+
+load("~/Documents/github/ext_analysis/prad.data.aldex2_0.Rda")
+load("~/Documents/github/ext_analysis/prad.data.aldex2_1.Rda")
+load("~/Documents/github/ext_analysis/prad.data.aldex2_2.Rda")
+load("~/Documents/github/ext_analysis/prad.data.aldex2_5.Rda")
+load("~/Documents/github/ext_analysis/prad.data.aldex3_0.Rda")
+load("~/Documents/github/ext_analysis/prad.data.aldex3_1.Rda")
+load("~/Documents/github/ext_analysis/prad.data.aldex3_2.Rda")
+load("~/Documents/github/ext_analysis/prad.data.aldex3_5.Rda")
+load ("~/Documents/github/ext_analysis/prad.data.limma.Rda")
+load("~/Documents/github/ext_analysis/prad.data.deseq.Rda") 
+load("~/Documents/github/ext_analysis/prad.data.edger.Rda")
+
+load("~/Documents/github/ext_analysis/thca.data.aldex2_0.Rda")
+load("~/Documents/github/ext_analysis/thca.data.aldex2_1.Rda")
+load("~/Documents/github/ext_analysis/thca.data.aldex2_2.Rda")
+load("~/Documents/github/ext_analysis/thca.data.aldex2_5.Rda")
+load("~/Documents/github/ext_analysis/thca.data.aldex3_0.Rda")
+load("~/Documents/github/ext_analysis/thca.data.aldex3_1.Rda")
+load("~/Documents/github/ext_analysis/thca.data.aldex3_2.Rda")
+load("~/Documents/github/ext_analysis/thca.data.aldex3_5.Rda")
+load ("~/Documents/github/ext_analysis/thca.data.limma.Rda")
+load("~/Documents/github/ext_analysis/thca.data.deseq.Rda") 
+load("~/Documents/github/ext_analysis/thca.data.edger.Rda")
+
 ```
 
 ```{r}
-#calculations for diff between plots
+#calculations for diff between plots - difference between ALDEx2 and ALDEx3
 
-source('code/get_confusion.R')
-ald0.conf <- get_confusion(immuno.data_0.aldex2, "ALDEx2", FDR=0.1)
-ald3_0.conf <- get_confusion(immuno.data_0.aldex3, "ALDEx3", FDR=0.1)
-
-diff.between.1 = ald3_0.conf$diff_coeff[[1]] - ald0.conf$diff_coeff[[1]]
-diff.between.2 = ald3_0.conf$diff_coeff[[2]] - ald0.conf$diff_coeff[[2]]
-diff.between.3 = ald3_0.conf$diff_coeff[[3]] - ald0.conf$diff_coeff[[3]]
-diff.between.4 = ald3_0.conf$diff_coeff[[4]] - ald0.conf$diff_coeff[[4]]
-diff.between.5 = ald3_0.conf$diff_coeff[[5]] - ald0.conf$diff_coeff[[5]]
-diff.between.6 = ald3_0.conf$diff_coeff[[6]] - ald0.conf$diff_coeff[[6]]
-diff.between.7 = ald3_0.conf$diff_coeff[[7]] - ald0.conf$diff_coeff[[7]]
-diff.between.8 = ald3_0.conf$diff_coeff[[8]] - ald0.conf$diff_coeff[[8]]
-diff.between.9 = ald3_0.conf$diff_coeff[[9]] - ald0.conf$diff_coeff[[9]]
-diff.between.10 = ald3_0.conf$diff_coeff[[10]] - ald0.conf$diff_coeff[[10]]
-diff.between.11 = ald3_0.conf$diff_coeff[[11]] - ald0.conf$diff_coeff[[11]]
-
-combined = list(diff.between.0, diff.between.1, diff.between.2, diff.between.3, diff.between.4, diff.between.5, diff.between.6, diff.between.7, diff.between.8, diff.between.9, diff.between.10)
-
-coef <- as.numeric(names(ald0.conf$diff_zero))
-
-diff.tpr.ald23 <- as.data.frame(matrix(data = NA, nrow = 100, ncol = 10))
-
-for(i in 1:length(coef)){
-  temp <- get(paste0("diff.between.", i))
-  diff.tpr.ald23[,i] <- abs(temp[,6])
-}
-
+source('~/Documents/github/usri/code/graph.diff.fun.R')
+graph.diff.fun(immuno.data_0.aldex2, immuno.data_0.aldex3)
 
 ```
-
-
-
-```{r}
-#diff between plots example code
-
-#Gamma = 0
-
-par(mfrow=c(1,2))
-
-#ALDEx3 panel
-plot(coef, TPR_raw3[1,], col=rgb(0,0.2,0.4,0.2), ylim=c(0,1), type='l', main = 'ALDEx3')
-points(coef, FDR_raw3[1,], col=rgb(0,0.6,1,0.2), type='l')
-points(coef, TPR_03[1,], col=rgb(1,0.2,0.4,0.2), type='l')
-points(coef, FDR_03[1,], col=rgb(0.8,0.2,0.6,0.2), type='l')
-
-for(i in 2:nrow(TPR_raw)){
-  points(coef, TPR_raw3[i,], col=rgb(0,0.2,0.4,0.2), type='l')
-  points(coef, FDR_raw3[i,], col=rgb(0,0.6,1,0.2), type='l')
-  points(coef, TPR_03[i,], col=rgb(1,0.2,0.4,0.2), type='l')
-  points(coef, FDR_03[i,], col=rgb(0.8,0.2,0.6,0.2), type='l')
-}
-
-#diff.between panel
-plot(coef, diff.tpr.ald23[1,], ylim = c(0,0.04), col=rgb(0,0,0,0.2), type='l', main = 'difference between')
-
-for(i in 1:nrow(diff.tpr.ald23)){points(coef, diff.tpr.ald23[i,], ylim = c(0,0.04), col=rgb(0,0,0,0.2), type='l')}
-
-```
-```{r}
-#Gamma = 0.1
-
-par(mfrow=c(1,2))
-
-#ALDEx3 panel
-plot(coef, TPR_raw3[1,], col=rgb(0,0.2,0.4,0.2), ylim=c(0,1), type='l', main = 'ALDEx3')
-points(coef, FDR_raw3[1,], col=rgb(0,0.6,1,0.2), type='l')
-points(coef, TPR_03[1,], col=rgb(1,0.2,0.4,0.2), type='l')
-points(coef, FDR_03[1,], col=rgb(0.8,0.2,0.6,0.2), type='l')
-
-for(i in 2:nrow(TPR_raw)){
-  points(coef, TPR_raw3[i,], col=rgb(0,0.2,0.4,0.2), type='l')
-  points(coef, FDR_raw3[i,], col=rgb(0,0.6,1,0.2), type='l')
-  points(coef, TPR_03[i,], col=rgb(1,0.2,0.4,0.2), type='l')
-  points(coef, FDR_03[i,], col=rgb(0.8,0.2,0.6,0.2), type='l')
-}
-
-#diff.between panel
-plot(coef, diff.tpr.ald23[1,], ylim = c(0,0.04), col=rgb(0,0,0,0.2), type='l', main = 'difference between')
-
-for(i in 1:nrow(diff.tpr.ald23)){points(coef, diff.tpr.ald23[i,], ylim = c(0,0.04), col=rgb(0,0,0,0.2), type='l')}
-```
-
 
 ```{r}
 #plots containing limma, DESeq, edgeR, ALDEx2, and ALDEx3
 #sample code, 2 panel plotting the tools with a 0.5 fold change cutoff
-source('code/graph2.fun.R')
-
-des.conf <- get_confusion(DESeq_var, "DESeq", FDR = 0.05)
-edge.conf <- get_confusion(edgeR_var, "edgeR", FDR= 0.05)
-ald0.conf <- get_confusion(aldex_0_var, "ALDEx2", FDR=0.05)
-ald1.conf <- get_confusion(aldex_1_var, "ALDEx2", FDR=0.05)
-ald2.conf <- get_confusion(aldex_2_var, "ALDEx2", FDR=0.05)
-ald5.conf <- get_confusion(aldex_5_var, "ALDEx2", FDR=0.05)
-ald3_0.conf <- get_confusion(aldex3_0_var, "ALDEx3", FDR=0.05)
-ald3_1.conf <- get_confusion(aldex3_1_var, "ALDEx3", FDR=0.05)
-ald3_2.conf <- get_confusion(aldex3_2_var, "ALDEx3", FDR=0.05)
-ald3_5.conf <- get_confusion(aldex3_5_var, "ALDEx3", FDR=0.05)
-limma.conf <- get_confusion(limma_var, "limma")
+source('~/Documents/github/usri/code/graph2.fun.R')
   
-  
-
-
 graph2.fun(DESeq_var = immuno.data.DESeq, edgeR_var = immuno.data.edgeR, limma_var = immuno.data.limma, aldex_0_var = immuno.data_0.aldex2, aldex_1_var = immuno.data_1.aldex2, aldex_2_var = immuno.data_2.aldex2, aldex_5_var = immuno.data_5.aldex2, aldex3_0_var = immuno.data_0.aldex3, aldex3_1_var = immuno.data_1.aldex3, aldex3_2_var = immuno.data_2.aldex3, aldex3_5_var = immuno.data_5.aldex3)
-```
-
-```{r fig.cap=“Counts of penguins of different species”}
 ```
 
 ```{r}
