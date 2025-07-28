@@ -848,8 +848,8 @@ $out_path/ext_analysis/cdiff.data.limma.Rda : code/cdiff_limma.R
 $out_path/ext_analysis/fre.data.limma.Rda : code/fre_limma.R
 	Rscript 'code/fre_limma.R'
 	
-$out_path/ext_analysis/hiv.data.limma.Rda : code/humanhiv_limma.R
-	Rscript 'code/humanhiv_limma.R'
+$out_path/ext_analysis/hiv.data.limma.Rda : code/hiv_limma.R
+	Rscript 'code/hiv_limma.R'
 	
 $out_path/ext_analysis/mar.data.limma.Rda : code/mar_limma.R
 	Rscript 'code/mar_limma.R'
