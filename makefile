@@ -833,8 +833,8 @@ $out_path/ext_analysis/thca.data.limma.asym1.prop70.Rda : code/thca_limma_asym1_
 $out_path/ext_analysis/cdiff.data.edgeR.Rda : code/cdiff_edgeR.R
 	Rscript 'code/cdiff_edgeR.R'
 	
-$out_path/ext_analysis/hiv.data.edgeR.Rda : code/humanhiv_edgeR.R
-	Rscript 'code/humanhiv_edgeR.R'
+$out_path/ext_analysis/hiv.data.edgeR.Rda : code/hiv_edgeR.R
+	Rscript 'code/hiv_edgeR.R'
 
 $out_path/ext_analysis/fre.data.edgeR.Rda : code/fre_edgeR.R
 	Rscript 'code/fre_edgeR.R'
