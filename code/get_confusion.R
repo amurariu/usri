@@ -15,10 +15,13 @@
 
 ###
 
-get_confusion <- function(input=NULL, prog=NULL, FDR=NULL){
+get_confusion <- function(input=NULL, prog=NULL, FDR=0.1){
 	#if(input==NULL){stop("input dataset")}
 	#if(type==NULL){stop("input dataset type")}
-	if(prog=="DESeq" || prog=="deseq"){
+	
+  # pull indices of columns containing log fold-change (or similar measure of 
+  # difference between groups) and adjusted P-value
+  if(prog=="DESeq" || prog=="deseq"){
 		lfc = 2 # fold change column
 		padj = 6 # BH adjusted p column
 	}else if(prog=="edgeR" || prog == "edger"){
@@ -40,57 +43,114 @@ get_confusion <- function(input=NULL, prog=NULL, FDR=NULL){
 	
 	# get the confusion matrix for the t.data
 
+  # make vector of prescribed log-fold change thresholds (i.e. which represent 
+  # modelled log fold-change injected into data from binomial thinning using the
+  # 'seqgendiff' package)  
 	coeff <- c(0.01,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1) #modelled LFC from thinning
+	
+	# make a matrix to hold counts of all the false-positives and true-positives
 	# count of all FP in random
 	TPFPR.mat = matrix(data=NA, nrow=length(coeff), ncol=8)
 	colnames(TPFPR.mat) <- c("cTPR0", "cFDR0", "cTPR5","cFDR5","zTPR0", "zFDR0", "zTPR5","zFDR5")
 	rownames(TPFPR.mat) <- coeff
 	
-	raw_coeff <- list()
-	diff_coeff <- list()
-	raw_zero <- list()
-	diff_zero <- list()
+	# make 4 lists to hold true/false positive/negative features of 100 loop 
+	# iterations for thinned data
+	raw_coeff <- list()   # explanation
+	diff_coeff <- list()  # explanation
+	raw_zero <- list()    # explanation
+	diff_zero <- list()   # explanation
 	
-	for(j in 1:length(coeff)){ # coeffient counter
-		# for each coefficient
-		raw.coeff <- as.data.frame(matrix(data=NA, nrow=length(input$t.data), ncol=7))
+	for(j in 1:length(coeff)){
+		
+	  # make dataframes & set column names to hold following data for the current
+	  # coefficient threshold:
+	  #     - n
+	  #     - 
+	  #     - 
+	  #     - 
+	  #     - 
+	  #     - 
+	  #     - 
+	  raw.coeff <- as.data.frame(matrix(data=NA, nrow=length(input$t.data), ncol=7))
 		diff.coeff <- as.data.frame(matrix(data=NA, nrow=length(input$t.data), ncol=7)) # same with difference of 0.5 fold
 		raw.zero <- as.data.frame(matrix(data=NA, nrow=length(input$t.data), ncol=7))
 		diff.zero <- as.data.frame(matrix(data=NA, nrow=length(input$t.data), ncol=7)) # same with difference of 0.5 fold
+		
 		colnames(raw.coeff) <- c("TP", "FP", "TN", "FN","model","TPR","FDR")
 		colnames(diff.coeff) <- c("TP", "FP", "TN", "FN","model","TPR","FDR")
 		colnames(raw.zero) <- c("TP", "FP", "TN", "FN","model","TPR","FDR")
 		colnames(diff.zero) <- c("TP", "FP", "TN", "FN","model","TPR","FDR")
 			
 		for(i in 1:length(input$t.data)){ # replicate counter
-			# all positives in the random data are FP		
-			TP.coeff <- which(abs(input$thin.data[[i]]$coefmat) >= coeff[j]) # true null
-			TN.coeff <- which(abs(input$thin.data[[i]]$coefmat) < coeff[j])
-			TN.zero <- which(abs(input$thin.data[[i]]$coefmat) == 0)
+			
+		  # all positives in the thinned data are false-positives as the sample
+		  # groupings have been randomised; however we can distinguish TPs and TNs
+		  # for each coefficient threshold. Two kinds of TN features: those not
+		  # altered by thinning (zeros in coefmat) and those whose coefficient
+		  # was altered by an amount less than the coefficient threshold (for the
+		  # current loop)
+			TP.coeff <- which(abs(input$thin.data[[i]]$coefmat) >= coeff[j]) # true positives; FC altered by thinning & >threshold
+			TN.coeff <- which(abs(input$thin.data[[i]]$coefmat) < coeff[j]) # true negatives; FC altered by thinning & <threshold
+			TN.zero <- which(abs(input$thin.data[[i]]$coefmat) == 0) # true negatives; FC not altered by thinning
 		
-				# model is the same for all
-		    # TP > coeff
+			# 'model' is the same for all: number of features where the MODELLED
+			# coefficient is > coefficient threshold for current loop
 			raw.coeff[i,5] <- length(TP.coeff)
 			diff.coeff[i,5] <- length(TP.coeff)
 			raw.zero[i,5] <- length(TP.coeff)
 			diff.zero[i,5] <- length(TP.coeff)
 			
-			# TP, the same for all
+			# true positives in the MEASURED data (thinned & randomised) are identical 
+			# for both coeff/zero but will differ between raw/diff based on an 
+			# arbitrary LFC threshold of >0.5
+			
+			# raw.coeff/raw.zero:   features with a MODELLED FC altered by thinning
+			#                       that is >threshold, with a MEASURED P value <FDR
+			
+			# diff.coeff/diff.zero: features with a MODELLED FC altered by thinning
+			#                       that is >threshold, with a MEASURED P value <FDR
+			#                       and a MEASURED log fold-change >0.5
+			
 			raw.coeff[i,1] <- length(intersect(which(input$t.data[[i]][,padj] < FDR), TP.coeff))
 			raw.zero[i,1] <- raw.coeff[i,1]
 			diff.coeff[i,1] <- length(intersect(which(input$t.data[[i]][,padj] < FDR & 
 			  abs(input$t.data[[i]][,lfc]) > 0.5), TP.coeff))
 			diff.zero[i,1] <- diff.coeff[i,1]
 			
-			# FP, differ by negative definition
+			# false positives in the MEASURED data (thinned & randomised) will differ 
+			# between coeff/zero based on how negatives are defined, and between
+			# raw/diff based on an arbitrary LFC threshold of >0.5
+			
+			# raw.coeff: features with a MODELLED FC altered by thinning that is
+			#            <threshold, with a MEASURED P value <FDR
+			
+			# raw.zero:  features whose fold changes were NOT altered by thinning,
+			#            but whose MEASURED P values are <FDR
+			
+			# diff.coeff/diff.zero: same as respective definitions above, but all FPs
+			#                       must also have a MEASURED log fold-change >0.5
+			
 			raw.coeff[i,2] <- length(intersect(which(input$t.data[[i]][,padj] < FDR), TN.coeff))
 			raw.zero[i,2] <- length(intersect(which(input$t.data[[i]][,padj] < FDR), TN.zero))
 			diff.coeff[i,2] <- length(intersect(which(input$t.data[[i]][,padj] < FDR & 
 			                                            abs(input$t.data[[i]][,lfc]) > 0.5), TN.coeff))
 			diff.zero[i,2] <- length(intersect(which(input$t.data[[i]][,padj] < FDR & 
-			  abs(input$t.data[[i]][,lfc]) > 0.5), TN.zero))
+			                                           abs(input$t.data[[i]][,lfc]) > 0.5), TN.zero))
 			
-			# TN, differ by negative definition
+			# true negatives in the MEASURED data (thinned & randomised) will differ
+			# between coeff/zero based on how negatives are defined, and between
+			# raw/diff based on an arbitrary LFC threshold of >0.5
+			
+			# raw.coeff: features with a MODELLED FC altered by thinning that is
+			#            <threshold, with a MEASURED P value >FDR
+			
+			# raw.zero:  features with a MODELLED FC that was NOT altered by thinning 
+			#            and with a MEASURED P value >FDR
+			
+			# diff.coeff/diff.zero: same as respective definitions above, but all TNs
+			#                       must also have a MEASURED log fold-change <0.5
+			
 			raw.coeff[i,3] <- length(intersect(which(input$t.data[[i]][,padj] > FDR), TN.coeff))
 			diff.coeff[i,3] <- length(intersect(which(input$t.data[[i]][,padj] > FDR & 
 			  abs(input$t.data[[i]][,lfc]) < 0.5), TN.coeff))
@@ -98,45 +158,72 @@ get_confusion <- function(input=NULL, prog=NULL, FDR=NULL){
 			diff.zero[i,3] <- length(intersect(which(input$t.data[[i]][,padj] > FDR & 
 			  abs(input$t.data[[i]][,lfc]) < 0.5), TN.zero))
 			
-			# FN, same for all
+			# false negatives in the MEASURED data (thinned & randomised) will be
+			# identical for both coeff/zero but will differ between raw/diff based on 
+			# an arbitrary LFC threshold of <0.5
+			
+			# raw.coeff/raw.zero:   features with a MODELLED FC altered by thinning
+			#                       that is >threshold, with a MEASURED P value >FDR
+			
+			# diff.coeff/diff.zero: features with a MODELLED FC altered by thinning
+			#                       that is >threshold, with a MEASURED P value >FDR
+			#                       and a MEASURED log fold-change >0.5
+			
 			raw.coeff[i,4] <- length(intersect(which(input$t.data[[i]][,padj] > FDR), TP.coeff))
-			diff.coeff[i,3] <- length(intersect(which(input$t.data[[i]][,padj] > FDR & 
+			diff.coeff[i,4] <- length(intersect(which(input$t.data[[i]][,padj] > FDR & 
 			  abs(input$t.data[[i]][,lfc]) < 0.5), TP.coeff))
 			raw.zero[i,4] <- length(intersect(which(input$t.data[[i]][,padj] > FDR), TP.coeff))
-			diff.zero[i,3] <- length(intersect(which(input$t.data[[i]][,padj] > FDR & 
+			diff.zero[i,4] <- length(intersect(which(input$t.data[[i]][,padj] > FDR & 
 			  abs(input$t.data[[i]][,lfc]) < 0.5), TP.coeff))
 		
-				# TPR
+			# the true positive rate (TPR) is the number of of true positives in the
+			# MEASURED data divided by the number of features in the MODELLED data
+			# which have a coefficient greater than the prescribed threshold (i.e how
+			# many known TPs are we detecting)
+			
 			raw.coeff[i,6] <- round(raw.coeff[i,1]/raw.coeff[i,5],3)
 			diff.coeff[i,6] <- round(diff.coeff[i,1]/diff.coeff[i,5],3)
 			raw.zero[i,6] <- round(raw.zero[i,1]/raw.zero[i,5],3)
 			diff.zero[i,6] <- round(diff.zero[i,1]/diff.zero[i,5],3)
-			# FDR
+			
+			# the false discovery rate (FDR) is the number of false positives in the
+			# MEASURED data divided by number of true positives and false positives
+			# in the MEASURED data (i.e. how many times are we calling something truly
+			# different between groups when we know it is not)
+			
 			raw.coeff[i,7] <- round(raw.coeff[i,2]/(raw.coeff[i,1] + raw.coeff[i,2]),3)
 			diff.coeff[i,7] <- round(diff.coeff[i,2]/(diff.coeff[i,1] + diff.coeff[i,2]),3)
 			raw.zero[i,7] <- round(raw.zero[i,2]/(raw.zero[i,1] + raw.zero[i,2]),3)
 			diff.zero[i,7] <- round(diff.zero[i,2]/(diff.zero[i,1] + diff.zero[i,2]),3)
 			}
-			raw_coeff[[j]] <- raw.coeff
-			diff_coeff[[j]] <- diff.coeff
-			raw_zero[[j]] <- raw.zero
-			diff_zero[[j]] <- diff.coeff
+		
+		# add all 100 iterations of the TP/FP/TN/FN/modelCoeffs/TPR/FDR to their
+		# respective lists
+		raw_coeff[[j]] <- raw.coeff
+		diff_coeff[[j]] <- diff.coeff
+		raw_zero[[j]] <- raw.zero
+		diff_zero[[j]] <- diff.coeff
 			
-			TPFPR.mat[j,1] <- mean(raw.coeff[,6]) # TPR
-			TPFPR.mat[j,2] <- mean(raw.coeff[,7]) # FDR
-			TPFPR.mat[j,3] <- mean(diff.coeff[,6])
-			TPFPR.mat[j,4] <- mean(diff.coeff[,7])
-		  TPFPR.mat[j,5] <- mean(raw.zero[,6]) # TPR
-			TPFPR.mat[j,6] <- mean(raw.zero[,7]) # FDR
-			TPFPR.mat[j,7] <- mean(diff.zero[,6])
-			TPFPR.mat[j,8] <- mean(diff.zero[,7])
-			
+		# calculate the average of the true positive rate and false discovery rate
+		# across all 100 instances and store in matrix
+		TPFPR.mat[j,1] <- mean(raw.coeff[,6]) # TPR
+		TPFPR.mat[j,2] <- mean(raw.coeff[,7]) # FDR
+		TPFPR.mat[j,3] <- mean(diff.coeff[,6])
+		TPFPR.mat[j,4] <- mean(diff.coeff[,7])
+		TPFPR.mat[j,5] <- mean(raw.zero[,6]) # TPR
+		TPFPR.mat[j,6] <- mean(raw.zero[,7]) # FDR
+		TPFPR.mat[j,7] <- mean(diff.zero[,6])
+		TPFPR.mat[j,8] <- mean(diff.zero[,7])
 		}
-		names(raw_coeff) <- coeff
-		names(diff_coeff) <- coeff
-		names(raw_zero) <- coeff
-		names(diff_zero) <- coeff
-		data.out <- list(raw_coeff, diff_coeff, raw_zero, diff_zero, TPFPR.mat)
-		names(data.out) <- c("raw_coeff","diff_coeff","raw_zero","diff_zero","TPFPR")
-		return(data.out)
+	
+	# set names of the list elements to the prescribed coefficient thresholds
+	names(raw_coeff) <- coeff
+	names(diff_coeff) <- coeff
+	names(raw_zero) <- coeff
+	names(diff_zero) <- coeff
+	
+	# build final list of data, set names and return object
+	data.out <- list(raw_coeff, diff_coeff, raw_zero, diff_zero, TPFPR.mat)
+	names(data.out) <- c("raw_coeff","diff_coeff","raw_zero","diff_zero","TPFPR")
+	return(data.out)
 }
