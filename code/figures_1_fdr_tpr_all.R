@@ -29,39 +29,64 @@ source(paste0(repo, "code/get_confusion.R"))
 # load in analysis data, get confusion matrices for all objects and extract the 
 # TPFPR matrix summary (or load them if they already exist as .Rda files) 
 
-if(length(list.files(paste0(repo,"analysis/confusionMats"), pattern = "cm")) != 11){
+# NOTE: as long as all 132 confusion matrix objects are present within the 
+#       'analysis/confusionMats/' directory, this loop should just load all of
+#       the 'TPFPR' matrices for each dataset and tool. To get around memory
+#       limits on my local machine, I had to run the code in the 'if' loop below
+#       manually for each dataset (changing the three 'pattern = ' arguments)
+#       to generate the confusion matrix objects. This shouldn't be a problem
+#       for anyone looking at this file after me who wants to replicate the
+#       analysis we did (as these files are already generated). If for whatever
+#       reason you want to re-make the confusion matrix objects, you'll have to
+#       re-run the if statement code manually. Sorry (not sorry) for being lazy.
+#           - Scott Dos Santos, 30th July 2025.
+
+if(length(list.files(paste0(repo,"analysis/confusionMats"), pattern = "cm")) != 77){
   
-  # load in analysis results (takes a minute or so!)
-  for(i in list.files(data, pattern = "immuno")){
+  # load in analysis results (takes a few minutes!)
+  for(i in list.files(data, pattern = "thca")){
     load(paste0(data, i))
   }
   
-  # build confusion matrix from datasets
-  cm.immuno.aldex2.0 <- get_confusion(input = immuno.data_0.aldex2, prog = "ALDEx2", FDR = 0.1)
-  cm.immuno.aldex2.1 <- get_confusion(input = immuno.data_1.aldex2, prog = "ALDEx2", FDR = 0.1)
-  cm.immuno.aldex2.2 <- get_confusion(input = immuno.data_2.aldex2, prog = "ALDEx2", FDR = 0.1)
-  cm.immuno.aldex2.5 <- get_confusion(input = immuno.data_5.aldex2, prog = "ALDEx2", FDR = 0.1)
-  cm.immuno.aldex3.0 <- get_confusion(input = immuno.data_0.aldex3, prog = "ALDEx3", FDR = 0.1)
-  cm.immuno.aldex3.1 <- get_confusion(input = immuno.data_1.aldex3, prog = "ALDEx3", FDR = 0.1)
-  cm.immuno.aldex3.2 <- get_confusion(input = immuno.data_2.aldex3, prog = "ALDEx3", FDR = 0.1)
-  cm.immuno.aldex3.5 <- get_confusion(input = immuno.data_5.aldex3, prog = "ALDEx3", FDR = 0.1)
-  cm.immuno.deseq <- get_confusion(input = immuno.data.DESeq, prog = "DESeq", FDR = 0.1)
-  cm.immuno.edger <- get_confusion(input = immuno.data.edgeR, prog = "edgeR", FDR = 0.1)
-  cm.immuno.limma <- get_confusion(input = immuno.data.limma, prog = "limma", FDR = 0.1)
+  # intialise vectors for storing dataset and tool strings
+  dataset <- vector()
+  tool <- vector()
   
-  # save confusion matrix list objects
+  # build confusion matrix from datasets (will take several minutes)
+  for(i in ls(pattern = "thca")){
+    
+    # extract dataset and tool names from input file (sensitive to aldex gamma)
+    dataset <- str_split(i, "\\." , 3)[[1]][1]
+    tool <- tolower(str_split(i, "\\." , 3)[[1]][3])
+    if(tool == "aldex2"| tool == "aldex3"){
+      tool <- paste0(tool, ".", gsub("data_", "", str_split(i, "\\." , 3)[[1]][2]))
+    }
+    
+    # run 'get_confusion.R' on analysis objects to automatically build the
+    # confusion matrices
+    assign(x = paste0("cm.", dataset, ".", tool),
+           get_confusion(input = get(i),
+                         prog = gsub("\\..", "", tool),
+                         FDR = 0.1)) 
+  }
+  
+  # save confusion matrix list objects as .Rda
   for(i in ls(pattern = "cm")){
     save(list = i,
          file = paste0(repo,"analysis/confusionMats/", i, ".Rda"))
   }
   
-  # extract TPFPR matrices from each confusion matrix
+  # extract TPFPR matrices from each confusion matrix and delete 'cm.' objects
   for(i in ls(pattern = "cm")){
     assign(x = paste0("tpfpr.", gsub("cm\\.", "", i)),
            value = as.data.frame(get(i)$TPFPR))
     rm(list = i)
   }
   
+  # finally, remove analysis objects from environment
+  for(i in ls(pattern = "^thca")){
+    rm(list = i)
+  }
 } else{
   
   # load in confusion matrix objects from .Rda
