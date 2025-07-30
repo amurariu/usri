@@ -22,4 +22,4 @@ mts.counts <- as.matrix(mts.counts)
 # generate results for thinned +/- randomised mts data, 100 times, plus 1x
 # non-randomised, non-thinned (i.e. original data)
 mts.data.edgeR <- edg.fun(data = mts.counts, conditions = mts.meta$groups.2, nloop = 100)
-save(mts.data.edgeR, file = "../ext_analysis/mts.data.edgeR.Rda")
+save(mts.data.edgeR, file = "/Volumes/data2/andreea/ext_analysis/mts.data.edgeR.Rda")

@@ -24,4 +24,4 @@ mts.counts <- as.matrix(mts.counts)
 mts.data.limma <- lim.fun(data = mts.counts, conditions = mts.meta$groups.2,
                           nloop = 100, mean = 0, prop_null = 0.95)
 
-save(mts.data.limma, file = "../ext_analysis/mts.data.limma.Rda")
+save(mts.data.limma, file = "/Volumes/data2/andreea/ext_analysis/mts.data.limma.Rda")

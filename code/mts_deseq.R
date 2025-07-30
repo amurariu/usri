@@ -22,4 +22,4 @@ mts.counts <- as.matrix(mts.counts)
 # generate results for thinned +/- randomised mts data, 100 times, plus 1x
 # non-randomised, non-thinned (i.e. original data)
 mts.data.DESeq <- des.fun(data = mts.counts, nloop = 100, conditions = mts.meta$groups.2)
-save(mts.data.DESeq, file = "../ext_analysis/mts.data.deseq.Rda")
+save(mts.data.DESeq, file = "/Volumes/data2/andreea/ext_analysis/mts.data.deseq.Rda")
