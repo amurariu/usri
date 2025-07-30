@@ -22,6 +22,6 @@ mts.counts <- as.matrix(mts.counts)
 # generate results for thinned +/- randomised mts data, 100 times, plus 1x
 # non-randomised, non-thinned (i.e. original data)
 mts.data.limma <- lim.fun(data = mts.counts, conditions = mts.meta$groups.2,
-                          nloop = 2, mean = 0, prop_null = 0.95)
+                          nloop = 100, mean = 0, prop_null = 0.95)
 
 save(mts.data.limma, file = "../ext_analysis/mts.data.limma.Rda")

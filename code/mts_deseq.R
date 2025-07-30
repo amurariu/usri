@@ -3,7 +3,7 @@
 # Scott Dos Santos
 # 2025-07-10
 
-library(DESeq2) #do not load aldex2 and aldex3 at the same time
+library(DESeq2)
 library(seqgendiff)
 
 # load DESeq2 function for generating randomised/thinned data
