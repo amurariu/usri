@@ -91,7 +91,7 @@ get_confusion <- function(input=NULL, prog=NULL, FDR=0.1){
 		  # was altered by an amount less than the coefficient threshold (for the
 		  # current loop)
 			TP.coeff <- which(abs(input$thin.data[[i]]$coefmat) >= coeff[j]) # true positives; FC altered by thinning & >threshold
-			TN.coeff <- which(abs(input$thin.data[[i]]$coefmat) < coeff[j]) # true negatives; FC altered by thinning & <threshold
+			TN.coeff <- which(abs(input$thin.data[[i]]$coefmat) < coeff[j]) # true negatives; FC altered by thinning & <threshold AND FC not altered
 			TN.zero <- which(abs(input$thin.data[[i]]$coefmat) == 0) # true negatives; FC not altered by thinning
 		
 			# 'model' is the same for all: number of features where the MODELLED
