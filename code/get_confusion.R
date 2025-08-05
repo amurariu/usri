@@ -123,7 +123,7 @@ get_confusion <- function(input=NULL, prog=NULL, FDR=0.1){
 			# raw/diff based on an arbitrary LFC threshold of >0.5
 			
 			# raw.coeff: features with a MODELLED FC altered by thinning that is
-			#            <threshold, with a MEASURED P value <FDR
+			#            <threshold (as well as FC not altered), with a MEASURED P value <FDR
 			
 			# raw.zero:  features whose fold changes were NOT altered by thinning,
 			#            but whose MEASURED P values are <FDR
@@ -143,7 +143,7 @@ get_confusion <- function(input=NULL, prog=NULL, FDR=0.1){
 			# raw/diff based on an arbitrary LFC threshold of >0.5
 			
 			# raw.coeff: features with a MODELLED FC altered by thinning that is
-			#            <threshold, with a MEASURED P value >FDR
+			#            <threshold (as well as FC not altered), with a MEASURED P value >FDR
 			
 			# raw.zero:  features with a MODELLED FC that was NOT altered by thinning 
 			#            and with a MEASURED P value >FDR
@@ -206,14 +206,17 @@ get_confusion <- function(input=NULL, prog=NULL, FDR=0.1){
 			
 		# calculate the average of the true positive rate and false discovery rate
 		# across all 100 instances and store in matrix
-		TPFPR.mat[j,1] <- mean(raw.coeff[,6]) # TPR
-		TPFPR.mat[j,2] <- mean(raw.coeff[,7]) # FDR
-		TPFPR.mat[j,3] <- mean(diff.coeff[,6])
-		TPFPR.mat[j,4] <- mean(diff.coeff[,7])
-		TPFPR.mat[j,5] <- mean(raw.zero[,6]) # TPR
-		TPFPR.mat[j,6] <- mean(raw.zero[,7]) # FDR
-		TPFPR.mat[j,7] <- mean(diff.zero[,6])
-		TPFPR.mat[j,8] <- mean(diff.zero[,7])
+		TPFPR.mat[j,1] <- mean(raw.coeff[,6])   # cTPR0
+		TPFPR.mat[j,2] <- mean(raw.coeff[,7])   # cFDR0
+		
+		TPFPR.mat[j,3] <- mean(diff.coeff[,6])  # cTPR5
+		TPFPR.mat[j,4] <- mean(diff.coeff[,7])  # cFDR5
+		
+		TPFPR.mat[j,5] <- mean(raw.zero[,6])    # zTPR0
+		TPFPR.mat[j,6] <- mean(raw.zero[,7])    # zFDR0
+		
+		TPFPR.mat[j,7] <- mean(diff.zero[,6])   # zTPR5
+		TPFPR.mat[j,8] <- mean(diff.zero[,7])   # zFDR5
 		}
 	
 	# set names of the list elements to the prescribed coefficient thresholds
