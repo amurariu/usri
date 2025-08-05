@@ -3,7 +3,6 @@
 
 out_path="/Volumes/data2/andreea"
 
-ALDEx2_0_sccyto: $out_path/ext_analysis/sccyto.data.aldex2_0.Rda
 
 $out_path/ext_analysis/sccyto.data.aldex2_0.Rda : code/sccyto_aldex2_0.R 
 	Rscript 'code/sccyto_aldex2_0.R' 
@@ -35,6 +34,9 @@ ALDEx2_0_cdiff: $out_path/ext_analysis/cdiff.data.aldex2_0.Rda
 ALDEx2_0_fre: $out_path/ext_analysis/fre.data.aldex2_0.Rda
 ALDEx2_0_hiv: $out_path/ext_analysis/hiv.data.aldex2_0.Rda
 ALDEx2_0_mar: $out_path/ext_analysis/mar.data.aldex2_0.Rda
+ALDEx2_0_sccyto: $out_path/ext_analysis/sccyto.data.aldex2_0.Rda
+ALDEx2_0_oral: $out_path/ext_analysis/oral.data.aldex2_0.Rda
+
 
 ALDEx2_1_immuno: $out_path/ext_analysis/immuno.data.aldex2_1.Rda
 ALDEx2_1_brca: $out_path/ext_analysis/brca.data.aldex2_1.Rda
@@ -47,6 +49,8 @@ ALDEx2_1_cdiff: $out_path/ext_analysis/cdiff.data.aldex2_1.Rda
 ALDEx2_1_fre: $out_path/ext_analysis/fre.data.aldex2_1.Rda
 ALDEx2_1_hiv: $out_path/ext_analysis/hiv.data.aldex2_1.Rda
 ALDEx2_1_mar: $out_path/ext_analysis/mar.data.aldex2_1.Rda
+ALDEx2_1_sccyto: $out_path/ext_analysis/sccyto.data.aldex2_1.Rda
+ALDEx2_1_oral: $out_path/ext_analysis/oral.data.aldex2_1.Rda
 
 ALDEx2_2_immuno: $out_path/ext_analysis/immuno.data.aldex2_2.Rda
 ALDEx2_2_brca: $out_path/ext_analysis/brca.data.aldex2_2.Rda
@@ -59,6 +63,8 @@ ALDEx2_2_cdiff: $out_path/ext_analysis/cdiff.data.aldex2_2.Rda
 ALDEx2_2_fre: $out_path/ext_analysis/fre.data.aldex2_2.Rda
 ALDEx2_2_hiv: $out_path/ext_analysis/hiv.data.aldex2_2.Rda
 ALDEx2_2_mar: $out_path/ext_analysis/mar.data.aldex2_2.Rda
+ALDEx2_2_sccyto: $out_path/ext_analysis/sccyto.data.aldex2_2.Rda
+ALDEx2_2_oral: $out_path/ext_analysis/oral.data.aldex2_2.Rda
 
 ALDEx2_3_immuno: $out_path/ext_analysis/immuno.data.aldex2_3.Rda
 ALDEx2_4_immuno: $out_path/ext_analysis/immuno.data.aldex2_4.Rda
@@ -74,6 +80,8 @@ ALDEx2_5_cdiff: $out_path/ext_analysis/cdiff.data.aldex2_5.Rda
 ALDEx2_5_fre: $out_path/ext_analysis/fre.data.aldex2_5.Rda
 ALDEx2_5_hiv: $out_path/ext_analysis/hiv.data.aldex2_5.Rda
 ALDEx2_5_mar: $out_path/ext_analysis/mar.data.aldex2_5.Rda
+ALDEx2_5_sccyto: $out_path/ext_analysis/sccyto.data.aldex2_5.Rda
+ALDEx2_5_oral: $out_path/ext_analysis/oral.data.aldex2_5.Rda
 
 limma_immuno: $out_path/ext_analysis/immuno.data.limma.Rda
 limma_brca: $out_path/ext_analysis/brca.data.limma.Rda
@@ -82,6 +90,8 @@ limma_lihc: $out_path/ext_analysis/lihc.data.limma.Rda
 limma_luad: $out_path/ext_analysis/luad.data.limma.Rda
 limma_prad: $out_path/ext_analysis/prad.data.limma.Rda
 limma_thca: $out_path/ext_analysis/thca.data.limma.Rda
+limma_sscyto: $out_path/ext_analysis/sscyto.data.limma.Rda
+limma_oral: $out_path/ext_analysis/oral.data.limma.Rda
 
 limma_immuno_asym1: $out_path/ext_analysis/immuno.data.limma.asym1.Rda
 limma_immuno_asym2: $out_path/ext_analysis/immuno.data.limma.asym2.Rda
@@ -122,6 +132,8 @@ ALDEx3_0_cdiff: $out_path/ext_analysis/cdiff.data.aldex3_0.Rda
 ALDEx3_0_fre: $out_path/ext_analysis/fre.data.aldex3_0.Rda
 ALDEx3_0_hiv: $out_path/ext_analysis/hiv.data.aldex3_0.Rda
 ALDEx3_0_mar: $out_path/ext_analysis/mar.data.aldex3_0.Rda
+ALDEx3_0_sccyto: $out_path/ext_analysis/sccyto.data.aldex3_0.Rda
+ALDEx3_0_oral: $out_path/ext_analysis/oral.data.aldex3_0.Rda
 
 ALDEx3_1_immuno: $out_path/ext_analysis/immuno.data.aldex3_1.Rda
 ALDEx3_1_brca: $out_path/ext_analysis/brca.data.aldex3_1.Rda
@@ -134,6 +146,8 @@ ALDEx3_1_cdiff: $out_path/ext_analysis/cdiff.data.aldex3_1.Rda
 ALDEx3_1_fre: $out_path/ext_analysis/fre.data.aldex3_1.Rda
 ALDEx3_1_hiv: $out_path/ext_analysis/hiv.data.aldex3_1.Rda
 ALDEx3_1_mar: $out_path/ext_analysis/mar.data.aldex3_1.Rda
+ALDEx3_1_sccyto: $out_path/ext_analysis/sccyto.data.aldex3_1.Rda
+ALDEx3_1_oral: $out_path/ext_analysis/oral.data.aldex3_1.Rda
 
 ALDEx3_2_immuno: $out_path/ext_analysis/immuno.data.aldex3_2.Rda
 ALDEx3_2_brca: $out_path/ext_analysis/brca.data.aldex3_2.Rda
@@ -146,6 +160,8 @@ ALDEx3_2_cdiff: $out_path/ext_analysis/cdiff.data.aldex3_2.Rda
 ALDEx3_2_fre: $out_path/ext_analysis/fre.data.aldex3_2.Rda
 ALDEx3_2_hiv: $out_path/ext_analysis/hiv.data.aldex3_2.Rda
 ALDEx3_2_mar: $out_path/ext_analysis/mar.data.aldex3_2.Rda
+ALDEx3_2_sccyto: $out_path/ext_analysis/sccyto.data.aldex3_2.Rda
+ALDEx3_2_oral: $out_path/ext_analysis/oral.data.aldex3_2.Rda
 
 ALDEx3_3_immuno: $out_path/ext_analysis/immuno.data.aldex3_3.Rda
 ALDEx3_4_immuno: $out_path/ext_analysis/immuno.data.aldex3_4.Rda
@@ -161,6 +177,8 @@ ALDEx3_5_cdiff: $out_path/ext_analysis/cdiff.data.aldex3_5.Rda
 ALDEx3_5_fre: $out_path/ext_analysis/fre.data.aldex3_5.Rda
 ALDEx3_5_hiv: $out_path/ext_analysis/hiv.data.aldex3_5.Rda
 ALDEx3_5_mar: $out_path/ext_analysis/mar.data.aldex3_5.Rda
+ALDEx3_5_sccyto: $out_path/ext_analysis/sccyto.data.aldex3_5.Rda
+ALDEx3_5_oral: $out_path/ext_analysis/oral.data.aldex3_5.Rda
 
 
 limma_immuno_asym0_90: $out_path/ext_analysis/immuno.data.limma.asym0.prop90.Rda
@@ -225,11 +243,17 @@ DESeq_cdiff: $out_path/ext_analysis/cdiff.data.deseq.Rda
 DESeq_hiv: $out_path/ext_analysis/hiv.data.deseq.Rda
 DESeq_fre: $out_path/ext_analysis/fre.data.deseq.Rda
 DESeq_mar: $out_path/ext_analysis/mar.data.deseq.Rda
+DESeq_sscyto: $out_path/ext_analysis/sscyto.data.deseq.Rda
+DESeq_oral: $out_path/ext_analysis/oral.data.deseq.Rda
+
 
 cdiff_edgeR: $out_path/ext_analysis/cdiff.data.edgeR.Rda
 hiv_edgeR: $out_path/ext_analysis/hiv.data.edgeR.Rda
 fre_edgeR: $out_path/ext_analysis/fre.data.edgeR.Rda
 mar_edgeR: $out_path/ext_analysis/mar.data.edgeR.Rda
+sscyto_edgeR: $out_path/ext_analysis/sscyto.data.edgeR.Rda
+oral_edgeR: $out_path/ext_analysis/oral.data.edgeR.Rda
+
 
 cdiff_limma: $out_path/ext_analysis/cdiff.data.limma.Rda
 hiv_limma: $out_path/ext_analysis/hiv.data.limma.Rda
@@ -323,6 +347,12 @@ $out_path/ext_analysis/hiv.data.deseq.Rda : code/hiv_deseq.R
 	
 $out_path/ext_analysis/mar.data.deseq.Rda : code/mar_deseq.R 
 	Rscript 'code/mar_deseq.R' 
+	
+$out_path/ext_analysis/sscyto.data.deseq.Rda : code/sscyto_deseq.R 
+	Rscript 'code/sscyto_deseq.R' 
+	
+$out_path/ext_analysis/oral.data.deseq.Rda : code/oral_deseq.R 
+	Rscript 'code/oral_deseq.R' 
 
 
 ### edgeR
@@ -382,6 +412,12 @@ $out_path/ext_analysis/hiv.data.aldex2_0.Rda : code/hiv_aldex2_0.R
 $out_path/ext_analysis/mar.data.aldex2_0.Rda : code/mar_aldex2_0.R 
 	Rscript 'code/mar_aldex2_0.R' 
 	
+$out_path/ext_analysis/sscyto.data.aldex2_0.Rda : code/sscyto_aldex2_0.R 
+	Rscript 'code/sscyto_aldex2_0.R'
+
+$out_path/ext_analysis/oral.data.aldex2_0.Rda : code/oral_aldex2_0.R 
+	Rscript 'code/oral_aldex2_0.R'
+	
 	
 ### aldex2_1
 $out_path/ext_analysis/immuno.data.aldex2_1.Rda : code/immuno_aldex2_1.R
@@ -417,6 +453,12 @@ $out_path/ext_analysis/hiv.data.aldex2_1.Rda : code/hiv_aldex2_1.R
 $out_path/ext_analysis/mar.data.aldex2_1.Rda : code/mar_aldex2_1.R 
 	Rscript 'code/mar_aldex2_1.R' 
 	
+$out_path/ext_analysis/sscyto.data.aldex2_1.Rda : code/sscyto_aldex2_1.R 
+	Rscript 'code/sscyto_aldex2_0.R'
+
+$out_path/ext_analysis/oral.data.aldex2_1.Rda : code/oral_aldex2_1.R 
+	Rscript 'code/oral_aldex2_0.R'
+	
 
 ### aldex2_2
 $out_path/ext_analysis/immuno.data.aldex2_2.Rda : code/immuno_aldex2_2.R code/ald2.fun.R
@@ -451,6 +493,12 @@ $out_path/ext_analysis/hiv.data.aldex2_2.Rda : code/hiv_aldex2_2.R
 	
 $out_path/ext_analysis/mar.data.aldex2_2.Rda : code/mar_aldex2_2.R 
 	Rscript 'code/mar_aldex2_2.R' 
+	
+$out_path/ext_analysis/sscyto.data.aldex2_2.Rda : code/sscyto_aldex2_2.R 
+	Rscript 'code/sscyto_aldex2_2.R'
+
+$out_path/ext_analysis/oral.data.aldex2_2.Rda : code/oral_aldex2_2.R 
+	Rscript 'code/oral_aldex2_2.R'
 	
 	
 #aldex2_3 and aldex2_4
@@ -495,6 +543,12 @@ $out_path/ext_analysis/hiv.data.aldex2_5.Rda : code/hiv_aldex2_5.R
 	
 $out_path/ext_analysis/mar.data.aldex2_5.Rda : code/mar_aldex2_5.R 
 	Rscript 'code/mar_aldex2_5.R' 
+	
+$out_path/ext_analysis/sscyto.data.aldex2_5.Rda : code/sscyto_aldex2_5.R 
+	Rscript 'code/sscyto_aldex2_5.R'
+
+$out_path/ext_analysis/oral.data.aldex2_5.Rda : code/oral_aldex2_5.R 
+	Rscript 'code/oral_aldex2_5.R'
 
 ###limma 	
 $out_path/ext_analysis/immuno.data.limma.Rda : code/immuno_limma.R code/lim.fun.R
@@ -617,6 +671,12 @@ $out_path/ext_analysis/hiv.data.aldex3_0.Rda : code/hiv_aldex3_0.R
 	
 $out_path/ext_analysis/mar.data.aldex3_0.Rda : code/mar_aldex3_0.R 
 	Rscript 'code/mar_aldex3_0.R' 
+
+$out_path/ext_analysis/sscyto.data.aldex3_0.Rda : code/sscyto_aldex3_0.R 
+	Rscript 'code/sscyto_aldex3_0.R' 
+	
+$out_path/ext_analysis/oral.data.aldex3_0.Rda : code/oral_aldex3_0.R 
+	Rscript 'code/oral_aldex3_0.R' 
 	
 	
 ### aldex3_1
@@ -652,6 +712,12 @@ $out_path/ext_analysis/hiv.data.aldex3_1.Rda : code/hiv_aldex3_1.R
 	
 $out_path/ext_analysis/mar.data.aldex3_1.Rda : code/mar_aldex3_1.R 
 	Rscript 'code/mar_aldex3_1.R' 
+
+$out_path/ext_analysis/sscyto.data.aldex3_1.Rda : code/sscyto_aldex3_1.R 
+	Rscript 'code/sscyto_aldex3_1.R' 
+	
+$out_path/ext_analysis/oral.data.aldex3_1.Rda : code/oral_aldex3_1.R 
+	Rscript 'code/oral_aldex3_1.R' 
 	
 ### aldex3_2
 $out_path/ext_analysis/immuno.data.aldex3_2.Rda : code/immuno_aldex3_2.R 
@@ -686,6 +752,12 @@ $out_path/ext_analysis/hiv.data.aldex3_2.Rda : code/hiv_aldex3_2.R
 	
 $out_path/ext_analysis/mar.data.aldex3_2.Rda : code/mar_aldex3_2.R 
 	Rscript 'code/mar_aldex3_2.R' 
+
+$out_path/ext_analysis/sscyto.data.aldex3_2.Rda : code/sscyto_aldex3_2.R 
+	Rscript 'code/sscyto_aldex3_2.R' 
+	
+$out_path/ext_analysis/oral.data.aldex3_2.Rda : code/oral_aldex3_2.R 
+	Rscript 'code/oral_aldex3_2.R' 
 	
 #aldex2_3 and aldex2_4
 
@@ -728,6 +800,12 @@ $out_path/ext_analysis/hiv.data.aldex3_5.Rda : code/hiv_aldex3_5.R
 	
 $out_path/ext_analysis/mar.data.aldex3_5.Rda : code/mar_aldex3_5.R 
 	Rscript 'code/mar_aldex3_5.R' 
+
+$out_path/ext_analysis/sscyto.data.aldex3_5.Rda : code/sscyto_aldex3_5.R 
+	Rscript 'code/sscyto_aldex3_5.R' 
+	
+$out_path/ext_analysis/oral.data.aldex3_5.Rda : code/oral_aldex3_5.R 
+	Rscript 'code/oral_aldex3_5.R' 
 	
 #asymmetrical limma with different prop_null values
 
@@ -871,6 +949,13 @@ $out_path/ext_analysis/fre.data.edgeR.Rda : code/fre_edgeR.R
 $out_path/ext_analysis/mar.data.edgeR.Rda : code/mar_edgeR.R
 	Rscript 'code/mar_edgeR.R'
 
+$out_path/ext_analysis/sscyto.data.edgeR.Rda : code/sscyto_edgeR.R
+	Rscript 'code/sscyto_edgeR.R'
+
+$out_path/ext_analysis/oral.data.edgeR.Rda : code/oral_edgeR.R
+	Rscript 'code/oral_edgeR.R'
+
+
 $out_path/ext_analysis/cdiff.data.limma.Rda : code/cdiff_limma.R
 	Rscript 'code/cdiff_limma.R'
 	
@@ -882,6 +967,13 @@ $out_path/ext_analysis/hiv.data.limma.Rda : code/hiv_limma.R
 	
 $out_path/ext_analysis/mar.data.limma.Rda : code/mar_limma.R
 	Rscript 'code/mar_limma.R'
+	
+$out_path/ext_analysis/sscyto.data.limma.Rda : code/sscyto_limma.R
+	Rscript 'code/sscyto_limma.R'
+	
+$out_path/ext_analysis/oral.data.limma.Rda : code/oral_limma.R
+	Rscript 'code/oral_limma.R'
+	
 
 #immuno with prop_null and different mean parameters
 
