@@ -454,10 +454,10 @@ $out_path/ext_analysis/mar.data.aldex2_1.Rda : code/mar_aldex2_1.R
 	Rscript 'code/mar_aldex2_1.R' 
 	
 $out_path/ext_analysis/sscyto.data.aldex2_1.Rda : code/sscyto_aldex2_1.R 
-	Rscript 'code/sscyto_aldex2_0.R'
+	Rscript 'code/sscyto_aldex2_1.R'
 
 $out_path/ext_analysis/oral.data.aldex2_1.Rda : code/oral_aldex2_1.R 
-	Rscript 'code/oral_aldex2_0.R'
+	Rscript 'code/oral_aldex2_1.R'
 	
 
 ### aldex2_2
