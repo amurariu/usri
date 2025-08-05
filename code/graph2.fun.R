@@ -24,7 +24,7 @@ par(mfrow=c(2,2))
 #left-side panel
 
   plot(coeff, ald0.conf$TPFPR[,1], col="black", type='b', lty=1,
-       xlab="modeled LFC", ylab="TPR", xlim=c(0,1), ylim=c(0.3,1),
+       xlab="modeled LFC", ylab="TPR", xlim=c(0,1), ylim=c(0,1),
        main="real LFC > coeff")
   points(coeff,ald1.conf$TPFPR[,1], col="black", type='b', pch='1', lty=1, cex=0.6) #plotting cTPR0 from TPFPR
   points(coeff,ald2.conf$TPFPR[,1], col="black", type='b', pch='2', lty=1, cex=0.6)
@@ -78,7 +78,7 @@ par(mfrow=c(2,2))
   
 #right side panel
 plot(coeff, ald0.conf$TPFPR[,5], col="black", type='b', lty=1,
-     xlab="modeled LFC", ylab="TPR", xlim=c(0,1), ylim=c(0.3,1),
+     xlab="modeled LFC", ylab="TPR", xlim=c(0,1), ylim=c(0,1),
      main="real LFC > 0")
 points(coeff,ald1.conf$TPFPR[,5], col="black", type='b', pch='1', lty=1, cex=0.6) #plotting cTPR0 from TPFPR
 points(coeff,ald2.conf$TPFPR[,5], col="black", type='b', pch='2', lty=1, cex=0.6)
@@ -132,7 +132,7 @@ abline(h=0.05, lty=3, lwd=2, col="grey")
 
 #bottom left panel
 plot(coeff, ald0.conf$TPFPR[,2], col="black", type='b', lty=1,
-     xlab="modeled LFC", ylab="FDR", xlim=c(0,1), ylim=c(0,0.6),
+     xlab="modeled LFC", ylab="FDR", xlim=c(0,1), ylim=c(0,1),
      main="real LFC > coeff")
 points(coeff,ald1.conf$TPFPR[,2], col="black", type='b', lty=1, pch='1', cex=0.6) 
 points(coeff,ald2.conf$TPFPR[,2], col="black", type='b', lty=1, pch='2', cex=0.6)
@@ -165,7 +165,7 @@ abline(h=0.05, lty=3, lwd=2, col="grey")
 
 #right side panel
 plot(coeff, ald0.conf$TPFPR[,6], col="black", type='b', lty=1,
-     xlab="modeled LFC", ylab="FDR", xlim=c(0,1), ylim=c(0,0.6),
+     xlab="modeled LFC", ylab="FDR", xlim=c(0,1), ylim=c(0,1),
      main="real LFC > 0")
 points(coeff,ald1.conf$TPFPR[,6], col="black", type='b', lty=1, pch='1', cex=0.6) 
 points(coeff,ald2.conf$TPFPR[,6], col="black", type='b', lty=1, pch='2', cex=0.6)

@@ -54,6 +54,9 @@ ALDEx2_2_fre: $out_path/ext_analysis/fre.data.aldex2_2.Rda
 ALDEx2_2_hiv: $out_path/ext_analysis/hiv.data.aldex2_2.Rda
 ALDEx2_2_mar: $out_path/ext_analysis/mar.data.aldex2_2.Rda
 
+ALDEx2_3_immuno: $out_path/ext_analysis/immuno.data.aldex2_3.Rda
+ALDEx2_4_immuno: $out_path/ext_analysis/immuno.data.aldex2_4.Rda
+
 ALDEx2_5_immuno: $out_path/ext_analysis/immuno.data.aldex2_5.Rda
 ALDEx2_5_brca: $out_path/ext_analysis/brca.data.aldex2_5.Rda
 ALDEx2_5_kirc: $out_path/ext_analysis/kirc.data.aldex2_5.Rda
@@ -126,7 +129,6 @@ ALDEx3_1_fre: $out_path/ext_analysis/fre.data.aldex3_1.Rda
 ALDEx3_1_hiv: $out_path/ext_analysis/hiv.data.aldex3_1.Rda
 ALDEx3_1_mar: $out_path/ext_analysis/mar.data.aldex3_1.Rda
 
-
 ALDEx3_2_immuno: $out_path/ext_analysis/immuno.data.aldex3_2.Rda
 ALDEx3_2_brca: $out_path/ext_analysis/brca.data.aldex3_2.Rda
 ALDEx3_2_kirc: $out_path/ext_analysis/kirc.data.aldex3_2.Rda
@@ -139,6 +141,8 @@ ALDEx3_2_fre: $out_path/ext_analysis/fre.data.aldex3_2.Rda
 ALDEx3_2_hiv: $out_path/ext_analysis/hiv.data.aldex3_2.Rda
 ALDEx3_2_mar: $out_path/ext_analysis/mar.data.aldex3_2.Rda
 
+ALDEx3_3_immuno: $out_path/ext_analysis/immuno.data.aldex3_3.Rda
+ALDEx3_4_immuno: $out_path/ext_analysis/immuno.data.aldex3_4.Rda
 
 ALDEx3_5_immuno: $out_path/ext_analysis/immuno.data.aldex3_5.Rda
 ALDEx3_5_brca: $out_path/ext_analysis/brca.data.aldex3_5.Rda
@@ -407,6 +411,7 @@ $out_path/ext_analysis/hiv.data.aldex2_1.Rda : code/hiv_aldex2_1.R
 $out_path/ext_analysis/mar.data.aldex2_1.Rda : code/mar_aldex2_1.R 
 	Rscript 'code/mar_aldex2_1.R' 
 	
+
 ### aldex2_2
 $out_path/ext_analysis/immuno.data.aldex2_2.Rda : code/immuno_aldex2_2.R code/ald2.fun.R
 	Rscript 'code/immuno_aldex2_2.R' 'code/ald2.fun.R'
@@ -440,6 +445,16 @@ $out_path/ext_analysis/hiv.data.aldex2_2.Rda : code/hiv_aldex2_2.R
 	
 $out_path/ext_analysis/mar.data.aldex2_2.Rda : code/mar_aldex2_2.R 
 	Rscript 'code/mar_aldex2_2.R' 
+	
+	
+#aldex2_3 and aldex2_4
+
+$out_path/ext_analysis/immuno.data.aldex2_3.Rda : code/immuno_aldex2_3.R
+	Rscript 'code/immuno_aldex2_3.R' 
+	
+$out_path/ext_analysis/immuno.data.aldex2_4.Rda : code/immuno_aldex2_4.R
+	Rscript 'code/immuno_aldex2_4.R' 
+	
 	
 ### aldex2_5
 $out_path/ext_analysis/immuno.data.aldex2_5.Rda : code/immuno_aldex2_5.R code/ald2.fun.R
@@ -665,6 +680,14 @@ $out_path/ext_analysis/hiv.data.aldex3_2.Rda : code/hiv_aldex3_2.R
 	
 $out_path/ext_analysis/mar.data.aldex3_2.Rda : code/mar_aldex3_2.R 
 	Rscript 'code/mar_aldex3_2.R' 
+	
+#aldex2_3 and aldex2_4
+
+$out_path/ext_analysis/immuno.data.aldex3_3.Rda : code/immuno_aldex3_3.R
+	Rscript 'code/immuno_aldex3_3.R' 
+	
+$out_path/ext_analysis/immuno.data.aldex3_4.Rda : code/immuno_aldex3_4.R
+	Rscript 'code/immuno_aldex3_4.R' 
 	
 ### aldex3_5
 $out_path/ext_analysis/immuno.data.aldex3_5.Rda : code/immuno_aldex3_5.R 
