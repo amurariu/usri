@@ -23,5 +23,5 @@ y_pd1 <- y_pd1[keep_pd1,keep.lib.sizes=FALSE]
 immuno.data <- y_pd1$counts #filtered base dataset
 
 #save file - gamma=1e-3
-immuno.data_3.aldex3 <- ald3.fun(data=immuno.data, conds=immuno.conds$conditions_p, nloop=100, gamma=0.3, prop_null = 0.95, mean = 0))
+immuno.data_3.aldex3 <- ald3.fun(data=immuno.data, conds=immuno.conds$conditions_p, nloop=100, gamma=0.3, prop_null = 0.95, mean = 0)
 save(immuno.data_3.aldex3, file="/Volumes/data2/andreea/ext_analysis/immuno.data.aldex3_3.Rda")
