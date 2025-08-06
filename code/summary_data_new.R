@@ -16,37 +16,35 @@ source('code/summary.data.fun.R')
 if(length(list.files(paste0(repo,"analysis/summarystats"), pattern = "ss")) != 88){
   
   # load in analysis results (takes a few minutes!)
-  for(i in list.files(data, pattern = "immuno")){
+  for(i in list.files(data, pattern = "immuno.*aldex")){
     load(paste0(data, i))
   }
-
-  # intialise vectors for storing dataset and tool strings
-  dataset <- vector()
-  tool <- vector()
   
-  # build confusion matrix from datasets (will take several minutes)
-  for(i in ls(pattern = "immuno")){
+  # build summary object from datasets (will take several minutes)
+  i <- ls(pattern = "immuno")[1]
     
-    # extract dataset and tool names from input file (sensitive to aldex gamma)
-    dataset <- str_split(i, "\\." , 3)[[1]][1]
-    tool <- tolower(str_split(i, "\\." , 3)[[1]][3])
-    if(tool == "aldex2"| tool == "aldex3"){
-      tool <- paste0(tool, ".", gsub("data_", "", str_split(i, "\\." , 3)[[1]][2]))
-    }
+  # extract dataset and tool names from input file (sensitive to aldex gamma)
+  dataset <- str_split(i, "\\." , 3)[[1]][1]
+  gamma <- "data_"
+  tool <- "aldex"
     
-    # run 'get_confusion.R' on analysis objects to automatically build the
-    # confusion matrices
-    assign(x = paste0("ss.", dataset, ".", tool),
-           get_confusion(input = get(i),
-                         prog = gsub("\\..", "", tool),
-                         FDR = 0.1)) 
-  }
+  # run 'get_confusion.R' on analysis objects to automatically build the
+  # confusion matrices
+  assign(x = paste0("ss.", dataset),
+         sum.fun(aldex2_0 = get(paste0(dataset, ".", gamma, 0, ".", tool, 2)),
+                 aldex2_1 = get(paste0(dataset, ".", gamma, 1, ".", tool, 2)),
+                 aldex2_2 = get(paste0(dataset, ".", gamma, 2, ".", tool, 2)),
+                 aldex2_5 = get(paste0(dataset, ".", gamma, 5, ".", tool, 2)),
+                 aldex3_0 = get(paste0(dataset, ".", gamma, 0, ".", tool, 3)),
+                 aldex3_1 = get(paste0(dataset, ".", gamma, 1, ".", tool, 3)),
+                 aldex3_2 = get(paste0(dataset, ".", gamma, 2, ".", tool, 3)),
+                 aldex3_5 = get(paste0(dataset, ".", gamma, 5, ".", tool, 3))))
+  
   
   # save confusion matrix list objects as .Rda
-  for(i in ls(pattern = "ss")){
-    save(list = i,
-         file = paste0(repo,"analysis/summarystats/", i, ".Rda"))
-  }
+  
+    save(list = paste0("ss.", dataset),
+         file = paste0(repo,"analysis/summarystats/ss.", dataset, ".Rda"))
   
   # extract TPFPR matrices from each confusion matrix and delete 'cm.' objects
   for(i in ls(pattern = "ss")){
@@ -56,7 +54,7 @@ if(length(list.files(paste0(repo,"analysis/summarystats"), pattern = "ss")) != 8
   }
   
   # finally, remove analysis objects from environment
-  for(i in ls(pattern = "^mts")){
+  for(i in ls(pattern = "^immuno")){
     rm(list = i)
   }
 } else{
