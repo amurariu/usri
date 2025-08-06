@@ -51,54 +51,59 @@ if(length(list.files(paste0(repo,"analysis/summarystats"), pattern = "ss")) != 8
   
   # load in confusion matrix objects from .Rda
   for(i in list.files(paste0(repo,"analysis/summarystats"), pattern = "ss")){
-    load(paste0(repo, "analysis/summary stats/", i))
+    load(paste0(repo, "analysis/summarystats/", i))
   }
 }
 
 ############################# data transformation #############################
 
 tmplist <- list()
+
 for(i in ls(pattern = "^ss.")){
-  # extract rownames and set to 'coeff'
+  # pull list
   df <- get(i)
-  df$coeff <- rownames(df)
-  rownames(df) <- NULL
   
-  # pivot around coeff column and add columns indicating dataset and tool 
-  df <- df %>% 
-    pivot_longer(-coeff, names_to = "metric", values_to = "value") %>% 
-    arrange(metric, coeff)
+  # make a temp dataframe with 1600 rows (200 x 8 tool/gamma combos) and 3 cols:
+  # abs values, dataset and tool
+  tempdf <- data.frame(matrix(data = NA, nrow = 1600, ncol = 3))
+  colnames(tempdf) <- c("abs", "dataset", "tool")
   
-  df$dataset <- str_split(i, "\\.", 3)[[1]][2]
-  df$tool <- str_split(i, "\\.", 3)[[1]][3]
+  start <- 1
+  end <- 200
   
-  # add to list
-  tmplist[[i]] <-df
-  rm(df)
+  # loop over list elements for each dataset and pull out abs values from each
+  # tool/gamma combo; stick in temp df & increment start/end vals
+  for(j in 1:length(df)){
+    
+    tempdf[(start:end), 1] <- df[[j]][,3]
+    name <- gsub("minmax", "aldex", names(df)[j])
+    tempdf[start:end, 3] <- name
+    
+    start <- start + 200
+    end <- end + 200
+  }
+  
+  # fill in current dataset
+  tempdf[,2] <- gsub("^ss\\.", "", i)
+  
+  # add temp dataframe of abs/dataset/tool values to list
+  tmplist[[i]] <- tempdf
 }
 
 # collapse list to df, then remove rownames, convert 'coeff' to numeric and
 # change order of columns
 plot.df <- do.call(rbind, tmplist)
-plot.df$coeff <- as.numeric(plot.df$coeff)
-plot.df <- plot.df %>% 
-  relocate(c(dataset, tool), .before = coeff) %>% 
-  relocate(metric, .after = tool)
 
-  
-  # filter plotting data based on inputs to function
-  plot.a <- plot.type
-  plot.b <- switch(tn.def, "coeff" = "c", "zero" = "z")
-  plot.c <- switch(as.character(coeff.thresh), "TRUE" = "5", "FALSE" = "0")
-  to.filter <- paste0(plot.b, plot.a, plot.c)
-  
-  to.plot <- df %>% 
-    filter(metric == to.filter)
-  
-  # plot data
-  to.plot %>% 
-    ggplot(aes(x = coeff, y = value))
-}
+# split tool into tool and gamma
+plot.df$gamma.char <- as.character(gsub("aldex._", "", plot.df$tool))
+plot.df$gamma.num <- as.numeric(gsub("aldex._", "", plot.df$tool))
+plot.df$tool <- gsub("_.$","", plot.df$tool)
+
+plot.immuno <- plot.df %>% 
+  filter(dataset == "immuno")
+
+
+
 
 
   
