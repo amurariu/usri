@@ -1,2001 +1,2001 @@
-group	reads
-R2	Cytotoxic T cell	1619
-R5	Cytotoxic T cell	1975
-R12	Cytotoxic T cell	1900
-R15	Cytotoxic T cell	1817
-R16	Cytotoxic T cell	2878
-R19	Cytotoxic T cell	2355
-R30	Cytotoxic T cell	2289
-R32	Cytotoxic T cell	1720
-R37	Cytotoxic T cell	1818
-R39	Cytotoxic T cell	1717
-R40	Cytotoxic T cell	1687
-R43	Cytotoxic T cell	2058
-R48	Cytotoxic T cell	2228
-R49	Cytotoxic T cell	1908
-R56	Cytotoxic T cell	1868
-R60	Cytotoxic T cell	1887
-R64	Cytotoxic T cell	1977
-R65	Cytotoxic T cell	1688
-R67	Cytotoxic T cell	2096
-R70	Cytotoxic T cell	1762
-R71	Cytotoxic T cell	1802
-R84	Cytotoxic T cell	1688
-R85	Cytotoxic T cell	1763
-R86	Cytotoxic T cell	1777
-R87	Cytotoxic T cell	1832
-R90	Cytotoxic T cell	1780
-R91	Cytotoxic T cell	1740
-R99	Cytotoxic T cell	2919
-R116	Cytotoxic T cell	1823
-R119	Cytotoxic T cell	1838
-R122	Cytotoxic T cell	1944
-R129	Cytotoxic T cell	1884
-R133	Cytotoxic T cell	1943
-R136	Cytotoxic T cell	1810
-R139	Cytotoxic T cell	2890
-R149	Cytotoxic T cell	1836
-R152	Cytotoxic T cell	1746
-R157	Cytotoxic T cell	1694
-R158	Cytotoxic T cell	1850
-R165	Cytotoxic T cell	1791
-R167	Cytotoxic T cell	1985
-R171	Cytotoxic T cell	1777
-R174	Cytotoxic T cell	2559
-R175	Cytotoxic T cell	3278
-R176	Cytotoxic T cell	1861
-R177	Cytotoxic T cell	1739
-R183	Cytotoxic T cell	2558
-R187	Cytotoxic T cell	1811
-R188	Cytotoxic T cell	1804
-R189	Cytotoxic T cell	1714
-R193	Cytotoxic T cell	1959
-R194	Cytotoxic T cell	1866
-R200	Cytotoxic T cell	1866
-R206	Cytotoxic T cell	1803
-R211	Cytotoxic T cell	1938
-R213	Cytotoxic T cell	1843
-R214	Cytotoxic T cell	1858
-R220	Cytotoxic T cell	1908
-R222	Cytotoxic T cell	1723
-R224	Cytotoxic T cell	1793
-R226	Cytotoxic T cell	1619
-R227	Cytotoxic T cell	1827
-R237	Cytotoxic T cell	2483
-R238	Cytotoxic T cell	1734
-R239	Cytotoxic T cell	1752
-R265	Cytotoxic T cell	2718
-R267	Cytotoxic T cell	2020
-R271	Cytotoxic T cell	1732
-R277	Cytotoxic T cell	1684
-R278	Cytotoxic T cell	1791
-R285	Cytotoxic T cell	1749
-R286	Cytotoxic T cell	1773
-R289	Cytotoxic T cell	2571
-R291	Cytotoxic T cell	2088
-R292	Cytotoxic T cell	1861
-R297	Cytotoxic T cell	1814
-R301	Cytotoxic T cell	2115
-R302	Cytotoxic T cell	1706
-R305	Cytotoxic T cell	1890
-R309	Cytotoxic T cell	1821
-R310	Cytotoxic T cell	2462
-R316	Cytotoxic T cell	1882
-R317	Cytotoxic T cell	1966
-R319	Cytotoxic T cell	1834
-R320	Cytotoxic T cell	2370
-R325	Cytotoxic T cell	1797
-R335	Cytotoxic T cell	1877
-R340	Cytotoxic T cell	1945
-R344	Cytotoxic T cell	1975
-R350	Cytotoxic T cell	1994
-R354	Cytotoxic T cell	2105
-R366	Cytotoxic T cell	1755
-R370	Cytotoxic T cell	1833
-R372	Cytotoxic T cell	2308
-R383	Cytotoxic T cell	1722
-R384	Cytotoxic T cell	2409
-R385	Cytotoxic T cell	1702
-R387	Cytotoxic T cell	1743
-R389	Cytotoxic T cell	2058
-R400	Cytotoxic T cell	2733
-R402	Cytotoxic T cell	1789
-R406	Cytotoxic T cell	2095
-R407	Cytotoxic T cell	2170
-R411	Cytotoxic T cell	1764
-R413	Cytotoxic T cell	1831
-R414	Cytotoxic T cell	1790
-R423	Cytotoxic T cell	1827
-R428	Cytotoxic T cell	1909
-R433	Cytotoxic T cell	1764
-R444	Cytotoxic T cell	2489
-R448	Cytotoxic T cell	2674
-R452	Cytotoxic T cell	1905
-R460	Cytotoxic T cell	1731
-R468	Cytotoxic T cell	1832
-R473	Cytotoxic T cell	1699
-R476	Cytotoxic T cell	1737
-R478	Cytotoxic T cell	1711
-R479	Cytotoxic T cell	3028
-R482	Cytotoxic T cell	2199
-R492	Cytotoxic T cell	1907
-R496	Cytotoxic T cell	3224
-R497	Cytotoxic T cell	1742
-R501	Cytotoxic T cell	2499
-R502	Cytotoxic T cell	2932
-R503	Cytotoxic T cell	1663
-R506	Cytotoxic T cell	2015
-R515	Cytotoxic T cell	1747
-R516	Cytotoxic T cell	2325
-R520	Cytotoxic T cell	1931
-R538	Cytotoxic T cell	2707
-R543	Cytotoxic T cell	2987
-R556	Cytotoxic T cell	2144
-R559	Cytotoxic T cell	2041
-R561	Cytotoxic T cell	2032
-R566	Cytotoxic T cell	1771
-R571	Cytotoxic T cell	2744
-R572	Cytotoxic T cell	1807
-R575	Cytotoxic T cell	2143
-R580	Cytotoxic T cell	1707
-R585	Cytotoxic T cell	1821
-R590	Cytotoxic T cell	1747
-R592	Cytotoxic T cell	2768
-R593	Cytotoxic T cell	1684
-R594	Cytotoxic T cell	1997
-R595	Cytotoxic T cell	1878
-R602	Cytotoxic T cell	1990
-R603	Cytotoxic T cell	2205
-R617	Cytotoxic T cell	1786
-R620	Cytotoxic T cell	1820
-R621	Cytotoxic T cell	2109
-R622	Cytotoxic T cell	1802
-R625	Cytotoxic T cell	1803
-R633	Cytotoxic T cell	1845
-R638	Cytotoxic T cell	1939
-R641	Cytotoxic T cell	1760
-R645	Cytotoxic T cell	2385
-R646	Cytotoxic T cell	1765
-R653	Cytotoxic T cell	1645
-R662	Cytotoxic T cell	2159
-R665	Cytotoxic T cell	2649
-R667	Cytotoxic T cell	1845
-R672	Cytotoxic T cell	2853
-R676	Cytotoxic T cell	2188
-R677	Cytotoxic T cell	1810
-R681	Cytotoxic T cell	2175
-R685	Cytotoxic T cell	1924
-R689	Cytotoxic T cell	2553
-R692	Cytotoxic T cell	2208
-R696	Cytotoxic T cell	1723
-R697	Cytotoxic T cell	3159
-R701	Cytotoxic T cell	1710
-R703	Cytotoxic T cell	1843
-R712	Cytotoxic T cell	1941
-R716	Cytotoxic T cell	1862
-R717	Cytotoxic T cell	1845
-R718	Cytotoxic T cell	2089
-R722	Cytotoxic T cell	1804
-R723	Cytotoxic T cell	1843
-R724	Cytotoxic T cell	3266
-R726	Cytotoxic T cell	1748
-R730	Cytotoxic T cell	2218
-R732	Cytotoxic T cell	1851
-R733	Cytotoxic T cell	1828
-R735	Cytotoxic T cell	2021
-R736	Cytotoxic T cell	1855
-R738	Cytotoxic T cell	1846
-R740	Cytotoxic T cell	1926
-R741	Cytotoxic T cell	2091
-R744	Cytotoxic T cell	3131
-R745	Cytotoxic T cell	1700
-R751	Cytotoxic T cell	1974
-R754	Cytotoxic T cell	1853
-R760	Cytotoxic T cell	1790
-R767	Cytotoxic T cell	1831
-R775	Cytotoxic T cell	1833
-R777	Cytotoxic T cell	1804
-R778	Cytotoxic T cell	1822
-R792	Cytotoxic T cell	1922
-R798	Cytotoxic T cell	1730
-R802	Cytotoxic T cell	1815
-R804	Cytotoxic T cell	2488
-R810	Cytotoxic T cell	1818
-R811	Cytotoxic T cell	1850
-R815	Cytotoxic T cell	2376
-R817	Cytotoxic T cell	1776
-R821	Cytotoxic T cell	1934
-R823	Cytotoxic T cell	1681
-R825	Cytotoxic T cell	1667
-R830	Cytotoxic T cell	1775
-R837	Cytotoxic T cell	2110
-R838	Cytotoxic T cell	1965
-R847	Cytotoxic T cell	2301
-R853	Cytotoxic T cell	2584
-R858	Cytotoxic T cell	1763
-R861	Cytotoxic T cell	1970
-R864	Cytotoxic T cell	2021
-R867	Cytotoxic T cell	1784
-R868	Cytotoxic T cell	1750
-R871	Cytotoxic T cell	3247
-R881	Cytotoxic T cell	1709
-R883	Cytotoxic T cell	1689
-R888	Cytotoxic T cell	1844
-R890	Cytotoxic T cell	1689
-R895	Cytotoxic T cell	2106
-R897	Cytotoxic T cell	2299
-R898	Cytotoxic T cell	1909
-R901	Cytotoxic T cell	1778
-R906	Cytotoxic T cell	3023
-R911	Cytotoxic T cell	1753
-R916	Cytotoxic T cell	1816
-R920	Cytotoxic T cell	1836
-R921	Cytotoxic T cell	1768
-R925	Cytotoxic T cell	2833
-R926	Cytotoxic T cell	1874
-R932	Cytotoxic T cell	2365
-R943	Cytotoxic T cell	2537
-R944	Cytotoxic T cell	1884
-R951	Cytotoxic T cell	2134
-R953	Cytotoxic T cell	1853
-R954	Cytotoxic T cell	1959
-R957	Cytotoxic T cell	1695
-R961	Cytotoxic T cell	1711
-R963	Cytotoxic T cell	3130
-R974	Cytotoxic T cell	1885
-R979	Cytotoxic T cell	1963
-R990	Cytotoxic T cell	1713
-R991	Cytotoxic T cell	1759
-R994	Cytotoxic T cell	2311
-R995	Cytotoxic T cell	1912
-R998	Cytotoxic T cell	1845
-R1003	Cytotoxic T cell	1912
-R1008	Cytotoxic T cell	2054
-R1016	Cytotoxic T cell	2715
-R1033	Cytotoxic T cell	1784
-R1034	Cytotoxic T cell	2130
-R1040	Cytotoxic T cell	2934
-R1041	Cytotoxic T cell	2067
-R1043	Cytotoxic T cell	2562
-R1049	Cytotoxic T cell	1769
-R1054	Cytotoxic T cell	2688
-R1057	Cytotoxic T cell	1903
-R1062	Cytotoxic T cell	1837
-R1074	Cytotoxic T cell	1848
-R1079	Cytotoxic T cell	1914
-R1086	Cytotoxic T cell	2061
-R1088	Cytotoxic T cell	2939
-R1095	Cytotoxic T cell	1765
-R1100	Cytotoxic T cell	1704
-R1105	Cytotoxic T cell	1858
-R1118	Cytotoxic T cell	2354
-R1121	Cytotoxic T cell	1835
-R1123	Cytotoxic T cell	1889
-R1124	Cytotoxic T cell	1967
-R1127	Cytotoxic T cell	2357
-R1139	Cytotoxic T cell	3211
-R1140	Cytotoxic T cell	2744
-R1147	Cytotoxic T cell	1824
-R1149	Cytotoxic T cell	1775
-R1153	Cytotoxic T cell	2148
-R1157	Cytotoxic T cell	2239
-R1158	Cytotoxic T cell	1891
-R1165	Cytotoxic T cell	2020
-R1171	Cytotoxic T cell	1712
-R1173	Cytotoxic T cell	1851
-R1174	Cytotoxic T cell	1857
-R1179	Cytotoxic T cell	2160
-R1181	Cytotoxic T cell	2867
-R1184	Cytotoxic T cell	3065
-R1185	Cytotoxic T cell	1781
-R1186	Cytotoxic T cell	2094
-R1191	Cytotoxic T cell	2246
-R1192	Cytotoxic T cell	1925
-R1193	Cytotoxic T cell	2785
-R1194	Cytotoxic T cell	1789
-R1197	Cytotoxic T cell	1772
-R1198	Cytotoxic T cell	2266
-R1202	Cytotoxic T cell	1945
-R1206	Cytotoxic T cell	1684
-R1207	Cytotoxic T cell	2333
-R1212	Cytotoxic T cell	1774
-R1215	Cytotoxic T cell	1730
-R1222	Cytotoxic T cell	2028
-R1227	Cytotoxic T cell	2504
-R1234	Cytotoxic T cell	2770
-R1240	Cytotoxic T cell	1670
-R1245	Cytotoxic T cell	1858
-R1249	Cytotoxic T cell	2095
-R1250	Cytotoxic T cell	1749
-R1255	Cytotoxic T cell	1963
-R1260	Cytotoxic T cell	2485
-R1264	Cytotoxic T cell	1964
-R1266	Cytotoxic T cell	2198
-R1272	Cytotoxic T cell	1736
-R1273	Cytotoxic T cell	1807
-R1274	Cytotoxic T cell	2142
-R1275	Cytotoxic T cell	2616
-R1276	Cytotoxic T cell	1817
-R1289	Cytotoxic T cell	1860
-R1290	Cytotoxic T cell	2162
-R1305	Cytotoxic T cell	2278
-R1311	Cytotoxic T cell	1789
-R1312	Cytotoxic T cell	1678
-R1318	Cytotoxic T cell	1690
-R1322	Cytotoxic T cell	1909
-R1326	Cytotoxic T cell	2494
-R1335	Cytotoxic T cell	1791
-R1337	Cytotoxic T cell	2341
-R1346	Cytotoxic T cell	1999
-R1360	Cytotoxic T cell	1677
-R1366	Cytotoxic T cell	1715
-R1369	Cytotoxic T cell	1813
-R1370	Cytotoxic T cell	2329
-R1374	Cytotoxic T cell	1754
-R1388	Cytotoxic T cell	1841
-R1390	Cytotoxic T cell	2060
-R1397	Cytotoxic T cell	1894
-R1405	Cytotoxic T cell	2595
-R1411	Cytotoxic T cell	2366
-R1413	Cytotoxic T cell	1742
-R1420	Cytotoxic T cell	1731
-R1421	Cytotoxic T cell	1902
-R1422	Cytotoxic T cell	1751
-R1428	Cytotoxic T cell	2487
-R1429	Cytotoxic T cell	2255
-R1431	Cytotoxic T cell	2421
-R1433	Cytotoxic T cell	2609
-R1436	Cytotoxic T cell	2049
-R1437	Cytotoxic T cell	1737
-R1448	Cytotoxic T cell	1875
-R1449	Cytotoxic T cell	2298
-R1450	Cytotoxic T cell	1969
-R1458	Cytotoxic T cell	2470
-R1460	Cytotoxic T cell	1723
-R1462	Cytotoxic T cell	2744
-R1464	Cytotoxic T cell	2035
-R1467	Cytotoxic T cell	1744
-R1468	Cytotoxic T cell	2417
-R1471	Cytotoxic T cell	1713
-R1478	Cytotoxic T cell	2694
-R1483	Cytotoxic T cell	2293
-R1485	Cytotoxic T cell	1757
-R1489	Cytotoxic T cell	1796
-R1491	Cytotoxic T cell	1936
-R1493	Cytotoxic T cell	1762
-R1495	Cytotoxic T cell	2592
-R1497	Cytotoxic T cell	1684
-R1498	Cytotoxic T cell	2587
-R1502	Cytotoxic T cell	1912
-R1504	Cytotoxic T cell	1855
-R1508	Cytotoxic T cell	1757
-R1511	Cytotoxic T cell	1872
-R1514	Cytotoxic T cell	2814
-R1518	Cytotoxic T cell	2134
-R1520	Cytotoxic T cell	2452
-R1524	Cytotoxic T cell	1804
-R1535	Cytotoxic T cell	2112
-R1537	Cytotoxic T cell	2023
-R1538	Cytotoxic T cell	2934
-R1541	Cytotoxic T cell	1896
-R1542	Cytotoxic T cell	1865
-R1543	Cytotoxic T cell	1985
-R1547	Cytotoxic T cell	1792
-R1549	Cytotoxic T cell	1785
-R1550	Cytotoxic T cell	3387
-R1551	Cytotoxic T cell	2054
-R1556	Cytotoxic T cell	2821
-R1562	Cytotoxic T cell	2019
-R1570	Cytotoxic T cell	1960
-R1576	Cytotoxic T cell	2369
-R1578	Cytotoxic T cell	1976
-R1587	Cytotoxic T cell	1977
-R1592	Cytotoxic T cell	2077
-R1594	Cytotoxic T cell	1744
-R1595	Cytotoxic T cell	1887
-R1604	Cytotoxic T cell	1921
-R1605	Cytotoxic T cell	2819
-R1608	Cytotoxic T cell	2836
-R1614	Cytotoxic T cell	1753
-R1620	Cytotoxic T cell	1773
-R1622	Cytotoxic T cell	1740
-R1623	Cytotoxic T cell	3061
-R1626	Cytotoxic T cell	3383
-R1627	Cytotoxic T cell	1990
-R1628	Cytotoxic T cell	1718
-R1630	Cytotoxic T cell	2587
-R1632	Cytotoxic T cell	1910
-R1635	Cytotoxic T cell	1767
-R1636	Cytotoxic T cell	2620
-R1640	Cytotoxic T cell	1823
-R1646	Cytotoxic T cell	1757
-R1648	Cytotoxic T cell	1802
-R1657	Cytotoxic T cell	2448
-R1658	Cytotoxic T cell	1785
-R1662	Cytotoxic T cell	2291
-R1671	Cytotoxic T cell	1758
-R1672	Cytotoxic T cell	1927
-R1676	Cytotoxic T cell	1982
-R1678	Cytotoxic T cell	1840
-R1679	Cytotoxic T cell	1662
-R1683	Cytotoxic T cell	2016
-R1687	Cytotoxic T cell	1722
-R1688	Cytotoxic T cell	3088
-R1691	Cytotoxic T cell	1981
-R1692	Cytotoxic T cell	1773
-R1699	Cytotoxic T cell	1743
-R1705	Cytotoxic T cell	1933
-R1706	Cytotoxic T cell	1864
-R1708	Cytotoxic T cell	1812
-R1714	Cytotoxic T cell	1964
-R1715	Cytotoxic T cell	2138
-R1733	Cytotoxic T cell	1806
-R1735	Cytotoxic T cell	2229
-R1745	Cytotoxic T cell	1750
-R1748	Cytotoxic T cell	1924
-R1750	Cytotoxic T cell	1915
-R1752	Cytotoxic T cell	1676
-R1756	Cytotoxic T cell	2472
-R1759	Cytotoxic T cell	1746
-R1760	Cytotoxic T cell	2258
-R1763	Cytotoxic T cell	2465
-R1772	Cytotoxic T cell	1770
-R1788	Cytotoxic T cell	1821
-R1790	Cytotoxic T cell	1780
-R1792	Cytotoxic T cell	1751
-R1796	Cytotoxic T cell	1916
-R1799	Cytotoxic T cell	1938
-R1804	Cytotoxic T cell	1903
-R1808	Cytotoxic T cell	2302
-R1812	Cytotoxic T cell	2473
-R1813	Cytotoxic T cell	1668
-R1820	Cytotoxic T cell	1691
-R1829	Cytotoxic T cell	1970
-R1831	Cytotoxic T cell	1787
-R1845	Cytotoxic T cell	1782
-R1847	Cytotoxic T cell	1906
-R1848	Cytotoxic T cell	2325
-R1849	Cytotoxic T cell	1677
-R1856	Cytotoxic T cell	1732
-R1860	Cytotoxic T cell	2924
-R1866	Cytotoxic T cell	1895
-R1867	Cytotoxic T cell	2233
-R1868	Cytotoxic T cell	2507
-R1873	Cytotoxic T cell	3097
-R1876	Cytotoxic T cell	2531
-R1881	Cytotoxic T cell	1911
-R1886	Cytotoxic T cell	1909
-R1890	Cytotoxic T cell	2904
-R1893	Cytotoxic T cell	1943
-R1894	Cytotoxic T cell	1993
-R1907	Cytotoxic T cell	1730
-R1908	Cytotoxic T cell	1772
-R1910	Cytotoxic T cell	2068
-R1912	Cytotoxic T cell	2713
-R1913	Cytotoxic T cell	2076
-R1914	Cytotoxic T cell	1771
-R1915	Cytotoxic T cell	1843
-R1918	Cytotoxic T cell	1726
-R1920	Cytotoxic T cell	1776
-R1934	Cytotoxic T cell	1785
-R1944	Cytotoxic T cell	2682
-R1947	Cytotoxic T cell	1799
-R1948	Cytotoxic T cell	1712
-R1954	Cytotoxic T cell	1975
-R1956	Cytotoxic T cell	2041
-R1964	Cytotoxic T cell	2308
-R1967	Cytotoxic T cell	1817
-R1971	Cytotoxic T cell	2762
-R1972	Cytotoxic T cell	1761
-R1973	Cytotoxic T cell	3180
-R1977	Cytotoxic T cell	1797
-R1988	Cytotoxic T cell	1919
-R1990	Cytotoxic T cell	1757
-R1991	Cytotoxic T cell	3145
-R1994	Cytotoxic T cell	1785
-R1995	Cytotoxic T cell	1752
-R1998	Cytotoxic T cell	1694
-R2008	Cytotoxic T cell	1779
-R2011	Cytotoxic T cell	1754
-R2012	Cytotoxic T cell	1949
-R2014	Cytotoxic T cell	3233
-R2015	Cytotoxic T cell	1997
-R2018	Cytotoxic T cell	1881
-R2019	Cytotoxic T cell	1998
-R2021	Cytotoxic T cell	1805
-R2027	Cytotoxic T cell	1850
-R2030	Cytotoxic T cell	1693
-R2035	Cytotoxic T cell	2055
-R2037	Cytotoxic T cell	1895
-R2044	Cytotoxic T cell	1833
-R2047	Cytotoxic T cell	2027
-R2050	Cytotoxic T cell	2817
-R2051	Cytotoxic T cell	2008
-R2055	Cytotoxic T cell	2013
-R2056	Cytotoxic T cell	2128
-R2059	Cytotoxic T cell	1857
-R2064	Cytotoxic T cell	1967
-R2067	Cytotoxic T cell	2084
-R2080	Cytotoxic T cell	2190
-R2086	Cytotoxic T cell	3032
-R2089	Cytotoxic T cell	1937
-R2094	Cytotoxic T cell	1796
-R2100	Cytotoxic T cell	2681
-R2111	Cytotoxic T cell	1742
-R2113	Cytotoxic T cell	1825
-R2117	Cytotoxic T cell	2512
-R2119	Cytotoxic T cell	1879
-R2120	Cytotoxic T cell	1749
-R2124	Cytotoxic T cell	1991
-R2128	Cytotoxic T cell	1739
-R2133	Cytotoxic T cell	2062
-R2137	Cytotoxic T cell	1813
-R2140	Cytotoxic T cell	2766
-R2141	Cytotoxic T cell	1781
-R2142	Cytotoxic T cell	2309
-R2150	Cytotoxic T cell	3288
-R2157	Cytotoxic T cell	2824
-R2166	Cytotoxic T cell	2066
-R2168	Cytotoxic T cell	1840
-R2171	Cytotoxic T cell	1831
-R2174	Cytotoxic T cell	1759
-R2177	Cytotoxic T cell	2624
-R2178	Cytotoxic T cell	2571
-R2185	Cytotoxic T cell	1961
-R2192	Cytotoxic T cell	1738
-R2193	Cytotoxic T cell	1751
-R2196	Cytotoxic T cell	1899
-R2197	Cytotoxic T cell	2778
-R2199	Cytotoxic T cell	1831
-R2202	Cytotoxic T cell	1937
-R2203	Cytotoxic T cell	2944
-R2213	Cytotoxic T cell	1808
-R2215	Cytotoxic T cell	1919
-R2218	Cytotoxic T cell	2138
-R2220	Cytotoxic T cell	1719
-R2235	Cytotoxic T cell	1864
-R2239	Cytotoxic T cell	1815
-R2242	Cytotoxic T cell	2823
-R2245	Cytotoxic T cell	2778
-R2251	Cytotoxic T cell	2307
-R2253	Cytotoxic T cell	1908
-R2255	Cytotoxic T cell	2268
-R2256	Cytotoxic T cell	1891
-R2263	Cytotoxic T cell	2438
-R2264	Cytotoxic T cell	1842
-R2266	Cytotoxic T cell	2733
-R2270	Cytotoxic T cell	2272
-R2273	Cytotoxic T cell	1947
-R2281	Cytotoxic T cell	2157
-R2284	Cytotoxic T cell	1680
-R2291	Cytotoxic T cell	1861
-R2298	Cytotoxic T cell	1777
-R2303	Cytotoxic T cell	2998
-R2309	Cytotoxic T cell	2529
-R2310	Cytotoxic T cell	1843
-R2313	Cytotoxic T cell	1813
-R2314	Cytotoxic T cell	1969
-R2315	Cytotoxic T cell	1742
-R2318	Cytotoxic T cell	2090
-R2319	Cytotoxic T cell	2370
-R2325	Cytotoxic T cell	1730
-R2331	Cytotoxic T cell	1874
-R2332	Cytotoxic T cell	1779
-R2336	Cytotoxic T cell	1827
-R2337	Cytotoxic T cell	1759
-R2341	Cytotoxic T cell	2914
-R2344	Cytotoxic T cell	1807
-R2346	Cytotoxic T cell	1825
-R2352	Cytotoxic T cell	1829
-R2358	Cytotoxic T cell	1806
-R2363	Cytotoxic T cell	1794
-R2367	Cytotoxic T cell	2091
-R2368	Cytotoxic T cell	1915
-R2369	Cytotoxic T cell	2725
-R2370	Cytotoxic T cell	1875
-R2375	Cytotoxic T cell	1856
-R2382	Cytotoxic T cell	1700
-R2383	Cytotoxic T cell	1909
-R2393	Cytotoxic T cell	1873
-R2395	Cytotoxic T cell	1769
-R2396	Cytotoxic T cell	1980
-R2399	Cytotoxic T cell	1623
-R2400	Cytotoxic T cell	1918
-R2411	Cytotoxic T cell	1736
-R2414	Cytotoxic T cell	2631
-R2428	Cytotoxic T cell	2984
-R2437	Cytotoxic T cell	1714
-R2443	Cytotoxic T cell	1692
-R2444	Cytotoxic T cell	2610
-R2445	Cytotoxic T cell	1981
-R2450	Cytotoxic T cell	1861
-R2456	Cytotoxic T cell	3450
-R2462	Cytotoxic T cell	1832
-R2464	Cytotoxic T cell	1969
-R2469	Cytotoxic T cell	1904
-R2476	Cytotoxic T cell	1767
-R2478	Cytotoxic T cell	1690
-R2479	Cytotoxic T cell	1770
-R2488	Cytotoxic T cell	2614
-R2499	Cytotoxic T cell	2321
-R2500	Cytotoxic T cell	1842
-R2504	Cytotoxic T cell	1763
-R2513	Cytotoxic T cell	2936
-R2516	Cytotoxic T cell	1794
-R2524	Cytotoxic T cell	1866
-R2525	Cytotoxic T cell	1753
-R2533	Cytotoxic T cell	1695
-R2537	Cytotoxic T cell	1918
-R2543	Cytotoxic T cell	2447
-R2544	Cytotoxic T cell	2932
-R2547	Cytotoxic T cell	2274
-R2551	Cytotoxic T cell	1777
-R2558	Cytotoxic T cell	2643
-R2559	Cytotoxic T cell	1990
-R2576	Cytotoxic T cell	1858
-R2579	Cytotoxic T cell	1719
-R2583	Cytotoxic T cell	2130
-R2586	Cytotoxic T cell	2125
-R2590	Cytotoxic T cell	1890
-R2591	Cytotoxic T cell	1765
-R2596	Cytotoxic T cell	1897
-R2599	Cytotoxic T cell	2130
-R2601	Cytotoxic T cell	1709
-R2616	Cytotoxic T cell	1756
-R2618	Cytotoxic T cell	1709
-R2620	Cytotoxic T cell	1862
-R2621	Cytotoxic T cell	1747
-R2622	Cytotoxic T cell	1795
-R2623	Cytotoxic T cell	1846
-R2634	Cytotoxic T cell	2758
-R2635	Cytotoxic T cell	1948
-R2637	Cytotoxic T cell	1827
-R2638	Cytotoxic T cell	2588
-R2647	Cytotoxic T cell	1776
-R2654	Cytotoxic T cell	1699
-R2657	Cytotoxic T cell	1740
-R2662	Cytotoxic T cell	1771
-R2676	Cytotoxic T cell	1999
-R2679	Cytotoxic T cell	2676
-R2680	Cytotoxic T cell	1769
-R2686	Cytotoxic T cell	4083
-R2689	Cytotoxic T cell	2840
-R2690	Cytotoxic T cell	1777
-R2701	Cytotoxic T cell	3716
-R2705	Cytotoxic T cell	1913
-R2706	Cytotoxic T cell	2674
-R2709	Cytotoxic T cell	1876
-R2716	Cytotoxic T cell	1743
-R2720	Cytotoxic T cell	3557
-R2733	Cytotoxic T cell	1776
-R2736	Cytotoxic T cell	1797
-R2750	Cytotoxic T cell	2403
-R2759	Cytotoxic T cell	1820
-R2760	Cytotoxic T cell	2817
-R2772	Cytotoxic T cell	1945
-R2776	Cytotoxic T cell	1919
-R2779	Cytotoxic T cell	2055
-R2780	Cytotoxic T cell	1764
-R2781	Cytotoxic T cell	1772
-R2782	Cytotoxic T cell	1913
-R2787	Cytotoxic T cell	1944
-R2791	Cytotoxic T cell	1886
-R2795	Cytotoxic T cell	1762
-R2800	Cytotoxic T cell	1737
-R2805	Cytotoxic T cell	2692
-R2814	Cytotoxic T cell	2194
-R2818	Cytotoxic T cell	1833
-R2821	Cytotoxic T cell	2476
-R2826	Cytotoxic T cell	1803
-R2851	Cytotoxic T cell	2083
-R2853	Cytotoxic T cell	1739
-R2861	Cytotoxic T cell	2251
-R2862	Cytotoxic T cell	2896
-R2864	Cytotoxic T cell	1891
-R2865	Cytotoxic T cell	1983
-R2868	Cytotoxic T cell	1771
-R2871	Cytotoxic T cell	2460
-R2874	Cytotoxic T cell	1708
-R2877	Cytotoxic T cell	1714
-R2887	Cytotoxic T cell	2164
-R2889	Cytotoxic T cell	1650
-R2895	Cytotoxic T cell	1992
-R2898	Cytotoxic T cell	1746
-R2901	Cytotoxic T cell	1909
-R2903	Cytotoxic T cell	1798
-R2910	Cytotoxic T cell	1835
-R2912	Cytotoxic T cell	1808
-R2913	Cytotoxic T cell	1890
-R2916	Cytotoxic T cell	1903
-R2919	Cytotoxic T cell	1906
-R2929	Cytotoxic T cell	2080
-R2933	Cytotoxic T cell	2277
-R2935	Cytotoxic T cell	1839
-R2939	Cytotoxic T cell	2592
-R2941	Cytotoxic T cell	1810
-R2943	Cytotoxic T cell	1732
-R2948	Cytotoxic T cell	2970
-R2952	Cytotoxic T cell	1953
-R2954	Cytotoxic T cell	1751
-R2958	Cytotoxic T cell	2470
-R2961	Cytotoxic T cell	1924
-R2962	Cytotoxic T cell	1936
-R2971	Cytotoxic T cell	2141
-R2977	Cytotoxic T cell	1863
-R2978	Cytotoxic T cell	1743
-R2985	Cytotoxic T cell	2293
-R2988	Cytotoxic T cell	1826
-R2990	Cytotoxic T cell	1890
-R2994	Cytotoxic T cell	2006
-R3007	Cytotoxic T cell	2085
-R3008	Cytotoxic T cell	2022
-R3009	Cytotoxic T cell	2392
-R3014	Cytotoxic T cell	1753
-R3017	Cytotoxic T cell	2303
-R3020	Cytotoxic T cell	2119
-R3021	Cytotoxic T cell	2224
-R3028	Cytotoxic T cell	1975
-R3030	Cytotoxic T cell	2463
-R3034	Cytotoxic T cell	2925
-R3037	Cytotoxic T cell	2182
-R3039	Cytotoxic T cell	1720
-R3044	Cytotoxic T cell	2520
-R3046	Cytotoxic T cell	1851
-R3048	Cytotoxic T cell	2378
-R3053	Cytotoxic T cell	1689
-R3057	Cytotoxic T cell	2001
-R3061	Cytotoxic T cell	2645
-R3064	Cytotoxic T cell	1755
-R3069	Cytotoxic T cell	2431
-R3078	Cytotoxic T cell	1755
-R3079	Cytotoxic T cell	3218
-R3084	Cytotoxic T cell	1979
-R3086	Cytotoxic T cell	1786
-R3090	Cytotoxic T cell	1910
-R3091	Cytotoxic T cell	2685
-R3099	Cytotoxic T cell	1846
-R3102	Cytotoxic T cell	2257
-R3105	Cytotoxic T cell	2117
-R3108	Cytotoxic T cell	3142
-R3110	Cytotoxic T cell	1855
-R3114	Cytotoxic T cell	1837
-R3115	Cytotoxic T cell	1978
-R3120	Cytotoxic T cell	2643
-R3121	Cytotoxic T cell	2697
-R3122	Cytotoxic T cell	1996
-R3124	Cytotoxic T cell	1892
-R3127	Cytotoxic T cell	2477
-R3128	Cytotoxic T cell	1890
-R3138	Cytotoxic T cell	1694
-R3139	Cytotoxic T cell	1900
-R3140	Cytotoxic T cell	1817
-R3151	Cytotoxic T cell	2989
-R3156	Cytotoxic T cell	2167
-R3157	Cytotoxic T cell	1727
-R3170	Cytotoxic T cell	2418
-R3173	Cytotoxic T cell	1800
-R3175	Cytotoxic T cell	1988
-R3179	Cytotoxic T cell	2254
-R3183	Cytotoxic T cell	1710
-R3185	Cytotoxic T cell	1711
-R3190	Cytotoxic T cell	1930
-R3197	Cytotoxic T cell	1952
-R3199	Cytotoxic T cell	1717
-R3201	Cytotoxic T cell	1984
-R3202	Cytotoxic T cell	2846
-R3203	Cytotoxic T cell	2047
-R3204	Cytotoxic T cell	1749
-R3210	Cytotoxic T cell	2181
-R3212	Cytotoxic T cell	2653
-R3213	Cytotoxic T cell	2268
-R3215	Cytotoxic T cell	2045
-R3216	Cytotoxic T cell	2857
-R3221	Cytotoxic T cell	2179
-R3222	Cytotoxic T cell	2460
-R3226	Cytotoxic T cell	2005
-R3237	Cytotoxic T cell	2180
-R3262	Cytotoxic T cell	3070
-R3269	Cytotoxic T cell	1835
-R3282	Cytotoxic T cell	2349
-R3284	Cytotoxic T cell	1870
-R3285	Cytotoxic T cell	2084
-R3286	Cytotoxic T cell	1814
-R3287	Cytotoxic T cell	1980
-R3288	Cytotoxic T cell	2102
-R3294	Cytotoxic T cell	1824
-R3299	Cytotoxic T cell	3995
-R3302	Cytotoxic T cell	2033
-R3303	Cytotoxic T cell	2045
-R3304	Cytotoxic T cell	2624
-R3305	Cytotoxic T cell	2895
-R3307	Cytotoxic T cell	1939
-R3310	Cytotoxic T cell	2006
-R3316	Cytotoxic T cell	2777
-R3320	Cytotoxic T cell	2609
-R3325	Cytotoxic T cell	1705
-R3329	Cytotoxic T cell	2812
-R3333	Cytotoxic T cell	2223
-R3338	Cytotoxic T cell	3026
-R3356	Cytotoxic T cell	1794
-R3359	Cytotoxic T cell	1977
-R3369	Cytotoxic T cell	1837
-R3370	Cytotoxic T cell	2503
-R3373	Cytotoxic T cell	2341
-R3375	Cytotoxic T cell	2265
-R3388	Cytotoxic T cell	2928
-R3394	Cytotoxic T cell	1916
-R3399	Cytotoxic T cell	2275
-R3401	Cytotoxic T cell	1879
-R3404	Cytotoxic T cell	2799
-R3418	Cytotoxic T cell	2185
-R3422	Cytotoxic T cell	2315
-R3424	Cytotoxic T cell	2397
-R3426	Cytotoxic T cell	1771
-R3427	Cytotoxic T cell	1717
-R3429	Cytotoxic T cell	1846
-R3430	Cytotoxic T cell	3395
-R3431	Cytotoxic T cell	2423
-R3434	Cytotoxic T cell	1748
-R3435	Cytotoxic T cell	2887
-R3436	Cytotoxic T cell	1893
-R3437	Cytotoxic T cell	2564
-R3449	Cytotoxic T cell	2051
-R3452	Cytotoxic T cell	2363
-R3454	Cytotoxic T cell	1702
-R3459	Cytotoxic T cell	2178
-R3461	Cytotoxic T cell	1758
-R3472	Cytotoxic T cell	1682
-R3473	Cytotoxic T cell	2077
-R3474	Cytotoxic T cell	1849
-R3479	Cytotoxic T cell	1916
-R3484	Cytotoxic T cell	2563
-R3485	Cytotoxic T cell	2730
-R3488	Cytotoxic T cell	1944
-R3489	Cytotoxic T cell	1722
-R3493	Cytotoxic T cell	2151
-R3494	Cytotoxic T cell	1801
-R3498	Cytotoxic T cell	1784
-R3505	Cytotoxic T cell	2032
-R3510	Cytotoxic T cell	1776
-R3516	Cytotoxic T cell	1779
-R3518	Cytotoxic T cell	1831
-R3519	Cytotoxic T cell	1733
-R3523	Cytotoxic T cell	1750
-R3528	Cytotoxic T cell	2171
-R3531	Cytotoxic T cell	1860
-R3533	Cytotoxic T cell	2210
-R3534	Cytotoxic T cell	2602
-R3537	Cytotoxic T cell	2668
-R3539	Cytotoxic T cell	1843
-R3540	Cytotoxic T cell	2107
-R3541	Cytotoxic T cell	2145
-R3542	Cytotoxic T cell	2199
-R3543	Cytotoxic T cell	1942
-R3544	Cytotoxic T cell	2791
-R3545	Cytotoxic T cell	1913
-R3555	Cytotoxic T cell	1720
-R3559	Cytotoxic T cell	1813
-R3565	Cytotoxic T cell	2817
-R3571	Cytotoxic T cell	1869
-R3579	Cytotoxic T cell	2058
-R3586	Cytotoxic T cell	2860
-R3589	Cytotoxic T cell	2560
-R3593	Cytotoxic T cell	1954
-R3605	Cytotoxic T cell	1910
-R3611	Cytotoxic T cell	1918
-R3621	Cytotoxic T cell	1693
-R3623	Cytotoxic T cell	1878
-R3632	Cytotoxic T cell	1980
-R3639	Cytotoxic T cell	1731
-R3647	Cytotoxic T cell	1747
-R3648	Cytotoxic T cell	2302
-R3653	Cytotoxic T cell	1673
-R3657	Cytotoxic T cell	1684
-R3669	Cytotoxic T cell	2280
-R3670	Cytotoxic T cell	1729
-R3671	Cytotoxic T cell	1912
-R3672	Cytotoxic T cell	2184
-R3678	Cytotoxic T cell	2205
-R3679	Cytotoxic T cell	2244
-R3680	Cytotoxic T cell	1923
-R3682	Cytotoxic T cell	1766
-R3686	Cytotoxic T cell	2762
-R3687	Cytotoxic T cell	3031
-R3697	Cytotoxic T cell	1822
-R3703	Cytotoxic T cell	2574
-R3704	Cytotoxic T cell	1971
-R3733	Cytotoxic T cell	2937
-R3735	Cytotoxic T cell	1874
-R3737	Cytotoxic T cell	1718
-R3739	Cytotoxic T cell	2269
-R3741	Cytotoxic T cell	1718
-R3744	Cytotoxic T cell	2014
-R3745	Cytotoxic T cell	1665
-R3746	Cytotoxic T cell	2276
-R3749	Cytotoxic T cell	1712
-R3753	Cytotoxic T cell	2077
-R3758	Cytotoxic T cell	1957
-R3773	Cytotoxic T cell	1799
-R3774	Cytotoxic T cell	2447
-R3779	Cytotoxic T cell	2436
-R3782	Cytotoxic T cell	2018
-R3783	Cytotoxic T cell	1785
-R3786	Cytotoxic T cell	2991
-R3789	Cytotoxic T cell	1747
-R3790	Cytotoxic T cell	1943
-R3792	Cytotoxic T cell	1724
-R3794	Cytotoxic T cell	2113
-R3805	Cytotoxic T cell	2344
-R3808	Cytotoxic T cell	1811
-R3812	Cytotoxic T cell	2962
-R3816	Cytotoxic T cell	2895
-R3820	Cytotoxic T cell	2213
-R3823	Cytotoxic T cell	1831
-R3827	Cytotoxic T cell	1873
-R3831	Cytotoxic T cell	1854
-R3833	Cytotoxic T cell	1869
-R3841	Cytotoxic T cell	1793
-R3842	Cytotoxic T cell	1722
-R3851	Cytotoxic T cell	1949
-R3853	Cytotoxic T cell	1762
-R3856	Cytotoxic T cell	1770
-R3857	Cytotoxic T cell	2034
-R3862	Cytotoxic T cell	2410
-R3865	Cytotoxic T cell	2246
-R3867	Cytotoxic T cell	1931
-R3870	Cytotoxic T cell	1955
-R3871	Cytotoxic T cell	1860
-R3875	Cytotoxic T cell	3720
-R3878	Cytotoxic T cell	1692
-R3885	Cytotoxic T cell	2510
-R3888	Cytotoxic T cell	3097
-R3890	Cytotoxic T cell	2094
-R3897	Cytotoxic T cell	2274
-R3909	Cytotoxic T cell	3192
-R3914	Cytotoxic T cell	1823
-R3924	Cytotoxic T cell	2341
-R3931	Cytotoxic T cell	2268
-R3934	Cytotoxic T cell	1728
-R3938	Cytotoxic T cell	1843
-R3939	Cytotoxic T cell	2205
-R3952	Cytotoxic T cell	1928
-R3953	Cytotoxic T cell	2785
-R3961	Cytotoxic T cell	2246
-R3966	Cytotoxic T cell	3052
-R3968	Cytotoxic T cell	2015
-R3970	Cytotoxic T cell	2034
-R3972	Cytotoxic T cell	2020
-R3977	Cytotoxic T cell	1793
-R3979	Cytotoxic T cell	1801
-R3980	Cytotoxic T cell	1986
-R3981	Cytotoxic T cell	1685
-R3984	Cytotoxic T cell	2220
-R3985	Cytotoxic T cell	1945
-R3992	Cytotoxic T cell	1873
-R4004	Cytotoxic T cell	2830
-R4009	Cytotoxic T cell	1975
-R4016	Cytotoxic T cell	1825
-R4022	Cytotoxic T cell	1908
-R4023	Cytotoxic T cell	1739
-R4025	Cytotoxic T cell	3251
-R4026	Cytotoxic T cell	1729
-R4029	Cytotoxic T cell	2155
-R4040	Cytotoxic T cell	2099
-R4045	Cytotoxic T cell	1971
-R4051	Cytotoxic T cell	1741
-R4052	Cytotoxic T cell	2750
-R4054	Cytotoxic T cell	1955
-R4058	Cytotoxic T cell	1739
-R4059	Cytotoxic T cell	2091
-R4060	Cytotoxic T cell	3612
-R4068	Cytotoxic T cell	1740
-R4069	Cytotoxic T cell	1667
-R4076	Cytotoxic T cell	1825
-R4077	Cytotoxic T cell	2934
-R4078	Cytotoxic T cell	3096
-R4084	Cytotoxic T cell	1941
-R4086	Cytotoxic T cell	1866
-R4093	Cytotoxic T cell	1748
-R4094	Cytotoxic T cell	1956
-R4097	Cytotoxic T cell	1767
-R4111	Cytotoxic T cell	1971
-B5	Memory B cell	1953
-B11	Memory B cell	3682
-B14	Memory B cell	2182
-B19	Memory B cell	1681
-B26	Memory B cell	1720
-B30	Memory B cell	1765
-B34	Memory B cell	1718
-B37	Memory B cell	1843
-B45	Memory B cell	1862
-B49	Memory B cell	1888
-B57	Memory B cell	2510
-B61	Memory B cell	1678
-B80	Memory B cell	1781
-B82	Memory B cell	1778
-B91	Memory B cell	2536
-B93	Memory B cell	2029
-B95	Memory B cell	1812
-B113	Memory B cell	1739
-B115	Memory B cell	2360
-B116	Memory B cell	2131
-B120	Memory B cell	2015
-B122	Memory B cell	1929
-B123	Memory B cell	3205
-B127	Memory B cell	1984
-B128	Memory B cell	1942
-B137	Memory B cell	1728
-B139	Memory B cell	2031
-B140	Memory B cell	2427
-B150	Memory B cell	2009
-B165	Memory B cell	1660
-B167	Memory B cell	1655
-B174	Memory B cell	2069
-B187	Memory B cell	2388
-B194	Memory B cell	2110
-B196	Memory B cell	2097
-B201	Memory B cell	1769
-B203	Memory B cell	1704
-B204	Memory B cell	1723
-B221	Memory B cell	1905
-B224	Memory B cell	2284
-B226	Memory B cell	2684
-B227	Memory B cell	1795
-B238	Memory B cell	1662
-B244	Memory B cell	2126
-B245	Memory B cell	1755
-B248	Memory B cell	1648
-B250	Memory B cell	1907
-B252	Memory B cell	1717
-B256	Memory B cell	1654
-B259	Memory B cell	1958
-B260	Memory B cell	1849
-B261	Memory B cell	1669
-B265	Memory B cell	1709
-B266	Memory B cell	1779
-B273	Memory B cell	2605
-B277	Memory B cell	2123
-B283	Memory B cell	3172
-B287	Memory B cell	1799
-B290	Memory B cell	3154
-B291	Memory B cell	2359
-B296	Memory B cell	1789
-B303	Memory B cell	1870
-B308	Memory B cell	2554
-B309	Memory B cell	1666
-B312	Memory B cell	1701
-B314	Memory B cell	1669
-B315	Memory B cell	2149
-B320	Memory B cell	2423
-B324	Memory B cell	2658
-B340	Memory B cell	2511
-B341	Memory B cell	2591
-B344	Memory B cell	1741
-B347	Memory B cell	2069
-B350	Memory B cell	1779
-B351	Memory B cell	1761
-B358	Memory B cell	2639
-B362	Memory B cell	2047
-B363	Memory B cell	2462
-B366	Memory B cell	2103
-B379	Memory B cell	3616
-B380	Memory B cell	1989
-B381	Memory B cell	2275
-B383	Memory B cell	1752
-B388	Memory B cell	1660
-B392	Memory B cell	1926
-B395	Memory B cell	1917
-B399	Memory B cell	1640
-B401	Memory B cell	1749
-B403	Memory B cell	1660
-B413	Memory B cell	2660
-B417	Memory B cell	1688
-B421	Memory B cell	1806
-B422	Memory B cell	1619
-B434	Memory B cell	2136
-B453	Memory B cell	2486
-B463	Memory B cell	1717
-B464	Memory B cell	2499
-B465	Memory B cell	3106
-B467	Memory B cell	1615
-B473	Memory B cell	1688
-B480	Memory B cell	2627
-B484	Memory B cell	1918
-B487	Memory B cell	1657
-B491	Memory B cell	1728
-B502	Memory B cell	2503
-B503	Memory B cell	3167
-B505	Memory B cell	1707
-B509	Memory B cell	1988
-B516	Memory B cell	1746
-B522	Memory B cell	2033
-B529	Memory B cell	1671
-B530	Memory B cell	2216
-B537	Memory B cell	1635
-B539	Memory B cell	2240
-B543	Memory B cell	1754
-B555	Memory B cell	1852
-B556	Memory B cell	1729
-B557	Memory B cell	2120
-B558	Memory B cell	2982
-B560	Memory B cell	1726
-B561	Memory B cell	1708
-B564	Memory B cell	1682
-B568	Memory B cell	1775
-B578	Memory B cell	2077
-B584	Memory B cell	1901
-B590	Memory B cell	2495
-B592	Memory B cell	1695
-B594	Memory B cell	1717
-B595	Memory B cell	1795
-B597	Memory B cell	1749
-B599	Memory B cell	1956
-B602	Memory B cell	1697
-B604	Memory B cell	1771
-B605	Memory B cell	1649
-B609	Memory B cell	1625
-B610	Memory B cell	1658
-B614	Memory B cell	2446
-B615	Memory B cell	1668
-B617	Memory B cell	1677
-B618	Memory B cell	1682
-B620	Memory B cell	1700
-B624	Memory B cell	2567
-B627	Memory B cell	2327
-B630	Memory B cell	1963
-B634	Memory B cell	2408
-B648	Memory B cell	2308
-B656	Memory B cell	2163
-B659	Memory B cell	1692
-B660	Memory B cell	2579
-B669	Memory B cell	1716
-B671	Memory B cell	1775
-B672	Memory B cell	1788
-B679	Memory B cell	1660
-B681	Memory B cell	2087
-B682	Memory B cell	2412
-B683	Memory B cell	1633
-B687	Memory B cell	1630
-B690	Memory B cell	1841
-B694	Memory B cell	1812
-B696	Memory B cell	1773
-B720	Memory B cell	1768
-B726	Memory B cell	1743
-B736	Memory B cell	1981
-B739	Memory B cell	2159
-B740	Memory B cell	1723
-B741	Memory B cell	2695
-B745	Memory B cell	1828
-B756	Memory B cell	2190
-B762	Memory B cell	2345
-B767	Memory B cell	3122
-B768	Memory B cell	1793
-B773	Memory B cell	2017
-B776	Memory B cell	1981
-B779	Memory B cell	2387
-B782	Memory B cell	3228
-B783	Memory B cell	2665
-B784	Memory B cell	1809
-B785	Memory B cell	1713
-B796	Memory B cell	1756
-B797	Memory B cell	1828
-B798	Memory B cell	1618
-B803	Memory B cell	1819
-B804	Memory B cell	2843
-B807	Memory B cell	1672
-B808	Memory B cell	1754
-B809	Memory B cell	1752
-B810	Memory B cell	2527
-B814	Memory B cell	1777
-B822	Memory B cell	1802
-B824	Memory B cell	2603
-B830	Memory B cell	1666
-B832	Memory B cell	1710
-B854	Memory B cell	2790
-B856	Memory B cell	1836
-B858	Memory B cell	1676
-B865	Memory B cell	1905
-B870	Memory B cell	2363
-B875	Memory B cell	1734
-B877	Memory B cell	2019
-B878	Memory B cell	1686
-B881	Memory B cell	1846
-B885	Memory B cell	1645
-B891	Memory B cell	1692
-B909	Memory B cell	1789
-B913	Memory B cell	1749
-B915	Memory B cell	1973
-B921	Memory B cell	2196
-B927	Memory B cell	1684
-B929	Memory B cell	2038
-B933	Memory B cell	1907
-B935	Memory B cell	1782
-B936	Memory B cell	3110
-B944	Memory B cell	1900
-B950	Memory B cell	2214
-B964	Memory B cell	1827
-B966	Memory B cell	1858
-B968	Memory B cell	1786
-B970	Memory B cell	1762
-B971	Memory B cell	1977
-B972	Memory B cell	1826
-B982	Memory B cell	2043
-B984	Memory B cell	3232
-B985	Memory B cell	1716
-B988	Memory B cell	1974
-B992	Memory B cell	2803
-B998	Memory B cell	1755
-B1001	Memory B cell	3731
-B1011	Memory B cell	1845
-B1014	Memory B cell	1964
-B1015	Memory B cell	2210
-B1019	Memory B cell	2080
-B1022	Memory B cell	1938
-B1024	Memory B cell	2995
-B1027	Memory B cell	1630
-B1032	Memory B cell	1778
-B1033	Memory B cell	1902
-B1037	Memory B cell	1680
-B1039	Memory B cell	1818
-B1045	Memory B cell	1966
-B1051	Memory B cell	1672
-B1055	Memory B cell	2105
-B1063	Memory B cell	2715
-B1066	Memory B cell	2335
-B1076	Memory B cell	1638
-B1081	Memory B cell	1731
-B1085	Memory B cell	2803
-B1086	Memory B cell	1725
-B1089	Memory B cell	2285
-B1091	Memory B cell	1779
-B1093	Memory B cell	2646
-B1102	Memory B cell	2088
-B1111	Memory B cell	1886
-B1112	Memory B cell	1760
-B1114	Memory B cell	2229
-B1118	Memory B cell	2620
-B1121	Memory B cell	2422
-B1123	Memory B cell	1752
-B1127	Memory B cell	1676
-B1129	Memory B cell	2604
-B1133	Memory B cell	2062
-B1134	Memory B cell	1727
-B1135	Memory B cell	2108
-B1140	Memory B cell	2701
-B1144	Memory B cell	2203
-B1145	Memory B cell	1867
-B1147	Memory B cell	1659
-B1148	Memory B cell	1799
-B1151	Memory B cell	1752
-B1152	Memory B cell	2057
-B1156	Memory B cell	2101
-B1157	Memory B cell	2367
-B1158	Memory B cell	2371
-B1164	Memory B cell	2210
-B1183	Memory B cell	1805
-B1185	Memory B cell	2154
-B1186	Memory B cell	1792
-B1187	Memory B cell	1758
-B1194	Memory B cell	1794
-B1202	Memory B cell	2214
-B1211	Memory B cell	2057
-B1220	Memory B cell	2019
-B1221	Memory B cell	1709
-B1222	Memory B cell	2349
-B1230	Memory B cell	2438
-B1231	Memory B cell	2351
-B1243	Memory B cell	1886
-B1248	Memory B cell	1772
-B1251	Memory B cell	1850
-B1254	Memory B cell	1951
-B1262	Memory B cell	1685
-B1264	Memory B cell	1750
-B1268	Memory B cell	2550
-B1270	Memory B cell	1776
-B1272	Memory B cell	2016
-B1279	Memory B cell	2427
-B1285	Memory B cell	2065
-B1292	Memory B cell	1605
-B1294	Memory B cell	2127
-B1306	Memory B cell	1673
-B1318	Memory B cell	1873
-B1319	Memory B cell	1767
-B1326	Memory B cell	1879
-B1332	Memory B cell	1740
-B1334	Memory B cell	2411
-B1335	Memory B cell	3054
-B1337	Memory B cell	1814
-B1345	Memory B cell	1805
-B1351	Memory B cell	1816
-B1367	Memory B cell	2004
-B1368	Memory B cell	1651
-B1370	Memory B cell	1808
-B1377	Memory B cell	1662
-B1378	Memory B cell	1660
-B1385	Memory B cell	1641
-B1389	Memory B cell	2261
-B1391	Memory B cell	2933
-B1394	Memory B cell	1815
-B1410	Memory B cell	1797
-B1412	Memory B cell	2098
-B1415	Memory B cell	1808
-B1421	Memory B cell	3514
-B1422	Memory B cell	2613
-B1423	Memory B cell	1786
-B1427	Memory B cell	1809
-B1433	Memory B cell	2114
-B1436	Memory B cell	2605
-B1437	Memory B cell	1797
-B1440	Memory B cell	1817
-B1442	Memory B cell	1984
-B1449	Memory B cell	2086
-B1452	Memory B cell	1775
-B1457	Memory B cell	2177
-B1458	Memory B cell	1723
-B1459	Memory B cell	2325
-B1462	Memory B cell	2343
-B1463	Memory B cell	1854
-B1465	Memory B cell	1802
-B1471	Memory B cell	1862
-B1475	Memory B cell	2134
-B1477	Memory B cell	1778
-B1478	Memory B cell	2056
-B1479	Memory B cell	1883
-B1485	Memory B cell	1666
-B1490	Memory B cell	1779
-B1495	Memory B cell	2826
-B1497	Memory B cell	2252
-B1507	Memory B cell	2252
-B1508	Memory B cell	2069
-B1509	Memory B cell	1671
-B1514	Memory B cell	2452
-B1519	Memory B cell	1637
-B1529	Memory B cell	1662
-B1536	Memory B cell	2110
-B1538	Memory B cell	1681
-B1540	Memory B cell	1852
-B1548	Memory B cell	1840
-B1549	Memory B cell	1664
-B1552	Memory B cell	1764
-B1563	Memory B cell	1649
-B1567	Memory B cell	1932
-B1572	Memory B cell	1677
-B1574	Memory B cell	2845
-B1576	Memory B cell	3084
-B1579	Memory B cell	1927
-B1580	Memory B cell	2119
-B1589	Memory B cell	1597
-B1596	Memory B cell	1625
-B1597	Memory B cell	2678
-B1598	Memory B cell	1715
-B1612	Memory B cell	1801
-B1623	Memory B cell	1818
-B1626	Memory B cell	1809
-B1636	Memory B cell	2208
-B1642	Memory B cell	1921
-B1643	Memory B cell	2155
-B1644	Memory B cell	1826
-B1649	Memory B cell	1957
-B1662	Memory B cell	1862
-B1665	Memory B cell	2061
-B1676	Memory B cell	1933
-B1700	Memory B cell	1894
-B1701	Memory B cell	1873
-B1706	Memory B cell	2294
-B1708	Memory B cell	1957
-B1709	Memory B cell	2136
-B1714	Memory B cell	1713
-B1715	Memory B cell	1825
-B1718	Memory B cell	1679
-B1724	Memory B cell	1804
-B1729	Memory B cell	1841
-B1731	Memory B cell	2137
-B1742	Memory B cell	1689
-B1749	Memory B cell	1774
-B1753	Memory B cell	2369
-B1758	Memory B cell	1728
-B1759	Memory B cell	1929
-B1760	Memory B cell	1765
-B1770	Memory B cell	2190
-B1772	Memory B cell	1863
-B1778	Memory B cell	1709
-B1780	Memory B cell	1650
-B1788	Memory B cell	1961
-B1792	Memory B cell	2056
-B1793	Memory B cell	2087
-B1796	Memory B cell	1990
-B1805	Memory B cell	2819
-B1806	Memory B cell	2355
-B1807	Memory B cell	2080
-B1810	Memory B cell	2292
-B1812	Memory B cell	1850
-B1813	Memory B cell	2734
-B1817	Memory B cell	1789
-B1820	Memory B cell	1963
-B1826	Memory B cell	1644
-B1827	Memory B cell	2074
-B1829	Memory B cell	1771
-B1836	Memory B cell	1772
-B1838	Memory B cell	2136
-B1841	Memory B cell	1676
-B1847	Memory B cell	1773
-B1849	Memory B cell	1745
-B1866	Memory B cell	1771
-B1867	Memory B cell	3009
-B1879	Memory B cell	1866
-B1883	Memory B cell	1740
-B1898	Memory B cell	1854
-B1906	Memory B cell	1708
-B1908	Memory B cell	1523
-B1909	Memory B cell	1913
-B1913	Memory B cell	2229
-B1936	Memory B cell	2523
-B1939	Memory B cell	2157
-B1945	Memory B cell	1984
-B1950	Memory B cell	1847
-B1953	Memory B cell	1860
-B1956	Memory B cell	1745
-B1963	Memory B cell	1654
-B1966	Memory B cell	1750
-B1975	Memory B cell	1793
-B1977	Memory B cell	2532
-B1980	Memory B cell	2073
-B1986	Memory B cell	1858
-B1987	Memory B cell	1824
-B1998	Memory B cell	1708
-B2001	Memory B cell	1778
-B2002	Memory B cell	2052
-B2004	Memory B cell	2823
-B2005	Memory B cell	1777
-B2006	Memory B cell	1875
-B2019	Memory B cell	2087
-B2037	Memory B cell	2163
-B2039	Memory B cell	1753
-B2040	Memory B cell	1969
-B2047	Memory B cell	2119
-B2050	Memory B cell	1692
-B2053	Memory B cell	1852
-B2059	Memory B cell	1672
-B2060	Memory B cell	3701
-B2064	Memory B cell	2194
-B2078	Memory B cell	2760
-B2096	Memory B cell	2418
-B2099	Memory B cell	1839
-B2102	Memory B cell	1673
-B2108	Memory B cell	1693
-B2109	Memory B cell	1701
-B2114	Memory B cell	2490
-B2116	Memory B cell	1721
-B2119	Memory B cell	1761
-B2122	Memory B cell	1740
-B2130	Memory B cell	2117
-B2134	Memory B cell	1839
-B2135	Memory B cell	1672
-B2137	Memory B cell	1820
-B2138	Memory B cell	2542
-B2139	Memory B cell	1567
-B2148	Memory B cell	1712
-B2150	Memory B cell	1800
-B2151	Memory B cell	1742
-B2154	Memory B cell	1644
-B2157	Memory B cell	2797
-B2161	Memory B cell	1692
-B2163	Memory B cell	1701
-B2165	Memory B cell	1772
-B2166	Memory B cell	1859
-B2168	Memory B cell	1690
-B2177	Memory B cell	2451
-B2182	Memory B cell	3287
-B2189	Memory B cell	2047
-B2196	Memory B cell	1868
-B2200	Memory B cell	1756
-B2203	Memory B cell	1746
-B2204	Memory B cell	2016
-B2207	Memory B cell	2978
-B2212	Memory B cell	3195
-B2213	Memory B cell	2609
-B2216	Memory B cell	1912
-B2217	Memory B cell	1799
-B2221	Memory B cell	2121
-B2224	Memory B cell	1964
-B2226	Memory B cell	2338
-B2233	Memory B cell	1640
-B2240	Memory B cell	2944
-B2243	Memory B cell	1734
-B2245	Memory B cell	1896
-B2247	Memory B cell	2000
-B2248	Memory B cell	2373
-B2251	Memory B cell	2034
-B2252	Memory B cell	1811
-B2256	Memory B cell	1821
-B2257	Memory B cell	2078
-B2258	Memory B cell	1768
-B2260	Memory B cell	2354
-B2266	Memory B cell	2396
-B2269	Memory B cell	2561
-B2271	Memory B cell	1888
-B2274	Memory B cell	1691
-B2286	Memory B cell	1851
-B2288	Memory B cell	2165
-B2289	Memory B cell	1734
-B2298	Memory B cell	1728
-B2303	Memory B cell	2184
-B2318	Memory B cell	2045
-B2319	Memory B cell	1917
-B2321	Memory B cell	2087
-B2329	Memory B cell	2143
-B2333	Memory B cell	3314
-B2337	Memory B cell	2520
-B2345	Memory B cell	2384
-B2353	Memory B cell	1860
-B2356	Memory B cell	2481
-B2358	Memory B cell	1694
-B2364	Memory B cell	2368
-B2367	Memory B cell	2469
-B2375	Memory B cell	2014
-B2379	Memory B cell	1895
-B2383	Memory B cell	1859
-B2386	Memory B cell	2469
-B2391	Memory B cell	1799
-B2394	Memory B cell	1698
-B2395	Memory B cell	2204
-B2396	Memory B cell	2529
-B2409	Memory B cell	2074
-B2411	Memory B cell	1774
-B2412	Memory B cell	2532
-B2430	Memory B cell	2552
-B2431	Memory B cell	2463
-B2437	Memory B cell	3282
-B2438	Memory B cell	2342
-B2442	Memory B cell	3041
-B2444	Memory B cell	1652
-B2447	Memory B cell	1827
-B2448	Memory B cell	2010
-B2461	Memory B cell	2474
-B2462	Memory B cell	1976
-B2464	Memory B cell	2159
-B2468	Memory B cell	2948
-B2470	Memory B cell	1860
-B2471	Memory B cell	1859
-B2494	Memory B cell	1909
-B2499	Memory B cell	1937
-B2511	Memory B cell	1739
-B2522	Memory B cell	2904
-B2525	Memory B cell	1983
-B2531	Memory B cell	1714
-B2532	Memory B cell	1687
-B2535	Memory B cell	2511
-B2536	Memory B cell	1890
-B2537	Memory B cell	1701
-B2538	Memory B cell	1699
-B2539	Memory B cell	3232
-B2548	Memory B cell	1906
-B2557	Memory B cell	2637
-B2558	Memory B cell	1852
-B2559	Memory B cell	1974
-B2576	Memory B cell	1658
-B2586	Memory B cell	1864
-B2587	Memory B cell	1982
-B2590	Memory B cell	2096
-B2591	Memory B cell	2606
-B2597	Memory B cell	1765
-B2598	Memory B cell	3262
-B2603	Memory B cell	2968
-B2605	Memory B cell	1894
-B2613	Memory B cell	1780
-B2626	Memory B cell	2049
-B2627	Memory B cell	1807
-B2631	Memory B cell	2569
-B2639	Memory B cell	2495
-B2647	Memory B cell	2047
-B2649	Memory B cell	1798
-B2653	Memory B cell	2183
-B2655	Memory B cell	1701
-B2656	Memory B cell	1710
-B2657	Memory B cell	2014
-B2662	Memory B cell	1852
-B2667	Memory B cell	1693
-B2674	Memory B cell	2115
-B2676	Memory B cell	1716
-B2677	Memory B cell	1761
-B2678	Memory B cell	3513
-B2679	Memory B cell	2532
-B2681	Memory B cell	1777
-B2682	Memory B cell	2637
-B2690	Memory B cell	2098
-B2695	Memory B cell	1685
-B2716	Memory B cell	1791
-B2725	Memory B cell	2099
-B2729	Memory B cell	1893
-B2732	Memory B cell	1781
-B2738	Memory B cell	2303
-B2740	Memory B cell	2023
-B2741	Memory B cell	2054
-B2752	Memory B cell	2035
-B2755	Memory B cell	2110
-B2760	Memory B cell	2376
-B2766	Memory B cell	1994
-B2774	Memory B cell	3011
-B2782	Memory B cell	1771
-B2784	Memory B cell	1711
-B2786	Memory B cell	1981
-B2788	Memory B cell	2033
-B2798	Memory B cell	1762
-B2809	Memory B cell	2469
-B2813	Memory B cell	1894
-B2814	Memory B cell	1714
-B2817	Memory B cell	1787
-B2821	Memory B cell	2658
-B2826	Memory B cell	1918
-B2828	Memory B cell	1665
-B2829	Memory B cell	1704
-B2830	Memory B cell	1638
-B2831	Memory B cell	1638
-B2841	Memory B cell	1662
-B2844	Memory B cell	2119
-B2849	Memory B cell	1724
-B2850	Memory B cell	2606
-B2851	Memory B cell	1882
-B2853	Memory B cell	1670
-B2855	Memory B cell	1703
-B2863	Memory B cell	2338
-B2864	Memory B cell	2718
-B2869	Memory B cell	1872
-B2872	Memory B cell	1877
-B2877	Memory B cell	1859
-B2878	Memory B cell	2593
-B2879	Memory B cell	1944
-B2880	Memory B cell	1933
-B2885	Memory B cell	2475
-B2886	Memory B cell	2217
-B2892	Memory B cell	2697
-B2903	Memory B cell	3219
-B2908	Memory B cell	1676
-B2912	Memory B cell	1671
-B2916	Memory B cell	2114
-B2917	Memory B cell	1869
-B2925	Memory B cell	2370
-B2941	Memory B cell	2340
-B2943	Memory B cell	1868
-B2947	Memory B cell	2739
-B2960	Memory B cell	1621
-B2961	Memory B cell	1848
-B2970	Memory B cell	2267
-B2972	Memory B cell	1723
-B2981	Memory B cell	1701
-B2982	Memory B cell	1823
-B2987	Memory B cell	2144
-B2990	Memory B cell	1659
-B2995	Memory B cell	1887
-B2997	Memory B cell	1710
-B3001	Memory B cell	2257
-B3003	Memory B cell	1762
-B3005	Memory B cell	2426
-B3014	Memory B cell	2589
-B3025	Memory B cell	1874
-B3026	Memory B cell	1650
-B3032	Memory B cell	1903
-B3037	Memory B cell	1843
-B3039	Memory B cell	1667
-B3044	Memory B cell	3038
-B3048	Memory B cell	2170
-B3062	Memory B cell	2303
-B3063	Memory B cell	2151
-B3064	Memory B cell	2272
-B3070	Memory B cell	2039
-B3071	Memory B cell	1800
-B3076	Memory B cell	1929
-B3080	Memory B cell	2750
-B3081	Memory B cell	1854
-B3083	Memory B cell	1620
-B3084	Memory B cell	1752
-B3085	Memory B cell	1676
-B3088	Memory B cell	1670
-B3094	Memory B cell	1743
-B3098	Memory B cell	1869
-B3106	Memory B cell	1688
-B3107	Memory B cell	2423
-B3111	Memory B cell	2790
-B3113	Memory B cell	2343
-B3120	Memory B cell	1926
-B3128	Memory B cell	2745
-B3136	Memory B cell	2882
-B3140	Memory B cell	2342
-B3157	Memory B cell	2247
-B3158	Memory B cell	1836
-B3160	Memory B cell	1725
-B3161	Memory B cell	2772
-B3163	Memory B cell	3610
-B3164	Memory B cell	1630
-B3167	Memory B cell	2198
-B3178	Memory B cell	1749
-B3179	Memory B cell	2406
-B3181	Memory B cell	2219
-B3183	Memory B cell	1655
-B3193	Memory B cell	1925
-B3198	Memory B cell	1764
-B3205	Memory B cell	1736
-B3206	Memory B cell	1886
-B3207	Memory B cell	1910
-B3211	Memory B cell	1864
-B3213	Memory B cell	1885
-B3214	Memory B cell	1683
-B3221	Memory B cell	1808
-B3223	Memory B cell	1778
-B3225	Memory B cell	1685
-B3226	Memory B cell	2479
-B3229	Memory B cell	1755
-B3236	Memory B cell	1982
-B3240	Memory B cell	1670
-B3242	Memory B cell	1825
-B3246	Memory B cell	1998
-B3247	Memory B cell	1804
-B3252	Memory B cell	1717
-B3258	Memory B cell	2187
-B3264	Memory B cell	1938
-B3266	Memory B cell	1685
-B3273	Memory B cell	2012
-B3274	Memory B cell	1789
-B3276	Memory B cell	3427
-B3284	Memory B cell	1779
-B3295	Memory B cell	1707
-B3297	Memory B cell	2756
-B3303	Memory B cell	1808
-B3306	Memory B cell	1694
-B3311	Memory B cell	2333
-B3312	Memory B cell	2300
-B3313	Memory B cell	1913
-B3325	Memory B cell	2284
-B3328	Memory B cell	2512
-B3329	Memory B cell	1682
-B3336	Memory B cell	2996
-B3340	Memory B cell	1839
-B3345	Memory B cell	1810
-B3349	Memory B cell	2154
-B3350	Memory B cell	1646
-B3351	Memory B cell	1849
-B3364	Memory B cell	1789
-B3368	Memory B cell	2967
-B3372	Memory B cell	2066
-B3375	Memory B cell	1794
-B3376	Memory B cell	2373
-B3378	Memory B cell	1698
-B3379	Memory B cell	1692
-B3380	Memory B cell	2723
-B3382	Memory B cell	2137
-B3390	Memory B cell	1882
-B3391	Memory B cell	1931
-B3394	Memory B cell	2015
-B3396	Memory B cell	1851
-B3401	Memory B cell	2113
-B3402	Memory B cell	3547
-B3407	Memory B cell	1969
-B3421	Memory B cell	2210
-B3424	Memory B cell	1774
-B3429	Memory B cell	2139
-B3433	Memory B cell	2347
-B3437	Memory B cell	2304
-B3443	Memory B cell	1637
-B3445	Memory B cell	1766
-B3448	Memory B cell	1808
-B3450	Memory B cell	2184
-B3451	Memory B cell	1867
-B3453	Memory B cell	1931
-B3459	Memory B cell	1848
-B3468	Memory B cell	2186
-B3480	Memory B cell	1816
-B3481	Memory B cell	2136
-B3486	Memory B cell	2791
-B3488	Memory B cell	1793
-B3493	Memory B cell	1878
-B3496	Memory B cell	2664
-B3497	Memory B cell	1810
-B3499	Memory B cell	1670
-B3501	Memory B cell	2329
-B3511	Memory B cell	1852
-B3514	Memory B cell	2155
-B3516	Memory B cell	1764
-B3517	Memory B cell	2029
-B3518	Memory B cell	2014
-B3519	Memory B cell	2243
-B3520	Memory B cell	1861
-B3521	Memory B cell	1992
-B3522	Memory B cell	1664
-B3526	Memory B cell	1889
-B3530	Memory B cell	1663
-B3531	Memory B cell	1996
-B3532	Memory B cell	1956
-B3534	Memory B cell	1784
-B3542	Memory B cell	1775
-B3543	Memory B cell	2509
-B3550	Memory B cell	2394
-B3563	Memory B cell	2127
-B3564	Memory B cell	2591
-B3568	Memory B cell	1812
-B3571	Memory B cell	1815
-B3574	Memory B cell	1895
-B3575	Memory B cell	2216
-B3578	Memory B cell	1691
-B3583	Memory B cell	2021
-B3594	Memory B cell	1915
-B3599	Memory B cell	1596
-B3601	Memory B cell	2723
-B3602	Memory B cell	1749
-B3604	Memory B cell	1642
-B3611	Memory B cell	1750
-B3613	Memory B cell	1810
-B3614	Memory B cell	1706
-B3617	Memory B cell	2348
-B3618	Memory B cell	2261
-B3619	Memory B cell	1732
-B3622	Memory B cell	1834
-B3628	Memory B cell	1841
-B3629	Memory B cell	2891
-B3634	Memory B cell	1979
-B3635	Memory B cell	1711
-B3637	Memory B cell	1750
-B3641	Memory B cell	1674
-B3646	Memory B cell	2348
-B3655	Memory B cell	1673
-B3658	Memory B cell	2729
-B3666	Memory B cell	1691
-B3673	Memory B cell	2183
-B3674	Memory B cell	1654
-B3683	Memory B cell	2143
-B3690	Memory B cell	1630
-B3694	Memory B cell	1782
-B3695	Memory B cell	1685
-B3699	Memory B cell	1952
-B3700	Memory B cell	2668
-B3704	Memory B cell	2581
-B3706	Memory B cell	2339
-B3712	Memory B cell	1797
-B3716	Memory B cell	1740
-B3721	Memory B cell	1795
-B3733	Memory B cell	1982
-B3736	Memory B cell	1644
-B3737	Memory B cell	2672
-B3738	Memory B cell	2126
-B3740	Memory B cell	1639
-B3741	Memory B cell	1642
-B3746	Memory B cell	1921
-B3768	Memory B cell	2695
-B3780	Memory B cell	3050
-B3781	Memory B cell	1774
-B3784	Memory B cell	1862
-B3786	Memory B cell	2481
-B3787	Memory B cell	1970
-B3792	Memory B cell	1996
-B3808	Memory B cell	1776
-B3812	Memory B cell	2630
-B3814	Memory B cell	1898
-B3826	Memory B cell	2169
-B3827	Memory B cell	2006
-B3828	Memory B cell	2160
-B3833	Memory B cell	2425
-B3839	Memory B cell	1770
-B3840	Memory B cell	1870
-B3843	Memory B cell	1741
-B3858	Memory B cell	3019
-B3865	Memory B cell	1946
-B3870	Memory B cell	1632
-B3877	Memory B cell	1787
-B3879	Memory B cell	1709
-B3880	Memory B cell	1635
-B3883	Memory B cell	1764
-B3885	Memory B cell	1776
-B3902	Memory B cell	2652
-B3906	Memory B cell	1709
-B3918	Memory B cell	2329
-B3930	Memory B cell	1721
-B3933	Memory B cell	1932
-B3934	Memory B cell	1758
-B3939	Memory B cell	1643
-B3942	Memory B cell	1755
-B3948	Memory B cell	1725
-B3950	Memory B cell	2192
-B3967	Memory B cell	1741
-B3971	Memory B cell	1697
-B3976	Memory B cell	1801
-B3977	Memory B cell	2099
-B3979	Memory B cell	2497
-B3980	Memory B cell	1814
-B3981	Memory B cell	1826
-B3985	Memory B cell	2557
-B3988	Memory B cell	1701
-B3991	Memory B cell	1814
-B4002	Memory B cell	1807
-B4004	Memory B cell	1829
-B4006	Memory B cell	1884
-B4007	Memory B cell	1937
-B4011	Memory B cell	1878
-B4019	Memory B cell	2773
-B4021	Memory B cell	1825
-B4023	Memory B cell	1820
-B4025	Memory B cell	2016
-B4027	Memory B cell	2520
-B4032	Memory B cell	1631
-B4043	Memory B cell	2224
-B4045	Memory B cell	1704
-B4046	Memory B cell	2491
-B4047	Memory B cell	1739
-B4048	Memory B cell	1938
-B4049	Memory B cell	1894
-B4053	Memory B cell	3498
-B4055	Memory B cell	2170
-B4061	Memory B cell	2112
-B4062	Memory B cell	1689
-B4063	Memory B cell	2567
-B4071	Memory B cell	1746
-B4074	Memory B cell	1865
-B4076	Memory B cell	2010
-B4084	Memory B cell	1740
-B4085	Memory B cell	3405
-B4095	Memory B cell	1940
-B4098	Memory B cell	2134
-B4099	Memory B cell	2066
-B4101	Memory B cell	1814
-B4102	Memory B cell	2135
-B4109	Memory B cell	2454
-B4115	Memory B cell	1786
-B4117	Memory B cell	1974
-B4125	Memory B cell	1781
-B4126	Memory B cell	2977
-B4131	Memory B cell	1898
-B4132	Memory B cell	1712
-B4133	Memory B cell	1701
-B4135	Memory B cell	2034
-B4146	Memory B cell	1821
-B4152	Memory B cell	2148
-B4157	Memory B cell	1868
-B4166	Memory B cell	1667
-B4169	Memory B cell	1912
-B4173	Memory B cell	1759
-B4176	Memory B cell	2380
-B4179	Memory B cell	1720
-B4180	Memory B cell	3253
-B4183	Memory B cell	2329
-B4186	Memory B cell	2486
-B4189	Memory B cell	1636
-B4190	Memory B cell	1788
-B4192	Memory B cell	2157
-B4196	Memory B cell	2458
-B4197	Memory B cell	2838
-B4200	Memory B cell	2541
-B4201	Memory B cell	2263
-B4203	Memory B cell	2324
-B4209	Memory B cell	2319
-B4210	Memory B cell	1898
-B4211	Memory B cell	1696
-B4213	Memory B cell	1877
-B4214	Memory B cell	2519
-B4225	Memory B cell	1658
-B4230	Memory B cell	1812
-B4237	Memory B cell	2045
-B4239	Memory B cell	2461
-B4241	Memory B cell	1772
-B4242	Memory B cell	1700
-B4245	Memory B cell	1979
-B4248	Memory B cell	2343
-B4253	Memory B cell	1756
-B4258	Memory B cell	2074
-B4266	Memory B cell	2791
-B4274	Memory B cell	1826
-B4279	Memory B cell	1970
-B4280	Memory B cell	1830
-B4282	Memory B cell	1785
-B4289	Memory B cell	2028
-B4291	Memory B cell	1891
-B4306	Memory B cell	1743
-B4309	Memory B cell	3007
-B4310	Memory B cell	2275
-B4319	Memory B cell	1660
-B4321	Memory B cell	1649
-B4324	Memory B cell	2590
-B4325	Memory B cell	2515
-B4326	Memory B cell	1693
-B4329	Memory B cell	1803
-B4336	Memory B cell	1741
-B4337	Memory B cell	1858
-B4343	Memory B cell	1802
-B4351	Memory B cell	1671
+cell	group	reads
+R2	CytotoxicT	1619
+R5	CytotoxicT	1975
+R12	CytotoxicT	1900
+R15	CytotoxicT	1817
+R16	CytotoxicT	2878
+R19	CytotoxicT	2355
+R30	CytotoxicT	2289
+R32	CytotoxicT	1720
+R37	CytotoxicT	1818
+R39	CytotoxicT	1717
+R40	CytotoxicT	1687
+R43	CytotoxicT	2058
+R48	CytotoxicT	2228
+R49	CytotoxicT	1908
+R56	CytotoxicT	1868
+R60	CytotoxicT	1887
+R64	CytotoxicT	1977
+R65	CytotoxicT	1688
+R67	CytotoxicT	2096
+R70	CytotoxicT	1762
+R71	CytotoxicT	1802
+R84	CytotoxicT	1688
+R85	CytotoxicT	1763
+R86	CytotoxicT	1777
+R87	CytotoxicT	1832
+R90	CytotoxicT	1780
+R91	CytotoxicT	1740
+R99	CytotoxicT	2919
+R116	CytotoxicT	1823
+R119	CytotoxicT	1838
+R122	CytotoxicT	1944
+R129	CytotoxicT	1884
+R133	CytotoxicT	1943
+R136	CytotoxicT	1810
+R139	CytotoxicT	2890
+R149	CytotoxicT	1836
+R152	CytotoxicT	1746
+R157	CytotoxicT	1694
+R158	CytotoxicT	1850
+R165	CytotoxicT	1791
+R167	CytotoxicT	1985
+R171	CytotoxicT	1777
+R174	CytotoxicT	2559
+R175	CytotoxicT	3278
+R176	CytotoxicT	1861
+R177	CytotoxicT	1739
+R183	CytotoxicT	2558
+R187	CytotoxicT	1811
+R188	CytotoxicT	1804
+R189	CytotoxicT	1714
+R193	CytotoxicT	1959
+R194	CytotoxicT	1866
+R200	CytotoxicT	1866
+R206	CytotoxicT	1803
+R211	CytotoxicT	1938
+R213	CytotoxicT	1843
+R214	CytotoxicT	1858
+R220	CytotoxicT	1908
+R222	CytotoxicT	1723
+R224	CytotoxicT	1793
+R226	CytotoxicT	1619
+R227	CytotoxicT	1827
+R237	CytotoxicT	2483
+R238	CytotoxicT	1734
+R239	CytotoxicT	1752
+R265	CytotoxicT	2718
+R267	CytotoxicT	2020
+R271	CytotoxicT	1732
+R277	CytotoxicT	1684
+R278	CytotoxicT	1791
+R285	CytotoxicT	1749
+R286	CytotoxicT	1773
+R289	CytotoxicT	2571
+R291	CytotoxicT	2088
+R292	CytotoxicT	1861
+R297	CytotoxicT	1814
+R301	CytotoxicT	2115
+R302	CytotoxicT	1706
+R305	CytotoxicT	1890
+R309	CytotoxicT	1821
+R310	CytotoxicT	2462
+R316	CytotoxicT	1882
+R317	CytotoxicT	1966
+R319	CytotoxicT	1834
+R320	CytotoxicT	2370
+R325	CytotoxicT	1797
+R335	CytotoxicT	1877
+R340	CytotoxicT	1945
+R344	CytotoxicT	1975
+R350	CytotoxicT	1994
+R354	CytotoxicT	2105
+R366	CytotoxicT	1755
+R370	CytotoxicT	1833
+R372	CytotoxicT	2308
+R383	CytotoxicT	1722
+R384	CytotoxicT	2409
+R385	CytotoxicT	1702
+R387	CytotoxicT	1743
+R389	CytotoxicT	2058
+R400	CytotoxicT	2733
+R402	CytotoxicT	1789
+R406	CytotoxicT	2095
+R407	CytotoxicT	2170
+R411	CytotoxicT	1764
+R413	CytotoxicT	1831
+R414	CytotoxicT	1790
+R423	CytotoxicT	1827
+R428	CytotoxicT	1909
+R433	CytotoxicT	1764
+R444	CytotoxicT	2489
+R448	CytotoxicT	2674
+R452	CytotoxicT	1905
+R460	CytotoxicT	1731
+R468	CytotoxicT	1832
+R473	CytotoxicT	1699
+R476	CytotoxicT	1737
+R478	CytotoxicT	1711
+R479	CytotoxicT	3028
+R482	CytotoxicT	2199
+R492	CytotoxicT	1907
+R496	CytotoxicT	3224
+R497	CytotoxicT	1742
+R501	CytotoxicT	2499
+R502	CytotoxicT	2932
+R503	CytotoxicT	1663
+R506	CytotoxicT	2015
+R515	CytotoxicT	1747
+R516	CytotoxicT	2325
+R520	CytotoxicT	1931
+R538	CytotoxicT	2707
+R543	CytotoxicT	2987
+R556	CytotoxicT	2144
+R559	CytotoxicT	2041
+R561	CytotoxicT	2032
+R566	CytotoxicT	1771
+R571	CytotoxicT	2744
+R572	CytotoxicT	1807
+R575	CytotoxicT	2143
+R580	CytotoxicT	1707
+R585	CytotoxicT	1821
+R590	CytotoxicT	1747
+R592	CytotoxicT	2768
+R593	CytotoxicT	1684
+R594	CytotoxicT	1997
+R595	CytotoxicT	1878
+R602	CytotoxicT	1990
+R603	CytotoxicT	2205
+R617	CytotoxicT	1786
+R620	CytotoxicT	1820
+R621	CytotoxicT	2109
+R622	CytotoxicT	1802
+R625	CytotoxicT	1803
+R633	CytotoxicT	1845
+R638	CytotoxicT	1939
+R641	CytotoxicT	1760
+R645	CytotoxicT	2385
+R646	CytotoxicT	1765
+R653	CytotoxicT	1645
+R662	CytotoxicT	2159
+R665	CytotoxicT	2649
+R667	CytotoxicT	1845
+R672	CytotoxicT	2853
+R676	CytotoxicT	2188
+R677	CytotoxicT	1810
+R681	CytotoxicT	2175
+R685	CytotoxicT	1924
+R689	CytotoxicT	2553
+R692	CytotoxicT	2208
+R696	CytotoxicT	1723
+R697	CytotoxicT	3159
+R701	CytotoxicT	1710
+R703	CytotoxicT	1843
+R712	CytotoxicT	1941
+R716	CytotoxicT	1862
+R717	CytotoxicT	1845
+R718	CytotoxicT	2089
+R722	CytotoxicT	1804
+R723	CytotoxicT	1843
+R724	CytotoxicT	3266
+R726	CytotoxicT	1748
+R730	CytotoxicT	2218
+R732	CytotoxicT	1851
+R733	CytotoxicT	1828
+R735	CytotoxicT	2021
+R736	CytotoxicT	1855
+R738	CytotoxicT	1846
+R740	CytotoxicT	1926
+R741	CytotoxicT	2091
+R744	CytotoxicT	3131
+R745	CytotoxicT	1700
+R751	CytotoxicT	1974
+R754	CytotoxicT	1853
+R760	CytotoxicT	1790
+R767	CytotoxicT	1831
+R775	CytotoxicT	1833
+R777	CytotoxicT	1804
+R778	CytotoxicT	1822
+R792	CytotoxicT	1922
+R798	CytotoxicT	1730
+R802	CytotoxicT	1815
+R804	CytotoxicT	2488
+R810	CytotoxicT	1818
+R811	CytotoxicT	1850
+R815	CytotoxicT	2376
+R817	CytotoxicT	1776
+R821	CytotoxicT	1934
+R823	CytotoxicT	1681
+R825	CytotoxicT	1667
+R830	CytotoxicT	1775
+R837	CytotoxicT	2110
+R838	CytotoxicT	1965
+R847	CytotoxicT	2301
+R853	CytotoxicT	2584
+R858	CytotoxicT	1763
+R861	CytotoxicT	1970
+R864	CytotoxicT	2021
+R867	CytotoxicT	1784
+R868	CytotoxicT	1750
+R871	CytotoxicT	3247
+R881	CytotoxicT	1709
+R883	CytotoxicT	1689
+R888	CytotoxicT	1844
+R890	CytotoxicT	1689
+R895	CytotoxicT	2106
+R897	CytotoxicT	2299
+R898	CytotoxicT	1909
+R901	CytotoxicT	1778
+R906	CytotoxicT	3023
+R911	CytotoxicT	1753
+R916	CytotoxicT	1816
+R920	CytotoxicT	1836
+R921	CytotoxicT	1768
+R925	CytotoxicT	2833
+R926	CytotoxicT	1874
+R932	CytotoxicT	2365
+R943	CytotoxicT	2537
+R944	CytotoxicT	1884
+R951	CytotoxicT	2134
+R953	CytotoxicT	1853
+R954	CytotoxicT	1959
+R957	CytotoxicT	1695
+R961	CytotoxicT	1711
+R963	CytotoxicT	3130
+R974	CytotoxicT	1885
+R979	CytotoxicT	1963
+R990	CytotoxicT	1713
+R991	CytotoxicT	1759
+R994	CytotoxicT	2311
+R995	CytotoxicT	1912
+R998	CytotoxicT	1845
+R1003	CytotoxicT	1912
+R1008	CytotoxicT	2054
+R1016	CytotoxicT	2715
+R1033	CytotoxicT	1784
+R1034	CytotoxicT	2130
+R1040	CytotoxicT	2934
+R1041	CytotoxicT	2067
+R1043	CytotoxicT	2562
+R1049	CytotoxicT	1769
+R1054	CytotoxicT	2688
+R1057	CytotoxicT	1903
+R1062	CytotoxicT	1837
+R1074	CytotoxicT	1848
+R1079	CytotoxicT	1914
+R1086	CytotoxicT	2061
+R1088	CytotoxicT	2939
+R1095	CytotoxicT	1765
+R1100	CytotoxicT	1704
+R1105	CytotoxicT	1858
+R1118	CytotoxicT	2354
+R1121	CytotoxicT	1835
+R1123	CytotoxicT	1889
+R1124	CytotoxicT	1967
+R1127	CytotoxicT	2357
+R1139	CytotoxicT	3211
+R1140	CytotoxicT	2744
+R1147	CytotoxicT	1824
+R1149	CytotoxicT	1775
+R1153	CytotoxicT	2148
+R1157	CytotoxicT	2239
+R1158	CytotoxicT	1891
+R1165	CytotoxicT	2020
+R1171	CytotoxicT	1712
+R1173	CytotoxicT	1851
+R1174	CytotoxicT	1857
+R1179	CytotoxicT	2160
+R1181	CytotoxicT	2867
+R1184	CytotoxicT	3065
+R1185	CytotoxicT	1781
+R1186	CytotoxicT	2094
+R1191	CytotoxicT	2246
+R1192	CytotoxicT	1925
+R1193	CytotoxicT	2785
+R1194	CytotoxicT	1789
+R1197	CytotoxicT	1772
+R1198	CytotoxicT	2266
+R1202	CytotoxicT	1945
+R1206	CytotoxicT	1684
+R1207	CytotoxicT	2333
+R1212	CytotoxicT	1774
+R1215	CytotoxicT	1730
+R1222	CytotoxicT	2028
+R1227	CytotoxicT	2504
+R1234	CytotoxicT	2770
+R1240	CytotoxicT	1670
+R1245	CytotoxicT	1858
+R1249	CytotoxicT	2095
+R1250	CytotoxicT	1749
+R1255	CytotoxicT	1963
+R1260	CytotoxicT	2485
+R1264	CytotoxicT	1964
+R1266	CytotoxicT	2198
+R1272	CytotoxicT	1736
+R1273	CytotoxicT	1807
+R1274	CytotoxicT	2142
+R1275	CytotoxicT	2616
+R1276	CytotoxicT	1817
+R1289	CytotoxicT	1860
+R1290	CytotoxicT	2162
+R1305	CytotoxicT	2278
+R1311	CytotoxicT	1789
+R1312	CytotoxicT	1678
+R1318	CytotoxicT	1690
+R1322	CytotoxicT	1909
+R1326	CytotoxicT	2494
+R1335	CytotoxicT	1791
+R1337	CytotoxicT	2341
+R1346	CytotoxicT	1999
+R1360	CytotoxicT	1677
+R1366	CytotoxicT	1715
+R1369	CytotoxicT	1813
+R1370	CytotoxicT	2329
+R1374	CytotoxicT	1754
+R1388	CytotoxicT	1841
+R1390	CytotoxicT	2060
+R1397	CytotoxicT	1894
+R1405	CytotoxicT	2595
+R1411	CytotoxicT	2366
+R1413	CytotoxicT	1742
+R1420	CytotoxicT	1731
+R1421	CytotoxicT	1902
+R1422	CytotoxicT	1751
+R1428	CytotoxicT	2487
+R1429	CytotoxicT	2255
+R1431	CytotoxicT	2421
+R1433	CytotoxicT	2609
+R1436	CytotoxicT	2049
+R1437	CytotoxicT	1737
+R1448	CytotoxicT	1875
+R1449	CytotoxicT	2298
+R1450	CytotoxicT	1969
+R1458	CytotoxicT	2470
+R1460	CytotoxicT	1723
+R1462	CytotoxicT	2744
+R1464	CytotoxicT	2035
+R1467	CytotoxicT	1744
+R1468	CytotoxicT	2417
+R1471	CytotoxicT	1713
+R1478	CytotoxicT	2694
+R1483	CytotoxicT	2293
+R1485	CytotoxicT	1757
+R1489	CytotoxicT	1796
+R1491	CytotoxicT	1936
+R1493	CytotoxicT	1762
+R1495	CytotoxicT	2592
+R1497	CytotoxicT	1684
+R1498	CytotoxicT	2587
+R1502	CytotoxicT	1912
+R1504	CytotoxicT	1855
+R1508	CytotoxicT	1757
+R1511	CytotoxicT	1872
+R1514	CytotoxicT	2814
+R1518	CytotoxicT	2134
+R1520	CytotoxicT	2452
+R1524	CytotoxicT	1804
+R1535	CytotoxicT	2112
+R1537	CytotoxicT	2023
+R1538	CytotoxicT	2934
+R1541	CytotoxicT	1896
+R1542	CytotoxicT	1865
+R1543	CytotoxicT	1985
+R1547	CytotoxicT	1792
+R1549	CytotoxicT	1785
+R1550	CytotoxicT	3387
+R1551	CytotoxicT	2054
+R1556	CytotoxicT	2821
+R1562	CytotoxicT	2019
+R1570	CytotoxicT	1960
+R1576	CytotoxicT	2369
+R1578	CytotoxicT	1976
+R1587	CytotoxicT	1977
+R1592	CytotoxicT	2077
+R1594	CytotoxicT	1744
+R1595	CytotoxicT	1887
+R1604	CytotoxicT	1921
+R1605	CytotoxicT	2819
+R1608	CytotoxicT	2836
+R1614	CytotoxicT	1753
+R1620	CytotoxicT	1773
+R1622	CytotoxicT	1740
+R1623	CytotoxicT	3061
+R1626	CytotoxicT	3383
+R1627	CytotoxicT	1990
+R1628	CytotoxicT	1718
+R1630	CytotoxicT	2587
+R1632	CytotoxicT	1910
+R1635	CytotoxicT	1767
+R1636	CytotoxicT	2620
+R1640	CytotoxicT	1823
+R1646	CytotoxicT	1757
+R1648	CytotoxicT	1802
+R1657	CytotoxicT	2448
+R1658	CytotoxicT	1785
+R1662	CytotoxicT	2291
+R1671	CytotoxicT	1758
+R1672	CytotoxicT	1927
+R1676	CytotoxicT	1982
+R1678	CytotoxicT	1840
+R1679	CytotoxicT	1662
+R1683	CytotoxicT	2016
+R1687	CytotoxicT	1722
+R1688	CytotoxicT	3088
+R1691	CytotoxicT	1981
+R1692	CytotoxicT	1773
+R1699	CytotoxicT	1743
+R1705	CytotoxicT	1933
+R1706	CytotoxicT	1864
+R1708	CytotoxicT	1812
+R1714	CytotoxicT	1964
+R1715	CytotoxicT	2138
+R1733	CytotoxicT	1806
+R1735	CytotoxicT	2229
+R1745	CytotoxicT	1750
+R1748	CytotoxicT	1924
+R1750	CytotoxicT	1915
+R1752	CytotoxicT	1676
+R1756	CytotoxicT	2472
+R1759	CytotoxicT	1746
+R1760	CytotoxicT	2258
+R1763	CytotoxicT	2465
+R1772	CytotoxicT	1770
+R1788	CytotoxicT	1821
+R1790	CytotoxicT	1780
+R1792	CytotoxicT	1751
+R1796	CytotoxicT	1916
+R1799	CytotoxicT	1938
+R1804	CytotoxicT	1903
+R1808	CytotoxicT	2302
+R1812	CytotoxicT	2473
+R1813	CytotoxicT	1668
+R1820	CytotoxicT	1691
+R1829	CytotoxicT	1970
+R1831	CytotoxicT	1787
+R1845	CytotoxicT	1782
+R1847	CytotoxicT	1906
+R1848	CytotoxicT	2325
+R1849	CytotoxicT	1677
+R1856	CytotoxicT	1732
+R1860	CytotoxicT	2924
+R1866	CytotoxicT	1895
+R1867	CytotoxicT	2233
+R1868	CytotoxicT	2507
+R1873	CytotoxicT	3097
+R1876	CytotoxicT	2531
+R1881	CytotoxicT	1911
+R1886	CytotoxicT	1909
+R1890	CytotoxicT	2904
+R1893	CytotoxicT	1943
+R1894	CytotoxicT	1993
+R1907	CytotoxicT	1730
+R1908	CytotoxicT	1772
+R1910	CytotoxicT	2068
+R1912	CytotoxicT	2713
+R1913	CytotoxicT	2076
+R1914	CytotoxicT	1771
+R1915	CytotoxicT	1843
+R1918	CytotoxicT	1726
+R1920	CytotoxicT	1776
+R1934	CytotoxicT	1785
+R1944	CytotoxicT	2682
+R1947	CytotoxicT	1799
+R1948	CytotoxicT	1712
+R1954	CytotoxicT	1975
+R1956	CytotoxicT	2041
+R1964	CytotoxicT	2308
+R1967	CytotoxicT	1817
+R1971	CytotoxicT	2762
+R1972	CytotoxicT	1761
+R1973	CytotoxicT	3180
+R1977	CytotoxicT	1797
+R1988	CytotoxicT	1919
+R1990	CytotoxicT	1757
+R1991	CytotoxicT	3145
+R1994	CytotoxicT	1785
+R1995	CytotoxicT	1752
+R1998	CytotoxicT	1694
+R2008	CytotoxicT	1779
+R2011	CytotoxicT	1754
+R2012	CytotoxicT	1949
+R2014	CytotoxicT	3233
+R2015	CytotoxicT	1997
+R2018	CytotoxicT	1881
+R2019	CytotoxicT	1998
+R2021	CytotoxicT	1805
+R2027	CytotoxicT	1850
+R2030	CytotoxicT	1693
+R2035	CytotoxicT	2055
+R2037	CytotoxicT	1895
+R2044	CytotoxicT	1833
+R2047	CytotoxicT	2027
+R2050	CytotoxicT	2817
+R2051	CytotoxicT	2008
+R2055	CytotoxicT	2013
+R2056	CytotoxicT	2128
+R2059	CytotoxicT	1857
+R2064	CytotoxicT	1967
+R2067	CytotoxicT	2084
+R2080	CytotoxicT	2190
+R2086	CytotoxicT	3032
+R2089	CytotoxicT	1937
+R2094	CytotoxicT	1796
+R2100	CytotoxicT	2681
+R2111	CytotoxicT	1742
+R2113	CytotoxicT	1825
+R2117	CytotoxicT	2512
+R2119	CytotoxicT	1879
+R2120	CytotoxicT	1749
+R2124	CytotoxicT	1991
+R2128	CytotoxicT	1739
+R2133	CytotoxicT	2062
+R2137	CytotoxicT	1813
+R2140	CytotoxicT	2766
+R2141	CytotoxicT	1781
+R2142	CytotoxicT	2309
+R2150	CytotoxicT	3288
+R2157	CytotoxicT	2824
+R2166	CytotoxicT	2066
+R2168	CytotoxicT	1840
+R2171	CytotoxicT	1831
+R2174	CytotoxicT	1759
+R2177	CytotoxicT	2624
+R2178	CytotoxicT	2571
+R2185	CytotoxicT	1961
+R2192	CytotoxicT	1738
+R2193	CytotoxicT	1751
+R2196	CytotoxicT	1899
+R2197	CytotoxicT	2778
+R2199	CytotoxicT	1831
+R2202	CytotoxicT	1937
+R2203	CytotoxicT	2944
+R2213	CytotoxicT	1808
+R2215	CytotoxicT	1919
+R2218	CytotoxicT	2138
+R2220	CytotoxicT	1719
+R2235	CytotoxicT	1864
+R2239	CytotoxicT	1815
+R2242	CytotoxicT	2823
+R2245	CytotoxicT	2778
+R2251	CytotoxicT	2307
+R2253	CytotoxicT	1908
+R2255	CytotoxicT	2268
+R2256	CytotoxicT	1891
+R2263	CytotoxicT	2438
+R2264	CytotoxicT	1842
+R2266	CytotoxicT	2733
+R2270	CytotoxicT	2272
+R2273	CytotoxicT	1947
+R2281	CytotoxicT	2157
+R2284	CytotoxicT	1680
+R2291	CytotoxicT	1861
+R2298	CytotoxicT	1777
+R2303	CytotoxicT	2998
+R2309	CytotoxicT	2529
+R2310	CytotoxicT	1843
+R2313	CytotoxicT	1813
+R2314	CytotoxicT	1969
+R2315	CytotoxicT	1742
+R2318	CytotoxicT	2090
+R2319	CytotoxicT	2370
+R2325	CytotoxicT	1730
+R2331	CytotoxicT	1874
+R2332	CytotoxicT	1779
+R2336	CytotoxicT	1827
+R2337	CytotoxicT	1759
+R2341	CytotoxicT	2914
+R2344	CytotoxicT	1807
+R2346	CytotoxicT	1825
+R2352	CytotoxicT	1829
+R2358	CytotoxicT	1806
+R2363	CytotoxicT	1794
+R2367	CytotoxicT	2091
+R2368	CytotoxicT	1915
+R2369	CytotoxicT	2725
+R2370	CytotoxicT	1875
+R2375	CytotoxicT	1856
+R2382	CytotoxicT	1700
+R2383	CytotoxicT	1909
+R2393	CytotoxicT	1873
+R2395	CytotoxicT	1769
+R2396	CytotoxicT	1980
+R2399	CytotoxicT	1623
+R2400	CytotoxicT	1918
+R2411	CytotoxicT	1736
+R2414	CytotoxicT	2631
+R2428	CytotoxicT	2984
+R2437	CytotoxicT	1714
+R2443	CytotoxicT	1692
+R2444	CytotoxicT	2610
+R2445	CytotoxicT	1981
+R2450	CytotoxicT	1861
+R2456	CytotoxicT	3450
+R2462	CytotoxicT	1832
+R2464	CytotoxicT	1969
+R2469	CytotoxicT	1904
+R2476	CytotoxicT	1767
+R2478	CytotoxicT	1690
+R2479	CytotoxicT	1770
+R2488	CytotoxicT	2614
+R2499	CytotoxicT	2321
+R2500	CytotoxicT	1842
+R2504	CytotoxicT	1763
+R2513	CytotoxicT	2936
+R2516	CytotoxicT	1794
+R2524	CytotoxicT	1866
+R2525	CytotoxicT	1753
+R2533	CytotoxicT	1695
+R2537	CytotoxicT	1918
+R2543	CytotoxicT	2447
+R2544	CytotoxicT	2932
+R2547	CytotoxicT	2274
+R2551	CytotoxicT	1777
+R2558	CytotoxicT	2643
+R2559	CytotoxicT	1990
+R2576	CytotoxicT	1858
+R2579	CytotoxicT	1719
+R2583	CytotoxicT	2130
+R2586	CytotoxicT	2125
+R2590	CytotoxicT	1890
+R2591	CytotoxicT	1765
+R2596	CytotoxicT	1897
+R2599	CytotoxicT	2130
+R2601	CytotoxicT	1709
+R2616	CytotoxicT	1756
+R2618	CytotoxicT	1709
+R2620	CytotoxicT	1862
+R2621	CytotoxicT	1747
+R2622	CytotoxicT	1795
+R2623	CytotoxicT	1846
+R2634	CytotoxicT	2758
+R2635	CytotoxicT	1948
+R2637	CytotoxicT	1827
+R2638	CytotoxicT	2588
+R2647	CytotoxicT	1776
+R2654	CytotoxicT	1699
+R2657	CytotoxicT	1740
+R2662	CytotoxicT	1771
+R2676	CytotoxicT	1999
+R2679	CytotoxicT	2676
+R2680	CytotoxicT	1769
+R2686	CytotoxicT	4083
+R2689	CytotoxicT	2840
+R2690	CytotoxicT	1777
+R2701	CytotoxicT	3716
+R2705	CytotoxicT	1913
+R2706	CytotoxicT	2674
+R2709	CytotoxicT	1876
+R2716	CytotoxicT	1743
+R2720	CytotoxicT	3557
+R2733	CytotoxicT	1776
+R2736	CytotoxicT	1797
+R2750	CytotoxicT	2403
+R2759	CytotoxicT	1820
+R2760	CytotoxicT	2817
+R2772	CytotoxicT	1945
+R2776	CytotoxicT	1919
+R2779	CytotoxicT	2055
+R2780	CytotoxicT	1764
+R2781	CytotoxicT	1772
+R2782	CytotoxicT	1913
+R2787	CytotoxicT	1944
+R2791	CytotoxicT	1886
+R2795	CytotoxicT	1762
+R2800	CytotoxicT	1737
+R2805	CytotoxicT	2692
+R2814	CytotoxicT	2194
+R2818	CytotoxicT	1833
+R2821	CytotoxicT	2476
+R2826	CytotoxicT	1803
+R2851	CytotoxicT	2083
+R2853	CytotoxicT	1739
+R2861	CytotoxicT	2251
+R2862	CytotoxicT	2896
+R2864	CytotoxicT	1891
+R2865	CytotoxicT	1983
+R2868	CytotoxicT	1771
+R2871	CytotoxicT	2460
+R2874	CytotoxicT	1708
+R2877	CytotoxicT	1714
+R2887	CytotoxicT	2164
+R2889	CytotoxicT	1650
+R2895	CytotoxicT	1992
+R2898	CytotoxicT	1746
+R2901	CytotoxicT	1909
+R2903	CytotoxicT	1798
+R2910	CytotoxicT	1835
+R2912	CytotoxicT	1808
+R2913	CytotoxicT	1890
+R2916	CytotoxicT	1903
+R2919	CytotoxicT	1906
+R2929	CytotoxicT	2080
+R2933	CytotoxicT	2277
+R2935	CytotoxicT	1839
+R2939	CytotoxicT	2592
+R2941	CytotoxicT	1810
+R2943	CytotoxicT	1732
+R2948	CytotoxicT	2970
+R2952	CytotoxicT	1953
+R2954	CytotoxicT	1751
+R2958	CytotoxicT	2470
+R2961	CytotoxicT	1924
+R2962	CytotoxicT	1936
+R2971	CytotoxicT	2141
+R2977	CytotoxicT	1863
+R2978	CytotoxicT	1743
+R2985	CytotoxicT	2293
+R2988	CytotoxicT	1826
+R2990	CytotoxicT	1890
+R2994	CytotoxicT	2006
+R3007	CytotoxicT	2085
+R3008	CytotoxicT	2022
+R3009	CytotoxicT	2392
+R3014	CytotoxicT	1753
+R3017	CytotoxicT	2303
+R3020	CytotoxicT	2119
+R3021	CytotoxicT	2224
+R3028	CytotoxicT	1975
+R3030	CytotoxicT	2463
+R3034	CytotoxicT	2925
+R3037	CytotoxicT	2182
+R3039	CytotoxicT	1720
+R3044	CytotoxicT	2520
+R3046	CytotoxicT	1851
+R3048	CytotoxicT	2378
+R3053	CytotoxicT	1689
+R3057	CytotoxicT	2001
+R3061	CytotoxicT	2645
+R3064	CytotoxicT	1755
+R3069	CytotoxicT	2431
+R3078	CytotoxicT	1755
+R3079	CytotoxicT	3218
+R3084	CytotoxicT	1979
+R3086	CytotoxicT	1786
+R3090	CytotoxicT	1910
+R3091	CytotoxicT	2685
+R3099	CytotoxicT	1846
+R3102	CytotoxicT	2257
+R3105	CytotoxicT	2117
+R3108	CytotoxicT	3142
+R3110	CytotoxicT	1855
+R3114	CytotoxicT	1837
+R3115	CytotoxicT	1978
+R3120	CytotoxicT	2643
+R3121	CytotoxicT	2697
+R3122	CytotoxicT	1996
+R3124	CytotoxicT	1892
+R3127	CytotoxicT	2477
+R3128	CytotoxicT	1890
+R3138	CytotoxicT	1694
+R3139	CytotoxicT	1900
+R3140	CytotoxicT	1817
+R3151	CytotoxicT	2989
+R3156	CytotoxicT	2167
+R3157	CytotoxicT	1727
+R3170	CytotoxicT	2418
+R3173	CytotoxicT	1800
+R3175	CytotoxicT	1988
+R3179	CytotoxicT	2254
+R3183	CytotoxicT	1710
+R3185	CytotoxicT	1711
+R3190	CytotoxicT	1930
+R3197	CytotoxicT	1952
+R3199	CytotoxicT	1717
+R3201	CytotoxicT	1984
+R3202	CytotoxicT	2846
+R3203	CytotoxicT	2047
+R3204	CytotoxicT	1749
+R3210	CytotoxicT	2181
+R3212	CytotoxicT	2653
+R3213	CytotoxicT	2268
+R3215	CytotoxicT	2045
+R3216	CytotoxicT	2857
+R3221	CytotoxicT	2179
+R3222	CytotoxicT	2460
+R3226	CytotoxicT	2005
+R3237	CytotoxicT	2180
+R3262	CytotoxicT	3070
+R3269	CytotoxicT	1835
+R3282	CytotoxicT	2349
+R3284	CytotoxicT	1870
+R3285	CytotoxicT	2084
+R3286	CytotoxicT	1814
+R3287	CytotoxicT	1980
+R3288	CytotoxicT	2102
+R3294	CytotoxicT	1824
+R3299	CytotoxicT	3995
+R3302	CytotoxicT	2033
+R3303	CytotoxicT	2045
+R3304	CytotoxicT	2624
+R3305	CytotoxicT	2895
+R3307	CytotoxicT	1939
+R3310	CytotoxicT	2006
+R3316	CytotoxicT	2777
+R3320	CytotoxicT	2609
+R3325	CytotoxicT	1705
+R3329	CytotoxicT	2812
+R3333	CytotoxicT	2223
+R3338	CytotoxicT	3026
+R3356	CytotoxicT	1794
+R3359	CytotoxicT	1977
+R3369	CytotoxicT	1837
+R3370	CytotoxicT	2503
+R3373	CytotoxicT	2341
+R3375	CytotoxicT	2265
+R3388	CytotoxicT	2928
+R3394	CytotoxicT	1916
+R3399	CytotoxicT	2275
+R3401	CytotoxicT	1879
+R3404	CytotoxicT	2799
+R3418	CytotoxicT	2185
+R3422	CytotoxicT	2315
+R3424	CytotoxicT	2397
+R3426	CytotoxicT	1771
+R3427	CytotoxicT	1717
+R3429	CytotoxicT	1846
+R3430	CytotoxicT	3395
+R3431	CytotoxicT	2423
+R3434	CytotoxicT	1748
+R3435	CytotoxicT	2887
+R3436	CytotoxicT	1893
+R3437	CytotoxicT	2564
+R3449	CytotoxicT	2051
+R3452	CytotoxicT	2363
+R3454	CytotoxicT	1702
+R3459	CytotoxicT	2178
+R3461	CytotoxicT	1758
+R3472	CytotoxicT	1682
+R3473	CytotoxicT	2077
+R3474	CytotoxicT	1849
+R3479	CytotoxicT	1916
+R3484	CytotoxicT	2563
+R3485	CytotoxicT	2730
+R3488	CytotoxicT	1944
+R3489	CytotoxicT	1722
+R3493	CytotoxicT	2151
+R3494	CytotoxicT	1801
+R3498	CytotoxicT	1784
+R3505	CytotoxicT	2032
+R3510	CytotoxicT	1776
+R3516	CytotoxicT	1779
+R3518	CytotoxicT	1831
+R3519	CytotoxicT	1733
+R3523	CytotoxicT	1750
+R3528	CytotoxicT	2171
+R3531	CytotoxicT	1860
+R3533	CytotoxicT	2210
+R3534	CytotoxicT	2602
+R3537	CytotoxicT	2668
+R3539	CytotoxicT	1843
+R3540	CytotoxicT	2107
+R3541	CytotoxicT	2145
+R3542	CytotoxicT	2199
+R3543	CytotoxicT	1942
+R3544	CytotoxicT	2791
+R3545	CytotoxicT	1913
+R3555	CytotoxicT	1720
+R3559	CytotoxicT	1813
+R3565	CytotoxicT	2817
+R3571	CytotoxicT	1869
+R3579	CytotoxicT	2058
+R3586	CytotoxicT	2860
+R3589	CytotoxicT	2560
+R3593	CytotoxicT	1954
+R3605	CytotoxicT	1910
+R3611	CytotoxicT	1918
+R3621	CytotoxicT	1693
+R3623	CytotoxicT	1878
+R3632	CytotoxicT	1980
+R3639	CytotoxicT	1731
+R3647	CytotoxicT	1747
+R3648	CytotoxicT	2302
+R3653	CytotoxicT	1673
+R3657	CytotoxicT	1684
+R3669	CytotoxicT	2280
+R3670	CytotoxicT	1729
+R3671	CytotoxicT	1912
+R3672	CytotoxicT	2184
+R3678	CytotoxicT	2205
+R3679	CytotoxicT	2244
+R3680	CytotoxicT	1923
+R3682	CytotoxicT	1766
+R3686	CytotoxicT	2762
+R3687	CytotoxicT	3031
+R3697	CytotoxicT	1822
+R3703	CytotoxicT	2574
+R3704	CytotoxicT	1971
+R3733	CytotoxicT	2937
+R3735	CytotoxicT	1874
+R3737	CytotoxicT	1718
+R3739	CytotoxicT	2269
+R3741	CytotoxicT	1718
+R3744	CytotoxicT	2014
+R3745	CytotoxicT	1665
+R3746	CytotoxicT	2276
+R3749	CytotoxicT	1712
+R3753	CytotoxicT	2077
+R3758	CytotoxicT	1957
+R3773	CytotoxicT	1799
+R3774	CytotoxicT	2447
+R3779	CytotoxicT	2436
+R3782	CytotoxicT	2018
+R3783	CytotoxicT	1785
+R3786	CytotoxicT	2991
+R3789	CytotoxicT	1747
+R3790	CytotoxicT	1943
+R3792	CytotoxicT	1724
+R3794	CytotoxicT	2113
+R3805	CytotoxicT	2344
+R3808	CytotoxicT	1811
+R3812	CytotoxicT	2962
+R3816	CytotoxicT	2895
+R3820	CytotoxicT	2213
+R3823	CytotoxicT	1831
+R3827	CytotoxicT	1873
+R3831	CytotoxicT	1854
+R3833	CytotoxicT	1869
+R3841	CytotoxicT	1793
+R3842	CytotoxicT	1722
+R3851	CytotoxicT	1949
+R3853	CytotoxicT	1762
+R3856	CytotoxicT	1770
+R3857	CytotoxicT	2034
+R3862	CytotoxicT	2410
+R3865	CytotoxicT	2246
+R3867	CytotoxicT	1931
+R3870	CytotoxicT	1955
+R3871	CytotoxicT	1860
+R3875	CytotoxicT	3720
+R3878	CytotoxicT	1692
+R3885	CytotoxicT	2510
+R3888	CytotoxicT	3097
+R3890	CytotoxicT	2094
+R3897	CytotoxicT	2274
+R3909	CytotoxicT	3192
+R3914	CytotoxicT	1823
+R3924	CytotoxicT	2341
+R3931	CytotoxicT	2268
+R3934	CytotoxicT	1728
+R3938	CytotoxicT	1843
+R3939	CytotoxicT	2205
+R3952	CytotoxicT	1928
+R3953	CytotoxicT	2785
+R3961	CytotoxicT	2246
+R3966	CytotoxicT	3052
+R3968	CytotoxicT	2015
+R3970	CytotoxicT	2034
+R3972	CytotoxicT	2020
+R3977	CytotoxicT	1793
+R3979	CytotoxicT	1801
+R3980	CytotoxicT	1986
+R3981	CytotoxicT	1685
+R3984	CytotoxicT	2220
+R3985	CytotoxicT	1945
+R3992	CytotoxicT	1873
+R4004	CytotoxicT	2830
+R4009	CytotoxicT	1975
+R4016	CytotoxicT	1825
+R4022	CytotoxicT	1908
+R4023	CytotoxicT	1739
+R4025	CytotoxicT	3251
+R4026	CytotoxicT	1729
+R4029	CytotoxicT	2155
+R4040	CytotoxicT	2099
+R4045	CytotoxicT	1971
+R4051	CytotoxicT	1741
+R4052	CytotoxicT	2750
+R4054	CytotoxicT	1955
+R4058	CytotoxicT	1739
+R4059	CytotoxicT	2091
+R4060	CytotoxicT	3612
+R4068	CytotoxicT	1740
+R4069	CytotoxicT	1667
+R4076	CytotoxicT	1825
+R4077	CytotoxicT	2934
+R4078	CytotoxicT	3096
+R4084	CytotoxicT	1941
+R4086	CytotoxicT	1866
+R4093	CytotoxicT	1748
+R4094	CytotoxicT	1956
+R4097	CytotoxicT	1767
+R4111	CytotoxicT	1971
+B5	MemoryB	1953
+B11	MemoryB	3682
+B14	MemoryB	2182
+B19	MemoryB	1681
+B26	MemoryB	1720
+B30	MemoryB	1765
+B34	MemoryB	1718
+B37	MemoryB	1843
+B45	MemoryB	1862
+B49	MemoryB	1888
+B57	MemoryB	2510
+B61	MemoryB	1678
+B80	MemoryB	1781
+B82	MemoryB	1778
+B91	MemoryB	2536
+B93	MemoryB	2029
+B95	MemoryB	1812
+B113	MemoryB	1739
+B115	MemoryB	2360
+B116	MemoryB	2131
+B120	MemoryB	2015
+B122	MemoryB	1929
+B123	MemoryB	3205
+B127	MemoryB	1984
+B128	MemoryB	1942
+B137	MemoryB	1728
+B139	MemoryB	2031
+B140	MemoryB	2427
+B150	MemoryB	2009
+B165	MemoryB	1660
+B167	MemoryB	1655
+B174	MemoryB	2069
+B187	MemoryB	2388
+B194	MemoryB	2110
+B196	MemoryB	2097
+B201	MemoryB	1769
+B203	MemoryB	1704
+B204	MemoryB	1723
+B221	MemoryB	1905
+B224	MemoryB	2284
+B226	MemoryB	2684
+B227	MemoryB	1795
+B238	MemoryB	1662
+B244	MemoryB	2126
+B245	MemoryB	1755
+B248	MemoryB	1648
+B250	MemoryB	1907
+B252	MemoryB	1717
+B256	MemoryB	1654
+B259	MemoryB	1958
+B260	MemoryB	1849
+B261	MemoryB	1669
+B265	MemoryB	1709
+B266	MemoryB	1779
+B273	MemoryB	2605
+B277	MemoryB	2123
+B283	MemoryB	3172
+B287	MemoryB	1799
+B290	MemoryB	3154
+B291	MemoryB	2359
+B296	MemoryB	1789
+B303	MemoryB	1870
+B308	MemoryB	2554
+B309	MemoryB	1666
+B312	MemoryB	1701
+B314	MemoryB	1669
+B315	MemoryB	2149
+B320	MemoryB	2423
+B324	MemoryB	2658
+B340	MemoryB	2511
+B341	MemoryB	2591
+B344	MemoryB	1741
+B347	MemoryB	2069
+B350	MemoryB	1779
+B351	MemoryB	1761
+B358	MemoryB	2639
+B362	MemoryB	2047
+B363	MemoryB	2462
+B366	MemoryB	2103
+B379	MemoryB	3616
+B380	MemoryB	1989
+B381	MemoryB	2275
+B383	MemoryB	1752
+B388	MemoryB	1660
+B392	MemoryB	1926
+B395	MemoryB	1917
+B399	MemoryB	1640
+B401	MemoryB	1749
+B403	MemoryB	1660
+B413	MemoryB	2660
+B417	MemoryB	1688
+B421	MemoryB	1806
+B422	MemoryB	1619
+B434	MemoryB	2136
+B453	MemoryB	2486
+B463	MemoryB	1717
+B464	MemoryB	2499
+B465	MemoryB	3106
+B467	MemoryB	1615
+B473	MemoryB	1688
+B480	MemoryB	2627
+B484	MemoryB	1918
+B487	MemoryB	1657
+B491	MemoryB	1728
+B502	MemoryB	2503
+B503	MemoryB	3167
+B505	MemoryB	1707
+B509	MemoryB	1988
+B516	MemoryB	1746
+B522	MemoryB	2033
+B529	MemoryB	1671
+B530	MemoryB	2216
+B537	MemoryB	1635
+B539	MemoryB	2240
+B543	MemoryB	1754
+B555	MemoryB	1852
+B556	MemoryB	1729
+B557	MemoryB	2120
+B558	MemoryB	2982
+B560	MemoryB	1726
+B561	MemoryB	1708
+B564	MemoryB	1682
+B568	MemoryB	1775
+B578	MemoryB	2077
+B584	MemoryB	1901
+B590	MemoryB	2495
+B592	MemoryB	1695
+B594	MemoryB	1717
+B595	MemoryB	1795
+B597	MemoryB	1749
+B599	MemoryB	1956
+B602	MemoryB	1697
+B604	MemoryB	1771
+B605	MemoryB	1649
+B609	MemoryB	1625
+B610	MemoryB	1658
+B614	MemoryB	2446
+B615	MemoryB	1668
+B617	MemoryB	1677
+B618	MemoryB	1682
+B620	MemoryB	1700
+B624	MemoryB	2567
+B627	MemoryB	2327
+B630	MemoryB	1963
+B634	MemoryB	2408
+B648	MemoryB	2308
+B656	MemoryB	2163
+B659	MemoryB	1692
+B660	MemoryB	2579
+B669	MemoryB	1716
+B671	MemoryB	1775
+B672	MemoryB	1788
+B679	MemoryB	1660
+B681	MemoryB	2087
+B682	MemoryB	2412
+B683	MemoryB	1633
+B687	MemoryB	1630
+B690	MemoryB	1841
+B694	MemoryB	1812
+B696	MemoryB	1773
+B720	MemoryB	1768
+B726	MemoryB	1743
+B736	MemoryB	1981
+B739	MemoryB	2159
+B740	MemoryB	1723
+B741	MemoryB	2695
+B745	MemoryB	1828
+B756	MemoryB	2190
+B762	MemoryB	2345
+B767	MemoryB	3122
+B768	MemoryB	1793
+B773	MemoryB	2017
+B776	MemoryB	1981
+B779	MemoryB	2387
+B782	MemoryB	3228
+B783	MemoryB	2665
+B784	MemoryB	1809
+B785	MemoryB	1713
+B796	MemoryB	1756
+B797	MemoryB	1828
+B798	MemoryB	1618
+B803	MemoryB	1819
+B804	MemoryB	2843
+B807	MemoryB	1672
+B808	MemoryB	1754
+B809	MemoryB	1752
+B810	MemoryB	2527
+B814	MemoryB	1777
+B822	MemoryB	1802
+B824	MemoryB	2603
+B830	MemoryB	1666
+B832	MemoryB	1710
+B854	MemoryB	2790
+B856	MemoryB	1836
+B858	MemoryB	1676
+B865	MemoryB	1905
+B870	MemoryB	2363
+B875	MemoryB	1734
+B877	MemoryB	2019
+B878	MemoryB	1686
+B881	MemoryB	1846
+B885	MemoryB	1645
+B891	MemoryB	1692
+B909	MemoryB	1789
+B913	MemoryB	1749
+B915	MemoryB	1973
+B921	MemoryB	2196
+B927	MemoryB	1684
+B929	MemoryB	2038
+B933	MemoryB	1907
+B935	MemoryB	1782
+B936	MemoryB	3110
+B944	MemoryB	1900
+B950	MemoryB	2214
+B964	MemoryB	1827
+B966	MemoryB	1858
+B968	MemoryB	1786
+B970	MemoryB	1762
+B971	MemoryB	1977
+B972	MemoryB	1826
+B982	MemoryB	2043
+B984	MemoryB	3232
+B985	MemoryB	1716
+B988	MemoryB	1974
+B992	MemoryB	2803
+B998	MemoryB	1755
+B1001	MemoryB	3731
+B1011	MemoryB	1845
+B1014	MemoryB	1964
+B1015	MemoryB	2210
+B1019	MemoryB	2080
+B1022	MemoryB	1938
+B1024	MemoryB	2995
+B1027	MemoryB	1630
+B1032	MemoryB	1778
+B1033	MemoryB	1902
+B1037	MemoryB	1680
+B1039	MemoryB	1818
+B1045	MemoryB	1966
+B1051	MemoryB	1672
+B1055	MemoryB	2105
+B1063	MemoryB	2715
+B1066	MemoryB	2335
+B1076	MemoryB	1638
+B1081	MemoryB	1731
+B1085	MemoryB	2803
+B1086	MemoryB	1725
+B1089	MemoryB	2285
+B1091	MemoryB	1779
+B1093	MemoryB	2646
+B1102	MemoryB	2088
+B1111	MemoryB	1886
+B1112	MemoryB	1760
+B1114	MemoryB	2229
+B1118	MemoryB	2620
+B1121	MemoryB	2422
+B1123	MemoryB	1752
+B1127	MemoryB	1676
+B1129	MemoryB	2604
+B1133	MemoryB	2062
+B1134	MemoryB	1727
+B1135	MemoryB	2108
+B1140	MemoryB	2701
+B1144	MemoryB	2203
+B1145	MemoryB	1867
+B1147	MemoryB	1659
+B1148	MemoryB	1799
+B1151	MemoryB	1752
+B1152	MemoryB	2057
+B1156	MemoryB	2101
+B1157	MemoryB	2367
+B1158	MemoryB	2371
+B1164	MemoryB	2210
+B1183	MemoryB	1805
+B1185	MemoryB	2154
+B1186	MemoryB	1792
+B1187	MemoryB	1758
+B1194	MemoryB	1794
+B1202	MemoryB	2214
+B1211	MemoryB	2057
+B1220	MemoryB	2019
+B1221	MemoryB	1709
+B1222	MemoryB	2349
+B1230	MemoryB	2438
+B1231	MemoryB	2351
+B1243	MemoryB	1886
+B1248	MemoryB	1772
+B1251	MemoryB	1850
+B1254	MemoryB	1951
+B1262	MemoryB	1685
+B1264	MemoryB	1750
+B1268	MemoryB	2550
+B1270	MemoryB	1776
+B1272	MemoryB	2016
+B1279	MemoryB	2427
+B1285	MemoryB	2065
+B1292	MemoryB	1605
+B1294	MemoryB	2127
+B1306	MemoryB	1673
+B1318	MemoryB	1873
+B1319	MemoryB	1767
+B1326	MemoryB	1879
+B1332	MemoryB	1740
+B1334	MemoryB	2411
+B1335	MemoryB	3054
+B1337	MemoryB	1814
+B1345	MemoryB	1805
+B1351	MemoryB	1816
+B1367	MemoryB	2004
+B1368	MemoryB	1651
+B1370	MemoryB	1808
+B1377	MemoryB	1662
+B1378	MemoryB	1660
+B1385	MemoryB	1641
+B1389	MemoryB	2261
+B1391	MemoryB	2933
+B1394	MemoryB	1815
+B1410	MemoryB	1797
+B1412	MemoryB	2098
+B1415	MemoryB	1808
+B1421	MemoryB	3514
+B1422	MemoryB	2613
+B1423	MemoryB	1786
+B1427	MemoryB	1809
+B1433	MemoryB	2114
+B1436	MemoryB	2605
+B1437	MemoryB	1797
+B1440	MemoryB	1817
+B1442	MemoryB	1984
+B1449	MemoryB	2086
+B1452	MemoryB	1775
+B1457	MemoryB	2177
+B1458	MemoryB	1723
+B1459	MemoryB	2325
+B1462	MemoryB	2343
+B1463	MemoryB	1854
+B1465	MemoryB	1802
+B1471	MemoryB	1862
+B1475	MemoryB	2134
+B1477	MemoryB	1778
+B1478	MemoryB	2056
+B1479	MemoryB	1883
+B1485	MemoryB	1666
+B1490	MemoryB	1779
+B1495	MemoryB	2826
+B1497	MemoryB	2252
+B1507	MemoryB	2252
+B1508	MemoryB	2069
+B1509	MemoryB	1671
+B1514	MemoryB	2452
+B1519	MemoryB	1637
+B1529	MemoryB	1662
+B1536	MemoryB	2110
+B1538	MemoryB	1681
+B1540	MemoryB	1852
+B1548	MemoryB	1840
+B1549	MemoryB	1664
+B1552	MemoryB	1764
+B1563	MemoryB	1649
+B1567	MemoryB	1932
+B1572	MemoryB	1677
+B1574	MemoryB	2845
+B1576	MemoryB	3084
+B1579	MemoryB	1927
+B1580	MemoryB	2119
+B1589	MemoryB	1597
+B1596	MemoryB	1625
+B1597	MemoryB	2678
+B1598	MemoryB	1715
+B1612	MemoryB	1801
+B1623	MemoryB	1818
+B1626	MemoryB	1809
+B1636	MemoryB	2208
+B1642	MemoryB	1921
+B1643	MemoryB	2155
+B1644	MemoryB	1826
+B1649	MemoryB	1957
+B1662	MemoryB	1862
+B1665	MemoryB	2061
+B1676	MemoryB	1933
+B1700	MemoryB	1894
+B1701	MemoryB	1873
+B1706	MemoryB	2294
+B1708	MemoryB	1957
+B1709	MemoryB	2136
+B1714	MemoryB	1713
+B1715	MemoryB	1825
+B1718	MemoryB	1679
+B1724	MemoryB	1804
+B1729	MemoryB	1841
+B1731	MemoryB	2137
+B1742	MemoryB	1689
+B1749	MemoryB	1774
+B1753	MemoryB	2369
+B1758	MemoryB	1728
+B1759	MemoryB	1929
+B1760	MemoryB	1765
+B1770	MemoryB	2190
+B1772	MemoryB	1863
+B1778	MemoryB	1709
+B1780	MemoryB	1650
+B1788	MemoryB	1961
+B1792	MemoryB	2056
+B1793	MemoryB	2087
+B1796	MemoryB	1990
+B1805	MemoryB	2819
+B1806	MemoryB	2355
+B1807	MemoryB	2080
+B1810	MemoryB	2292
+B1812	MemoryB	1850
+B1813	MemoryB	2734
+B1817	MemoryB	1789
+B1820	MemoryB	1963
+B1826	MemoryB	1644
+B1827	MemoryB	2074
+B1829	MemoryB	1771
+B1836	MemoryB	1772
+B1838	MemoryB	2136
+B1841	MemoryB	1676
+B1847	MemoryB	1773
+B1849	MemoryB	1745
+B1866	MemoryB	1771
+B1867	MemoryB	3009
+B1879	MemoryB	1866
+B1883	MemoryB	1740
+B1898	MemoryB	1854
+B1906	MemoryB	1708
+B1908	MemoryB	1523
+B1909	MemoryB	1913
+B1913	MemoryB	2229
+B1936	MemoryB	2523
+B1939	MemoryB	2157
+B1945	MemoryB	1984
+B1950	MemoryB	1847
+B1953	MemoryB	1860
+B1956	MemoryB	1745
+B1963	MemoryB	1654
+B1966	MemoryB	1750
+B1975	MemoryB	1793
+B1977	MemoryB	2532
+B1980	MemoryB	2073
+B1986	MemoryB	1858
+B1987	MemoryB	1824
+B1998	MemoryB	1708
+B2001	MemoryB	1778
+B2002	MemoryB	2052
+B2004	MemoryB	2823
+B2005	MemoryB	1777
+B2006	MemoryB	1875
+B2019	MemoryB	2087
+B2037	MemoryB	2163
+B2039	MemoryB	1753
+B2040	MemoryB	1969
+B2047	MemoryB	2119
+B2050	MemoryB	1692
+B2053	MemoryB	1852
+B2059	MemoryB	1672
+B2060	MemoryB	3701
+B2064	MemoryB	2194
+B2078	MemoryB	2760
+B2096	MemoryB	2418
+B2099	MemoryB	1839
+B2102	MemoryB	1673
+B2108	MemoryB	1693
+B2109	MemoryB	1701
+B2114	MemoryB	2490
+B2116	MemoryB	1721
+B2119	MemoryB	1761
+B2122	MemoryB	1740
+B2130	MemoryB	2117
+B2134	MemoryB	1839
+B2135	MemoryB	1672
+B2137	MemoryB	1820
+B2138	MemoryB	2542
+B2139	MemoryB	1567
+B2148	MemoryB	1712
+B2150	MemoryB	1800
+B2151	MemoryB	1742
+B2154	MemoryB	1644
+B2157	MemoryB	2797
+B2161	MemoryB	1692
+B2163	MemoryB	1701
+B2165	MemoryB	1772
+B2166	MemoryB	1859
+B2168	MemoryB	1690
+B2177	MemoryB	2451
+B2182	MemoryB	3287
+B2189	MemoryB	2047
+B2196	MemoryB	1868
+B2200	MemoryB	1756
+B2203	MemoryB	1746
+B2204	MemoryB	2016
+B2207	MemoryB	2978
+B2212	MemoryB	3195
+B2213	MemoryB	2609
+B2216	MemoryB	1912
+B2217	MemoryB	1799
+B2221	MemoryB	2121
+B2224	MemoryB	1964
+B2226	MemoryB	2338
+B2233	MemoryB	1640
+B2240	MemoryB	2944
+B2243	MemoryB	1734
+B2245	MemoryB	1896
+B2247	MemoryB	2000
+B2248	MemoryB	2373
+B2251	MemoryB	2034
+B2252	MemoryB	1811
+B2256	MemoryB	1821
+B2257	MemoryB	2078
+B2258	MemoryB	1768
+B2260	MemoryB	2354
+B2266	MemoryB	2396
+B2269	MemoryB	2561
+B2271	MemoryB	1888
+B2274	MemoryB	1691
+B2286	MemoryB	1851
+B2288	MemoryB	2165
+B2289	MemoryB	1734
+B2298	MemoryB	1728
+B2303	MemoryB	2184
+B2318	MemoryB	2045
+B2319	MemoryB	1917
+B2321	MemoryB	2087
+B2329	MemoryB	2143
+B2333	MemoryB	3314
+B2337	MemoryB	2520
+B2345	MemoryB	2384
+B2353	MemoryB	1860
+B2356	MemoryB	2481
+B2358	MemoryB	1694
+B2364	MemoryB	2368
+B2367	MemoryB	2469
+B2375	MemoryB	2014
+B2379	MemoryB	1895
+B2383	MemoryB	1859
+B2386	MemoryB	2469
+B2391	MemoryB	1799
+B2394	MemoryB	1698
+B2395	MemoryB	2204
+B2396	MemoryB	2529
+B2409	MemoryB	2074
+B2411	MemoryB	1774
+B2412	MemoryB	2532
+B2430	MemoryB	2552
+B2431	MemoryB	2463
+B2437	MemoryB	3282
+B2438	MemoryB	2342
+B2442	MemoryB	3041
+B2444	MemoryB	1652
+B2447	MemoryB	1827
+B2448	MemoryB	2010
+B2461	MemoryB	2474
+B2462	MemoryB	1976
+B2464	MemoryB	2159
+B2468	MemoryB	2948
+B2470	MemoryB	1860
+B2471	MemoryB	1859
+B2494	MemoryB	1909
+B2499	MemoryB	1937
+B2511	MemoryB	1739
+B2522	MemoryB	2904
+B2525	MemoryB	1983
+B2531	MemoryB	1714
+B2532	MemoryB	1687
+B2535	MemoryB	2511
+B2536	MemoryB	1890
+B2537	MemoryB	1701
+B2538	MemoryB	1699
+B2539	MemoryB	3232
+B2548	MemoryB	1906
+B2557	MemoryB	2637
+B2558	MemoryB	1852
+B2559	MemoryB	1974
+B2576	MemoryB	1658
+B2586	MemoryB	1864
+B2587	MemoryB	1982
+B2590	MemoryB	2096
+B2591	MemoryB	2606
+B2597	MemoryB	1765
+B2598	MemoryB	3262
+B2603	MemoryB	2968
+B2605	MemoryB	1894
+B2613	MemoryB	1780
+B2626	MemoryB	2049
+B2627	MemoryB	1807
+B2631	MemoryB	2569
+B2639	MemoryB	2495
+B2647	MemoryB	2047
+B2649	MemoryB	1798
+B2653	MemoryB	2183
+B2655	MemoryB	1701
+B2656	MemoryB	1710
+B2657	MemoryB	2014
+B2662	MemoryB	1852
+B2667	MemoryB	1693
+B2674	MemoryB	2115
+B2676	MemoryB	1716
+B2677	MemoryB	1761
+B2678	MemoryB	3513
+B2679	MemoryB	2532
+B2681	MemoryB	1777
+B2682	MemoryB	2637
+B2690	MemoryB	2098
+B2695	MemoryB	1685
+B2716	MemoryB	1791
+B2725	MemoryB	2099
+B2729	MemoryB	1893
+B2732	MemoryB	1781
+B2738	MemoryB	2303
+B2740	MemoryB	2023
+B2741	MemoryB	2054
+B2752	MemoryB	2035
+B2755	MemoryB	2110
+B2760	MemoryB	2376
+B2766	MemoryB	1994
+B2774	MemoryB	3011
+B2782	MemoryB	1771
+B2784	MemoryB	1711
+B2786	MemoryB	1981
+B2788	MemoryB	2033
+B2798	MemoryB	1762
+B2809	MemoryB	2469
+B2813	MemoryB	1894
+B2814	MemoryB	1714
+B2817	MemoryB	1787
+B2821	MemoryB	2658
+B2826	MemoryB	1918
+B2828	MemoryB	1665
+B2829	MemoryB	1704
+B2830	MemoryB	1638
+B2831	MemoryB	1638
+B2841	MemoryB	1662
+B2844	MemoryB	2119
+B2849	MemoryB	1724
+B2850	MemoryB	2606
+B2851	MemoryB	1882
+B2853	MemoryB	1670
+B2855	MemoryB	1703
+B2863	MemoryB	2338
+B2864	MemoryB	2718
+B2869	MemoryB	1872
+B2872	MemoryB	1877
+B2877	MemoryB	1859
+B2878	MemoryB	2593
+B2879	MemoryB	1944
+B2880	MemoryB	1933
+B2885	MemoryB	2475
+B2886	MemoryB	2217
+B2892	MemoryB	2697
+B2903	MemoryB	3219
+B2908	MemoryB	1676
+B2912	MemoryB	1671
+B2916	MemoryB	2114
+B2917	MemoryB	1869
+B2925	MemoryB	2370
+B2941	MemoryB	2340
+B2943	MemoryB	1868
+B2947	MemoryB	2739
+B2960	MemoryB	1621
+B2961	MemoryB	1848
+B2970	MemoryB	2267
+B2972	MemoryB	1723
+B2981	MemoryB	1701
+B2982	MemoryB	1823
+B2987	MemoryB	2144
+B2990	MemoryB	1659
+B2995	MemoryB	1887
+B2997	MemoryB	1710
+B3001	MemoryB	2257
+B3003	MemoryB	1762
+B3005	MemoryB	2426
+B3014	MemoryB	2589
+B3025	MemoryB	1874
+B3026	MemoryB	1650
+B3032	MemoryB	1903
+B3037	MemoryB	1843
+B3039	MemoryB	1667
+B3044	MemoryB	3038
+B3048	MemoryB	2170
+B3062	MemoryB	2303
+B3063	MemoryB	2151
+B3064	MemoryB	2272
+B3070	MemoryB	2039
+B3071	MemoryB	1800
+B3076	MemoryB	1929
+B3080	MemoryB	2750
+B3081	MemoryB	1854
+B3083	MemoryB	1620
+B3084	MemoryB	1752
+B3085	MemoryB	1676
+B3088	MemoryB	1670
+B3094	MemoryB	1743
+B3098	MemoryB	1869
+B3106	MemoryB	1688
+B3107	MemoryB	2423
+B3111	MemoryB	2790
+B3113	MemoryB	2343
+B3120	MemoryB	1926
+B3128	MemoryB	2745
+B3136	MemoryB	2882
+B3140	MemoryB	2342
+B3157	MemoryB	2247
+B3158	MemoryB	1836
+B3160	MemoryB	1725
+B3161	MemoryB	2772
+B3163	MemoryB	3610
+B3164	MemoryB	1630
+B3167	MemoryB	2198
+B3178	MemoryB	1749
+B3179	MemoryB	2406
+B3181	MemoryB	2219
+B3183	MemoryB	1655
+B3193	MemoryB	1925
+B3198	MemoryB	1764
+B3205	MemoryB	1736
+B3206	MemoryB	1886
+B3207	MemoryB	1910
+B3211	MemoryB	1864
+B3213	MemoryB	1885
+B3214	MemoryB	1683
+B3221	MemoryB	1808
+B3223	MemoryB	1778
+B3225	MemoryB	1685
+B3226	MemoryB	2479
+B3229	MemoryB	1755
+B3236	MemoryB	1982
+B3240	MemoryB	1670
+B3242	MemoryB	1825
+B3246	MemoryB	1998
+B3247	MemoryB	1804
+B3252	MemoryB	1717
+B3258	MemoryB	2187
+B3264	MemoryB	1938
+B3266	MemoryB	1685
+B3273	MemoryB	2012
+B3274	MemoryB	1789
+B3276	MemoryB	3427
+B3284	MemoryB	1779
+B3295	MemoryB	1707
+B3297	MemoryB	2756
+B3303	MemoryB	1808
+B3306	MemoryB	1694
+B3311	MemoryB	2333
+B3312	MemoryB	2300
+B3313	MemoryB	1913
+B3325	MemoryB	2284
+B3328	MemoryB	2512
+B3329	MemoryB	1682
+B3336	MemoryB	2996
+B3340	MemoryB	1839
+B3345	MemoryB	1810
+B3349	MemoryB	2154
+B3350	MemoryB	1646
+B3351	MemoryB	1849
+B3364	MemoryB	1789
+B3368	MemoryB	2967
+B3372	MemoryB	2066
+B3375	MemoryB	1794
+B3376	MemoryB	2373
+B3378	MemoryB	1698
+B3379	MemoryB	1692
+B3380	MemoryB	2723
+B3382	MemoryB	2137
+B3390	MemoryB	1882
+B3391	MemoryB	1931
+B3394	MemoryB	2015
+B3396	MemoryB	1851
+B3401	MemoryB	2113
+B3402	MemoryB	3547
+B3407	MemoryB	1969
+B3421	MemoryB	2210
+B3424	MemoryB	1774
+B3429	MemoryB	2139
+B3433	MemoryB	2347
+B3437	MemoryB	2304
+B3443	MemoryB	1637
+B3445	MemoryB	1766
+B3448	MemoryB	1808
+B3450	MemoryB	2184
+B3451	MemoryB	1867
+B3453	MemoryB	1931
+B3459	MemoryB	1848
+B3468	MemoryB	2186
+B3480	MemoryB	1816
+B3481	MemoryB	2136
+B3486	MemoryB	2791
+B3488	MemoryB	1793
+B3493	MemoryB	1878
+B3496	MemoryB	2664
+B3497	MemoryB	1810
+B3499	MemoryB	1670
+B3501	MemoryB	2329
+B3511	MemoryB	1852
+B3514	MemoryB	2155
+B3516	MemoryB	1764
+B3517	MemoryB	2029
+B3518	MemoryB	2014
+B3519	MemoryB	2243
+B3520	MemoryB	1861
+B3521	MemoryB	1992
+B3522	MemoryB	1664
+B3526	MemoryB	1889
+B3530	MemoryB	1663
+B3531	MemoryB	1996
+B3532	MemoryB	1956
+B3534	MemoryB	1784
+B3542	MemoryB	1775
+B3543	MemoryB	2509
+B3550	MemoryB	2394
+B3563	MemoryB	2127
+B3564	MemoryB	2591
+B3568	MemoryB	1812
+B3571	MemoryB	1815
+B3574	MemoryB	1895
+B3575	MemoryB	2216
+B3578	MemoryB	1691
+B3583	MemoryB	2021
+B3594	MemoryB	1915
+B3599	MemoryB	1596
+B3601	MemoryB	2723
+B3602	MemoryB	1749
+B3604	MemoryB	1642
+B3611	MemoryB	1750
+B3613	MemoryB	1810
+B3614	MemoryB	1706
+B3617	MemoryB	2348
+B3618	MemoryB	2261
+B3619	MemoryB	1732
+B3622	MemoryB	1834
+B3628	MemoryB	1841
+B3629	MemoryB	2891
+B3634	MemoryB	1979
+B3635	MemoryB	1711
+B3637	MemoryB	1750
+B3641	MemoryB	1674
+B3646	MemoryB	2348
+B3655	MemoryB	1673
+B3658	MemoryB	2729
+B3666	MemoryB	1691
+B3673	MemoryB	2183
+B3674	MemoryB	1654
+B3683	MemoryB	2143
+B3690	MemoryB	1630
+B3694	MemoryB	1782
+B3695	MemoryB	1685
+B3699	MemoryB	1952
+B3700	MemoryB	2668
+B3704	MemoryB	2581
+B3706	MemoryB	2339
+B3712	MemoryB	1797
+B3716	MemoryB	1740
+B3721	MemoryB	1795
+B3733	MemoryB	1982
+B3736	MemoryB	1644
+B3737	MemoryB	2672
+B3738	MemoryB	2126
+B3740	MemoryB	1639
+B3741	MemoryB	1642
+B3746	MemoryB	1921
+B3768	MemoryB	2695
+B3780	MemoryB	3050
+B3781	MemoryB	1774
+B3784	MemoryB	1862
+B3786	MemoryB	2481
+B3787	MemoryB	1970
+B3792	MemoryB	1996
+B3808	MemoryB	1776
+B3812	MemoryB	2630
+B3814	MemoryB	1898
+B3826	MemoryB	2169
+B3827	MemoryB	2006
+B3828	MemoryB	2160
+B3833	MemoryB	2425
+B3839	MemoryB	1770
+B3840	MemoryB	1870
+B3843	MemoryB	1741
+B3858	MemoryB	3019
+B3865	MemoryB	1946
+B3870	MemoryB	1632
+B3877	MemoryB	1787
+B3879	MemoryB	1709
+B3880	MemoryB	1635
+B3883	MemoryB	1764
+B3885	MemoryB	1776
+B3902	MemoryB	2652
+B3906	MemoryB	1709
+B3918	MemoryB	2329
+B3930	MemoryB	1721
+B3933	MemoryB	1932
+B3934	MemoryB	1758
+B3939	MemoryB	1643
+B3942	MemoryB	1755
+B3948	MemoryB	1725
+B3950	MemoryB	2192
+B3967	MemoryB	1741
+B3971	MemoryB	1697
+B3976	MemoryB	1801
+B3977	MemoryB	2099
+B3979	MemoryB	2497
+B3980	MemoryB	1814
+B3981	MemoryB	1826
+B3985	MemoryB	2557
+B3988	MemoryB	1701
+B3991	MemoryB	1814
+B4002	MemoryB	1807
+B4004	MemoryB	1829
+B4006	MemoryB	1884
+B4007	MemoryB	1937
+B4011	MemoryB	1878
+B4019	MemoryB	2773
+B4021	MemoryB	1825
+B4023	MemoryB	1820
+B4025	MemoryB	2016
+B4027	MemoryB	2520
+B4032	MemoryB	1631
+B4043	MemoryB	2224
+B4045	MemoryB	1704
+B4046	MemoryB	2491
+B4047	MemoryB	1739
+B4048	MemoryB	1938
+B4049	MemoryB	1894
+B4053	MemoryB	3498
+B4055	MemoryB	2170
+B4061	MemoryB	2112
+B4062	MemoryB	1689
+B4063	MemoryB	2567
+B4071	MemoryB	1746
+B4074	MemoryB	1865
+B4076	MemoryB	2010
+B4084	MemoryB	1740
+B4085	MemoryB	3405
+B4095	MemoryB	1940
+B4098	MemoryB	2134
+B4099	MemoryB	2066
+B4101	MemoryB	1814
+B4102	MemoryB	2135
+B4109	MemoryB	2454
+B4115	MemoryB	1786
+B4117	MemoryB	1974
+B4125	MemoryB	1781
+B4126	MemoryB	2977
+B4131	MemoryB	1898
+B4132	MemoryB	1712
+B4133	MemoryB	1701
+B4135	MemoryB	2034
+B4146	MemoryB	1821
+B4152	MemoryB	2148
+B4157	MemoryB	1868
+B4166	MemoryB	1667
+B4169	MemoryB	1912
+B4173	MemoryB	1759
+B4176	MemoryB	2380
+B4179	MemoryB	1720
+B4180	MemoryB	3253
+B4183	MemoryB	2329
+B4186	MemoryB	2486
+B4189	MemoryB	1636
+B4190	MemoryB	1788
+B4192	MemoryB	2157
+B4196	MemoryB	2458
+B4197	MemoryB	2838
+B4200	MemoryB	2541
+B4201	MemoryB	2263
+B4203	MemoryB	2324
+B4209	MemoryB	2319
+B4210	MemoryB	1898
+B4211	MemoryB	1696
+B4213	MemoryB	1877
+B4214	MemoryB	2519
+B4225	MemoryB	1658
+B4230	MemoryB	1812
+B4237	MemoryB	2045
+B4239	MemoryB	2461
+B4241	MemoryB	1772
+B4242	MemoryB	1700
+B4245	MemoryB	1979
+B4248	MemoryB	2343
+B4253	MemoryB	1756
+B4258	MemoryB	2074
+B4266	MemoryB	2791
+B4274	MemoryB	1826
+B4279	MemoryB	1970
+B4280	MemoryB	1830
+B4282	MemoryB	1785
+B4289	MemoryB	2028
+B4291	MemoryB	1891
+B4306	MemoryB	1743
+B4309	MemoryB	3007
+B4310	MemoryB	2275
+B4319	MemoryB	1660
+B4321	MemoryB	1649
+B4324	MemoryB	2590
+B4325	MemoryB	2515
+B4326	MemoryB	1693
+B4329	MemoryB	1803
+B4336	MemoryB	1741
+B4337	MemoryB	1858
+B4343	MemoryB	1802
+B4351	MemoryB	1671
