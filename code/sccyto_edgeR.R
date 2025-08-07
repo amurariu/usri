@@ -19,4 +19,4 @@ sccyto.filt <- sccyto[apply(sccyto, 1, function(x){length(which(x != 0))/length(
 
 # run edgeR then save
 sccyto.data.edgeR <- edg.fun(data = as.matrix(sccyto.filt), conditions = sccyto.conds$comparison, nloop = 100)
-save(sccyto.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/sccyto.data.edgeR.Rda") 
+save(sccyto.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/sccyto.data.edger.Rda") 
