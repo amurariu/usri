@@ -558,8 +558,8 @@ $out_path/ext_analysis/hiv.data.aldex2_5.Rda : code/hiv_aldex2_5.R
 $out_path/ext_analysis/mar.data.aldex2_5.Rda : code/mar_aldex2_5.R 
 	Rscript 'code/mar_aldex2_5.R' 
 	
-$out_path/ext_analysis/sscyto.data.aldex2_5.Rda : code/sscyto_aldex2_5.R 
-	Rscript 'code/sscyto_aldex2_5.R'
+$out_path/ext_analysis/sccyto.data.aldex2_5.Rda : code/sccyto_aldex2_5.R 
+	Rscript 'code/sccyto_aldex2_5.R'
 
 $out_path/ext_analysis/oral.data.aldex2_5.Rda : code/oral_aldex2_5.R 
 	Rscript 'code/oral_aldex2_5.R'
