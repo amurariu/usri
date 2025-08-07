@@ -21,6 +21,6 @@ keep_brca <- filterByExpr(y_brca)
 y_brca <- y_brca[keep_brca,keep.lib.sizes=FALSE]
 brca.data <- y_brca$counts #filtered base dataset
 
-#BRCA function
+# run deseq, then save
 brca.data.DESeq <- des.fun(data = brca.data, nloop = 100, conditions = brca.conds$conditions_b) 
-save(brca.data.DESeq, file="../ext_analysis/brca.data.deseq.Rda")
+save(brca.data.DESeq, file="/Volumes/data2/andreea/ext_analysis/brca.data.deseq.Rda")

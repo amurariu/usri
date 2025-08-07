@@ -19,6 +19,6 @@ keep_luad <- filterByExpr(y_luad)
 y_luad <- y_luad[keep_luad,keep.lib.sizes=FALSE]
 luad.data <- y_luad$counts #filtered base dataset
 
-#save file - gamma=1e-3
+#save file - gamma = 0.1
 luad.data_1.aldex2 <- ald2.fun(data=luad.data, conditions=luad.conds$conditions_lu, nloop=100, gamma=0.1)
-save(luad.data_1.aldex2, file="../ext_analysis/luad.data.aldex2_1.Rda")
+save(luad.data_1.aldex2, file="/Volumes/data2/andreea/ext_analysis/luad.data.aldex2_1.Rda")

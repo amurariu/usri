@@ -19,5 +19,6 @@ keep_thca <- filterByExpr(y_thca)
 y_thca <- y_thca[keep_thca,keep.lib.sizes=FALSE]
 thca.data <- y_thca$counts #filtered base dataset
 
+#save file - gamma = 0.1
 thca.data_1.aldex3 <- ald3.fun(data=thca.data, conds=thca.conds$conditions_t, nloop=100, gamma=0.1)
 save(thca.data_1.aldex3, file="/Volumes/data2/andreea/ext_analysis/thca.data.aldex3_1.Rda")

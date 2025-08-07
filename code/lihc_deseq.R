@@ -19,6 +19,6 @@ keep_lihc <- filterByExpr(y_lihc)
 y_lihc <- y_lihc[keep_lihc,keep.lib.sizes=FALSE]
 lihc.data <- y_lihc$counts 
 
-#LIHC function
+# run deseq and save
 lihc.data.DESeq <- des.fun(data = lihc.data, nloop = 100, conditions = lihc.conds$conditions_li)
-save(lihc.data.DESeq, file="../ext_analysis/lihc.data.deseq.Rda")
+save(lihc.data.DESeq, file="/Volumes/data2/andreea/ext_analysis/lihc.data.deseq.Rda")

@@ -20,5 +20,6 @@ keep_kirc <- filterByExpr(y_kirc)
 y_kirc <- y_kirc[keep_kirc,keep.lib.sizes=FALSE]
 kirc.data <- y_kirc$counts #filtered base dataset
 
+#save file - gamma = 1e-3
 kirc.data_0.aldex3 <- ald3.fun(data=kirc.data, conds=kirc.conds$conditions_k, nloop=100, gamma=1e-3)
 save(kirc.data_0.aldex3, file="/Volumes/data2/andreea/ext_analysis/kirc.data.aldex3_0.Rda")

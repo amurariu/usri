@@ -17,5 +17,6 @@ keep_prad <- filterByExpr(y_prad)
 y_prad <- y_prad[keep_prad,keep.lib.sizes=FALSE]
 prad.data <- y_prad$counts #filtered base dataset
 
+# run limma then save
 prad.data.limma <- lim.fun(prad.data, prad.conds, 100, mean = 0)
-save(prad.data.limma, file="../ext_analysis/prad.data.limma.Rda") 
+save(prad.data.limma, file="/Volumes/data2/andreea/ext_analysis/prad.data.limma.Rda") 

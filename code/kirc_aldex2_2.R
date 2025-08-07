@@ -22,4 +22,4 @@ kirc.data <- y_kirc$counts #filtered base dataset
 
 #save file - gamma=0.2
 kirc.data_2.aldex2 <- ald2.fun(data=kirc.data, conditions=kirc.conds$conditions_k, nloop=100, gamma = 0.2)
-save(kirc.data_2.aldex2, file="../ext_analysis/kirc.data.aldex2_2.Rda")
+save(kirc.data_2.aldex2, file="/Volumes/data2/andreea/ext_analysis/kirc.data.aldex2_2.Rda")

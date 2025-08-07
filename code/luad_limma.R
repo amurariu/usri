@@ -17,5 +17,6 @@ keep_luad <- filterByExpr(y_luad)
 y_luad <- y_luad[keep_luad,keep.lib.sizes=FALSE]
 luad.data <- y_luad$counts #filtered base dataset
 
+# run limma then save file
 luad.data.limma <- lim.fun(luad.data, luad.conds, 100, mean = 0)
-save(luad.data.limma, file="../ext_analysis/luad.data.limma.Rda") 
+save(luad.data.limma, file="/Volumes/data2/andreea/ext_analysis/luad.data.limma.Rda") 

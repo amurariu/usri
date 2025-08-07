@@ -1,6 +1,5 @@
 library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
-library(DESeq2, warn.conflicts=F)
 
 source('code/edg.fun.R')
 
@@ -19,5 +18,6 @@ keep_lihc <- filterByExpr(y_lihc)
 y_lihc <- y_lihc[keep_lihc,keep.lib.sizes=FALSE]
 lihc.data <- y_lihc$counts 
 
+# run edgeR and save
 lihc.data.edgeR <- edg.fun(lihc.data, lihc.conds, 100)
-save(lihc.data.edgeR, file="../ext_analysis/lihc.data.edger.Rda")
+save(lihc.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/lihc.data.edger.Rda")

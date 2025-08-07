@@ -20,6 +20,6 @@ keep_kirc <- filterByExpr(y_kirc)
 y_kirc <- y_kirc[keep_kirc,keep.lib.sizes=FALSE]
 kirc.data <- y_kirc$counts
 
-#KIRC function
+# run deseq2 then save
 kirc.data.DESeq <- des.fun(data = kirc.data, nloop = 100, conditions = kirc.conds$conditions_k)
-save(kirc.data.DESeq, file="../ext_analysis/kirc.data.deseq.Rda") 
+save(kirc.data.DESeq, file="/Volumes/data2/andreea/ext_analysis/kirc.data.deseq.Rda") 

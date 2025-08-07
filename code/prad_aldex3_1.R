@@ -19,5 +19,6 @@ keep_prad <- filterByExpr(y_prad)
 y_prad <- y_prad[keep_prad,keep.lib.sizes=FALSE]
 prad.data <- y_prad$counts #filtered base dataset
 
+#save file - gamma = 0.1
 prad.data_1.aldex3 <- ald3.fun(data=prad.data, conds=prad.conds$conditions_pr, nloop=100, gamma=0.1)
 save(prad.data_1.aldex3, file="/Volumes/data2/andreea/ext_analysis/prad.data.aldex3_1.Rda")

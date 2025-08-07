@@ -19,5 +19,6 @@ keep_kirc <- filterByExpr(y_kirc)
 y_kirc <- y_kirc[keep_kirc,keep.lib.sizes=FALSE]
 kirc.data <- y_kirc$counts 
 
+# run edgeR then save
 kirc.data.edgeR <- edg.fun(kirc.data, kirc.conds, 100)
-save(kirc.data.edgeR, file="../ext_analysis/kirc.data.edger.Rda")
+save(kirc.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/kirc.data.edger.Rda")

@@ -20,5 +20,6 @@ keep_brca <- filterByExpr(y_brca)
 y_brca <- y_brca[keep_brca,keep.lib.sizes=FALSE]
 brca.data <- y_brca$counts 
 
+# run edgeR, then save
 brca.data.edgeR <- edg.fun(brca.data, brca.conds, 100)
-save(brca.data.edgeR, file="../ext_analysis/brca.data.edger.Rda")
+save(brca.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/brca.data.edger.Rda")
