@@ -372,7 +372,7 @@ $out_path/ext_analysis/prad.data.edger.Rda : code/prad_edgeR.R
 $out_path/ext_analysis/thca.data.edger.Rda : code/thca_edgeR.R 
 	Rscript 'code/thca_edgeR.R' 'code/edg.fun.R'
 
-$out_path/ext_analysis/sccyto.data.edger.Rda : code/sccyto_edgeR.R 
+$out_path/ext_analysis/sccyto.data.edgeR.Rda : code/sccyto_edgeR.R 
 	Rscript 'code/sccyto_edgeR.R' 
 
 $out_path/ext_analysis/oral.data.edger.Rda : code/oral_edgeR.R 
