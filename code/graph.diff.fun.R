@@ -4,10 +4,10 @@ source('code/get_confusion.R')
 
 graph.diff.fun <- function(var1, var2){
   
-ald0.conf <- get_confusion(immuno.data_0.aldex2, "ALDEx2", FDR=0.1)
+ald0.conf <- get_confusion(immuno.data_0.aldex2, "ALDEx2", FDR=0.1) #remember to change this to make this general var1/2 later
 ald3_0.conf <- get_confusion(immuno.data_0.aldex3, "ALDEx3", FDR=0.1)
 
-diff.between.1 = ald3_0.conf$diff_coeff[[1]] - ald0.conf$diff_coeff[[1]]
+diff.between.1 = ald3_0.conf$diff_coeff[[1]] - ald0.conf$diff_coeff[[1]] #getting the difference between at each coefficient for each of the 100 iterations
 diff.between.2 = ald3_0.conf$diff_coeff[[2]] - ald0.conf$diff_coeff[[2]]
 diff.between.3 = ald3_0.conf$diff_coeff[[3]] - ald0.conf$diff_coeff[[3]]
 diff.between.4 = ald3_0.conf$diff_coeff[[4]] - ald0.conf$diff_coeff[[4]]
@@ -19,7 +19,7 @@ diff.between.9 = ald3_0.conf$diff_coeff[[9]] - ald0.conf$diff_coeff[[9]]
 diff.between.10 = ald3_0.conf$diff_coeff[[10]] - ald0.conf$diff_coeff[[10]]
 diff.between.11 = ald3_0.conf$diff_coeff[[11]] - ald0.conf$diff_coeff[[11]]
 
-combined = list(diff.between.0, diff.between.1, diff.between.2, diff.between.3, diff.between.4, diff.between.5, diff.between.6, diff.between.7, diff.between.8, diff.between.9, diff.between.10)
+combined = list(diff.between.1, diff.between.2, diff.between.3, diff.between.4, diff.between.5, diff.between.6, diff.between.7, diff.between.8, diff.between.9, diff.between.10, diff.between.11)
 
 coef <- as.numeric(names(ald0.conf$diff_zero))
 
@@ -28,6 +28,13 @@ diff.tpr.ald23 <- as.data.frame(matrix(data = NA, nrow = 100, ncol = 10))
 for(i in 1:length(coef)){
   temp <- get(paste0("diff.between.", i))
   diff.tpr.ald23[,i] <- abs(temp[,6])
+}
+
+diff.fdr.ald23 <- as.data.frame(matrix(data = NA, nrow = 100, ncol = 10))
+
+for(i in 1:length(coef)){
+  temp <- get(paste0("diff.between.", i))
+  diff.fdr.ald23[,i] <- abs(temp[,7])
 }
 
 
@@ -58,7 +65,7 @@ for(i in 1:length(coef)){
 par(mfrow=c(1,2))
 
 #ALDEx3 panel
-plot(coef, TPR_raw3[1,], col=rgb(0,0.2,0.4,0.2), ylim=c(0,1), type='l', main = 'ALDEx3')
+plot(coef, TPR_raw3[1,], col=rgb(0,0.2,0.4,0.2), ylim=c(0,1), type='l', main = 'ALDEx3 FDR and TPR \nwith γ = 0', ylab = "TPR/FDR", xlab = "modelled LFC" )
 points(coef, FDR_raw3[1,], col=rgb(0,0.6,1,0.2), type='l')
 points(coef, TPR_03[1,], col=rgb(1,0.2,0.4,0.2), type='l')
 points(coef, FDR_03[1,], col=rgb(0.8,0.2,0.6,0.2), type='l')
@@ -71,7 +78,13 @@ for(i in 2:nrow(TPR_raw)){
 }
 
 #diff.between panel
-plot(coef, diff.tpr.ald23[1,], ylim = c(0,0.04), col=rgb(0,0,0,0.2), type='l', main = 'difference between')
+plot(coef, diff.tpr.ald23[1,], ylim = c(0,0.04), col=rgb(0,0,0.5,0.2), type='l', main = 'Difference between TPR and FDR \nof ALDEx2 and ALDEx3 ', xlab = "modelled LFC", ylab = "difference between TPR/FDR")
 
-for(i in 1:nrow(diff.tpr.ald23)){points(coef, diff.tpr.ald23[i,], ylim = c(0,0.04), col=rgb(0,0,0,0.2), type='l')}
+for(i in 1:nrow(diff.tpr.ald23)){points(coef, diff.tpr.ald23[i,], ylim = c(0,0.04), col=rgb(0,0,0.5,0.2), type='l')}
+
+
+for(i in 1:nrow(diff.fdr.ald23)){points(coef, diff.fdr.ald23[i,], ylim = c(0,0.04), col=rgb(0.8,0,0,0.2), type='l')}
+
+
+
 }

@@ -91,6 +91,19 @@ load ("~/Documents/github/ext_analysis/thca.data.limma.Rda")
 load("~/Documents/github/ext_analysis/thca.data.deseq.Rda") 
 load("~/Documents/github/ext_analysis/thca.data.edger.Rda")
 
+
+load("~/Documents/github/ext_analysis/mts.data.aldex2_0.Rda")
+load("~/Documents/github/ext_analysis/mts.data.aldex2_1.Rda")
+load("~/Documents/github/ext_analysis/mts.data.aldex2_2.Rda")
+load("~/Documents/github/ext_analysis/mts.data.aldex2_5.Rda")
+load("~/Documents/github/ext_analysis/mts.data.aldex3_0.Rda")
+load("~/Documents/github/ext_analysis/mts.data.aldex3_1.Rda")
+load("~/Documents/github/ext_analysis/mts.data.aldex3_2.Rda")
+load("~/Documents/github/ext_analysis/mts.data.aldex3_5.Rda")
+load ("~/Documents/github/ext_analysis/mts.data.limma.Rda")
+load("~/Documents/github/ext_analysis/mts.data.deseq.Rda") 
+load("~/Documents/github/ext_analysis/mts.data.edger.Rda")
+
 ```
 
 ```{r}
@@ -98,6 +111,13 @@ load("~/Documents/github/ext_analysis/thca.data.edger.Rda")
 
 source('~/Documents/github/usri/code/graph.diff.fun.R')
 graph.diff.fun(immuno.data_0.aldex2, immuno.data_0.aldex3)
+
+
+source('~/Documents/github/usri/code/graph.diff.fun.R')
+
+graph2.fun(DESeq_var = kirc.data.DESeq, edgeR_var = kirc.data.edgeR, limma_var = kirc.data.limma, aldex_0_var = kirc.data_0.aldex2, aldex_1_var = kirc.data_1.aldex2, aldex_2_var = kirc.data_2.aldex2, aldex_5_var = kirc.data_5.aldex2, aldex3_0_var = kirc.data_0.aldex3, aldex3_1_var = kirc.data_1.aldex3, aldex3_2_var = kirc.data_2.aldex3, aldex3_5_var = kirc.data_5.aldex3)
+
+graph2.fun(DESeq_var = mts.data.DESeq, edgeR_var = mts.data.edgeR, limma_var = mts.data.limma, aldex_0_var = mts.data_0.aldex2, aldex_1_var = mts.data_1.aldex2, aldex_2_var = mts.data_2.aldex2, aldex_5_var = mts.data_5.aldex2, aldex3_0_var = mts.data_0.aldex3, aldex3_1_var = mts.data_1.aldex3, aldex3_2_var = mts.data_2.aldex3, aldex3_5_var = mts.data_5.aldex3)
 
 ```
 

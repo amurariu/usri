@@ -3,10 +3,6 @@
 
 out_path="/Volumes/data2/andreea"
 
-
-$out_path/ext_analysis/sccyto.data.aldex2_0.Rda : code/sccyto_aldex2_0.R 
-	Rscript 'code/sccyto_aldex2_0.R' 
-
 DESeq_immuno: $out_path/ext_analysis/immuno.data.deseq.Rda
 DESeq_brca: $out_path/ext_analysis/brca.data.deseq.Rda
 DESeq_kirc: $out_path/ext_analysis/kirc.data.deseq.Rda
