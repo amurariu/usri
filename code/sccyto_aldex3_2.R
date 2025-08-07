@@ -1,7 +1,7 @@
+devtools::load_all('~/Documents/ALDEx3')
 library(seqgendiff, warn.conflicts=F)
-library(edgeR, warn.conflicts=F)
 
-source('code/lim.fun.R')
+source('code/ald3.fun.R')
 
 #####
 # sc_cyto dataset
@@ -14,8 +14,9 @@ sccyto <- read.table(file=raw_counts_sccyto, header=T, row.names=1, sep='\t')
 conditions_s <- read.table(file=conds_sccyto, sep='\t', row.names = 1, header = T)
 sccyto.conds <- data.frame(conditions_s) 
 
-# filter to remove any ASV present in <10 % of samples
+# filter to remove any gene present in <10 % of samples
 sccyto.filt <- sccyto[apply(sccyto, 1, function(x){length(which(x != 0))/length(x)} >0.1),]
 
-sccyto.data.limma <- lim.fun(data = as.matrix(sccyto.filt), conditions = conditions_s$comparison, nloop = 100, mean = 0, prop_null = 0.95)
-save(sccyto.data.limma, file="/Volumes/data2/andreea/ext_analysis/sccyto.data.limma.Rda") 
+# run using gamma = 0.2 and save to .Rda
+sccyto.data_2.aldex3 <- ald3.fun(data=as.matrix(sccyto.filt), conds=conditions_s$comparison, nloop=100, gamma=0.2, prop_null = 0.95, mean = 0)
+save(sccyto.data_2.aldex3, file="/Volumes/data2/andreea/ext_analysis/sccyto.data.aldex3_2.Rda")
