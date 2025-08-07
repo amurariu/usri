@@ -14,8 +14,9 @@ sccyto <- read.table(file=raw_counts_sccyto, header=T, row.names=1, sep='\t')
 conditions_s <- read.table(file=conds_sccyto, sep='\t', row.names = 1, header = T)
 sccyto.conds <- data.frame(conditions_s) 
 
-# filter to remove any ASV present in <10 % of samples
+# filter to remove any gene present in <10 % of samples
 sccyto.filt <- sccyto[apply(sccyto, 1, function(x){length(which(x != 0))/length(x)} >0.1),]
 
-sccyto.data_5.aldex2 <- ald2.fun(data=as.matrix(sccyto.filt), conditions=sccyto.conds$comparison, nloop=100, gamma=0.5)
-save(sccyto.data_5.aldex2, file="/Volumes/data2/andreea/ext_analysis/sccyto.data.aldex2_5.Rda")
+# run using gamma = 0.1 and save to .Rda
+sccyto.data_1.aldex2 <- ald2.fun(data=as.matrix(sccyto.filt), conditions=sccyto.conds$comparison, nloop=100, gamma=0.1)
+save(sccyto.data_1.aldex2, file="/Volumes/data2/andreea/ext_analysis/sccyto.data.aldex2_1.Rda")

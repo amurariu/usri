@@ -24,7 +24,7 @@ mts.counts <- as.matrix(mts.counts)
 
 # generate results for thinned +/- randomised mts data, 100 times, plus 1x
 # non-randomised, non-thinned (i.e. original data)
-mts.data.aldex3.2 <- ald3.fun(data = mts.counts, nloop = 100,
+mts.data_2.aldex3 <- ald3.fun(data = mts.counts, nloop = 100,
                               conds = mts.meta$groups.2, gamma = 0.2, prop_null = 0.95, mean = 0)
 
-save(mts.data.aldex3.2, file = "/Volumes/data2/andreea/ext_analysis/mts.data.aldex3_2.Rda")
+save(mts.data_2.aldex3, file = "/Volumes/data2/andreea/ext_analysis/mts.data.aldex3_2.Rda")

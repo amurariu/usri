@@ -19,6 +19,6 @@ keep_luad <- filterByExpr(y_luad)
 y_luad <- y_luad[keep_luad,keep.lib.sizes=FALSE]
 luad.data <- y_luad$counts 
 
-#LUAD function
+# run deseq then save file
 luad.data.DESeq <- des.fun(data = luad.data, nloop = 100, conditions = luad.conds$conditions_lu) 
-save(luad.data.DESeq, file="../ext_analysis/luad.data.deseq.Rda")
+save(luad.data.DESeq, file="/Volumes/data2/andreea/ext_analysis/luad.data.deseq.Rda")

@@ -19,6 +19,6 @@ keep_thca <- filterByExpr(y_thca)
 y_thca <- y_thca[keep_thca,keep.lib.sizes=FALSE]
 thca.data <- y_thca$counts 
 
-#THCA function
+# run deseq2 then save
 thca.data.DESeq <- des.fun(data = thca.data, nloop = 100, conditions = thca.conds$conditions_t)
-save(thca.data.DESeq, file="../ext_analysis/thca.data.deseq.Rda")
+save(thca.data.DESeq, file="/Volumes/data2/andreea/ext_analysis/thca.data.deseq.Rda")

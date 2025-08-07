@@ -21,6 +21,6 @@ keep_lihc <- filterByExpr(y_lihc)
 y_lihc <- y_lihc[keep_lihc,keep.lib.sizes=FALSE]
 lihc.data <- y_lihc$counts #filtered base dataset
 
-#save file - gamma=0.2
+#save file - gamma = 0.2
 lihc.data_2.aldex2 <- ald2.fun(data=lihc.data, conditions=lihc.conds$conditions_li, nloop=100, gamma = 0.2)
-save(lihc.data_2.aldex2, file="../ext_analysis/lihc.data.aldex2_2.Rda")
+save(lihc.data_2.aldex2, file="/Volumes/data2/andreea/ext_analysis/lihc.data.aldex2_2.Rda")

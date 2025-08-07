@@ -1,6 +1,5 @@
 library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
-library(DESeq2, warn.conflicts=F)
 
 source('code/edg.fun.R')
 
@@ -19,5 +18,6 @@ keep_thca <- filterByExpr(y_thca)
 y_thca <- y_thca[keep_thca,keep.lib.sizes=FALSE]
 thca.data <- y_thca$counts 
 
+# run edgeR then save
 thca.data.edgeR <- edg.fun(thca.data, thca.conds, 100)
-save(thca.data.edgeR, file="../ext_analysis/thca.data.edger.Rda")
+save(thca.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/thca.data.edger.Rda")

@@ -19,6 +19,6 @@ keep_prad <- filterByExpr(y_prad)
 y_prad <- y_prad[keep_prad,keep.lib.sizes=FALSE]
 prad.data <- y_prad$counts 
 
-#PRAD function
+# run deseq2 then save
 prad.data.DESeq <- des.fun(data = prad.data, nloop = 100, conditions = prad.conds$conditions_pr)
-save(prad.data.DESeq, file="../ext_analysis/prad.data.deseq.Rda") 
+save(prad.data.DESeq, file="/Volumes/data2/andreea/ext_analysis/prad.data.deseq.Rda") 

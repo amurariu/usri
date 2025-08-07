@@ -1,6 +1,5 @@
 library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
-library(DESeq2, warn.conflicts=F)
 
 source('code/edg.fun.R')
 
@@ -19,5 +18,6 @@ keep_prad <- filterByExpr(y_prad)
 y_prad <- y_prad[keep_prad,keep.lib.sizes=FALSE]
 prad.data <- y_prad$counts 
 
+# run edgeR then save
 prad.data.edgeR <- edg.fun(prad.data, prad.conds, 100)
-save(prad.data.edgeR, file="../ext_analysis/prad.data.edger.Rda")
+save(prad.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/prad.data.edger.Rda")

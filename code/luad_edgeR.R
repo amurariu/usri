@@ -1,6 +1,5 @@
 library(seqgendiff, warn.conflicts=F)
 library(edgeR, warn.conflicts=F)
-library(DESeq2, warn.conflicts=F)
 
 source('code/edg.fun.R')
 
@@ -19,5 +18,6 @@ keep_luad <- filterByExpr(y_luad)
 y_luad <- y_luad[keep_luad,keep.lib.sizes=FALSE]
 luad.data <- y_luad$counts 
 
+# run edgeR then save file
 luad.data.edgeR <- edg.fun(luad.data, luad.conds, 100)
-save(luad.data.edgeR, file="../ext_analysis/luad.data.edger.Rda")
+save(luad.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/luad.data.edger.Rda")

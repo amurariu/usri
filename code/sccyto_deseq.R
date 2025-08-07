@@ -18,6 +18,6 @@ sccyto.conds <- data.frame(conditions_s)
 sccyto.filt <- sccyto[apply(sccyto, 1, function(x){length(which(x != 0))/length(x)} >0.1),]
 sccyto.filt <- sccyto.filt+1
 
-# function
+# run deseq2 then save
 sccyto.data.DESeq <- des.fun(data = sccyto.filt, nloop = 100, conditions = conditions_s$comparison)
 save(sccyto.data.DESeq, file="/Volumes/data2/andreea/ext_analysis/sccyto.data.deseq.Rda") 
