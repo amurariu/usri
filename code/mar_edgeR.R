@@ -20,4 +20,4 @@ mar.filt <- mar[apply(mar, 1, function(x){length(which(x != 0))/length(x)} >0.1)
 
 # function
 mar.data.edgeR <- edg.fun(data = as.matrix(mar.filt), conditions = mar.conds$comparison, nloop = 100)
-save(mar.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/mar.data.edgeR.Rda") 
+save(mar.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/mar.data.edger.Rda") 

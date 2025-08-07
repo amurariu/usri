@@ -18,4 +18,4 @@ fre.filt <- fre[apply(fre, 1, function(x){length(which(x != 0))/length(x)} >0.1)
 
 # function
 fre.data.edgeR <- edg.fun(data = as.matrix(fre.filt), conditions = fre.conds$comparison, nloop = 100)
-save(fre.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/fre.data.edgeR.Rda") 
+save(fre.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/fre.data.edger.Rda") 

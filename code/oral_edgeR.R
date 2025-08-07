@@ -19,4 +19,4 @@ oral.filt <- oral[apply(oral, 1, function(x){length(which(x != 0))/length(x)} >0
 
 # function
 oral.data.edgeR <- des.fun(data = oral.filt, nloop = 100, conditions = conditions_o$comparison)
-save(oral.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/oral.data.edgeR.Rda") 
+save(oral.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/oral.data.edger.Rda") 

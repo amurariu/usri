@@ -21,4 +21,4 @@ sccyto.filt <- as.matrix(sccyto.filt)
 
 # run edgeR then save
 sccyto.data.edgeR <- edg.fun(data = sccyto.filt, conditions = conditions_s$group, nloop = 100)
-save(sccyto.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/sccyto.data.edgeR.Rda") 
+save(sccyto.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/sccyto.data.edger.Rda") 

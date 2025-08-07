@@ -19,4 +19,4 @@ hiv.filt <- hiv[apply(hiv, 1, function(x){length(which(x != 0))/length(x)} >0.1)
 
 # function
 hiv.data.edgeR <- edg.fun(data = as.matrix(hiv.filt), conditions = hiv.conds$comparison, nloop = 100)
-save(hiv.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/hiv.data.edgeR.Rda") 
+save(hiv.data.edgeR, file="/Volumes/data2/andreea/ext_analysis/hiv.data.edger.Rda") 
