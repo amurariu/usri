@@ -17,6 +17,7 @@ oral.conds <- data.frame(conditions_o)
 # filter to remove any ASV present in <10 % of samples
 oral.filt <- oral[apply(oral, 1, function(x){length(which(x != 0))/length(x)} >0.1),]
 oral.filt <- oral.filt+1
+oral.filt <- as.matrix(oral.filt)
 
 # function
 oral.data.DESeq <- des.fun(data = oral.filt, nloop = 100, conditions = conditions_o$comparison)
