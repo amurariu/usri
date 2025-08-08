@@ -14,6 +14,7 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(stringr)
+library(RColorBrewer)
 
 # local directory where analysis results live (all too large for GH)
 data <- "~/Documents/GitHub/ext_analysis/"
@@ -136,31 +137,30 @@ plot.df <- plot.df %>%
 # delete tpfpr objects and temporary objects
 rm(list = c("tmplist", "i", ls(pattern = "tpfpr")))
 
-# # filter dataframe for TPR & FDR values (using the different definitions of
-# # true negatives and with/without a threshold of 0.5)
-# plot.cFDR0 <- plot.df %>% 
-#   filter(metric == "cFDR0")
-# 
-# plot.cTPR0 <- plot.df %>% 
-#   filter(metric == "cTPR0")
-# 
-# plot.cFDR5 <- plot.df %>% 
-#   filter(metric == "cFDR5")
-# 
-# plot.cTPR5 <- plot.df %>% 
-#   filter(metric == "cTPR5")
-# 
-# plot.zFDR0 <- plot.df %>% 
-#   filter(metric == "zFDR0")
-# 
-# plot.zTPR0 <- plot.df %>% 
-#   filter(metric == "zTPR0")
-# 
-# plot.zFDR5 <- plot.df %>% 
-#   filter(metric == "zFDR5")
-# 
-# plot.zTPR5 <- plot.df %>% 
-#   filter(metric == "zTPR5")
+# edit tool column to have sentence case and show gamma symbols
+plot.df$tool <- case_when(plot.df$tool == "deseq" ~ "DESeq2",
+                          plot.df$tool == "edger" ~ "EdgeR",
+                          plot.df$tool == "limma" ~ "Limma",
+                          .default = plot.df$tool)
+
+plot.df$tool <- gsub("aldex", "ALDEx", plot.df$tool)
+plot.df$tool <- gsub("\\.0", " (\u03b3 = 0)", plot.df$tool)
+plot.df$tool <- gsub("\\.1", " (\u03b3 = 1)", plot.df$tool)
+plot.df$tool <- gsub("\\.2", " (\u03b3 = 2)", plot.df$tool)
+plot.df$tool <- gsub("\\.2", " (\u03b3 = 3)", plot.df$tool)
+plot.df$tool <- gsub("\\.2", " (\u03b3 = 4)", plot.df$tool)
+plot.df$tool <- gsub("\\.5", " (\u03b3 = 5)", plot.df$tool)
+
+# edit dataset column for sentence case
+plot.df$dataset <- case_when(plot.df$dataset == "brca" ~ "Cancer genome atlas: BRCA",
+                             plot.df$dataset == "immuno" ~ "PD1 immunotherapy",
+                             plot.df$dataset == "kirc" ~ "Cancer genome atlas: KIRC",
+                             plot.df$dataset == "lihc" ~ "Cancer genome atlas: LIHC",
+                             plot.df$dataset == "luad" ~ "Cancer genome atlas: LUAD",
+                             plot.df$dataset == "mts" ~ "Vaginal metatranscriptome",
+                             plot.df$dataset == "prad" ~ "Cancer genome atlas: PRAD",
+                             plot.df$dataset == "thca" ~ "Cancer genome atlas: THCA",
+                     .default = plot.df$dataset)
 
 ############################## plotting function ##############################
 
@@ -169,7 +169,7 @@ rm(list = c("tmplist", "i", ls(pattern = "tpfpr")))
 # or FDR with which definition of true negatives (coefficient vs. zero) and
 # with/without an arbitrary coefficient threshold of 0.5 for positives)
 
-function(df = NULL, plot.type = NULL, tn.def = NULL, coeff.thresh = NULL){
+nicePlots <- function(df = NULL, plot.type = NULL, tn.def = NULL, coeff.thresh = NULL){
   
   # throw errors if inputs are not correct
   if(is.null(df)) stop("Please specify dataframe containing plotting data")
@@ -181,7 +181,7 @@ function(df = NULL, plot.type = NULL, tn.def = NULL, coeff.thresh = NULL){
   
   if(!plot.type %in% c("FDR", "TPR")) stop("Argument 'plot.type' must be one of: FDR, TPR")
   if(length(plot.type) != 1) stop("Argument 'plot.type' must be a vector of length = 1")
-  if(!is.vector(plot.type) != 1) stop("Argument 'plot.type' must be a vector of length = 1")
+  if(!is.vector(plot.type)) stop("Argument 'plot.type' must be a vector of length = 1")
   
   if(!tn.def %in% c("coeff", "zero")) stop("Argument 'tn.def' must be one of: coeff, zero")
   if(length(tn.def) != 1) stop("Argument 'tn.def' must be a vector of length = 1")
@@ -200,16 +200,63 @@ function(df = NULL, plot.type = NULL, tn.def = NULL, coeff.thresh = NULL){
   to.plot <- df %>% 
     filter(metric == to.filter)
  
+  # get y axis label and title based on plot type input
+  plot.ylab <- switch(plot.type,
+                      "FDR" = "FDR",
+                      "TPR" = "TPR")
+  
+  # get y axis label and title based on plot type input
+  plot.title <- switch(plot.type,
+                      "FDR" = "False discovery rate (FDR) by dataset and tool",
+                      "TPR" = "Sensitivity / true positive rate (TPR) by dataset and tool")
+  
+  # define colour scheme for datasets
+  cols.ald2 <- brewer.pal(n = 9, name = "Blues")[4:7]
+  cols.ald3 <- brewer.pal(n = 9, name = "Oranges")[4:7]
+  
+  cols.dataset <- c(cols.ald2,    # ALDEx2, gamma = 0 / 0.1 / 0.2 / 0.5
+                    cols.ald3,    # ALDEx3, gamma = 0 / 0.1 / 0.2 / 0.5
+                    "black",      # DESeq2
+                    "grey50",     # EdgeR
+                    "grey80"      # limma
+                    )
+  
   # plot data
-  to.plot %>% 
-    ggplot(aes(x = coeff, y = value))
+  nice.plot <- to.plot %>% 
+    ggplot(aes(x = coeff, y = value, colour = tool))+
+    geom_point(size = 1)+
+    geom_line()+
+    xlab("Threshold: model difference between groups")+
+    ylab(plot.ylab)+
+    ggtitle(plot.title)+
+    scale_colour_manual(name = "Tool", values = cols.dataset)+
+    theme_bw()+
+    theme(axis.text = element_text(size = 7),
+          legend.box.spacing = unit(0.1, "cm"),
+          legend.text = element_text(size = 8),
+          legend.title = element_text(size = 9, face = "bold"))+
+    facet_wrap(~dataset)
+  
+  return(nice.plot)
 }
 
+############################## plotting TPR & FDR ##############################
 
+# false discovery rate: negatives >coeff, no difference threshold (cFDR0)
+png(paste0(repo, "figures/tprfdr_falseDiscoveryRate.png"),
+    units = "in", height = 6, width = 10, res = 600)
 
+nicePlots(df = plot.df, plot.type = "FDR", tn.def = "coeff", coeff.thresh = FALSE)
 
+dev.off()
 
+# sensitivity: negatives >coeff, no difference threshold (cTPR0)
+png(paste0(repo, "figures/tprfdr_sensitivity.png"),
+    units = "in", height = , width = , res = 600)
 
+nicePlots(df = plot.df, plot.type = "TPR", tn.def = "coeff", coeff.thresh = FALSE)
+
+dev.off()
 
 
 
