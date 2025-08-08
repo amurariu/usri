@@ -12,7 +12,7 @@ repo <- "~/Documents/GitHub/usri/"
 
 source('code/summary.data.fun.R')
 
-if(length(list.files(paste0(repo,"analysis/summarystats"), pattern = "ss")) != 8){
+if(length(list.files(paste0(repo,"analysis/summarystats"), pattern = "ss")) != 7){
   
   # load in analysis results (takes a few minutes!)
   for(i in list.files(data, pattern = "immuno.*aldex")){
@@ -188,13 +188,15 @@ p4<- ggplot(df_combined2, aes(x = estimate, y = -log10(p.val.adj), color = scale
        y = "-log10 Adjusted p.val.adj",
        color = "scale")
 
-(p1|p2)/(p3|p4)
+(p1|p2)
+
+(p3|p4)
 
 
 
 #effect size
 
-ggplot(df_combined, aes(x = diff.win, y = diff.btw, color = scale)) +
+p5<-ggplot(df_combined, aes(x = diff.win, y = diff.btw, color = scale)) +
 geom_point(alpha = 0.6, size = 0.8) +
 geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "black") +  
 geom_abline(slope = -1, intercept = 0, linetype = "dashed", color = "black") +
@@ -204,3 +206,14 @@ labs(title = "ALDEx2 Effect Plot",
      y = "diff.btw",
      color = "scale")
 
+p6<-ggplot(df_combined2, aes(x = diff.win, y = diff.btw, color = scale)) + #need to change this based on what corresponds to diff.win and diff.btw for aldex3
+  geom_point(alpha = 0.6, size = 0.8) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "black") +  
+  geom_abline(slope = -1, intercept = 0, linetype = "dashed", color = "black") +
+  theme_bw() +
+  labs(title = "ALDEx3 Effect Plot",
+       x = "diff.win",
+       y = "diff.btw",
+       color = "scale")
+
+p5|p6
