@@ -12,10 +12,10 @@ conds_oral <-"https://raw.githubusercontent.com/amurariu/usri/main/data/oral_met
 
 oral <- read.table(file=raw_counts_oral, header=T, row.names=1, sep='\t')
 conditions_o <- read.table(file=conds_oral, sep='\t', row.names = 1, header = T)
-oral.conds <- data.frame(conditions_o) 
 
-# filter to remove any ASV present in <10 % of samples
+# filter to remove any OTU present in <10 % of samples
 oral.filt <- oral[apply(oral, 1, function(x){length(which(x != 0))/length(x)} >0.1),]
 
-oral.data_1.aldex2 <- ald2.fun(data=as.matrix(oral.filt), conditions=oral.conds$comparison, nloop=100, gamma=0.1)
+# run ALDEx2 at gamma = 0.1, then save
+oral.data_1.aldex2 <- ald2.fun(data=as.matrix(oral.filt), conditions=conditions_o$group, nloop=100, gamma=0.1)
 save(oral.data_1.aldex2, file="/Volumes/data2/andreea/ext_analysis/oral.data.aldex2_1.Rda")

@@ -1,31 +1,31 @@
 group	reads.all	reads.filt	reads.diff
-ak_035166	Keratinised gingiva	2446	2186	260
-ak_016465	Keratinised gingiva	2707	2457	250
-ak_024143	Keratinised gingiva	5819	5637	182
-ak_037037	Keratinised gingiva	6596	6317	279
-ak_024401	Keratinised gingiva	7903	6804	1099
-ak_097125	Keratinised gingiva	3285	3003	282
-ak_097366	Keratinised gingiva	2735	2519	216
-ak_032645	Keratinised gingiva	2713	2552	161
-ak_037693	Keratinised gingiva	5319	5131	188
-ak_034033	Keratinised gingiva	3679	3461	218
-ak_033463	Keratinised gingiva	14697	13180	1517
-ak_099390	Keratinised gingiva	6866	6672	194
-ak_015445	Keratinised gingiva	8031	7281	750
-ak_023546	Keratinised gingiva	5815	4694	1121
-ak_032440	Keratinised gingiva	3550	3136	414
-op_033472	Oral plaque	13349	12123	1226
-op_038401	Oral plaque	6095	5524	571
-op_102311	Oral plaque	3282	2932	350
-op_016307	Oral plaque	5653	4949	704
-op_023502	Oral plaque	6827	5359	1468
-op_023870	Oral plaque	4188	3815	373
-op_098441	Oral plaque	2332	2175	157
-op_107201	Oral plaque	1379	1210	169
-op_035169	Oral plaque	2040	1649	391
-op_024146	Oral plaque	7029	6896	133
-op_024199	Oral plaque	4212	3822	390
-op_015958	Oral plaque	2875	2588	287
-op_032024	Oral plaque	2686	2434	252
-op_103496	Oral plaque	6083	5819	264
-op_023549	Oral plaque	5374	5044	330
+ak_035166	KeratinisedGingiva	2446	2186	260
+ak_016465	KeratinisedGingiva	2707	2457	250
+ak_024143	KeratinisedGingiva	5819	5637	182
+ak_037037	KeratinisedGingiva	6596	6317	279
+ak_024401	KeratinisedGingiva	7903	6804	1099
+ak_097125	KeratinisedGingiva	3285	3003	282
+ak_097366	KeratinisedGingiva	2735	2519	216
+ak_032645	KeratinisedGingiva	2713	2552	161
+ak_037693	KeratinisedGingiva	5319	5131	188
+ak_034033	KeratinisedGingiva	3679	3461	218
+ak_033463	KeratinisedGingiva	14697	13180	1517
+ak_099390	KeratinisedGingiva	6866	6672	194
+ak_015445	KeratinisedGingiva	8031	7281	750
+ak_023546	KeratinisedGingiva	5815	4694	1121
+ak_032440	KeratinisedGingiva	3550	3136	414
+op_033472	OralPlaque	13349	12123	1226
+op_038401	OralPlaque	6095	5524	571
+op_102311	OralPlaque	3282	2932	350
+op_016307	OralPlaque	5653	4949	704
+op_023502	OralPlaque	6827	5359	1468
+op_023870	OralPlaque	4188	3815	373
+op_098441	OralPlaque	2332	2175	157
+op_107201	OralPlaque	1379	1210	169
+op_035169	OralPlaque	2040	1649	391
+op_024146	OralPlaque	7029	6896	133
+op_024199	OralPlaque	4212	3822	390
+op_015958	OralPlaque	2875	2588	287
+op_032024	OralPlaque	2686	2434	252
+op_103496	OralPlaque	6083	5819	264
+op_023549	OralPlaque	5374	5044	330

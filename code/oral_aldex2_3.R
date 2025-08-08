@@ -16,6 +16,6 @@ conditions_o <- read.table(file=conds_oral, sep='\t', row.names = 1, header = T)
 # filter to remove any OTU present in <10 % of samples
 oral.filt <- oral[apply(oral, 1, function(x){length(which(x != 0))/length(x)} >0.1),]
 
-# run ALDEx2 at gamma = 0.2, then save
-oral.data_2.aldex2 <- ald2.fun(data=as.matrix(oral.filt), conditions=conditions_o$group, nloop=100, gamma=0.2)
-save(oral.data_2.aldex2, file="/Volumes/data2/andreea/ext_analysis/oral.data.aldex2_2.Rda")
+# run ALDEx2 at gamma = 0.3, then save
+oral.data_3.aldex2 <- ald2.fun(data=as.matrix(oral.filt), conditions=conditions_o$group, nloop=100, gamma=0.3)
+save(oral.data_3.aldex2, file="/Volumes/data2/andreea/ext_analysis/oral.data.aldex2_3.Rda")

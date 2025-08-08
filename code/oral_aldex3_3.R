@@ -1,7 +1,7 @@
-library(ALDEx2,warn.conflicts = F) #do not load aldex2 and aldex3 at the same time
+devtools::load_all('~/Documents/ALDEx3')
 library(seqgendiff, warn.conflicts=F)
 
-source('code/ald2.fun.R')
+source('code/ald3.fun.R')
 
 #####
 # oral dataset
@@ -16,6 +16,6 @@ conditions_o <- read.table(file=conds_oral, sep='\t', row.names = 1, header = T)
 # filter to remove any OTU present in <10 % of samples
 oral.filt <- oral[apply(oral, 1, function(x){length(which(x != 0))/length(x)} >0.1),]
 
-# run ALDEx2 at gamma = 0.2, then save
-oral.data_2.aldex2 <- ald2.fun(data=as.matrix(oral.filt), conditions=conditions_o$group, nloop=100, gamma=0.2)
-save(oral.data_2.aldex2, file="/Volumes/data2/andreea/ext_analysis/oral.data.aldex2_2.Rda")
+# run ALDEx3 at gamma = 0.3, then save
+oral.data_3.aldex3 <- ald3.fun(data=as.matrix(oral.filt), conds=conditions_o$group, nloop=100, gamma=0.3, prop_null = 0.95, mean = 0)
+save(oral.data_3.aldex3, file="/Volumes/data2/andreea/ext_analysis/oral.data.aldex3_3.Rda")

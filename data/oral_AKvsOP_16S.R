@@ -21,8 +21,8 @@ oral.meta <- data.frame(group = gsub("_.*", "", colnames(oral.data)),
                         reads.filt = colSums(oral.filt))
 oral.meta$reads.diff <- oral.meta$reads.all - oral.meta$reads.filt
 
-oral.meta$group <- gsub("ak", "Keratinised gingiva", oral.meta$group)
-oral.meta$group <- gsub("op", "Oral plaque", oral.meta$group)
+oral.meta$group <- gsub("ak", "KeratinisedGingiva", oral.meta$group)
+oral.meta$group <- gsub("op", "OralPlaque", oral.meta$group)
 
 # write dfs to files
 write.table(oral.filt, file = "~/Documents/PostDoc_Western/Data/diffAbund/datasets/16S/oral_data.txt",
