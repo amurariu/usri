@@ -145,11 +145,11 @@ plot.df$tool <- case_when(plot.df$tool == "deseq" ~ "DESeq2",
 
 plot.df$tool <- gsub("aldex", "ALDEx", plot.df$tool)
 plot.df$tool <- gsub("\\.0", " (\u03b3 = 0)", plot.df$tool)
-plot.df$tool <- gsub("\\.1", " (\u03b3 = 1)", plot.df$tool)
-plot.df$tool <- gsub("\\.2", " (\u03b3 = 2)", plot.df$tool)
-plot.df$tool <- gsub("\\.2", " (\u03b3 = 3)", plot.df$tool)
-plot.df$tool <- gsub("\\.2", " (\u03b3 = 4)", plot.df$tool)
-plot.df$tool <- gsub("\\.5", " (\u03b3 = 5)", plot.df$tool)
+plot.df$tool <- gsub("\\.1", " (\u03b3 = 0.1)", plot.df$tool)
+plot.df$tool <- gsub("\\.2", " (\u03b3 = 0.2)", plot.df$tool)
+plot.df$tool <- gsub("\\.3", " (\u03b3 = 0.3)", plot.df$tool)
+plot.df$tool <- gsub("\\.4", " (\u03b3 = 0.4)", plot.df$tool)
+plot.df$tool <- gsub("\\.5", " (\u03b3 = 0.5)", plot.df$tool)
 
 # edit dataset column for sentence case
 plot.df$dataset <- case_when(plot.df$dataset == "brca" ~ "Cancer genome atlas: BRCA",
@@ -161,6 +161,12 @@ plot.df$dataset <- case_when(plot.df$dataset == "brca" ~ "Cancer genome atlas: B
                              plot.df$dataset == "prad" ~ "Cancer genome atlas: PRAD",
                              plot.df$dataset == "thca" ~ "Cancer genome atlas: THCA",
                      .default = plot.df$dataset)
+
+# convert tool column to factor and change levels
+lvl <- levels(factor(plot.df$tool))
+
+plot.df$tool <- factor(plot.df$tool, 
+                       levels = c(lvl[4],lvl[1:3], lvl[8], lvl[5:7], lvl[9:11]))
 
 ############################## plotting function ##############################
 
@@ -243,21 +249,17 @@ nicePlots <- function(df = NULL, plot.type = NULL, tn.def = NULL, coeff.thresh =
 ############################## plotting TPR & FDR ##############################
 
 # false discovery rate: negatives >coeff, no difference threshold (cFDR0)
-png(paste0(repo, "figures/tprfdr_falseDiscoveryRate.png"),
-    units = "in", height = 6, width = 10, res = 600)
+# png(paste0(repo, "figures/tprfdr_falseDiscoveryRate.png"),
+#     units = "in", height = 6.5, width = 10, res = 600)
 
 nicePlots(df = plot.df, plot.type = "FDR", tn.def = "coeff", coeff.thresh = FALSE)
 
-dev.off()
+# dev.off()
 
 # sensitivity: negatives >coeff, no difference threshold (cTPR0)
-png(paste0(repo, "figures/tprfdr_sensitivity.png"),
-    units = "in", height = , width = , res = 600)
+# png(paste0(repo, "figures/tprfdr_sensitivity.png"),
+#     units = "in", height = 6.5, width = 10, res = 600)
 
 nicePlots(df = plot.df, plot.type = "TPR", tn.def = "coeff", coeff.thresh = FALSE)
 
-dev.off()
-
-
-
-
+# dev.off()
