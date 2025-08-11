@@ -20,5 +20,5 @@ y_luad <- y_luad[keep_luad,keep.lib.sizes=FALSE]
 luad.data <- y_luad$counts #filtered base dataset
 
 #save file - gamma = 0.3
-luad.data_3.aldex3 <- ald3.fun(data=luad.data, conds=luad.conds$conditions_lu, nloop=100, gamma=0.3)
+luad.data_3.aldex3 <- ald3.fun(data=luad.data, conds=luad.conds$conditions_lu, nloop=100, gamma=0.3, prop_null = 0.95, mean = 0)
 save(luad.data_3.aldex3, file="/Volumes/data2/andreea/ext_analysis/luad.data.aldex3_3.Rda")

@@ -21,5 +21,5 @@ y_kirc <- y_kirc[keep_kirc,keep.lib.sizes=FALSE]
 kirc.data <- y_kirc$counts #filtered base dataset
 
 #save file - gamma = 0.3
-kirc.data_3.aldex3 <- ald3.fun(data=kirc.data, conds=kirc.conds$conditions_k, nloop=100, gamma=0.3)
+kirc.data_3.aldex3 <- ald3.fun(data=kirc.data, conds=kirc.conds$conditions_k, nloop=100, gamma=0.3, prop_null = 0.95, mean = 0)
 save(kirc.data_3.aldex3, file="/Volumes/data2/andreea/ext_analysis/kirc.data.aldex3_3.Rda")
