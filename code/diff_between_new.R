@@ -81,6 +81,7 @@ diff.5between.11 = ald3_5.conf$diff_coeff[[11]] - ald5.conf$diff_coeff[[11]]
   
   
   
+  #diff between calculations for TPR
   diff.tpr.ald23 <- as.data.frame(matrix(data = NA, nrow = 100, ncol = 10))
   
   for(i in 1:length(coef)){

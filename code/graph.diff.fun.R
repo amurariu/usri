@@ -23,15 +23,15 @@ combined = list(diff.between.1, diff.between.2, diff.between.3, diff.between.4, 
 
 coef <- as.numeric(names(ald0.conf$diff_zero))
 
+#matrix for diff between of TPR
 diff.tpr.ald23 <- as.data.frame(matrix(data = NA, nrow = 100, ncol = 10))
-
 for(i in 1:length(coef)){
   temp <- get(paste0("diff.between.", i))
   diff.tpr.ald23[,i] <- abs(temp[,6])
 }
 
+#matrix for diff between of FDR
 diff.fdr.ald23 <- as.data.frame(matrix(data = NA, nrow = 100, ncol = 10))
-
 for(i in 1:length(coef)){
   temp <- get(paste0("diff.between.", i))
   diff.fdr.ald23[,i] <- abs(temp[,7])
@@ -50,6 +50,7 @@ FDR_raw3 <- matrix(data=NA, nrow=length(ald3_0.conf$diff_zero[[1]]$TP), ncol=len
 TPR_03 <- matrix(data=NA, nrow=length(ald3_0.conf$diff_zero[[1]]$TP), ncol=length(coef))
 FDR_03 <- matrix(data=NA, nrow=length(ald3_0.conf$diff_zero[[1]]$TP), ncol=length(coef))
 
+
 for(i in 1:length(coef)){
   TPR_raw[,i] <- ald0.conf$raw_coeff[[i]]$TPR
   FDR_raw[,i] <- ald0.conf$raw_coeff[[i]]$FDR
@@ -61,6 +62,15 @@ for(i in 1:length(coef)){
   TPR_03[,i] <- ald3_0.conf$raw_zero[[i]]$TPR
   FDR_03[,i] <- ald3_0.conf$raw_zero[[i]]$FDR
 }
+
+##### data transformation #######
+
+tempdf <- data.frame(matrix(data = NA, nrow = 1600, ncol = 3))
+colnames(tempdf) <- c("abs", "dataset", "tool")
+
+
+
+merged<-list(TPR_0, TPR_03, TPR_raw, TPR_raw3) #need to add coef here somehow, add separation for raw and 0
 
 par(mfrow=c(1,2))
 
@@ -86,5 +96,19 @@ for(i in 1:nrow(diff.tpr.ald23)){points(coef, diff.tpr.ald23[i,], ylim = c(0,0.0
 for(i in 1:nrow(diff.fdr.ald23)){points(coef, diff.fdr.ald23[i,], ylim = c(0,0.04), col=rgb(0.8,0,0,0.2), type='l')}
 
 
-
 }
+
+
+
+
+
+
+#plot with ggplot
+
+p1<-merged %>% 
+  ggplot(aes(x = coeff)) + 
+  theme_bw()+
+  facet_wrap(~tool)+
+  labs(title = "ALDEx3 TPR and FDR for 100 Iterations with γ=0")+
+  xlab('Modelled LFC')+
+  ylab('TPR/FDR')

@@ -5,7 +5,6 @@
 out_path="/Volumes/data2/andreea"
 
 
-
 # define final target objects for each tool & dataset - no asymmetry
 
 ### DESeq2
@@ -114,7 +113,7 @@ ALDEx2_3_kirc: $out_path/ext_analysis/kirc.data.aldex2_3.Rda
 ALDEx2_3_lihc: $out_path/ext_analysis/lihc.data.aldex2_3.Rda
 ALDEx2_3_luad: $out_path/ext_analysis/luad.data.aldex2_3.Rda
 ALDEx2_3_mar: $out_path/ext_analysis/mar.data.aldex2_3.Rda
-ALDEx2_3_mts: $out_path/ext_analysis/mts.data.aldex2_2.Rda
+ALDEx2_3_mts: $out_path/ext_analysis/mts.data.aldex2_3.Rda
 ALDEx2_3_oral: $out_path/ext_analysis/oral.data.aldex2_3.Rda
 ALDEx2_3_prad: $out_path/ext_analysis/prad.data.aldex2_3.Rda
 ALDEx2_3_sccyto: $out_path/ext_analysis/sccyto.data.aldex2_3.Rda
@@ -130,7 +129,7 @@ ALDEx2_4_kirc: $out_path/ext_analysis/kirc.data.aldex2_4.Rda
 ALDEx2_4_lihc: $out_path/ext_analysis/lihc.data.aldex2_4.Rda
 ALDEx2_4_luad: $out_path/ext_analysis/luad.data.aldex2_4.Rda
 ALDEx2_4_mar: $out_path/ext_analysis/mar.data.aldex2_4.Rda
-ALDEx2_4_mts: $out_path/ext_analysis/mts.data.aldex2_2.Rda
+ALDEx2_4_mts: $out_path/ext_analysis/mts.data.aldex2_4.Rda
 ALDEx2_4_oral: $out_path/ext_analysis/oral.data.aldex2_4.Rda
 ALDEx2_4_prad: $out_path/ext_analysis/prad.data.aldex2_4.Rda
 ALDEx2_4_sccyto: $out_path/ext_analysis/sccyto.data.aldex2_4.Rda
