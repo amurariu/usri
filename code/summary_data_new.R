@@ -104,6 +104,9 @@ plot.df$tool <- gsub("_.$","", plot.df$tool)
 plot.immuno <- plot.df %>% 
   filter(dataset == "immuno")
 
+
+#################### Density Plot Panel ######################
+
 group_means <- plot.immuno %>%
   group_by(tool, gamma.char) %>%
   summarise(mean_value = mean(abs), .groups='drop') #####
@@ -125,14 +128,17 @@ p1<-plot.immuno %>%
 
 
 p2 <- ggplot(group_means0, aes(x = gamma.num, y = mean_value, colour=dataset, shape = tool)) +
-  geom_jitter(width = 0.01, alpha = 0.7) + 
+  geom_jitter(width = 0.01, alpha = 0.5) + 
   labs(title = "Average Minimum Difference Across Datasets",
        x = "Scale",
        y = "Mean Absolute Minimum Difference for Significance") +
-  theme_bw()
+  theme_bw()+
+  geom_point(size = 2.5)
 
+p1|p2 #to plot as a 2 panel figure
 
-#volcano plots
+################# volcano plots ######################
+
 load(paste(anal.path,"immuno.data.aldex2_0.Rda", sep=""))
 load(paste(anal.path,"immuno.data.aldex2_1.Rda", sep=""))
 load(paste(anal.path,"immuno.data.aldex2_2.Rda", sep=""))
@@ -188,14 +194,12 @@ p4<- ggplot(df_combined2, aes(x = estimate, y = -log10(p.val.adj), color = scale
        y = "-log10 Adjusted p.val.adj",
        color = "scale")
 
-(p1|p2)
 
-(p3|p4)
+p3|p4 #to plot as 2 panel figure
 
+#################### effect size plots #######################
 
-
-#effect size
-
+#aldex2 panel
 p5<-ggplot(df_combined, aes(x = diff.win, y = diff.btw, color = scale)) +
 geom_point(alpha = 0.6, size = 0.8) +
 geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "black") +  
@@ -206,14 +210,21 @@ labs(title = "ALDEx2 Effect Plot",
      y = "diff.btw",
      color = "scale")
 
-p6<-ggplot(df_combined2, aes(x = diff.win, y = diff.btw, color = scale)) + #need to change this based on what corresponds to diff.win and diff.btw for aldex3
+p6<-ggplot(df_combined2, aes(x = std.error*sqrt(109), y = estimate, color = scale)) + #need to change this based on what corresponds to diff.win and diff.btw for aldex3
   geom_point(alpha = 0.6, size = 0.8) +
   geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "black") +  
   geom_abline(slope = -1, intercept = 0, linetype = "dashed", color = "black") +
   theme_bw() +
   labs(title = "ALDEx3 Effect Plot",
-       x = "diff.win",
-       y = "diff.btw",
+       x = "std.error*sqrt(number of samples)",
+       y = "estimate",
        color = "scale")
 
 p5|p6
+
+
+
+#plot(immuno.data_0.aldex3$t.data[[1]]$std.error*sqrt(120), immuno.data_0.aldex3$t.data[[1]]$estimate)
+#std.error * sqrt(total number of samples) <- diff.win
+#estimate <-  diff.btw
+
