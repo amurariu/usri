@@ -14,7 +14,7 @@ url <- "https://raw.githubusercontent.com/amurariu/usri/main/data/transcriptome.
 yeast <- read.table(url, header=T, row.names=1)
 
 # remove the one gene with 0 reads
-yeast <- yeast[rownames(yst) != "YOR072W-B",]
+yeast <- yeast[rownames(yeast) != "YOR072W-B",]
 
 # Gierlinski:2015aa
 yeast[,c('SNF2.6', 'SNF2.13','SNF2.25','SNF2.35')] <- NULL
