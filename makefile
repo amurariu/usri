@@ -22,6 +22,8 @@ DESeq_oral: $out_path/ext_analysis/oral.data.deseq.Rda
 DESeq_prad: $out_path/ext_analysis/prad.data.deseq.Rda
 DESeq_sc: $out_path/ext_analysis/sccyto.data.deseq.Rda
 DESeq_thca: $out_path/ext_analysis/thca.data.deseq.Rda
+DESeq_yeast: $out_path/ext_analysis/yeast.data.deseq.Rda
+
 
 ### edgeR
 edgeR_brca: $out_path/ext_analysis/brca.data.edger.Rda
@@ -38,6 +40,8 @@ edgeR_oral: $out_path/ext_analysis/oral.data.edger.Rda
 edgeR_prad: $out_path/ext_analysis/prad.data.edger.Rda
 edgeR_sc: $out_path/ext_analysis/sccyto.data.edger.Rda
 edgeR_thca: $out_path/ext_analysis/thca.data.edger.Rda
+edgeR_yeast: $out_path/ext_analysis/yeast.data.edger.Rda
+
 
 ### Limma
 limma_brca: $out_path/ext_analysis/brca.data.limma.Rda
@@ -54,6 +58,8 @@ limma_oral: $out_path/ext_analysis/oral.data.limma.Rda
 limma_prad: $out_path/ext_analysis/prad.data.limma.Rda
 limma_sccyto: $out_path/ext_analysis/sccyto.data.limma.Rda
 limma_thca: $out_path/ext_analysis/thca.data.limma.Rda
+limma_yeast: $out_path/ext_analysis/yeast.data.limma.Rda
+
 
 ### ALDEx2 gamma = 1e-3
 ALDEx2_0_brca: $out_path/ext_analysis/brca.data.aldex2_0.Rda
@@ -70,6 +76,8 @@ ALDEx2_0_oral: $out_path/ext_analysis/oral.data.aldex2_0.Rda
 ALDEx2_0_prad: $out_path/ext_analysis/prad.data.aldex2_0.Rda
 ALDEx2_0_sccyto: $out_path/ext_analysis/sccyto.data.aldex2_0.Rda
 ALDEx2_0_thca: $out_path/ext_analysis/thca.data.aldex2_0.Rda
+ALDEx2_0_yeast: $out_path/ext_analysis/yeast.data.aldex2_0.Rda
+
 
 ### ALDEx2 gamma = 0.1
 ALDEx2_1_brca: $out_path/ext_analysis/brca.data.aldex2_1.Rda
@@ -86,6 +94,7 @@ ALDEx2_1_oral: $out_path/ext_analysis/oral.data.aldex2_1.Rda
 ALDEx2_1_prad: $out_path/ext_analysis/prad.data.aldex2_1.Rda
 ALDEx2_1_sccyto: $out_path/ext_analysis/sccyto.data.aldex2_1.Rda
 ALDEx2_1_thca: $out_path/ext_analysis/thca.data.aldex2_1.Rda
+ALDEx2_1_yeast: $out_path/ext_analysis/yeast.data.aldex2_1.Rda
 
 ### ALDEx2 gamma = 0.2
 ALDEx2_2_brca: $out_path/ext_analysis/brca.data.aldex2_2.Rda
@@ -102,6 +111,7 @@ ALDEx2_2_oral: $out_path/ext_analysis/oral.data.aldex2_2.Rda
 ALDEx2_2_prad: $out_path/ext_analysis/prad.data.aldex2_2.Rda
 ALDEx2_2_sccyto: $out_path/ext_analysis/sccyto.data.aldex2_2.Rda
 ALDEx2_2_thca: $out_path/ext_analysis/thca.data.aldex2_2.Rda
+ALDEx2_2_yeast: $out_path/ext_analysis/yeast.data.aldex2_2.Rda
 
 ### ALDEx2 gamma = 0.3
 ALDEx2_3_brca: $out_path/ext_analysis/brca.data.aldex2_3.Rda
@@ -118,6 +128,7 @@ ALDEx2_3_oral: $out_path/ext_analysis/oral.data.aldex2_3.Rda
 ALDEx2_3_prad: $out_path/ext_analysis/prad.data.aldex2_3.Rda
 ALDEx2_3_sccyto: $out_path/ext_analysis/sccyto.data.aldex2_3.Rda
 ALDEx2_3_thca: $out_path/ext_analysis/thca.data.aldex2_3.Rda
+ALDEx2_3_yeast: $out_path/ext_analysis/yeast.data.aldex2_3.Rda
 
 ### ALDEx2 gamma = 0.4
 ALDEx2_4_brca: $out_path/ext_analysis/brca.data.aldex2_4.Rda
@@ -134,6 +145,7 @@ ALDEx2_4_oral: $out_path/ext_analysis/oral.data.aldex2_4.Rda
 ALDEx2_4_prad: $out_path/ext_analysis/prad.data.aldex2_4.Rda
 ALDEx2_4_sccyto: $out_path/ext_analysis/sccyto.data.aldex2_4.Rda
 ALDEx2_4_thca: $out_path/ext_analysis/thca.data.aldex2_4.Rda
+ALDEx2_4_yeast: $out_path/ext_analysis/yeast.data.aldex2_4.Rda
 
 ### ALDEx2 gamma = 0.5
 ALDEx2_5_brca: $out_path/ext_analysis/brca.data.aldex2_5.Rda
@@ -150,6 +162,7 @@ ALDEx2_5_oral: $out_path/ext_analysis/oral.data.aldex2_5.Rda
 ALDEx2_5_prad: $out_path/ext_analysis/prad.data.aldex2_5.Rda
 ALDEx2_5_sccyto: $out_path/ext_analysis/sccyto.data.aldex2_5.Rda
 ALDEx2_5_thca: $out_path/ext_analysis/thca.data.aldex2_5.Rda
+ALDEx2_5_yeast: $out_path/ext_analysis/yeast.data.aldex2_5.Rda
 
 ### ALDEx3 gamma = 1e-3
 ALDEx3_0_brca: $out_path/ext_analysis/brca.data.aldex3_0.Rda
@@ -166,6 +179,7 @@ ALDEx3_0_oral: $out_path/ext_analysis/oral.data.aldex3_0.Rda
 ALDEx3_0_prad: $out_path/ext_analysis/prad.data.aldex3_0.Rda
 ALDEx3_0_sccyto: $out_path/ext_analysis/sccyto.data.aldex3_0.Rda
 ALDEx3_0_thca: $out_path/ext_analysis/thca.data.aldex3_0.Rda
+ALDEx3_0_yeast: $out_path/ext_analysis/yeast.data.aldex3_0.Rda
 
 ### ALDEx3 gamma = 0.1
 ALDEx3_1_brca: $out_path/ext_analysis/brca.data.aldex3_1.Rda
@@ -182,6 +196,7 @@ ALDEx3_1_oral: $out_path/ext_analysis/oral.data.aldex3_1.Rda
 ALDEx3_1_prad: $out_path/ext_analysis/prad.data.aldex3_1.Rda
 ALDEx3_1_sccyto: $out_path/ext_analysis/sccyto.data.aldex3_1.Rda
 ALDEx3_1_thca: $out_path/ext_analysis/thca.data.aldex3_1.Rda
+ALDEx3_1_yeast: $out_path/ext_analysis/yeast.data.aldex3_1.Rda
 
 ### ALDEx3 gamma = 0.2
 ALDEx3_2_brca: $out_path/ext_analysis/brca.data.aldex3_2.Rda
@@ -198,6 +213,7 @@ ALDEx3_2_oral: $out_path/ext_analysis/oral.data.aldex3_2.Rda
 ALDEx3_2_prad: $out_path/ext_analysis/prad.data.aldex3_2.Rda
 ALDEx3_2_sccyto: $out_path/ext_analysis/sccyto.data.aldex3_2.Rda
 ALDEx3_2_thca: $out_path/ext_analysis/thca.data.aldex3_2.Rda
+ALDEx3_2_yeast: $out_path/ext_analysis/yeast.data.aldex3_2.Rda
 
 ### ALDEx3 gamma = 0.3
 ALDEx3_3_brca: $out_path/ext_analysis/brca.data.aldex3_3.Rda
@@ -214,6 +230,7 @@ ALDEx3_3_oral: $out_path/ext_analysis/oral.data.aldex3_3.Rda
 ALDEx3_3_prad: $out_path/ext_analysis/prad.data.aldex3_3.Rda
 ALDEx3_3_sccyto: $out_path/ext_analysis/sccyto.data.aldex3_3.Rda
 ALDEx3_3_thca: $out_path/ext_analysis/thca.data.aldex3_3.Rda
+ALDEx3_3_yeast: $out_path/ext_analysis/yeast.data.aldex3_3.Rda
 
 ### ALDEx3 gamma = 0.4
 ALDEx3_4_brca: $out_path/ext_analysis/brca.data.aldex3_4.Rda
@@ -230,6 +247,7 @@ ALDEx3_4_oral: $out_path/ext_analysis/oral.data.aldex3_4.Rda
 ALDEx3_4_prad: $out_path/ext_analysis/prad.data.aldex3_4.Rda
 ALDEx3_4_sccyto: $out_path/ext_analysis/sccyto.data.aldex3_4.Rda
 ALDEx3_4_thca: $out_path/ext_analysis/thca.data.aldex3_4.Rda
+ALDEx3_4_yeast: $out_path/ext_analysis/yeast.data.aldex3_4.Rda
 
 ### ALDEx3 gamma = 0.5
 ALDEx3_5_brca: $out_path/ext_analysis/brca.data.aldex3_5.Rda
@@ -246,6 +264,7 @@ ALDEx3_5_oral: $out_path/ext_analysis/oral.data.aldex3_5.Rda
 ALDEx3_5_prad: $out_path/ext_analysis/prad.data.aldex3_5.Rda
 ALDEx3_5_sccyto: $out_path/ext_analysis/sccyto.data.aldex3_5.Rda
 ALDEx3_5_thca: $out_path/ext_analysis/thca.data.aldex3_5.Rda
+ALDEx3_5_yeast: $out_path/ext_analysis/yeast.data.aldex3_5.Rda
 
 ### limma: asymmetry around mean of normal distribution (thinning)
 limma_brca_asym1: $out_path/ext_analysis/brca.data.limma.asym1.Rda
@@ -403,6 +422,9 @@ $out_path/ext_analysis/sccyto.data.deseq.Rda : code/sccyto_deseq.R
 $out_path/ext_analysis/thca.data.deseq.Rda : code/thca_deseq.R
 	Rscript 'code/thca_deseq.R'
 
+$out_path/ext_analysis/yeast.data.deseq.Rda : code/yeast_deseq.R
+	Rscript 'code/yeast_deseq.R'
+
 
 ### edgeR
 $out_path/ext_analysis/brca.data.edger.Rda : code/brca_edgeR.R 
@@ -447,6 +469,8 @@ $out_path/ext_analysis/sccyto.data.edger.Rda : code/sccyto_edgeR.R
 $out_path/ext_analysis/thca.data.edger.Rda : code/thca_edgeR.R 
 	Rscript 'code/thca_edgeR.R'
 
+$out_path/ext_analysis/yeast.data.edger.Rda : code/yeast_edgeR.R 
+	Rscript 'code/yeast_edgeR.R'
 
 ### limma 		
 $out_path/ext_analysis/brca.data.limma.Rda : code/brca_limma.R 
@@ -491,6 +515,9 @@ $out_path/ext_analysis/sccyto.data.limma.Rda : code/sccyto_limma.R
 $out_path/ext_analysis/thca.data.limma.Rda : code/thca_limma.R 
 	Rscript 'code/thca_limma.R'
 
+$out_path/ext_analysis/yeast.data.limma.Rda : code/yeast_limma.R 
+	Rscript 'code/yeast_limma.R'
+
 
 ### aldex2_0
 $out_path/ext_analysis/brca.data.aldex2_0.Rda : code/brca_aldex2_0.R 
@@ -534,6 +561,9 @@ $out_path/ext_analysis/sccyto.data.aldex2_0.Rda : code/sccyto_aldex2_0.R
 
 $out_path/ext_analysis/thca.data.aldex2_0.Rda : code/thca_aldex2_0.R 
 	Rscript 'code/thca_aldex2_0.R'
+	
+$out_path/ext_analysis/yeast.data.aldex2_0.Rda : code/yeast_aldex2_0.R 
+	Rscript 'code/yeast_aldex2_0.R'
 
 
 ### aldex2_1
@@ -579,6 +609,8 @@ $out_path/ext_analysis/sccyto.data.aldex2_1.Rda : code/sccyto_aldex2_1.R
 $out_path/ext_analysis/thca.data.aldex2_1.Rda : code/thca_aldex2_1.R 
 	Rscript 'code/thca_aldex2_1.R'
 
+$out_path/ext_analysis/yeast.data.aldex2_1.Rda : code/yeast_aldex2_1.R 
+	Rscript 'code/yeast_aldex2_1.R'
 
 ### aldex2_2
 $out_path/ext_analysis/brca.data.aldex2_2.Rda : code/brca_aldex2_2.R 
@@ -622,6 +654,9 @@ $out_path/ext_analysis/sccyto.data.aldex2_2.Rda : code/sccyto_aldex2_2.R
 
 $out_path/ext_analysis/thca.data.aldex2_2.Rda : code/thca_aldex2_2.R 
 	Rscript 'code/thca_aldex2_2.R'
+
+$out_path/ext_analysis/yeast.data.aldex2_2.Rda : code/yeast_aldex2_2.R 
+	Rscript 'code/yeast_aldex2_2.R'
 
 
 ### aldex2_3
@@ -667,6 +702,8 @@ $out_path/ext_analysis/sccyto.data.aldex2_3.Rda : code/sccyto_aldex2_3.R
 $out_path/ext_analysis/thca.data.aldex2_3.Rda : code/thca_aldex2_3.R 
 	Rscript 'code/thca_aldex2_3.R'
 
+$out_path/ext_analysis/yeast.data.aldex2_3.Rda : code/yeast_aldex2_3.R 
+	Rscript 'code/yeast_aldex2_3.R'
 
 ### aldex2_4
 $out_path/ext_analysis/brca.data.aldex2_4.Rda : code/brca_aldex2_4.R 
@@ -710,6 +747,9 @@ $out_path/ext_analysis/sccyto.data.aldex2_4.Rda : code/sccyto_aldex2_4.R
 
 $out_path/ext_analysis/thca.data.aldex2_4.Rda : code/thca_aldex2_4.R 
 	Rscript 'code/thca_aldex2_4.R'
+
+$out_path/ext_analysis/yeast.data.aldex2_4.Rda : code/yeast_aldex2_4.R 
+	Rscript 'code/yeast_aldex2_4.R'
 
 
 ### aldex2_5
@@ -755,6 +795,8 @@ $out_path/ext_analysis/sccyto.data.aldex2_5.Rda : code/sccyto_aldex2_5.R
 $out_path/ext_analysis/thca.data.aldex2_5.Rda : code/thca_aldex2_5.R 
 	Rscript 'code/thca_aldex2_5.R'
 
+$out_path/ext_analysis/yeast.data.aldex2_5.Rda : code/yeast_aldex2_5.R 
+	Rscript 'code/yeast_aldex2_5.R'
 
 ### aldex3_0
 $out_path/ext_analysis/brca.data.aldex3_0.Rda : code/brca_aldex3_0.R 
@@ -798,6 +840,9 @@ $out_path/ext_analysis/sccyto.data.aldex3_0.Rda : code/sccyto_aldex3_0.R
 
 $out_path/ext_analysis/thca.data.aldex3_0.Rda : code/thca_aldex3_0.R 
 	Rscript 'code/thca_aldex3_0.R'
+
+$out_path/ext_analysis/yeast.data.aldex3_0.Rda : code/yeast_aldex3_0.R 
+	Rscript 'code/yeast_aldex3_0.R'
 
 
 ### aldex3_1
@@ -843,6 +888,9 @@ $out_path/ext_analysis/sccyto.data.aldex3_1.Rda : code/sccyto_aldex3_1.R
 $out_path/ext_analysis/thca.data.aldex3_1.Rda : code/thca_aldex3_1.R 
 	Rscript 'code/thca_aldex3_1.R'
 
+$out_path/ext_analysis/yeast.data.aldex3_1.Rda : code/yeast_aldex3_1.R 
+	Rscript 'code/yeast_aldex3_1.R'
+
 
 ### aldex3_2
 $out_path/ext_analysis/brca.data.aldex3_2.Rda : code/brca_aldex3_2.R 
@@ -887,6 +935,8 @@ $out_path/ext_analysis/sccyto.data.aldex3_2.Rda : code/sccyto_aldex3_2.R
 $out_path/ext_analysis/thca.data.aldex3_2.Rda : code/thca_aldex3_2.R 
 	Rscript 'code/thca_aldex3_2.R'
 
+$out_path/ext_analysis/yeast.data.aldex3_2.Rda : code/yeast_aldex3_2.R 
+	Rscript 'code/yeast_aldex3_2.R'
 
 ### aldex3_3
 $out_path/ext_analysis/brca.data.aldex3_3.Rda : code/brca_aldex3_3.R 
@@ -930,6 +980,9 @@ $out_path/ext_analysis/sccyto.data.aldex3_3.Rda : code/sccyto_aldex3_3.R
 
 $out_path/ext_analysis/thca.data.aldex3_3.Rda : code/thca_aldex3_3.R 
 	Rscript 'code/thca_aldex3_3.R'
+
+$out_path/ext_analysis/yeast.data.aldex3_3.Rda : code/yeast_aldex3_3.R 
+	Rscript 'code/yeast_aldex3_3.R'
 
 
 ### aldex3_4
@@ -975,6 +1028,8 @@ $out_path/ext_analysis/sccyto.data.aldex3_4.Rda : code/sccyto_aldex3_4.R
 $out_path/ext_analysis/thca.data.aldex3_4.Rda : code/thca_aldex3_4.R 
 	Rscript 'code/thca_aldex3_4.R'
 
+$out_path/ext_analysis/yeast.data.aldex3_4.Rda : code/yeast_aldex3_4.R 
+	Rscript 'code/yeast_aldex3_4.R'
 
 ### aldex3_5
 $out_path/ext_analysis/brca.data.aldex3_5.Rda : code/brca_aldex3_5.R 
@@ -1018,6 +1073,9 @@ $out_path/ext_analysis/sccyto.data.aldex3_5.Rda : code/sccyto_aldex3_5.R
 
 $out_path/ext_analysis/thca.data.aldex3_5.Rda : code/thca_aldex3_5.R 
 	Rscript 'code/thca_aldex3_5.R'
+
+$out_path/ext_analysis/yeast.data.aldex3_5.Rda : code/yeast_aldex3_5.R 
+	Rscript 'code/yeast_aldex3_5.R'
 
 
 ### limma: asymmetry around mean of normal distribution (thinning)
