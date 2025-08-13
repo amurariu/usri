@@ -161,6 +161,48 @@ ggplot(total, aes(x = diff.win, y = diff.btw)) +
        y = "diff.btw")
 
 
+#plot from figure
+par(mfrow=c(1,1))
+aldex.plot(immuno.data_0.aldex2$t.data[[10]], type='MW')
+title("D: Effect", adj=0, line= 0.8) 
+points(immuno.data_0.aldex2$t.data[[10]]$diff.win[which(immuno.data_2.aldex2$t.data[[10]]$we.eBH < 0.05)], 
+       (immuno.data_0.aldex2$t.data[[10]]$diff.btw[which(immuno.data_2.aldex2$t.data[[10]]$we.eBH < 0.05)]), cex=0.6, pch=19, 
+       col='orange')
+points(immuno.data_0.aldex2$t.data[[10]]$diff.win[which(immuno.data_5.aldex2$t.data[[10]]$we.eBH < 0.05)], 
+       (immuno.data_0.aldex2$t.data[[10]]$diff.btw[which(immuno.data_5.aldex2$t.data[[10]]$we.eBH < 0.05)]), col='blue', 
+       cex=0.6, pch=19)
+
+abline(v=c(-0.5,0.5), lty=2, col='darkgrey')
+abline(v=c(-1.5,1.5), lty=2, col='darkgrey')
+
+
 #plot(immuno.data_0.aldex3$t.data[[1]]$std.error*sqrt(120), immuno.data_0.aldex3$t.data[[1]]$estimate)
 #std.error * sqrt(total number of samples) <- diff.win
 #estimate <-  diff.btw
+
+
+#test code
+cols.ald2 <- brewer.pal(n = 9, name = "Blues")[4:7]
+cols.ald3 <- brewer.pal(n = 9, name = "Oranges")[4:7]
+
+cols.dataset <- c(
+  setNames(cols.ald2, paste0("ALDEx2.", unique(total$scale))),
+  setNames(cols.ald3, paste0("ALDEx3.", unique(total$scale)))
+)
+
+
+##newest version
+ggplot(immuno.data_0.aldex2$t.data[[10]], aes(diff.win, diff.btw)) +
+geom_point(alpha = 0.6, size = 1) +
+geom_point(data = immuno.data_0.aldex2$t.data[[10]] %>%
+      filter(we.eBH < 0.05, immuno.data_2.aldex2$t.data[[10]]$we.eBH >= 0.05,
+      immuno.data_5.aldex2$t.data[[10]]$we.eBH >= 0.05), color = "red", size = 1.5) +  geom_point(data = immuno.data_0.aldex2$t.data[[10]] %>% 
+            filter(immuno.data_2.aldex2$t.data[[10]]$we.eBH < 0.05), color = "orange"
+            , size = 1.5) +
+geom_point(data = immuno.data_0.aldex2$t.data[[10]] %>%
+            filter(immuno.data_5.aldex2$t.data[[10]]$we.eBH < 0.05), color = "blue", 
+           size = 1.5) +
+  geom_abline(slope = 1,  intercept = 0, linetype = "dashed", color = "black") +
+  geom_abline(slope = -1, intercept = 0, linetype = "dashed", color = "black") +
+labs(title = "D: Effect-Size Plots", x = "diff.win", y = "diff.btw") +
+theme_bw() 
