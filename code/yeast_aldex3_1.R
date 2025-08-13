@@ -31,5 +31,5 @@ y_yeast <- y_yeast[keep_yeast,keep.lib.sizes=FALSE]
 yeast.data <- y_yeast$counts #filtered base dataset
 
 #save file - gamma=0.1
-yeast.data_1.aldex3 <- ald3.fun(data=yeast.data, conds=yeast.conds$conditions_y, nloop=100, gamma=0.1)
+yeast.data_1.aldex3 <- ald3.fun(data=yeast.data, conds=yeast.conds$conditions_y, nloop=100, gamma=0.1, prop_null = 0.95, mean = 0)
 save(yeast.data_1.aldex3, file="/Volumes/data2/andreea/ext_analysis/yeast.data.aldex3_1.Rda")
