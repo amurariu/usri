@@ -23,4 +23,4 @@ immuno.data <- y_pd1$counts #filtered base dataset
 
 #save file - gamma=1e-3
 immuno.data_1.aldex2 <- ald2.fun(data=immuno.data, conditions=immuno.conds$conditions_p, nloop=100, gamma=0.1)
-save(immuno.data_1.aldex2, file="../ext_analysis/immuno.data.aldex2_1.Rda")
+save(immuno.data_1.aldex2, file="/Volumes/data2/andreea/ext_analysis/immuno.data.aldex2_1.Rda")
