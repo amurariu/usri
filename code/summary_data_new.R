@@ -200,8 +200,8 @@ p3|p4 #to plot as 2 panel figure
 #################### effect size plots #######################
 
 #aldex2 panel
-p5<-ggplot(df_combined, aes(x = diff.win, y = diff.btw, color = scale)) +
-geom_point(alpha = 0.6, size = 0.8) +
+p5<-ggplot(df_combined, aes(x = diff.win, y = diff.btw, color = scale, shape = we.eBH < 0.05)) +
+geom_point(alpha = 0.6, size = 1) +
 geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "black") +  
 geom_abline(slope = -1, intercept = 0, linetype = "dashed", color = "black") +
 theme_bw() +
