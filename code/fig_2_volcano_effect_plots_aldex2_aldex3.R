@@ -201,8 +201,8 @@ gamma5 <- immuno.data_5.aldex2$t.data[[20]]
 gamma0$title <- "ALDEx2"
 
 to.plot.0 <- gamma0 %>%
-  filter(we.eBH < 0.05, immuno.data_2.aldex2$t.data[[20]]$we.eBH >= 0.05,
-         immuno.data_5.aldex2$t.data[[20]]$we.eBH >= 0.05)
+  filter(we.eBH < 0.05, gamma2$we.eBH >= 0.05,
+         gamma5$we.eBH >= 0.05)
 
 to.plot.2 <- gamma0 %>%
   filter(gamma2$we.eBH <0.05)
@@ -227,29 +227,29 @@ gamma3.0 <- immuno.data_0.aldex3$t.data[[20]]
 gamma3.2 <- immuno.data_2.aldex3$t.data[[20]]
 gamma3.5 <- immuno.data_5.aldex3$t.data[[20]]
 
-gamma0$title <- "ALDEx2"
+gamma3.0$title <- "ALDEx3"
 
 to.plot.3.0 <- gamma3.0 %>%
-  filter(p.val.adj < 0.05, immuno.data_2.aldex3$t.data[[20]]$p.val.adj >= 0.05,
-         immuno.data_5.aldex3$t.data[[20]]$p.val.adj >= 0.05)
+  filter(p.val.adj < 0.05, gamma3.2$p.val.adj >= 0.05,
+         gamma3.5$p.val.adj >= 0.05)
 
-to.plot.3.2 <- gamma3.2 %>%
-  filter(p.val.adj < 0.05,  immuno.data_5.aldex3$t.data[[20]]$p.val.adj >= 0.05)
+to.plot.3.2 <- gamma3.0 %>%
+  filter(gamma3.2$p.val.adj <0.05)
 
-to.plot.3.5 <- gamma3.5 %>%
-  filter(immuno.data_5.aldex3$t.data[[20]]$p.val.adj < 0.05)
+to.plot.3.5 <- gamma3.0 %>%
+  filter(gamma3.5$p.val.adj <0.05)
+
 
 ##newest version
-ggplot(gamma0, aes(diff.win, diff.btw)) +
+ggplot(gamma3.0, aes(std.error*sqrt(109), estimate)) +
   geom_point(alpha = 0.6, size = 1)+
-  geom_point(data = to.plot.0, color = "red", size = 1.5)+
-  geom_point(data = to.plot.2, color = "orange", size = 1.5)+
-  geom_point(data = to.plot.5, color = "blue", size = 1.5)+
+  geom_point(data = to.plot.3.0, color = "red", size = 1.5)+
+  geom_point(data = to.plot.3.2, color = "orange", size = 1.5)+
+  geom_point(data = to.plot.3.5, color = "blue", size = 1.5)+
   geom_abline(slope = 1,  intercept = 0, linetype = "dashed", color = "black")+
   geom_abline(slope = -1, intercept = 0, linetype = "dashed", color = "black")+
   labs(title = "D: Effect-Size Plots", x = "diff.win", y = "diff.btw")+
   theme_bw()
-
 
 
 
