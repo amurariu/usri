@@ -1,255 +1,256 @@
-#ALDEx2: need to keep columns diff.btw, we.ebH, diff.win
-#ALDEx3: need to keep columns estimate, p.adj.val, std. error
-library(tidyr)
+# representative volcano & effect plots using immuno dataset
+
+# Andreea Murariu & Scott Dos Santos
+# Last edited: 2025-08-14
+
+library(stringr)
 library(dplyr)
+library(RColorBrewer)
 library(ggplot2)
 library(patchwork)
-library(stringr)
-library(RColorBrewer)
-library(ALDEx2)
 
+# set path to directory containing all analysis objects
 anal.path <- "~/Documents/GitHub/ext_analysis/"
+repo.figs <- "~/Documents/GitHub/usri/figures/"
 
-################# volcano plots ######################
+################################ volcano plots ################################
 
-load(paste(anal.path,"immuno.data.aldex2_0.Rda", sep=""))
-load(paste(anal.path,"immuno.data.aldex2_1.Rda", sep=""))
-load(paste(anal.path,"immuno.data.aldex2_2.Rda", sep=""))
-load(paste(anal.path,"immuno.data.aldex2_5.Rda", sep=""))
-load(paste(anal.path,"immuno.data.aldex3_0.Rda", sep=""))
-load(paste(anal.path,"immuno.data.aldex3_1.Rda", sep=""))
-load(paste(anal.path,"immuno.data.aldex3_2.Rda", sep=""))
-load(paste(anal.path,"immuno.data.aldex3_5.Rda", sep=""))
+# load all aldex analysis objects from immuno dataset and extract an iteration
+# (30th iteration, picked out of the air)
+for(i in list.files(anal.path, pattern = "immuno.data.aldex")){
+  load(paste0(anal.path,i))
+  gamma <- gsub("aldex.*_","", str_split_i(i, "\\.", 3))
+  tool <- gsub("_.*","", str_split_i(i, "\\.", 3))
+  object <- paste0("immuno.data_", gamma, ".", tool)
+  assign(x = paste0("gamma", gamma, tool),
+         value = get(object)$t.data[[30]])
+}
 
-# Convert results to data frames
-df1.win <- as.data.frame(immuno.data_0.aldex2$t.data[[30]]$diff.win)
-colnames(df1.win) <- c("diff.win")
-df1.padj <- as.data.frame(immuno.data_0.aldex2$t.data[[30]]$we.eBH)
-colnames(df1.padj) <- c("p.adj")
-df1.btw <- as.data.frame(immuno.data_0.aldex2$t.data[[30]]$diff.btw)
-colnames(df1.btw) <- c("diff.btw")
-df1<-bind_cols(df1.win, df1.padj, df1.btw)
-df1$scale <- "0"
+# remove temporary objects
+rm(gamma,tool,object,i,
+   list = ls(pattern = "immuno."))
 
-df2.win <- as.data.frame(immuno.data_1.aldex2$t.data[[30]]$diff.win)
-colnames(df2.win) <- c("diff.win")
-df2.padj <- as.data.frame(immuno.data_1.aldex2$t.data[[30]]$we.eBH)
-colnames(df2.padj) <- c("p.adj")
-df2.btw <- as.data.frame(immuno.data_1.aldex2$t.data[[30]]$diff.btw)
-colnames(df2.btw) <- c("diff.btw")
-df2<-bind_cols(df2.win, df2.padj, df2.btw)
-df2$scale <- "0.1"  
+# filter gamma = 0 for points where P <0.05 in gamma = 0 BUT the corresponding
+# features are NOT significant in other gamma values (filtering like this only
+# works because all data frames are in the same order and have the same number
+# of rows)
+a2.to.plot0 <- gamma0aldex2 %>% 
+  filter(we.eBH <0.05,
+         gamma1aldex2$we.eBH >=0.05,
+         gamma2aldex2$we.eBH >=0.05,
+         gamma5aldex2$we.eBH >=0.05)
 
-df3.win <- as.data.frame(immuno.data_2.aldex2$t.data[[30]]$diff.win)
-colnames(df3.win) <- c("diff.win")
-df3.padj <- as.data.frame(immuno.data_2.aldex2$t.data[[30]]$we.eBH)
-colnames(df3.padj) <- c("p.adj")
-df3.btw <- as.data.frame(immuno.data_2.aldex2$t.data[[30]]$diff.btw)
-colnames(df3.btw) <- c("diff.btw")
-df3<-bind_cols(df3.win, df3.padj, df3.btw)
-df3$scale <- "0.2"
+# filter gamma = 0 separately for points where P <0.05 in gamma = 1 / 2 / 5
+a2.to.plot1 <- gamma0aldex2 %>% 
+  filter(gamma1aldex2$we.eBH <0.05)
 
-df4.win <- as.data.frame(immuno.data_5.aldex2$t.data[[30]]$diff.win)
-colnames(df4.win) <- c("diff.win")
-df4.padj <- as.data.frame(immuno.data_5.aldex2$t.data[[30]]$we.eBH)
-colnames(df4.padj) <- c("p.adj")
-df4.btw <- as.data.frame(immuno.data_5.aldex2$t.data[[30]]$diff.btw)
-colnames(df4.btw) <- c("diff.btw")
-df4<-bind_cols(df4.win, df4.padj, df4.btw)
-df4$scale <- "0.5" 
+a2.to.plot2 <- gamma0aldex2 %>% 
+  filter(gamma2aldex2$we.eBH <0.05)
 
-df_combined <- bind_rows(df1, df2, df3, df4)
-df_combined$tool <- "ALDEx2"
+a2.to.plot5 <- gamma0aldex2 %>% 
+  filter(gamma5aldex2$we.eBH <0.05)
 
+# set colours for gamma values for ALDEx2 and ALDEx3 as in FDR/TPR figure
+cols.volcano <- c(brewer.pal(n = 9, name = "Blues")[c(3,5,7)], "navy",
+                  brewer.pal(n = 9, name = "OrRd")[c(3,5,7,9)])
 
-#ALDEx3 new data frames
-df5.win <- as.data.frame(immuno.data_0.aldex3$t.data[[30]]$std.error*sqrt(109))
-colnames(df5.win) <- c("diff.win")
-df5.padj <- as.data.frame(immuno.data_0.aldex3$t.data[[30]]$p.val.adj)
-colnames(df5.padj) <- c("p.adj")
-df5.btw <- as.data.frame(immuno.data_0.aldex3$t.data[[30]]$estimate)
-colnames(df5.btw) <- c("diff.btw")
-df5<-bind_cols(df5.win, df5.padj, df5.btw)
-df5$scale <- "0"
+# make legend colour vector for scale_colour_manual
+leg.cols.a2 <- c("0" = cols.volcano[1], "0.1" = cols.volcano[2],
+                 "0.2" = cols.volcano[3], "0.5" = cols.volcano[4])
 
-df6.win <- as.data.frame(immuno.data_1.aldex3$t.data[[30]]$std.error*sqrt(109))
-colnames(df6.win) <- c("diff.win")
-df6.padj <- as.data.frame(immuno.data_1.aldex3$t.data[[30]]$p.val.adj)
-colnames(df6.padj) <- c("p.adj")
-df6.btw <- as.data.frame(immuno.data_1.aldex3$t.data[[30]]$estimate)
-colnames(df6.btw) <- c("diff.btw")
-df6<-bind_cols(df6.win, df6.padj, df6.btw)
-df6$scale <- "0.1"  
+# add column for strip title
+gamma0aldex2$title <- "ALDEx2"
 
-df7.win <- as.data.frame(immuno.data_2.aldex3$t.data[[30]]$std.error*sqrt(109))
-colnames(df7.win) <- c("diff.win")
-df7.padj <- as.data.frame(immuno.data_2.aldex3$t.data[[30]]$p.val.adj)
-colnames(df7.padj) <- c("p.adj")
-df7.btw <- as.data.frame(immuno.data_2.aldex3$t.data[[30]]$estimate)
-colnames(df7.btw) <- c("diff.btw")
-df7<-bind_cols(df7.win, df7.padj, df7.btw)
-df7$scale <- "0.2"
+# plot volcano plots for all features in gamma = 0 and overlay points which
+# are significant at increasing gamma values
+# png(paste0(repo.figs, "fig2_volcanoPlotsALDEx2.png"),
+#     units = "in", height = 5, width = 5, res = 600)
 
-df8.win <- as.data.frame(immuno.data_5.aldex3$t.data[[30]]$std.error*sqrt(109))
-colnames(df8.win) <- c("diff.win")
-df8.padj <- as.data.frame(immuno.data_5.aldex3$t.data[[30]]$p.val.adj)
-colnames(df8.padj) <- c("p.adj")
-df8.btw <- as.data.frame(immuno.data_5.aldex3$t.data[[30]]$estimate)
-colnames(df8.btw) <- c("diff.btw")
-df8<-bind_cols(df8.win, df8.padj, df8.btw)
-df8$scale <- "0.5" 
+vol.a2 <- ggplot(data = gamma0aldex2, aes(x = diff.btw, y = -log10(we.eBH)))+
+  geom_point(alpha = 0.4, size = 1, colour = "grey50")+
+  geom_point(data = a2.to.plot0, size = 1, aes(colour = "0"))+
+  geom_point(data = a2.to.plot1, size = 1, aes(colour = "0.1"))+
+  geom_point(data = a2.to.plot2, size = 1, aes(colour = "0.2"))+
+  geom_point(data = a2.to.plot5, size = 1, aes(colour = "0.5"))+
+  geom_hline(yintercept = -log10(0.05), linetype = "dashed")+  # FDR threshold
+  scale_y_continuous(limits = c(0,65), expand = c(0.005,0.75))+
+  scale_x_continuous(limits = c(-7.75,6.25), expand = c(0.005, 0.005))+
+  scale_colour_manual(name = "Scale (\u03b3)", values = leg.cols.a2)+
+  labs(x = "Log difference between groups", y = expression("-Log"[10]*" adjusted P-value"))+
+  theme_bw()+
+  facet_wrap(~title)+
+  theme(legend.box.spacing = unit(0.01, "cm"), legend.key.spacing = unit(0.01, "cm"),
+        legend.text = element_text(size = 8), strip.text = element_text(face = "bold"),
+        legend.title = element_text(size = 9, face = "bold"), legend.position = "top")
 
-df2_combined <- bind_rows(df5, df6, df7, df8)
-df2_combined$tool <- "ALDEx3"
+vol.a2
 
-total <- bind_rows(df_combined, df2_combined)
+# dev.off()
 
 
-# Volcano plot
-p3<- ggplot(total, aes(x = diff.btw, y = -log10(p.adj), color = scale)) +
-  geom_point(alpha = 0.6) +
-  geom_hline(yintercept = -log10(0.05), linetype = "dashed") +  # FDR threshold
-  theme_bw() +
-  facet_wrap(~tool)+
-  labs(title = "ALDEx2 Volcano Plot",
-       x = "diff.btw",
-       y = "-log10 Adjusted p.adj",
-       color = "scale")
+# same for ALDEx3: but first calculate dispersion (diff w/in groups), for the
+# immuno dataset (which has 109 samples) analysed with ALDEx3
+# diff.win = std.error * sqrt(no. samples)
+gamma0aldex3 <- gamma0aldex3 %>% 
+  mutate(diff.win = std.error * sqrt(109))
 
 
+#filter gamma 0 
+a3.to.plot0 <- gamma0aldex3 %>% 
+  filter(p.val.adj <0.05,
+         gamma1aldex3$p.val.adj >=0.05,
+         gamma2aldex3$p.val.adj >=0.05,
+         gamma5aldex3$p.val.adj >=0.05)
 
-############ volcano plot with other colours: #####################
-library(ggplot2)
-library(RColorBrewer)
+a3.to.plot1 <- gamma0aldex3 %>% 
+  filter(gamma1aldex3$p.val.adj <0.05)
 
-# 4 shades of blue for ALDEx2, 4 shades of orange for ALDEx3
-cols.ald2 <- brewer.pal(9, "Blues")[4:7]
-cols.ald3 <- brewer.pal(9, "Oranges")[4:7]
+a3.to.plot2 <- gamma0aldex3 %>% 
+  filter(gamma2aldex3$p.val.adj <0.05)
 
-# Named vector matching interaction(tool, scale)
-cols.dataset <- c(
-  setNames(cols.ald2, paste0("ALDEx2.", unique(total$scale))),
-  setNames(cols.ald3, paste0("ALDEx3.", unique(total$scale)))
-)
+a3.to.plot5 <- gamma0aldex3 %>% 
+  filter(gamma5aldex3$p.val.adj <0.05)
 
-p3 <- ggplot(total, aes(x = diff.btw, y = -log10(p.adj), color = interaction(tool, scale))) +
-  geom_point(alpha = 0.6) +
-  geom_hline(yintercept = -log10(0.05), linetype = "dashed") +
-  scale_colour_manual(name = "Tool & Scale", values = cols.dataset) +
-  theme_bw() +
-  facet_wrap(~tool) +
-  labs(title = "Volcano Plot", x = "diff.btw", y = "-log10 Adjusted p.adj")
+# legend colour vector
+leg.cols.a3 <- c("0" = cols.volcano[5], "0.1" = cols.volcano[6],
+                 "0.2" = cols.volcano[7], "0.5" = cols.volcano[8])
 
+# strip title
+gamma0aldex3$title <- "ALDEx3"
 
-#################### effect size plots #######################
+# plot
+# png(paste0(repo.figs, "fig2_volcanoPlotsALDEx3.png"),
+#     units = "in", height = 5, width = 5, res = 600)
 
-cols.ald2 <- brewer.pal(n = 9, name = "Blues")[4:7]
-cols.ald3 <- brewer.pal(n = 9, name = "Oranges")[4:7]
+vol.a3 <- ggplot(data = gamma0aldex3, aes(x = estimate, y = -log10(p.val.adj)))+
+  geom_point(alpha = 0.4, size = 1, colour = "grey50")+
+  geom_point(data = a3.to.plot0, size = 1, aes(colour = "0"))+
+  geom_point(data = a3.to.plot1, size = 1, aes(colour = "0.1"))+
+  geom_point(data = a3.to.plot2, size = 1, aes(colour = "0.2"))+
+  geom_point(data = a3.to.plot5, size = 1, aes(colour = "0.5"))+
+  geom_hline(yintercept = -log10(0.05), linetype = "dashed")+  # FDR threshold
+  scale_y_continuous(limits = c(0,65), expand = c(0.005,0.75))+
+  scale_x_continuous(limits = c(-7.75,6.25), expand = c(0.005, 0.005))+
+  scale_colour_manual(name = "Scale (\u03b3)", values = leg.cols.a3)+
+  labs(x = "Log difference between groups", y = expression("-Log"[10]*" adjusted P-value"))+
+  theme_bw()+
+  facet_wrap(~title)+
+  theme(legend.box.spacing = unit(0.01, "cm"), legend.key.spacing = unit(0.01, "cm"),
+        legend.text = element_text(size = 8), strip.text = element_text(face = "bold"),
+        legend.title = element_text(size = 9, face = "bold"), legend.position = "top")
 
-cols.dataset <- c(
-  setNames(cols.ald2, paste0("ALDEx2.", unique(total$scale))),
-  setNames(cols.ald3, paste0("ALDEx3.", unique(total$scale)))
-)
+vol.a3
 
-ggplot(total, aes(x = diff.win, y = diff.btw)) +
-  geom_point(data = subset(total, p.adj > 0.05), color = "gray80", alpha = 0.3, size = 1) +
-  geom_point(data = subset(total, p.adj <= 0.05), aes(color = interaction(tool, scale)), alpha = 0.8, size = 1) +
-  scale_colour_manual(name = "Tool & Scale", values = cols.dataset) +
-  geom_abline(slope = 1,  intercept = 0, linetype = "dashed", color = "black") +
-  geom_abline(slope = -1, intercept = 0, linetype = "dashed", color = "black") +
-  theme_bw() +
-  facet_wrap(scale ~ tool, ncol = 2) +
-  labs(title = "Effect-Size Plot", 
-       x = "diff.win", 
-       y = "diff.btw")
-
-
-#plot from figure
-par(mfrow=c(1,1))
-aldex.plot(immuno.data_0.aldex2$t.data[[10]], type='MW')
-title("D: Effect", adj=0, line= 0.8) 
-points(immuno.data_0.aldex2$t.data[[10]]$diff.win[which(immuno.data_2.aldex2$t.data[[10]]$we.eBH < 0.05)], 
-       (immuno.data_0.aldex2$t.data[[10]]$diff.btw[which(immuno.data_2.aldex2$t.data[[10]]$we.eBH < 0.05)]), cex=0.6, pch=19, 
-       col='orange')
-points(immuno.data_0.aldex2$t.data[[10]]$diff.win[which(immuno.data_5.aldex2$t.data[[10]]$we.eBH < 0.05)], 
-       (immuno.data_0.aldex2$t.data[[10]]$diff.btw[which(immuno.data_5.aldex2$t.data[[10]]$we.eBH < 0.05)]), col='blue', 
-       cex=0.6, pch=19)
-
-abline(v=c(-0.5,0.5), lty=2, col='darkgrey')
-abline(v=c(-1.5,1.5), lty=2, col='darkgrey')
+# dev.off()
 
 
-#plot(immuno.data_0.aldex3$t.data[[1]]$std.error*sqrt(120), immuno.data_0.aldex3$t.data[[1]]$estimate)
-#std.error * sqrt(total number of samples) <- diff.win
-#estimate <-  diff.btw
+# both together on same plot
+# png(paste0(repo.figs, "fig2_volcanoPlotsALDEx.png"),
+#     units = "in", height = 5, width = 10, res = 600)
+
+vol.a3.edit <- ggplot(data = gamma0aldex3, aes(x = estimate, y = -log10(p.val.adj)))+
+  geom_point(alpha = 0.4, size = 1, colour = "grey50")+
+  geom_point(data = a3.to.plot0, size = 1, aes(colour = "0"))+
+  geom_point(data = a3.to.plot1, size = 1, aes(colour = "0.1"))+
+  geom_point(data = a3.to.plot2, size = 1, aes(colour = "0.2"))+
+  geom_point(data = a3.to.plot5, size = 1, aes(colour = "0.5"))+
+  geom_hline(yintercept = -log10(0.05), linetype = "dashed")+  # FDR threshold
+  scale_y_continuous(limits = c(0,65), expand = c(0.005,0.75))+
+  scale_x_continuous(limits = c(-7.75,6.25), expand = c(0.005, 0.005))+
+  scale_colour_manual(name = "Scale (\u03b3)", values = leg.cols.a3)+
+  labs(x = "Log difference between groups", y = expression("-Log"[10]*" adjusted P-value"))+
+  theme_bw()+
+  facet_wrap(~title)+
+  theme(legend.box.spacing = unit(0.01, "cm"), legend.key.spacing = unit(0.01, "cm"),
+        legend.text = element_text(size = 8), strip.text = element_text(face = "bold"),
+        legend.title = element_text(size = 9, face = "bold"), legend.position = "top",
+        axis.title.y = element_blank())
 
 
-#test code
-cols.ald2 <- brewer.pal(n = 9, name = "Blues")[4:7]
-cols.ald3 <- brewer.pal(n = 9, name = "Oranges")[4:7]
+vol.a2 | vol.a3.edit
 
-cols.dataset <- c(
-  setNames(cols.ald2, paste0("ALDEx2.", unique(total$scale))),
-  setNames(cols.ald3, paste0("ALDEx3.", unique(total$scale)))
-)
+# dev.off()
 
+################################# effect plots #################################
 
-gamma0 <- immuno.data_0.aldex2$t.data[[20]]
-gamma2 <- immuno.data_2.aldex2$t.data[[20]]
-gamma5 <- immuno.data_5.aldex2$t.data[[20]]
+# data for plotting difference within groups vs. difference between groups is
+# already in all data frames: either natively, or calculated in previous section
 
-gamma0$title <- "ALDEx2"
+# aldex2
+# png(paste0(repo.figs, "fig2_effectPlotsALDEx2.png"),
+#     units = "in", height = 5, width = 5, res = 600)
 
-to.plot.0 <- gamma0 %>%
-  filter(we.eBH < 0.05, gamma2$we.eBH >= 0.05,
-         gamma5$we.eBH >= 0.05)
-
-to.plot.2 <- gamma0 %>%
-  filter(gamma2$we.eBH <0.05)
-
-to.plot.5 <- gamma0 %>%
-  filter(gamma5$we.eBH <0.05)
-
-##newest version
-p1<-ggplot(gamma0, aes(diff.win, diff.btw)) +
-geom_point(alpha = 0.6, size = 1)+
-geom_point(data = to.plot.0, color = "red", size = 1.5)+
-geom_point(data = to.plot.2, color = "orange", size = 1.5)+
-  geom_point(data = to.plot.5, color = "blue", size = 1.5)+
+eff.a2 <- ggplot(data = gamma0aldex2, aes(x = diff.win, y = diff.btw))+
+  geom_point(alpha = 0.4, size = 1, colour = "grey50")+
+  geom_point(data = a2.to.plot0, size = 1, aes(colour = "0"))+
+  geom_point(data = a2.to.plot1, size = 1, aes(colour = "0.1"))+
+  geom_point(data = a2.to.plot2, size = 1, aes(colour = "0.2"))+
+  geom_point(data = a2.to.plot5, size = 1, aes(colour = "0.5"))+
   geom_abline(slope = 1,  intercept = 0, linetype = "dashed", color = "black")+
   geom_abline(slope = -1, intercept = 0, linetype = "dashed", color = "black")+
-  labs(title = "ALDEx2 Effect-Size Plot", x = "diff.win", y = "diff.btw")+
-  theme_bw()
+  scale_colour_manual(name = "Scale (\u03b3)", values = leg.cols.a2)+
+  scale_x_continuous(limits = c(0,14), expand = c(0.0001, 0.001))+
+  scale_y_continuous(limits = c(-7.75,6.25), expand = c(0.001, 0.001))+
+  labs(x = "Log difference within groups", y = "Log difference between groups")+
+  theme_bw()+
+  facet_wrap(~title)+
+  theme(legend.box.spacing = unit(0.01, "cm"), legend.key.spacing = unit(0.01, "cm"),
+        legend.text = element_text(size = 8), strip.text = element_text(face = "bold"),
+        legend.title = element_text(size = 9, face = "bold"), legend.position = "top")
 
+eff.a2
 
+# dev.off()
 
-gamma3.0 <- immuno.data_0.aldex3$t.data[[20]]
-gamma3.2 <- immuno.data_2.aldex3$t.data[[20]]
-gamma3.5 <- immuno.data_5.aldex3$t.data[[20]]
+# aldex3
+# png(paste0(repo.figs, "fig2_effectPlotsALDEx3.png"),
+#     units = "in", height = 5, width = 5, res = 600)
 
-gamma3.0$title <- "ALDEx3"
-
-to.plot.3.0 <- gamma3.0 %>%
-  filter(p.val.adj < 0.05, gamma3.2$p.val.adj >= 0.05,
-         gamma3.5$p.val.adj >= 0.05)
-
-to.plot.3.2 <- gamma3.0 %>%
-  filter(gamma3.2$p.val.adj <0.05)
-
-to.plot.3.5 <- gamma3.0 %>%
-  filter(gamma3.5$p.val.adj <0.05)
-
-
-##newest version
-p2<-ggplot(gamma3.0, aes(std.error*sqrt(109), estimate)) +
-  geom_point(alpha = 0.6, size = 1)+
-  geom_point(data = to.plot.3.0, color = "red", size = 1.5)+
-  geom_point(data = to.plot.3.2, color = "orange", size = 1.5)+
-  geom_point(data = to.plot.3.5, color = "blue", size = 1.5)+
+eff.a3 <- ggplot(data = gamma0aldex3, aes(x = diff.win, y = estimate))+
+  geom_point(alpha = 0.4, size = 1, colour = "grey50")+
+  geom_point(data = a3.to.plot0, size = 1, aes(colour = "0"))+
+  geom_point(data = a3.to.plot1, size = 1, aes(colour = "0.1"))+
+  geom_point(data = a3.to.plot2, size = 1, aes(colour = "0.2"))+
+  geom_point(data = a3.to.plot5, size = 1, aes(colour = "0.5"))+
   geom_abline(slope = 1,  intercept = 0, linetype = "dashed", color = "black")+
   geom_abline(slope = -1, intercept = 0, linetype = "dashed", color = "black")+
-  labs(title = "ALDEx3 Effect-Size Plot", x = "diff.win", y = "diff.btw")+
-  theme_bw()
+  scale_colour_manual(name = "Scale (\u03b3)", values = leg.cols.a3)+
+  scale_x_continuous(limits = c(0,14), expand = c(0.0001, 0.001))+
+  scale_y_continuous(limits = c(-7.75,6.25), expand = c(0.001, 0.001))+
+  labs(x = "Log difference within groups", y = "Log difference between groups")+
+  theme_bw()+
+  facet_wrap(~title)+
+  theme(legend.box.spacing = unit(0.01, "cm"), legend.key.spacing = unit(0.01, "cm"),
+        legend.text = element_text(size = 8), strip.text = element_text(face = "bold"),
+        legend.title = element_text(size = 9, face = "bold"), legend.position = "top")
 
+eff.a3
 
-p1|p2
+# dev.off()
+
+# both
+# png(paste0(repo.figs, "fig2_effectPlotsALDEx.png"),
+#     units = "in", height = 5, width = 10, res = 600)
+
+eff.a3.edit <- ggplot(data = gamma0aldex3, aes(x = diff.win, y = estimate))+
+  geom_point(alpha = 0.4, size = 1, colour = "grey50")+
+  geom_point(data = a3.to.plot0, size = 1, aes(colour = "0"))+
+  geom_point(data = a3.to.plot1, size = 1, aes(colour = "0.1"))+
+  geom_point(data = a3.to.plot2, size = 1, aes(colour = "0.2"))+
+  geom_point(data = a3.to.plot5, size = 1, aes(colour = "0.5"))+
+  geom_abline(slope = 1,  intercept = 0, linetype = "dashed", color = "black")+
+  geom_abline(slope = -1, intercept = 0, linetype = "dashed", color = "black")+
+  scale_colour_manual(name = "Scale (\u03b3)", values = leg.cols.a3)+
+  scale_x_continuous(limits = c(0,14), expand = c(0.0001, 0.001))+
+  scale_y_continuous(limits = c(-7.75,6.25), expand = c(0.001, 0.001))+
+  labs(x = "Log difference within groups")+
+  theme_bw()+
+  facet_wrap(~title)+
+  theme(legend.box.spacing = unit(0.01, "cm"), legend.key.spacing = unit(0.01, "cm"),
+        legend.text = element_text(size = 8), strip.text = element_text(face = "bold"),
+        legend.title = element_text(size = 9, face = "bold"), legend.position = "top",
+        axis.title.y = element_blank())
+
+eff.a2 | eff.a3.edit
+
+# dev.off()
