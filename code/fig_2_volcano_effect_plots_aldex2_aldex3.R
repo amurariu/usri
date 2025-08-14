@@ -211,14 +211,14 @@ to.plot.5 <- gamma0 %>%
   filter(gamma5$we.eBH <0.05)
 
 ##newest version
-ggplot(gamma0, aes(diff.win, diff.btw)) +
+p1<-ggplot(gamma0, aes(diff.win, diff.btw)) +
 geom_point(alpha = 0.6, size = 1)+
 geom_point(data = to.plot.0, color = "red", size = 1.5)+
 geom_point(data = to.plot.2, color = "orange", size = 1.5)+
   geom_point(data = to.plot.5, color = "blue", size = 1.5)+
   geom_abline(slope = 1,  intercept = 0, linetype = "dashed", color = "black")+
   geom_abline(slope = -1, intercept = 0, linetype = "dashed", color = "black")+
-  labs(title = "D: Effect-Size Plots", x = "diff.win", y = "diff.btw")+
+  labs(title = "ALDEx2 Effect-Size Plot", x = "diff.win", y = "diff.btw")+
   theme_bw()
 
 
@@ -241,13 +241,15 @@ to.plot.3.5 <- gamma3.0 %>%
 
 
 ##newest version
-ggplot(gamma3.0, aes(std.error*sqrt(109), estimate)) +
+p2<-ggplot(gamma3.0, aes(std.error*sqrt(109), estimate)) +
   geom_point(alpha = 0.6, size = 1)+
   geom_point(data = to.plot.3.0, color = "red", size = 1.5)+
   geom_point(data = to.plot.3.2, color = "orange", size = 1.5)+
   geom_point(data = to.plot.3.5, color = "blue", size = 1.5)+
   geom_abline(slope = 1,  intercept = 0, linetype = "dashed", color = "black")+
   geom_abline(slope = -1, intercept = 0, linetype = "dashed", color = "black")+
-  labs(title = "D: Effect-Size Plots", x = "diff.win", y = "diff.btw")+
+  labs(title = "ALDEx3 Effect-Size Plot", x = "diff.win", y = "diff.btw")+
   theme_bw()
 
+
+p1|p2
