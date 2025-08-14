@@ -6,6 +6,9 @@ library(ggplot2)
 library(patchwork)
 library(stringr)
 library(RColorBrewer)
+library(ALDEx2)
+
+anal.path <- "~/Documents/GitHub/ext_analysis/"
 
 ################# volcano plots ######################
 
@@ -191,18 +194,24 @@ cols.dataset <- c(
 )
 
 
+gamma0 <- immuno.data_0.aldex2$t.data[[10]]
+gamma0$title <- "ALDEx2"
+
+to.plot.0 <- gamma0 %>%
+  filter(we.eBH < 0.05, immuno.data_2.aldex2$t.data[[10]]$we.eBH >= 0.05,
+         immuno.data_5.aldex2$t.data[[10]]$we.eBH >= 0.05)
+
 ##newest version
-ggplot(immuno.data_0.aldex2$t.data[[10]], aes(diff.win, diff.btw)) +
-geom_point(alpha = 0.6, size = 1) +
-geom_point(data = immuno.data_0.aldex2$t.data[[10]] %>%
-      filter(we.eBH < 0.05, immuno.data_2.aldex2$t.data[[10]]$we.eBH >= 0.05,
-      immuno.data_5.aldex2$t.data[[10]]$we.eBH >= 0.05), color = "red", size = 1.5) +  geom_point(data = immuno.data_0.aldex2$t.data[[10]] %>% 
-            filter(immuno.data_2.aldex2$t.data[[10]]$we.eBH < 0.05), color = "orange"
-            , size = 1.5) +
-geom_point(data = immuno.data_0.aldex2$t.data[[10]] %>%
-            filter(immuno.data_5.aldex2$t.data[[10]]$we.eBH < 0.05), color = "blue", 
-           size = 1.5) +
-  geom_abline(slope = 1,  intercept = 0, linetype = "dashed", color = "black") +
-  geom_abline(slope = -1, intercept = 0, linetype = "dashed", color = "black") +
-labs(title = "D: Effect-Size Plots", x = "diff.win", y = "diff.btw") +
-theme_bw() 
+ggplot(gamma0, aes(diff.win, diff.btw)) +
+geom_point(alpha = 0.6, size = 1)+
+geom_point(data = to.plot.0, color = "red", size = 1.5)+
+  geom_point(data = immuno.data_0.aldex2$t.data[[10]] %>% 
+            filter(immuno.data_2.aldex2$t.data[[10]]$we.eBH < 0.05), color = "orange", size = 1.5)+
+  geom_point(data = immuno.data_0.aldex2$t.data[[10]] %>%
+            filter(immuno.data_5.aldex2$t.data[[10]]$we.eBH < 0.05), color = "blue", size = 1.5)+
+  geom_abline(slope = 1,  intercept = 0, linetype = "dashed", color = "black")+
+  geom_abline(slope = -1, intercept = 0, linetype = "dashed", color = "black")+
+  labs(title = "D: Effect-Size Plots", x = "diff.win", y = "diff.btw")+
+  theme_bw()
+
+
