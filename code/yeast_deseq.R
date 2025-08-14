@@ -1,5 +1,6 @@
 library(seqgendiff, warn.conflicts=F)
 library(DESeq2, warn.conflicts=F)
+library(edgeR)
 
 source('code/des.fun.R')
 
