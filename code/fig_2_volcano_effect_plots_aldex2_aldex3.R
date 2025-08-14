@@ -204,11 +204,11 @@ to.plot.0 <- gamma0 %>%
   filter(we.eBH < 0.05, immuno.data_2.aldex2$t.data[[20]]$we.eBH >= 0.05,
          immuno.data_5.aldex2$t.data[[20]]$we.eBH >= 0.05)
 
-to.plot.2 <- gamma2 %>%
-  filter(we.eBH < 0.05,  immuno.data_5.aldex2$t.data[[20]]$we.eBH >= 0.05)
+to.plot.2 <- gamma0 %>%
+  filter(gamma2$we.eBH <0.05)
 
-to.plot.5 <- gamma5 %>%
-  filter(immuno.data_5.aldex2$t.data[[20]]$we.eBH < 0.05)
+to.plot.5 <- gamma0 %>%
+  filter(gamma5$we.eBH <0.05)
 
 ##newest version
 ggplot(gamma0, aes(diff.win, diff.btw)) +
