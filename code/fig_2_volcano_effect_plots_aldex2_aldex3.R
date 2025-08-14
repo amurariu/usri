@@ -251,5 +251,3 @@ ggplot(gamma3.0, aes(std.error*sqrt(109), estimate)) +
   labs(title = "D: Effect-Size Plots", x = "diff.win", y = "diff.btw")+
   theme_bw()
 
-
-
