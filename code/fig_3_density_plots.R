@@ -12,31 +12,35 @@ repo <- "~/Documents/GitHub/usri/"
 
 source('code/summary.data.fun.R')
 
-if(length(list.files(paste0(repo,"analysis/summarystats"), pattern = "ss")) != 7){
+if(length(list.files(paste0(repo,"analysis/summarystats"), pattern = "ss")) != 8){
   
   # load in analysis results (takes a few minutes!)
-  for(i in list.files(data, pattern = "immuno.*aldex")){
+  for(i in list.files(data, pattern = "yeast.*aldex")){
     load(paste0(data, i))
   }
   
   # build summary object from datasets (will take several minutes)
-  i <- ls(pattern = "immuno")[1]
+  i <- ls(pattern = "yeast")[1]
     
   # extract dataset and tool names from input file (sensitive to aldex gamma)
   dataset <- str_split(i, "\\." , 3)[[1]][1]
   gamma <- "data_"
   tool <- "aldex"
     
-  # run 'get_confusion.R' on analysis objects to automatically build the
+  # run 'summary statistics' on analysis objects to automatically build the
   # confusion matrices
   assign(x = paste0("ss.", dataset),
          sum.fun(aldex2_0 = get(paste0(dataset, ".", gamma, 0, ".", tool, 2)),
                  aldex2_1 = get(paste0(dataset, ".", gamma, 1, ".", tool, 2)),
                  aldex2_2 = get(paste0(dataset, ".", gamma, 2, ".", tool, 2)),
+                 aldex2_3 = get(paste0(dataset, ".", gamma, 3, ".", tool, 2)),
+                 aldex2_4 = get(paste0(dataset, ".", gamma, 4, ".", tool, 2)),
                  aldex2_5 = get(paste0(dataset, ".", gamma, 5, ".", tool, 2)),
                  aldex3_0 = get(paste0(dataset, ".", gamma, 0, ".", tool, 3)),
                  aldex3_1 = get(paste0(dataset, ".", gamma, 1, ".", tool, 3)),
                  aldex3_2 = get(paste0(dataset, ".", gamma, 2, ".", tool, 3)),
+                 aldex3_3 = get(paste0(dataset, ".", gamma, 3, ".", tool, 3)),
+                 aldex3_4 = get(paste0(dataset, ".", gamma, 4, ".", tool, 3)),
                  aldex3_5 = get(paste0(dataset, ".", gamma, 5, ".", tool, 3))))
   
   
@@ -46,7 +50,7 @@ if(length(list.files(paste0(repo,"analysis/summarystats"), pattern = "ss")) != 7
          file = paste0(repo,"analysis/summarystats/ss.", dataset, ".Rda"))
   
   # finally, remove analysis objects from environment
-  for(i in ls(pattern = "^immuno")){
+  for(i in ls(pattern = "^yeast")){
     rm(list = i)
   }
 } else{
@@ -65,9 +69,9 @@ for(i in ls(pattern = "^ss.")){
   # pull list
   df <- get(i)
   
-  # make a temp dataframe with 1600 rows (200 x 8 tool/gamma combos) and 3 cols:
+  # make a temp dataframe with 1800 rows (200 x 9 tool/gamma combos) and 3 cols:
   # abs values, dataset and tool
-  tempdf <- data.frame(matrix(data = NA, nrow = 1600, ncol = 3))
+  tempdf <- data.frame(matrix(data = NA, nrow = 1800, ncol = 3))
   colnames(tempdf) <- c("abs", "dataset", "tool")
   
   start <- 1

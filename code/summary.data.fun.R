@@ -1,6 +1,6 @@
 anal.path <- "../ext_analysis/" #move ext_analysis back to github folder
 
-sum.fun <- function(aldex2_0, aldex2_1, aldex2_2, aldex2_5, aldex3_0, aldex3_1, aldex3_2, aldex3_5){
+sum.fun <- function(aldex2_0, aldex2_1, aldex2_2, aldex2_3, aldex2_4, aldex2_5, aldex3_0, aldex3_1, aldex3_2, aldex3_3, aldex3_4, aldex3_5){
 #summary for gamma = 1e-3, ALDEx2
   minmax2_0 <- matrix(data=NA, ncol=3, nrow=200)
   absmin0 <- matrix(data = NA, ncol = 1, nrow = 100)
@@ -49,6 +49,40 @@ for(i in 1:100){
   absmax2[i] <- abs(max(aldex2_2$t.data[[i]]$diff.btw[lt2 & sig2]))
 }
 minmax2_2[,3] <- rbind(absmin2, absmax2)
+
+
+#summary for gamma = 0.3, ALDEx2
+minmax2_3 <- matrix(data=NA, ncol=3, nrow=200)
+absmin3 <- matrix(data = NA, ncol = 1, nrow = 100)
+absmax3 <- matrix(data = NA, ncol = 1, nrow = 100)
+colnames(minmax2_3)<-c('max', 'min', 'abs')
+for(i in 1:100){
+  gt3 <- aldex2_3$t.data[[i]]$diff.btw > 0
+  lt3 <- aldex2_3$t.data[[i]]$diff.btw < 0
+  sig3 <- aldex2_3$t.data[[i]]$we.eBH < 0.05
+  minmax2_3[i,2] <- min(aldex2_3$t.data[[i]]$diff.btw[gt3 & sig3])
+  minmax2_3[i,1] <- max(aldex2_3$t.data[[i]]$diff.btw[lt3 & sig3])
+  absmin3[i] <- abs(min(aldex2_3$t.data[[i]]$diff.btw[gt3 & sig3]))
+  absmax3[i] <- abs(max(aldex2_3$t.data[[i]]$diff.btw[lt3 & sig3]))
+}
+minmax2_3[,3] <- rbind(absmin3, absmax3)
+
+
+#summary for gamma = 0.4, ALDEx2
+minmax2_4 <- matrix(data=NA, ncol=3, nrow=200)
+absmin4 <- matrix(data = NA, ncol = 1, nrow = 100)
+absmax4 <- matrix(data = NA, ncol = 1, nrow = 100)
+colnames(minmax2_4)<-c('max', 'min', 'abs')
+for(i in 1:100){
+  gt2 <- aldex2_4$t.data[[i]]$diff.btw > 0
+  lt2 <- aldex2_4$t.data[[i]]$diff.btw < 0
+  sig2 <- aldex2_4$t.data[[i]]$we.eBH < 0.05
+  minmax2_4[i,2] <- min(aldex2_4$t.data[[i]]$diff.btw[gt4 & sig4])
+  minmax2_4[i,1] <- max(aldex2_4$t.data[[i]]$diff.btw[lt4 & sig4])
+  absmin4[i] <- abs(min(aldex2_4$t.data[[i]]$diff.btw[gt4 & sig4]))
+  absmax4[i] <- abs(max(aldex2_4$t.data[[i]]$diff.btw[lt4 & sig4]))
+}
+minmax2_4[,3] <- rbind(absmin4, absmax4)
   
   #summary for gamma = 0.5, ALDEx2
 minmax2_5 <- matrix(data=NA, ncol=3, nrow=200)
@@ -113,6 +147,38 @@ for(i in 1:100){
   absmax3_2[i] <- abs(max(aldex3_2$t.data[[i]]$estimate[lt3_2 & sig3_2]))
 }
 minmax3_2[,3] <- rbind(absmin3_2, absmax3_2)
+
+#summary for gamma = 0.3, ALDEx3
+minmax3_3 <- matrix(data=NA, ncol=3, nrow=200)
+absmin3_3 <- matrix(data = NA, ncol = 1, nrow = 100)
+absmax3_3 <- matrix(data = NA, ncol = 1, nrow = 100)
+colnames(minmax3_3)<-c('max', 'min', 'abs')
+for(i in 1:100){
+  gt3_3 <- aldex3_3$t.data[[i]]$estimate > 0
+  lt3_3 <-  aldex3_3$t.data[[i]]$estimate < 0
+  sig3_3 <-  aldex3_3$t.data[[i]]$p.val.adj < 0.05
+  minmax3_3[i,2] <- min(aldex3_3$t.data[[i]]$estimate[gt3_3 & sig3_3])
+  minmax3_3[i,1] <- max(aldex3_3$t.data[[i]]$estimate[lt3_3 & sig3_3])
+  absmin3_3[i] <- abs(min(aldex3_3$t.data[[i]]$estimate[gt3_3 & sig3_3]))
+  absmax3_3[i] <- abs(max(aldex3_3$t.data[[i]]$estimate[lt3_3 & sig3_3]))
+}
+minmax3_3[,3] <- rbind(absmin3_3, absmax3_3)
+
+#summary for gamma = 0.2, ALDEx3
+minmax3_4 <- matrix(data=NA, ncol=3, nrow=200)
+absmin3_4 <- matrix(data = NA, ncol = 1, nrow = 100)
+absmax3_4 <- matrix(data = NA, ncol = 1, nrow = 100)
+colnames(minmax3_4)<-c('max', 'min', 'abs')
+for(i in 1:100){
+  gt3_4 <- aldex3_4$t.data[[i]]$estimate > 0
+  lt3_4 <-  aldex3_4$t.data[[i]]$estimate < 0
+  sig3_4 <-  aldex3_4$t.data[[i]]$p.val.adj < 0.05
+  minmax3_4[i,2] <- min(aldex3_4$t.data[[i]]$estimate[gt3_4 & sig3_4])
+  minmax3_4[i,1] <- max(aldex3_4$t.data[[i]]$estimate[lt3_4 & sig3_4])
+  absmin3_4[i] <- abs(min(aldex3_4$t.data[[i]]$estimate[gt3_4 & sig3_4]))
+  absmax3_4[i] <- abs(max(aldex3_4$t.data[[i]]$estimate[lt3_4 & sig3_4]))
+}
+minmax3_4[,3] <- rbind(absmin3_4, absmax3_4)
   
   #summary for gamma = 0.5, ALDEx3
 minmax3_5 <- matrix(data=NA, ncol=3, nrow=200)
@@ -130,5 +196,5 @@ for(i in 1:100){
 }
 minmax3_5[,3] <- rbind(absmin3_5, absmax3_5)
 
-return(list(minmax2_0 = minmax2_0, minmax2_1 = minmax2_1, minmax2_2 = minmax2_2, minmax2_5 = minmax2_5, minmax3_0 = minmax3_0, minmax3_1 = minmax3_1, minmax3_2 = minmax3_2, minmax3_5 = minmax3_5))
+return(list(minmax2_0 = minmax2_0, minmax2_1 = minmax2_1, minmax2_2 = minmax2_2, minmax2_3 = minmax2_3, minmax2_4 = minmax2_4,  minmax2_5 = minmax2_5, minmax3_0 = minmax3_0, minmax3_1 = minmax3_1, minmax3_2 = minmax3_2, minmax3_3 = minmax3_3, minmax3_4 = minmax3_4, minmax3_5 = minmax3_5))
 }
