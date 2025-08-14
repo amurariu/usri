@@ -74,9 +74,9 @@ absmin4 <- matrix(data = NA, ncol = 1, nrow = 100)
 absmax4 <- matrix(data = NA, ncol = 1, nrow = 100)
 colnames(minmax2_4)<-c('max', 'min', 'abs')
 for(i in 1:100){
-  gt2 <- aldex2_4$t.data[[i]]$diff.btw > 0
-  lt2 <- aldex2_4$t.data[[i]]$diff.btw < 0
-  sig2 <- aldex2_4$t.data[[i]]$we.eBH < 0.05
+  gt4 <- aldex2_4$t.data[[i]]$diff.btw > 0
+  lt4 <- aldex2_4$t.data[[i]]$diff.btw < 0
+  sig4 <- aldex2_4$t.data[[i]]$we.eBH < 0.05
   minmax2_4[i,2] <- min(aldex2_4$t.data[[i]]$diff.btw[gt4 & sig4])
   minmax2_4[i,1] <- max(aldex2_4$t.data[[i]]$diff.btw[lt4 & sig4])
   absmin4[i] <- abs(min(aldex2_4$t.data[[i]]$diff.btw[gt4 & sig4]))
