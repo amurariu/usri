@@ -15,12 +15,12 @@ source('code/summary.data.fun.R')
 if(length(list.files(paste0(repo,"analysis/summarystats"), pattern = "ss")) != 8){
   
   # load in analysis results (takes a few minutes!)
-  for(i in list.files(data, pattern = "yeast.*aldex")){
+  for(i in list.files(data, pattern = "mts.*aldex")){
     load(paste0(data, i))
   }
   
   # build summary object from datasets (will take several minutes)
-  i <- ls(pattern = "yeast")[1]
+  i <- ls(pattern = "mts")[1]
     
   # extract dataset and tool names from input file (sensitive to aldex gamma)
   dataset <- str_split(i, "\\." , 3)[[1]][1]
@@ -50,7 +50,7 @@ if(length(list.files(paste0(repo,"analysis/summarystats"), pattern = "ss")) != 8
          file = paste0(repo,"analysis/summarystats/ss.", dataset, ".Rda"))
   
   # finally, remove analysis objects from environment
-  for(i in ls(pattern = "^yeast")){
+  for(i in ls(pattern = "^mts")){
     rm(list = i)
   }
 } else{
