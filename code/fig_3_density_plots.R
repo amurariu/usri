@@ -45,7 +45,9 @@ if(length(list.files(paste0(repo,"analysis/summarystats"), pattern = "ss")) != 8
   
   
   # save confusion matrix list objects as .Rda
-  
+  # NOTE: for MTS dataset, iteration 73 of ALDEx2 at gamma = 0.5 had NO
+  # significant P values for the negative diff.btw features and so returns
+  # -Inf for the 73rd value in 'max' column and 173rd value in 'abs' column
     save(list = paste0("ss.", dataset),
          file = paste0(repo,"analysis/summarystats/ss.", dataset, ".Rda"))
   
@@ -69,9 +71,9 @@ for(i in ls(pattern = "^ss.")){
   # pull list
   df <- get(i)
   
-  # make a temp dataframe with 1800 rows (200 x 9 tool/gamma combos) and 3 cols:
+  # make a temp dataframe with 2400 rows (200 x 12 tool/gamma combos) and 3 cols:
   # abs values, dataset and tool
-  tempdf <- data.frame(matrix(data = NA, nrow = 1800, ncol = 3))
+  tempdf <- data.frame(matrix(data = NA, nrow = 2400, ncol = 3))
   colnames(tempdf) <- c("abs", "dataset", "tool")
   
   start <- 1
@@ -99,6 +101,9 @@ for(i in ls(pattern = "^ss.")){
 # collapse list to df, then remove rownames, convert 'coeff' to numeric and
 # change order of columns
 plot.df <- do.call(rbind, tmplist)
+
+# remove problematic Inf row for MTS dataset (ALDEx2, gamma = 0.5)
+plot.df <- plot.df[-grep(Inf, plot.df$abs),]
 
 # split tool into tool and gamma
 plot.df$gamma.char <- as.character(gsub("aldex._", "", plot.df$tool))
