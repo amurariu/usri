@@ -147,8 +147,6 @@ plot.df$tool <- gsub("aldex","ALDEx", plot.df$tool)
 cols.density <- c("#E6E6FA","#CBE3FC","#B0E2FF","#66B3F6","#2171B5","#08306B",
                   brewer.pal(n = 9, name = "YlOrRd")[c(1,3,5,6,8,9)])
 
-"#FFFFCC" "#FED976" "#FD8D3C" "#FC4E2A" "#BD0026" "#800026"
-
 #################### Density Plot Panel ######################
 
 # filter for immuno dataset
@@ -231,8 +229,8 @@ group_means.oth$dataset <- case_when(group_means.oth$dataset == "mts" ~ "Vaginal
                                      group_means.oth$dataset == "yeast" ~ "Yeast transcriptome")
 
 # plot stripchart: colours = tool
-png(paste0(repo,"figures/fig3_stripchartToolALDEx.png"),
-    units = "in", height = 4, width = 6, res = 600)
+# png(paste0(repo,"figures/fig3_stripchartToolALDEx.png"),
+#     units = "in", height = 4, width = 6, res = 600)
 
 p2 <- ggplot(group_means.oth, aes(x = gamma.num, y = mean_value, colour=tool, shape = dataset))+
   geom_point(alpha = 1, size = 1)+
@@ -259,12 +257,12 @@ p2 <- ggplot(group_means.oth, aes(x = gamma.num, y = mean_value, colour=tool, sh
 
 p2
 
-dev.off()
+# dev.off()
 
 
 # plot stripchart: colours = dataset
-png(paste0(repo,"figures/fig3_stripchartDatasetALDEx.png"),
-    units = "in", height = 4, width = 6, res = 600)
+# png(paste0(repo,"figures/fig3_stripchartDatasetALDEx.png"),
+#     units = "in", height = 4, width = 6, res = 600)
 
 p3 <- ggplot(group_means.oth, aes(x = gamma.num, y = mean_value, colour=dataset, shape = tool))+
   geom_point(alpha = 1, size = 1)+
@@ -291,21 +289,21 @@ p3 <- ggplot(group_means.oth, aes(x = gamma.num, y = mean_value, colour=dataset,
 
 p3
 
-dev.off()
+# dev.off()
 
 # plot density plots and stripchart as a two-panel figure (strip = tool)
-png(paste0(repo,"figures/fig3_bothTool.png"),
-    units = "in", height = 4, width = 10, res = 600)
+# png(paste0(repo,"figures/fig3_bothTool.png"),
+#     units = "in", height = 4, width = 10, res = 600)
 
 p1|p2
 
-dev.off()
+# dev.off()
 
 
 # plot density plots and stripchart as a two-panel figure (strip = dataset)
-png(paste0(repo,"figures/fig3_bothDataset.png"),
-    units = "in", height = 4, width = 10, res = 600)
+# png(paste0(repo,"figures/fig3_bothDataset.png"),
+#     units = "in", height = 4, width = 10, res = 600)
 
 p1|p3
 
-dev.off()
+# dev.off()
