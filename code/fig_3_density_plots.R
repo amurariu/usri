@@ -1,7 +1,7 @@
 # density plots and strip chart for example dataset: ALDEx2 vs. ALDEx3
 
 # Andreea Murariu & Scott Dos Santos
-# Last edited: 2025-08-15
+# Last edited: 2025-08-19
 
 library(stringr)
 library(dplyr)
