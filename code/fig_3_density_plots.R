@@ -228,6 +228,26 @@ group_means.oth$dataset <- case_when(group_means.oth$dataset == "mts" ~ "Vaginal
                                      group_means.oth$dataset == "sccyto" ~ "Single-cell transcriptome",
                                      group_means.oth$dataset == "yeast" ~ "Yeast transcriptome")
 
+group_means.oth2 <- plot.df %>% 
+  filter(!dataset %in% c("brca","immuno","kirc","lihc","luad","prad","thca")) %>% 
+  mutate(title = "Minimum absolute difference between groups for P <0.05",
+         shp = dataset)
+
+
+colnames(group_means.oth2)[1] <- "mean_value"
+group_means.oth2$dataset <- case_when(group_means.oth2$dataset == "mts" ~ "Vaginal metatranscriptome",
+                                     group_means.oth2$dataset == "sccyto" ~ "Single-cell transcriptome",
+                                     group_means.oth2$dataset == "yeast" ~ "Yeast transcriptome")
+
+group_means.yst <- group_means.oth2 %>% 
+  filter(dataset == "Yeast transcriptome")
+
+group_means.sc <- group_means.oth2 %>% 
+  filter(dataset == "Single-cell transcriptome")
+
+group_means.mts <- group_means.oth2 %>% 
+  filter(dataset == "Vaginal metatranscriptome")
+
 # plot stripchart: colours = tool
 # png(paste0(repo,"figures/fig3_stripchartToolALDEx.png"),
 #     units = "in", height = 4, width = 6, res = 600)
@@ -264,14 +284,30 @@ p2
 # png(paste0(repo,"figures/fig3_stripchartDatasetALDEx.png"),
 #     units = "in", height = 4, width = 6, res = 600)
 
-p3 <- ggplot(group_means.oth, aes(x = gamma.num, y = mean_value, colour=dataset, shape = tool))+
-  geom_point(alpha = 1, size = 1)+
-  geom_line(linewidth = 0.25)+
+p3 <- ggplot(group_means.oth2, aes(x = gamma.num, y = mean_value, colour=dataset, shape = tool))+
   labs(x = "Scale (\u03b3)", y = "Minimum log difference")+
+  stat_summary(data = group_means.yst, aes(group = tool), geom = "errorbar",
+               fun.data = "mean_se", width = 0.0055, linewidth = 0.35, colour = "black")+
+  stat_summary(data = group_means.sc, aes(group = tool), geom = "errorbar",
+               fun.data = "mean_se", width = 0.0055, linewidth = 0.35, colour = "black")+
+  stat_summary(data = group_means.mts, aes(group = tool), geom = "errorbar",
+               fun.data = "mean_se", width = 0.0055, linewidth = 0.35, colour = "black")+
   stat_summary(data = group_means.hum, aes(group = tool), geom = "errorbar",
-               fun.data = "mean_se", width = 0.0075, linewidth = 0.35, colour = "black")+
+               fun.data = "mean_se", width = 0.0055, linewidth = 0.35, colour = "black")+
+  stat_summary(data = group_means.yst, aes(group = tool, colour = dataset),
+               geom = "point", fun = "mean", size = 1)+
+  stat_summary(data = group_means.sc, aes(group = tool, colour = dataset),
+               geom = "point", fun = "mean", size = 1)+
+  stat_summary(data = group_means.mts, aes(group = tool, colour = dataset),
+               geom = "point", fun = "mean", size = 1)+
   stat_summary(data = group_means.hum, aes(group = tool,  colour = shp),
                geom = "point", fun = "mean", size = 1)+
+  stat_summary(data = group_means.yst, aes(group = tool, colour = dataset),
+               geom = "line", fun = "mean", linewidth = 0.25)+
+  stat_summary(data = group_means.sc, aes(group = tool, colour = dataset),
+               geom = "line", fun = "mean", linewidth = 0.25)+
+  stat_summary(data = group_means.mts, aes(group = tool, colour = dataset),
+               geom = "line", fun = "mean", linewidth = 0.25)+
   stat_summary(data = group_means.hum, aes(group = tool), colour = "purple3",
                geom = "line", fun = "mean", linewidth = 0.25)+
   scale_x_continuous(limits = c(-0.005, 0.505), expand = c(0.0025,0.01))+
