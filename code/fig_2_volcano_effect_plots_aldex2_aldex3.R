@@ -305,3 +305,59 @@ eff.a3.edit <- ggplot(data = gamma0aldex3, aes(x = diff.win, y = estimate))+
 eff.a2 | eff.a3.edit
 
 # dev.off()
+
+########################### calculating sig features ###########################
+
+# make df and vectors for holding data
+sig.genes <- data.frame(matrix(data = NA, nrow = 6, ncol = 4, 
+                               dimnames = list(c(paste0("gamma", seq(0,5,1))),
+                                               c("A2mean","A2sd", "A3mean", "A3sd"))))
+
+for(i in 0:5){
+  assign(x = paste0("sig", i, ".a2"), value = vector())
+  assign(x = paste0("sig", i, ".a3"), value = vector())
+}
+
+# loop over all aldex outputs for immuno data and calculate the number of 
+# significantly different features at each gamma value for ALDEx2 and ALDEx3
+# separately
+for(i in 1:100){
+  
+  # pull ALDEx2 & ALDEx3 data for current iteration
+  for(j in 0:5){
+    assign(x = paste0("a2.df.", j),
+           value = get(paste0("immuno.data_", j, ".aldex2"))$t.data[[i]])
+    
+    assign(x = paste0("a3.df.", j),
+           value = get(paste0("immuno.data_", j, ".aldex3"))$t.data[[i]])
+    }
+  
+  # get the number of significant features for each scale value
+  for(j in 0:5){
+    assign(x = paste0("sig", j, ".a2"),
+           value = append(x = get(paste0("sig", j, ".a2")), after = i-1, 
+                          values = nrow(get(paste0("a2.df.", j)) %>% filter(we.eBH <0.05))))
+    
+    assign(x = paste0("sig", j, ".a3"),
+           value = append(x = get(paste0("sig", j, ".a3")), after = i-1, 
+                          values = nrow(get(paste0("a3.df.", j)) %>% filter(p.val.adj <0.05))))
+    
+    rm(list = c(paste0("a2.df.", j), paste0("a3.df.", j)))
+    }
+  
+  
+  }
+
+# bind vectors and calculate means
+sig.genes.a2 <- cbind(sig0.a2, sig1.a2, sig2.a2, sig3.a2, sig4.a2, sig5.a2)
+sig.genes.a3 <- cbind(sig0.a3, sig1.a3, sig2.a3, sig3.a3, sig4.a3, sig5.a3)
+
+sig.genes[,1] <- apply(sig.genes.a2, 2, mean)
+sig.genes[,2] <- apply(sig.genes.a2, 2, sd)
+sig.genes[,3] <- apply(sig.genes.a3, 2, mean)
+sig.genes[,4] <- apply(sig.genes.a3, 2, sd)
+  
+# delete temp files
+for(i in 1:5){
+  rm(list = c(paste0("sig",i,".a2"), paste0("sig",i,".a3")))
+}
