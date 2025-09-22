@@ -237,20 +237,25 @@ nicePlots <- function(df = NULL, plot.type = NULL, tn.def = NULL, coeff.thresh =
     geom_line()+
     xlab("Threshold: model difference between groups")+
     ylab(plot.ylab)+
-    ggtitle(plot.title)+
+    # ggtitle(plot.title)+
     scale_colour_manual(name = "Tool", values = cols.dataset)+
     theme_bw()+
-    theme(axis.text = element_text(size = 7), axis.title = element_text(size = 9),
+    guides(colour = guide_legend(nrow = 2))+
+    theme(axis.text = element_text(size = 9), axis.title = element_text(size = 10),
           legend.key.spacing.y = unit(0.1, "cm"), legend.key.spacing.x = unit(0, "cm"),
           legend.key.size = unit(0.3, "cm"), legend.margin = margin(0,0,0,0.0,"cm"),
-          legend.title = element_text(face = "bold", size = 8), legend.text = element_text(size = 7),
-          legend.box.spacing = unit(0.2, "cm"), strip.text = element_text(face = "bold"))+
+          legend.title = element_text(face = "bold", size = 10), legend.text = element_text(size = 9),
+          legend.box.spacing = unit(0.2, "cm"), strip.text = element_text(face = "bold"),
+          legend.position = "top")+
     facet_wrap(~dataset, ncol = 5)
   
   return(nice.plot)
 }
 
 ############################## plotting TPR & FDR ##############################
+
+# NOTE: these figures need to be edited in Inkscape to change the x axis 0 value
+#       from '0.00' to '0', to avoid spacing issues
 
 # false discovery rate: negatives >coeff, no difference threshold (cFDR0)
 # png(paste0(repo, "figures/fig1_tprfdr_falseDiscoveryRate.png"),

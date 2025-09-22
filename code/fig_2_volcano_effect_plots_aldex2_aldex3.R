@@ -30,6 +30,12 @@ for(i in list.files(anal.path, pattern = "immuno.data.aldex")){
 rm(gamma,tool,object,i,
    list = ls(pattern = "immuno."))
 
+# calculate -log10 P values, then change any Inf to reasonable value to be
+# displayed on plot (62.5 for A2)
+gamma0aldex2$qval <- -log10(gamma0aldex2$we.eBH)
+gamma0aldex2$qval <- case_when(gamma0aldex2$qval == Inf ~ 62.5,
+                               .default = gamma0aldex2$qval)
+
 # filter gamma = 0 for points where P <0.05 in gamma = 0 BUT the corresponding
 # features are NOT significant in other gamma values (filtering like this only
 # works because all data frames are in the same order and have the same number
@@ -77,7 +83,7 @@ gamma0aldex2$title <- "ALDEx2"
 # png(paste0(repo.figs, "fig2_volcanoPlotsALDEx2.png"),
 #     units = "in", height = 5, width = 5, res = 600)
 
-vol.a2 <- ggplot(data = gamma0aldex2, aes(x = diff.btw, y = -log10(we.eBH)))+
+vol.a2 <- ggplot(data = gamma0aldex2, aes(x = diff.btw, y = qval))+
   geom_point(alpha = 0.4, size = 0.8, colour = "grey50")+
   geom_point(data = a2.to.plot0, size = 1.5, aes(fill = "0"), shape = 21, colour = "black", stroke = 0.25)+
   geom_point(data = a2.to.plot1, size = 1.5, aes(fill = "0.1"), shape = 21, colour = "black", stroke = 0.25)+
@@ -94,8 +100,9 @@ vol.a2 <- ggplot(data = gamma0aldex2, aes(x = diff.btw, y = -log10(we.eBH)))+
   facet_wrap(~title)+
   guides(fill = guide_legend(nrow = 1))+
   theme(legend.box.spacing = unit(0.01, "cm"), legend.key.spacing = unit(0.01, "cm"),
-        legend.text = element_text(size = 8), strip.text = element_text(face = "bold"),
-        legend.title = element_text(size = 9, face = "bold"), legend.position = "top")
+        legend.text = element_text(size = 9), strip.text = element_text(face = "bold", size = 12),
+        legend.title = element_text(size = 10, face = "bold"), legend.position = "top",
+        axis.title = element_text(size = 10), axis.text = element_text(size = 10))
 
 vol.a2
 
@@ -106,7 +113,11 @@ vol.a2
 # immuno dataset (which has 109 samples) analysed with ALDEx3
 # diff.win = std.error * sqrt(no. samples)
 gamma0aldex3 <- gamma0aldex3 %>% 
-  mutate(diff.win = std.error * sqrt(109))
+  mutate(diff.win = std.error * sqrt(109),
+         qval = -log10(p.val.adj))
+
+gamma0aldex3$qval <- case_when(gamma0aldex3$qval == Inf ~ 62.5,
+                               .default = gamma0aldex3$qval)
 
 #filter gamma 0 
 a3.to.plot0 <- gamma0aldex3 %>% 
@@ -143,7 +154,7 @@ gamma0aldex3$title <- "ALDEx3"
 # png(paste0(repo.figs, "fig2_volcanoPlotsALDEx3.png"),
 #     units = "in", height = 5, width = 5, res = 600)
 
-vol.a3 <- ggplot(data = gamma0aldex3, aes(x = estimate, y = -log10(p.val.adj)))+
+vol.a3 <- ggplot(data = gamma0aldex3, aes(x = estimate, y = qval))+
   geom_point(alpha = 0.4, size = 0.9, colour = "grey50")+
   geom_point(data = a3.to.plot0, size = 1.5, aes(fill = "0"), shape = 21, colour = "black", stroke = 0.25)+
   geom_point(data = a3.to.plot1, size = 1.5, aes(fill = "0.1"), shape = 21, colour = "black", stroke = 0.25)+
@@ -160,8 +171,9 @@ vol.a3 <- ggplot(data = gamma0aldex3, aes(x = estimate, y = -log10(p.val.adj)))+
   facet_wrap(~title)+
   guides(fill = guide_legend(nrow = 1))+
   theme(legend.box.spacing = unit(0.01, "cm"), legend.key.spacing = unit(0.01, "cm"),
-        legend.text = element_text(size = 8), strip.text = element_text(face = "bold"),
-        legend.title = element_text(size = 9, face = "bold"), legend.position = "top")
+        legend.text = element_text(size = 9), strip.text = element_text(face = "bold", size = 12),
+        legend.title = element_text(size = 10, face = "bold"), legend.position = "top",
+        axis.title = element_text(size = 10), axis.text = element_text(size = 10))
 
 vol.a3
 
@@ -172,7 +184,7 @@ vol.a3
 # png(paste0(repo.figs, "fig2_volcanoPlotsALDEx.png"),
 #     units = "in", height = 5, width = 10, res = 600)
 
-vol.a3.edit <- ggplot(data = gamma0aldex3, aes(x = estimate, y = -log10(p.val.adj)))+
+vol.a3.edit <- ggplot(data = gamma0aldex3, aes(x = estimate, y = qval))+
   geom_point(alpha = 0.4, size = 0.9, colour = "grey50")+
   geom_point(data = a3.to.plot0, size = 1.5, aes(fill = "0"), shape = 21, colour = "black", stroke = 0.25)+
   geom_point(data = a3.to.plot1, size = 1.5, aes(fill = "0.1"), shape = 21, colour = "black", stroke = 0.25)+
@@ -189,10 +201,10 @@ vol.a3.edit <- ggplot(data = gamma0aldex3, aes(x = estimate, y = -log10(p.val.ad
   facet_wrap(~title)+
   guides(fill = guide_legend(nrow = 1))+
   theme(legend.box.spacing = unit(0.01, "cm"), legend.key.spacing = unit(0.01, "cm"),
-        legend.text = element_text(size = 8), strip.text = element_text(face = "bold"),
+        legend.text = element_text(size = 8), strip.text = element_text(face = "bold", size = 12),
         legend.title = element_text(size = 9, face = "bold"), legend.position = "top",
+        axis.title = element_text(size = 10), axis.text = element_text(size = 10),
         axis.title.y = element_blank())
-
 
 vol.a2 | vol.a3.edit
 
@@ -225,8 +237,9 @@ eff.a2 <- ggplot(data = gamma0aldex2, aes(x = diff.win, y = diff.btw))+
   facet_wrap(~title)+
   guides(fill = guide_legend(nrow = 1))+
   theme(legend.box.spacing = unit(0.01, "cm"), legend.key.spacing = unit(0.01, "cm"),
-        legend.text = element_text(size = 8), strip.text = element_text(face = "bold"),
-        legend.title = element_text(size = 9, face = "bold"), legend.position = "top")
+        legend.text = element_text(size = 8), strip.text = element_text(face = "bold", size = 12),
+        legend.title = element_text(size = 9, face = "bold"), legend.position = "top",
+        axis.title = element_text(size = 10), axis.text = element_text(size = 10))
 
 eff.a2
 
@@ -254,8 +267,9 @@ eff.a3 <- ggplot(data = gamma0aldex3, aes(x = diff.win, y = estimate))+
   facet_wrap(~title)+
   guides(fill = guide_legend(nrow = 1))+
   theme(legend.box.spacing = unit(0.01, "cm"), legend.key.spacing = unit(0.01, "cm"),
-        legend.text = element_text(size = 8), strip.text = element_text(face = "bold"),
-        legend.title = element_text(size = 9, face = "bold"), legend.position = "top")
+        legend.text = element_text(size = 8), strip.text = element_text(face = "bold", size = 12),
+        legend.title = element_text(size = 9, face = "bold"), legend.position = "top",
+        axis.title = element_text(size = 10), axis.text = element_text(size = 10))
 
 eff.a3
 
@@ -283,8 +297,9 @@ eff.a3.edit <- ggplot(data = gamma0aldex3, aes(x = diff.win, y = estimate))+
   facet_wrap(~title)+
   guides(fill = guide_legend(nrow = 1))+
   theme(legend.box.spacing = unit(0.01, "cm"), legend.key.spacing = unit(0.01, "cm"),
-        legend.text = element_text(size = 8), strip.text = element_text(face = "bold"),
+        legend.text = element_text(size = 8), strip.text = element_text(face = "bold", size = 12),
         legend.title = element_text(size = 9, face = "bold"), legend.position = "top",
+        axis.title = element_text(size = 10), axis.text = element_text(size = 10),
         axis.title.y = element_blank())
 
 eff.a2 | eff.a3.edit

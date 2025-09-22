@@ -99,11 +99,25 @@ tr <- ggplot()+geom_blank(aes(1,1))+
         axis.text.y = element_blank(),axis.ticks = element_blank(),
         axis.line = element_blank())
 
-png(paste0(repo,"figures/fig4_dispersionAbundance.png"),
-    units = "in", height = 4, width = 6, res = 600)
+# png(paste0(repo,"figures/fig4_dispersionAbundance.png"),
+#     units = "in", height = 4, width = 6, res = 600)
 
 grid.arrange(tl,tr,bl,br, ncol = 2, nrow = 2, heights = c(1, 2), widths = c(4.25, 1))
 
-dev.off()
+# dev.off()
 
 
+# make figure showing disp vs abund containing legend to use in inkscape later
+# png(paste0(repo, "figures/fig4_dispersionAbundance_legend.png"),
+#     units = "in", height = 4, width = 6, res = 600)
+
+bl.leg <- ggplot(data = plot.filt, aes(x = diff.win, y = rab.all))+
+  geom_point(aes(colour = dataset), shape = 19, size = 0.75, alpha = 0.35)+
+  labs(x = "Log Dispersion within groups", y = "Log relative abundance")+
+  scale_colour_manual(values = cols.dataset)+
+  theme_bw()+
+  theme(axis.title = element_text(size = 8), axis.text = element_text(size = 7))
+
+bl.leg
+
+# dev.off()

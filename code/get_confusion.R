@@ -65,13 +65,6 @@ get_confusion <- function(input=NULL, prog=NULL, FDR=0.1){
 		
 	  # make dataframes & set column names to hold following data for the current
 	  # coefficient threshold:
-	  #     - n
-	  #     - 
-	  #     - 
-	  #     - 
-	  #     - 
-	  #     - 
-	  #     - 
 	  raw.coeff <- as.data.frame(matrix(data=NA, nrow=length(input$t.data), ncol=7))
 		diff.coeff <- as.data.frame(matrix(data=NA, nrow=length(input$t.data), ncol=7)) # same with difference of 0.5 fold
 		raw.zero <- as.data.frame(matrix(data=NA, nrow=length(input$t.data), ncol=7))

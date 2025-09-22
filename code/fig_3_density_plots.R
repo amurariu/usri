@@ -171,8 +171,8 @@ plot.filter$denscol <- case_when(plot.filter$gamma.char == "0" & plot.filter$too
 plot.filter$denscol <- factor(plot.filter$denscol, levels = cols.density)
 
 # make vector of scale values for legend
-leg.vals <- c(paste0("ALDEx2: ", c(0,0.1,0.2,0.3,0.4,0.5)),
-              paste0("ALDEx3: ", c(0,0.1,0.2,0.3,0.4,0.5)))
+leg.vals <- c(paste0("A2: ", c(0,0.1,0.2,0.3,0.4,0.5)),
+              paste0("A3: ", c(0,0.1,0.2,0.3,0.4,0.5)))
 
 
 # get group means for given dataset and add colours
@@ -195,13 +195,15 @@ p1 <- plot.filter %>%
   xlab('Minimum absolute log difference for significance')+ ylab('Density')+
   scale_x_continuous(limits = c(0,1.99), expand = c(0,0))+
   scale_y_continuous(limits = c(0,11), expand = c(0,0))+
+  guides(fill = guide_legend(nrow = 2, byrow = TRUE))+
   theme_bw()+
   facet_wrap(~tool)+
-  theme(axis.text = element_text(size = 7), axis.title = element_text(size = 8, face = "bold"),
+  theme(axis.text = element_text(size = 9), axis.title = element_text(size = 10),
         strip.text = element_text(face = "bold"), legend.box.spacing = unit(0.15, "cm"),
-        legend.text = element_text(size = 6), legend.title = element_text(size = 7, face = "bold"),
-        legend.key.spacing.y = unit(0.1, "cm"), legend.key.spacing.x = unit(0, "cm"),
-        legend.key.size = unit(0.5, "cm"), legend.margin = margin(0,0,0,0.0,"cm"))
+        legend.text = element_text(size = 7), legend.title = element_text(size = 8, face = "bold"),
+        legend.key.spacing.y = unit(0.1, "cm"), legend.key.spacing.x = unit(0.2, "cm"),
+        legend.key.size = unit(0.3, "cm"), legend.margin = margin(0,0,0,0.0,"cm"),
+        legend.position = "top")
 
 p1
 
@@ -315,13 +317,15 @@ p3 <- ggplot(group_means.oth2, aes(x = gamma.num, y = mean_value, colour=dataset
                       values = c("Vaginal metatranscriptome" = "dodgerblue", "Single-cell transcriptome" = "orangered2",
                                  "Yeast transcriptome" = "goldenrod2", "TCGA transcriptomes" = "purple3"))+
   labs(x = "Scale (\u03b3)", y = "Minimum log difference", shape = "Tool")+
+  guides(colour = guide_legend(nrow = 2), shape = guide_legend(nrow = 2))+
   theme_bw()+
   facet_wrap(~title)+
-  theme(axis.title = element_text(size = 8), axis.text = element_text(size = 7),
-        legend.key.spacing.y = unit(0.1, "cm"), legend.key.spacing.x = unit(0, "cm"),
-        legend.key.size = unit(0.1, "cm"), legend.margin = margin(0,0,0,0.0,"cm"),
-        legend.title = element_text(face = "bold", size = 7), legend.text = element_text(size = 6),
-        legend.box.spacing = unit(0.2, "cm"), strip.text = element_text(face = "bold"))
+  theme(axis.title = element_text(size = 10), axis.text = element_text(size = 9),
+        legend.key.spacing.y = unit(0.1, "cm"), legend.key.spacing.x = unit(0.3, "cm"),
+        legend.key.size = unit(0.2, "cm"), legend.margin = margin(0,0,0,0.0,"cm"),
+        legend.title = element_text(face = "bold", size = 8), legend.text = element_text(size = 7),
+        legend.box.spacing = unit(0.2, "cm"), strip.text = element_text(face = "bold"),
+        legend.position = "top", legend.spacing.x = unit(0.5, "cm"))
 
 p3
 
