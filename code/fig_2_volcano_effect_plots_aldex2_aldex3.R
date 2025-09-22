@@ -201,8 +201,8 @@ vol.a3.edit <- ggplot(data = gamma0aldex3, aes(x = estimate, y = qval))+
   facet_wrap(~title)+
   guides(fill = guide_legend(nrow = 1))+
   theme(legend.box.spacing = unit(0.01, "cm"), legend.key.spacing = unit(0.01, "cm"),
-        legend.text = element_text(size = 8), strip.text = element_text(face = "bold", size = 12),
-        legend.title = element_text(size = 9, face = "bold"), legend.position = "top",
+        legend.text = element_text(size = 9), strip.text = element_text(face = "bold", size = 12),
+        legend.title = element_text(size = 10, face = "bold"), legend.position = "top",
         axis.title = element_text(size = 10), axis.text = element_text(size = 10),
         axis.title.y = element_blank())
 
@@ -237,8 +237,8 @@ eff.a2 <- ggplot(data = gamma0aldex2, aes(x = diff.win, y = diff.btw))+
   facet_wrap(~title)+
   guides(fill = guide_legend(nrow = 1))+
   theme(legend.box.spacing = unit(0.01, "cm"), legend.key.spacing = unit(0.01, "cm"),
-        legend.text = element_text(size = 8), strip.text = element_text(face = "bold", size = 12),
-        legend.title = element_text(size = 9, face = "bold"), legend.position = "top",
+        legend.text = element_text(size = 9), strip.text = element_text(face = "bold", size = 12),
+        legend.title = element_text(size = 10, face = "bold"), legend.position = "top",
         axis.title = element_text(size = 10), axis.text = element_text(size = 10))
 
 eff.a2
@@ -267,8 +267,8 @@ eff.a3 <- ggplot(data = gamma0aldex3, aes(x = diff.win, y = estimate))+
   facet_wrap(~title)+
   guides(fill = guide_legend(nrow = 1))+
   theme(legend.box.spacing = unit(0.01, "cm"), legend.key.spacing = unit(0.01, "cm"),
-        legend.text = element_text(size = 8), strip.text = element_text(face = "bold", size = 12),
-        legend.title = element_text(size = 9, face = "bold"), legend.position = "top",
+        legend.text = element_text(size = 9), strip.text = element_text(face = "bold", size = 12),
+        legend.title = element_text(size = 10, face = "bold"), legend.position = "top",
         axis.title = element_text(size = 10), axis.text = element_text(size = 10))
 
 eff.a3
@@ -297,8 +297,8 @@ eff.a3.edit <- ggplot(data = gamma0aldex3, aes(x = diff.win, y = estimate))+
   facet_wrap(~title)+
   guides(fill = guide_legend(nrow = 1))+
   theme(legend.box.spacing = unit(0.01, "cm"), legend.key.spacing = unit(0.01, "cm"),
-        legend.text = element_text(size = 8), strip.text = element_text(face = "bold", size = 12),
-        legend.title = element_text(size = 9, face = "bold"), legend.position = "top",
+        legend.text = element_text(size = 9), strip.text = element_text(face = "bold", size = 12),
+        legend.title = element_text(size = 10, face = "bold"), legend.position = "top",
         axis.title = element_text(size = 10), axis.text = element_text(size = 10),
         axis.title.y = element_blank())
 
