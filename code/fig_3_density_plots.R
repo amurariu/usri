@@ -213,7 +213,7 @@ p1
 # bulk transcriptome datasets, and other datasets, separately
 group_means.all <- plot.df %>%
   group_by(tool, dataset, gamma.num) %>%
-  summarise(mean_value = mean(abs))
+  summarise(mean_value = mean(abs), stdv = sd(abs))
 
 # also add column ensuring these data points are represented in legend
 group_means.hum <- group_means.all %>% 
@@ -345,5 +345,76 @@ p1|p2
 #     units = "in", height = 4, width = 10, res = 600)
 
 p1|p3
+
+# dev.off()
+
+#################### Density Plot Panel: other datasets ######################
+
+# filter for single cell, yeast, mts and TCGA datasets
+plot.filter <- plot.df %>% 
+  filter(dataset != "immuno")
+
+plot.filter$dataset <- case_when(plot.filter$dataset %in% c("brca", "kirc", "lihc", "luad", "prad", "thca") ~ "tcga",
+                                 .default = plot.filter$dataset)
+
+plot.filter$dataset <- case_when(plot.filter$dataset == "tcga" ~ "TCGA datasets",
+                                 plot.filter$dataset == "mts" ~ "Metatranscriptome",
+                                 plot.filter$dataset == "sccyto" ~ "Single-cell",
+                                 plot.filter$dataset == "yeast" ~ "Yeast",
+                                 .default = plot.filter$dataset)
+
+# add colour values to filtered dataset
+plot.filter$denscol <- case_when(plot.filter$gamma.char == "0" & plot.filter$tool == "ALDEx2" ~ cols.density[1],
+                                 plot.filter$gamma.char == "0.1" & plot.filter$tool == "ALDEx2" ~ cols.density[2],
+                                 plot.filter$gamma.char == "0.2" & plot.filter$tool == "ALDEx2" ~ cols.density[3],
+                                 plot.filter$gamma.char == "0.3" & plot.filter$tool == "ALDEx2" ~ cols.density[4],
+                                 plot.filter$gamma.char == "0.4" & plot.filter$tool == "ALDEx2" ~ cols.density[5],
+                                 plot.filter$gamma.char == "0.5" & plot.filter$tool == "ALDEx2" ~ cols.density[6],
+                                 plot.filter$gamma.char == "0" & plot.filter$tool == "ALDEx3" ~ cols.density[7],
+                                 plot.filter$gamma.char == "0.1" & plot.filter$tool == "ALDEx3" ~ cols.density[8],
+                                 plot.filter$gamma.char == "0.2" & plot.filter$tool == "ALDEx3" ~ cols.density[9],
+                                 plot.filter$gamma.char == "0.3" & plot.filter$tool == "ALDEx3" ~ cols.density[10],
+                                 plot.filter$gamma.char == "0.4" & plot.filter$tool == "ALDEx3" ~ cols.density[11],
+                                 plot.filter$gamma.char == "0.5" & plot.filter$tool == "ALDEx3" ~ cols.density[12])
+
+# convert colours to factor based on tool & gamma order
+plot.filter$denscol <- factor(plot.filter$denscol, levels = cols.density)
+
+# make vector of scale values for legend
+leg.vals <- c(paste0("A2: ", c(0,0.1,0.2,0.3,0.4,0.5)),
+              paste0("A3: ", c(0,0.1,0.2,0.3,0.4,0.5)))
+
+
+# get group means for given dataset and add colours
+group_means.filter<- plot.filter %>%
+  group_by(dataset, tool, gamma.char) %>%
+  summarise(mean_value = mean(abs), stdv = sd(abs))
+
+group_means.filter$linecols <- rep(cols.density, 4)
+
+# plot example density plot for given dataset (change file name accordingly)
+# png(paste0(repo,"figures/supFig_densityPlotsALDEx_otherDatasets.png"),
+#     units = "in", height = 6, width = 8, res = 600)
+
+p1 <- plot.filter %>% 
+  ggplot(aes(x = abs)) + 
+  geom_density(aes(fill = denscol), linewidth = 0.3, alpha=0.7)+
+  scale_fill_identity(name = "Scale (\u03b3)", guide = "legend", labels = leg.vals)+
+  geom_vline(data = group_means.filter, aes(xintercept = mean_value, colour=linecols), linetype="dashed", linewidth=0.3) +
+  scale_colour_identity()+
+  xlab('Minimum absolute log difference for significance')+ ylab('Density')+
+  scale_x_continuous(expand = c(0,0.075))+
+  scale_y_continuous(expand = c(0,0.035))+
+  guides(fill = guide_legend(nrow = 2, byrow = TRUE))+
+  theme_bw()+
+  facet_grid(rows = vars(dataset), cols = vars(tool), scale = "free")+
+  theme(axis.text = element_text(size = 9), axis.title = element_text(size = 10),
+        strip.text = element_text(face = "bold", size = ), legend.box.spacing = unit(0.15, "cm"),
+        legend.text = element_text(size = 9), legend.title = element_text(size = 10, face = "bold"),
+        legend.key.spacing.y = unit(0.1, "cm"), legend.key.spacing.x = unit(0.75, "cm"),
+        legend.key.size = unit(0.3, "cm"), legend.margin = margin(0,0,0,0.0,"cm"),
+        legend.position = "top")
+
+p1
 
 # dev.off()
