@@ -288,35 +288,37 @@ p2
 
 p3 <- ggplot(group_means.oth2, aes(x = gamma.num, y = mean_value, colour=dataset, shape = tool))+
   labs(x = "Scale (\u03b3)", y = "Minimum log difference")+
-  stat_summary(data = group_means.yst, aes(group = tool), geom = "errorbar",
-               fun.data = "mean_se", width = 0.0055, linewidth = 0.35, colour = "black")+
-  stat_summary(data = group_means.sc, aes(group = tool), geom = "errorbar",
-               fun.data = "mean_se", width = 0.0055, linewidth = 0.35, colour = "black")+
-  stat_summary(data = group_means.mts, aes(group = tool), geom = "errorbar",
-               fun.data = "mean_se", width = 0.0055, linewidth = 0.35, colour = "black")+
-  stat_summary(data = group_means.hum, aes(group = tool), geom = "errorbar",
-               fun.data = "mean_se", width = 0.0055, linewidth = 0.35, colour = "black")+
   stat_summary(data = group_means.yst, aes(group = tool, colour = dataset),
-               geom = "point", fun = "mean", size = 1)+
+               geom = "point", fun = "mean", size = 1.5)+
   stat_summary(data = group_means.sc, aes(group = tool, colour = dataset),
-               geom = "point", fun = "mean", size = 1)+
+               geom = "point", fun = "mean", size = 1.5)+
   stat_summary(data = group_means.mts, aes(group = tool, colour = dataset),
-               geom = "point", fun = "mean", size = 1)+
+               geom = "point", fun = "mean", size = 1.5)+
   stat_summary(data = group_means.hum, aes(group = tool,  colour = shp),
-               geom = "point", fun = "mean", size = 1)+
-  stat_summary(data = group_means.yst, aes(group = tool, colour = dataset),
+               geom = "point", fun = "mean", size = 1.5)+
+  stat_summary(data = group_means.yst, aes(group = tool, colour = dataset, linetype = tool),
                geom = "line", fun = "mean", linewidth = 0.25)+
-  stat_summary(data = group_means.sc, aes(group = tool, colour = dataset),
+  stat_summary(data = group_means.sc, aes(group = tool, colour = dataset, linetype = tool),
                geom = "line", fun = "mean", linewidth = 0.25)+
-  stat_summary(data = group_means.mts, aes(group = tool, colour = dataset),
+  stat_summary(data = group_means.mts, aes(group = tool, colour = dataset, linetype = tool),
                geom = "line", fun = "mean", linewidth = 0.25)+
-  stat_summary(data = group_means.hum, aes(group = tool), colour = "purple3",
+  stat_summary(data = group_means.hum, aes(group = tool, linetype = tool), colour = "purple3",
                geom = "line", fun = "mean", linewidth = 0.25)+
+  stat_summary(data = group_means.yst, aes(group = tool), geom = "errorbar",
+               fun.data = "mean_se", width = 0.0055, linewidth = 0.25, colour = "black")+
+  stat_summary(data = group_means.sc, aes(group = tool), geom = "errorbar",
+               fun.data = "mean_se", width = 0.0055, linewidth = 0.25, colour = "black")+
+  stat_summary(data = group_means.mts, aes(group = tool), geom = "errorbar",
+               fun.data = "mean_se", width = 0.0055, linewidth = 0.25, colour = "black")+
+  stat_summary(data = group_means.hum, aes(group = tool), geom = "errorbar",
+               fun.data = "mean_se", width = 0.0055, linewidth = 0.25, colour = "black")+
   scale_x_continuous(limits = c(-0.005, 0.505), expand = c(0.0025,0.01))+
   scale_colour_manual(name = "Dataset",
                       values = c("Vaginal metatranscriptome" = "dodgerblue", "Single-cell transcriptome" = "orangered2",
                                  "Yeast transcriptome" = "goldenrod2", "TCGA transcriptomes" = "purple3"))+
-  labs(x = "Scale (\u03b3)", y = "Minimum log difference", shape = "Tool")+
+  scale_shape_manual(name = "Tool", values = c("ALDEx2" = 19, "ALDEx3" = 21))+
+  scale_linetype_manual(name = "Tool", values = c("ALDEx2" = 1, "ALDEx3" = 2))+
+  labs(x = "Scale (\u03b3)", y = "Minimum log difference")+
   guides(colour = guide_legend(nrow = 2), shape = guide_legend(nrow = 2))+
   theme_bw()+
   facet_wrap(~title)+
