@@ -350,6 +350,104 @@ p1|p3
 
 # dev.off()
 
+################# Density Plot Panel: slopes and intercepts ###################
+
+# want to calculate slope and intercept of line when gamma plotted vs. min diff
+# for significance for each dataset across all 100 iterations
+
+# re-run code for making original plot.df from ss objects
+tmplist <- list()
+
+for(i in ls(pattern = "^ss.")){
+  # pull list
+  df <- get(i)
+  
+  # make a temp dataframe with 2400 rows (200 x 12 tool/gamma combos) and 3 cols:
+  # abs values, dataset and tool
+  tempdf <- data.frame(matrix(data = NA, nrow = 2400, ncol = 3))
+  colnames(tempdf) <- c("abs", "dataset", "tool")
+  
+  start <- 1
+  end <- 200
+  
+  # loop over list elements for each dataset and pull out abs values from each
+  # tool/gamma combo; stick in temp df & increment start/end vals
+  for(j in 1:length(df)){
+    
+    tempdf[(start:end), 1] <- df[[j]][,3]
+    name <- gsub("minmax", "aldex", names(df)[j])
+    tempdf[start:end, 3] <- name
+    
+    start <- start + 200
+    end <- end + 200
+  }
+  
+  # fill in current dataset
+  tempdf[,2] <- gsub("^ss\\.", "", i)
+  
+  # add temp dataframe of abs/dataset/tool values to list
+  tmplist[[i]] <- tempdf
+  
+  # remove temp objects
+  rm(df, end, j, name, start, tempdf)
+}
+
+# collapse list to df, then remove rownames, convert 'coeff' to numeric and
+# change order of columns
+plot.df <- do.call(rbind, tmplist)
+
+# split tool into tool and gamma (numeric)
+plot.df$gamma.num <- as.numeric(gsub("aldex._", "0.", plot.df$tool))
+plot.df$tool <- gsub("_.$","", plot.df$tool)
+
+# convert tools to correct case
+plot.df$tool <- gsub("aldex","ALDEx", plot.df$tool)
+
+# loop over all iterations for both ALDEx2 and ALDEx3, for all 10 datasets and
+# extract the minimum log differences required for a significant result at all
+# gamma values, then get the slope and intercept of the linear regression for
+# that iteration
+dataset <- c("brca", "kirc", "lihc", "luad", "prad", "thca", "immuno", "yeast", "sccyto", "mts")
+tool <- c("ALDEx2", "ALDEx3")
+lm.vals <- list()
+
+for(ds in dataset){
+  for(tl in tool){
+    for(i in 1:200){
+      df <- plot.df %>% 
+        filter(dataset == ds, tool == tl)
+      inds <- seq(i, 1200, 200)
+      abs <- df[inds,]
+      if(Inf  %in% abs$abs) next
+      lmod <- lm(formula = abs~gamma.num, data = abs)
+      lm.vals[[paste(ds,tl,i, sep = ".")]] <- data.frame(slope = lmod$coefficients[2], 
+                                                         intercept = lmod$coefficients[1], 
+                                                         row.names = NULL)
+    }
+  }
+  
+  rm(ds,tl,i,df,inds,abs,lmod)
+}
+
+# convert list to dataframe
+lm.values <- do.call(rbind, lm.vals)
+rm(lm.vals)
+
+# add dataset and tool columns, taking values from the row names
+lm.values$dataset <- rownames(lm.values)
+lm.values$dataset <- gsub("\\.ALDEx.\\..*", "", lm.values$dataset)
+
+lm.values$tool <- rownames(lm.values)
+lm.values$tool <- gsub(".*\\.ALDEx2.*", "ALDEx2", lm.values$tool)
+lm.values$tool <- gsub(".*\\.ALDEx3.*", "ALDEx3", lm.values$tool)
+
+# calculate mean and sd for slope and intercept across all dataset/tool combos
+lm.values.sum <- lm.values %>% 
+  group_by(dataset,tool) %>% 
+  summarise(mean.sl = mean(slope), mean.in = mean(intercept),
+            stdev.sl = sd(slope), stdev.in = sd(intercept))
+
+
 #################### Density Plot Panel: other datasets ######################
 
 # filter for single cell, yeast, mts and TCGA datasets
