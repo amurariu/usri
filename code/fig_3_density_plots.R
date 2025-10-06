@@ -350,6 +350,30 @@ p1|p3
 
 # dev.off()
 
+# final calculation of TCGA transcriptome slopes for min diff for sig vs. gamma
+# and for yeast datasets
+a2.yeast <- group_means.oth %>% 
+  filter(dataset == "Yeast transcriptome", tool == "ALDEx2")
+
+a3.yeast <- group_means.oth %>% 
+  filter(dataset == "Yeast transcriptome", tool == "ALDEx3")
+
+a2.tcga <- group_means.hum %>% 
+  filter(tool == "ALDEx2") %>% 
+  group_by(gamma.num) %>% 
+  summarise(mean.diff = mean(mean_value))
+
+a3.tcga <- group_means.hum %>% 
+  filter(tool == "ALDEx3") %>% 
+  group_by(gamma.num) %>% 
+  summarise(mean.diff = mean(mean_value))
+
+lm.a2.tcga <- lm(formula = mean.diff~gamma.num, data = a2.tcga) # slope = 2.3
+lm.a3.tcga <- lm(formula = mean.diff~gamma.num, data = a3.tcga) # slope = 1.6
+
+lm.a2.yeast <- lm(formula = mean_value~gamma.num, data = a2.yeast) # slope = 2.3
+lm.a3.yeast <- lm(formula = mean_value~gamma.num, data = a3.yeast) # slope = 1.6
+
 ################# Density Plot Panel: slopes and intercepts ###################
 
 # want to calculate slope and intercept of line when gamma plotted vs. min diff
@@ -426,7 +450,7 @@ for(ds in dataset){
     }
   }
   
-  rm(ds,tl,i,df,inds,abs,lmod)
+  # rm(ds,tl,i,df,inds,abs,lmod)
 }
 
 # convert list to dataframe
@@ -446,7 +470,6 @@ lm.values.sum <- lm.values %>%
   group_by(dataset,tool) %>% 
   summarise(mean.sl = mean(slope), mean.in = mean(intercept),
             stdev.sl = sd(slope), stdev.in = sd(intercept))
-
 
 #################### Density Plot Panel: other datasets ######################
 
