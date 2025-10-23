@@ -252,7 +252,7 @@ nicePlots <- function(df = NULL, plot.type = NULL, tn.def = NULL, coeff.thresh =
   return(nice.plot)
 }
 
-############################## plotting TPR & FDR ##############################
+####################### plotting TPR & FDR: OLD FIGURES! #######################
 
 # NOTE: these figures need to be edited in Inkscape to change the x axis 0 value
 #       from '0.00' to '0', to avoid spacing issues
@@ -270,5 +270,278 @@ nicePlots(df = plot.df, plot.type = "FDR", tn.def = "coeff", coeff.thresh = FALS
 #     units = "in", height = 6, width = 12, res = 600)
 
 nicePlots(df = plot.df, plot.type = "TPR", tn.def = "coeff", coeff.thresh = FALSE)
+
+# dev.off()
+
+########################## plotting TPR & FDR: subset ##########################
+
+# subset data for 6 datasets: immuno, mts, single-cell, yeast, brca, prad
+plot.subset <- plot.df %>% 
+  filter(!dataset %in% c("Cancer genome atlas: KIRC", "Cancer genome atlas: LIHC",
+                         "Cancer genome atlas: LUAD", "Cancer genome atlas: THCA"))
+
+# filter by fdr metric
+subs.fdr <- plot.subset %>% 
+  filter(metric == "cFDR0")
+
+# new column for ALDEx2 or ALDEx3 and gamma values, then filter 
+subs.fdr$tool.sep <- gsub("2 .*", "2", subs.fdr$tool)
+subs.fdr$tool.sep <- gsub("3 .*", "3", subs.fdr$tool.sep)
+
+subs.fdr$gamma <- case_when(subs.fdr$tool == "ALDEx2 (\u03b3 = 0)" ~ "0", subs.fdr$tool == "ALDEx2 (\u03b3 = 0.1)" ~ "1",
+                            subs.fdr$tool == "ALDEx2 (\u03b3 = 0.2)" ~ "2", subs.fdr$tool == "ALDEx2 (\u03b3 = 0.3)" ~ "3",
+                            subs.fdr$tool == "ALDEx2 (\u03b3 = 0.4)" ~ "4", subs.fdr$tool == "ALDEx2 (\u03b3 = 0.5)" ~ "5",
+                            subs.fdr$tool == "ALDEx3 (\u03b3 = 0)" ~ "0", subs.fdr$tool == "ALDEx3 (\u03b3 = 0.1)" ~ "1",
+                            subs.fdr$tool == "ALDEx3 (\u03b3 = 0.2)" ~ "2", subs.fdr$tool == "ALDEx3 (\u03b3 = 0.3)" ~ "3",
+                            subs.fdr$tool == "ALDEx3 (\u03b3 = 0.4)" ~ "4", subs.fdr$tool == "ALDEx3 (\u03b3 = 0.5)" ~ "5",
+                            .default = NA)
+
+subs.fdr.oth <- subs.fdr %>% 
+  filter(!tool.sep %in% c("ALDEx2","ALDEx3"))
+
+subs.fdr.a23.g0 <- subs.fdr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "0")
+
+subs.fdr.a23.g1 <- subs.fdr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "1")
+
+subs.fdr.a23.g2 <- subs.fdr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "2")
+
+subs.fdr.a23.g3 <- subs.fdr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "3")
+
+subs.fdr.a23.g4 <- subs.fdr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "4")
+
+subs.fdr.a23.g5 <- subs.fdr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "5")
+
+# plotting FDR
+# png(paste0(repo, "figures/fig1_tprfdr_falseDiscoveryRate.png"),
+#     units = "in", height = 6, width = 10, res = 600)
+
+ggplot(data = subs.fdr.oth, aes(x = coeff, y = value))+
+  geom_point(aes(colour = tool), size = 1.25, show.legend = F)+
+  geom_line(aes(colour = tool), lwd = 0.2, show.legend = F)+
+  geom_text(data = subs.fdr.a23.g0, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = subs.fdr.a23.g0, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = subs.fdr.a23.g1, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = subs.fdr.a23.g1, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = subs.fdr.a23.g2, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = subs.fdr.a23.g2, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = subs.fdr.a23.g3, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = subs.fdr.a23.g3, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = subs.fdr.a23.g4, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = subs.fdr.a23.g4, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = subs.fdr.a23.g5, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = subs.fdr.a23.g5, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  xlab("Threshold: model difference between groups")+ ylab("FDR")+
+  scale_linetype_manual(name = "ALDEx", values = c(2,2,3,3,3))+
+  scale_colour_manual(name = "Tool", values = c("black", "grey60", "grey83", "dodgerblue2", "orangered2"))+
+  facet_wrap(~dataset, ncol = 3)+
+  theme_bw()+
+  theme(axis.text = element_text(size = 9), axis.title = element_text(size = 10),
+        strip.text = element_text(face = "bold"))
+
+# dev.off()
+
+# filter by tpr metric
+subs.tpr <- plot.subset %>% 
+  filter(metric == "cTPR0")
+
+# new column for ALDEx2 or ALDEx3 and gamma values, then filter 
+subs.tpr$tool.sep <- gsub("2 .*", "2", subs.tpr$tool)
+subs.tpr$tool.sep <- gsub("3 .*", "3", subs.tpr$tool.sep)
+
+subs.tpr$gamma <- case_when(subs.tpr$tool == "ALDEx2 (\u03b3 = 0)" ~ "0", subs.tpr$tool == "ALDEx2 (\u03b3 = 0.1)" ~ "1",
+                            subs.tpr$tool == "ALDEx2 (\u03b3 = 0.2)" ~ "2", subs.tpr$tool == "ALDEx2 (\u03b3 = 0.3)" ~ "3",
+                            subs.tpr$tool == "ALDEx2 (\u03b3 = 0.4)" ~ "4", subs.tpr$tool == "ALDEx2 (\u03b3 = 0.5)" ~ "5",
+                            subs.tpr$tool == "ALDEx3 (\u03b3 = 0)" ~ "0", subs.tpr$tool == "ALDEx3 (\u03b3 = 0.1)" ~ "1",
+                            subs.tpr$tool == "ALDEx3 (\u03b3 = 0.2)" ~ "2", subs.tpr$tool == "ALDEx3 (\u03b3 = 0.3)" ~ "3",
+                            subs.tpr$tool == "ALDEx3 (\u03b3 = 0.4)" ~ "4", subs.tpr$tool == "ALDEx3 (\u03b3 = 0.5)" ~ "5",
+                            .default = NA)
+
+subs.tpr.oth <- subs.tpr %>% 
+  filter(!tool.sep %in% c("ALDEx2","ALDEx3"))
+
+subs.tpr.a23.g0 <- subs.tpr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "0")
+
+subs.tpr.a23.g1 <- subs.tpr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "1")
+
+subs.tpr.a23.g2 <- subs.tpr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "2")
+
+subs.tpr.a23.g3 <- subs.tpr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "3")
+
+subs.tpr.a23.g4 <- subs.tpr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "4")
+
+subs.tpr.a23.g5 <- subs.tpr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "5")
+
+# plotting TPR
+# png(paste0(repo, "figures/fig1_tprfdr_truePositiveRate.png"),
+#     units = "in", height = 6, width = 10, res = 600)
+
+ggplot(data = subs.tpr.oth, aes(x = coeff, y = value))+
+  geom_point(aes(colour = tool), size = 1.25, show.legend = F)+
+  geom_line(aes(colour = tool), lwd = 0.2, show.legend = F)+
+  geom_text(data = subs.tpr.a23.g0, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = subs.tpr.a23.g0, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = subs.tpr.a23.g1, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = subs.tpr.a23.g1, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = subs.tpr.a23.g2, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = subs.tpr.a23.g2, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = subs.tpr.a23.g3, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = subs.tpr.a23.g3, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = subs.tpr.a23.g4, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = subs.tpr.a23.g4, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = subs.tpr.a23.g5, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = subs.tpr.a23.g5, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  xlab("Threshold: model difference between groups")+ ylab("TPR")+
+  scale_linetype_manual(name = "ALDEx", values = c(2,2,3,3,3))+
+  scale_colour_manual(name = "Tool", values = c("black", "grey60", "grey83", "dodgerblue2", "orangered2"))+
+  facet_wrap(~dataset, ncol = 3)+
+  theme_bw()+
+  theme(axis.text = element_text(size = 9), axis.title = element_text(size = 10),
+        strip.text = element_text(face = "bold"))
+
+# dev.off()
+
+######################## plotting TPR & FDR: supplement ########################
+
+# filter by fdr metric
+suppl.fdr <- plot.df %>% 
+  filter(metric == "cFDR0")
+
+# new column for ALDEx2 or ALDEx3 and gamma values, then filter 
+suppl.fdr$tool.sep <- gsub("2 .*", "2", suppl.fdr$tool)
+suppl.fdr$tool.sep <- gsub("3 .*", "3", suppl.fdr$tool.sep)
+
+suppl.fdr$gamma <- case_when(suppl.fdr$tool == "ALDEx2 (\u03b3 = 0)" ~ "0", suppl.fdr$tool == "ALDEx2 (\u03b3 = 0.1)" ~ "1",
+                            suppl.fdr$tool == "ALDEx2 (\u03b3 = 0.2)" ~ "2", suppl.fdr$tool == "ALDEx2 (\u03b3 = 0.3)" ~ "3",
+                            suppl.fdr$tool == "ALDEx2 (\u03b3 = 0.4)" ~ "4", suppl.fdr$tool == "ALDEx2 (\u03b3 = 0.5)" ~ "5",
+                            suppl.fdr$tool == "ALDEx3 (\u03b3 = 0)" ~ "0", suppl.fdr$tool == "ALDEx3 (\u03b3 = 0.1)" ~ "1",
+                            suppl.fdr$tool == "ALDEx3 (\u03b3 = 0.2)" ~ "2", suppl.fdr$tool == "ALDEx3 (\u03b3 = 0.3)" ~ "3",
+                            suppl.fdr$tool == "ALDEx3 (\u03b3 = 0.4)" ~ "4", suppl.fdr$tool == "ALDEx3 (\u03b3 = 0.5)" ~ "5",
+                            .default = NA)
+
+suppl.fdr.oth <- suppl.fdr %>% 
+  filter(!tool.sep %in% c("ALDEx2","ALDEx3"))
+
+suppl.fdr.a23.g0 <- suppl.fdr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "0")
+
+suppl.fdr.a23.g1 <- suppl.fdr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "1")
+
+suppl.fdr.a23.g2 <- suppl.fdr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "2")
+
+suppl.fdr.a23.g3 <- suppl.fdr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "3")
+
+suppl.fdr.a23.g4 <- suppl.fdr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "4")
+
+suppl.fdr.a23.g5 <- suppl.fdr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "5")
+
+# plotting FDR
+# png(paste0(repo, "figures/supplFig_falseDiscoveryRate.png"),
+#     units = "in", height = 6, width = 12, res = 600)
+
+ggplot(data = suppl.fdr.oth, aes(x = coeff, y = value))+
+  geom_point(aes(colour = tool), size = 1.25, show.legend = F)+
+  geom_line(aes(colour = tool), lwd = 0.2, show.legend = F)+
+  geom_text(data = suppl.fdr.a23.g0, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = suppl.fdr.a23.g0, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = suppl.fdr.a23.g1, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = suppl.fdr.a23.g1, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = suppl.fdr.a23.g2, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = suppl.fdr.a23.g2, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = suppl.fdr.a23.g3, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = suppl.fdr.a23.g3, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = suppl.fdr.a23.g4, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = suppl.fdr.a23.g4, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = suppl.fdr.a23.g5, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = suppl.fdr.a23.g5, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  xlab("Threshold: model difference between groups")+ ylab("FDR")+
+  scale_linetype_manual(name = "ALDEx", values = c(2,2,3,3,3))+
+  scale_colour_manual(name = "Tool", values = c("black", "grey60", "grey83", "dodgerblue2", "orangered2"))+
+  facet_wrap(~dataset, ncol = 5)+
+  theme_bw()+
+  theme(axis.text = element_text(size = 9), axis.title = element_text(size = 10),
+        strip.text = element_text(face = "bold"))
+
+# dev.off()
+
+# filter by tpr metric
+suppl.tpr <- plot.df %>% 
+  filter(metric == "cTPR0")
+
+# new column for ALDEx2 or ALDEx3 and gamma values, then filter 
+suppl.tpr$tool.sep <- gsub("2 .*", "2", suppl.tpr$tool)
+suppl.tpr$tool.sep <- gsub("3 .*", "3", suppl.tpr$tool.sep)
+
+suppl.tpr$gamma <- case_when(suppl.tpr$tool == "ALDEx2 (\u03b3 = 0)" ~ "0", suppl.tpr$tool == "ALDEx2 (\u03b3 = 0.1)" ~ "1",
+                             suppl.tpr$tool == "ALDEx2 (\u03b3 = 0.2)" ~ "2", suppl.tpr$tool == "ALDEx2 (\u03b3 = 0.3)" ~ "3",
+                             suppl.tpr$tool == "ALDEx2 (\u03b3 = 0.4)" ~ "4", suppl.tpr$tool == "ALDEx2 (\u03b3 = 0.5)" ~ "5",
+                             suppl.tpr$tool == "ALDEx3 (\u03b3 = 0)" ~ "0", suppl.tpr$tool == "ALDEx3 (\u03b3 = 0.1)" ~ "1",
+                             suppl.tpr$tool == "ALDEx3 (\u03b3 = 0.2)" ~ "2", suppl.tpr$tool == "ALDEx3 (\u03b3 = 0.3)" ~ "3",
+                             suppl.tpr$tool == "ALDEx3 (\u03b3 = 0.4)" ~ "4", suppl.tpr$tool == "ALDEx3 (\u03b3 = 0.5)" ~ "5",
+                             .default = NA)
+
+suppl.tpr.oth <- suppl.tpr %>% 
+  filter(!tool.sep %in% c("ALDEx2","ALDEx3"))
+
+suppl.tpr.a23.g0 <- suppl.tpr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "0")
+
+suppl.tpr.a23.g1 <- suppl.tpr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "1")
+
+suppl.tpr.a23.g2 <- suppl.tpr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "2")
+
+suppl.tpr.a23.g3 <- suppl.tpr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "3")
+
+suppl.tpr.a23.g4 <- suppl.tpr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "4")
+
+suppl.tpr.a23.g5 <- suppl.tpr %>% 
+  filter(tool.sep %in% c("ALDEx2", "ALDEx3"), gamma == "5")
+
+# plotting TPR
+# png(paste0(repo, "figures/supplFig_truePositiveRate.png"),
+#     units = "in", height = 6, width = 12, res = 600)
+
+ggplot(data = suppl.tpr.oth, aes(x = coeff, y = value))+
+  geom_point(aes(colour = tool), size = 1.25, show.legend = F)+
+  geom_line(aes(colour = tool), lwd = 0.2, show.legend = F)+
+  geom_text(data = suppl.tpr.a23.g0, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = suppl.tpr.a23.g0, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = suppl.tpr.a23.g1, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = suppl.tpr.a23.g1, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = suppl.tpr.a23.g2, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = suppl.tpr.a23.g2, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = suppl.tpr.a23.g3, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = suppl.tpr.a23.g3, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = suppl.tpr.a23.g4, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = suppl.tpr.a23.g4, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = suppl.tpr.a23.g5, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = suppl.tpr.a23.g5, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  xlab("Threshold: model difference between groups")+ ylab("TPR")+
+  scale_linetype_manual(name = "ALDEx", values = c(2,2,3,3,3))+
+  scale_colour_manual(name = "Tool", values = c("black", "grey60", "grey83", "dodgerblue2", "orangered2"))+
+  facet_wrap(~dataset, ncol = 5)+
+  theme_bw()+
+  theme(axis.text = element_text(size = 9), axis.title = element_text(size = 10),
+        strip.text = element_text(face = "bold"))
 
 # dev.off()
