@@ -67,7 +67,7 @@ cols.dataset <- c("purple2", "dodgerblue2", "olivedrab", "orangered2", "goldenro
 # then blank plot for top right corner 
 bl <- ggplot(data = plot.filt, aes(x = diff.win, y = rab.all))+
   geom_point(aes(colour = dataset), shape = 19, size = 0.2, alpha = 0.35, show.legend = F)+
-  labs(x = "Log Dispersion within groups", y = "Log relative abundance")+
+  labs(x = "Log dispersion within groups", y = "Log relative abundance")+
   scale_colour_manual(values = cols.dataset)+
   theme_bw()+
   theme(axis.title = element_text(size = 8), axis.text = element_text(size = 7))
@@ -113,7 +113,7 @@ grid.arrange(tl,tr,bl,br, ncol = 2, nrow = 2, heights = c(1, 2), widths = c(4.25
 
 bl.leg <- ggplot(data = plot.filt, aes(x = diff.win, y = rab.all))+
   geom_point(aes(colour = dataset), shape = 19, size = 0.75, alpha = 0.35)+
-  labs(x = "Log Dispersion within groups", y = "Log relative abundance")+
+  labs(x = "Log dispersion within groups", y = "Log relative abundance")+
   scale_colour_manual(values = cols.dataset)+
   theme_bw()+
   theme(axis.title = element_text(size = 8), axis.text = element_text(size = 7))

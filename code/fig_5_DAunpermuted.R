@@ -162,8 +162,8 @@ dropped.a2$qval0.4 <- a2.4[match(dropped.a2$entity, a2.4$entity),"we.eBH"]
 dropped.a2$qval0.5 <- a2.5[match(dropped.a2$entity, a2.5$entity),"we.eBH"]
 
 # write this table to .txt, to be included in a supplementary file
-write.table(dropped.a2, file = paste0(repo, "data/SupplementaryFile1_droppedALDEx2.txt"),
-            quote = FALSE, sep = "\t", row.names = FALSE, col.names = TRUE)
+# write.table(dropped.a2, file = paste0(repo, "data/SupplementaryFile1_droppedALDEx2.txt"),
+#             quote = FALSE, sep = "\t", row.names = FALSE, col.names = TRUE)
 
 ################################## DA: ALDEx3 ##################################
 
@@ -248,8 +248,8 @@ dropped.a3$qval0.4 <- a3.4[match(dropped.a3$entity, a3.4$entity2),"p.val.adj"]
 dropped.a3$qval0.5 <- a3.5[match(dropped.a3$entity, a3.5$entity2),"p.val.adj"]
 
 # write this table to .txt, to be included in a supplementary file
-write.table(dropped.a3, file = paste0(repo, "data/SupplementaryFile1_droppedALDEx3.txt"),
-            quote = FALSE, sep = "\t", row.names = FALSE, col.names = TRUE)
+# write.table(dropped.a3, file = paste0(repo, "data/SupplementaryFile1_droppedALDEx3.txt"),
+#             quote = FALSE, sep = "\t", row.names = FALSE, col.names = TRUE)
 
 ################################ effect: ALDEx3 ################################
 
