@@ -174,7 +174,6 @@ plot.filter$denscol <- factor(plot.filter$denscol, levels = cols.density)
 leg.vals <- c(paste0("A2: ", c(0,0.1,0.2,0.3,0.4,0.5)),
               paste0("A3: ", c(0,0.1,0.2,0.3,0.4,0.5)))
 
-
 # get group means for given dataset and add colours
 group_means.filter<- plot.filter %>%
   group_by(tool, gamma.char) %>%
@@ -231,15 +230,19 @@ group_means.oth$dataset <- case_when(group_means.oth$dataset == "mts" ~ "Vaginal
                                      group_means.oth$dataset == "yeast" ~ "Yeast transcriptome")
 
 group_means.oth2 <- plot.df %>% 
-  filter(!dataset %in% c("brca","immuno","kirc","lihc","luad","prad","thca")) %>% 
+  filter(!dataset %in% c("brca","kirc","lihc","luad","prad","thca")) %>% 
   mutate(title = "Minimum absolute difference between groups for P <0.05",
          shp = dataset)
 
 
 colnames(group_means.oth2)[1] <- "mean_value"
-group_means.oth2$dataset <- case_when(group_means.oth2$dataset == "mts" ~ "Vaginal metatranscriptome",
-                                     group_means.oth2$dataset == "sccyto" ~ "Single-cell transcriptome",
-                                     group_means.oth2$dataset == "yeast" ~ "Yeast transcriptome")
+group_means.oth2$dataset <- case_when(group_means.oth2$dataset == "immuno" ~ "Immunotherapy transcriptome",
+                                      group_means.oth2$dataset == "mts" ~ "Vaginal metatranscriptome",
+                                      group_means.oth2$dataset == "sccyto" ~ "Single-cell transcriptome",
+                                      group_means.oth2$dataset == "yeast" ~ "Yeast transcriptome")
+
+group_means.imm <- group_means.oth2 %>% 
+  filter(dataset == "Immunotherapy transcriptome")
 
 group_means.yst <- group_means.oth2 %>% 
   filter(dataset == "Yeast transcriptome")
@@ -288,6 +291,8 @@ p2
 
 p3 <- ggplot(group_means.oth2, aes(x = gamma.num, y = mean_value, colour=dataset, shape = tool))+
   labs(x = "Scale (\u03b3)", y = "Minimum log difference")+
+  stat_summary(data = group_means.imm, aes(group = tool, colour = dataset),
+               geom = "point", fun = "mean", size = 1.5)+
   stat_summary(data = group_means.yst, aes(group = tool, colour = dataset),
                geom = "point", fun = "mean", size = 1.5)+
   stat_summary(data = group_means.sc, aes(group = tool, colour = dataset),
@@ -296,6 +301,8 @@ p3 <- ggplot(group_means.oth2, aes(x = gamma.num, y = mean_value, colour=dataset
                geom = "point", fun = "mean", size = 1.5)+
   stat_summary(data = group_means.hum, aes(group = tool,  colour = shp),
                geom = "point", fun = "mean", size = 1.5)+
+  stat_summary(data = group_means.imm, aes(group = tool, colour = dataset, linetype = tool),
+               geom = "line", fun = "mean", linewidth = 0.25)+
   stat_summary(data = group_means.yst, aes(group = tool, colour = dataset, linetype = tool),
                geom = "line", fun = "mean", linewidth = 0.25)+
   stat_summary(data = group_means.sc, aes(group = tool, colour = dataset, linetype = tool),
@@ -304,6 +311,8 @@ p3 <- ggplot(group_means.oth2, aes(x = gamma.num, y = mean_value, colour=dataset
                geom = "line", fun = "mean", linewidth = 0.25)+
   stat_summary(data = group_means.hum, aes(group = tool, linetype = tool), colour = "purple3",
                geom = "line", fun = "mean", linewidth = 0.25)+
+  stat_summary(data = group_means.imm, aes(group = tool), geom = "errorbar",
+               fun.data = "mean_se", width = 0.0055, linewidth = 0.25, colour = "black")+
   stat_summary(data = group_means.yst, aes(group = tool), geom = "errorbar",
                fun.data = "mean_se", width = 0.0055, linewidth = 0.25, colour = "black")+
   stat_summary(data = group_means.sc, aes(group = tool), geom = "errorbar",
@@ -315,7 +324,7 @@ p3 <- ggplot(group_means.oth2, aes(x = gamma.num, y = mean_value, colour=dataset
   scale_x_continuous(limits = c(-0.005, 0.505), expand = c(0.0025,0.01))+
   scale_colour_manual(name = "Dataset",
                       values = c("Vaginal metatranscriptome" = "dodgerblue", "Single-cell transcriptome" = "orangered2",
-                                 "Yeast transcriptome" = "goldenrod2", "TCGA transcriptomes" = "purple3"))+
+                                 "Yeast transcriptome" = "goldenrod2", "TCGA transcriptomes" = "purple3", "Immunotherapy transcriptome" = "darkolivegreen4"))+
   scale_shape_manual(name = "Tool", values = c("ALDEx2" = 19, "ALDEx3" = 21))+
   scale_linetype_manual(name = "Tool", values = c("ALDEx2" = 1, "ALDEx3" = 2))+
   labs(x = "Scale (\u03b3)", y = "Minimum log difference")+
@@ -343,6 +352,7 @@ p1|p2
 
 
 # plot density plots and stripchart as a two-panel figure (strip = dataset)
+# NOTE: Edit legend in inkscape
 # png(paste0(repo,"figures/fig3_bothDataset.png"),
 #     units = "in", height = 4, width = 10, res = 600)
 
