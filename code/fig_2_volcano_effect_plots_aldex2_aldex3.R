@@ -9,26 +9,51 @@ library(RColorBrewer)
 library(ggplot2)
 library(patchwork)
 
-# set path to directory containing all analysis objects
+# path to directory containing all analysis objects
 anal.path <- "~/Documents/GitHub/ext_analysis/"
+
+# path to figure directory on GH
 repo.figs <- "~/Documents/GitHub/usri/figures/"
+
+# path to immunotherapy analysis data required for these figures, x12 files
+repo.data <- paste("~/Documents/GitHub/usri/data/imm_",
+                   paste0("gamma", 0:5, "aldex", rep(c("2.Rda", "3.Rda"), each = 6)), sep = "")
 
 ################################ volcano plots ################################
 
 # load all aldex analysis objects from immuno dataset and extract an iteration
-# (30th iteration, picked out of the air)
-for(i in list.files(anal.path, pattern = "immuno.data.aldex")){
-  load(paste0(anal.path,i))
-  gamma <- gsub("aldex.*_","", str_split_i(i, "\\.", 3))
-  tool <- gsub("_.*","", str_split_i(i, "\\.", 3))
-  object <- paste0("immuno.data_", gamma, ".", tool)
-  assign(x = paste0("gamma", gamma, tool),
-         value = get(object)$t.data[[30]])
+# (30th iteration, picked out of the air), or load output if they already exist
+# (these loops are horrible to read- sorry to whoever lays eyes on them)
+if(!all(file.exists(repo.data))){
+  
+  # load analysis outputs and extract 30th loops if they don't already exist
+  # NOTE: requires generation of analysis objects to run from scratch!
+  for(i in list.files(anal.path, pattern = "immuno.data.aldex")){
+    load(paste0(anal.path,i))
+    gamma <- gsub("aldex.*_","", str_split_i(i, "\\.", 3))
+    tool <- gsub("_.*","", str_split_i(i, "\\.", 3))
+    object <- paste0("immuno.data_", gamma, ".", tool)
+    assign(x = paste0("gamma", gamma, tool),
+           value = get(object)$t.data[[30]])
+  }
+  
+  # remove temporary objects
+  rm(gamma,tool,object,i,
+     list = ls(pattern = "immuno."))
+  
+  # write 30th iteration of immuno data to files
+  for(i in 1:length(ls(pattern = "gamma"))){
+    save(list = ls(pattern = "gamma")[i],
+         file = repo.data[i])
+  }
+} else{
+  
+  for(i in repo.data){
+    load(i)
+    rm(i)
+  }
 }
 
-# remove temporary objects
-rm(gamma,tool,object,i,
-   list = ls(pattern = "immuno."))
 
 # calculate -log10 P values, then change any Inf to reasonable value to be
 # displayed on plot (62.5 for A2)
@@ -262,7 +287,7 @@ eff.a3 <- ggplot(data = gamma0aldex3, aes(x = diff.win, y = estimate))+
   scale_fill_manual(name = "Scale (\u03b3)", values = leg.cols.a3)+
   scale_x_continuous(limits = c(0,14), expand = c(0.0001, 0.001))+
   scale_y_continuous(limits = c(-7.75,6.25), expand = c(0.001, 0.001))+
-  labs(x = "Log difference within groups", y = "Log difference between groups")+
+  labs(x = "Log error of linear model", y = "Log difference between groups")+
   theme_bw()+
   facet_wrap(~title)+
   guides(fill = guide_legend(nrow = 1))+
@@ -292,7 +317,7 @@ eff.a3.edit <- ggplot(data = gamma0aldex3, aes(x = diff.win, y = estimate))+
   scale_fill_manual(name = "Scale (\u03b3)", values = leg.cols.a3)+
   scale_x_continuous(limits = c(0,14), expand = c(0.0001, 0.001))+
   scale_y_continuous(limits = c(-7.75,6.25), expand = c(0.001, 0.001))+
-  labs(x = "Log difference within groups")+
+  labs(x = "Log error of linear model")+
   theme_bw()+
   facet_wrap(~title)+
   guides(fill = guide_legend(nrow = 1))+
@@ -307,6 +332,8 @@ eff.a2 | eff.a3.edit
 # dev.off()
 
 ########################### calculating sig features ###########################
+
+# NOTE: need to re-load data objects for this section of code!
 
 # make df and vectors for holding data
 sig.genes <- data.frame(matrix(data = NA, nrow = 6, ncol = 4, 
