@@ -1,7 +1,7 @@
 # unpermuted differential expression analysis: ALDEx2 vs. ALDEx3
 
 # Scott Dos Santos
-# Last edited: 2025-10-17
+# Last edited: 2025-10-24
 
 library(stringr)
 library(dplyr)
@@ -9,79 +9,91 @@ library(RColorBrewer)
 library(ggplot2)
 library(patchwork)
 
-# set paths to directory containing all analysis objects/repo
-data <- "~/Documents/GitHub/ext_analysis/"
+# set path to GH repository
 repo <- "~/Documents/GitHub/usri/"
 
 #################################### setup ####################################
 
-# load in ALDEx2 and ALDEx3 results objects for BRCA dataset and extract
-# unpermuted data (or load aggregated results if the data have previously
-# been processed). Also load in BRCA dataset gene ID to symbol lookup and
-# the list of validated/candidate cancer genes from Network of Cancer Genes
-# (source: http://network-cancer-genes.org/cancertypedrivers.ph on 2025-10-20
-# from NCG v7.2)
-files <- c("brca.a2.u.Rda", "brca.a3.u.Rda", "TCGA-BRCA_geneLookupAll.txt",
-           "brca.NCG.breastCancer.txt", "brca.NCG.breastCancer.txt")
+# load in following from GH repo: output of ALDEx2/ALDEx3 run on unpermuted BRCA
+# dataset, ensembl -> gene symbol lookup, and lists of validated/candidate 
+# cancer drivers from Network of Cancer Genes v7.2 (obained 2025-10-20, source:
+# http://network-cancer-genes.org/cancertypedrivers.ph )
 
-if(all(file.exists(paste0(repo,"data/",files)))){
-  
-  load(paste0(repo, "data/brca.a2.u.Rda")) # unpermuted ALDEx2, all gamma, brca
-  load(paste0(repo, "data/brca.a3.u.Rda")) # unpermuted ALDEx3, all gamma, brca
-  
-  # ensembl ID -> gene symbol ID lookup table
-  brca.lookup <- read.table(paste0(repo, "data/TCGA-BRCA_geneLookupAll.txt"),
-                            sep = "\t", header = T, quote = "", row.names = 1)
-  
-  # candidate & validated genes involved in breast cancer
-  ncg.breast <- read.table(paste0(repo, "data/brca.NCG.breastCancer.txt"),
-                           sep = "\t", header = T, quote = "")
-  
-  # candidate & validated genes involved in cancer (all types)
-  ncg.all <- read.table(paste0(repo, "data/brca.NCG.allCancer.txt"),
-                        sep = "\t", header = T, quote = "")
-  
-} else{
-  
-  df.a2 <- list()
-  df.a3 <- list()
-  
-  for(i in list.files(data, pattern = "brca.data.aldex",full.names = T)){
-    load(i)
-    
-    tool <- gsub("/Users/scottdossantos/Documents/GitHub/ext_analysis//brca\\.data\\.", "",
-                 gsub("\\.Rda", "", i))
-    
-    if(str_split_i(ls(pattern = "brca"), pattern = "\\.", 3) == "aldex2"){
-      
-      df.a2[[tool]] <- get(ls(pattern = "brca"))$u.data
-      df.a2[[tool]]$tool <- gsub("_.*", "", tool)
-      df.a2[[tool]]$gamma <- paste0("0.", gsub("aldex.*_", "", tool))
-      
-    } else{
-      
-      df.a3[[tool]] <- get(ls(pattern = "brca"))$u.data
-      df.a3[[tool]]$tool <- gsub("_.*", "", tool)
-      df.a3[[tool]]$gamma <- paste0("0.", gsub("aldex.*_", "", tool))
-      
-    }
-    
-    rm(list = c(ls(pattern = "brca"), "tool", "i"))
-  }
-  
-  # collapse unpermuted results to list
-  brca.a2.u <- do.call(rbind, df.a2)
-  brca.a3.u <- do.call(rbind, df.a3)
-  
-  # save collapsed lists to .Rda
-  save(brca.a2.u, file = paste0(repo, "data/brca.a2.u.Rda"))
-  save(brca.a3.u, file = paste0(repo, "data/brca.a3.u.Rda"))
-  
-  # pull all Ensembl gene IDs (to extract gene symbols and descriptions from
-  # BioMart at: https://useast.ensembl.org/info/data/biomart/index.html)
-  # write(gsub("\\..*", "", rownames(df.a2$aldex2_0)), file = paste0(repo, "data/TCGA-BRCA_allGenes.txt"))
-  
-}
+# unpermuted ALDEx2, all gamma, brca
+url.a2 <- "https://github.com/amurariu/usri/raw/refs/heads/main/data/brca.a2.u.Rda"
+tf.a2 <- tempfile(fileext = ".Rda")
+download.file(url = url.a2, destfile = tf.a2, mode = "wb")
+load(tf.a2)
+unlink(tf.a2)
+
+# unpermuted ALDEx3, all gamma, brca
+url.a3 <- "https://github.com/amurariu/usri/raw/refs/heads/main/data/brca.a3.u.Rda"
+tf.a3 <- tempfile(fileext = ".Rda")
+download.file(url = url.a3, destfile = tf.a3, mode = "wb")
+load(tf.a3)
+unlink(tf.a3)
+
+# ensembl ID -> gene symbol ID lookup table
+url.lookup <- "https://github.com/amurariu/usri/raw/refs/heads/main/data/TCGA-BRCA_geneLookupAll.txt"
+brca.lookup <- read.table(url.lookup, sep = "\t", header = T, quote = "", row.names = 1)
+
+# candidate & validated genes involved in breast cancer
+url.ncgbst <- "https://github.com/amurariu/usri/raw/refs/heads/main/data/brca.NCG.breastCancer.txt"
+ncg.breast <- read.table(url.ncgbst, sep = "\t", header = T, quote = "")
+
+# candidate & validated genes involved in cancer (all types)
+url.ncgall <- "https://github.com/amurariu/usri/raw/refs/heads/main/data/brca.NCG.allCancer.txt"
+ncg.all <- read.table(url.ncgall, sep = "\t", header = T, quote = "")
+
+rm(list = c(ls(pattern = "url\\."), ls(pattern = "tf\\.")))
+
+
+
+# # original code to generate 'brca.a2.u' and 'brca.a3.u' from scratch:
+# 
+# # local directory containing analysis outputs
+# data <- "~/Documents/GitHub/ext_analysis/"
+# 
+# # lists to hold each unpermuted analysis output
+# df.a2 <- list()
+# df.a3 <- list()
+# 
+# for(i in list.files(data, pattern = "brca.data.aldex",full.names = T)){
+#   
+#   load(i)
+# 
+#   tool <- gsub("/Users/scottdossantos/Documents/GitHub/ext_analysis//brca\\.data\\.", "",
+#                gsub("\\.Rda", "", i))
+#   
+#   if(str_split_i(ls(pattern = "brca"), pattern = "\\.", 3) == "aldex2"){
+#     
+#     df.a2[[tool]] <- get(ls(pattern = "brca"))$u.data
+#     df.a2[[tool]]$tool <- gsub("_.*", "", tool)
+#     df.a2[[tool]]$gamma <- paste0("0.", gsub("aldex.*_", "", tool))
+#       
+#     } else{
+#       
+#     df.a3[[tool]] <- get(ls(pattern = "brca"))$u.data
+#     df.a3[[tool]]$tool <- gsub("_.*", "", tool)
+#     df.a3[[tool]]$gamma <- paste0("0.", gsub("aldex.*_", "", tool))
+#       
+#     }
+#     
+#   rm(list = c(ls(pattern = "brca"), "tool", "i"))
+#   
+#   }
+# 
+# # collapse unpermuted results to list
+# brca.a2.u <- do.call(rbind, df.a2)
+# brca.a3.u <- do.call(rbind, df.a3)
+# 
+# # save collapsed lists to .Rda
+# save(brca.a2.u, file = paste0(repo, "data/brca.a2.u.Rda"))
+# save(brca.a3.u, file = paste0(repo, "data/brca.a3.u.Rda"))
+# 
+# # pull all Ensembl gene IDs (to extract gene symbols and descriptions from
+# # BioMart at: https://useast.ensembl.org/info/data/biomart/index.html)
+# # write(gsub("\\..*", "", rownames(df.a2$aldex2_0)), file = paste0(repo, "data/TCGA-BRCA_allGenes.txt"))
 
 ################################## DA: ALDEx2 ##################################
 
@@ -103,13 +115,6 @@ for(i in levels(factor(brca.a2.u$gamma))){
 # check how many significantly different genes are NOT in the lookup
 length(which(is.na(sig.a2.0.0$gene))) # 336
 
-# pull and write these genes to try and identify them manually via ensembl.org
-# NOTE: 2025-10-20 USeast AWS issues; can't access ensembl
-unknowns.a2 <- sig.a2.0.0 %>% 
-  filter(is.na(gene))
-
-# write(x = unknowns.a2$entity, ncolumns = 1, file = paste0(repo,"data/brca.unknowns.txt"))
-
 # identify genes which were dropped at each gamma increase
 dropped.01 <- data.frame(entity = setdiff(sig.a2.0.0$entity, sig.a2.0.1$entity))
 dropped.02 <- data.frame(entity = setdiff(sig.a2.0.1$entity, sig.a2.0.2$entity))
@@ -124,15 +129,6 @@ dropped.a2$gene <- brca.lookup[match(dropped.a2$entity, brca.lookup$Gene.stable.
 dropped.a2$desc <- brca.lookup[match(dropped.a2$entity, brca.lookup$Gene.stable.ID), "Gene.description"]
 
 rm(list = ls(pattern = "dropped\\.0.*"))
-
-# match dropped genes to NCG genes 
-dropped.a2.ncg <- dropped.a2 %>%
-  filter(!is.na(gene))
-
-dropped.a2.ncg$ncg.bst <- ncg.breast[match(dropped.a2.ncg$gene, ncg.breast$gene),2]
-dropped.a2.ncg$ncg.all <- ncg.all[match(dropped.a2.ncg$gene, ncg.all$gene),2]
-
-length(which(!is.na(dropped.a2.ncg$ncg.bst))) # 154
 
 # separate aggregated ALDEx3 results by gamma value
 for(i in levels(factor(brca.a2.u$gamma))){
@@ -189,13 +185,6 @@ for(i in levels(factor(brca.a3.u$gamma))){
 # check how many significantly different genes are NOT in the lookup
 length(which(is.na(sig.a3.0.0$gene))) # 336
 
-# pull and write these genes to try and identify them manually via ensembl.org
-# NOTE: 2025-10-20 USeast AWS issues; can't access ensembl
-unknowns.a3 <- sig.a3.0.0 %>% 
-  filter(is.na(gene))
-
-# write(x = unknowns.a3$entity, ncolumns = 1, file = paste0(repo,"data/brca.unknowns.txt"))
-
 # identify genes which were dropped at each gamma increase
 dropped.01 <- data.frame(entity = setdiff(sig.a3.0.0$entity2, sig.a3.0.1$entity2))
 dropped.02 <- data.frame(entity = setdiff(sig.a3.0.1$entity2, sig.a3.0.2$entity2))
@@ -210,15 +199,6 @@ dropped.a3$gene <- brca.lookup[match(dropped.a3$entity, brca.lookup$Gene.stable.
 dropped.a3$desc <- brca.lookup[match(dropped.a3$entity, brca.lookup$Gene.stable.ID), "Gene.description"]
 
 rm(list = ls(pattern = "dropped\\.0.*"))
-
-# match dropped genes to NCG genes 
-dropped.a3.ncg <- dropped.a3 %>%
-  filter(!is.na(gene))
-
-dropped.a3.ncg$ncg.bst <- ncg.breast[match(dropped.a3.ncg$gene, ncg.breast$gene),2]
-dropped.a3.ncg$ncg.all <- ncg.all[match(dropped.a3.ncg$gene, ncg.all$gene),2]
-
-length(which(!is.na(dropped.a3.ncg$ncg.bst))) # 129
 
 # separate aggregated ALDEx3 results by gamma value
 for(i in levels(factor(brca.a3.u$gamma))){
@@ -294,7 +274,7 @@ leg.cols.a3 <- c("0" = cols.volcano[7], "0.1" = cols.volcano[8], "0.2" = cols.vo
 # set strip title
 volc.a3.ns$title <- "ALDEx3: unpermuted BRCA dataset"
 
-# png(paste0(repo, "figures/fig5_unpermutedDA_ALDEx3.png"),
+# png(paste0(repo, "figures/fig_unpermutedDA_ALDEx3.png"),
 #     units = "in", height = 6, width = 10, res = 600)
 
 volc.a3 <- ggplot(data = volc.a3.ns, aes(x = estimate, y = qval))+
@@ -381,17 +361,13 @@ volc.a2.sig5 <- a2.0 %>%
 volc.a2.ns <- a2.0 %>% 
   filter(we.eBH >0.05)
 
-# set colours for gamma values for ALDEx3 as in FDR/TPR figure
-cols.volcano <- c("#E6E6FA","#CBE3FC","#B0E2FF","#66B3F6","#2171B5","#08306B",
-                  brewer.pal(n = 9, name = "YlOrRd")[c(1,3,5,6,8,9)])
-
 leg.cols.a2 <- c("0" = cols.volcano[1], "0.1" = cols.volcano[2], "0.2" = cols.volcano[3],
                  "0.3" = cols.volcano[4], "0.4" = cols.volcano[5], "0.5" = cols.volcano[6])
 
 # set strip title
 volc.a2.ns$title <- "ALDEx2: unpermuted BRCA dataset"
 
-# png(paste0(repo, "figures/fig5_unpermutedDA_ALDEx2.png"),
+# png(paste0(repo, "figures/fig_unpermutedDA_ALDEx2.png"),
 #     units = "in", height = 6, width = 10, res = 600)
 
 volc.a2 <- ggplot(data = volc.a2.ns, aes(x = diff.btw, y = qval))+
@@ -420,7 +396,7 @@ volc.a2
 # dev.off()
 
 # plot both A2 and A3 side by side
-# png(paste0(repo, "figures/fig5_unpermutedDA_ALDExBoth.png"),
+# png(paste0(repo, "figures/fig_unpermutedDA_ALDExBoth.png"),
 #     units = "in", height = 6, width = 12, res = 600)
 
 volc.a2 | volc.a3.edit

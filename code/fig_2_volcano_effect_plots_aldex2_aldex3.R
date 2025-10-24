@@ -1,7 +1,7 @@
-# representative volcano & effect plots using immuno dataset
+# representative volcano & effect plots using immunotherapy dataset
 
 # Andreea Murariu & Scott Dos Santos
-# Last edited: 2025-08-14
+# Last edited: 2025-08-24
 
 library(stringr)
 library(dplyr)
@@ -9,51 +9,65 @@ library(RColorBrewer)
 library(ggplot2)
 library(patchwork)
 
-# path to directory containing all analysis objects
-anal.path <- "~/Documents/GitHub/ext_analysis/"
-
 # path to figure directory on GH
 repo.figs <- "~/Documents/GitHub/usri/figures/"
 
-# path to immunotherapy analysis data required for these figures, x12 files
-repo.data <- paste("~/Documents/GitHub/usri/data/imm_",
-                   paste0("gamma", 0:5, "aldex", rep(c("2.Rda", "3.Rda"), each = 6)), sep = "")
+#################################### setup ####################################
 
-################################ volcano plots ################################
+# load in all ALDEx2 and ALDEx3 results at gamma = 0 to gamma = 0.5 for the 
+# immunotherapy dataset's 30th iteration (this number was chosen out of the air)
 
-# load all aldex analysis objects from immuno dataset and extract an iteration
-# (30th iteration, picked out of the air), or load output if they already exist
-# (these loops are horrible to read- sorry to whoever lays eyes on them)
-if(!all(file.exists(repo.data))){
-  
-  # load analysis outputs and extract 30th loops if they don't already exist
-  # NOTE: requires generation of analysis objects to run from scratch!
-  for(i in list.files(anal.path, pattern = "immuno.data.aldex")){
-    load(paste0(anal.path,i))
-    gamma <- gsub("aldex.*_","", str_split_i(i, "\\.", 3))
-    tool <- gsub("_.*","", str_split_i(i, "\\.", 3))
-    object <- paste0("immuno.data_", gamma, ".", tool)
-    assign(x = paste0("gamma", gamma, tool),
-           value = get(object)$t.data[[30]])
-  }
-  
-  # remove temporary objects
-  rm(gamma,tool,object,i,
-     list = ls(pattern = "immuno."))
-  
-  # write 30th iteration of immuno data to files
-  for(i in 1:length(ls(pattern = "gamma"))){
-    save(list = ls(pattern = "gamma")[i],
-         file = repo.data[i])
-  }
-} else{
-  
-  for(i in repo.data){
-    load(i)
-    rm(i)
-  }
+# files to load
+rda <- paste0("https://github.com/amurariu/usri/raw/refs/heads/main/data/imm_gamma",
+              0:5, "aldex", rep(c("2.Rda", "3.Rda"), each = 6))
+
+# load directly from GitHub
+for(i in rda){
+  tf <- tempfile(fileext = ".Rda")
+  download.file(url = i, destfile = tf, mode = "wb")
+  load(tf)
+  unlink(tf)
+  rm(tf)
 }
 
+
+
+# # original code to produce all 'gammaXaldexY' data frames
+# 
+# # load all aldex analysis objects from immuno dataset and extract the 30th
+# # iteration- picked out of the air (these loops are horrible to read- sorry to
+# # whoever lays eyes on them)
+# 
+# # path to directory containing all analysis objects
+# anal.path <- "~/Documents/GitHub/ext_analysis/"
+# 
+# # load analysis outputs and extract 30th loops if they don't already exist
+# # NOTE: requires generation of analysis objects to run from scratch!
+# for(i in list.files(anal.path, pattern = "immuno.data.aldex")){
+#   load(paste0(anal.path,i))
+# 
+#   gamma <- gsub("aldex.*_","", str_split_i(i, "\\.", 3))
+#   tool <- gsub("_.*","", str_split_i(i, "\\.", 3))
+#   object <- paste0("immuno.data_", gamma, ".", tool)
+# 
+#   assign(x = paste0("gamma", gamma, tool),
+#          value = get(object)$t.data[[30]])
+# }
+# 
+# # remove temporary objects
+# rm(gamma,tool,object,i, list = ls(pattern = "immuno."))
+# 
+# # write 30th iteration of immuno data to files
+# repo.data <- paste("~/Documents/GitHub/usri/data/imm_",
+#                    paste0("gamma", 0:5, "aldex", rep(c("2.Rda", "3.Rda"), each = 6)), sep = "")
+# 
+# 
+# for(i in 1:length(ls(pattern = "gamma"))){
+#   save(list = ls(pattern = "gamma")[i],
+#        file = repo.data[i])
+# }
+
+################################ volcano plots ################################
 
 # calculate -log10 P values, then change any Inf to reasonable value to be
 # displayed on plot (62.5 for A2)
@@ -105,7 +119,7 @@ gamma0aldex2$title <- "ALDEx2"
 
 # plot volcano plots for all features in gamma = 0 and overlay points which
 # are significant at increasing gamma values
-# png(paste0(repo.figs, "fig2_volcanoPlotsALDEx2.png"),
+# png(paste0(repo.figs, "fig_volcanoPlotsALDEx2.png"),
 #     units = "in", height = 5, width = 5, res = 600)
 
 vol.a2 <- ggplot(data = gamma0aldex2, aes(x = diff.btw, y = qval))+
@@ -176,7 +190,7 @@ leg.cols.a3 <- c("0" = cols.volcano[7], "0.1" = cols.volcano[8], "0.2" = cols.vo
 gamma0aldex3$title <- "ALDEx3"
 
 # plot
-# png(paste0(repo.figs, "fig2_volcanoPlotsALDEx3.png"),
+# png(paste0(repo.figs, "fig_volcanoPlotsALDEx3.png"),
 #     units = "in", height = 5, width = 5, res = 600)
 
 vol.a3 <- ggplot(data = gamma0aldex3, aes(x = estimate, y = qval))+
@@ -206,7 +220,7 @@ vol.a3
 
 
 # both together on same plot
-# png(paste0(repo.figs, "fig2_volcanoPlotsALDEx.png"),
+# png(paste0(repo.figs, "fig_volcanoPlotsALDEx.png"),
 #     units = "in", height = 5, width = 10, res = 600)
 
 vol.a3.edit <- ggplot(data = gamma0aldex3, aes(x = estimate, y = qval))+
@@ -241,7 +255,7 @@ vol.a2 | vol.a3.edit
 # already in all data frames: either natively, or calculated in previous section
 
 # aldex2
-# png(paste0(repo.figs, "fig2_effectPlotsALDEx2.png"),
+# png(paste0(repo.figs, "fig_effectPlotsALDEx2.png"),
 #     units = "in", height = 5, width = 5, res = 600)
 
 eff.a2 <- ggplot(data = gamma0aldex2, aes(x = diff.win, y = diff.btw))+
@@ -271,7 +285,7 @@ eff.a2
 # dev.off()
 
 # aldex3
-# png(paste0(repo.figs, "fig2_effectPlotsALDEx3.png"),
+# png(paste0(repo.figs, "fig_effectPlotsALDEx3.png"),
 #     units = "in", height = 5, width = 5, res = 600)
 
 eff.a3 <- ggplot(data = gamma0aldex3, aes(x = diff.win, y = estimate))+
@@ -301,7 +315,7 @@ eff.a3
 # dev.off()
 
 # both
-# png(paste0(repo.figs, "fig2_effectPlotsALDEx.png"),
+# png(paste0(repo.figs, "fig_effectPlotsALDEx.png"),
 #     units = "in", height = 5, width = 10, res = 600)
 
 eff.a3.edit <- ggplot(data = gamma0aldex3, aes(x = diff.win, y = estimate))+
@@ -333,58 +347,72 @@ eff.a2 | eff.a3.edit
 
 ########################### calculating sig features ###########################
 
-# NOTE: need to re-load data objects for this section of code!
+# load in number of significantly different genes at each ALDEx2 or ALDEx3
+# iteration for the immunotherapy dataset at each gamma value
+url.sig <- "https://github.com/amurariu/usri/raw/refs/heads/main/data/imm_sigGenesALDEx.Rda"
+tf.sig <- tempfile(fileext = ".Rda")
+download.file(url = url.sig, destfile = tf.sig, mode = "wb")
+load(tf.sig)
+unlink(tf.sig)
+rm(list = c("url.sig", "tf.sig"))
 
 # make df and vectors for holding data
-sig.genes <- data.frame(matrix(data = NA, nrow = 6, ncol = 4, 
-                               dimnames = list(c(paste0("gamma", seq(0,5,1))),
-                                               c("A2mean","A2sd", "A3mean", "A3sd"))))
+sig.genes.sum <- data.frame(matrix(data = NA, nrow = 6, ncol = 4, 
+                                   dimnames = list(c(paste0("gamma", seq(0,5,1))),
+                                                   c("A2mean","A2sd", "A3mean", "A3sd"))))
 
-for(i in 0:5){
-  assign(x = paste0("sig", i, ".a2"), value = vector())
-  assign(x = paste0("sig", i, ".a3"), value = vector())
-}
+# calculate means and standard deviations for ALDEx2 and ALDEx3
+sig.genes.sum[,1] <- apply(sig.genes.all[,1:6], 2, mean)
+sig.genes.sum[,2] <- apply(sig.genes.all[,1:6], 2, sd)
+sig.genes.sum[,3] <- apply(sig.genes.all[,7:12], 2, mean)
+sig.genes.sum[,4] <- apply(sig.genes.all[,7:12], 2, sd)
 
-# loop over all aldex outputs for immuno data and calculate the number of 
-# significantly different features at each gamma value for ALDEx2 and ALDEx3
-# separately
-for(i in 1:100){
-  
-  # pull ALDEx2 & ALDEx3 data for current iteration
-  for(j in 0:5){
-    assign(x = paste0("a2.df.", j),
-           value = get(paste0("immuno.data_", j, ".aldex2"))$t.data[[i]])
-    
-    assign(x = paste0("a3.df.", j),
-           value = get(paste0("immuno.data_", j, ".aldex3"))$t.data[[i]])
-    }
-  
-  # get the number of significant features for each scale value
-  for(j in 0:5){
-    assign(x = paste0("sig", j, ".a2"),
-           value = append(x = get(paste0("sig", j, ".a2")), after = i-1, 
-                          values = nrow(get(paste0("a2.df.", j)) %>% filter(we.eBH <0.05))))
-    
-    assign(x = paste0("sig", j, ".a3"),
-           value = append(x = get(paste0("sig", j, ".a3")), after = i-1, 
-                          values = nrow(get(paste0("a3.df.", j)) %>% filter(p.val.adj <0.05))))
-    
-    rm(list = c(paste0("a2.df.", j), paste0("a3.df.", j)))
-    }
-  
-  
-  }
 
-# bind vectors and calculate means
-sig.genes.a2 <- cbind(sig0.a2, sig1.a2, sig2.a2, sig3.a2, sig4.a2, sig5.a2)
-sig.genes.a3 <- cbind(sig0.a3, sig1.a3, sig2.a3, sig3.a3, sig4.a3, sig5.a3)
 
-sig.genes[,1] <- apply(sig.genes.a2, 2, mean)
-sig.genes[,2] <- apply(sig.genes.a2, 2, sd)
-sig.genes[,3] <- apply(sig.genes.a3, 2, mean)
-sig.genes[,4] <- apply(sig.genes.a3, 2, sd)
-  
-# delete temp files
-for(i in 1:5){
-  rm(list = c(paste0("sig",i,".a2"), paste0("sig",i,".a3")))
-}
+# # original code for producing 'sig.genes'
+# 
+# # make vectors for holding number of significant genes at each iteration
+# for(i in 0:5){
+#   assign(x = paste0("sig", i, ".a2"), value = vector())
+#   assign(x = paste0("sig", i, ".a3"), value = vector())
+# }
+# 
+# # loop over all aldex outputs for immuno data and calculate the number of 
+# # significantly different features at each gamma value for ALDEx2 and ALDEx3
+# # separately
+# for(i in 1:100){
+#   
+#   # pull ALDEx2 & ALDEx3 data for current iteration
+#   for(j in 0:5){
+#     assign(x = paste0("a2.df.", j),
+#            value = get(paste0("immuno.data_", j, ".aldex2"))$t.data[[i]])
+#     
+#     assign(x = paste0("a3.df.", j),
+#            value = get(paste0("immuno.data_", j, ".aldex3"))$t.data[[i]])
+#     }
+#   
+#   # get the number of significant features for each scale value
+#   for(j in 0:5){
+#     assign(x = paste0("sig", j, ".a2"),
+#            value = append(x = get(paste0("sig", j, ".a2")), after = i-1, 
+#                           values = nrow(get(paste0("a2.df.", j)) %>% filter(we.eBH <0.05))))
+#     
+#     assign(x = paste0("sig", j, ".a3"),
+#            value = append(x = get(paste0("sig", j, ".a3")), after = i-1, 
+#                           values = nrow(get(paste0("a3.df.", j)) %>% filter(p.val.adj <0.05))))
+#     
+#     rm(list = c(paste0("a2.df.", j), paste0("a3.df.", j)))
+#     
+#     }
+# }
+# 
+# # bind vectors and save object
+# sig.genes.all <- cbind(sig0.a2, sig1.a2, sig2.a2, sig3.a2, sig4.a2, sig5.a2,
+#                       sig0.a3, sig1.a3, sig2.a3, sig3.a3, sig4.a3, sig5.a3)
+# 
+# save(sig.genes.all, file = paste0("~/Documents/GitHub/usri/data/imm_sigGenesALDEx.Rda"))
+#   
+# # delete temp files
+# for(i in 1:5){
+#   rm(list = c(paste0("sig",i,".a2"), paste0("sig",i,".a3")))
+# }
