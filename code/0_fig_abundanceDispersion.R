@@ -1,7 +1,7 @@
 # log abundance vs. dispersion for example dataset: ALDEx2 all datasets
 
 # Scott Dos Santos
-# Last edited: 2025-08-24
+# Last edited: 2025-10-24
 
 library(stringr)
 library(dplyr)
