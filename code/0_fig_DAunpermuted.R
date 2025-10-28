@@ -45,11 +45,32 @@ ncg.breast <- read.table(url.ncgbst, sep = "\t", header = T, quote = "")
 url.ncgall <- "https://github.com/amurariu/usri/raw/refs/heads/main/data/brca.NCG.allCancer.txt"
 ncg.all <- read.table(url.ncgall, sep = "\t", header = T, quote = "")
 
+# unpermuted DESeq2, brca
+url.des <- "https://github.com/amurariu/usri/raw/refs/heads/main/data/brca.deseq.u.Rda"
+tf.des <- tempfile(fileext = ".Rda")
+download.file(url = url.des, destfile = tf.des, mode = "wb")
+load(tf.des)
+unlink(tf.des)
+
+# unpermuted EdgeR, brca
+url.edg <- "https://github.com/amurariu/usri/raw/refs/heads/main/data/brca.edger.u.Rda"
+tf.edg <- tempfile(fileext = ".Rda")
+download.file(url = url.edg, destfile = tf.edg, mode = "wb")
+load(tf.edg)
+unlink(tf.edg)
+
+# unpermuted Limma, brca
+url.lim <- "https://github.com/amurariu/usri/raw/refs/heads/main/data/brca.limma.u.Rda"
+tf.lim <- tempfile(fileext = ".Rda")
+download.file(url = url.lim, destfile = tf.lim, mode = "wb")
+load(tf.lim)
+unlink(tf.lim)
+
 rm(list = c(ls(pattern = "url\\."), ls(pattern = "tf\\.")))
 
 
 
-# # original code to generate 'brca.a2.u' and 'brca.a3.u' from scratch:
+# # original code to extract unpermuted results for all tools from scratch:
 # 
 # # local directory containing analysis outputs
 # data <- "~/Documents/GitHub/ext_analysis/"
@@ -94,6 +115,22 @@ rm(list = c(ls(pattern = "url\\."), ls(pattern = "tf\\.")))
 # # pull all Ensembl gene IDs (to extract gene symbols and descriptions from
 # # BioMart at: https://useast.ensembl.org/info/data/biomart/index.html)
 # # write(gsub("\\..*", "", rownames(df.a2$aldex2_0)), file = paste0(repo, "data/TCGA-BRCA_allGenes.txt"))
+# 
+# 
+# # load analysis objects for BRCA dataset for DESeq2, EdgeR and Limma
+# load(paste0(data, "brca.data.deseq.Rda"))
+# load(paste0(data, "brca.data.edger.Rda"))
+# load(paste0(data, "brca.data.limma.Rda"))
+# 
+# # extract dataframe containing DA results of unpermuted data
+# for(i in ls(pattern = "\\.data\\.")){
+#   tool <- tolower(str_split_i(i, pattern = "\\.data\\.", i = 2))
+#   assign(x = paste0("brca.", tool, ".u"),  value = get(i)$u.data)
+#   save(list = paste0("brca.", tool, ".u"), file = paste0(repo, "data/brca.", tool, ".u.Rda"))
+# }
+# 
+# # remove large analysis objects
+# rm(list = ls(pattern = "brca\\.data\\."))
 
 ################################## DA: ALDEx2 ##################################
 
@@ -402,3 +439,8 @@ volc.a2
 volc.a2 | volc.a3.edit
 
 # dev.off()
+
+# pull number of significantly different genes in DESeq2, EdgeR and Limma
+length(which(brca.deseq.u$padj <0.05)) # 16,736
+length(which(brca.edger.u$FDR <0.05)) # 16,407 
+length(which(brca.limma.u$adj.P.Val <0.05)) # 16,295
