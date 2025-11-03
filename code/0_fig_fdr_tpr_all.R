@@ -1,7 +1,7 @@
 # summarising FDRs and TPRs across all tools & datasets
 
 # Scott Dos Santos
-# Last edited: 2025-10-24
+# Last edited: 2025-11-03
 
 # script to build summary dataframes and graphs for showing average TPR and FDR
 # of all tools at varying prescribed coefficient thresholds, per dataset. Uses
@@ -348,6 +348,10 @@ suppl.fdr$gamma <- case_when(suppl.fdr$tool == "ALDEx2 (\u03b3 = 0)" ~ "0", supp
                             suppl.fdr$tool == "ALDEx3 (\u03b3 = 0.4)" ~ "4", suppl.fdr$tool == "ALDEx3 (\u03b3 = 0.5)" ~ "5",
                             .default = NA)
 
+# calculate the positive predictive value for later (avoids having to re-filter)
+#(PPV = 1 - FDR)
+suppl.fdr$ppv <- (1 - suppl.fdr$value)
+
 suppl.fdr.oth <- suppl.fdr %>% 
   filter(!tool.sep %in% c("ALDEx2","ALDEx3"))
 
@@ -457,6 +461,39 @@ ggplot(data = suppl.tpr.oth, aes(x = coeff, y = value))+
   geom_text(data = suppl.tpr.a23.g5, aes(x = coeff, y = value, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
   geom_line(data = suppl.tpr.a23.g5, aes(x = coeff, y = value, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
   xlab("Threshold: model difference between groups")+ ylab("TPR")+
+  scale_linetype_manual(name = "ALDEx", values = c(2,2,3,3,3))+
+  scale_colour_manual(name = "Tool", values = c("black", "grey60", "grey83", "dodgerblue2", "orangered2"))+
+  facet_wrap(~dataset, ncol = 5)+
+  theme_bw()+
+  theme(axis.text = element_text(size = 9), axis.title = element_text(size = 10),
+        strip.text = element_text(face = "bold"))
+
+# dev.off()
+
+########################## positive predictive value ##########################
+
+# use previously calculated PPV values from FDR section (PPV = 1 - FDR)
+
+# plotting PPV
+# png(paste0(repo, "figures/supplFig_positivePredictiveValue.png"),
+#     units = "in", height = 6, width = 12, res = 600)
+
+ggplot(data = suppl.fdr.oth, aes(x = coeff, y = ppv))+
+  geom_point(aes(colour = tool), size = 1.25, show.legend = F)+
+  geom_line(aes(colour = tool), lwd = 0.2, show.legend = F)+
+  geom_text(data = suppl.fdr.a23.g0, aes(x = coeff, y = ppv, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = suppl.fdr.a23.g0, aes(x = coeff, y = ppv, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = suppl.fdr.a23.g1, aes(x = coeff, y = ppv, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = suppl.fdr.a23.g1, aes(x = coeff, y = ppv, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = suppl.fdr.a23.g2, aes(x = coeff, y = ppv, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = suppl.fdr.a23.g2, aes(x = coeff, y = ppv, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = suppl.fdr.a23.g3, aes(x = coeff, y = ppv, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = suppl.fdr.a23.g3, aes(x = coeff, y = ppv, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = suppl.fdr.a23.g4, aes(x = coeff, y = ppv, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = suppl.fdr.a23.g4, aes(x = coeff, y = ppv, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  geom_text(data = suppl.fdr.a23.g5, aes(x = coeff, y = ppv, label = gamma, colour = tool.sep), size = 1.9, show.legend = F)+
+  geom_line(data = suppl.fdr.a23.g5, aes(x = coeff, y = ppv, colour = tool.sep, lty = tool.sep), lwd = 0.2, show.legend = F)+
+  xlab("Threshold: model difference between groups")+ ylab("PPV")+
   scale_linetype_manual(name = "ALDEx", values = c(2,2,3,3,3))+
   scale_colour_manual(name = "Tool", values = c("black", "grey60", "grey83", "dodgerblue2", "orangered2"))+
   facet_wrap(~dataset, ncol = 5)+
