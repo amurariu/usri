@@ -1,6 +1,6 @@
 # Code and study data for Dos Santos et al. (2025)
 
-Last updated: 28th October 2025
+Last updated: 17th November 2025
 
 This repository contains input data and code for running all analyses and producing all figures in the article, **"Are any of these results even real?!": one simple rule to control the false discovery rate when analysing high-throughput sequencing data**, published in XYZ.
 
@@ -18,4 +18,5 @@ This repository contains input data and code for running all analyses and produc
 
 - **figures:**
   - Directory containing .png files for all figures produced by 'code/fig_xyz' scripts.
+  - Also contains sub-directory 'SVGs' containing the SVG files of the final figures used in the manuscript, and 'figureEdits.txt', describing exactly how all R-produced figures have been edited, if applicable.
 

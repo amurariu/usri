@@ -116,7 +116,7 @@ tr <- ggplot()+geom_blank(aes(1,1))+
         axis.text.y = element_blank(),axis.ticks = element_blank(),
         axis.line = element_blank())
 
-# png(paste0(repo,"figures/fig_dispersionAbundance.png"),
+# png(paste0(repo,"figures/supplFig_dispersionAbundance.png"),
 #     units = "in", height = 4, width = 6, res = 600)
 
 grid.arrange(tl,tr,bl,br, ncol = 2, nrow = 2, heights = c(1, 2), widths = c(4.25, 1))
@@ -125,7 +125,7 @@ grid.arrange(tl,tr,bl,br, ncol = 2, nrow = 2, heights = c(1, 2), widths = c(4.25
 
 
 # make figure showing disp vs abund containing legend to use in inkscape later
-# png(paste0(repo, "figures/fig_dispersionAbundance_legend.png"),
+# png(paste0(repo, "figures/supplFig_dispersionAbundance_legend.png"),
 #     units = "in", height = 4, width = 6, res = 600)
 
 bl.leg <- ggplot(data = plot.filt, aes(x = diff.win, y = rab.all))+

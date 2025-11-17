@@ -311,7 +311,7 @@ leg.cols.a3 <- c("0" = cols.volcano[7], "0.1" = cols.volcano[8], "0.2" = cols.vo
 # set strip title
 volc.a3.ns$title <- "ALDEx3: unpermuted BRCA dataset"
 
-# png(paste0(repo, "figures/fig_unpermutedDA_ALDEx3.png"),
+# png(paste0(repo, "figures/supplFig_unpermutedDA_ALDEx3.png"),
 #     units = "in", height = 6, width = 10, res = 600)
 
 volc.a3 <- ggplot(data = volc.a3.ns, aes(x = estimate, y = qval))+
@@ -404,7 +404,7 @@ leg.cols.a2 <- c("0" = cols.volcano[1], "0.1" = cols.volcano[2], "0.2" = cols.vo
 # set strip title
 volc.a2.ns$title <- "ALDEx2: unpermuted BRCA dataset"
 
-# png(paste0(repo, "figures/fig_unpermutedDA_ALDEx2.png"),
+# png(paste0(repo, "figures/supplFig_unpermutedDA_ALDEx2.png"),
 #     units = "in", height = 6, width = 10, res = 600)
 
 volc.a2 <- ggplot(data = volc.a2.ns, aes(x = diff.btw, y = qval))+
@@ -433,7 +433,7 @@ volc.a2
 # dev.off()
 
 # plot both A2 and A3 side by side
-# png(paste0(repo, "figures/fig_unpermutedDA_ALDExBoth.png"),
+# png(paste0(repo, "figures/supplFig_unpermutedDA_ALDExBoth.png"),
 #     units = "in", height = 6, width = 12, res = 600)
 
 volc.a2 | volc.a3.edit
