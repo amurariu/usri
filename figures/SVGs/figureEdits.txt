@@ -43,3 +43,7 @@ Supplementary Figure S4 ALDEx3 returns a tighter distribution of minimum log-dif
 Supplementary Figure S5 Boundaries between features reported as differentially expressed at different gamma values are curved:
    - Produced from 'supplFig_unpermutedDA_ALDExBoth.png'
    - No edits at all
+
+Supplementary Figure S6 The tumour suppressor gene, PTEN, being considered differentially expressed by ALDEx2 is driven by a few outlier samples:
+   - Produced from 'supplFig_unpermuted_PTEN.png'
+   - Cropped figure to remove R-produced legend and created new legend from scratch

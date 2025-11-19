@@ -7,6 +7,7 @@ library(stringr)
 library(dplyr)
 library(RColorBrewer)
 library(ggplot2)
+library(ggtext)
 library(patchwork)
 
 # set path to GH repository
@@ -444,3 +445,100 @@ volc.a2 | volc.a3.edit
 length(which(brca.deseq.u$padj <0.05)) # 16,736
 length(which(brca.edger.u$FDR <0.05)) # 16,407 
 length(which(brca.limma.u$adj.P.Val <0.05)) # 16,295
+
+################################ PTEN read dist ################################
+
+# PTEN is an example of a gene which is initially differentially expressed when
+# running a scale-naive analysis but this becomes non-significant after adding
+# a small amount of scale uncertainty (gamma = 0.1). 
+
+# ENSG00000171862.16 is PTEN in the latest release of Ensembl, but the gene ID
+# in the BRCA dataset is ENSG00000171862.8; want to make density plot of reads
+# and/or CLR abundance in the BRCA data per group
+
+# load in original BRCA dataset read count table and conditions
+url.df <- "https://github.com/amurariu/usri/raw/refs/heads/main/data/TCGA-BRCA.normal-tumor.pair.rawCount.tsv"
+reads.brca <- read.table(file = url.df, sep = "\t", header = T, quote = "", row.names = 1)
+
+url.cn <- "https://github.com/amurariu/usri/raw/refs/heads/main/data/TCGA-BRCA.conditions.tsv"
+conds.brca <- as.data.frame(t(read.table(url.cn, sep = "\t", header = F, quote = "")))
+
+rm(list = ls(pattern = "url"))
+
+# pull PTEN reads from all samples and add group membership information
+pten <- as.data.frame(t(reads.brca["ENSG00000171862.8",]))
+pten$group <- conds.brca$V1
+rownames(pten) <- colnames(reads.brca)
+colnames(pten) <- c("reads", "group")
+
+# capitalise groups
+pten$group <- case_when(pten$group == "tumor" ~ "Tumour", pten$group == "normal" ~ "Normal")
+
+# filter reads with EdgeR as in function
+library(edgeR)
+
+brca.edge <- DGEList(counts=reads.brca, group=factor(conds.brca$V1))
+brca.keep <- filterByExpr(brca.edge)
+brca.edge <- brca.edge[brca.keep,keep.lib.sizes=FALSE]
+brca.data <- brca.edge$counts 
+nrow(brca.data) # returns 21,813 genes from total of 60,483
+
+# load ALDEx2 and set seed
+library(ALDEx2)
+
+set.seed(2025)
+
+# clr transform as in original analysis with virtually zero scale uncertainty
+brca.clr <- aldex.clr(reads = brca.data, conds = conds.brca$V1, mc.samples = 128,
+                      denom = "all", verbose = TRUE, gamma = 1e-3)
+
+# source code for truncated version of aldex.effect() which only calculates
+# rab.all, rab per group and rab.sample (see R script for precise details as to
+# why this was necessary)
+source(paste0(repo, "code/trunc_aldex_effect.R" ))
+
+# get median CLR abundances across 128 MC instances for 21,813 genes
+brca.clr.e <- trunc.aldex.effect(clr = brca.clr, verbose = T, include.sample.summary = T)
+
+# add CLR abundance to plotting dataframe
+pten$clr <- as.vector(t(brca.clr.e["ENSG00000171862.8", grep("rab.sample.", colnames(brca.clr.e))]))
+
+# add title column for ggplot strip
+pten$titleL <- "Read counts: <i>PTEN</i>"
+pten$titleR <- "CLR abundance: <i>PTEN</i>"
+
+# plot density of PTEN counts and CLR abundances
+p1 <- ggplot(data = pten, aes(x = reads, fill = group))+
+  geom_histogram(colour = "black", lwd = 0.2, alpha = 0.5, 
+                 bins = 26, binwidth = 1000, boundary = 0)+
+  scale_y_continuous(limits = c(0,37.5), expand = c(0,0))+
+  scale_x_continuous(limits = c(0,27000), breaks = seq(0,26000,5000), expand = c(0,0))+
+  scale_fill_manual(name = "Group", values = c("dodgerblue2", "orange"))+
+  xlab("Reads counts")+ylab("Number of samples")+
+  theme_bw()+
+  facet_wrap(~titleL)+
+  theme(legend.box.spacing = unit(0.01, "cm"), legend.key.spacing = unit(0.25, "cm"),
+        legend.text = element_text(size = 9), strip.text = element_markdown(face = "bold", size = 10),
+        legend.title = element_text(size = 10, face = "bold"), legend.position = "top",
+        axis.title = element_text(size = 10), axis.text = element_text(size = 10))
+
+p2 <- ggplot(data = pten, aes(x = clr, fill = group))+
+  geom_histogram(colour = "black", lwd = 0.2, alpha = 0.5, binwidth = 0.2, boundary = 0)+
+  scale_x_continuous(limits = c(2,7), breaks = seq(2,7,1), expand = c(0,0))+
+  scale_y_continuous(limits = c(0,50), breaks = seq(0,40,10), expand = c(0,0))+
+  scale_fill_manual(name = "Group", values = c("dodgerblue2", "orange"))+
+  xlab("CLR abundance")+ylab("")+
+  theme_bw()+
+  facet_wrap(~titleR)+
+  theme(legend.box.spacing = unit(0.01, "cm"), legend.key.spacing = unit(0.25, "cm"),
+        legend.text = element_text(size = 9), strip.text = element_markdown(face = "bold", size = 10),
+        legend.title = element_text(size = 10, face = "bold"), legend.position = "top",
+        axis.title = element_text(size = 10), axis.text = element_text(size = 10),
+        axis.title.y = element_blank())
+
+# png(paste0(repo, "figures/supplFig_unpermuted_PTEN.png"),
+#     units = "in", height = 4, width = 10, res = 600)
+
+p1 | p2
+
+# dev.off()
