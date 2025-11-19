@@ -516,7 +516,7 @@ group_means.filter<- plot.filter %>%
 group_means.filter$linecols <- rep(cols.density, 4)
 
 # plot example density plot for given dataset (change file name accordingly)
-# png(paste0(repo,"figures/supFig_densityPlotsALDEx_otherDatasets.png"),
+# png(paste0(repo,"figures/supplFig_densityPlotsALDEx_otherDatasets.png"),
 #     units = "in", height = 6, width = 8, res = 600)
 
 p1 <- plot.filter %>% 
