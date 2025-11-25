@@ -44,6 +44,6 @@ Supplementary Figure S5 Boundaries between features reported as differentially e
    - Produced from 'supplFig_unpermutedDA_ALDExBoth.png'
    - No edits at all
 
-Supplementary Figure S6 The tumour suppressor gene, PTEN, being considered differentially expressed by ALDEx2 is driven by a few outlier samples:
+Supplementary Figure S6 Significant differences in PTEN expression are driven by a few outlier samples:
    - Produced from 'supplFig_unpermuted_PTEN.png'
    - Cropped figure to remove R-produced legend and created new legend from scratch
