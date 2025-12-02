@@ -2,7 +2,7 @@
 
 Last updated: 17th November 2025
 
-This repository contains input data and code for running all analyses and producing all figures in the article, **"Are any of these results even real?!": one simple rule to control the false discovery rate when analysing high-throughput sequencing data**, published in XYZ.
+This repository contains input data and code for running all analyses and producing all figures in the article, **Not every gene is special: one simple rule to control the false discovery rate when analysing high-throughput sequencing data**, published in XYZ.
 
 ### Contents:
 - **analysis:**
