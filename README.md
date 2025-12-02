@@ -20,3 +20,6 @@ This repository contains input data and code for running all analyses and produc
   - Directory containing .png files for all figures produced by 'code/fig_xyz' scripts.
   - Also contains sub-directory 'SVGs' containing the SVG files of the final figures used in the manuscript, and 'figureEdits.txt', describing exactly how all R-produced figures have been edited, if applicable.
 
+- **paper:**
+  - Directory containing all files relating to submission of this study to PLOS Computational Biology
+  - Sub-directories include PNG files of manuscript figures, LaTeX source files for the final manuscript for bioRxiv and PLOS Computational Biology.
