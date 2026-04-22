@@ -1,190 +1,190 @@
 sample	Group	Age	Health.condition
-DYEY1	DYEY1	kindergarten	3	Healthy
-DYEY10	DYEY10	kindergarten	5	Healthy
-DYEY2	DYEY2	kindergarten	4	Healthy
-DYEY3	DYEY3	kindergarten	4	Healthy
-DYEY4	DYEY4	kindergarten	4	Healthy
-DYEY5	DYEY5	kindergarten	5	Healthy
-DYEY6	DYEY6	kindergarten	4	Healthy
-DYEY7	DYEY7	kindergarten	4	Healthy
-DYEY8	DYEY8	kindergarten	5	Healthy
-DYEY9	DYEY9	kindergarten	5	Healthy
-TET1	TET1	kindergarten	6	Healthy
-TET10	TET10	kindergarten	6	Healthy
-TET100	TET100	kindergarten	5	Healthy
-TET103	TET103	kindergarten	5	Healthy
-TET104	TET104	kindergarten	5	Healthy
-TET105	TET105	kindergarten	5	Healthy
-TET106	TET106	kindergarten	4	Healthy
-TET107	TET107	kindergarten	4	Healthy
-TET108	TET108	kindergarten	5	Healthy
-TET109	TET109	kindergarten	5	Healthy
-TET110	TET110	kindergarten	4	Healthy
-TET112	TET112	kindergarten	4	Healthy
-TET113	TET113	kindergarten	5	Healthy
-TET114	TET114	kindergarten	5	Healthy
-TET115	TET115	kindergarten	6	Healthy
-TET117	TET117	kindergarten	4	Healthy
-TET118	TET118	kindergarten	5	Healthy
-TET119	TET119	kindergarten	5	Healthy
-TET120	TET120	kindergarten	6	Healthy
-TET121	TET121	kindergarten	4	Healthy
-TET14	TET14	kindergarten	6	Healthy
-TET15	TET15	kindergarten	4	Healthy
-TET16	TET16	kindergarten	6	Healthy
-TET18	TET18	kindergarten	6	Healthy
-TET19	TET19	kindergarten	4	Healthy
-TET2	TET2	kindergarten	6	Healthy
-TET20	TET20	kindergarten	6	Healthy
-TET24	TET24	kindergarten	5	Healthy
-TET26	TET26	kindergarten	6	Healthy
-TET28	TET28	kindergarten	5	Healthy
-TET29	TET29	kindergarten	6	Healthy
-TET31	TET31	kindergarten	5	Healthy
-TET33	TET33	kindergarten	6	Healthy
-TET34	TET34	kindergarten	6	Healthy
-TET35	TET35	kindergarten	5	Healthy
-TET36	TET36	kindergarten	5	Healthy
-TET37	TET37	kindergarten	6	Healthy
-TET38	TET38	kindergarten	5	Healthy
-TET39	TET39	kindergarten	4	Healthy
-TET4	TET4	kindergarten	5	Healthy
-TET40	TET40	kindergarten	5	Healthy
-TET41	TET41	kindergarten	6	Healthy
-TET42	TET42	kindergarten	6	Healthy
-TET43	TET43	kindergarten	5	Healthy
-TET44	TET44	kindergarten	6	Healthy
-TET45	TET45	kindergarten	6	Healthy
-TET46	TET46	kindergarten	6	Healthy
-TET47	TET47	kindergarten	4	Healthy
-TET48	TET48	kindergarten	6	Healthy
-TET5	TET5	kindergarten	5	Healthy
-TET51	TET51	kindergarten	5	Healthy
-TET52	TET52	kindergarten	4	Healthy
-TET53	TET53	kindergarten	6	Healthy
-TET54	TET54	kindergarten	5	Healthy
-TET56	TET56	kindergarten	5	Healthy
-TET57	TET57	kindergarten	5	Healthy
-TET58	TET58	kindergarten	4	Healthy
-TET6	TET6	kindergarten	4	Healthy
-TET60	TET60	kindergarten	5	Healthy
-TET61	TET61	kindergarten	4	Healthy
-TET62	TET62	kindergarten	4	Healthy
-TET63	TET63	kindergarten	5	Healthy
-TET65	TET65	kindergarten	4	Healthy
-TET67	TET67	kindergarten	6	Healthy
-TET68	TET68	kindergarten	4	Healthy
-TET7	TET7	kindergarten	5	Healthy
-TET70	TET70	kindergarten	5	Healthy
-TET71	TET71	kindergarten	4	Healthy
-TET72	TET72	kindergarten	4	Healthy
-TET75	TET75	kindergarten	4	Healthy
-TET76	TET76	kindergarten	4	Healthy
-TET77	TET77	kindergarten	5	Healthy
-TET78	TET78	kindergarten	5	Healthy
-TET79	TET79	kindergarten	4	Healthy
-TET8	TET8	kindergarten	6	Healthy
-TET80	TET80	kindergarten	6	Healthy
-TET81	TET81	kindergarten	6	Healthy
-TET82	TET82	kindergarten	6	Healthy
-TET84	TET84	kindergarten	5	Healthy
-TET85	TET85	kindergarten	4	Healthy
-TET86	TET86	kindergarten	4	Healthy
-TET87	TET87	kindergarten	5	Healthy
-TET88	TET88	kindergarten	5	Healthy
-TET89	TET89	kindergarten	6	Healthy
-TET9	TET9	kindergarten	6	Healthy
-TET90	TET90	kindergarten	6	Healthy
-TET92	TET92	kindergarten	5	Healthy
-TET93	TET93	kindergarten	4	Healthy
-TET94	TET94	kindergarten	4	Healthy
-TET95	TET95	kindergarten	5	Healthy
-TET96	TET96	kindergarten	6	Healthy
-TET97	TET97	kindergarten	4	Healthy
-TET98	TET98	kindergarten	4	Healthy
-TL100	TL100	elder	77	Healthy
-TL30	TL30	elder	61	Healthy
-TL107	TL107	elder	62	Healthy
-TL106	TL106	elder	70	Healthy
-TL80	TL80	elder	73	Healthy
-TL76	TL76	elder	61	Healthy
-TL65	TL65	elder	62	Healthy
-TL7	TL7	elder	70	Healthy
-TL96	TL96	elder	60	Healthy
-TL86	TL86	elder	62	Healthy
-TL103	TL103	elder	60	Healthy
-TL95	TL95	elder	73	Healthy
-TL111	TL111	elder	70	Healthy
-TL61	TL61	elder	62	Healthy
-TL94	TL94	elder	62	Healthy
-TL62	TL62	elder	62	Healthy
-TL63	TL63	elder	61	Healthy
-TL37	TL37	elder	63	Healthy
-TL116	TL116	elder	71	Healthy
-TL31	TL31	elder	61	Healthy
-TL118	TL118	elder	64	Healthy
-TL13	TL13	elder	63	Healthy
-TL121	TL121	elder	61	Healthy
-TL57	TL57	elder	64	Healthy
-TL87	TL87	elder	79	Healthy
-TL64	TL64	elder	66	Healthy
-TL2	TL2	elder	63	Healthy
-TL108	TL108	elder	61	Healthy
-TL73	TL73	elder	69	Healthy
-TL55	TL55	elder	66	Healthy
-TL109	TL109	elder	60	Healthy
-TL77	TL77	elder	62	Healthy
-TL38	TL38	elder	72	Healthy
-TL12	TL12	elder	68	Healthy
-TL67	TL67	elder	66	Healthy
-TL10	TL10	elder	65	Healthy
-TL3	TL3	elder	61	Healthy
-TL14	TL14	elder	74	Healthy
-TL97	TL97	elder	76	Healthy
-TL123	TL123	elder	61	Healthy
-TL6	TL6	elder	63	Healthy
-100a	100a	elder	60	Healthy
-TL120	TL120	elder	62	Healthy
-TL54	TL54	elder	69	Healthy
-TL117	TL117	elder	65	Healthy
-TL44	TL44	elder	60	Healthy
-TL71	TL71	elder	63	Healthy
-TL20	TL20	elder	64	Healthy
-TL1	TL1	elder	62	Healthy
-TL124	TL124	elder	67	Healthy
-TL78	TL78	elder	69	Healthy
-TL105	TL105	elder	65	Healthy
-TL81	TL81	elder	73	Healthy
-TL91	TL91	elder	70	Healthy
-TL66	TL66	elder	60	Healthy
-TL92	TL92	elder	61	Healthy
-TL88	TL88	elder	64	Healthy
-TL60	TL60	elder	76	Healthy
-TL69	TL69	elder	67	Healthy
-TL93	TL93	elder	77	Healthy
-TL113	TL113	elder	61	Healthy
-TL59	TL59	elder	66	Healthy
-TL115	TL115	elder	63	Healthy
-TL85	TL85	elder	61	Healthy
-TL4	TL4	elder	69	Healthy
-TL39	TL39	elder	72	Healthy
-TL16	TL16	elder	68	Healthy
-TL114	TL114	elder	65	Healthy
-TL129	TL129	elder	65	Healthy
-TL102	TL102	elder	72	Healthy
-TL110	TL110	elder	62	Healthy
-TL84	TL84	elder	62	Healthy
-TL112	TL112	elder	64	Healthy
-TL74	TL74	elder	68	Healthy
-TL70	TL70	elder	76	Healthy
-TL99	TL99	elder	61	Healthy
-TL82	TL82	elder	63	Healthy
-TL18	TL18	elder	66	Healthy
-TL23	TL23	elder	74	Healthy
-TL83	TL83	elder	64	Healthy
-100b	100b	elder	60	Healthy
-TL90	TL90	elder	62	Healthy
-TL27	TL27	elder	63	Healthy
-TL5	TL5	elder	79	Healthy
-TL58	TL58	elder	61	Healthy
-TL119	TL119	elder	62	Healthy
+DYEY1	kindergarten	3	Healthy
+DYEY10	kindergarten	5	Healthy
+DYEY2	kindergarten	4	Healthy
+DYEY3	kindergarten	4	Healthy
+DYEY4	kindergarten	4	Healthy
+DYEY5	kindergarten	5	Healthy
+DYEY6	kindergarten	4	Healthy
+DYEY7	kindergarten	4	Healthy
+DYEY8	kindergarten	5	Healthy
+DYEY9	kindergarten	5	Healthy
+TET1	kindergarten	6	Healthy
+TET10	kindergarten	6	Healthy
+TET100	kindergarten	5	Healthy
+TET103	kindergarten	5	Healthy
+TET104	kindergarten	5	Healthy
+TET105	kindergarten	5	Healthy
+TET106	kindergarten	4	Healthy
+TET107	kindergarten	4	Healthy
+TET108	kindergarten	5	Healthy
+TET109	kindergarten	5	Healthy
+TET110	kindergarten	4	Healthy
+TET112	kindergarten	4	Healthy
+TET113	kindergarten	5	Healthy
+TET114	kindergarten	5	Healthy
+TET115	kindergarten	6	Healthy
+TET117	kindergarten	4	Healthy
+TET118	kindergarten	5	Healthy
+TET119	kindergarten	5	Healthy
+TET120	kindergarten	6	Healthy
+TET121	kindergarten	4	Healthy
+TET14	kindergarten	6	Healthy
+TET15	kindergarten	4	Healthy
+TET16	kindergarten	6	Healthy
+TET18	kindergarten	6	Healthy
+TET19	kindergarten	4	Healthy
+TET2	kindergarten	6	Healthy
+TET20	kindergarten	6	Healthy
+TET24	kindergarten	5	Healthy
+TET26	kindergarten	6	Healthy
+TET28	kindergarten	5	Healthy
+TET29	kindergarten	6	Healthy
+TET31	kindergarten	5	Healthy
+TET33	kindergarten	6	Healthy
+TET34	kindergarten	6	Healthy
+TET35	kindergarten	5	Healthy
+TET36	kindergarten	5	Healthy
+TET37	kindergarten	6	Healthy
+TET38	kindergarten	5	Healthy
+TET39	kindergarten	4	Healthy
+TET4	kindergarten	5	Healthy
+TET40	kindergarten	5	Healthy
+TET41	kindergarten	6	Healthy
+TET42	kindergarten	6	Healthy
+TET43	kindergarten	5	Healthy
+TET44	kindergarten	6	Healthy
+TET45	kindergarten	6	Healthy
+TET46	kindergarten	6	Healthy
+TET47	kindergarten	4	Healthy
+TET48	kindergarten	6	Healthy
+TET5	kindergarten	5	Healthy
+TET51	kindergarten	5	Healthy
+TET52	kindergarten	4	Healthy
+TET53	kindergarten	6	Healthy
+TET54	kindergarten	5	Healthy
+TET56	kindergarten	5	Healthy
+TET57	kindergarten	5	Healthy
+TET58	kindergarten	4	Healthy
+TET6	kindergarten	4	Healthy
+TET60	kindergarten	5	Healthy
+TET61	kindergarten	4	Healthy
+TET62	kindergarten	4	Healthy
+TET63	kindergarten	5	Healthy
+TET65	kindergarten	4	Healthy
+TET67	kindergarten	6	Healthy
+TET68	kindergarten	4	Healthy
+TET7	kindergarten	5	Healthy
+TET70	kindergarten	5	Healthy
+TET71	kindergarten	4	Healthy
+TET72	kindergarten	4	Healthy
+TET75	kindergarten	4	Healthy
+TET76	kindergarten	4	Healthy
+TET77	kindergarten	5	Healthy
+TET78	kindergarten	5	Healthy
+TET79	kindergarten	4	Healthy
+TET8	kindergarten	6	Healthy
+TET80	kindergarten	6	Healthy
+TET81	kindergarten	6	Healthy
+TET82	kindergarten	6	Healthy
+TET84	kindergarten	5	Healthy
+TET85	kindergarten	4	Healthy
+TET86	kindergarten	4	Healthy
+TET87	kindergarten	5	Healthy
+TET88	kindergarten	5	Healthy
+TET89	kindergarten	6	Healthy
+TET9	kindergarten	6	Healthy
+TET90	kindergarten	6	Healthy
+TET92	kindergarten	5	Healthy
+TET93	kindergarten	4	Healthy
+TET94	kindergarten	4	Healthy
+TET95	kindergarten	5	Healthy
+TET96	kindergarten	6	Healthy
+TET97	kindergarten	4	Healthy
+TET98	kindergarten	4	Healthy
+TL100	elder	77	Healthy
+TL30	elder	61	Healthy
+TL107	elder	62	Healthy
+TL106	elder	70	Healthy
+TL80	elder	73	Healthy
+TL76	elder	61	Healthy
+TL65	elder	62	Healthy
+TL7	elder	70	Healthy
+TL96	elder	60	Healthy
+TL86	elder	62	Healthy
+TL103	elder	60	Healthy
+TL95	elder	73	Healthy
+TL111	elder	70	Healthy
+TL61	elder	62	Healthy
+TL94	elder	62	Healthy
+TL62	elder	62	Healthy
+TL63	elder	61	Healthy
+TL37	elder	63	Healthy
+TL116	elder	71	Healthy
+TL31	elder	61	Healthy
+TL118	elder	64	Healthy
+TL13	elder	63	Healthy
+TL121	elder	61	Healthy
+TL57	elder	64	Healthy
+TL87	elder	79	Healthy
+TL64	elder	66	Healthy
+TL2	elder	63	Healthy
+TL108	elder	61	Healthy
+TL73	elder	69	Healthy
+TL55	elder	66	Healthy
+TL109	elder	60	Healthy
+TL77	elder	62	Healthy
+TL38	elder	72	Healthy
+TL12	elder	68	Healthy
+TL67	elder	66	Healthy
+TL10	elder	65	Healthy
+TL3	elder	61	Healthy
+TL14	elder	74	Healthy
+TL97	elder	76	Healthy
+TL123	elder	61	Healthy
+TL6	elder	63	Healthy
+100a	elder	60	Healthy
+TL120	elder	62	Healthy
+TL54	elder	69	Healthy
+TL117	elder	65	Healthy
+TL44	elder	60	Healthy
+TL71	elder	63	Healthy
+TL20	elder	64	Healthy
+TL1	elder	62	Healthy
+TL124	elder	67	Healthy
+TL78	elder	69	Healthy
+TL105	elder	65	Healthy
+TL81	elder	73	Healthy
+TL91	elder	70	Healthy
+TL66	elder	60	Healthy
+TL92	elder	61	Healthy
+TL88	elder	64	Healthy
+TL60	elder	76	Healthy
+TL69	elder	67	Healthy
+TL93	elder	77	Healthy
+TL113	elder	61	Healthy
+TL59	elder	66	Healthy
+TL115	elder	63	Healthy
+TL85	elder	61	Healthy
+TL4	elder	69	Healthy
+TL39	elder	72	Healthy
+TL16	elder	68	Healthy
+TL114	elder	65	Healthy
+TL129	elder	65	Healthy
+TL102	elder	72	Healthy
+TL110	elder	62	Healthy
+TL84	elder	62	Healthy
+TL112	elder	64	Healthy
+TL74	elder	68	Healthy
+TL70	elder	76	Healthy
+TL99	elder	61	Healthy
+TL82	elder	63	Healthy
+TL18	elder	66	Healthy
+TL23	elder	74	Healthy
+TL83	elder	64	Healthy
+100b	elder	60	Healthy
+TL90	elder	62	Healthy
+TL27	elder	63	Healthy
+TL5	elder	79	Healthy
+TL58	elder	61	Healthy
+TL119	elder	62	Healthy

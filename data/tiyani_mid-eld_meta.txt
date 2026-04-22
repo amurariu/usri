@@ -1,173 +1,173 @@
 sample	Group	Age	Health.condition
-TZ20	TZ20	mid_age	36	Healthy
-TZ7	TZ7	mid_age	30	Healthy
-TZ95	TZ95	mid_age	38	Healthy
-TZ55	TZ55	mid_age	37	Healthy
-TZ86	TZ86	mid_age	43	Healthy
-TZ114	TZ114	mid_age	44	Healthy
-TZ66	TZ66	mid_age	36	Healthy
-TZ15	TZ15	mid_age	30	Healthy
-TZ109	TZ109	mid_age	33	Healthy
-TZ85	TZ85	mid_age	33	Healthy
-TZ115	TZ115	mid_age	39	Healthy
-TZ71	TZ71	mid_age	35	Healthy
-TZ62	TZ62	mid_age	39	Healthy
-TZ64	TZ64	mid_age	38	Healthy
-TZ112	TZ112	mid_age	37	Healthy
-TZ63	TZ63	mid_age	36	Healthy
-TZ93	TZ93	mid_age	40	Healthy
-TZ74	TZ74	mid_age	36	Healthy
-TZ65	TZ65	mid_age	38	Healthy
-TZ45	TZ45	mid_age	40	Healthy
-TZ11	TZ11	mid_age	43	Healthy
-TZ53	TZ53	mid_age	35	Healthy
-TZ44	TZ44	mid_age	39	Healthy
-TZ34	TZ34	mid_age	40	Healthy
-TZ59	TZ59	mid_age	45	Healthy
-TZ73	TZ73	mid_age	42	Healthy
-TZ94	TZ94	mid_age	30	Healthy
-TZ16	TZ16	mid_age	36	Healthy
-TZ102	TZ102	mid_age	45	Healthy
-TZ38	TZ38	mid_age	43	Healthy
-TZ24	TZ24	mid_age	48	Healthy
-TZ58	TZ58	mid_age	44	Healthy
-TZ28	TZ28	mid_age	44	Healthy
-TZ83	TZ83	mid_age	47	Healthy
-TZ33	TZ33	mid_age	36	Healthy
-TZ29	TZ29	mid_age	35	Healthy
-TZ22	TZ22	mid_age	39	Healthy
-TZ107	TZ107	mid_age	32	Healthy
-TZ12	TZ12	mid_age	32	Healthy
-TZ32	TZ32	mid_age	44	Healthy
-TZ78	TZ78	mid_age	41	Healthy
-TZ6	TZ6	mid_age	34	Healthy
-TZ111	TZ111	mid_age	40	Healthy
-TZ47	TZ47	mid_age	45	Healthy
-TZ88	TZ88	mid_age	43	Healthy
-TZ30.1	TZ30.1	mid_age	37	Healthy
-TZ108	TZ108	mid_age	41	Healthy
-TZ19	TZ19	mid_age	45	Healthy
-TZ40	TZ40	mid_age	36	Healthy
-TZ91	TZ91	mid_age	40	Healthy
-TZ52	TZ52	mid_age	47	Healthy
-TZ37	TZ37	mid_age	46	Healthy
-TZ101	TZ101	mid_age	47	Healthy
-TZ57	TZ57	mid_age	43	Healthy
-TZ81	TZ81	mid_age	43	Healthy
-TZ13	TZ13	mid_age	42	Healthy
-TZ89	TZ89	mid_age	44	Healthy
-TZ4	TZ4	mid_age	41	Healthy
-TZ87	TZ87	mid_age	46	Healthy
-TZ3	TZ3	mid_age	38	Healthy
-TZ5	TZ5	mid_age	45	Healthy
-TZ8	TZ8	mid_age	48	Healthy
-TZ26	TZ26	mid_age	48	Healthy
-TZ75	TZ75	mid_age	38	Healthy
-TZ80	TZ80	mid_age	49	Healthy
-TZ60	TZ60	mid_age	36	Healthy
-TZ30	TZ30	mid_age	37	Healthy
-TZ56	TZ56	mid_age	38	Healthy
-TZ41	TZ41	mid_age	44	Healthy
-TZ76	TZ76	mid_age	50	Healthy
-TZ9	TZ9	mid_age	43	Healthy
-TZ50	TZ50	mid_age	33	Healthy
-TZ77	TZ77	mid_age	45	Healthy
-TZ68	TZ68	mid_age	41	Healthy
-TZ82	TZ82	mid_age	37	Healthy
-TZ104	TZ104	mid_age	38	Healthy
-TZ110	TZ110	mid_age	48	Healthy
-TZ96	TZ96	mid_age	43	Healthy
-TZ67	TZ67	mid_age	30	Healthy
-TZ92	TZ92	mid_age	33	Healthy
-TZ113	TZ113	mid_age	38	Healthy
-TZ105	TZ105	mid_age	36	Healthy
-TZ69	TZ69	mid_age	38	Healthy
-TZ48	TZ48	mid_age	36	Healthy
-TZ103	TZ103	mid_age	39	Healthy
-TZ61	TZ61	mid_age	43	Healthy
-TL100	TL100	elder	77	Healthy
-TL30	TL30	elder	61	Healthy
-TL107	TL107	elder	62	Healthy
-TL106	TL106	elder	70	Healthy
-TL80	TL80	elder	73	Healthy
-TL76	TL76	elder	61	Healthy
-TL65	TL65	elder	62	Healthy
-TL7	TL7	elder	70	Healthy
-TL96	TL96	elder	60	Healthy
-TL86	TL86	elder	62	Healthy
-TL103	TL103	elder	60	Healthy
-TL95	TL95	elder	73	Healthy
-TL111	TL111	elder	70	Healthy
-TL61	TL61	elder	62	Healthy
-TL94	TL94	elder	62	Healthy
-TL62	TL62	elder	62	Healthy
-TL63	TL63	elder	61	Healthy
-TL37	TL37	elder	63	Healthy
-TL116	TL116	elder	71	Healthy
-TL31	TL31	elder	61	Healthy
-TL118	TL118	elder	64	Healthy
-TL13	TL13	elder	63	Healthy
-TL121	TL121	elder	61	Healthy
-TL57	TL57	elder	64	Healthy
-TL87	TL87	elder	79	Healthy
-TL64	TL64	elder	66	Healthy
-TL2	TL2	elder	63	Healthy
-TL108	TL108	elder	61	Healthy
-TL73	TL73	elder	69	Healthy
-TL55	TL55	elder	66	Healthy
-TL109	TL109	elder	60	Healthy
-TL77	TL77	elder	62	Healthy
-TL38	TL38	elder	72	Healthy
-TL12	TL12	elder	68	Healthy
-TL67	TL67	elder	66	Healthy
-TL10	TL10	elder	65	Healthy
-TL3	TL3	elder	61	Healthy
-TL14	TL14	elder	74	Healthy
-TL97	TL97	elder	76	Healthy
-TL123	TL123	elder	61	Healthy
-TL6	TL6	elder	63	Healthy
-100a	100a	elder	60	Healthy
-TL120	TL120	elder	62	Healthy
-TL54	TL54	elder	69	Healthy
-TL117	TL117	elder	65	Healthy
-TL44	TL44	elder	60	Healthy
-TL71	TL71	elder	63	Healthy
-TL20	TL20	elder	64	Healthy
-TL1	TL1	elder	62	Healthy
-TL124	TL124	elder	67	Healthy
-TL78	TL78	elder	69	Healthy
-TL105	TL105	elder	65	Healthy
-TL81	TL81	elder	73	Healthy
-TL91	TL91	elder	70	Healthy
-TL66	TL66	elder	60	Healthy
-TL92	TL92	elder	61	Healthy
-TL88	TL88	elder	64	Healthy
-TL60	TL60	elder	76	Healthy
-TL69	TL69	elder	67	Healthy
-TL93	TL93	elder	77	Healthy
-TL113	TL113	elder	61	Healthy
-TL59	TL59	elder	66	Healthy
-TL115	TL115	elder	63	Healthy
-TL85	TL85	elder	61	Healthy
-TL4	TL4	elder	69	Healthy
-TL39	TL39	elder	72	Healthy
-TL16	TL16	elder	68	Healthy
-TL114	TL114	elder	65	Healthy
-TL129	TL129	elder	65	Healthy
-TL102	TL102	elder	72	Healthy
-TL110	TL110	elder	62	Healthy
-TL84	TL84	elder	62	Healthy
-TL112	TL112	elder	64	Healthy
-TL74	TL74	elder	68	Healthy
-TL70	TL70	elder	76	Healthy
-TL99	TL99	elder	61	Healthy
-TL82	TL82	elder	63	Healthy
-TL18	TL18	elder	66	Healthy
-TL23	TL23	elder	74	Healthy
-TL83	TL83	elder	64	Healthy
-100b	100b	elder	60	Healthy
-TL90	TL90	elder	62	Healthy
-TL27	TL27	elder	63	Healthy
-TL5	TL5	elder	79	Healthy
-TL58	TL58	elder	61	Healthy
-TL119	TL119	elder	62	Healthy
+TZ20	mid_age	36	Healthy
+TZ7	mid_age	30	Healthy
+TZ95	mid_age	38	Healthy
+TZ55	mid_age	37	Healthy
+TZ86	mid_age	43	Healthy
+TZ114	mid_age	44	Healthy
+TZ66	mid_age	36	Healthy
+TZ15	mid_age	30	Healthy
+TZ109	mid_age	33	Healthy
+TZ85	mid_age	33	Healthy
+TZ115	mid_age	39	Healthy
+TZ71	mid_age	35	Healthy
+TZ62	mid_age	39	Healthy
+TZ64	mid_age	38	Healthy
+TZ112	mid_age	37	Healthy
+TZ63	mid_age	36	Healthy
+TZ93	mid_age	40	Healthy
+TZ74	mid_age	36	Healthy
+TZ65	mid_age	38	Healthy
+TZ45	mid_age	40	Healthy
+TZ11	mid_age	43	Healthy
+TZ53	mid_age	35	Healthy
+TZ44	mid_age	39	Healthy
+TZ34	mid_age	40	Healthy
+TZ59	mid_age	45	Healthy
+TZ73	mid_age	42	Healthy
+TZ94	mid_age	30	Healthy
+TZ16	mid_age	36	Healthy
+TZ102	mid_age	45	Healthy
+TZ38	mid_age	43	Healthy
+TZ24	mid_age	48	Healthy
+TZ58	mid_age	44	Healthy
+TZ28	mid_age	44	Healthy
+TZ83	mid_age	47	Healthy
+TZ33	mid_age	36	Healthy
+TZ29	mid_age	35	Healthy
+TZ22	mid_age	39	Healthy
+TZ107	mid_age	32	Healthy
+TZ12	mid_age	32	Healthy
+TZ32	mid_age	44	Healthy
+TZ78	mid_age	41	Healthy
+TZ6	mid_age	34	Healthy
+TZ111	mid_age	40	Healthy
+TZ47	mid_age	45	Healthy
+TZ88	mid_age	43	Healthy
+TZ30.1	mid_age	37	Healthy
+TZ108	mid_age	41	Healthy
+TZ19	mid_age	45	Healthy
+TZ40	mid_age	36	Healthy
+TZ91	mid_age	40	Healthy
+TZ52	mid_age	47	Healthy
+TZ37	mid_age	46	Healthy
+TZ101	mid_age	47	Healthy
+TZ57	mid_age	43	Healthy
+TZ81	mid_age	43	Healthy
+TZ13	mid_age	42	Healthy
+TZ89	mid_age	44	Healthy
+TZ4	mid_age	41	Healthy
+TZ87	mid_age	46	Healthy
+TZ3	mid_age	38	Healthy
+TZ5	mid_age	45	Healthy
+TZ8	mid_age	48	Healthy
+TZ26	mid_age	48	Healthy
+TZ75	mid_age	38	Healthy
+TZ80	mid_age	49	Healthy
+TZ60	mid_age	36	Healthy
+TZ30	mid_age	37	Healthy
+TZ56	mid_age	38	Healthy
+TZ41	mid_age	44	Healthy
+TZ76	mid_age	50	Healthy
+TZ9	mid_age	43	Healthy
+TZ50	mid_age	33	Healthy
+TZ77	mid_age	45	Healthy
+TZ68	mid_age	41	Healthy
+TZ82	mid_age	37	Healthy
+TZ104	mid_age	38	Healthy
+TZ110	mid_age	48	Healthy
+TZ96	mid_age	43	Healthy
+TZ67	mid_age	30	Healthy
+TZ92	mid_age	33	Healthy
+TZ113	mid_age	38	Healthy
+TZ105	mid_age	36	Healthy
+TZ69	mid_age	38	Healthy
+TZ48	mid_age	36	Healthy
+TZ103	mid_age	39	Healthy
+TZ61	mid_age	43	Healthy
+TL100	elder	77	Healthy
+TL30	elder	61	Healthy
+TL107	elder	62	Healthy
+TL106	elder	70	Healthy
+TL80	elder	73	Healthy
+TL76	elder	61	Healthy
+TL65	elder	62	Healthy
+TL7	elder	70	Healthy
+TL96	elder	60	Healthy
+TL86	elder	62	Healthy
+TL103	elder	60	Healthy
+TL95	elder	73	Healthy
+TL111	elder	70	Healthy
+TL61	elder	62	Healthy
+TL94	elder	62	Healthy
+TL62	elder	62	Healthy
+TL63	elder	61	Healthy
+TL37	elder	63	Healthy
+TL116	elder	71	Healthy
+TL31	elder	61	Healthy
+TL118	elder	64	Healthy
+TL13	elder	63	Healthy
+TL121	elder	61	Healthy
+TL57	elder	64	Healthy
+TL87	elder	79	Healthy
+TL64	elder	66	Healthy
+TL2	elder	63	Healthy
+TL108	elder	61	Healthy
+TL73	elder	69	Healthy
+TL55	elder	66	Healthy
+TL109	elder	60	Healthy
+TL77	elder	62	Healthy
+TL38	elder	72	Healthy
+TL12	elder	68	Healthy
+TL67	elder	66	Healthy
+TL10	elder	65	Healthy
+TL3	elder	61	Healthy
+TL14	elder	74	Healthy
+TL97	elder	76	Healthy
+TL123	elder	61	Healthy
+TL6	elder	63	Healthy
+100a	elder	60	Healthy
+TL120	elder	62	Healthy
+TL54	elder	69	Healthy
+TL117	elder	65	Healthy
+TL44	elder	60	Healthy
+TL71	elder	63	Healthy
+TL20	elder	64	Healthy
+TL1	elder	62	Healthy
+TL124	elder	67	Healthy
+TL78	elder	69	Healthy
+TL105	elder	65	Healthy
+TL81	elder	73	Healthy
+TL91	elder	70	Healthy
+TL66	elder	60	Healthy
+TL92	elder	61	Healthy
+TL88	elder	64	Healthy
+TL60	elder	76	Healthy
+TL69	elder	67	Healthy
+TL93	elder	77	Healthy
+TL113	elder	61	Healthy
+TL59	elder	66	Healthy
+TL115	elder	63	Healthy
+TL85	elder	61	Healthy
+TL4	elder	69	Healthy
+TL39	elder	72	Healthy
+TL16	elder	68	Healthy
+TL114	elder	65	Healthy
+TL129	elder	65	Healthy
+TL102	elder	72	Healthy
+TL110	elder	62	Healthy
+TL84	elder	62	Healthy
+TL112	elder	64	Healthy
+TL74	elder	68	Healthy
+TL70	elder	76	Healthy
+TL99	elder	61	Healthy
+TL82	elder	63	Healthy
+TL18	elder	66	Healthy
+TL23	elder	74	Healthy
+TL83	elder	64	Healthy
+100b	elder	60	Healthy
+TL90	elder	62	Healthy
+TL27	elder	63	Healthy
+TL5	elder	79	Healthy
+TL58	elder	61	Healthy
+TL119	elder	62	Healthy
