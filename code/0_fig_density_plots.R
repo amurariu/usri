@@ -281,7 +281,6 @@ group_means.sc <- group_means.oth2 %>%
 group_means.mts <- group_means.oth2 %>% 
   filter(dataset == "Vaginal metatranscriptome")
 
-
 # make line graphs grouped in different ways
 
 # colours = tool only
@@ -316,6 +315,15 @@ p2
 # dev.off()
 
 
+# load in tiyani 16S dataset and bind with group_means.oth2
+load(paste0(repo, "data/tiyani_pairs/tiyani.min.diff.Rda"))
+group_means.oth2 <- rbind(group_means.oth2, tiyani.min.diff)
+
+# make new variable for group means for tiyani 16s data to follow naming
+# convention
+group_means.tiy <- tiyani.min.diff
+
+
 # colours = dataset, lines = tool(final figure for paper!)
 # png(paste0(repo,"figures/fig_stripchartDatasetALDEx.png"),
 #     units = "in", height = 4, width = 6, res = 600)
@@ -332,6 +340,8 @@ p3 <- ggplot(group_means.oth2, aes(x = gamma.num, y = mean_value, colour=dataset
                geom = "point", fun = "mean", size = 1.5)+
   stat_summary(data = group_means.hum, aes(group = tool,  colour = shp),
                geom = "point", fun = "mean", size = 1.5)+
+  stat_summary(data = group_means.tiy, aes(group = tool,  colour = dataset),
+               geom = "point", fun = "mean", size = 1.5)+
   stat_summary(data = group_means.imm, aes(group = tool, colour = dataset, linetype = tool),
                geom = "line", fun = "mean", linewidth = 0.25)+
   stat_summary(data = group_means.yst, aes(group = tool, colour = dataset, linetype = tool),
@@ -339,6 +349,8 @@ p3 <- ggplot(group_means.oth2, aes(x = gamma.num, y = mean_value, colour=dataset
   stat_summary(data = group_means.sc, aes(group = tool, colour = dataset, linetype = tool),
                geom = "line", fun = "mean", linewidth = 0.25)+
   stat_summary(data = group_means.mts, aes(group = tool, colour = dataset, linetype = tool),
+               geom = "line", fun = "mean", linewidth = 0.25)+
+  stat_summary(data = group_means.tiy, aes(group = tool, linetype = tool), colour = "grey40",
                geom = "line", fun = "mean", linewidth = 0.25)+
   stat_summary(data = group_means.hum, aes(group = tool, linetype = tool), colour = "purple3",
                geom = "line", fun = "mean", linewidth = 0.25)+
@@ -352,9 +364,11 @@ p3 <- ggplot(group_means.oth2, aes(x = gamma.num, y = mean_value, colour=dataset
                fun.data = "mean_se", width = 0.0055, linewidth = 0.25, colour = "black")+
   stat_summary(data = group_means.hum, aes(group = tool), geom = "errorbar",
                fun.data = "mean_se", width = 0.0055, linewidth = 0.25, colour = "black")+
+  stat_summary(data = group_means.tiy, aes(group = tool), geom = "errorbar",
+               fun.data = "mean_se", width = 0.0055, linewidth = 0.25, colour = "black")+
   scale_x_continuous(limits = c(-0.005, 0.505), expand = c(0.0025,0.01))+
   scale_colour_manual(name = "Dataset",
-                      values = c("Vaginal metatranscriptome" = "dodgerblue", "Single-cell transcriptome" = "orangered2",
+                      values = c("Vaginal metatranscriptome" = "dodgerblue", "Single-cell transcriptome" = "orangered2", "Tiyani 16S" = "grey40",
                                  "Yeast transcriptome" = "goldenrod2", "TCGA transcriptomes" = "purple3", "Immunotherapy transcriptome" = "darkolivegreen4"))+
   scale_shape_manual(name = "Tool", values = c("ALDEx2" = 19, "ALDEx3" = 21))+
   scale_linetype_manual(name = "Tool", values = c("ALDEx2" = 1, "ALDEx3" = 2))+
@@ -383,12 +397,22 @@ p1|p3
 # dev.off()
 
 # final calculation of TCGA transcriptome slopes for min diff for sig vs. gamma
-# and for yeast datasets
+# and for yeast/16S datasets
 a2.yeast <- group_means.oth %>% 
   filter(dataset == "Yeast transcriptome", tool == "ALDEx2")
 
 a3.yeast <- group_means.oth %>% 
   filter(dataset == "Yeast transcriptome", tool == "ALDEx3")
+
+a2.tiyani <- tiyani.min.diff %>% 
+  filter(tool == "ALDEx2") %>% 
+  group_by(tool, gamma.num) %>% 
+  summarise(mean_value = mean(mean_value))
+
+a3.tiyani <- tiyani.min.diff %>% 
+  filter(tool == "ALDEx3") %>% 
+  group_by(tool, gamma.num) %>% 
+  summarise(mean_value = mean(mean_value))
 
 a2.tcga <- group_means.hum %>% 
   filter(tool == "ALDEx2") %>% 
@@ -400,11 +424,14 @@ a3.tcga <- group_means.hum %>%
   group_by(gamma.num) %>% 
   summarise(mean.diff = mean(mean_value))
 
-lm.a2.tcga <- lm(formula = mean.diff~gamma.num, data = a2.tcga) # slope = 2.3
+lm.a2.tcga <- lm(formula = mean.diff~gamma.num, data = a2.tcga) # slope = 2.4
 lm.a3.tcga <- lm(formula = mean.diff~gamma.num, data = a3.tcga) # slope = 1.6
 
-lm.a2.yeast <- lm(formula = mean_value~gamma.num, data = a2.yeast) # slope = 2.3
+lm.a2.yeast <- lm(formula = mean_value~gamma.num, data = a2.yeast) # slope = 2.4
 lm.a3.yeast <- lm(formula = mean_value~gamma.num, data = a3.yeast) # slope = 1.6
+
+lm.a2.tiyani <- lm(formula = mean_value~gamma.num, data = a2.tiyani) # slope = 2.6
+lm.a3.tiyani <- lm(formula = mean_value~gamma.num, data = a3.tiyani) # slope = 1.7
 
 ################### regression of min difference vs gamma #####################
 
@@ -451,7 +478,7 @@ for(ds in dataset){
   rm(ds,tl,i,df,inds,abs,lmod)
 }
 
-# convert list to dataframe
+# convert lists to dataframe
 lm.values <- do.call(rbind, lm.vals)
 rm(lm.vals)
 
@@ -470,7 +497,74 @@ lm.values.sum <- lm.values %>%
   summarise(mean.sl = mean(slope), mean.in = mean(intercept),
             stdev.sl = sd(slope), stdev.in = sd(intercept))
 
+
+
+# now do the same for tiyani data: 21 iterations per gamma value; start by
+# pulling the group comparisons from the row names
+tiyani.min.diff$group <- paste0(str_split_i(string = rownames(tiyani.min.diff), pattern = "\\.", i = 2),
+                                ".",
+                                str_split_i(string = rownames(tiyani.min.diff), pattern = "\\.", i = 3))
+
+# initialise list and loop over all analysis instances, calculating a linear
+# model for each pairwise comparison of groups and pulling the slope and
+# intercept into a data frame
+lm.vals.tiy <- list()
+
+for(i in levels(factor(tiyani.min.diff$group))){
+  for(tl in tool){
+    df <- tiyani.min.diff %>% 
+      filter(group == i, tool == tl)
+    
+    lmod <- lm(formula = mean_value ~ gamma.num, data = df)
+    lm.vals.tiy[[paste(i,tl, sep = ".")]] <- data.frame(slope = lmod$coefficients[2],
+                                                        intercept = lmod$coefficients[1],
+                                                        row.names = NULL)
+    
+  }
+  
+  rm(i, tl, df, lmod)
+}
+
+# collapse list to dataframe
+lm.values.tiy <- do.call(rbind, lm.vals.tiy)
+rm(lm.vals.tiy)
+
+# add dataset and tool
+lm.values.tiy$dataset <- gsub("\\.ALDEx.*", "", rownames(lm.values.tiy))
+lm.values.tiy$tool <- gsub(".*ALDEx", "ALDEx", rownames(lm.values.tiy))
+
+# calculate mean and sd for slope and intercept across all dataset combos for
+# ALDEx2 and ALDEx3 (this is the data for the 16S row in Supplementary Table 2)
+lm.values.tiy.sum <- lm.values.tiy %>% 
+  group_by(tool) %>% 
+  summarise(mean.sl = mean(slope), mean.in = mean(intercept),
+            stdev.sl = sd(slope), stdev.in = sd(intercept))
+
 ###################### density plots for other datasets ########################
+
+# reload plot.df from GitHub
+url.data <- "https://github.com/amurariu/usri/raw/refs/heads/main/data/all_minDifferenceSig.Rda"
+tf.data <- tempfile(fileext = ".Rda")
+download.file(url = url.data, destfile = tf.data, mode = "wb")
+load(tf.data)
+unlink(tf.data)
+
+# NOTE: for MTS dataset, iteration 73 of ALDEx2 at gamma = 0.5 had NO P values
+#       <0.05 for the negative diff.btw features and so returns -Inf for the 
+#       73rd value in 'max' column and 173rd value in 'abs' column. Same issue
+#       is present in single cell dataset: 28 Inf values (3 in A2 - 0.3, 7 in 
+#       A2 - 0.4, 13 in A2 - 0.5, 1 in A3 - 0.4, 4 in A3 - 0.5)
+
+# remove problematic Inf rows for metatranscriptome & single cell datasets
+length(which(plot.df$abs == Inf)) # 1 for mts, 28 for sccyto
+plot.df <- plot.df[-grep(Inf, plot.df$abs),]
+
+# split tool into tool and gamma (numeric)
+plot.df$gamma.num <- as.numeric(gsub("aldex._", "0.", plot.df$tool))
+plot.df$tool <- gsub("_.$","", plot.df$tool)
+
+# convert tools to correct case
+plot.df$tool <- gsub("aldex","ALDEx", plot.df$tool)
 
 # filter for single cell, yeast, mts and TCGA datasets (reload
 # plot.df)
@@ -485,6 +579,15 @@ plot.filter$dataset <- case_when(plot.filter$dataset == "tcga" ~ "TCGA datasets"
                                  plot.filter$dataset == "sccyto" ~ "Single-cell",
                                  plot.filter$dataset == "yeast" ~ "Yeast",
                                  .default = plot.filter$dataset)
+
+# make a new copy of the tiyani data and edit the rowsnames and columns to be
+# identical to 'plot.filter'
+plot.tiyani <- tiyani.min.diff %>% 
+  mutate(abs = mean_value) %>% 
+  select(abs, dataset, tool, gamma.num)
+
+plot.filter <- rbind(plot.filter, plot.tiyani)
+
 
 # add colour values to filtered dataset
 plot.filter$denscol <- case_when(plot.filter$gamma.num == "0" & plot.filter$tool == "ALDEx2" ~ cols.density[1],
@@ -509,15 +612,16 @@ leg.vals <- c(paste0("A2: ", c(0,0.1,0.2,0.3,0.4,0.5)),
 
 
 # get group means for given dataset and add colours
-group_means.filter<- plot.filter %>%
+group_means.filter <- plot.filter %>%
   group_by(dataset, tool, gamma.num) %>%
   summarise(mean_value = mean(abs), stdv = sd(abs))
 
-group_means.filter$linecols <- rep(cols.density, 4)
+group_means.filter$linecols <- rep(cols.density, 
+                                   length(levels(factor(group_means.filter$dataset))))
 
 # plot example density plot for given dataset (change file name accordingly)
 # png(paste0(repo,"figures/supplFig_densityPlotsALDEx_otherDatasets.png"),
-#     units = "in", height = 6, width = 8, res = 600)
+#     units = "in", height = 8, width = 10, res = 600)
 
 p1 <- plot.filter %>% 
   ggplot(aes(x = abs)) + 
@@ -538,6 +642,6 @@ p1 <- plot.filter %>%
         legend.key.size = unit(0.3, "cm"), legend.margin = margin(0,0,0,0.0,"cm"),
         legend.position = "top")
 
-p1 # note:warning re: 29 Inf values not removed from plot.df can be ignored
+p1
 
 # dev.off()
