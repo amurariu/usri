@@ -33,7 +33,7 @@ unlink(tf.data)
 # inst <- sample(1:100, 1)
 # 
 # # make vector of datasets
-# datasets <- c("brca","immuno","kirc","lihc","luad","mts","oral","prad","sccyto","thca")
+# datasets <- c("brca","immuno","kirc","lihc","luad","mts","prad","sccyto","thca")
 # 
 # # load aldex2 analysis objects from above datasets only for gamma = 0
 # # and extract randomly selected instance (68 if set.seed = 1)
@@ -46,20 +46,29 @@ unlink(tf.data)
 #   rm(tmpdf)
 # }
 # 
+# # add representative of tiyani data: centenarians vs. primary schoolers dataset
+# # was chosen due to its slope/intercept being closest to the tiyani average of
+# # 2.6 and 0.63
+# load(paste0(repo, "data/tiyani_pairs/results_aldex2.0.Rda"))
+# tiyani.aldex2.0$cent.psch$dataset <- "tiyani-16s"
+# colnames(tiyani.aldex2.0$cent.psch)[c(2,3)] <- c("rab.win.0", "rab.win.1")
+# tmplist[["tiyani-16s"]] <- tiyani.aldex2.0$cent.psch
+# 
 # # add yeast data
 # load(paste0(repo, "data/yeastUnf.A2g0.Rda"))
 # yeastUnf.data_0.aldex2$dataset <- "yeast"
 # tmplist[["yeast"]] <- yeastUnf.data_0.aldex2
 # 
-# rm(list = ls(pattern = "\\.aldex2$"))
+# # remove all aldex2 results objects
+# rm(list = ls(pattern = "\\.aldex2"))
 # 
 # # bind all dataframes
 # plot.df <- do.call(rbind, tmplist)
-# plot.df <- plot.df %>% 
+# plot.df <- plot.df %>%
 #   relocate(dataset, .before = rab.all)
 # 
 # # save as compressed .Rda file
-# # save(plot.df, file = paste0(repo, "data/all_dispersionAbundance.Rda"))
+# save(plot.df, file = paste0(repo, "data/all_dispersionAbundance.Rda"))
 # 
 # rm(tmplist)
 
@@ -74,11 +83,11 @@ unlink(tf.data)
 
 # needs filtering, based on above being pretty much illegible
 plot.filt <- plot.df %>% 
-  filter(dataset %in% c("immuno", "mts", "oral", "sccyto", "yeast")) %>% 
+  filter(dataset %in% c("immuno", "mts", "tiyani-16s", "sccyto", "yeast")) %>% 
   mutate(strip = "ALDEx2: dispersion vs. relative abundance")
 
 # make colour vector for datasets (n = 5)
-cols.dataset <- c("purple2", "dodgerblue2", "olivedrab", "orangered2", "goldenrod2")
+cols.dataset <- c("purple2", "dodgerblue2", "orangered2", "grey40", "goldenrod2")
 
 # make 4 separate graphs: main scatterplot in bottom left, density plots for x 
 # and y values in top right and bottom right, then blank plot for top right
