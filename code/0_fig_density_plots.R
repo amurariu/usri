@@ -315,7 +315,7 @@ p2
 # dev.off()
 
 
-# load in tiyani 16S dataset and bind with group_means.oth2
+# load in tianyi 16S dataset and bind with group_means.oth2
 load(paste0(repo, "data/tiyani_pairs/tiyani.min.diff.Rda"))
 group_means.oth2 <- rbind(group_means.oth2, tiyani.min.diff)
 
@@ -397,7 +397,7 @@ p1|p3
 # dev.off()
 
 # final calculation of TCGA transcriptome slopes for min diff for sig vs. gamma
-# and for yeast/16S datasets
+# and for yeast/16S datasets (data in Supplementary Table S1)
 a2.yeast <- group_means.oth %>% 
   filter(dataset == "Yeast transcriptome", tool == "ALDEx2")
 
@@ -407,12 +407,14 @@ a3.yeast <- group_means.oth %>%
 a2.tiyani <- tiyani.min.diff %>% 
   filter(tool == "ALDEx2") %>% 
   group_by(tool, gamma.num) %>% 
-  summarise(mean_value = mean(mean_value))
+  summarise(mean_val = mean(mean_value),
+            stdv = sd(mean_value))
 
 a3.tiyani <- tiyani.min.diff %>% 
   filter(tool == "ALDEx3") %>% 
   group_by(tool, gamma.num) %>% 
-  summarise(mean_value = mean(mean_value))
+  summarise(mean_val = mean(mean_value),
+            stdv = sd(mean_value))
 
 a2.tcga <- group_means.hum %>% 
   filter(tool == "ALDEx2") %>% 
@@ -430,8 +432,8 @@ lm.a3.tcga <- lm(formula = mean.diff~gamma.num, data = a3.tcga) # slope = 1.6
 lm.a2.yeast <- lm(formula = mean_value~gamma.num, data = a2.yeast) # slope = 2.4
 lm.a3.yeast <- lm(formula = mean_value~gamma.num, data = a3.yeast) # slope = 1.6
 
-lm.a2.tiyani <- lm(formula = mean_value~gamma.num, data = a2.tiyani) # slope = 2.6
-lm.a3.tiyani <- lm(formula = mean_value~gamma.num, data = a3.tiyani) # slope = 1.7
+lm.a2.tiyani <- lm(formula = mean_val~gamma.num, data = a2.tiyani) # slope = 2.6
+lm.a3.tiyani <- lm(formula = mean_val~gamma.num, data = a3.tiyani) # slope = 1.7
 
 ################### regression of min difference vs gamma #####################
 
@@ -491,7 +493,7 @@ lm.values$tool <- gsub(".*\\.ALDEx2.*", "ALDEx2", lm.values$tool)
 lm.values$tool <- gsub(".*\\.ALDEx3.*", "ALDEx3", lm.values$tool)
 
 # calculate mean and sd for slope and intercept across all dataset/tool combos
-# (this is the data in Supplementary Table 2)
+# (this is the data in Table 2)
 lm.values.sum <- lm.values %>% 
   group_by(dataset,tool) %>% 
   summarise(mean.sl = mean(slope), mean.in = mean(intercept),
@@ -534,7 +536,7 @@ lm.values.tiy$dataset <- gsub("\\.ALDEx.*", "", rownames(lm.values.tiy))
 lm.values.tiy$tool <- gsub(".*ALDEx", "ALDEx", rownames(lm.values.tiy))
 
 # calculate mean and sd for slope and intercept across all dataset combos for
-# ALDEx2 and ALDEx3 (this is the data for the 16S row in Supplementary Table 2)
+# ALDEx2 and ALDEx3 (this is the data for the 16S row in Table 2)
 lm.values.tiy.sum <- lm.values.tiy %>% 
   group_by(tool) %>% 
   summarise(mean.sl = mean(slope), mean.in = mean(intercept),
