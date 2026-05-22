@@ -1,12 +1,12 @@
-Figure edits for Dos Santos et al. 2025
+Figure edits for Dos Santos et al. 2026
 
 Figure 1 Scale-naive analyses provide poor control of the false discovery rate (FDR) across all datasets:
    - Produced from 'fig_tprfdr_falseDiscoveryRate.png'
-   - Manually created legend above figure: coloured, dashed lines indicating ALDEx2/3 and black/dark grey/light grey for other tools; numbers with coloured, dashed lines indicating gamma value.
+   - Manually created legend above figure: coloured, dashed lines indicating ALDEx2/3 and black/dark grey/light grey for other tools; numbers with coloured, dashed lines indicating gamma value
 
 Figure 2 Sensitivity is reduced when adding increasing amounts of scale uncertainty:
    - Produced from 'fig_tprfdr_truePositiveRate.png'
-   - Manually created legend above figure: coloured, dashed lines indicating ALDEx2/3 and black/dark grey/light grey for other tools; numbers with coloured, dashed lines indicating gamma value.
+   - Manually created legend above figure: coloured, dashed lines indicating ALDEx2/3 and black/dark grey/light grey for other tools; numbers with coloured, dashed lines indicating gamma value
 
 Figure 3 Accounting for scale uncertainty reduces the total number of features identified as differentially expressed:
    - Produced from 'fig_volcanoPlotsALDEx.png' and 'fig_effectPlotsALDEx.png'
@@ -22,23 +22,22 @@ Figure 4 ALDEx3 requires a lower difference between groups to identify different
 Supplementary Figure S1 False-discovery and true-positive rates for all datasets tested:
    - Produced from 'supplFig_falseDiscoveryRate.png' and 'supplFig_truePositiveRate.png'
    - Added text boxes indicating panels A and B
-   - Manually created legend above figure: coloured, dashed lines indicating ALDEx2/3 and black/dark grey/light grey for other tools; numbers with coloured, dashed lines indicating gamma value.
+   - Manually created legend above figure: coloured, dashed lines indicating ALDEx2/3 and black/dark grey/light grey for other tools; numbers with coloured, dashed lines indicating gamma value
 
 Supplementary Figure S2 Positive predictive values for all datasets tested:
    - Produced from 'supplFig_positivePredictiveValue.png'
-   - Manually created legend above figure: coloured, dashed lines indicating ALDEx2/3 and black/dark grey/light grey for other tools; numbers with coloured, dashed lines indicating gamma value.
+   - Manually created legend above figure: coloured, dashed lines indicating ALDEx2/3 and black/dark grey/light grey for other tools; numbers with coloured, dashed lines indicating gamma value
 
 Supplementary Figure S3 Features from single-cell and metatranscriptome datasets have a larger dispersion compared to bulk RNA-seq data:
    - Produced from 'supplFig_dispersionAbundance.png' and 'supplFig_dispersionAbundance_legend.png'
    - Clipped coloured data points from legend of 'supplFig_dispersionAbundance_legend.png' and added corresponding text boxes indicating dataset
+   - Added white box to obscure original x axis text labels for right-hand side density plot and replaced with text boxes containing smaller sized labels
 
 Supplementary Figure S4 ALDEx3 returns a tighter distribution of minimum log-difference values required for significance across all datasets:
    - Produced from 'supFig_densityPlotsALDEx_otherDatasets.png'
    - Obscured x- and y-axis labels with small white boxes
-   - Added text boxes with identical x and y axis labels, but shifted the position of labels such that the bottom of the text box aligns with the bottom of the axis tick (rather than centring
-     the axis text labels with the axis ticks)
-   - The position of the y-axis labels on the bottom-most graph is different from all other axis labels; top of the axis label is aligned with the top of the axis tick to prevent label
-     label overlap in the original figure
+   - Added text boxes with identical x and y axis labels, but shifted the position of labels so the bottom of the text aligns with the bottom of the axis tick (rather than centring the axis text labels with the axis ticks)
+   - The position of the y-axis labels on the bottom-most graph is different from all other axis labels; top of the axis label is aligned with the top of the axis tick to prevent label overlap in the original figure
 
 Supplementary Figure S5 Boundaries between features reported as differentially expressed at different gamma values are curved:
    - Produced from 'supplFig_unpermutedDA_ALDExBoth.png'

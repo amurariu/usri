@@ -1,7 +1,7 @@
 # log abundance vs. dispersion for example dataset: ALDEx2 all datasets
 
 # Scott Dos Santos
-# Last edited: 2025-10-24
+# Last edited: 2026-05-21
 
 library(stringr)
 library(dplyr)
@@ -86,8 +86,14 @@ plot.filt <- plot.df %>%
   filter(dataset %in% c("immuno", "mts", "tiyani-16s", "sccyto", "yeast")) %>% 
   mutate(strip = "ALDEx2: dispersion vs. relative abundance")
 
-# make colour vector for datasets (n = 5)
-cols.dataset <- c("purple2", "dodgerblue2", "orangered2", "grey40", "goldenrod2")
+# calculate median dispersion values per dataset for overlaying on density plot
+grp.meds <- plot.filt %>% 
+  group_by(dataset) %>% 
+  summarise(med = median(diff.win))
+
+# make colour vector for datasets (n = 5), corresponding to line graph of
+# mean minimum log differences by gamma
+cols.dataset <- c("darkolivegreen4", "dodgerblue2", "orangered2", "grey40", "goldenrod2")
 
 # make 4 separate graphs: main scatterplot in bottom left, density plots for x 
 # and y values in top right and bottom right, then blank plot for top right
@@ -100,7 +106,10 @@ bl <- ggplot(data = plot.filt, aes(x = diff.win, y = rab.all))+
 
 tl <- ggplot(data = plot.filt, aes(x = diff.win))+
   geom_density(aes(colour = dataset), linewidth = 0.4, show.legend = F)+
+  geom_vline(data = grp.meds, aes(xintercept = med, colour = dataset),
+             linetype = 2, linewidth = 0.3, show.legend = F)+
   scale_colour_manual(values = cols.dataset)+
+  scale_y_continuous(limits = c(0,4), expand = c(0,0))+
   labs(y = "Density")+
   theme_bw()+
   facet_wrap(~strip)+
@@ -111,6 +120,7 @@ tl <- ggplot(data = plot.filt, aes(x = diff.win))+
 br <- ggplot(data = plot.filt, aes(y = rab.all))+
   geom_density(aes(colour = dataset), linewidth = 0.4, show.legend = F)+
   scale_colour_manual(values = cols.dataset)+
+  scale_x_continuous(limits = c(0,4), expand = c(0,0))+
   labs(x = "Density")+
   theme_bw()+
   theme(axis.title.y = element_blank(), plot.margin = margin(0.2,0.2,0.2,0,"cm"),
