@@ -1,0 +1,749 @@
+% Template for PLoS
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL old.tex   Fri Nov 28 12:05:07 2025
+%DIF ADD new.tex   Fri May 22 16:13:42 2026
+% Version 3.7 Aug 2025
+%
+% % % % % % % % % % % % % % % % % % % % % %
+%
+% -- IMPORTANT NOTE
+%
+% This template contains comments intended 
+% to minimize problems and delays during our production 
+% process. Please follow the template instructions
+% whenever possible.
+%
+% % % % % % % % % % % % % % % % % % % % % % % 
+%
+% Once your paper is accepted for publication, 
+% PLEASE REMOVE ALL TRACKED CHANGES in this file 
+% and leave only the final text of your manuscript. 
+% PLOS recommends the use of latexdiff to track changes during review, as this will help to maintain a clean tex file.
+% Visit https://www.ctan.org/pkg/latexdiff?lang=en for info or contact us at latex@plos.org.
+%
+%
+% There are no restrictions on package use within the LaTeX files except that no packages listed in the template may be deleted.
+%
+% Please do not include colors or graphics in the text.
+%
+% The manuscript LaTeX source should be contained within a single file (do not use \input, \externaldocument, or similar commands).
+%
+% % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- FIGURES AND TABLES
+%
+% Please include tables/figure captions directly after the paragraph where they are first cited in the text.
+%
+% DO NOT INCLUDE GRAPHICS IN YOUR MANUSCRIPT
+% - Figures should be uploaded separately from your manuscript file. 
+% - Figures generated using LaTeX should be extracted and removed from the PDF before submission. 
+% - Figures containing multiple panels/subfigures must be combined into one image file before submission.
+% For figure citations, please use "Fig" instead of "Figure".
+% See http://journals.plos.org/plosone/s/figures for PLOS figure guidelines.
+%
+% Tables should be cell-based and may not contain:
+% - spacing/line breaks within cells to alter layout or alignment
+% - do not nest tabular environments (no tabular environments within tabular environments)
+% - no graphics or colored text (cell background color/shading OK)
+% See http://journals.plos.org/plosone/s/tables for table guidelines.
+%
+% For tables that exceed the width of the text column, use the adjustwidth environment as illustrated in the example table in text below.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+%
+% -- EQUATIONS, MATH SYMBOLS, SUBSCRIPTS, AND SUPERSCRIPTS
+%
+% IMPORTANT
+% Below are a few tips to help format your equations and other special characters according to our specifications. For more tips to help reduce the possibility of formatting errors during conversion, please see our LaTeX guidelines at http://journals.plos.org/plosone/s/latex
+%
+% For inline equations, please be sure to include all portions of an equation in the math environment.  For example, x$^2$ is incorrect; this should be formatted as $x^2$ (or $\mathrm{x}^2$ if the romanized font is desired).
+%
+% Do not include text that is not math in the math environment. For example, CO2 should be written as CO\textsubscript{2} instead of CO$_2$.
+%
+% Please add line breaks to long display equations when possible in order to fit size of the column. 
+%
+% For inline equations, please do not include punctuation (commas, etc) within the math environment unless this is part of the equation.
+%
+% When adding superscript or subscripts outside of brackets/braces, please group using {}.  For example, change "[U(D,E,\gamma)]^2" to "{[U(D,E,\gamma)]}^2". 
+%
+% Do not use \cal for caligraphic font.  Instead, use \mathcal{}
+%
+% % % % % % % % % % % % % % % % % % % % % % % % 
+%
+% Please contact latex@plos.org with any questions.
+%
+% % % % % % % % % % % % % % % % % % % % % % % %
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[top=0.85in,left=2.75in,footskip=0.75in]{geometry}
+
+% amsmath and amssymb packages, useful for mathematical formulas and symbols
+\usepackage{amsmath,amssymb}
+
+% Use adjustwidth environment to exceed column width (see example table in text)
+\usepackage{changepage}
+
+% textcomp package and marvosym package for additional characters
+\usepackage{textcomp,marvosym}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+
+% Use nameref to cite supporting information files (see Supporting Information section for more info)
+\usepackage{nameref,hyperref}
+
+% line numbers
+\usepackage[right]{lineno}
+
+% ligatures disabled
+\usepackage[nopatch=eqnum]{microtype}
+\DisableLigatures[f]{encoding = *, family = * }
+
+% color can be used to apply background shading to table cells only
+\usepackage[table]{xcolor}
+
+% array package and thick rules for tables
+\usepackage{array}
+
+% SJDS added: for greek gamma symbol
+\usepackage{textgreek}
+
+% SJDS added: for multi-row and -column tables
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% SJDS added: precise positioning of tables
+\usepackage{float}
+
+% create "+" rule type for thick vertical lines
+\newcolumntype{+}{!{\vrule width 2pt}}
+
+% create \thickcline for thick horizontal lines of variable length
+\newlength\savedwidth
+\newcommand\thickcline[1]{%
+  \noalign{\global\savedwidth\arrayrulewidth\global\arrayrulewidth 2pt}%
+  \cline{#1}%
+  \noalign{\vskip\arrayrulewidth}%
+  \noalign{\global\arrayrulewidth\savedwidth}%
+}
+
+% \thickhline command for thick horizontal lines that span the table
+\newcommand\thickhline{\noalign{\global\savedwidth\arrayrulewidth\global\arrayrulewidth 2pt}%
+\hline
+\noalign{\global\arrayrulewidth\savedwidth}}
+
+
+% Remove comment for double spacing
+%\usepackage{setspace} 
+%\doublespacing
+
+% Text layout
+\raggedright
+\setlength{\parindent}{0.5cm}
+\textwidth 5.25in
+\textheight 8.75in
+
+% Bold the 'Figure #' in the caption and separate it from the title/caption with a period
+% Captions will be left justified
+\usepackage[aboveskip=1pt,labelfont=bf,labelsep=period,justification=raggedright,singlelinecheck=off]{caption}
+\renewcommand{\figurename}{Fig}
+
+% Please use the included `plos2025.bst` as your BibTeX style
+\bibliographystyle{plos2025}
+
+% Remove brackets from numbering in List of References
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+
+
+% Header and Footer with logo
+\usepackage{lastpage,fancyhdr,graphicx}
+\usepackage{epstopdf}
+%\pagestyle{myheadings}
+\pagestyle{fancy}
+\fancyhf{}
+%\setlength{\headheight}{27.023pt}
+%\lhead{\includegraphics[width=2.0in]{PLOS-submission.eps}}
+\rfoot{\thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrule}{\hrule height 2pt \vspace{2mm}}
+\fancyheadoffset[L]{2.25in}
+\fancyfootoffset[L]{2.25in}
+\lfoot{\today}
+
+%% Include all user-defined macros below
+
+\newcommand{\lorem}{\textbf{LOREM}}
+\newcommand{\ipsum}{\textbf{IPSUM}}
+
+%% END MACROS SECTION
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFaddtex}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdeltex}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+\providecommand{\DIFmodbegin}{} %DIF PREAMBLE
+\providecommand{\DIFmodend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF HYPERREF PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{\texorpdfstring{\DIFaddtex{#1}}{#1}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{\texorpdfstring{\DIFdeltex{#1}}{}} %DIF PREAMBLE
+\newcommand{\DIFscaledelfig}{0.5}
+%DIF HIGHLIGHTGRAPHICS PREAMBLE %DIF PREAMBLE
+\RequirePackage{settobox} %DIF PREAMBLE
+\RequirePackage{letltxmacro} %DIF PREAMBLE
+\newsavebox{\DIFdelgraphicsbox} %DIF PREAMBLE
+\newlength{\DIFdelgraphicswidth} %DIF PREAMBLE
+\newlength{\DIFdelgraphicsheight} %DIF PREAMBLE
+% store original definition of \includegraphics %DIF PREAMBLE
+\LetLtxMacro{\DIFOincludegraphics}{\includegraphics} %DIF PREAMBLE
+\newcommand{\DIFaddincludegraphics}[2][]{{\color{blue}\fbox{\DIFOincludegraphics[#1]{#2}}}} %DIF PREAMBLE
+\newcommand{\DIFdelincludegraphics}[2][]{% %DIF PREAMBLE
+\sbox{\DIFdelgraphicsbox}{\DIFOincludegraphics[#1]{#2}}% %DIF PREAMBLE
+\settoboxwidth{\DIFdelgraphicswidth}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\settoboxtotalheight{\DIFdelgraphicsheight}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\scalebox{\DIFscaledelfig}{% %DIF PREAMBLE
+\parbox[b]{\DIFdelgraphicswidth}{\usebox{\DIFdelgraphicsbox}\\[-\baselineskip] \rule{\DIFdelgraphicswidth}{0em}}\llap{\resizebox{\DIFdelgraphicswidth}{\DIFdelgraphicsheight}{% %DIF PREAMBLE
+\setlength{\unitlength}{\DIFdelgraphicswidth}% %DIF PREAMBLE
+\begin{picture}(1,1)% %DIF PREAMBLE
+\thicklines\linethickness{2pt} %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\framebox(1,1){}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\line( 1,1){1}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,1){\line(1,-1){1}}}% %DIF PREAMBLE
+\end{picture}% %DIF PREAMBLE
+}\hspace*{3pt}}} %DIF PREAMBLE
+} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbegin}{\DIFaddbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddend}{\DIFaddend} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbegin}{\DIFdelbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelend}{\DIFdelend} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbegin}{\DIFOaddbegin \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbegin}{\DIFOdelbegin \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbeginFL}{\DIFaddbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddendFL}{\DIFaddendFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbeginFL}{\DIFdelbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelendFL}{\DIFdelendFL} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbeginFL}{\DIFOaddbeginFL \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbeginFL}{\DIFOdelbeginFL \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+%DIF COLORLISTINGS PREAMBLE %DIF PREAMBLE
+\RequirePackage{listings} %DIF PREAMBLE
+\RequirePackage{color} %DIF PREAMBLE
+\lstdefinelanguage{DIFcode}{ %DIF PREAMBLE
+%DIF DIFCODE_UNDERLINE %DIF PREAMBLE
+  moredelim=[il][\color{red}\sout]{\%DIF\ <\ }, %DIF PREAMBLE
+  moredelim=[il][\color{blue}\uwave]{\%DIF\ >\ } %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstdefinestyle{DIFverbatimstyle}{ %DIF PREAMBLE
+	language=DIFcode, %DIF PREAMBLE
+	basicstyle=\ttfamily, %DIF PREAMBLE
+	columns=fullflexible, %DIF PREAMBLE
+	keepspaces=true %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim}{\lstset{style=DIFverbatimstyle}}{} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim*}{\lstset{style=DIFverbatimstyle,showspaces=true}}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\begin{document}
+\vspace*{0.2in}
+
+% Title must be 250 characters or less.
+\begin{flushleft}
+{\Large
+\textbf{Not every gene is special: \DIFdelbegin \DIFdel{one simple rule to control }\DIFdelend \DIFaddbegin \DIFadd{controlling }\DIFaddend the false discovery rate when analysing high-throughput sequencing data} % Please use "sentence case" for title and headings (capitalize only the first word in a title (or heading), the first word in a subtitle (or subheading), and any proper nouns).
+}
+% rejected title ideas: 
+%  - 'Santa isn't real and neither are your results: ...'
+%  - ' "Well damn, Jackie, I can't control the FDR": ...'
+%  - 'Talking to your teen about the dangers of getting high (false-discovery rates): ...'
+%  - 'We all suck at this, but here's how to suck slightly less: ...'
+%  - 'Trying to be less wrong every day: ...'
+%  - 'Every gene is not special: ...'
+\newline
+% Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
+\\
+Scott J. Dos Santos\textsuperscript{1\Yinyang},
+Andreea C. Murariu\textsuperscript{1\Yinyang},
+Justin D. Silverman\textsuperscript{2,3,4,5},
+Gregory B. Gloor\textsuperscript{1*},
+%Name5 Surname\textsuperscript{2\ddag},
+%Name6 Surname\textsuperscript{2\ddag},
+%Name7 Surname\textsuperscript{1,2,3*},
+%with the Lorem Ipsum Consortium\textsuperscript{\textpilcrow}
+\\
+\bigskip
+\textbf{1} Department of Biochemistry, Western University, London, ON, Canada
+\\
+\textbf{2} College of Information Science and Technology, Pennsylvania State University, State College, PA, USA
+\\
+\textbf{3} Department of Statistics, Pennsylvania State University, State College, PA, USA
+\\
+\textbf{4} Department of Medicine, Pennsylvania State University, Hershey, PA, USA
+\\
+\textbf{5} Institute for Computational and Data Science, Pennsylvania State University, State College, PA, USA
+\\
+\bigskip
+
+% Insert additional author notes using the symbols described below. Insert symbol callouts after author names as necessary.
+% 
+% Remove or comment out the author notes below if they aren't used.
+%
+% Primary Equal Contribution Note
+\Yinyang These authors contributed equally to this work.
+
+% Additional Equal Contribution Note
+% Also use this double-dagger symbol for special authorship notes, such as senior authorship.
+%\ddag These authors also contributed equally to this work.
+
+% Current address notes
+%\textcurrency Current Address: Dept/Program/Center, Institution Name, City, State, Country % change symbol to "\textcurrency a" if more than one current address note
+% \textcurrency b Insert second current address 
+% \textcurrency c Insert third current address
+
+% Deceased author note
+%\dag Deceased
+
+% Group/Consortium Author Note
+%\textpilcrow Membership list can be found in the Acknowledgments section.
+
+% Use the asterisk to denote corresponding authorship and provide email address in note below.
+* ggloor@uwo.ca
+
+\end{flushleft}
+% Please keep the abstract below 300 words
+
+% For PLOS Medicine research article authors, please structure your abstract
+% with "Background", "Method and Findings" and "Conclusion" sections per
+% journal requirements.
+
+% For PLOS Neglected Tropical Diseases research article authors, please
+% structure your abstract with "Background", "Methodology", "Findings", and
+% "Conclusion" sections per journal requirements.
+%
+\section*{Abstract}
+Differential expression\DIFdelbegin \DIFdel{and differential }\DIFdelend \DIFaddbegin \DIFadd{/}\DIFaddend abundance analyses are commonplace in studies employing high-throughput sequencing\DIFdelbegin \DIFdel{approaches}\DIFdelend ; however different tools often fail to return comparable results when applied to the same dataset. Most tools employ \DIFdelbegin \DIFdel{various }\DIFdelend normalisations to attempt to correct for technical variation in the count data. Previously, we demonstrated that these normalisations are often inappropriate due to incorrect assumptions regarding the overall scale (i.e. size) of the biological system in question. In this study, we \DIFdelbegin \DIFdel{conducted 100 permutation analyses of }\DIFdelend \DIFaddbegin \DIFadd{used a combination of binomial thinning and permutation of sample groupings to produce 100 iterations of }\DIFaddend 10 RNA-seq datasets \DIFdelbegin \DIFdel{to show }\DIFdelend \DIFaddbegin \DIFadd{in which ~5 \% of all features are expected to be significantly different between groups. This enabled calculation of the false discovery rate (FDR) and sensitivity across 100 analysis iterations. Our simulations showed }\DIFaddend that scale misspecification results in poor control of the \DIFdelbegin \DIFdel{false discovery rate by several commonly-used analysis tools . Moreover, we demonstrate that this can }\DIFdelend \DIFaddbegin \DIFadd{FDR by several commonly used tools and that this could }\DIFaddend be ameliorated by using a scale model in ALDEx2 or ALDEx3 to account for uncertainty around the \DIFdelbegin \DIFdel{size of the }\DIFdelend system scale. We \DIFdelbegin \DIFdel{show that there is an }\DIFdelend \DIFaddbegin \DIFadd{highlighted the }\DIFaddend inherent trade-off between satisfactory control of \DIFdelbegin \DIFdel{false-discovery rates and sensitivity and }\DIFdelend \DIFaddbegin \DIFadd{the FDR and high sensitivity, showing }\DIFaddend that no tool offers both. We \DIFdelbegin \DIFdel{also quantify how }\DIFdelend \DIFaddbegin \DIFadd{established that }\DIFaddend increasing scale uncertainty \DIFdelbegin \DIFdel{affects the }\DIFdelend \DIFaddbegin \DIFadd{also increases the minimum }\DIFaddend difference between groups required for a feature to be reported as differentially expressed. \DIFdelbegin \DIFdel{Finally, we provide universal guidance on choosing an appropriate amount of scale uncertainty for any type of analysis}\DIFdelend \DIFaddbegin \DIFadd{This phenomenon was not only universal, but also remarkably consistent between disparate types of sequencing data. Critically, we leveraged ‘real-world’, non-permuted analyses of bulk RNA-seq and 16S rRNA amplicon datasets to demonstrate that the latter effect is not a result of our thinning/permutation approach}\DIFaddend . Overall, our work highlights the \DIFdelbegin \DIFdel{strengths and pitfalls of commonly used tools for differential expression analyses and highlights the }\DIFdelend \DIFaddbegin \DIFadd{(potentially unwitting) }\DIFaddend choice between sensitivity and \DIFdelbegin \DIFdel{false-discovery rate }\DIFdelend \DIFaddbegin \DIFadd{FDR }\DIFaddend control that all researchers are making when analysing sequencing data \DIFaddbegin \DIFadd{and provides guidance on choosing an appropriate amount of scale uncertainty for the analysis of any type of high-throughput sequencing data}\DIFaddend .
+
+
+% Please keep the Author Summary between 150 and 200 words. Use first person.
+% PLOS ONE, PLOS Biology, PLOS Global Public Health, PLOS Mental Health, and PLOS Water authors please skip this step. Author Summary is not valid for submissions to these journals.
+
+% For PLOS Medicine authors, please structure your author summary with answers to the following questions:
+% Why was this study done?
+% What did the researchers do and find?
+% What do these findings mean?
+%
+\section*{Author summary}
+Despite attempts to define best practices in differential abundance or expression analysis of high-throughput sequencing data, there is no standardised approach, and a plethora of tools are available to use. Each tool applies different assumptions and methods, which can lead to drastically different results when multiple tools are applied to the same dataset. Our work echoes several recent studies describing how several popular tools exaggerate differences in gene expression or abundance between groups. We build on prior work by showing that these excessively high false discovery rates can be mitigated by using a new approach that models some degree of uncertainty around the total size (or scale) of the biological system under study. While we find scale models to be less sensitive, no tool offers both high sensitivity and a low rate of false discoveries, highlighting a trade-off that researchers must be cognisant of when analysing sequencing data. Accordingly, we extend these observations with guidance on selecting an appropriate degree of scale uncertainty so that analysts can make an informed choice about balancing the ability to detect differences in their data with the confidence that any given difference is real.
+
+\linenumbers
+
+% Use "Eq" instead of "Equation" for equation citations.
+%\begin{eqnarray}
+%\label{eq:schemeP}
+%	\mathrm{P_Y} = \underbrace{H(Y_n) - H(Y_n|\mathbf{V}^{Y}_{n})}_{S_Y} + \underbrace{H(Y_n|\mathbf{V}^{Y}_{n})- H(Y_n|\mathbf{V}^{X,Y}_{n})}_{T_{X\rightarrow Y}},
+%\end{eqnarray}
+
+\section*{Introduction}
+
+High-throughput sequencing (HTS) has been widely adopted across the biological sciences in the study of health and disease \cite{malla_exploring_2019, Montgomery:2022aa}. Various approaches exist, including amplicon sequencing using universal `barcoding' genes (e.g. 16S rRNA gene hypervariable regions \cite{johnson_evaluation_2019}, \textit{cpn}60 \cite{vancuren_variant_2020}, \textit{rpoB} \cite{ogier_rpob_2019}), shotgun metagenomic sequencing \cite{quince_shotgun_2017}, bulk and single-cell RNA-seq \cite{gate_clonally_2020,jovic_single_2022}, and metatranscriptome sequencing \cite{france_insight_2022}. Determining the taxa, genes or functions that distinguish two different biological conditions of interest is a common end-point for such analyses and a multitude of tools have been developed to enable this \cite{Quinn:2019aa, liu_practical_2021}.
+
+Tools for differential expression/abundance analysis typically take as input a table of read counts per gene or taxon across all samples. In reality, this count table does not represent the absolute abundance of the given features in their original environment \cite{gloor_its_2016,vandeputte_quantitative_2017}.The counts represent relative abundances on account of several steps in the sequencing workflow being inherently compositional \cite{gloor_compositional_2016}. Only a minute proportion of the final, pooled sequencing library is loaded onto the sequencing flow cell which itself originates from a small amount of each original DNA extract, itself a fraction of the original sample and so on. All information regarding the true biological scale of the community under study is lost and all downstream analyses are ignorant to this information, regardless of the tool used \cite{lovell_proportions_2011}. Ultimately, variation in sequencing depth across samples from the same dataset is decoupled from and unrelated to system scale.
+
+Most analyses involve some sort of normalisation of the read count table in the workflow to account for differences in sequencing depth; however, this unwittingly introduces a critical problem \cite{weiss_normalization_2017}. Normalisations often make an inaccurate assumption about system scale \cite{nixon_scale_2024, nixon_incorporating_2025, gloor_explicit_2025}. Examples of such assumptions include: i) that the geometric mean of the observed data accurately reflects system scale \cite{aitchison_statistical_1986}; ii) that the total microbial abundance is the same across all samples \cite{hughes_rarefaction_2005}; iii) that certain features within a sample represent a suitable reference that may be used to scale others \cite{robinson_scaling_2010,vandesompele_accurate_2002}; iv) that scale remains constant across different parts of a sample \cite{anders_2010_differential}. Recent work has shown that violating these assumptions can inflate the false discovery rate (FDR) beyond what can be considered reasonable; in fact the true FDR can be above 75\% in some cases \cite{li_exaggerated_2022,konnaris_uncertainty_2025,nixon_incorporating_2025,gloor_explicit_2025}.
+
+Poor control of the FDR is a widespread issue across many experimental designs that use HTS data; indeed, the problem of poor FDR control in high dimensional biological data dates to at least the analysis of microarray data \cite{Cui:2003aa}. Poor FDR control is a long-standing problem when analysing bulk transcriptome data \cite{Soneson:2013, li_exaggerated_2022} and similar issues arise with microbiome data \cite{hawinkel2017, Nearing:2022aa}. In response to this, the use of a dual cutoff approach where both a \textit{P}-value and a log\textsubscript{2} fold-change (L2FC) are commonly used to help reduce the number of positive identifications \cite{Cui:2003aa}. Specific guidance for transcriptome data was provided by Schurch \textit{et al}. using a large bulk transcriptome dataset \cite{schurch_how_2016}. This dual cutoff method is widespread in the HTS literature, and its adoption was enhanced by the very useful volcano plot \cite{Cui:2003aa} that is now standard across many fields that use HTS.
+
+However, soon after the dual cutoff approach was first \DIFdelbegin \DIFdel{used}\DIFdelend \DIFaddbegin \DIFadd{implemented}\DIFaddend , it was shown not to control the FDR \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
+\cite{Zhang:2009aa}}\hskip0pt%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{witten2007comparison, Zhang:2009aa}}\hskip0pt%DIFAUXCMD
+}\DIFaddend . There are several reasons for this. First, there is a mismatch between the assumptions of variance for the two approaches; the L2FC cutoff assumes that all genes have the same variance, while the statistical test uses a gene-specific variance to determine the \textit{P}-value. One way to think about this is that there are two ways that a gene can be significantly different between groups but undesirably so; it can have a low variance and small L2FC, or it can have a large variance and large L2FC \cite{ebrahimpoor_inflated_2021}. Second, while the widely-used Benjamini-Hochberg \cite{benjamini:1995} (BH) procedure controls the FDR for all rejected genes, it does not necessarily do so over any subset of genes, and indeed false positives are often over-represented in any such subset \cite{Goeman:2014aa, ebrahimpoor_inflated_2021}. One way to deal with the first problem is shrinkage to provide better variance estimates \cite{Zhang:2009aa}, and shrinkage is implemented in popular tools such as DESeq2 \cite{love_moderated_2014}, and limma \cite{ritchie_limma_2015}. However, there is no way to deal with the second issue, as is apparent by the inflated FDR exhibited by many, if not all tools as noted above. \DIFaddbegin \DIFadd{Further complicating the problem is the application of tools such as DESeq2 or edgeR, which were designed for RNA-seq data, to disparate types of sequencing data for which they were not designed, such as amplicon sequencing data \mbox{%DIFAUXCMD
+\cite{Nearing:2022aa, regueira-iglesias_critical_2023, yang_comprehensive_2022}}\hskip0pt%DIFAUXCMD
+. This can also be accompanied by the common practice of adding a pseudocount of 1 to all features in the data to avoid errors due to sparse count tables, which can also contribute to a high FDR \mbox{%DIFAUXCMD
+\cite{weiss_normalization_2017}}\hskip0pt%DIFAUXCMD
+.
+}\DIFaddend 
+
+To address the important issue of poor FDR control, Nixon \textit{et al.} \cite{nixon_scale_2024} proposed an alternative to normalisation-based methods, introducing the concept of scale models through a framework known as `scale reliant inference' (SRI). These scale models have  been incorporated into the ALDEx2 R package \cite{gloor_explicit_2025}, a Bayesian toolbox for modelling the underlying variation in sequencing count data and estimating the L2FC. Originally, ALDEx2 applied a centred log-ratio (CLR) transformation to many instances of the modelled count data drawn from a Dirichlet distribution \cite{fernandes:2014}; however in doing so, it made the implicit, yet incorrect assumption that system scale is equivalent to the inverse of the geometric mean used for calculating the CLR (see work by Nixon \textit{et al}. \cite{nixon_scale_2024} and McGovern \textit{et al}. \cite{mcgovern_addressing_2023} for details). Following the incorporation of scale models into ALDEx2, system scale is now directly modelled across each separate Dirichlet instance, acknowledging the reality that a single point-estimate of scale is essentially guaranteed to be incorrect \cite{gloor_explicit_2025}. By accounting for scale uncertainty, this modification converts the original ALDEx2 algorithm into a  model termed a `scale simulation random variable' \cite{nixon_scale_2024}. ALDEx3 is a new implementation of the ALDEx2 approach; ALDEx3 is based on linear models and  requires fewer computational  resources while still implementing the Bayesian approach to modelling and analysis.
+
+Konnaris and colleagues demonstrated the utility of scale models by applying ALDEx3 to one of the largest collections of paired microbiome-microbial abundance data to date \cite{konnaris_uncertainty_2025}, comparing its performance to machine learning (ML) models from a recent high-profile study \cite{nishijima_fecal_2025}. These ML models failed to generalise to new datasets from the \textit{mutt} database \cite{konnaris_uncertainty_2025} when predicting microbial load and also failed to improve on the FDR achieved by scale-na\"ive ALDEx3. In contrast, ALDEx3 scale models achieved a superior FDR, and better positive- and negative-predictive values when applied to both shotgun metagenomic data and 16S rRNA amplicon sequencing data. Similar findings have been reported for ALDEx2 when applied to a variety of HTS datasets; superior control of the FDR is achieved when applying the SRI framework \cite{gloor_explicit_2025}.
+
+\DIFaddbegin \DIFadd{Multiple other approaches exist for FDR correction and their development was driven in no small part by the acknowledgement that the scale of an environment can confound transcriptome analyses. Spike-in of a pre-determined number of molecules or cells provides a reference that may be used to back-normalise relative abundances and act as a built-in control for variability during sample processing \mbox{%DIFAUXCMD
+\cite{rao_multi-kingdom_2021} }\hskip0pt%DIFAUXCMD
+(e.g. due to differences in handling or DNA extraction). The external RNA controls consortium developed a set of 92 polyadenylated transcripts of varying lengths and GC content that may be spiked-in prior to library preparation with the goal of normalising count data to minimise variability between replicates \mbox{%DIFAUXCMD
+\cite{baker_external_2005}}\hskip0pt%DIFAUXCMD
+. Others have applied spike-in approaches to develop novel methods of reducing error in scale estimation in single-cell RNA-seq data and improve computation of the underlying gene expression levels \mbox{%DIFAUXCMD
+\cite{ding_normalization_2015}}\hskip0pt%DIFAUXCMD
+. Droplet digital PCR targeting the 16S rRNA gene and flow cytometry have both been applied to microbiome studies to enumerate total cell counts and calculate absolute abundances within biological systems \mbox{%DIFAUXCMD
+\cite{lin_towards_2019, barlow_quantitative_2020}}\hskip0pt%DIFAUXCMD
+. While these methods have been reported to improve normalisation of high-throughput sequencing data, not all of these methods are routine practice in their respective fields, Further, these approaches require precise application in the lab (as opposed to application to sequencing data after the fact), and may also represent a source of additional variation that can complicate analyses \mbox{%DIFAUXCMD
+\cite{risso_normalization_2014}}\hskip0pt%DIFAUXCMD
+.
+}
+
+\DIFaddend Previous work highlighting the advantages of the SRI framework has mainly focused on amplicon sequencing and shotgun metagenomic datasets \cite{konnaris_uncertainty_2025}, or has been limited to a single transcriptomic dataset \cite{gloor_explicit_2025}. Here, we extend prior studies by testing the performance of scale models from ALDEx2, and its faster and more memory-efficient successor, ALDEx3, on 10 different RNA-seq datasets, encompassing approaches such as bulk transcriptome (from both lab-derived and clinical samples), single-cell and metatranscriptome sequencing. We compare these two implementations of SRI to widely-used, normalisation-based tools in terms of sensitivity and FDR, and highlight an important trade-off between the two that researchers should consider when analysing HTS data. Further, we quantify the relationship between the degree of scale uncertainty modelled by ALDEx2 and ALDEx3 and the minimum fold-change between conditions required for a statistically significant result- a critical factor to consider when conducting differential expression analysis with scale models. This analysis provides strong guidance on how to build appropriate scale models that offer better FDR controls for HTS data analysis.
+
+
+\section*{Materials and methods}
+
+\subsection*{Datasets used in analysis}
+We obtained read count data and grouping metadata from publicly available RNA-seq datasets described by the following studies or sources: Li \textit{et al.} \cite{li_exaggerated_2022} (PD1 immunotherapy dataset), Gierlinski \textit{et al.} \cite{gierlinski_statistical_2015} (wild-type vs. \textit{Snf2}-knockout yeast transcriptome dataset), Skinnider \textit{et al.} \cite{skinnider_evaluating_2019} (single-cell RNA-seq dataset comparing cytotoxic T cells vs. memory T cells), \DIFdelbegin \DIFdel{and }\DIFdelend Dos Santos \textit{et al.} \cite{dos_santos_vaginal_2024} (vaginal metatranscriptome dataset comparing healthy vs. bacterial vaginosis patients, aggregated by KEGG orthology terms)\DIFaddbegin \DIFadd{, and Bian }\textit{\DIFadd{et al.}} \DIFadd{\mbox{%DIFAUXCMD
+\cite{bian_gut_2017} }\hskip0pt%DIFAUXCMD
+(16S rRNA amplicon sequencing data from stool samples obtained from Chinese individuals of different age groups)}\DIFaddend . A further seven bulk RNA-seq datasets originating from the Cancer Genome Atlas project \cite{weinstein_cancer_2013} were obtained from the supplementary data provided by Li \textit{et al}. via Zenodo \cite{li_supplement_2022} (available at: \url{https://zenodo.org/records/8320659}), corresponding to the following tumour types: breast invasive carcinoma (BRCA) \cite{tcga_brca_2012,tcga_brca_2015}, kidney renal cell carcinoma (KIRC) \cite{tcga_kirc_2013}, liver hepatocellular carcinoma (LIHC) \cite{tcga_lihc_2017}, lung adenocarcinoma (LUAD) \cite{tcga_luad_2016}, prostate adenocarcinoma (PRAD) \cite{tcga_prad_2015}, and thyroid carcinoma (THCA) \cite{tcga_thca_2014}.
+
+All Cancer Genome Atlas datasets, the PD1 immunotherapy dataset, and the yeast transcriptome dataset were filtered using the \texttt{filterByExpr()} function from the edgeR package \cite{robinson_edger_2010}. The single-cell RNA-seq dataset was filtered such that only 1000 randomly selected cells in the upper quartile of read counts were retained in each group, along with features with read count totals of at least 300 reads across all samples. The vaginal metatranscriptome dataset was filtered using the CoDaSeq package (v0.99.7) \cite{gloor_codaseq} to retain features present in 30 \% of samples, at a minimum proportion of 0.005 \% of a given sample (as per the original study) \cite{dos_santos_vaginal_2024}. \DIFaddbegin \DIFadd{The 16S rRNA amplicon dataset used the same set of operational taxonomic units as in the original analysis \mbox{%DIFAUXCMD
+\cite{bian_gut_2017}}\hskip0pt%DIFAUXCMD
+.
+}\DIFaddend 
+
+\subsection*{Binomial thinning of count data and group membership permutation}
+For the analysis of all \DIFaddbegin \DIFadd{RNA-seq }\DIFaddend datasets, we applied binomial thinning via the seqgendiff R package (v1.2.4) \cite{gerard_data-based_2020} to achieve the following: i) permute the grouping variable such that group membership of all samples is randomised; and ii) inject an artificial signal into read count data such that 5 \% of all features in a given dataset are modelled to be differentially abundant between groups. The result of the former is that any analysis with the permuted grouping variable is meaningless as almost all positive findings are, by definition, false-positives (FPs; excluding features affected by binomial thinning). The result of the latter is that any features whose counts are altered by binomial thinning \emph{could} be detected as being significantly different between groups and are considered simulated `true' positives (TPs). The magnitude of the difference between groups (i.e. the amount of `signal' added) is drawn from a normal distribution with a standard deviation of 2 and a mean of zero; because of this, not all features \DIFdelbegin \DIFdel{with a modelled difference }\DIFdelend \DIFaddbegin \DIFadd{which have been altered by thinning }\DIFaddend are actually detectable \DIFaddbegin \DIFadd{by the differential expression tools }\DIFaddend (i.e. false negatives, FNs). Features whose counts have not been altered by binomial thinning and are not identified as significantly different between groups are `true' negatives (TNs).
+
+\subsection*{Calculation of sensitivity and false discovery rate}
+For each iteration of the permutation analyses, sensitivity (i.e. true positive rate, TPR) was calculated as the number of TPs reported by a given tool as differentially expressed, divided by the total number of simulated TP features altered by binomial thinning in a given analysis iteration which equates to:
+\begin{eqnarray}
+	\label{eq:TPR}
+	\mathrm{TPR} = \frac{\mathrm{TP}}{\mathrm{TP} + \mathrm{FN}}
+ \end{eqnarray}
+
+Likewise, the false discovery rate (FDR) was calculated for each analysis iteration as the number of features incorrectly defined by a tool as differentially expressed (i.e. reported as significantly different but not among the features altered by binomial thinning), divided by the total number of differentially expressed features reported by that tool, equating to: 
+\begin{eqnarray}
+	\label{eq:FDR}
+	\mathrm{FDR} = \frac{\mathrm{FP}}{\mathrm{TP} + \mathrm{FP}}
+ \end{eqnarray}
+
+At each 0.1 increment from 0 to 1, the features which were altered by binomial thinning must have a simulated (i.e. `true') log\textsubscript{2} fold-change exceeding this value to be considered a TP; this threshold is referred to as the model difference between groups. For every model difference threshold from 0 to 1, sensitivity and FDR were calculated as above for each tool and dataset, based on the number of TP features for that threshold \DIFaddbegin \DIFadd{(i.e. a feature whose fold-change has been altered by thinning but is lower than the current threshold is not considered a `negatives' }\textit{\DIFadd{per se}}\DIFadd{, but does not count towards the total number of positives for the given threshold)}\DIFaddend . For example: for a feature to be considered a TP at a model difference threshold of 0.5, the log\textsubscript{2} fold-change `injected' by binomial thinning must be $\geq$0.5, and for the same feature to be considered a positive finding by a given tool, that tool must report a corresponding Benjamini-Hochberg (BH) adjusted \textit{P}-value \DIFdelbegin \DIFdel{$\leq$}\DIFdelend \DIFaddbegin \DIFadd{$<$}\DIFaddend 0.05 \cite{benjamini:1995}. \DIFdelbegin \DIFdel{Note that }\DIFdelend BH-adjusted \textit{P}-values are calculated only once per analysis iteration for the entire set of features. Positive predictive values were also calculated for each tool and dataset as $1 - \mathrm{FDR}$.
+
+\subsection*{Differential expression analyses}
+We tested the performance of ALDEx2 (v1.4.1) \cite{fernandes:2014}, ALDEx3 (v0.3.0) \cite{konnaris_uncertainty_2025}, DESeq2 (v1.49.1) \cite{love_moderated_2014}, edgeR (v4.7.2), and limma (v3.65.1; limma-voom) \cite{ritchie_limma_2015} across the aforementioned 10 \DIFdelbegin \DIFdel{datasets }\DIFdelend \DIFaddbegin \DIFadd{RNA-seq datasets and the lone 16S rRNA amplicon dataset  }\DIFaddend in RStudio, using R version 4.5.1 \cite{r_core_2025}. \DIFdelbegin \DIFdel{A }\DIFdelend \DIFaddbegin \DIFadd{For RNA-seq datasets, a }\DIFaddend total of 100 group permutations  were performed for each dataset and tool combination. For each analysis iteration, group membership permutation and binomial thinning were performed after setting a dynamic seed value to ensure unique, yet reproducible, permutations (seed value = 20 + iteration number). Analysis functions were run on permuted, thinned data using the permuted grouping variable after setting a static seed value to ensure reproducibility. 
+
+\DIFaddbegin \DIFadd{For the single 16S rRNA amplicon sequencing dataset, count data did not undergo binomial thinning, nor was group membership permuted. Instead, the count data was subset by the seven age group categories to produce 21 unique combinations of the data, covering all pairwise comparisons of the age groups (e.g. centenarians vs. middle-aged adults, centenarians vs. young adults, centenarians vs. kindergarteners etc.). ALDEx2 and ALDEx3 were run on all 21 pairwise combinations of the count data, reflecting a real-world scenario rather than a `semi-synthetic' permutation analysis.
+}
+
+\DIFaddend \subsection*{Modelling scale uncertainty with ALDEx2 and ALDEx3}
+The ALDEx2 and ALDEx3 packages model uncertainty in the scale of the biological system under study, as has been extensively detailed elsewhere \cite{nixon_incorporating_2025, gloor_explicit_2025}. Briefly, we can describe the true counts of any system, $\mathbf{W}$, which contains $D$ features and $N$ samples, as the product of the proportional parts of the samples (i.e  composition) and the total counts of the samples (i.e. the  scale). Thus, any single sample from  system $\mathbf{W}$ can be described fully by Eq. \ref{eq:singlePart}.
+
+\begin{eqnarray}
+	\label{eq:singlePart}
+	\mathbf{W}_{.n} = \mathbf{W}^{\mathrm{comp}}_{.n} * \mathbf{W}^{\mathrm{total}}_{.n} 
+\end{eqnarray}
+
+Unfortunately, we can never measure the true system directly, owing to the compositional nature of HTS data which provide only an indirect readout of the compositional information of, system $\mathbf{W}$ \cite{lovell_proportions_2011, gloor_microbiome_2017}. The observations we produce by sequencing for a given feature\DIFaddbegin \DIFadd{, $d$,  }\DIFaddend in a single sample\DIFaddbegin \DIFadd{, $n$, }\DIFaddend is described as $\mathbf{Y}_{dn}$. Each observation is an integer representation of the probability of measuring a given feature in the given sample, scaled by the total number of reads collected\cite{fernandes:2013}. The single  point observations from $\mathbf{Y}_{dn}$ are converted to a Bayesian posterior distribution of proportions \cite{fernandes:2013} to provide a distribution of reasonable estimates. This is done by sampling from a Dirichlet distribution to give a posterior estimate of $\hat{\mathbf{W}}^{\mathrm{comp}}_{.n}$ \cite{fernandes:2014} (where the $\hat{}$ indicates an estimate) as in Eq. \ref{eq:Dir}:
+
+\begin{eqnarray}
+	\label{eq:Dir}
+	\hat{\mathbf{W}}^{comp}_{.n} \sim \mathrm{Dirichlet}(\mathbf{Y}_{.n} + 0.5 * \mathbf{1}_{D})
+\end{eqnarray}
+
+Data from HTS are \DIFaddbegin \DIFadd{almost }\DIFaddend always normalised to remove nuisance parameters and make them commensurate \cite{robinson_scaling_2010}. The insight of Nixon et al. \cite{nixon_scale_2024} was that almost all normalisations \DIFaddbegin \DIFadd{of the count data for a given sample ($\mathbf{Y}_{.n}$) }\DIFaddend made the strict assumption of being a direct estimate of the sample system scale: that is, that \DIFdelbegin \DIFdel{$\hat{\mathbf{W}}^{\mathrm{total}}_{n} = \mathrm{Norm}(\mathbf{Y}_{n})$}\DIFdelend \DIFaddbegin \DIFadd{$\hat{\mathbf{W}}^{\mathrm{total}}_{.n} = \mathrm{Norm}(\mathbf{Y}_{.n})$}\DIFaddend . Nixon and colleagues showed that these estimates were always incorrect, but could be made more useful by including  uncertainty. The Bayesian framework was adapted to include scale uncertainty in the normalisation as in Eq \ref{eq:adaptation}.
+
+\begin{eqnarray}
+	\label{eq:adaptation}
+	\hat{\mathbf{W}}^{total}_{.n} \sim \mathrm{Norm}(\mathbf{Y}_{.n} + \gamma)
+\end{eqnarray}
+
+Here, $\gamma$ is drawn from a Gaussian distribution with mean $\mu_n$ and variance \DIFdelbegin \DIFdel{$\Sigma^2_n$}\DIFdelend \DIFaddbegin \DIFadd{$\sigma^2_n$ (and by definition, standard deviation $\sigma_n$)}\DIFaddend . In this way the full posterior estimate of sample  $\hat{\mathbf{W}_{.n}}$ incorporates uncertainty in both the observed data and the normalisation of that data as in Eq. \ref{eq:norm}.
+
+\begin{eqnarray}
+	\label{eq:norm}
+	\hat{\mathbf{W}}_{.n} = \hat{\mathbf{W}}^{comp}_{.n} * \hat{\mathbf{W}}^{total}_{.n}
+\end{eqnarray}
+
+
+Programmatically, $\gamma$  is controlled by the `\texttt{gamma}' parameter in the call to `\texttt{aldex.clr()}'\DIFdelbegin \DIFdel{. This }\DIFdelend \DIFaddbegin \DIFadd{, which controls the standard deviation of the Gaussian distribution referenced above. By default, $mu_n$ is set to 1, but may be specified by making a custom matrix of system scale values with the `}\texttt{\DIFadd{aldex.makeScaleMatrix()}}\DIFadd{' command. The `}\texttt{\DIFadd{gamma}}\DIFadd{' }\DIFaddend parameter can be used to incorporate only uncertainty in the estimation of normalisation, or can be tuned to include prior information about absolute abundance in each sample along with the error of those observations \DIFdelbegin \DIFdel{. See }\DIFdelend \DIFaddbegin \DIFadd{(see }\DIFaddend Nixon et al. \cite{nixon_incorporating_2025}, for a fulsome description of the \texttt{gamma} parameter\DIFaddbegin \DIFadd{)}\DIFaddend . For both ALDEx2 and ALDEx3, simple scale models can be constructed by passing a single numeric value to the `\texttt{gamma}' argument. These scale values are used to adjust the log-ratio transformed count data. In the present work, gamma values from essentially zero (0.001) to 0.5 in increments of 0.1 were used for both tools to model biological system scale.
+
+%DIF <  The ALDEx2 package was recently modified to allow for modelling uncertainty of the scale of the biological system under study and this has been extensively detailed elsewhere \cite{nixon_incorporating_2025, gloor_explicit_2025}. Briefly, we can describe the real counts of system \( \mathbf{W}\) which may contain \(d\) parts and \(n\) samples, as the product of the proportional (compositional) part of a sample in the system and the total counts of that sample. Thus, the observation of one part in one sample of the system, \(W_{dn}\), system can be described fully with the equation: 
+\DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+%DIF <  \[ \mathbf{W}= \mathbf{W}^{comp}_{dn} * \mathbf{W}^{total}_{n}. \]
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+%DIF <  Unfortunately, we can never measure the system directly but use indirect readouts derived from high throughput sequencing; these contain only compositional information \cite{lovell_proportions_2011, gloor_microbiome_2017}. Thus, the actual observations we get for the same feature and sample are described by \(\mathbf{Y}_{dn}\) which is an estimate of \(\mathbf{YW}_{dn}\) only. These `counts' are integer representations of the probability of measuring each feature in the sample scaled by the total number of reads collected. Reads are always normalised to remove nuisance parameters and make them commesurate. The insight of Nixon et al \cite{nixon_scale_2024} was that the normalization was a direct estimate of the system total: that is, that \( \mathrm{Norm}(\mathbf{Y}_{n}) \) was an estimate of \( \hat{\mathbf{W}}^{total}_{n} \) (the~\( \hat \) notation means an estimate of the parameter). Nixon et al. showed that the normalization estimates were always incorrect, but that the estimate could be made more useful by adding an error term to the normalization. Since ALDEx2 already introduced and error term in the measurement, it was a simple adaptation to produce a Bayesian framework that included all estimation uncertainty: 
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+%DIF <  \[ \hat{\mathbf{W}}_{dn} = (\mathbf{Y_{dn}} + \epsilon_1) * (\mathrm{Norm}(\mathbf{Y}_{n}) + \epsilon_2 ). \]
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+%DIF <  In this formulation, the first error term is managed by Monte-Carlo sampling from a Dirichlet distribution \cite{fernandes:2013}, while the second error term is derived by drawing from a log-Normal distribution \cite{nixon_scale_2024}. The magnitude of the second error term is set by the `\texttt{gamma}' (or \(\gamma\)) parameter in the discussion that follows.
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+%DIF <  ALDEx3 is the successor to ALDEx2, based on linear models and also incorporates modelling of scale uncertainty in the same manner when the `\texttt{scale}' argument is set to `\texttt{clr.sm}'. Simple scale models can be constructed by passing a single numeric value to the `\texttt{gamma}' argument of ALDEx2 or ALDEx3, corresponding to the standard deviation parameter of the log-normal distribution that ALDEx will draw from. These scale values will be used to adjust log-ratio transformed count data drawn from a Dirichlet distribution. Here, gamma values from essentially zero (0.001) to 0.5 in increments of 0.1 were used for both tools to model biological system scale.
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \subsection*{Data availability and visualisation}
+All code needed to reproduce these analyses are available on GitHub at: \url{https://github.com/amurariu/usri}. This repository also contains input count data and metadata for all datasets, as well as code needed to replicate the figures in this study. All figures were produced using ggplot2 (v3.5.2) \cite{wickham_ggplot_2016} and edited in Inkscape (v1.3.1). For transparency, details of figure edits made in Inkscape are available on GitHub, in addition to the original SVG files.
+
+
+% For figure citations, please use "Fig" instead of "Figure".
+
+% Place figure captions after the first paragraph in which they are cited.
+%\begin{figure}[!h]
+%\caption{\textbf{Bold the figure title.}
+%Figure caption text here, please use this space for the figure panel descriptions instead of using subfigure commands. A: Lorem ipsum dolor sit amet. B: Consectetur adipiscing elit.}
+%\label{fig1}
+%\end{figure}
+
+
+\section*{Results}
+% Results and Discussion can be combined.
+
+% Place tables after the first paragraph in which they are cited.
+%\begin{table}[!ht]
+%\begin{adjustwidth}{-2.25in}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
+%\centering
+%\caption{\textbf{Table caption Nulla mi mi, venenatis sed ipsum varius, volutpat euismod diam.}}
+%\begin{tabular}{|l+l|l|l|l|l|l|l|}
+%\hline
+%\multicolumn{4}{|l|}{\textbf{Heading1}} & \multicolumn{4}{|l|}{\textbf{Heading2}}\\ \thickhline
+%$cell1 row1$ & cell2 row 1 & cell3 row 1 & cell4 row 1 & cell5 row 1 & cell6 row 1 & cell7 row 1 & cell8 row 1\\ \hline
+%$cell1 row2$ & cell2 row 2 & cell3 row 2 & cell4 row 2 & cell5 row 2 & cell6 row 2 & cell7 row 2 & cell8 row 2\\ \hline
+%$cell1 row3$ & cell2 row 3 & cell3 row 3 & cell4 row 3 & cell5 row 3 & cell6 row 3 & cell7 row 3 & cell8 row 3\\ \hline
+%\end{tabular}
+%\begin{flushleft} Table notes Phasellus venenatis, tortor nec vestibulum mattis, massa tortor interdum felis, nec pellentesque metus tortor nec nisl. Ut ornare mauris tellus, vel dapibus arcu suscipit sed.
+%\end{flushleft}
+%\label{table1}
+%\end{adjustwidth}
+%\end{table}
+
+%PLOS does not support heading levels beyond the 3rd (no 4th level headings).
+
+\subsection*{High false discovery rates are universal across scale-na\"ive tools}
+Since there is usually no objective standard of truth for high throughput data, we calculated the false discovery rate (FDR) for all combinations of tools and gamma values using a strategy of group permutation with the injection of artificial `true' signal into 5\% of all features using binomial thinning \cite{gerard_data-based_2020}. In every dataset tested, DESeq2, edgeR and limma-voom exhibited the highest FDRs of all tools, compared to scale-na\"ive and scale-aware ALDEx2 and ALDEx3 (Fig. \ref{fig:FDR}). DESeq2 and edgeR routinely returned FDRs that were often double or more the reported nominal values, and were always larger than the FDR reported by either ALDEx2 and ALDEx3. This problem was most acute in Cancer Genome Atlas datasets (Supplementary \nameref{fig:supFigFDR_TPR_all}) and was not as pronounced in the yeast transcriptome dataset. Both ALDEx2 and ALDEx3 demonstrated better FDR control in all datasets, even when system scale was not modelled. Increasing scale uncertainty further reduced the FDR, such that when \textgamma~$\geq$0.1 there were virtually no false discoveries until the modelled log\textsubscript{2} fold-change (L2FC) between groups reached approximately 0.5; this was universal across all datasets. At higher modelled difference thresholds, the effect of scale was even more pronounced when compared to scale-na\"ive analyses: the FDR was below 5\% (or practically zero, in many cases) when \textgamma~$\geq$0.4, regardless of the L2FC simulated by binomial thinning. Of the three tools unable to incorporate scale information, the lowest FDR was generally seen with limma; the sole exception being for the single-cell RNA-seq dataset. Universally, the FDR increased as the L2FC threshold concomitantly increased, with FDRs being highest when considering features with the largest L2FCs between groups. FDRs routinely exceeded 20 \%, and could exceed 40 \%, when features had a modelled L2FC $>$1. This was particularly noteworthy given that a large fold-change between groups is often interpreted as a sign that expression of a particular feature is both truly different between conditions and also important to the biological situation under study. Naturally, the same patterns are seen when the positive predictive value is calculated (Supplementary \nameref{fig:supFigPPV}).
+
+\begin{figure}[H]
+    \centering
+    \caption{\textbf{Scale-na\"ive analyses provide poor control of the false discovery rate (FDR) across all datasets.} False-discovery rates for the indicated tool and dataset combinations were calculated separately for each 0.1 increment in the model difference between groups threshold (i.e. the simulated or `true' log\textsubscript{2} fold-change between groups, as determined by binomial thinning). Each data point represents the FDR when considering dataset features with a simulated log-difference at or above the given x-axis threshold. \DIFaddbeginFL \DIFaddFL{Features were considered differentially abundant at a BH-adjusted }\textit{\DIFaddFL{P}}\DIFaddFL{-value of $<$0.05.}\DIFaddendFL }
+    \label{fig:FDR}
+\end{figure}
+
+\subsection*{Commonly used tools offer a trade-off between high sensitivity and good FDR control}
+We next calculated the true-positive rate (TPR), or sensitivity, for all tool and dataset combinations. Unlike what was observed for the FDR calculations, DESeq2, edgeR and limma exhibited higher sensitivity in every dataset tested than did either version of ALDEx (Fig. \ref{fig:TPR}). Conversely, sensitivity was lower for both ALDEx2 and ALDEx3 across every dataset, even in scale-na\"ive analyses. This was expected because the ALDEx model is a consensus model \cite{fernandes:2014} and generally has a somewhat lower sensitivity \cite{hawinkel2017, Nearing:2022aa}. As was observed for FDR control, the addition of scale uncertainty had an evident effect on TPRs: increasing gamma values reduced sensitivity, with larger values (\textgamma~$\geq$0.4) resulting in less than 50 \% of true positive features being detected by ALDEx2 in some datasets. ALDEx3 performed better than its predecessor at every degree of scale uncertainty tested, remaining competitive with DESeq2, edgeR and limma when small amounts of scale were added (\textgamma~$\leq$0.2). Notably, ALDEx2 and ALDEx3 had poor sensitivity with the single-cell dataset and to a lesser extent, the vaginal metatranscriptome dataset (though the latter may be due to the fact that a simple scale model is insufficient for the vaginal metatranscriptome; see discussion). TPRs for these datasets were markedly lower than the remaining bulk transcriptome data (Supplementary \nameref{fig:supFigFDR_TPR_all}), failing to achieve $>$40 and $>$50 \%, respectively, in many cases. Notably, the effect of the modelled L2FC on sensitivity was again obvious. The TPR tended to plateau for all tools when the modelled L2FC was $\geq$0.5, although at high \textgamma~values $\ge$0.4, this was not the case. 
+
+\begin{figure}[H]
+    \centering
+    \caption{\textbf{Sensitivity is reduced when adding increasing amounts of scale uncertainty.} True positive rates (TPR; i.e. sensitivity) for the indicated tool and dataset combinations were calculated separately for each 0.1 increment in the model difference between groups threshold (i.e. the simulated or `true' log\textsubscript{2} fold-change between groups, as determined by binomial thinning). Each data point represents the TPR when considering dataset features with a simulated log-difference at or above the given x-axis threshold. \DIFaddbeginFL \DIFaddFL{Features were considered differentially abundant at a BH-adjusted }\textit{\DIFaddFL{P}}\DIFaddFL{-value of $<$0.05.}\DIFaddendFL }
+    \label{fig:TPR}
+\end{figure}
+
+
+\subsection*{Increasing scale uncertainty increases the minimum fold-change required for significance}
+Using the PD1 immunotherapy dataset as an example, we investigated the effect of increasing values of \textgamma~in ALDEx2 and ALDEx3 relative to the scale-na\"ive analysis (i.e., with \textgamma~set to 0.001). The reduction in sensitivity from increasing \textgamma~was accompanied by a reduction in the total number of differentially expressed features returned for both tools (Table \ref{tab:sigGenes}). ALDEx2 was more sensitive to this effect than was ALDEx3, mirroring the results of the sensitivity and FDR benchmarking. 
+
+\begin{table}[H]
+    \caption{\textbf{Number of differentially expressed genes reported by ALDEx2 and ALDEx3 for the immunotherapy dataset.} Data expressed as the mean of all 100 iterations rounded to the nearest integer, with standard deviations given in parentheses. \DIFaddbeginFL \DIFaddFL{Features were considered differentially abundant at a BH-adjusted }\textit{\DIFaddFL{P}}\DIFaddFL{-value of $<$0.05.}\DIFaddendFL }
+    \centering
+    \begin{tabular}{crr}
+        \toprule
+        & \multicolumn{2}{c}{No. significant genes ($\pm$~s.d.)}\\
+        \cmidrule(lr){2-3}
+        Scale uncertainty (\textgamma{}) & ALDEx2 & ALDEx3\\
+        \midrule
+        0 & 689 (60) & 685 (56)\\
+        0.1 & 628 (20) & 647 (21) \\
+        0.2 & 554 (22) & 599 (20) \\
+        0.3 & 481 (24) & 547 (22) \\
+        0.4 & 412 (26) & 497 (22) \\
+        0.5 & 347 (29) & 447 (22) \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:sigGenes}
+\end{table}
+
+To explain both the decrease in significantly different features and the superior FDR control that characterise ALDEx2 and ALDEx3, we constructed volcano plots \cite{Cui:2003aa} (difference between groups vs. -log\textsubscript{10} \textit{P}-value) and effect plots \cite{gloor:effect} (difference within groups vs. difference between groups) from a randomly chosen analysis iteration of the PD1 immunotherapy dataset. For both tools, the volcano plots show distinct, curved boundaries between genes that were significantly different between groups at increasing amounts of scale uncertainty (Fig. \ref{fig:volcano}A and \ref{fig:volcano}B). The same approximate boundaries for each \textgamma~value in additional datasets can also be seen in Supplementary \nameref{fig:supFigEffect}. By explicitly modelling uncertainty in the scale, both tools eliminated potentially spurious false-positive results by a dynamic cutoff that: i) required a large L2FC if near the FDR cutoff value chosen (i.e. features have a large L2FC but marginal statistical significance) or ii) allowed a smaller L2FC value if the adjusted \textit{P}-value was smaller (i.e. features are more statistically significant, but not necessarily biologically pertinent). \DIFaddbegin \DIFadd{Note that if a feature is reported as differentially expressed at a larger gamma value, it will always be reported as differential when using a smaller value of gamma. }\DIFaddend The same phenomenon is illustrated in effect plots (Fig. \ref{fig:volcano}C and \ref{fig:volcano}D): features that exhibit a larger dispersion within a group require a larger difference between groups to remain significantly different at larger \textgamma~values. This effect is less pronounced with ALDEx3, explaining its increased sensitivity even at higher degrees of scale uncertainty.
+
+\begin{figure}[H]
+    \centering
+    \caption{\textbf{Accounting for scale uncertainty reduces the total number of features identified as differentially expressed.} A randomly selected iteration from the \DIFdelbeginFL \DIFdelFL{ALDEx2 and ALDEx3 }\DIFdelendFL PD1 immunotherapy dataset \DIFdelbeginFL \DIFdelFL{analyses }\DIFdelendFL was used to create volcano plots (\textbf{A, B}) and effect plots (\textbf{C, D}) \DIFaddbeginFL \DIFaddFL{for the corresponding ALDEx2 and ALDEx3 analyses}\DIFaddendFL . Each data point represents a feature from the scale-na\"ive analysis (\textgamma~= 0.001). Grey points indicate non-significant features; coloured points indicate features which are significantly different between groups after a given amount of scale uncertainty has been added to the model. Grey dashed lines indicate either: BH-adjusted \textit{P}-value $<$0.05 (\textbf{A, B}) or equivalent difference between and within groups (\textbf{C, D}).}   
+    \label{fig:volcano}
+\end{figure}
+
+To further understand the effect of increasing scale uncertainty on differential expression analyses, we visualised the minimum L2FC required for ALDEx2 and ALDEx3 to return a statistically significant result across all 100 iterations of the PD1 immunotherapy dataset (Fig. \ref{fig:density}A). At almost every \textgamma~value, the mean L2FC required for a significant result was lower with ALDEx3 compared to ALDEx2-- the sole exception to this being the scale-na\"ive analyses, where the difference was negligible (0.34 ALDEx2 vs. 0.36 ALDEx3; Supplementary \nameref{tab:supTabDensity}). The distribution of minimum differences needed for a significant result became markedly wider as the degree of scale uncertainty increased with ALDEx2. However, for ALDEx3 these distributions were comparatively narrower for all values of \textgamma~tested.
+
+\begin{figure}[H]
+    \centering
+    \caption{\textbf{ALDEx3 requires a lower difference between groups to identify differentially expressed genes compared to ALDEx2.} (\textbf{Left}) For each of the 100 iterations of the PD1 immunotherapy transcriptome dataset, the minimum absolute difference between groups needed for a gene to be reported as differentially expressed by ALDEx2 and ALDEx3 was recorded, based on a BH-adjusted \textit{P}-value of $<$0.05, for \textgamma~values ranging from 0 to 0.5. The distributions of these values are coloured by tool and \textgamma~value, with dashed lines indicating the mean. (\textbf{Right}) Minimum absolute differences required for a significant result \DIFaddbeginFL \DIFaddFL{(BH-adjusted }\textit{\DIFaddFL{P}}\DIFaddFL{-value $<$0.05) }\DIFaddendFL were calculated across all 100 iterations for all \DIFaddbeginFL \DIFaddFL{10 RNA-seq }\DIFaddendFL datasets\DIFaddbeginFL \DIFaddFL{, plus all 21 pairwise comparisons of groups from the non-permuted 16S rRNA amplicon sequencing dataset}\DIFaddendFL . Mean values per dataset are plotted ($\pm$ SEM) for ALDEx2 and ALDEx3. Cancer Genome Atlas datasets are aggregated and plotted data represent a mean of means at each \textgamma~value.}
+    \label{fig:density}
+\end{figure}
+
+We next examined the minimum L2FC difference as a function of the amount of scale uncertainty added across all datasets to determine the generality of the observations in the PD1 immunotherapy dataset (Fig. \ref{fig:density}B). We observed that different datasets had different L2FC thresholds for statistical significance even in the absence of additional scale uncertainty. For all datasets, the additional L2FC required for statistical significance was again most noticeable at the largest degree of scale uncertainty tested. The L2FC threshold for significance was associated with the amount of measurement variation in the datasets: those that have very little measurement uncertainty (yeast, TCGA) having small initial thresholds and those with substantial uncertainty (single-cell, metatranscriptome) having larger initial thresholds (Supplementary \nameref{fig:supFigDispAbund}). Strikingly, for both ALDEx2 and ALDEx3 we observed the relationship between the minimum L2FC and the additional scale uncertainty to be nearly constant for each tool, although the slopes differed considerably by tool. The distribution of the minimum difference required for significance was narrower for bulk RNA-seq datasets analysed with ALDEx2 compared to metatranscriptomic\DIFdelbegin \DIFdel{or }\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend single-cell\DIFaddbegin \DIFadd{, or 16S rRNA amplicon }\DIFaddend data; however, all distributions were comparatively narrower when data were analysed with ALDEx3 (Supplementary \nameref{fig:supFigDensity}). Metatranscriptomic \DIFaddbegin \DIFadd{and 16S rRNA }\DIFaddend data in particular exhibited \DIFdelbegin \DIFdel{a relatively large amount }\DIFdelend \DIFaddbegin \DIFadd{relatively large amounts }\DIFaddend of variability in the minimum log difference required for a significant result between iterations. Linear regression of these average minimum differences required for significance vs. gamma values of 0 to 0.5 similar slopes for all tool and dataset combinations, averaging to a mean of \DIFdelbegin \DIFdel{2.39 }\DIFdelend \DIFaddbegin \DIFadd{2.41 }\DIFaddend for ALDEx2 and \DIFdelbegin \DIFdel{1.64 }\DIFdelend \DIFaddbegin \DIFadd{1.65 }\DIFaddend for ALDEx3 (Fig. \ref{fig:density}B).
+
+Table \ref{tab:regression} shows slopes and intercepts for the minimum L2FC when scale uncertainty is added to the various datasets. This was calculated as the mean coefficient and intercept from linear regression models of the minimum log differences required for significance vs. \textgamma~values of 0 to 0.5, across all 100 iterations of ALDEx2 and ALDEx3 analyses, for all \DIFdelbegin \DIFdel{datasets}\DIFdelend \DIFaddbegin \DIFadd{RNA-seq datasets, or for the 16S rRNA amplicon dataset, across all 21 unique pairwise combinations of the age categories}\DIFaddend . As in Fig. \ref{fig:density}B, slopes for ALDEx2 ranged from 2.34 to \DIFdelbegin \DIFdel{2.53}\DIFdelend \DIFaddbegin \DIFadd{2.61}\DIFaddend , while slopes for ALDEx3 ranged from 1.60 to 1.95. Thus, we concluded that there was a near-constant relationship between increasing scale uncertainty and the additional L2FC required for significance across disparate data types\DIFaddbegin \DIFadd{, including both `semi-synthetic' permutation analyses, and non-permuted, `real-world' differential abundance analyses}\DIFaddend . The utility of this relationship in selecting an appropriate value of \textgamma~is expanded upon in the discussion.
+
+\begin{table}[H]
+    \caption{\DIFdelbeginFL \textbf{\DIFdelFL{Linear models of gamma values vs. minimum log differences required for significance over 100 iterations of ALDEx2 and ALDEx3:}} %DIFAUXCMD
+\DIFdelendFL \DIFaddbeginFL \textbf{\DIFaddFL{Linear models of gamma values vs. minimum log differences required for significance when using ALDEx2 and ALDEx3:}} \DIFaddendFL The minimum log difference required for a statistically significant result (\DIFaddbeginFL \DIFaddFL{BH-adjusted }\DIFaddendFL \textit{P}\DIFaddbeginFL \DIFaddFL{-value }\DIFaddendFL $<$0.05) was calculated for each iteration of the ALDEx2 and ALDEx3 analyses for all \DIFaddbeginFL \DIFaddFL{RNA-seq }\DIFaddendFL datasets\DIFaddbeginFL \DIFaddFL{, as well as for all pairwise age group comparisons of the lone 16S rRNA amplicon sequencing dataset}\DIFaddendFL . Linear regression was performed on these minimum differences vs. the corresponding gamma values and the mean coefficients and intercepts of the models are reported. Values in parentheses represent standard deviations.}
+    \centering
+    \begin{tabular}{lrrrr}
+         \toprule
+         & \multicolumn{2}{c}{ALDEx2 ($\pm$ s.d.)} & \multicolumn{2}{c}{ALDEx3 ($\pm$ s.d.)}\\
+         \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+         Dataset &  Coefficient & Intercept & Coefficient & Intercept\\
+         \midrule
+         Immunotherapy & \textbf{2.37} (0.28) & \textbf{0.32} (0.03) & \textbf{1.60} (0.15) & \textbf{0.33} (0.03) \\
+         Metatranscriptome & \textbf{2.49} (0.90) & \textbf{0.89} (0.23) & \textbf{1.62} (0.82) & \textbf{0.91} (0.25) \\
+         TCGA: BRCA & \textbf{2.37} (0.28) & \textbf{0.20} (0.03) & \textbf{1.61} (0.15) & \textbf{0.21} (0.02) \\
+         TCGA: KIRC & \textbf{2.35} (0.28) & \textbf{0.20} (0.03) & \textbf{1.62} (0.14) & \textbf{0.21} (0.03) \\
+         TCGA: LIHC & \textbf{2.39} (0.29) & \textbf{0.29} (0.04) & \textbf{1.61} (0.16) & \textbf{0.31} (0.04) \\
+         TCGA: LUAD & \textbf{2.35} (0.27) & \textbf{0.24} (0.03) & \textbf{1.61} (0.16) & \textbf{0.26} (0.03) \\
+         TCGA: PRAD & \textbf{2.34} (0.28) & \textbf{0.21} (0.03) & \textbf{1.61} (0.16) & \textbf{0.22} (0.03) \\
+         TCGA: THCA & \textbf{2.35} (0.27) & \textbf{0.21} (0.03) & \textbf{1.61} (0.14) & \textbf{0.22} (0.03) \\
+         \DIFaddbeginFL \DIFaddFL{Tianyi 16S rRNA }& \textbf{\DIFaddFL{2.61}} \DIFaddFL{(0.85) }& \textbf{\DIFaddFL{0.64}} \DIFaddFL{(0.14) }& \textbf{\DIFaddFL{1.66}} \DIFaddFL{(0.37) }& \textbf{\DIFaddFL{0.72}} \DIFaddFL{(0.11) }\\
+         \DIFaddendFL Single-cell & \textbf{2.53} (1.11) & \textbf{0.46} (0.16) & \textbf{1.95} (0.97) & \textbf{0.49} (0.19) \\
+         Yeast & \textbf{2.37} (0.30) & \textbf{0.16} (0.03) & \textbf{1.61} (0.15) & \textbf{0.16} (0.03) \\
+         \bottomrule
+    \end{tabular}
+    \label{tab:regression}
+\end{table}
+
+
+\subsection*{Applying scale models to real datasets highlights spurious findings in scale-na\"ive analyses}
+Having shown the advantages and trade-offs of modelling system scale in semi-simulated datasets with binomial thinning, we next applied scale models to the original, unpermuted BRCA dataset to assess the performance of ALDEx2 and ALDEx3 on real data. In a scale-na\"ive analysis of healthy vs. tumour samples, ALDEx2 identified 15,837 differentially expressed genes, whereas ALDEx3 identified 15,825. For comparison, analyses with DESeq2, edgeR and limma all yielded a larger number of differentially expressed genes (16,736, 16,407 and 16,295 respectively). As expected, increasing amounts of scale uncertainty reduced the number of differentially expressed genes reported by both ALDEx2 and ALDEx3, down to 2,777 and 4,437 respectively at \textgamma~= 0.5 (Supplementary \nameref{tab:sigGenesReal} \& Supplementary \nameref{fig:supFigEffect}).
+
+Critically, for each increase in scale uncertainty, the overwhelming majority of genes dropped by ALDEx2 and ALDEx3 ($>$99 \%) did not belong to the set of experimentally validated breast cancer drivers \cite{repana_network_2019}. Those that did tended to have a low BH-adjusted \textit{P}-value, a low fold-change between groups, a high within-group dispersion, or a combination thereof (Supplementary \nameref{file:supFileDroppedGenes}). For example, expression of the well-known tumour suppressor gene, \textit{PTEN}, was no longer significantly different between groups according to ALDEx2 at a \textgamma~value of 0.1. Notably, the L2FC was minute (-0.0594), the BH-adjusted \textit{P}-value was already marginal in the scale-na\"ive analysis (\textit{P} = 0.034) and log within-group dispersion was relatively large (0.757). These observations suggested considerable heterogeneity in the expression of \textit{PTEN} in this dataset. Examination of the raw and normalised expression values for \textit{PTEN} (Supplementary \nameref{fig:supFigPTEN}) showed that the raw or normalised distributions overlapped nearly perfectly, with any perceived differences between tumour and normal adjacent tissue in this dataset being driven by a small number of outlier samples. Similar behaviour for this gene with the addition of scale uncertainty was seen with ALDEx3 (Supplementary \nameref{file:supFileDroppedGenes}).
+
+At higher degrees of scale-uncertainty, the reduced sensitivity of ALDEx2 became apparent. At \textgamma~= 0.5, genes known to be involved in cancer pathogenesis, such as \textit{ERBB2} and \textit{KRAS}, were no longer identified as differentially expressed, despite a two-fold difference in expression between groups. While RNA-seq data does not directly account for heterozygosity or non-functional proteins, these observations highlighted the problem of an excessively high \textgamma~value, and suggest that lower values are appropriate in most instances.
+
+
+\section*{Discussion}
+
+The analysis of `-omics' data is not, and likely will never be, standardised; each analyst has their preferred approach and tool, accompanied by its various pros and cons. This variation often leads to poor reproducibility, conflicting results, or both-- even when the same dataset is analysed with different tools. One reason for this is that there has been no compelling reason to choose one approach over another, in part because of a lack of understanding as to why different tools give different answers. This has now changed with the introduction of the scale model approach  \cite{nixon_scale_2024} where it was shown that different normalisations made different assumptions about the sampled environment; these assumptions were shown to be always provably incorrect. The use of incorrect assumptions lead to false positive and false negative errors \cite{nixon_scale_2024, nixon_incorporating_2025, gloor_explicit_2025, mcgovern_replacing_2025}.
+
+Li \textit{et al}. \cite{li_exaggerated_2022} used an approach similar to this work and found that both DESeq2 and edgeR often identified as many differentially abundant genes when analysing permuted datasets (i.e. all results are false-positives) as when analysing the original, unpermuted data. Results from each tool poorly overlapped with the other, particularly when considering the PD1 immunotherapy dataset used in the present work; only 8 \% of differentially expressed genes were reported by both tools. Conversely, and worryingly, there was considerable overlap between the list of differentially expressed genes from analysis of permuted and original count data, highlighting the prevalence of false discoveries in any given DESeq2 or edgeR analysis. Among the false-positive findings were genes related to immune functions which, given the biological context, would seem like a plausible result; however in reality, none of the randomly permuted differences were true.
+
+In this study we substantially extend our previous work across an additional 10 datasets of different data types, three additional tools, and 10-fold more permutations of the datasets. Here, we used a data permutation approach \cite{li_exaggerated_2022} to produce known false-positives, along with binomial thinning \cite{gerard_data-based_2020} to introduce potential true-positives. This combination allowed us to benchmark tools on data that exhibit all of the uncertainty and unpredictability inherent in real HTS data that is missing from pre-specified models, while still introducing pre-specified `true' signal \cite{gerard_data-based_2020}. From this new data we identify universal guidance for the amount of scale uncertainty to add, and strengthen the argument that one cannot have one's statistical cake and eat it. The sensitivity and FDR tradeoffs of some of the most widely used RNA-seq analysis tools are highly biased towards sensitivity, as has been observed before \cite{hawinkel2017, Nearing:2022aa, li_exaggerated_2022}. Thus, analysts can either be practically assured of getting a ``statistically significant'' result but at the risk of a very high chance of a false discovery, or they can expect lower sensitivity balanced by the confidence that any significant results represent a real difference between their biological conditions of interest.
+
+In line with previous benchmarking on different types of datasets \cite{hawinkel2017, Nearing:2022aa, li_exaggerated_2022}, we observed that both edgeR and DESeq2 often exhibit very high FDR rates that are balanced by very high sensitivity. We note that limma performs well in some but not all types of data, having an acceptable FDR and a high sensitivity in the majority of datasets. \DIFaddbegin \DIFadd{While the application of these three tools- designed for bulk RNA-seq- to single-cell data (rather than specialised tools for single-cell data) remains somewhat contentious \mbox{%DIFAUXCMD
+\cite{murphy_balanced_2022}}\hskip0pt%DIFAUXCMD
+, the application of these tools to count data at the cell level reflects a common (yet inappropriate) use case. It must also be noted that we do not advocate for the use of }\DIFaddend ALDEx2 \DIFaddbegin \DIFadd{or ALDEx3 for analysis of single-cell RNA-seq data. Rather, we included a single-cell dataset in this work to demonstrate the universal effect of scale uncertainty, even when dealing with datasets that have very different distributional characteristics compared to the other RNA-seq datasets. ALDEx2 }\DIFaddend and ALDEx3 have the lowest sensitivity overall, but also markedly lower FDR rates for all datasets. Notably, ALDEx3 provides the same functionality as its predecessor in terms of acknowledging biological scale during normalisation; however, it offers superior sensitivity at the same degree of scale uncertainty while also controlling for false discoveries at any given L2FC and \textgamma~value.
+
+Both our work and that of Li \textit{et al}. make the counterintuitive observation that the FDRs are highest when filtering for a larger L2FC in the permuted datasets. Prior work has shown that placing emphasis on such features through the common practice of double-filtering results for high fold-change and BH-adjusted \textit{P}-values using volcano plots can inflate the FDR even further \cite{Cui:2003aa, bourgon_independent_2010}. These simulation experiments underscore the danger of taking the results of RNA-seq analysis tools at face values without considering the well-documented problem of inadequate FDR control \cite{witten2007comparison, Zhang:2009aa}. One obvious issue of using a simple-fold-change cutoff is that a feature can appear to have a large L2FC between groups, when in fact that change is driven by a few outlier samples. We therefore caution any user against associating large fold changes in expression with true biological differences simply because of the magnitude of difference without further inspection.
+
+The incorporation of modelled scale uncertainty into the core ALDEx2 and ALDEx3 algorithms offers excellent FDR control with only modest loss of sensitivity. As noted, the use of a dual cutoff approach composed of \textit{P}-value cutoffs and fold-change thresholds can inflate FDRs; however, even modest amounts of scale uncertainty eliminate the need for such an approach without inflating the FDR. \DIFaddbegin \DIFadd{As such, we recommend the use of scale models in ALDEx2 and ALDEx3 over the scale-na\"ive implementations of these tools, regardless of the type of sequencing data in question. In our testing, there was never a scenario where a scale-na\"ive model outperformed the scale-aware method in terms of FDR control. Given the high FDRs of the other tools tested, we believe that a higher confidence in one's differential expression/abundance results is worth the trade-off of a decreased sensitivity- a conclusion echoed by others \mbox{%DIFAUXCMD
+\cite{Nearing:2022aa, weiss_normalization_2017}}\hskip0pt%DIFAUXCMD
+. 
+}
+
+\DIFadd{While other approaches for FDR stabilisation do exist (e.g. spike-in normalisation) these methods introduce additional uncertainty in both their application and their measurement that must be accounted for \mbox{%DIFAUXCMD
+\cite{risso_normalization_2014}}\hskip0pt%DIFAUXCMD
+. Thus, the approach outlined in this study can be used in two ways. First, the unknown scale of the underlying environment can be modelled and used to reduce false positive results, as we show above. Second, when external measurements are available, such as with spike-ins, flow cytometry, or droplet digital PCR \mbox{%DIFAUXCMD
+\cite{lin_towards_2019, barlow_quantitative_2020}}\hskip0pt%DIFAUXCMD
+, they can be used directly to build a scale model, as others have shown \mbox{%DIFAUXCMD
+\cite{konnaris_uncertainty_2025}}\hskip0pt%DIFAUXCMD
+. In both cases, the key point is that there is additional uncertainty in the normalisation that should be incorporated in the analysis- and that further uncertainty reduces the number of false positive findings.
+}
+
+\DIFaddend The addition of scale uncertainty \DIFdelbegin \DIFdel{provided }\DIFdelend \DIFaddbegin \DIFadd{provides }\DIFaddend a way to exclude two types of features. First, those that have marginal BH-adjusted \textit{P}-values but a large between-condition differences. Such features have large or unpredictable dispersions and often come from  distributions where there are only a few outlier (or high leverage) samples represented. In our analysis of real-world data, the \textit{PTEN} tumour suppressor gene was not differentially expressed when we added even a small amount of scale uncertainty; inspection of the raw input and normalised output confirmed it as an  example of a gene where a few outlier samples drove the significant result. Second, many features have very small differences but minute BH-adjusted \textit{P}-values. These represent features with a very small difference between groups and very small dispersion and so are likely not to be biologically relevant. Indeed, these are the same features that are excluded with a dual L2FC cutoff and \textit{P}-value cutoff. Thus, the use of a scale model excludes both types of features that Ebrahimpoor \textit{et al}. \cite{ebrahimpoor_inflated_2021} suggests are problematic, without depending on subsetting the adjusted \textit{P}-values, which is known to be counter productive \cite{Goeman:2014aa, ebrahimpoor_inflated_2021}.
+
+Although only simple scale models are explored in the present work, ALDEx2 and ALDEx3 are capable of constructing informed scale models that apply different degrees of scale uncertainty to each group of interest \cite{nixon_scale_2024, nixon_incorporating_2025}. We have previously shown\DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{dos_santos_vaginal_2024, dos_santos_incorporating_2026} }\hskip0pt%DIFAUXCMD
+}\DIFaddend that this approach is necessary in multiple vaginal metatranscriptome datasets to correct for the 10 to 100-fold difference in total bacterial load that exists between states of health and bacterial vaginosis \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
+\cite{dos_santos_vaginal_2024, zozaya-hinchliffe_quantitative_2010}}\hskip0pt%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{zozaya-hinchliffe_quantitative_2010}}\hskip0pt%DIFAUXCMD
+}\DIFaddend . Using an informed scale model removes an asymmetry in the data that causes a multitude of housekeeping functions to be identified as differentially expressed, while also preventing known pathways involved in BV pathophysiology from being identified as such. Moreover, this methodology was shown to be robust to replication even when applying it to independent validation datasets with vastly different population demographics \DIFdelbegin \DIFdel{.
+}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{dos_santos_vaginal_2024}}\hskip0pt%DIFAUXCMD
+. For any similar scenarios in which researchers are either aware of, or suspect there to be a difference in the overall biological scale between the conditions of interest, we recommend the use of a full, informed scale model over a simpler approach of modelling the same degree of scale uncertainty across all samples \mbox{%DIFAUXCMD
+\cite{dos_santos_incorporating_2026}}\hskip0pt%DIFAUXCMD
+.
+}\DIFaddend 
+
+Notably, this work provides a path forward to reducing the FDR in a way that only minimally impacts sensitivity across many different types of HTS data. The relationship between \textgamma~and the minimum L2FC required for a statistically significant result shown in Fig. \ref{fig:density} and Table \ref{tab:regression} provides almost universal guidance on selecting an appropriate level of scale uncertainty when using ALDEx2 or ALDEx3. We recommend that investigators introduce scale uncertainty into any analysis sufficient to provide a buffer of an additional 0.5-fold change. This equates to adding a \textgamma~value of 0.2 when using ALDEx2, and of 0.3 when using ALDEx3, and this ensures that the FDR rate is controlled at least to an inferred L2FC of $>$0.5 across all the datasets tested here with only minimal impacts on sensitivity. If the analyst is interested in only very large L2FC values $>$1, then we suggest using a \textgamma~value of 0.4 for either tool. 
+
+\section*{Conclusion}
+Overall, we have demonstrated the utility of scale models implemented by ALDEx2 and ALDEx3 in the analysis of high-throughput sequencing datasets, as well as their excellent FDR control. Like others, we highlight the unacceptably high rate of false-positive findings returned by commonly used RNA-seq analysis tools and note the inherent trade off all researchers need to be cognisant of when considering how to analyse their data.
+
+
+% For more information, see \nameref{S1_Appendix}.
+
+\section*{Supporting information}
+
+% Include only the SI item label in the paragraph heading. Use the \nameref{label} command to cite SI items in the text.
+\paragraph*{Fig. S1}
+\label{fig:supFigFDR_TPR_all}
+\textbf{False-discovery and true-positive rates for all datasets tested.} False-discovery rates (FDR; \textbf{A}) and true positive rates (TPR; \textbf{B}) for all tool and dataset combinations were calculated separately for each 0.1 increment in the model difference between groups (i.e. the simulated or `true' log\textsubscript{2} fold-change between groups, as determined by binomial thinning). Each data point represents the FDR or TPR when considering dataset features with a simulated log-difference at or above the given x-axis threshold. \DIFaddbegin \DIFadd{Features were considered differentially abundant at a BH-adjusted }\textit{\DIFadd{P}}\DIFadd{-value of $<$0.05.
+}\DIFaddend 
+
+\paragraph*{Fig. S2}
+\label{fig:supFigPPV}
+\textbf{Positive predictive values for all datasets tested.} The positive predictive value (PPV) for all tool and dataset combinations was calculated separately for each 0.1 increment in the model difference between groups (i.e. the simulated or `true' log\textsubscript{2} fold-change between groups, as determined by binomial thinning). Each data point represents the PPV when considering dataset features with a simulated log-difference at or above the given x-axis threshold. \DIFaddbegin \DIFadd{Features were considered differentially abundant at a BH-adjusted }\textit{\DIFadd{P}}\DIFadd{-value of $<$0.05.
+}\DIFaddend 
+
+\paragraph*{Table S1}
+\label{tab:supTabDensity}
+\textbf{Average minimum log differences required for a significant result with ALDEx2 and ALDEx3 for all datasets and \textgamma~values.} For all datasets, the mean minimum log difference required for ALDEx2 and ALDEx3 to recognise a feature as differentially expressed \DIFaddbegin \DIFadd{(i.e. BH-adjusted }\textit{\DIFadd{P}}\DIFadd{-value $<$0.05) }\DIFaddend was calculated for \textgamma~values ranging from 0 to 0.5, across all 100 iterations (TGCA, The Cancer Genome Atlas).
+
+\paragraph*{Fig. S3}
+\label{fig:supFigDispAbund}
+\textbf{Features from single-cell and metatranscriptome datasets have a larger dispersion compared to bulk RNA-seq data.} \DIFdelbegin \DIFdel{A single}\DIFdelend \DIFaddbegin \DIFadd{The within-group log dispersion of each feature was plotted against the log abundance from either: 1) a single, randomly selected }\DIFaddend iteration of the ALDEx2 \DIFdelbegin \DIFdel{results was selected at random }\DIFdelend \DIFaddbegin \DIFadd{permutation analyses }\DIFaddend for the single-cell, metatranscriptome, PD1 immunotherapy, \DIFdelbegin \DIFdel{yeast transcriptome and oral }\DIFdelend \DIFaddbegin \DIFadd{and yeast transcriptome datasets; or 2) one of the unique pairwise age group comparisons from the Tianyi }\DIFaddend 16S rRNA \DIFdelbegin \DIFdel{datasets and the within-group log dispersion of each feature was plotted against the log abundance}\DIFdelend \DIFaddbegin \DIFadd{amplicon dataset (selected due to its regression coefficient and intercept being closest to the dataset averages of both parameters)}\DIFaddend .
+
+\paragraph*{Fig. S4}
+\label{fig:supFigDensity}
+\textbf{ALDEx3 returns a tighter distribution of minimum log-difference values required for significance across all datasets.} For each of the 100 iterations of the given dataset, the minimum absolute difference between groups needed for a gene to be reported as differentially expressed by ALDEx2 and ALDEx3 was recorded, based on a BH-adjusted \textit{P}-value of $<$0.05, for \textgamma~values ranging from 0 to 0.5. Data for the Cancer Genome Atlas (TCGA), metatranscriptome, single-cell, and yeast datasets are expressed as density plots and coloured by tool and \textgamma~value. Values for TCGA datasets represent an aggregate across the individual tumour transcriptome datasets. Dashed lines indicate the mean value.
+
+\paragraph*{Table S2}
+\label{tab:sigGenesReal}
+\textbf{Differentially expressed genes reported by all tested tools for the original, unpermuted BRCA dataset.} The total number of genes identified as differentially expressed by ALDEx2 (A2), ALDEx3 (A3), DESeq2 (DS), edgeR (ER) and limma-voom (LM) are shown for increasing values of \textgamma. At each \textgamma~value from 0.1 to 0.5, the number and proportion of genes belonging to the `canonical drivers' and `breast cancer' categories of the Network of Cancer Genes \cite{repana_network_2019} that are no longer significantly different between groups (i.e. dropped genes) are also shown for ALDEx2 and ALDEx3. Data represent the results of a single analysis performed with the original, unpermuted count table and group membership vector. Dashes indicate non-applicable fields. 
+
+\paragraph*{Fig. S5}
+\label{fig:supFigEffect}
+\textbf{Boundaries between features reported as differentially expressed at different \textgamma~values are curved.} Volcano plots of log difference between groups vs. -log\textsubscript{10} \textit{P}-values were generated for ALDEx2 (\textbf{left}) and ALDEx3 (\textbf{right}) analyses of the original, unpermuted BRCA dataset from the Cancer Genome Atlas. Curved boundaries between points identified as differentially expressed at different \textgamma~values can be clearly seen. Each data point represents a feature from the scale-na\"ive analysis (\textgamma~= 0.001). Grey points indicate non-significant features; coloured points indicate features which are significantly different after a certain amount of scale uncertainty has been added to the model. Grey dashed lines indicate BH-adjusted \textit{P}-value $<$0.05.
+
+\paragraph*{File S1}
+\label{file:supFileDroppedGenes}
+\textbf{Genes dropped as scale uncertainty increases are largely unrelated to cancer development.} A list of all genes in the BRCA dataset which are no longer identified as significantly different between groups \DIFaddbegin \DIFadd{(i.e. BH-adjusted }\textit{\DIFadd{P}}\DIFadd{-value $<$0.05) }\DIFaddend as scale uncertainty (\textgamma) increases by 0.1 increments for ALDEx2 and ALDEx3. Gene symbols, validation status in the Network of Cancer Genes, log\textsubscript{2} fold-change, within-group dispersion, and BH-adjusted \textit{P}-values at each gamma are also reported.
+
+\paragraph*{Fig. S6}
+\label{fig:supFigPTEN}
+\textbf{Significant differences in \textit{PTEN} expression are driven by a few outlier samples:} Expression of the tumour suppressor gene, \textit{PTEN}, in the Cancer Genome Atlas BRCA dataset is shown in histograms of read counts (\textbf{left}) and centred log-ratio (CLR) abundance values calculated by ALDEx2 (\textbf{right}). Bars are coloured by sample group. Bin width is 1,000 (reads) or 0.2 (CLR). The limited number of outlier samples in each group can clearly be seen at either end of the histograms, with most samples overlapping in the centre.
+
+%\paragraph*{S Fig.}
+%\label{}
+%\textbf{} 
+
+
+\section*{Acknowledgments}
+We would like to express our thanks to the original authors of all the datasets used in this study for making their data freely and easily accessible for others to use. Their commitment to open science is \DIFdelbegin \DIFdel{laudable }\DIFdelend \DIFaddbegin \DIFadd{commendable }\DIFaddend and is very much appreciated. Specific thanks to the Cancer Genome Atlas research consortium and the donors who contributed samples to their work.
+
+\nolinenumbers
+
+% Please compile your BiBTeX database using the "plos2025.bst" BibTeX style.
+% This file is part of the current package.
+% A sample BibTeX file is also included as "plos_bibtex_sample.bib".
+%
+% or
+%
+% Type in your references following Vancouver style and reference formatting instructions
+% available at https://journals.plos.org/plosone/s/submission-guidelines#loc-references
+% \begin{thebibliography}{}
+% \bibitem{}
+% Text
+% \end{thebibliography}
+
+\bibliography{diffAbund_refs.bib}
+
+\end{document}
+
