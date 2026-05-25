@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.30)  22 MAY 2026 16:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.30)  25 MAY 2026 15:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1057,24 +1057,21 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
  [4]
 [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] (./diff.bbl [17]
-[18] [19] [20] [21]) [22] [23]
+[18] [19] [20] [21] [22]) [23]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./diff.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `diff.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  18395 strings out of 476025
- 294181 string characters out of 5790017
+ 294179 string characters out of 5790017
  1941388 words of memory out of 5000000
  38330 multiletter control sequences out of 15000+600000
- 523259 words of font info for 114 fonts, out of 8000000 for 9000
+ 523250 words of font info for 114 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,11n,76p,3420b,591s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 69i,12n,76p,3499b,591s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
@@ -1090,10 +1087,10 @@ texlive/2023/texmf-dist/fonts/type1/public/cbfonts/grmn1000.pfb></usr/local/tex
 live/2023/texmf-dist/fonts/type1/public/cbfonts/grxn1000.pfb></usr/local/texliv
 e/2023/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy6.pfb></usr/local/te
 xlive/2023/texmf-dist/fonts/type1/public/marvosym/marvosym.pfb>
-Output written on diff.pdf (23 pages, 288502 bytes).
+Output written on diff.pdf (23 pages, 297570 bytes).
 PDF statistics:
- 606 PDF objects out of 1000 (max. 8388607)
- 545 compressed objects within 6 object streams
+ 613 PDF objects out of 1000 (max. 8388607)
+ 552 compressed objects within 6 object streams
  141 named destinations out of 1000 (max. 500000)
  27137 words of extra memory for PDF output out of 29859 (max. 10000000)
 

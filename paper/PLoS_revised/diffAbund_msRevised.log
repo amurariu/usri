@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.30)  22 MAY 2026 16:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.30)  25 MAY 2026 15:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -966,7 +966,7 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 199
+LaTeX Font Info:    Trying to load font information for U+msa on input line 192
 .
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -974,7 +974,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 199
+LaTeX Font Info:    Trying to load font information for U+msb on input line 192
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -983,7 +983,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+mvs on input line 199
+LaTeX Font Info:    Trying to load font information for U+mvs on input line 192
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/marvosym/umvs.fd)
@@ -1011,13 +1011,13 @@ Package rerunfilecheck Info: File `diffAbund_msRevised.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 16876 strings out of 476025
- 272190 string characters out of 5790017
+ 16878 strings out of 476025
+ 272208 string characters out of 5790017
  1870388 words of memory out of 5000000
  36821 multiletter control sequences out of 15000+600000
- 523696 words of font info for 119 fonts, out of 8000000 for 9000
+ 523804 words of font info for 120 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,12n,76p,2382b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 69i,12n,76p,2386b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
@@ -1032,10 +1032,10 @@ l/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local
 texlive/2023/texmf-dist/fonts/type1/public/cbfonts/grmn1000.pfb></usr/local/tex
 live/2023/texmf-dist/fonts/type1/public/cbfonts/grxn1000.pfb></usr/local/texliv
 e/2023/texmf-dist/fonts/type1/public/marvosym/marvosym.pfb>
-Output written on diffAbund_msRevised.pdf (22 pages, 263623 bytes).
+Output written on diffAbund_msRevised.pdf (22 pages, 263264 bytes).
 PDF statistics:
- 593 PDF objects out of 1000 (max. 8388607)
- 535 compressed objects within 6 object streams
+ 591 PDF objects out of 1000 (max. 8388607)
+ 533 compressed objects within 6 object streams
  140 named destinations out of 1000 (max. 500000)
  27137 words of extra memory for PDF output out of 29859 (max. 10000000)
 
