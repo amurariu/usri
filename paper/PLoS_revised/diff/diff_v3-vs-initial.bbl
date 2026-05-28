@@ -301,6 +301,14 @@ Yang L, Chen J.
 \newblock \href {http://dx.doi.org/10.1186/s40168-022-01320-0}
   {doi:10.1186/s40168-022-01320-0}.
 
+\bibitem{ALDEx3}
+Silverman J, Gloor G, McGovern K. ALDEx3: Linear Models for Sequence Count
+  Data; 2026.
+\newblock R package version 1.0.2.
+\newblock Available from: \url{https://CRAN.R-project.org/package=ALDEx3}.
+  \href {http://dx.doi.org/https://doi.org/10.32614/CRAN.package.ALDEx3}
+  {doi:https://doi.org/10.32614/CRAN.package.ALDEx3}.
+
 \bibitem{fernandes:2014}
 Fernandes AD, Reid JN, Macklaim JM, McMurrough TA, Edgell DR, Gloor GB.
 \newblock Unifying the analysis of high-throughput sequencing datasets:

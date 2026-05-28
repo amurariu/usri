@@ -301,6 +301,14 @@ Yang L, Chen J.
 \newblock \href {http://dx.doi.org/10.1186/s40168-022-01320-0}
   {doi:10.1186/s40168-022-01320-0}.
 
+\bibitem{ALDEx3}
+Silverman J, Gloor G, McGovern K. ALDEx3: Linear Models for Sequence Count
+  Data; 2026.
+\newblock R package version 1.0.2.
+\newblock Available from: \url{https://CRAN.R-project.org/package=ALDEx3}.
+  \href {http://dx.doi.org/https://doi.org/10.32614/CRAN.package.ALDEx3}
+  {doi:https://doi.org/10.32614/CRAN.package.ALDEx3}.
+
 \bibitem{fernandes:2014}
 Fernandes AD, Reid JN, Macklaim JM, McMurrough TA, Edgell DR, Gloor GB.
 \newblock Unifying the analysis of high-throughput sequencing datasets:
@@ -317,14 +325,6 @@ McGovern KC, Nixon MP, Silverman JD.
 \newblock PLOS Computational Biology. 2023;19(11):e1011659.
 \newblock \href {http://dx.doi.org/10.1371/journal.pcbi.1011659}
   {doi:10.1371/journal.pcbi.1011659}.
-
-\bibitem{nishijima_fecal_2025}
-Nishijima S, Stankevic E, Aasmets O, Schmidt TSB, Nagata N, Keller MI, et~al.
-\newblock Fecal microbial load is a major determinant of gut microbiome
-  variation and a confounder for disease associations.
-\newblock Cell. 2025;188(1):222-36.e15.
-\newblock \href {http://dx.doi.org/10.1016/j.cell.2024.10.022}
-  {doi:10.1016/j.cell.2024.10.022}.
 
 \bibitem{rao_multi-kingdom_2021}
 Rao C, Coyte KZ, Bainter W, Geha RS, Martin CR, Rakoff-Nahoum S.
@@ -371,6 +371,14 @@ Risso D, Ngai J, Speed TP, Dudoit S.
   genes or samples.
 \newblock Nature Biotechnology. 2014;32(9):896-902.
 \newblock \href {http://dx.doi.org/10.1038/nbt.2931} {doi:10.1038/nbt.2931}.
+
+\bibitem{nishijima_fecal_2025}
+Nishijima S, Stankevic E, Aasmets O, Schmidt TSB, Nagata N, Keller MI, et~al.
+\newblock Fecal microbial load is a major determinant of gut microbiome
+  variation and a confounder for disease associations.
+\newblock Cell. 2025;188(1):222-36.e15.
+\newblock \href {http://dx.doi.org/10.1016/j.cell.2024.10.022}
+  {doi:10.1016/j.cell.2024.10.022}.
 
 \bibitem{gierlinski_statistical_2015}
 Gierli{\'n}ski M, Cole C, Schofield P, Schurch NJ, Sherstnev A, Singh V, et~al.
