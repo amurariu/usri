@@ -2,7 +2,11 @@
 # conditions is conditions_p from above
 # name is the name of the output file and must be in quotes
 # nloops is the number of test loops
-ald3.fun <- function(data, conds, gamma, nloop, prop_null, mean){
+### 
+## GG: note, the newest version of ALDEx3 uses summary, not summary.aldex
+## GG: added parameters for sd and for nsample
+###
+ald3.fun <- function(data, conds, gamma, nloop, prop_null, mean, nsample=128, std=2){
   
   thin.data.out.aldex3 <- list() 
   aldex.summary.r <- list()
@@ -17,10 +21,11 @@ ald3.fun <- function(data, conds, gamma, nloop, prop_null, mean){
     
     #thin_2group adds rnorm noise to 5% of the transcripts, generates TPs in the dataset
     #generate thin_2group for each dataset as well as labelling for conditions and new dataset
+    # new GG - std is default 2, make it much larger for microbiome data!! 4?
     message('Thinning data...')
     thin3 <- thin_2group(data, prop_null= prop_null, alpha=0,
                         signal_fun = stats::rnorm, 
-                        signal_params = list(mean = mean, sd = 2))
+                        signal_params = list(mean = mean, sd = std))
     thin.data.out.aldex3[[i]] <- thin3
     conds_th <- as.vector(thin3$designmat)   #thinned conditions
     data_th <- thin3$mat #thinned data
@@ -36,12 +41,11 @@ ald3.fun <- function(data, conds, gamma, nloop, prop_null, mean){
   
     Xt <- formula(~conditions_t)
     datat <- data.frame(conditions_t=conditions_t)
-    nsample <- 256
     
     # randomized conditions only (.r)
     message("Running ALDEx3 (scale = ", gamma, ") on original data with randomised groups...")
     data.out.r <- aldex(data, Xt, data=datat, nsample=nsample, scale=clr.sm, gamma=gamma)
-    sum.imm.r <- summary.aldex(data.out.r)
+    sum.imm.r <- summary(data.out.r)
     aldex.summary.r[[i]] <- sum.imm.r
 
     # LFC column is estimate column 3
@@ -51,7 +55,7 @@ ald3.fun <- function(data, conds, gamma, nloop, prop_null, mean){
     # randomized and thinned (.t)
     message("Running ALDEx3 (scale = ", gamma, ") on thinned data with randomised groups...")
     data.out.t <- aldex(data_th, Xt, data=datat, nsample=nsample, scale=clr.sm, gamma=gamma)
-    sum.imm.t <- summary.aldex(data.out.t)
+    sum.imm.t <- summary(data.out.t)
     aldex.summary.t[[i]] <- sum.imm.t
     
     }
@@ -69,12 +73,11 @@ ald3.fun <- function(data, conds, gamma, nloop, prop_null, mean){
   
   X <- formula(~conditions)
   dataf <- data.frame(conditions=conditions)
-  nsample <- 256
   
   message("Running ALDEx3 (scale = ", gamma, ") on original data with non-randomised groups...")
   set.seed(2025)
   data.out.aldex3.u <- aldex(data, X, data=dataf, nsample=nsample, scale=clr.sm, gamma=gamma)
-  sum.imm.u <- summary.aldex(data.out.aldex3.u)
+  sum.imm.u <- summary(data.out.aldex3.u)
   
   return(list(conditions=conditions, thin.data=thin.data.out.aldex3, u.data = sum.imm.u, r.data = aldex.summary.r, t.data = aldex.summary.t))
 
