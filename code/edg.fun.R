@@ -2,7 +2,7 @@
 # conditions is conditions_p from above
 # name is the name of the output file and must be in quotes
 # nloops is the number of test loops
-edg.fun <- function(data, conditions, nloop=100){
+edg.fun <- function(data, conditions, nloop = 100, prop_null = 0.95, mean = 0, std = 2){
   
   thin.data.out.edger <- list() #change name of list here-----------
   data.out.edgeR.u <- list() 
@@ -23,9 +23,9 @@ edg.fun <- function(data, conditions, nloop=100){
     set.seed(seed)
     
     message('Thinning data...')
-    thin <- thin_2group(data, prop_null=0.95, alpha=0,
+    thin <- thin_2group(data, prop_null = prop_null, alpha=0,
                                signal_fun = stats::rnorm, 
-                               signal_params = list(mean = 0, sd = 2))
+                               signal_params = list(mean = mean, sd = std))
     thin.data.out.edger[[i]] <- thin
     conds_th <- as.vector(thin$designmat)   #thinned and randomized conditions
     data_th <- thin$mat #thinned and randomized data

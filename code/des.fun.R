@@ -7,7 +7,7 @@
 # conditions: original grouping variable vector
 # nloop: number of randomisation instances for randomised data
 
-des.fun <- function(data, nloop=100, conditions){
+des.fun <- function(data, nloop = 100, conditions, prop_null = 0.95, mean = 0, std = 2){
 	
 	thin.data.out <- list() 
 	data.out.deseq.u <- list()
@@ -27,9 +27,10 @@ des.fun <- function(data, nloop=100, conditions){
 	  set.seed(seed)
 	  
 	  # binomial thinning of data
-	  thin <- thin_2group(data, prop_null=0.95, alpha=0,
+	  message('Thinning data...')
+	  thin <- thin_2group(data, prop_null = prop_null, alpha=0,
 	                      signal_fun = stats::rnorm, 
-	                      signal_params = list(mean = 0, sd = 2))
+	                      signal_params = list(mean = mean, sd = std))
 	  
 	  thin.data.out[[i]] <- thin
 	  
