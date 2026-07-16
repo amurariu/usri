@@ -19,11 +19,12 @@
 #################################### setup ####################################
 
 library(Seurat)
+library(SeuratData)
 library(Matrix)
 
 # clone the seurat-data repo (https://github.com/satijalab/seurat-data) and then
 # load via devtools
-devtools::load_all("~/Documents/GitHub/seurat-data/")
+# devtools::load_all("~/Documents/GitHub/seurat-data/")
 
 # check available seurat datasets
 AvailableData()
@@ -32,8 +33,8 @@ AvailableData()
 # InstallData('ifnb')
 
 # load the ifnb dataset (ignore warnings)
-ifnb <- LoadData("ifnb")
-
+ifnb.orig <- LoadData("ifnb")
+ifnb <- ifnb.orig
 # load the inferred sample IDs of each cell from the Kang dataset github repo
 # (origin: https://github.com/yelabucsf/demuxlet_paper_code/tree/master/fig3 but
 # these files have been saved in their original form in the current study repo)
@@ -71,6 +72,26 @@ ifnb <- AddMetaData(ifnb, metadata = info)
 ifnb$donor_id[is.na(ifnb$donor_id)] <- "unknown"
 ifnb <- subset(ifnb, subset = donor_id != "unknown")
 
+##### added by GG July 16, 2026
+# get metadata
+meta <- ifnb@meta.data
+# make a master vector of unique names STIM_DONOR_TYPE to use for aggregation
+# substitute spaces with _ in seurat_annotation column
+meta$seurat_annotations <- gsub(" ", "_", meta$seurat_annotations)
+# remove SNG- from the Donor names
+meta$donor_id <- gsub("SNG-", "", meta$donor_id)
+# concatenate names
+con_names <- paste(meta$stim, meta$donor_id, meta$seurat_annotations, sep="_")
+
+counts <- as.data.frame(Matrix(ifnb$RNA$counts, sparse=F))
+
+# finally aggregate 
+ifnb.agg <- stats::aggregate(t(counts), by=list(con_names), FUN=sum)
+rownames(ifnb.agg) <- ifnb.agg$Group.1
+ifnb.agg$Group.1 <- NULL
+####
+
+# subset into  
 # pseudobulk the counts based on donor-condition-celltype
 pseudo_ifnb <- AggregateExpression(ifnb, assays = "RNA", return.seurat = T, 
                                    group.by = c("stim", "donor_id", "seurat_annotations"))
@@ -80,7 +101,14 @@ pseudo_ifnb$celltype.stim <- paste(pseudo_ifnb$seurat_annotations, pseudo_ifnb$s
 Idents(pseudo_ifnb) <- "celltype.stim"
 
 # export normalised/aggregated count data to matrix
-counts <- as.data.frame(Matrix(pseudo_ifnb$RNA$counts,sparse=F))
+seu.agg.counts <- as.data.frame(Matrix(pseudo_ifnb$RNA$counts,sparse=F))
+
+#### added by GG July 16, 2026
+#  head(colSums(seu.agg.counts), n=10L)
+#  head(colSums(ifnb.agg), n=10L)
+# tldr: equivalent columns give exactly the same read count total and 
+# the same count per gene
+####
 
 # move rownames to own column and move to front of df
 counts$feature <- rownames(counts)
