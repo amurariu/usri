@@ -47,4 +47,3 @@ ald2.fun <- function(data, conditions, nloop=100, gamma, prop_null, mean, nsampl
 
   return(list(conditions=conditions, r.data=data.out.aldex.r, thin.data=thin.data.out.aldex, u.data=aldex.u, t.data=data.out.aldex.t))
 }
-
