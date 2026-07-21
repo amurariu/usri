@@ -82,4 +82,3 @@ ald3.fun <- function(data, conds, gamma, nloop, prop_null, mean, nsample=128, st
   return(list(conditions=conditions, r.data = aldex.summary.r, thin.data=thin.data.out.aldex3, u.data = sum.imm.u, t.data = aldex.summary.t))
 
 }
-
