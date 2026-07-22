@@ -1,7 +1,7 @@
 # log abundance vs. dispersion for example dataset: ALDEx2 all datasets
 
 # Scott Dos Santos
-# Last edited: 2026-05-21
+# Last edited: 2026-07-22
 
 library(stringr)
 library(dplyr)
@@ -24,7 +24,7 @@ unlink(tf.data)
 
 
 # # original code for generating 'plot.df' loaded above
-# 
+
 # # set external analysis directory
 # data <- "~/Documents/GitHub/ext_analysis/"
 # 
@@ -33,7 +33,7 @@ unlink(tf.data)
 # inst <- sample(1:100, 1)
 # 
 # # make vector of datasets
-# datasets <- c("brca","immuno","kirc","lihc","luad","mts","prad","sccyto","thca")
+# datasets <- c("16S","brca","immuno","kirc","lihc","luad","mts","prad","pseudo","thca")
 # 
 # # load aldex2 analysis objects from above datasets only for gamma = 0
 # # and extract randomly selected instance (68 if set.seed = 1)
@@ -45,14 +45,6 @@ unlink(tf.data)
 #   tmplist[[i]] <-tmpdf
 #   rm(tmpdf)
 # }
-# 
-# # add representative of tiyani data: centenarians vs. primary schoolers dataset
-# # was chosen due to its slope/intercept being closest to the tiyani average of
-# # 2.6 and 0.63
-# load(paste0(repo, "data/tiyani_pairs/results_aldex2.0.Rda"))
-# tiyani.aldex2.0$cent.psch$dataset <- "tiyani-16s"
-# colnames(tiyani.aldex2.0$cent.psch)[c(2,3)] <- c("rab.win.0", "rab.win.1")
-# tmplist[["tiyani-16s"]] <- tiyani.aldex2.0$cent.psch
 # 
 # # add yeast data
 # load(paste0(repo, "data/yeastUnf.A2g0.Rda"))
