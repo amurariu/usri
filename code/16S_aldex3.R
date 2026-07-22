@@ -9,7 +9,7 @@
 # 2 (5): e00327-17. This study looked at gut microbiome differences between a
 # range of different age groups, from kindergarten-aged children to centenarians
 # and compared OTUs present in the respective groups. This analysis will use a
-# comparison of kindergarteners vs. middle-schoolers.
+# comparison of kindergarteners vs. middle-schoolers using ALDEx3.
 
 #################################### setup ####################################
 
