@@ -293,12 +293,7 @@ group_means.mts <- group_means.oth2 %>%
   filter(dataset == "Vaginal metatranscriptome")
 
 
-# make line graphs grouped in different ways
-
-# colours = tool only
-# png(paste0(repo,"figures/fig_stripchartToolALDEx.png"),
-#     units = "in", height = 4, width = 6, res = 600)
-
+# make line graphs grouped by aldex2 vs aldex3
 p2 <- ggplot(group_means.oth, aes(x = gamma.num, y = mean_value, colour=tool, shape = dataset))+
   geom_point(alpha = 1, size = 1)+
   geom_line(linewidth = 0.25)+
@@ -324,10 +319,7 @@ p2 <- ggplot(group_means.oth, aes(x = gamma.num, y = mean_value, colour=tool, sh
 
 p2
 
-# dev.off()
-
-
-# colours = dataset, lines = tool(final figure for paper!)
+# make line graphs coloured by dataset, with tool indicated by dashed lines
 # png(paste0(repo,"figures/fig_stripchartDatasetALDEx.png"),
 #     units = "in", height = 4, width = 6, res = 600)
 
