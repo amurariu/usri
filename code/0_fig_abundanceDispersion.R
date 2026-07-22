@@ -75,7 +75,7 @@ unlink(tf.data)
 
 # needs filtering, based on above being pretty much illegible
 plot.filt <- plot.df %>% 
-  filter(dataset %in% c("immuno", "mts", "tiyani-16s", "sccyto", "yeast")) %>% 
+  filter(dataset %in% c("immuno", "mts", "16S", "pseudo", "yeast")) %>% 
   mutate(strip = "ALDEx2: dispersion vs. relative abundance")
 
 # calculate median dispersion values per dataset for overlaying on density plot
@@ -83,9 +83,14 @@ grp.meds <- plot.filt %>%
   group_by(dataset) %>% 
   summarise(med = median(diff.win))
 
+# re-order factor so single-cell data is plotted first and everything else laid
+# on top
+plot.filt$dataset <- factor(plot.filt$dataset,
+                            levels = c("pseudo", "yeast", "immuno", "mts", "16S"))
+
 # make colour vector for datasets (n = 5), corresponding to line graph of
 # mean minimum log differences by gamma
-cols.dataset <- c("darkolivegreen4", "dodgerblue2", "orangered2", "grey40", "goldenrod2")
+cols.dataset <- c("orangered2", "goldenrod2", "darkolivegreen4", "dodgerblue2", "grey40")
 
 # make 4 separate graphs: main scatterplot in bottom left, density plots for x 
 # and y values in top right and bottom right, then blank plot for top right

@@ -48,7 +48,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"><g
-       id="g2"><image
+       id="g2"
+       inkscape:export-filename="../../paper/figures/supFig_densityPlotsALDEx_otherDatasets.png"
+       inkscape:export-xdpi="600"
+       inkscape:export-ydpi="600"><image
          width="165.73"
          height="132.584"
          preserveAspectRatio="none"
