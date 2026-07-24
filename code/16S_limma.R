@@ -19,10 +19,19 @@ library(seqgendiff)
 source("code/lim.fun.R")
 source("code/get_confusion.R")
 
-# load and bind input data frames of 16S rRNA amplicon data
-load("~/Documents/GitHub/tiyani-aldex3/data/kin.Rda") # private repo
-load("~/Documents/GitHub/tiyani-aldex3/data/mid.Rda") # private repo
+# load input data frames of 16S rRNA amplicon data
+rda <- paste0("https://github.com/amurariu/usri/raw/refs/heads/main/data/tianyi_",
+              c("mid", "kin"), "_ft.Rda")
 
+for(i in rda){
+  tf <- tempfile(fileext = ".Rda")
+  download.file(url = i, destfile = tf, mode = "wb")
+  load(tf)
+  unlink(tf)
+  rm(tf)
+}
+
+# bind input data and make metadata objects
 counts <- cbind(kin,mid)
 ages <- data.frame(group = c(rep("K", 103), rep("M", 114)))
 
