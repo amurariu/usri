@@ -141,7 +141,7 @@ cutoff.volc.a3 <- ggplot(data = plot.a3.ns, aes(x = estimate, y = log10p))+
   xlab(expression("Log"[2]~"fold change"))+
   ylab(expression("-Log"[10]~" P"["adj"]))+
   facet_wrap(~strip)+
-  theme_bw()
+  theme_bw()+
 
 cutoff.volc.a3
 
@@ -162,15 +162,6 @@ cutoff.eff.a3 <- ggplot(data = plot.a3.ns, aes(x = estimate, y = std.error))+
   theme_bw()
 
 cutoff.eff.a3
-
-
-# plot both together side by side
-# png(paste0(repo.figs, "fig_a3_volcEffect_cutoff.png"),
-#     units = "in", height = 4, width = 10, res = 600)
-
-cutoff.volc.a3 | cutoff.eff.a3
-
-# dev.off()
 
 ########################### ALDEx3: gamma only plots ###########################
 
@@ -211,12 +202,21 @@ gamma.eff.a3 <- ggplot(data = plot.a3.ns, aes(x = estimate, y = std.error))+
 
 gamma.eff.a3
 
+############################ final figures: ALDEx3 ############################
 
-# plot both together side by side
-# png(paste0(repo.figs, "fig_a3_volcEffect_gamma.png"),
+# plot both volcano plots together side by side
+# png(paste0(repo.figs, "fig_a3_volcEffect_gamma_v.png"),
 #     units = "in", height = 4, width = 10, res = 600)
 
-gamma.volc.a3 | gamma.eff.a3
+cutoff.volc.a3 | gamma.volc.a3
+
+# dev.off()
+
+# plot both effect plots together side by side
+# png(paste0(repo.figs, "fig_a3_volcEffect_gamma_e.png"),
+#     units = "in", height = 4, width = 10, res = 600)
+
+cutoff.eff.a3 | gamma.eff.a3
 
 # dev.off()
 
@@ -304,15 +304,6 @@ cutoff.eff.a2 <- ggplot(data = plot.a2.ns, aes(x = diff.btw, y = diff.win))+
 
 cutoff.eff.a2
 
-
-# plot both together side by side
-# png(paste0(repo.figs, "fig_a2_volcEffect_cutoff.png"),
-#     units = "in", height = 4, width = 10, res = 600)
-
-cutoff.volc.a2 | cutoff.eff.a2
-
-# dev.off()
-
 ########################### ALDEx2: gamma only plots ###########################
 
 # volcano plot
@@ -352,11 +343,20 @@ gamma.eff.a2 <- ggplot(data = plot.a2.ns, aes(x = diff.btw, y = diff.win))+
 
 gamma.eff.a2
 
+############################ final figures: ALDEx2 ############################
 
-# plot both together side by side
-# png(paste0(repo.figs, "fig_a2_volcEffect_gamma.png"),
+# plot both volcano plots together side by side
+# png(paste0(repo.figs, "fig_a2_volcEffect_gamma_v.png"),
 #     units = "in", height = 4, width = 10, res = 600)
 
-gamma.volc.a2 | gamma.eff.a2
+cutoff.volc.a2 | gamma.volc.a2
+
+# dev.off()
+
+
+# png(paste0(repo.figs, "fig_a2_volcEffect_gamma_e.png"),
+#     units = "in", height = 4, width = 10, res = 600)
+
+cutoff.eff.a2 | gamma.eff.a2
 
 # dev.off()
