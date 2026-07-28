@@ -8,9 +8,13 @@ Figure 2 Sensitivity is reduced when adding increasing amounts of scale uncertai
    - Produced from 'fig_tprfdr_truePositiveRate.png'
    - Manually created legend above figure: coloured, dashed lines indicating ALDEx2/3 and black/dark grey/light grey for other tools; numbers with coloured, dashed lines indicating gamma value
 
-Figure 3 Accounting for scale uncertainty reduces the total number of features identified as differentially expressed:
-   - Produced from 'fig_volcanoPlotsALDEx.png' and 'fig_effectPlotsALDEx.png'
+Figure 3 ALDEx3 scale models achieve the same result as a dual P-value/fold-change cutoff without inflating the FDR:
+   - Produced from 'fig_a3_volcEffect_v.png' and 'fig_a3_volcEffect_e.png'
    - Added text boxes indicating panels A, B, C, and D
+   - Added grey boxes to obscure placeholder titles in the grey strip panels above each plot
+   - Added text boxes for plot titles corresponding to what each plot shows
+   - Added white boxes to obscure x and y axis titles where appropriate
+   - Added white box behind figure so legend area of top plot is not transparent
 
 Figure 4 ALDEx3 requires a lower difference between groups to identify differentially expressed genes compared to ALDEx2:
    - Produced from 'fig_densityStripchart.png'
@@ -23,27 +27,35 @@ Supplementary Figure S1 False-discovery rates for all datasets tested:
    - Produced from 'supplFig_falseDiscoveryRate.png'
    - Manually created legend above figure: coloured, dashed lines indicating ALDEx2/3 and black/dark grey/light grey for other tools; numbers with coloured, dashed lines indicating gamma value
 
-Supplementary Figure S2 True-positive rates for all datasets tested:
-   - Produced from 'supplFig_truePositiveRate.png'
-   - Manually created legend above figure: coloured, dashed lines indicating ALDEx2/3 and black/dark grey/light grey for other tools; numbers with coloured, dashed lines indicating gamma value
-
-Supplementary Figure S3 Positive predictive values for all datasets tested:
+Supplementary Figure S2 Positive predictive values for all datasets tested:
    - Produced from 'supplFig_positivePredictiveValue.png'
    - Manually created legend above figure: coloured, dashed lines indicating ALDEx2/3 and black/dark grey/light grey for other tools; numbers with coloured, dashed lines indicating gamma value
 
-Supplementary Figure S4 Features from single-cell and metatranscriptome datasets have a larger dispersion compared to bulk RNA-seq data:
+Supplementary Figure S3 True-positive rates for all datasets tested:
+   - Produced from 'supplFig_truePositiveRate.png'
+   - Manually created legend above figure: coloured, dashed lines indicating ALDEx2/3 and black/dark grey/light grey for other tools; numbers with coloured, dashed lines indicating gamma value
+
+Supplementary Figure S4 ALDEx2 scale models achieve the same result as a dual P-value/fold-change cutoff without inflating the FDR:
+   - Produced from 'fig_a2_volcEffect_v.png' and 'fig_a2_volcEffect_e.png'
+   - Added text boxes indicating panels A, B, C, and D
+   - Added grey boxes to obscure placeholder titles in the grey strip panels above each plot
+   - Added text boxes for plot titles corresponding to what each plot shows
+   - Added white boxes to obscure x and y axis titles where appropriate
+   - Added white box behind figure so legend area of top plot is not transparent
+
+Supplementary Figure S5 Features from single-cell and metatranscriptome datasets have a larger dispersion compared to bulk RNA-seq data:
    - Produced from 'supplFig_dispersionAbundance.png' and 'supplFig_dispersionAbundance_legend.png'
    - Clipped coloured data points from legend of 'supplFig_dispersionAbundance_legend.png' and added corresponding text boxes indicating dataset
    - Added white box to obscure original x axis text labels for right-hand side density plot and replaced with text boxes containing smaller sized labels
 
-Supplementary Figure S5 ALDEx3 returns a tighter distribution of minimum log-difference values required for significance across all datasets:
+Supplementary Figure S6 ALDEx3 returns a tighter distribution of minimum log-difference values required for significance across all datasets:
    - Produced from 'supFig_densityPlotsALDEx_otherDatasets.png'
    - Manually created legend above figure: coloured, dashed lines indicating ALDEx2/3 and black/dark grey/light grey for other tools; numbers with coloured, dashed lines indicating gamma value
 
-Supplementary Figure S6 Boundaries between features reported as differentially expressed at different gamma values are curved:
+Supplementary Figure S7 Boundaries between features reported as differentially expressed at different gamma values are curved:
    - Produced from 'supplFig_unpermutedDA_ALDExBoth.png'
    - No edits at all
 
-Supplementary Figure S7 Significant differences in PTEN expression are driven by a few outlier samples:
+Supplementary Figure S8 Significant differences in PTEN expression are driven by a few outlier samples:
    - Produced from 'supplFig_unpermuted_PTEN.png'
    - Cropped figure to remove R-produced legend and created new legend from scratch
