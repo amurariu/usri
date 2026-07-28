@@ -1,0 +1,612 @@
+\begin{thebibliography}{10}
+
+\bibitem{malla_exploring_2019}
+Malla MA, Dubey A, Kumar A, Yadav S, Hashem A, Abd~Allah EF.
+\newblock Exploring the human microbiome: the potential future role of
+  next-generation sequencing in disease diagnosis and treatment.
+\newblock Frontiers in Immunology. 2019;9:2868.
+\newblock \href {http://dx.doi.org/10.3389/fimmu.2018.02868}
+  {doi:10.3389/fimmu.2018.02868}.
+
+\bibitem{Montgomery:2022aa}
+Montgomery SB, Bernstein JA, Wheeler MT.
+\newblock Toward transcriptomics as a primary tool for rare disease
+  investigation.
+\newblock Cold Spring Harbour Molecular Case Studies. 2022;8(2):a006198.
+\newblock \href {http://dx.doi.org/10.1101/mcs.a006198}
+  {doi:10.1101/mcs.a006198}.
+
+\bibitem{johnson_evaluation_2019}
+Johnson JS, Spakowicz DJ, Hong BY, Petersen LM, Demkowicz P, Chen L, et~al.
+\newblock Evaluation of {16S} {rRNA} gene sequencing for species and
+  strain-level microbiome analysis.
+\newblock Nature Communications. 2019;10(1):5029.
+\newblock \href {http://dx.doi.org/10.1038/s41467-019-13036-1}
+  {doi:10.1038/s41467-019-13036-1}.
+
+\bibitem{vancuren_variant_2020}
+Vancuren SJ, Dos~Santos SJ, Hill JE, Team MMLP.
+\newblock Variant calling for cpn60 barcode sequence-based microbiome
+  profiling.
+\newblock PLoS One. 2020;15(7):e0235682.
+\newblock \href {http://dx.doi.org/10.1371/journal.pone.0235682}
+  {doi:10.1371/journal.pone.0235682}.
+
+\bibitem{ogier_rpob_2019}
+Ogier JC, Pag{\`e}s S, Galan M, Barret M, Gaudriault S.
+\newblock {rpoB}, a promising marker for analyzing the diversity of bacterial
+  communities by amplicon sequencing.
+\newblock BMC Microbiology. 2019;19(1):171.
+\newblock \href {http://dx.doi.org/10.1186/s12866-019-1546-z}
+  {doi:10.1186/s12866-019-1546-z}.
+
+\bibitem{quince_shotgun_2017}
+Quince C, Walker AW, Simpson JT, Loman NJ, Segata N.
+\newblock Shotgun metagenomics, from sampling to analysis.
+\newblock Nature Biotechnology. 2017;35(9):833-44.
+\newblock \href {http://dx.doi.org/10.1038/nbt.3935} {doi:10.1038/nbt.3935}.
+
+\bibitem{gate_clonally_2020}
+Gate D, Saligrama N, Leventhal O, Yang AC, Unger MS, Middeldorp J, et~al.
+\newblock Clonally expanded {CD8} {T} cells patrol the cerebrospinal fluid in
+  {Alzheimer}'s disease.
+\newblock Nature. 2020;577(7790):399-404.
+\newblock \href {http://dx.doi.org/10.1038/s41586-019-1895-7}
+  {doi:10.1038/s41586-019-1895-7}.
+
+\bibitem{jovic_single_2022}
+Jovic D, Liang X, Zeng H, Lin L, Xu F, Luo Y.
+\newblock Single-cell {RNA} sequencing technologies and applications: A brief
+  overview.
+\newblock Clinical and Translational Medicine. 2022;12(3):e694.
+\newblock \href {http://dx.doi.org/10.1002/ctm2.694} {doi:10.1002/ctm2.694}.
+
+\bibitem{france_insight_2022}
+France MT, Fu L, Rutt L, Yang H, Humphrys MS, Narina S, et~al.
+\newblock Insight into the ecology of vaginal bacteria through integrative
+  analyses of metagenomic and metatranscriptomic data.
+\newblock Genome Biology. 2022;23(1):66.
+\newblock \href {http://dx.doi.org/10.1186/s13059-022-02635-9}
+  {doi:10.1186/s13059-022-02635-9}.
+
+\bibitem{Quinn:2019aa}
+Quinn TP, Erb I, Gloor G, Notredame C, Richardson MF, Crowley TM.
+\newblock A field guide for the compositional analysis of any-omics data.
+\newblock GigaScience. 2019;8(9):1-14.
+\newblock \href {http://dx.doi.org/10.1093/gigascience/giz107}
+  {doi:10.1093/gigascience/giz107}.
+
+\bibitem{liu_practical_2021}
+Liu YX, Qin Y, Chen T, Lu M, Qian X, Guo X, et~al.
+\newblock A practical guide to amplicon and metagenomic analysis of microbiome
+  data.
+\newblock Protein \& Cell. 2021;12(5):315-30.
+\newblock \href {http://dx.doi.org/10.1007/s13238-020-00724-8}
+  {doi:10.1007/s13238-020-00724-8}.
+
+\bibitem{gloor_its_2016}
+Gloor GB, Wu JR, Pawlowsky-Glahn V, Egozcue JJ.
+\newblock It's all relative: analyzing microbiome data as compositions.
+\newblock Annals of Epidemiology. 2016;26(5):322-9.
+\newblock \href {http://dx.doi.org/10.1016/j.annepidem.2016.03.003}
+  {doi:10.1016/j.annepidem.2016.03.003}.
+
+\bibitem{vandeputte_quantitative_2017}
+Vandeputte D, Kathagen G, D'hoe K, Vieira-Silva S, Valles-Colomer M, Sabino J,
+  et~al.
+\newblock Quantitative microbiome profiling links gut community variation to
+  microbial load.
+\newblock Nature. 2017;551(7681):507-11.
+\newblock \href {http://dx.doi.org/10.1038/nature24460}
+  {doi:10.1038/nature24460}.
+
+\bibitem{gloor_compositional_2016}
+Gloor GB, Reid G.
+\newblock Compositional analysis: a valid approach to analyze microbiome
+  high-throughput sequencing data.
+\newblock Canadian Journal of Microbiology. 2016;62(8):692-703.
+\newblock \href {http://dx.doi.org/10.1139/cjm-2015-0821}
+  {doi:10.1139/cjm-2015-0821}.
+
+\bibitem{lovell_proportions_2011}
+Lovell D, M{\"u}ller W, Taylor J, Zwart A, Helliwell C.
+\newblock Proportions, percentages, PPM: do the molecular biosciences treat
+  compositional data right?
+\newblock In: Compositional {Data} {Analysis}. John Wiley \& Sons, Ltd; 2011.
+  p. 191-207.
+
+\bibitem{weiss_normalization_2017}
+Weiss S, Xu ZZ, Peddada S, Amir A, Bittinger K, Gonzalez A, et~al.
+\newblock Normalization and microbial differential abundance strategies depend
+  upon data characteristics.
+\newblock Microbiome. 2017;5(1):27.
+\newblock \href {http://dx.doi.org/10.1186/s40168-017-0237-y}
+  {doi:10.1186/s40168-017-0237-y}.
+
+\bibitem{nixon_scale_2024}
+Nixon MP, Letourneau J, David LA, Lazar NA, Mukherjee S, Silverman JD. Scale
+  reliant inference; 2024.
+\newblock \href {http://dx.doi.org/10.48550/arXiv.2201.03616}
+  {doi:10.48550/arXiv.2201.03616}.
+
+\bibitem{nixon_incorporating_2025}
+Nixon MP, Gloor GB, Silverman JD.
+\newblock Incorporating scale uncertainty in microbiome and gene expression
+  analysis as an extension of normalization.
+\newblock Genome Biology. 2025;26(1):139.
+\newblock \href {http://dx.doi.org/10.1186/s13059-025-03609-3}
+  {doi:10.1186/s13059-025-03609-3}.
+
+\bibitem{gloor_explicit_2025}
+Gloor GB, Nixon MP, Silverman JD.
+\newblock Explicit scale simulation for analysis of {RNA}-sequencing count data
+  with {ALDEx2}.
+\newblock NAR Genomics and Bioinformatics. 2025;7(3):lqaf108.
+\newblock \href {http://dx.doi.org/10.1093/nargab/lqaf108}
+  {doi:10.1093/nargab/lqaf108}.
+
+\bibitem{aitchison_statistical_1986}
+Aitchison J.
+\newblock The statistical analysis of compositional data.
+\newblock Chapman \& Hall; 1986.
+
+\bibitem{hughes_rarefaction_2005}
+Hughes JB, Hellmann JJ.
+\newblock The application of rarefaction techniques to molecular inventories of
+  microbial diversity.
+\newblock Methods in Enzymology. 2005;397:292-308.
+\newblock \href {http://dx.doi.org/10.1016/S0076-6879(05)97017-1}
+  {doi:10.1016/S0076-6879(05)97017-1}.
+
+\bibitem{robinson_scaling_2010}
+Robinson MD, Oshlack A.
+\newblock A scaling normalization method for differential expression analysis
+  of {RNA}-seq data.
+\newblock Genome Biology. 2010;11(3):R25.
+\newblock \href {http://dx.doi.org/10.1186/gb-2010-11-3-r25}
+  {doi:10.1186/gb-2010-11-3-r25}.
+
+\bibitem{vandesompele_accurate_2002}
+Vandesompele J, De~Preter K, Pattyn F, Poppe B, Van~Roy N, Speleman F.
+\newblock Accurate normalization of real-time quantitative {RT}-{PCR} data by
+  geometric averaging of multiple internal control genes.
+\newblock Genome Biology. 2002;3(7):research0034.1.
+\newblock \href {http://dx.doi.org/10.1186/gb-2002-3-7-research0034}
+  {doi:10.1186/gb-2002-3-7-research0034}.
+
+\bibitem{anders_2010_differential}
+Anders S, Huber W.
+\newblock Differential expression analysis for sequence count data.
+\newblock Genome Biology. 2010;11(10):R106.
+\newblock \href {http://dx.doi.org/10.1186/gb-2010-11-10-r106}
+  {doi:10.1186/gb-2010-11-10-r106}.
+
+\bibitem{li_exaggerated_2022}
+Li Y, Ge X, Peng F, Li W, Li JJ.
+\newblock Exaggerated false positives by popular differential expression
+  methods when analyzing human population samples.
+\newblock Genome Biology. 2022;23(1):79.
+\newblock \href {http://dx.doi.org/10.1186/s13059-022-02648-4}
+  {doi:10.1186/s13059-022-02648-4}.
+
+\bibitem{konnaris_uncertainty_2025}
+Konnaris MA, Saxena M, Lazar N, Silverman JD. Uncertainty modeling outperforms
+  machine learning for microbiome data analysis; 2025.
+\newblock \href {http://dx.doi.org/10.1101/2025.09.12.675956}
+  {doi:10.1101/2025.09.12.675956}.
+
+\bibitem{Cui:2003aa}
+Cui X, Churchill GA.
+\newblock Statistical tests for differential expression in cDNA microarray
+  experiments.
+\newblock Genome Biol. 2003;4(4):210.1  210.10.
+\newblock \href {http://dx.doi.org/10.1186/gb-2003-4-4-210}
+  {doi:10.1186/gb-2003-4-4-210}.
+
+\bibitem{Soneson:2013}
+Soneson C, Delorenzi M.
+\newblock A comparison of methods for differential expression analysis of
+  {RNA-seq} data.
+\newblock BMC Bioinformatics. 2013;14:91.
+\newblock \href {http://dx.doi.org/10.1186/1471-2105-14-91}
+  {doi:10.1186/1471-2105-14-91}.
+
+\bibitem{hawinkel2017}
+Hawinkel S, Mattiello F, Bijnens L, Thas O.
+\newblock A broken promise: microbiome differential abundance methods do not
+  control the false discovery rate.
+\newblock Briefings in Bioinformatics. 2019;20:210-21.
+\newblock \href {http://dx.doi.org/10.1093/bib/bbx104}
+  {doi:10.1093/bib/bbx104}.
+
+\bibitem{Nearing:2022aa}
+Nearing JT, Douglas GM, Hayes MG, MacDonald J, Desai DK, Allward N, et~al.
+\newblock Microbiome differential abundance methods produce different results
+  across 38 datasets.
+\newblock Nature Communications. 2022;13(1):342.
+\newblock \href {http://dx.doi.org/10.1038/s41467-022-28034-z}
+  {doi:10.1038/s41467-022-28034-z}.
+
+\bibitem{schurch_how_2016}
+Schurch NJ, Schofield P, Gierli{\'n}ski M, Cole C, Sherstnev A, Singh V, et~al.
+\newblock How many biological replicates are needed in an {RNA}-seq experiment
+  and which differential expression tool should you use?
+\newblock RNA. 2016;22(6):839-51.
+\newblock \href {http://dx.doi.org/10.1261/rna.053959.115}
+  {doi:10.1261/rna.053959.115}.
+
+\bibitem{witten2007comparison}
+Witten D, Tibshirani R.
+\newblock A comparison of fold-change and the t-statistic for microarray data
+  analysis.
+\newblock Analysis. 2007;1776:58-85.
+
+\bibitem{Zhang:2009aa}
+Zhang S, Cao J.
+\newblock A close examination of double filtering with fold change and T test
+  in microarray analysis.
+\newblock BMC Bioinformatics. 2009;10:402.
+\newblock \href {http://dx.doi.org/10.1186/1471-2105-10-402}
+  {doi:10.1186/1471-2105-10-402}.
+
+\bibitem{ebrahimpoor_inflated_2021}
+Ebrahimpoor M, Goeman JJ.
+\newblock Inflated false discovery rate due to volcano plots: problem and
+  solutions.
+\newblock Briefings in Bioinformatics. 2021;22(5):bbab053.
+\newblock \href {http://dx.doi.org/10.1093/bib/bbab053}
+  {doi:10.1093/bib/bbab053}.
+
+\bibitem{benjamini:1995}
+Benjamini Y, Hochberg Y.
+\newblock Controlling the false discovery rate: a practical and powerful
+  approach to multiple testing.
+\newblock Journal of the Royal Statistical Society Series B (Methodological).
+  1995;57(1):289-300.
+
+\bibitem{Goeman:2014aa}
+Goeman JJ, Solari A.
+\newblock Multiple hypothesis testing in genomics.
+\newblock Statistics in Medicine. 2014;33(11):1946-78.
+\newblock \href {http://dx.doi.org/10.1002/sim.6082} {doi:10.1002/sim.6082}.
+
+\bibitem{love_moderated_2014}
+Love MI, Huber W, Anders S.
+\newblock Moderated estimation of fold change and dispersion for {RNA}-seq data
+  with {DESeq2}.
+\newblock Genome Biology. 2014;15(12):550.
+\newblock \href {http://dx.doi.org/10.1186/s13059-014-0550-8}
+  {doi:10.1186/s13059-014-0550-8}.
+
+\bibitem{ritchie_limma_2015}
+Ritchie ME, Phipson B, Wu D, Hu Y, Law CW, Shi W, et~al.
+\newblock Limma powers differential expression analyses for {RNA}-sequencing
+  and microarray studies.
+\newblock Nucleic Acids Research. 2015;43(7):e47.
+\newblock \href {http://dx.doi.org/10.1093/nar/gkv007}
+  {doi:10.1093/nar/gkv007}.
+
+\bibitem{regueira-iglesias_critical_2023}
+Regueira-Iglesias A, Balsa-Castro C, Blanco-Pintos T, Tomás I.
+\newblock Critical review of {16S} {rRNA} gene sequencing workflow in
+  microbiome studies: {From} primer selection to advanced data analysis.
+\newblock Molecular Oral Microbiology. 2023;38(5):347-99.
+\newblock \href {http://dx.doi.org/10.1111/omi.12434} {doi:10.1111/omi.12434}.
+
+\bibitem{yang_comprehensive_2022}
+Yang L, Chen J.
+\newblock A comprehensive evaluation of microbial differential abundance
+  analysis methods: current status and potential solutions.
+\newblock Microbiome. 2022;10(1):130.
+\newblock \href {http://dx.doi.org/10.1186/s40168-022-01320-0}
+  {doi:10.1186/s40168-022-01320-0}.
+
+\bibitem{squair_confronting_2021}
+Squair JW, Gautier M, Kathe C, Anderson MA, James ND, Hutson TH, et~al.
+\newblock Confronting false discoveries in single-cell differential expression.
+\newblock Nature Communications. 2021;12(1):5692.
+\newblock \href {http://dx.doi.org/10.1038/s41467-021-25960-2}
+  {doi:10.1038/s41467-021-25960-2}.
+
+\bibitem{junttila_benchmarking_2022}
+Junttila S, Smolander J, Elo LL.
+\newblock Benchmarking methods for detecting differential states between
+  conditions from multi-subject single-cell {RNA}-seq data.
+\newblock Briefings in Bioinformatics. 2022;23(5):bbac286.
+\newblock \href {http://dx.doi.org/10.1093/bib/bbac286}
+  {doi:10.1093/bib/bbac286}.
+
+\bibitem{ALDEx3}
+Silverman J, Gloor G, McGovern K. ALDEx3: Linear Models for Sequence Count
+  Data; 2026.
+\newblock R package version 1.0.2.
+\newblock Available from: \url{https://CRAN.R-project.org/package=ALDEx3}.
+  \href {http://dx.doi.org/https://doi.org/10.32614/CRAN.package.ALDEx3}
+  {doi:https://doi.org/10.32614/CRAN.package.ALDEx3}.
+
+\bibitem{fernandes:2014}
+Fernandes AD, Reid JN, Macklaim JM, McMurrough TA, Edgell DR, Gloor GB.
+\newblock Unifying the analysis of high-throughput sequencing datasets:
+  characterizing {RNA}-seq, 16{S} r{RNA} gene sequencing and selective growth
+  experiments by compositional data analysis.
+\newblock Microbiome. 2014;2:15.1-15.13.
+\newblock \href {http://dx.doi.org/10.1186/2049-2618-2-15}
+  {doi:10.1186/2049-2618-2-15}.
+
+\bibitem{mcgovern_addressing_2023}
+McGovern KC, Nixon MP, Silverman JD.
+\newblock Addressing erroneous scale assumptions in microbe and gene set
+  enrichment analysis.
+\newblock PLOS Computational Biology. 2023;19(11):e1011659.
+\newblock \href {http://dx.doi.org/10.1371/journal.pcbi.1011659}
+  {doi:10.1371/journal.pcbi.1011659}.
+
+\bibitem{rao_multi-kingdom_2021}
+Rao C, Coyte KZ, Bainter W, Geha RS, Martin CR, Rakoff-Nahoum S.
+\newblock Multi-kingdom ecological drivers of microbiota assembly in preterm
+  infants.
+\newblock Nature. 2021;591(7851):633-8.
+\newblock \href {http://dx.doi.org/10.1038/s41586-021-03241-8}
+  {doi:10.1038/s41586-021-03241-8}.
+
+\bibitem{baker_external_2005}
+Baker SC, Bauer SR, Beyer RP, Brenton JD, Bromley B, Burrill J, et~al.
+\newblock The {External} {RNA} {Controls} {Consortium}: a progress report.
+\newblock Nature Methods. 2005;2(10):731-4.
+\newblock \href {http://dx.doi.org/10.1038/nmeth1005-731}
+  {doi:10.1038/nmeth1005-731}.
+
+\bibitem{ding_normalization_2015}
+Ding B, Zheng L, Zhu Y, Li N, Jia H, Ai R, et~al.
+\newblock Normalization and noise reduction for single cell {RNA}-seq
+  experiments.
+\newblock Bioinformatics. 2015;31(13):2225-7.
+\newblock \href {http://dx.doi.org/10.1093/bioinformatics/btv122}
+  {doi:10.1093/bioinformatics/btv122}.
+
+\bibitem{lin_towards_2019}
+Lin Y, Gifford S, Ducklow H, Schofield O, Cassar N.
+\newblock Towards {Quantitative} {Microbiome} {Community} {Profiling} {Using}
+  {Internal} {Standards}.
+\newblock Applied and Environmental Microbiology. 2019;85(5):e02634-18.
+\newblock \href {http://dx.doi.org/10.1128/AEM.02634-18}
+  {doi:10.1128/AEM.02634-18}.
+
+\bibitem{barlow_quantitative_2020}
+Barlow JT, Bogatyrev SR, Ismagilov RF.
+\newblock A quantitative sequencing framework for absolute abundance
+  measurements of mucosal and lumenal microbial communities.
+\newblock Nature Communications. 2020;11:2590.
+\newblock \href {http://dx.doi.org/10.1038/s41467-020-16224-6}
+  {doi:10.1038/s41467-020-16224-6}.
+
+\bibitem{risso_normalization_2014}
+Risso D, Ngai J, Speed TP, Dudoit S.
+\newblock Normalization of {RNA}-seq data using factor analysis of control
+  genes or samples.
+\newblock Nature Biotechnology. 2014;32(9):896-902.
+\newblock \href {http://dx.doi.org/10.1038/nbt.2931} {doi:10.1038/nbt.2931}.
+
+\bibitem{nishijima_fecal_2025}
+Nishijima S, Stankevic E, Aasmets O, Schmidt TSB, Nagata N, Keller MI, et~al.
+\newblock Fecal microbial load is a major determinant of gut microbiome
+  variation and a confounder for disease associations.
+\newblock Cell. 2025;188(1):222-36.e15.
+\newblock \href {http://dx.doi.org/10.1016/j.cell.2024.10.022}
+  {doi:10.1016/j.cell.2024.10.022}.
+
+\bibitem{gierlinski_statistical_2015}
+Gierli{\'n}ski M, Cole C, Schofield P, Schurch NJ, Sherstnev A, Singh V, et~al.
+\newblock Statistical models for {RNA}-seq data derived from a two-condition
+  48-replicate experiment.
+\newblock Bioinformatics. 2015;31(22):3625-30.
+\newblock \href {http://dx.doi.org/10.1093/bioinformatics/btv425}
+  {doi:10.1093/bioinformatics/btv425}.
+
+\bibitem{skinnider_evaluating_2019}
+Skinnider MA, Squair JW, Foster LJ.
+\newblock Evaluating measures of association for single-cell transcriptomics.
+\newblock Nature Methods. 2019;16(5):381-6.
+\newblock \href {http://dx.doi.org/10.1038/s41592-019-0372-4}
+  {doi:10.1038/s41592-019-0372-4}.
+
+\bibitem{kang_multiplexed_2018}
+Kang HM, Subramaniam M, Targ S, Nguyen M, Maliskova L, McCarthy E, et~al.
+\newblock Multiplexed droplet single-cell {RNA}-sequencing using natural
+  genetic variation.
+\newblock Nature Biotechnology. 2018;36(1):89-94.
+\newblock \href {http://dx.doi.org/10.1038/nbt.4042} {doi:10.1038/nbt.4042}.
+
+\bibitem{dos_santos_vaginal_2024}
+Dos~Santos SJ, Copeland C, Macklaim JM, Reid G, Gloor GB.
+\newblock Vaginal metatranscriptome meta-analysis reveals functional {BV}
+  subgroups and novel colonisation strategies.
+\newblock Microbiome. 2024;12:271.
+\newblock \href {http://dx.doi.org/10.1186/s40168-024-01992-w}
+  {doi:10.1186/s40168-024-01992-w}.
+
+\bibitem{bian_gut_2017}
+Bian G, Gloor GB, Gong A, Jia C, Zhang W, Hu J, et~al.
+\newblock The gut microbiota of healthy aged {Chinese} is similar to that of
+  the healthy young.
+\newblock mSphere. 2017;2(5):e00327-17.
+\newblock \href {http://dx.doi.org/10.1128/msphere.00327-17}
+  {doi:10.1128/msphere.00327-17}.
+
+\bibitem{weinstein_cancer_2013}
+Weinstein JN, Collisson EA, Mills GB, Shaw KRM, Ozenberger BA, Ellrott K,
+  et~al.
+\newblock The cancer genome atlas pan-cancer analysis project.
+\newblock Nature Genetics. 2013;45(10):1113-20.
+\newblock \href {http://dx.doi.org/10.1038/ng.2764} {doi:10.1038/ng.2764}.
+
+\bibitem{li_supplement_2022}
+Li Y, Ge X. Processed datasets for differential expression analysis on
+  polulation-level RNA-seq data- version 6; 2022.
+\newblock \href {http://dx.doi.org/10.5281/zenodo.8320659}
+  {doi:10.5281/zenodo.8320659}.
+
+\bibitem{tcga_brca_2012}
+Koboldt DC, Fulton RS, McLellan MD, Schmidt H, Kalicki-Veizer J, McMichael JF,
+  et~al.
+\newblock Comprehensive molecular portraits of human breast tumours.
+\newblock Nature. 2012;490(7418):61-70.
+\newblock \href {http://dx.doi.org/10.1038/nature11412}
+  {doi:10.1038/nature11412}.
+
+\bibitem{tcga_brca_2015}
+Ciriello G, Gatza ML, Beck AH, Wilkerson MD, Rhie SK, Pastore A, et~al.
+\newblock Comprehensive molecular portraits of invasive lobular breast cancer.
+\newblock Cell. 2015;63(2):506-19.
+\newblock \href {http://dx.doi.org/10.1016/j.cell.2015.09.033}
+  {doi:10.1016/j.cell.2015.09.033}.
+
+\bibitem{tcga_kirc_2013}
+Creighton CJ, Morgan M, Gunaratne PH, Wheeler DA, Gibbs RA, Gordon~Robertson A,
+  et~al.
+\newblock Comprehensive molecular characterization of clear cell renal cell
+  carcinoma.
+\newblock Nature. 2013;499(7456):43-9.
+\newblock \href {http://dx.doi.org/10.1038/nature12222}
+  {doi:10.1038/nature12222}.
+
+\bibitem{tcga_lihc_2017}
+Ally A, Balasundaram M, Carlsen R, Chuah E, Clarke A, Dhalla N, et~al.
+\newblock Comprehensive and integrative genomic characterization of
+  hepatocellular carcinoma.
+\newblock Cell. 2017;169(7):1327-41.e23.
+\newblock \href {http://dx.doi.org/10.1016/j.cell.2017.05.046}
+  {doi:10.1016/j.cell.2017.05.046}.
+
+\bibitem{tcga_luad_2016}
+Campbell JD, Alexandrov A, Kim J, Wala J, Berger AH, Pedamallu CS, et~al.
+\newblock Distinct patterns of somatic genome alterations in lung
+  adenocarcinomas and squamous cell carcinomas.
+\newblock Nature Genetics. 2016;48(6):607-16.
+\newblock \href {http://dx.doi.org/10.1038/ng.3564} {doi:10.1038/ng.3564}.
+
+\bibitem{tcga_prad_2015}
+Abeshouse A, Ahn J, Akbani R, Ally A, Amin S, Andry CD, et~al.
+\newblock The molecular taxonomy of primary prostate cancer.
+\newblock Cell. 2015;163(4):1011-25.
+\newblock \href {http://dx.doi.org/10.1016/j.cell.2015.10.025}
+  {doi:10.1016/j.cell.2015.10.025}.
+
+\bibitem{tcga_thca_2014}
+Agrawal N, Akbani R, Aksoy BA, Ally A, Arachchi H, Asa SL, et~al.
+\newblock Integrated genomic characterization of papillary thyroid carcinoma.
+\newblock Cell. 2014;159(3):676-90.
+\newblock \href {http://dx.doi.org/10.1016/j.cell.2014.09.050}
+  {doi:10.1016/j.cell.2014.09.050}.
+
+\bibitem{robinson_edger_2010}
+Robinson MD, McCarthy DJ, Smyth GK.
+\newblock {edgeR}: a {Bioconductor} package for differential expression
+  analysis of digital gene expression data.
+\newblock Bioinformatics. 2010;26(1):139-40.
+\newblock \href {http://dx.doi.org/10.1093/bioinformatics/btp616}
+  {doi:10.1093/bioinformatics/btp616}.
+
+\bibitem{stuart_comprehensive_2019}
+Stuart T, Butler A, Hoffman P, Hafemeister C, Papalexi E, Mauck WM, et~al.
+\newblock Comprehensive {Integration} of {Single}-{Cell} {Data}.
+\newblock Cell. 2019;177(7):1888-902.e21.
+\newblock \href {http://dx.doi.org/10.1016/j.cell.2019.05.031}
+  {doi:10.1016/j.cell.2019.05.031}.
+
+\bibitem{gloor_codaseq}
+Gloor GB. CoDaSeq: Compositional Data Analysis of High Throughput Sequencing;
+  2025.
+\newblock Available from: \url{https://github.com/ggloor/CoDaSeq}.
+
+\bibitem{gerard_data-based_2020}
+Gerard D.
+\newblock Data-based {RNA}-seq simulations by binomial thinning.
+\newblock BMC Bioinformatics. 2020;21(1):206.
+\newblock \href {http://dx.doi.org/10.1186/s12859-020-3450-9}
+  {doi:10.1186/s12859-020-3450-9}.
+
+\bibitem{r_core_2025}
+{R Core Team}. R: A Language and Environment for Statistical Computing. Vienna,
+  Austria; 2025.
+\newblock Available from: \url{https://www.R-project.org/}.
+
+\bibitem{gloor_microbiome_2017}
+Gloor GB, Macklaim JM, Pawlowsky-Glahn V, Egozcue JJ.
+\newblock Microbiome datasets are compositional and this is not optional.
+\newblock Frontiers in Microbiology. 2017;8:2224.
+\newblock \href {http://dx.doi.org/10.3389/fmicb.2017.02224}
+  {doi:10.3389/fmicb.2017.02224}.
+
+\bibitem{fernandes:2013}
+Fernandes AD, Macklaim JM, Linn TG, Reid G, Gloor GB.
+\newblock {ANOVA}-like differential expression (ALDEx) analysis for mixed
+  population {RNA}-Seq.
+\newblock PLoS One. 2013;8(7):e67019.
+\newblock \href {http://dx.doi.org/10.1371/journal.pone.0067019}
+  {doi:10.1371/journal.pone.0067019}.
+
+\bibitem{wickham_ggplot_2016}
+Wickham H.
+\newblock ggplot2: Elegant Graphics for Data Analysis.
+\newblock Springer-Verlag New York; 2016.
+\newblock Available from: \url{https://ggplot2.tidyverse.org}.
+
+\bibitem{gloor:effect}
+Gloor G, Macklaim J, Fernandes A.
+\newblock Displaying variation in large datasets: plotting a visual summary of
+  effect sizes.
+\newblock Journal of Computational and Graphical Statistics. 2016;25(3C):971-9.
+\newblock \href {http://dx.doi.org/10.1080/10618600.2015.1131161}
+  {doi:10.1080/10618600.2015.1131161}.
+
+\bibitem{repana_network_2019}
+Repana D, Nulsen J, Dressler L, Bortolomeazzi M, Venkata SK, Tourna A, et~al.
+\newblock The {Network} of {Cancer} {Genes} ({NCG}): a comprehensive catalogue
+  of known and candidate cancer genes from cancer sequencing screens.
+\newblock Genome Biology. 2019;20:1.
+\newblock \href {http://dx.doi.org/10.1186/s13059-018-1612-0}
+  {doi:10.1186/s13059-018-1612-0}.
+
+\bibitem{mcgovern_replacing_2025}
+McGovern KC, Silverman JD.
+\newblock Replacing normalizations with interval assumptions enhances
+  differential expression and differential abundance analyses.
+\newblock BMC Bioinformatics. 2025;26(1):164.
+\newblock \href {http://dx.doi.org/10.1186/s12859-025-06177-2}
+  {doi:10.1186/s12859-025-06177-2}.
+
+\bibitem{murphy_balanced_2022}
+Murphy AE, Skene NG.
+\newblock A balanced measure shows superior performance of pseudobulk methods
+  in single-cell {RNA}-sequencing analysis.
+\newblock Nature Communications. 2022;13(1):7851.
+\newblock \href {http://dx.doi.org/10.1038/s41467-022-35519-4}
+  {doi:10.1038/s41467-022-35519-4}.
+
+\bibitem{bourgon_independent_2010}
+Bourgon R, Gentleman R, Huber W.
+\newblock Independent filtering increases detection power for high-throughput
+  experiments.
+\newblock Proceedings of the National Academy of Sciences.
+  2010;107(21):9546-51.
+\newblock \href {http://dx.doi.org/10.1073/pnas.0914005107}
+  {doi:10.1073/pnas.0914005107}.
+
+\bibitem{dos_santos_incorporating_2026}
+Dos~Santos SJ, Gloor GB.
+\newblock Incorporating scale uncertainty into differential expression analyses
+  using {ALDEx2}.
+\newblock Current Protocols. 2026;6(2):e70307.
+\newblock \href {http://dx.doi.org/10.1002/cpz1.70307}
+  {doi:10.1002/cpz1.70307}.
+
+\bibitem{zozaya-hinchliffe_quantitative_2010}
+Zozaya-Hinchliffe M, Lillis R, Martin DH, Ferris MJ.
+\newblock Quantitative {PCR} assessments of bacterial species in women with and
+  without bacterial vaginosis.
+\newblock Journal of Clinical Microbiology. 2010;48(5):1812-9.
+\newblock \href {http://dx.doi.org/10.1128/JCM.00851-09}
+  {doi:10.1128/JCM.00851-09}.
+
+\end{thebibliography}
