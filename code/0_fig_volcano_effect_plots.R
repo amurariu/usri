@@ -346,7 +346,7 @@ gamma.eff.a2
 ############################ final figures: ALDEx2 ############################
 
 # plot both volcano plots together side by side
-# png(paste0(repo.figs, "fig_a2_volcEffect_gamma_v.png"),
+# png(paste0(repo.figs, "supplFig_a2_volcEffect_gamma_v.png"),
 #     units = "in", height = 4, width = 10, res = 600)
 
 cutoff.volc.a2 | gamma.volc.a2
@@ -354,7 +354,7 @@ cutoff.volc.a2 | gamma.volc.a2
 # dev.off()
 
 
-# png(paste0(repo.figs, "fig_a2_volcEffect_gamma_e.png"),
+# png(paste0(repo.figs, "supplFig_a2_volcEffect_gamma_e.png"),
 #     units = "in", height = 4, width = 10, res = 600)
 
 cutoff.eff.a2 | gamma.eff.a2

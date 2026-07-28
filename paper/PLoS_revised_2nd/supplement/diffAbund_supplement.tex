@@ -22,7 +22,7 @@
 \bibliographystyle{plos2025}
 
 
-\title{\textbf{Supplementary material for Dos Santos \textit{et al}. (2025)}}
+\title{\textbf{Supplementary material for Dos Santos \textit{et al}. (2026)}}
 
 \author[$\dagger$ ]{Scott J. Dos Santos}
 \author[$\dagger$ ]{Andreea C. Murariu}
@@ -32,7 +32,7 @@
 \affil[$\dagger$]{Equal contribution}
 \affil[*]{Corresponding author}
 
-\date{November 2025}
+\date{August 2026}
 
 %-----------------------
 % Begin document
@@ -51,6 +51,9 @@ False-discovery and true-positive rates for all datasets tested.
 
 \paragraph*{Fig. \ref{fig:supFigPPV_all}}
 Positive predictive values for all datasets tested.
+
+\paragraph*{Fig. \ref{fig:supFigVolcanoEffectA2}}
+ALDEx2 scale models achieve the same result as a dual \textit{P}-value/fold-change cutoff without inflating the FDR.
 
 \paragraph*{Table \ref{tab:supTabDensity}}
 Average minimum log differences required for a significant result with ALDEx2 and ALDEx3 for all datasets and \textgamma~values.
@@ -104,6 +107,14 @@ Genes dropped as scale uncertainty increases are largely unrelated to cancer dev
     \includegraphics[width = \linewidth]{supFig_PPV_all.png}
     \caption{\textbf{Positive predictive values for all datasets tested.} The positive predictive value (PPV) for all tool and dataset combinations was calculated separately for each 0.1 increment in the model difference between groups (i.e. the simulated or `true' log\textsubscript{2} fold-change between groups, as determined by binomial thinning). Each data point represents the PPV when considering dataset features with a simulated log-difference at or above the given x-axis threshold. Features were considered differentially abundant at a BH-adjusted \textit{P}-value of $<$0.05.}
     \label{fig:supFigPPV_all}
+\end{figure}
+\newpage
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = \linewidth]{supFig_volcanoEffect_a2.png}
+    \caption{\textbf{ALDEx2 scale models achieve the same result as a dual \textit{P}-value/fold-change cutoff without inflating the FDR.} A randomly selected analysis iteration of the PD1 immunotherapy dataset was used to create volcano plots (\textbf{A, B}) and effect plots (\textbf{C, D}) for ALDEx2 analyses. Each data point represents a feature from the scale-na\"ive analysis (\textgamma~= 0.001). Differentially expressed features are defined either by: a BH-adjusted \textit{P}-value threshold of $<$0.05 \textit{and} a fold-change cutoff of $\geq$1 (\textbf{A, B}); or a BH-adjusted \textit{P}-value threshold of $<$0.05 when \textgamma = 0.5 (\textbf{C, D}). Grey points indicate non-significant features. Coloured points indicate features which are significantly different between groups after applying different definitions of differential expression. Vertical dashed lines in \textbf{A-C} indicate a log$_2$ fold-change of 1; horizontal dashed lines indicate BH-adjusted \textit{P}-value $<$0.05. Grey dotted and dashed lines in \textbf{D} indicate approximate isarithms between non-significant and significant features when \textgamma{} = 0.001 and 0.5, respectively.}
+    \label{fig:supFigVolcanoEffectA2}
 \end{figure}
 \newpage
 
@@ -215,7 +226,7 @@ Genes dropped as scale uncertainty increases are largely unrelated to cancer dev
     \caption{\textbf{Significant differences in \textit{PTEN} expression are driven by a few outlier samples:} Expression of the tumour suppressor gene, \textit{PTEN}, in the Cancer Genome Atlas BRCA dataset is shown in histograms of read counts (\textbf{left}) and centred log-ratio (CLR) abundance values (\textbf{right}) calculated by ALDEx2. Bars are coloured by sample group. Bin width is 1,000 (reads) or 0.2 (CLR). The limited number of outlier samples in each group can clearly be seen at either end of the histograms, with most samples overlapping in the centre.}
     \label{fig:supFigPTEN}
 \end{figure}
-\newpage
+
 
 \bibliography{diffAbund_refs.bib}
 
