@@ -1,7 +1,7 @@
 % Template for PLoS
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL old_ms.tex   Thu May 28 09:46:33 2026
-%DIF ADD new_ms.tex   Thu Jul 30 10:30:13 2026
+%DIF ADD new_ms.tex   Thu Jul 30 13:51:04 2026
 % Version 3.7 Aug 2025
 %
 % % % % % % % % % % % % % % % % % % % % % %
@@ -616,7 +616,7 @@ The sensitivity and FDR tradeoffs of some of the most widely used RNA-seq analys
 \DIFdel{. ALDEx2 and }\DIFdelend \DIFaddbegin \DIFadd{; inspection of the raw input and normalised output confirmed it as an example of a gene where a few outlier samples drove the significant result. Second, many features have very small differences but minute BH-adjusted }\textit{\DIFadd{P}}\DIFadd{-values. These represent features with a very small difference between groups and very small dispersion and so are likely not to be biologically relevant. Indeed, these are the same features that are excluded with a dual L2FC cutoff and }\textit{\DIFadd{P}}\DIFadd{-value cutoff. Effectively, the ratio of the }\DIFaddend ALDEx3 \DIFdelbegin \DIFdel{have the lowest sensitivity overall, but also markedly lower FDR rates for all datasets. Note that high sensitivity is not itself useful if the majority of features are returned as significant; this situation is analogous to not being able to determine which runner won a race based on ribbons given out for participation alone. Notably, ALDEx3 provides the same functionality as its predecessor in terms of acknowledging biological scale during normalisation; however, it offers superior sensitivity at the same }\DIFdelend \DIFaddbegin \DIFadd{estimate to the standard error of the estimate (log-difference between groups : log-dispersion within groups for ALDEx2) is linked to statistical significance for any given feature. Increasing the }\DIFaddend degree of scale uncertainty \DIFdelbegin \DIFdel{while also controlling for false discoveries at any given L2FC and \textgamma~value .
 }\DIFdelend \DIFaddbegin \DIFadd{with a larger gamma value increases the threshold of this ratio required for a feature to be detected as statistically significant. Thus, the use of a scale model excludes both types of features that Ebrahimpoor }\textit{\DIFadd{et al}}\DIFadd{. \mbox{%DIFAUXCMD
 \cite{ebrahimpoor_inflated_2021} }\hskip0pt%DIFAUXCMD
-suggests are problematic, without depending on subsetting the }\textit{\DIFadd{P}}\DIFadd{-values prior to BH correction, which is known to be counter productive \mbox{%DIFAUXCMD
+suggests are problematic, without depending on subsetting the }\textit{\DIFadd{P}}\DIFadd{-values following BH correction, which is known to be counter productive \mbox{%DIFAUXCMD
 \cite{Goeman:2014aa, ebrahimpoor_inflated_2021}}\hskip0pt%DIFAUXCMD
 .
 }\DIFaddend 

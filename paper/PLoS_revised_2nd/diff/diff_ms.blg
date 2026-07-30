@@ -7,8 +7,6 @@ Reallocated global_strs (elt_size=200001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: diffAbund_refs.bib
-Warning--empty author and editor in nixon_scale_2024
-Warning--missing publisher in nixon_scale_2024
 Warning--empty author and editor in konnaris_uncertainty_2025
 Warning--missing publisher in konnaris_uncertainty_2025
 Warning--empty author and editor in ALDEx3
@@ -22,43 +20,43 @@ Warning--empty author and editor in r_core_2025
 Warning--missing publisher in r_core_2025
 You've used 81 entries,
             3507 wiz_defined-function locations,
-            1203 strings with 59212 characters,
-and the built_in function-call counts, 502819 in all, are:
-= -- 55976
+            1205 strings with 59254 characters,
+and the built_in function-call counts, 503343 in all, are:
+= -- 56066
 > -- 1999
 < -- 1077
 + -- 1457
 - -- 401
-* -- 50132
-:= -- 55219
-add.period$ -- 382
+* -- 50167
+:= -- 55267
+add.period$ -- 385
 call.type$ -- 81
 change.case$ -- 3
 chr.to.int$ -- 2511
-cite$ -- 93
-duplicate$ -- 15547
-empty$ -- 53216
+cite$ -- 91
+duplicate$ -- 15635
+empty$ -- 53258
 format.name$ -- 440
-if$ -- 114005
+if$ -- 114138
 int.to.chr$ -- 0
 int.to.str$ -- 81
-missing$ -- 986
-newline$ -- 474
+missing$ -- 987
+newline$ -- 476
 num.names$ -- 81
-pop$ -- 2592
+pop$ -- 2590
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1966
+skip$ -- 1967
 stack$ -- 0
-substring$ -- 139036
-swap$ -- 2656
+substring$ -- 139120
+swap$ -- 2654
 text.length$ -- 312
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 12
-while$ -- 974
+warning$ -- 10
+while$ -- 976
 width$ -- 83
-write$ -- 1026
-(There were 12 warnings)
+write$ -- 1029
+(There were 10 warnings)
