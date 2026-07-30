@@ -53,7 +53,7 @@ False-discovery and true-positive rates for all datasets tested.
 Positive predictive values for all datasets tested.
 
 \paragraph*{Fig. \ref{fig:supFigVolcanoEffectA2}}
-ALDEx2 scale models achieve the same result as a dual \textit{P}-value/fold-change cutoff without inflating the FDR.
+ALDEx2 scale models provide better FDR control than a dual \textit{P}-value/fold-change cutoff.
 
 \paragraph*{Table \ref{tab:supTabDensity}}
 Average minimum log differences required for a significant result with ALDEx2 and ALDEx3 for all datasets and \textgamma~values.
@@ -113,7 +113,7 @@ Genes dropped as scale uncertainty increases are largely unrelated to cancer dev
 \begin{figure}[H]
     \centering
     \includegraphics[width = \linewidth]{supFig_volcanoEffect_a2.png}
-    \caption{\textbf{ALDEx2 scale models achieve the same result as a dual \textit{P}-value/fold-change cutoff without inflating the FDR.} A randomly selected analysis iteration of the PD1 immunotherapy dataset was used to create volcano plots (\textbf{A, B}) and effect plots (\textbf{C, D}) for ALDEx2 analyses. Each data point represents a feature from the scale-na\"ive analysis (\textgamma~= 0.001). Differentially expressed features are defined either by: a BH-adjusted \textit{P}-value threshold of $<$0.05 \textit{and} a fold-change cutoff of $\geq$1 (\textbf{A, B}); or a BH-adjusted \textit{P}-value threshold of $<$0.05 when \textgamma = 0.5 (\textbf{C, D}). Grey points indicate non-significant features. Coloured points indicate features which are significantly different between groups after applying different definitions of differential expression. Vertical dashed lines in \textbf{A-C} indicate a log$_2$ fold-change of 1; horizontal dashed lines indicate BH-adjusted \textit{P}-value $<$0.05. Grey dotted and dashed lines in \textbf{D} indicate approximate isarithms between non-significant and significant features when \textgamma{} = 0.001 and 0.5, respectively.}
+    \caption{\textbf{ALDEx2 scale models provide better FDR control than a dual \textit{P}-value/fold-change cutoff.} A randomly selected analysis iteration of the PD1 immunotherapy dataset was used to create volcano plots (\textbf{A, B}) and effect plots (\textbf{C, D}) for ALDEx2 analyses. Each data point represents a feature from the scale-na\"ive analysis (\textgamma~= 0.001). Differentially expressed features are defined either by: a BH-adjusted \textit{P}-value threshold of $<$0.05 \textit{and} a fold-change cutoff of $\geq$1 (\textbf{A, B}); or a BH-adjusted \textit{P}-value threshold of $<$0.05 when \textgamma = 0.5 (\textbf{C, D}). Grey points indicate non-significant features. Coloured points indicate features which are significantly different between groups after applying different definitions of differential expression. Vertical dashed lines in \textbf{A-C} indicate a log$_2$ fold-change of 1; horizontal dashed lines indicate BH-adjusted \textit{P}-value $<$0.05. Grey dotted and dashed lines in \textbf{D} indicate approximate isarithms between non-significant and significant features when \textgamma{} = 0.001 and 0.5, respectively.}
     \label{fig:supFigVolcanoEffectA2}
 \end{figure}
 \newpage

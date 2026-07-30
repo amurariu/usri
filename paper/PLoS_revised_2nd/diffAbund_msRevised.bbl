@@ -227,6 +227,21 @@ Nearing JT, Douglas GM, Hayes MG, MacDonald J, Desai DK, Allward N, et~al.
 \newblock \href {http://dx.doi.org/10.1038/s41467-022-28034-z}
   {doi:10.1038/s41467-022-28034-z}.
 
+\bibitem{junttila_benchmarking_2022}
+Junttila S, Smolander J, Elo LL.
+\newblock Benchmarking methods for detecting differential states between
+  conditions from multi-subject single-cell {RNA}-seq data.
+\newblock Briefings in Bioinformatics. 2022;23(5):bbac286.
+\newblock \href {http://dx.doi.org/10.1093/bib/bbac286}
+  {doi:10.1093/bib/bbac286}.
+
+\bibitem{squair_confronting_2021}
+Squair JW, Gautier M, Kathe C, Anderson MA, James ND, Hutson TH, et~al.
+\newblock Confronting false discoveries in single-cell differential expression.
+\newblock Nature Communications. 2021;12(1):5692.
+\newblock \href {http://dx.doi.org/10.1038/s41467-021-25960-2}
+  {doi:10.1038/s41467-021-25960-2}.
+
 \bibitem{schurch_how_2016}
 Schurch NJ, Schofield P, Gierli{\'n}ski M, Cole C, Sherstnev A, Singh V, et~al.
 \newblock How many biological replicates are needed in an {RNA}-seq experiment
@@ -285,21 +300,6 @@ Ritchie ME, Phipson B, Wu D, Hu Y, Law CW, Shi W, et~al.
 \newblock Nucleic Acids Research. 2015;43(7):e47.
 \newblock \href {http://dx.doi.org/10.1093/nar/gkv007}
   {doi:10.1093/nar/gkv007}.
-
-\bibitem{squair_confronting_2021}
-Squair JW, Gautier M, Kathe C, Anderson MA, James ND, Hutson TH, et~al.
-\newblock Confronting false discoveries in single-cell differential expression.
-\newblock Nature Communications. 2021;12(1):5692.
-\newblock \href {http://dx.doi.org/10.1038/s41467-021-25960-2}
-  {doi:10.1038/s41467-021-25960-2}.
-
-\bibitem{junttila_benchmarking_2022}
-Junttila S, Smolander J, Elo LL.
-\newblock Benchmarking methods for detecting differential states between
-  conditions from multi-subject single-cell {RNA}-seq data.
-\newblock Briefings in Bioinformatics. 2022;23(5):bbac286.
-\newblock \href {http://dx.doi.org/10.1093/bib/bbac286}
-  {doi:10.1093/bib/bbac286}.
 
 \bibitem{regueira-iglesias_critical_2023}
 Regueira-Iglesias A, Balsa-Castro C, Blanco-Pintos T, Tomás I.
