@@ -1,0 +1,62 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: diff_ms.aux
+The style file: plos2025.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: diffAbund_refs.bib
+Warning--empty author and editor in konnaris_uncertainty_2025
+Warning--missing publisher in konnaris_uncertainty_2025
+Warning--empty author and editor in ALDEx3
+Warning--missing publisher in ALDEx3
+Warning--empty author and editor in li_supplement_2022
+Warning--missing publisher in li_supplement_2022
+Reallocated str_pool (elt_size=1) to 130000 items from 65000.
+Warning--empty author and editor in gloor_codaseq
+Warning--missing publisher in gloor_codaseq
+Warning--empty author and editor in r_core_2025
+Warning--missing publisher in r_core_2025
+You've used 80 entries,
+            3507 wiz_defined-function locations,
+            1199 strings with 59062 characters,
+and the built_in function-call counts, 501339 in all, are:
+= -- 55852
+> -- 1978
+< -- 1059
++ -- 1445
+- -- 397
+* -- 50018
+:= -- 55050
+add.period$ -- 380
+call.type$ -- 80
+change.case$ -- 3
+chr.to.int$ -- 2471
+cite$ -- 90
+duplicate$ -- 15458
+empty$ -- 53066
+format.name$ -- 436
+if$ -- 113670
+int.to.chr$ -- 0
+int.to.str$ -- 80
+missing$ -- 976
+newline$ -- 470
+num.names$ -- 80
+pop$ -- 2554
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1944
+stack$ -- 0
+substring$ -- 138784
+swap$ -- 2621
+text.length$ -- 304
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 10
+while$ -- 964
+width$ -- 82
+write$ -- 1016
+(There were 10 warnings)
