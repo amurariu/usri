@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.30)  10 AUG 2026 13:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.8.30)  11 AUG 2026 09:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1068,7 +1068,7 @@ Package rerunfilecheck Info: File `diff_ms.out' has not changed.
 Here is how much of TeX's memory you used:
  18422 strings out of 476025
  294640 string characters out of 5790017
- 1882388 words of memory out of 5000000
+ 1885388 words of memory out of 5000000
  38337 multiletter control sequences out of 15000+600000
  523909 words of font info for 121 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1088,10 +1088,10 @@ texlive/2023/texmf-dist/fonts/type1/public/cbfonts/grmn1000.pfb></usr/local/tex
 live/2023/texmf-dist/fonts/type1/public/cbfonts/grxn1000.pfb></usr/local/texliv
 e/2023/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy6.pfb></usr/local/te
 xlive/2023/texmf-dist/fonts/type1/public/marvosym/marvosym.pfb>
-Output written on diff_ms.pdf (23 pages, 276243 bytes).
+Output written on diff_ms.pdf (23 pages, 278093 bytes).
 PDF statistics:
- 626 PDF objects out of 1000 (max. 8388607)
- 565 compressed objects within 6 object streams
+ 633 PDF objects out of 1000 (max. 8388607)
+ 572 compressed objects within 6 object streams
  147 named destinations out of 1000 (max. 500000)
  27137 words of extra memory for PDF output out of 29859 (max. 10000000)
 
