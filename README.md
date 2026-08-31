@@ -11,7 +11,7 @@ This repository contains input data and code for running all analyses and produc
     - Summary stats (contains minimal difference between groups needed for *P* <0.05, for ALDEx2 and ALDEx3).
    
 - **code:**
-  - Directory containing all R scripts for producing the figures in the paper and running all tools on all datasets w/ binomial thinning, over 100 iterations of the data.
+  - Directory containing all R scripts for producing the figures in the paper and running all tools on all datasets w/ binomial thinning, over 100 iterations of the data. Note that these .Rda files are not provided in the repository due to their very large file size. They can be generated locally by running the corresponding R scripts.
 
 - **data:**
   - Directory containing input & metadata for all datasets, as well as metadata and any functional lookup data.
